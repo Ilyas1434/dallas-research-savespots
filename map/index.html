@@ -1,0 +1,764 @@
+<title>Dallas County Overdose Intelligence Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<style>
+  :root{
+    --bg:#0b0e13; --panel:#11151d; --panel-2:#161c26; --line:#232b38;
+    --ink:#e7edf5; --ink-dim:#9aa7b8; --ink-faint:#6b7789;
+    --accent:#4ea1ff; --warn:#ffb454; --danger:#ff6b5e; --ok:#4fd6a0;
+    --sidebar-w:372px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  #app{display:flex; height:100vh; width:100vw}
+
+  /* ---------- Sidebar ---------- */
+  #sidebar{
+    width:var(--sidebar-w); min-width:var(--sidebar-w); height:100%;
+    background:var(--panel); border-right:1px solid var(--line);
+    display:flex; flex-direction:column; z-index:1200; position:relative;
+  }
+  .brand{padding:14px 16px 10px; border-bottom:1px solid var(--line)}
+  .brand h1{font-size:15px; margin:0 0 3px; letter-spacing:.2px; font-weight:650}
+  .brand .sub{font-size:11px; color:var(--ink-dim); line-height:1.4}
+  .stamp{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+  .chip{font-size:10.5px; padding:3px 7px; border-radius:20px; background:var(--panel-2);
+    border:1px solid var(--line); color:var(--ink-dim)}
+  .chip b{color:var(--ink); font-weight:600}
+  .lag{margin-top:8px; font-size:10.5px; line-height:1.45; color:var(--warn);
+    background:rgba(255,180,84,.08); border:1px solid rgba(255,180,84,.22);
+    border-radius:7px; padding:7px 9px}
+
+  .tabs{display:flex; border-bottom:1px solid var(--line); background:var(--panel)}
+  .tab{flex:1; padding:9px 4px; font-size:11.5px; text-align:center; cursor:pointer;
+    color:var(--ink-faint); border-bottom:2px solid transparent; user-select:none; white-space:nowrap}
+  .tab:hover{color:var(--ink-dim)}
+  .tab.active{color:var(--ink); border-bottom-color:var(--accent)}
+
+  .scroll{flex:1; overflow-y:auto; padding:12px 14px 40px}
+  .scroll::-webkit-scrollbar{width:8px}
+  .scroll::-webkit-scrollbar-thumb{background:#222c3a; border-radius:4px}
+
+  .sec-h{font-size:10.5px; text-transform:uppercase; letter-spacing:.7px;
+    color:var(--ink-faint); margin:14px 0 7px; font-weight:600}
+  .sec-h:first-child{margin-top:0}
+
+  /* toggles */
+  .toggle{display:flex; align-items:flex-start; gap:9px; padding:8px 9px; border-radius:8px;
+    cursor:pointer; border:1px solid transparent; margin-bottom:3px}
+  .toggle:hover{background:var(--panel-2)}
+  .toggle.on{background:var(--panel-2); border-color:var(--line)}
+  .toggle.disabled{opacity:.5; cursor:not-allowed}
+  .sw{width:32px; height:18px; border-radius:20px; background:#2a3342; position:relative;
+    flex:0 0 auto; margin-top:1px; transition:background .15s}
+  .sw::after{content:""; position:absolute; width:14px; height:14px; border-radius:50%;
+    background:#8492a6; top:2px; left:2px; transition:.15s}
+  .toggle.on .sw{background:var(--accent)}
+  .toggle.on .sw::after{left:16px; background:#fff}
+  .toggle .tx{flex:1; min-width:0}
+  .toggle .tt{font-size:12.5px; line-height:1.25; display:flex; align-items:center; gap:6px; flex-wrap:wrap}
+  .toggle .dd{font-size:10.5px; color:var(--ink-faint); margin-top:2px; line-height:1.35}
+  .swatch{width:11px;height:11px;border-radius:3px;flex:0 0 auto;display:inline-block}
+  .pending{font-size:9px; text-transform:uppercase; letter-spacing:.5px; color:var(--warn);
+    border:1px solid rgba(255,180,84,.35); border-radius:10px; padding:1px 6px}
+
+  /* legend */
+  .legend-box{background:var(--panel-2); border:1px solid var(--line); border-radius:8px;
+    padding:10px 11px; margin-bottom:10px}
+  .legend-box .lt{font-size:11.5px; font-weight:600; margin-bottom:6px}
+  .grad{height:11px; border-radius:3px; margin:5px 0 3px}
+  .grad-lab{display:flex; justify-content:space-between; font-size:10px; color:var(--ink-dim)}
+  .legend-note{font-size:10px; color:var(--ink-faint); margin-top:6px; line-height:1.4}
+  .cat-row{display:flex; align-items:center; gap:7px; font-size:11px; margin:3px 0; color:var(--ink-dim)}
+  .cat-dot{width:12px; height:12px; border-radius:50%; border:1.5px solid #0009; flex:0 0 auto}
+  path.hatch-path{fill:url(#hatch); fill-opacity:1; pointer-events:none}
+  .hatch-swatch{width:16px;height:12px;border-radius:2px;border:1px solid var(--line);
+    background-image:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(255,255,255,.55) 2px,rgba(255,255,255,.55) 3px);
+    background-color:#3a4150; flex:0 0 auto}
+
+  /* insights */
+  .kpi-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px}
+  .kpi{background:var(--panel-2); border:1px solid var(--line); border-radius:9px; padding:10px 11px}
+  .kpi .v{font-size:20px; font-weight:680; letter-spacing:-.3px}
+  .kpi .l{font-size:10px; color:var(--ink-dim); margin-top:2px; line-height:1.3}
+  .kpi .l b{color:var(--ink-dim)}
+  .kpi.wide{grid-column:1/3}
+  .spark-wrap{background:var(--panel-2); border:1px solid var(--line); border-radius:9px;
+    padding:11px 12px; margin-bottom:12px}
+  .spark-wrap .st{font-size:11.5px; font-weight:600; margin-bottom:2px}
+  .spark-wrap .ss{font-size:10px; color:var(--ink-faint); margin-bottom:8px; line-height:1.4}
+  .bars{margin-bottom:6px}
+  .bar-row{display:flex; align-items:center; gap:8px; margin:4px 0; font-size:11px}
+  .bar-row .bl{width:120px; color:var(--ink-dim); flex:0 0 auto; text-transform:capitalize}
+  .bar-track{flex:1; height:9px; background:#1c2430; border-radius:5px; overflow:hidden}
+  .bar-fill{height:100%; border-radius:5px}
+  .bar-row .bn{width:22px; text-align:right; color:var(--ink); flex:0 0 auto}
+
+  /* about / prose */
+  .prose{font-size:12px; line-height:1.55; color:var(--ink-dim)}
+  .prose h4{font-size:11px; text-transform:uppercase; letter-spacing:.6px; color:var(--ink-faint);
+    margin:15px 0 6px; font-weight:600}
+  .prose h4:first-child{margin-top:0}
+  .prose p{margin:0 0 8px}
+  .prose b{color:var(--ink)}
+  .src{border:1px solid var(--line); border-radius:8px; padding:8px 10px; margin-bottom:7px; background:var(--panel-2)}
+  .src .sn{font-size:12px; color:var(--ink); font-weight:600}
+  .src .sm{font-size:10.5px; color:var(--ink-faint); margin-top:2px; line-height:1.4}
+
+  /* map */
+  #map{flex:1; height:100%; background:#0b0e13}
+  .leaflet-container{background:#0b0e13; font-family:inherit}
+  .leaflet-popup-content-wrapper{background:#141a24; color:var(--ink); border-radius:9px;
+    box-shadow:0 8px 30px #000a; border:1px solid var(--line)}
+  .leaflet-popup-tip{background:#141a24; border:1px solid var(--line)}
+  .leaflet-popup-content{margin:11px 13px; font-size:12px; line-height:1.5}
+  .leaflet-popup-content .pp-t{font-size:13px; font-weight:650; margin-bottom:4px}
+  .leaflet-popup-content .pp-r{color:var(--ink-dim)}
+  .leaflet-popup-content .pp-r b{color:var(--ink); font-weight:600}
+  .leaflet-popup-content .pp-cat{display:inline-block; font-size:10px; padding:2px 7px; border-radius:10px;
+    margin-top:5px; font-weight:600}
+  .leaflet-popup-close-button{color:var(--ink-faint)!important}
+  .leaflet-bar a{background:#141a24; color:var(--ink); border-color:var(--line)}
+  .leaflet-bar a:hover{background:#1c2430}
+  .cluster-icon{background:rgba(78,161,255,.85); border:2px solid #fff; border-radius:50%;
+    color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center;
+    font-size:12px; box-shadow:0 2px 8px #0007}
+
+  /* mobile */
+  #menu-btn{display:none; position:absolute; top:10px; left:10px; z-index:1300;
+    background:var(--panel); border:1px solid var(--line); color:var(--ink);
+    width:42px; height:42px; border-radius:9px; font-size:20px; cursor:pointer}
+  .loading{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background:var(--bg); z-index:2000; color:var(--ink-dim); font-size:13px; flex-direction:column; gap:10px}
+  .spin{width:26px;height:26px;border:3px solid #2a3342;border-top-color:var(--accent);
+    border-radius:50%;animation:sp 1s linear infinite}
+  @keyframes sp{to{transform:rotate(360deg)}}
+
+  @media (max-width:760px){
+    #sidebar{position:absolute; left:0; top:0; height:100%; transform:translateX(-100%);
+      transition:transform .22s ease; box-shadow:8px 0 30px #000a; --sidebar-w:88vw; max-width:360px}
+    #sidebar.open{transform:translateX(0)}
+    #menu-btn{display:block}
+  }
+</style>
+
+<!-- hidden SVG defs: diagonal hatch pattern for CDC-suppressed tracts -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="6" height="6" fill="none"></rect>
+      <line x1="0" y1="0" x2="0" y2="6" stroke="rgba(255,255,255,0.5)" stroke-width="1.4"></line>
+    </pattern>
+  </defs>
+</svg>
+
+<div id="app">
+  <button id="menu-btn" aria-label="Toggle panel">☰</button>
+  <aside id="sidebar">
+    <div class="brand">
+      <h1>Dallas County Overdose Intelligence</h1>
+      <div class="sub">Naloxone placement &amp; harm-reduction targeting from aggregated public-health data.</div>
+      <div class="stamp" id="stamp"></div>
+      <div class="lag" id="lag"></div>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div class="scroll" id="panel"></div>
+  </aside>
+  <div id="map"></div>
+</div>
+
+<div class="loading" id="loading"><div class="spin"></div><div>Loading Dallas County data…</div></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+"use strict";
+/* ============================================================
+   Dallas County Overdose Intelligence Map
+   - Dark CARTO basemap, Leaflet only, no build step.
+   - Aggregated data only. No point-level death data exists in
+     this repo and none is synthesized. (Privacy rule.)
+   - Optional layers are feature-detected: 404 => toggle shows
+     "pending" and is disabled; appears automatically when built.
+   ============================================================ */
+
+const DATA = "../data/clean/";  // resolves to /data/clean on Vercel "/" rewrite and locally under /map/index.html
+const F = {
+  tracts:    "tract_overdose.geojson",
+  svi:       "svi_tracts.geojson",
+  nalox:     "naloxone_locations.geojson",
+  coverage:  "coverage_gap.json",
+  walk:      "walk_coverage.json",
+  vsrr:      "vsrr.json",
+  mortMeta:  "mortality_meta.json",
+  ctxMeta:   "context_meta.json",
+  builtenv:  "builtenv_index.json",       // present now (blight/311) — still feature-detected
+  composite: "composite_index.geojson",   // may not exist yet
+  candidates:"placement_candidates.geojson"// may not exist yet
+};
+
+const store = {};      // loaded json by key
+const avail = {};      // availability flags by key
+const built = {};      // built Leaflet layers by layer id (lazy)
+const activeLayers = {}; // id -> layer currently on map
+let map, tractGeoFeatures = [], sviByGeoid = {}, covByGeoid = {};
+
+/* ---------- fetch helpers ---------- */
+async function getJSON(key, required){
+  try{
+    const r = await fetch(DATA + F[key], {cache:"no-store"});
+    if(!r.ok){ avail[key]=false; if(required) console.warn("MISSING required", key, r.status); return null; }
+    const j = await r.json();
+    store[key]=j; avail[key]=true; return j;
+  }catch(e){ avail[key]=false; if(required) console.warn("ERR", key, e); return null; }
+}
+
+/* ============================================================
+   COLOR SCALES (hand-rolled sequential interpolation, no d3)
+   ============================================================ */
+function h2r(h){h=h.replace('#','');return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+function mix(a,b,t){return 'rgb('+Math.round(a[0]+(b[0]-a[0])*t)+','+Math.round(a[1]+(b[1]-a[1])*t)+','+Math.round(a[2]+(b[2]-a[2])*t)+')';}
+function makeScale(hexes){
+  const rgb = hexes.map(h2r);
+  return function(t){
+    if(t==null||isNaN(t)) return null;
+    t=Math.max(0,Math.min(1,t));
+    const seg=(rgb.length-1)*t, i=Math.min(Math.floor(seg),rgb.length-2);
+    return mix(rgb[i],rgb[i+1],seg-i);
+  };
+}
+const PAL = {
+  mortality: makeScale(['#2c0f0a','#6e1f14','#b3341c','#e85d2e','#ff9d4d','#ffe08a']),
+  svi:       makeScale(['#1b1035','#3d2470','#6438a8','#9151d6','#bd7ef0','#e6ccff']),
+  poverty:   makeScale(['#0a1c33','#123a66','#1f5f9e','#2f8fd6','#66c2ff','#c2e8ff']),
+  distance:  makeScale(['#2a0a24','#5c1447','#94216f','#c73a8f','#ec6aa5','#ffb3d1']),
+  dart:      makeScale(['#0a2418','#14472b','#1f7a45','#33b06a','#6fe0a0','#c2f5d8']),
+  blight:    makeScale(['#2b1e08','#5c3d10','#94641a','#c78f2a','#ecc25a','#fff0b3']),
+  composite: makeScale(['#08313a','#0d5a63','#1f8f7e','#4dbf6a','#a8e05a','#ffe066'])
+};
+// normalize value into 0..1 within [min,max]; optional sqrt for skewed counts
+function norm(v,min,max,sqrt){ if(v==null||isNaN(v)) return null; let t=(v-min)/(max-min); t=Math.max(0,Math.min(1,t)); return sqrt?Math.sqrt(t):t; }
+
+/* naloxone category styling */
+const CAT = {
+  otp_methadone:        {label:"OTP / methadone",       color:"#4ea1ff"},
+  storefront_dispenser: {label:"Storefront dispenser",  color:"#4fd6a0"},
+  harm_reduction:       {label:"Harm reduction",        color:"#ff6b5e"},
+  recovery_services:    {label:"Recovery services",     color:"#b98bff"},
+  health_clinic:        {label:"Health clinic",         color:"#ffd24d"},
+  nightlife_venue:      {label:"Nightlife venue",       color:"#ff8fc4"}
+};
+function catStyle(c){ return CAT[c] || {label:c||"Other", color:"#9aa7b8"}; }
+
+/* ============================================================
+   LAYER DEFINITIONS  (built lazily on first use)
+   ============================================================ */
+const LAYERS = {
+  mortality: {
+    label:"Overdose mortality", legend:"choropleth", pal:"mortality",
+    desc:"Model-based death rate per 100k (2025)", requires:["tracts"],
+    dom:[0,64.7], unit:"per 100k", fmt:v=>v.toFixed(1)+" / 100k",
+    build(){
+      return L.geoJSON(store.tracts, {
+        style:f=>choStyle(f.properties.od_death_rate_per_100k, "mortality",[0,64.7]),
+        onEachFeature:(f,l)=>{const p=f.properties;
+          l.bindPopup(`<div class="pp-t">Tract ${p.geoid.slice(-6)}</div>
+            <div class="pp-r"><b>${p.od_death_rate_per_100k.toFixed(1)}</b> deaths / 100k</div>
+            ${p.count_suppressed?'<div class="pp-r" style="margin-top:4px;font-size:11px;color:#ffb454">Death count 1–9 suppressed (CDC); model-based rate shown.</div>':''}`);}
+      });
+    }
+  },
+  suppressed: {
+    label:"CDC-suppressed counts", legend:"hatch",
+    desc:"Tracts with death counts 1–9 masked by NCHS", requires:["tracts"],
+    build(){
+      const feats = store.tracts.features.filter(f=>f.properties.count_suppressed);
+      return L.geoJSON({type:"FeatureCollection",features:feats},{
+        interactive:false,
+        style:()=>({className:"hatch-path", stroke:false, fillOpacity:1, weight:0})
+      });
+    }
+  },
+  svi: {
+    label:"Social vulnerability (SVI)", legend:"choropleth", pal:"svi",
+    desc:"CDC/ATSDR SVI 2022 overall percentile", requires:["svi"],
+    dom:[0,1], unit:"percentile", fmt:v=>v.toFixed(2),
+    build(){
+      return L.geoJSON(store.svi,{
+        style:f=>choStyle(f.properties.svi_overall,"svi",[0,1]),
+        onEachFeature:(f,l)=>{const p=f.properties;
+          l.bindPopup(`<div class="pp-t">Tract ${p.geoid.slice(-6)}</div>
+            <div class="pp-r">SVI overall: <b>${fmtN(p.svi_overall)}</b></div>
+            <div class="pp-r" style="font-size:11px;margin-top:3px">Socioecon ${fmtN(p.svi_theme1)} · Household ${fmtN(p.svi_theme2)} · Minority/lang ${fmtN(p.svi_theme3)} · Housing/transit ${fmtN(p.svi_theme4)}</div>`);}
+      });
+    }
+  },
+  poverty: {
+    label:"Poverty rate", legend:"choropleth", pal:"poverty",
+    desc:"% below poverty (ACS 2020–2024)", requires:["svi"],
+    dom:[0,62], unit:"% poverty", fmt:v=>v.toFixed(0)+"%",
+    build(){
+      return L.geoJSON(store.svi,{
+        style:f=>choStyle(f.properties.pct_poverty_acs2024,"poverty",[0,62]),
+        onEachFeature:(f,l)=>{const p=f.properties;
+          l.bindPopup(`<div class="pp-t">Tract ${p.geoid.slice(-6)}</div>
+            <div class="pp-r">Poverty: <b>${fmtN(p.pct_poverty_acs2024)}%</b></div>
+            <div class="pp-r">Uninsured: <b>${fmtN(p.pct_uninsured_acs2024)}%</b></div>`);}
+      });
+    }
+  },
+  distance: {
+    label:"Distance to naloxone", legend:"choropleth", pal:"distance",
+    desc:"Miles from tract centroid to nearest supply", requires:["coverage","tracts"],
+    dom:[0,10.2], unit:"miles", fmt:v=>v.toFixed(1)+" mi",
+    build(){
+      const fc = joinToTracts(covByGeoid);
+      return L.geoJSON(fc,{
+        style:f=>{const m=f.properties.dist_nearest_any_m;
+          return choStyle(m==null?null:m/1609.34,"distance",[0,10.2]);},
+        onEachFeature:(f,l)=>{const p=f.properties; if(p.dist_nearest_any_m==null){l.bindPopup(`Tract ${p.geoid.slice(-6)}: no data`);return;}
+          l.bindPopup(`<div class="pp-t">Tract ${p.geoid.slice(-6)}</div>
+            <div class="pp-r">Nearest supply: <b>${(p.dist_nearest_any_m/1609.34).toFixed(2)} mi</b></div>
+            <div class="pp-r">Nearest storefront: <b>${(p.dist_nearest_storefront_m/1609.34).toFixed(1)} mi</b></div>
+            <div class="pp-r">Nearest 24/7: <b>${(p.dist_nearest_247_m/1609.34).toFixed(1)} mi</b></div>
+            <div class="pp-r" style="margin-top:3px">${p.supply_within_1mi?'✓ within 1 mi':p.supply_within_2mi?'within 2 mi (not 1)':'✗ &gt; 2 mi from supply'}</div>`);}
+      });
+    }
+  },
+  dart: {
+    label:"DART transit density", legend:"choropleth", pal:"dart",
+    desc:"Rail/bus stops within ½ mile of centroid", requires:["svi"],
+    dom:[0,84], unit:"stops", sqrt:true, fmt:v=>Math.round(v)+" stops",
+    build(){
+      return L.geoJSON(store.svi,{
+        style:f=>choStyle(f.properties.dart_stops_halfmile,"dart",[0,84],true),
+        onEachFeature:(f,l)=>{const p=f.properties;
+          l.bindPopup(`<div class="pp-t">Tract ${p.geoid.slice(-6)}</div>
+            <div class="pp-r">DART stops ≤ ½ mi: <b>${p.dart_stops_halfmile||0}</b></div>`);}
+      });
+    }
+  },
+  blight: {
+    label:"Neighborhood blight (311)", legend:"choropleth", pal:"blight",
+    desc:"Illegal-dumping/graffiti/litter 311 reports, 24mo", requires:["builtenv","tracts"],
+    dom:[0,1], unit:"reports", sqrt:true, fmt:v=>Math.round(v)+" reports",
+    build(){
+      const bt = store.builtenv.tracts||{};
+      let mx=1; for(const k in bt){ mx=Math.max(mx, bt[k].blight_311_24mo||0); }
+      this.dom=[0,mx]; this.fmt=v=>Math.round(v)+" reports";
+      const fc = joinToTracts(function(g){return bt[g];});
+      return L.geoJSON(fc,{
+        style:f=>{const v=f.properties && f.properties.blight_311_24mo;
+          return choStyle(v==null?null:v,"blight",[0,mx],true);},
+        onEachFeature:(f,l)=>{const p=f.properties; if(!p||p.blight_311_24mo==null){l.bindPopup(`Tract ${(f.properties&&f.properties.geoid||'').slice(-6)}: no data`);return;}
+          const c=p.blight_311_24mo_by_category||{};
+          l.bindPopup(`<div class="pp-t">Tract ${p.geoid.slice(-6)}</div>
+            <div class="pp-r">311 blight reports (24mo): <b>${p.blight_311_24mo}</b></div>
+            <div class="pp-r" style="font-size:11px;margin-top:3px">Dumping ${c.illegal_dumping||0} · Graffiti ${c.graffiti||0} · Litter ${c.litter||0}</div>
+            <div class="pp-r" style="font-size:11px">Vacancy proxy addrs: ${p.vacancy_proxy_addresses||0}</div>`);}
+      });
+    }
+  },
+  naloxone: {
+    label:"Naloxone supply sites", legend:"points",
+    desc:"39 sites by category (1 mobile org, no fixed point)", requires:["nalox"],
+    build(){
+      const g = L.layerGroup();
+      store.nalox.features.forEach(f=>{
+        if(!f.geometry) return; // mobile org: null geometry, intentionally not placed
+        const p=f.properties, cs=catStyle(p.category), ll=[f.geometry.coordinates[1],f.geometry.coordinates[0]];
+        L.circleMarker(ll,{radius:6,color:"#0b0e13",weight:1.5,fillColor:cs.color,fillOpacity:.95})
+         .bindPopup(`<div class="pp-t">${esc(p.name)}</div>
+            <div class="pp-r">${esc(p.address||"")}${p.city?", "+esc(p.city):""} ${p.zip||""}</div>
+            ${p.hours_raw?`<div class="pp-r" style="margin-top:3px">Hours: ${esc(p.hours_raw)}</div>`:""}
+            ${p.access_247?'<div class="pp-r" style="color:#4fd6a0">Open 24/7</div>':""}
+            <div class="pp-r" style="font-size:11px;margin-top:3px">Source: ${esc(p.source||"—")} · Verified ${esc(p.verified_on||"—")}</div>
+            <span class="pp-cat" style="background:${cs.color}22;color:${cs.color}">${cs.label}</span>`)
+         .addTo(g);
+      });
+      return g;
+    }
+  },
+  radii: {
+    label:"Coverage radii (1 &amp; 2 mi)", legend:"radii",
+    desc:"Walkable-ish rings around each fixed site", requires:["nalox"],
+    build(){
+      const g = L.layerGroup();
+      store.nalox.features.forEach(f=>{
+        if(!f.geometry) return;
+        const ll=[f.geometry.coordinates[1],f.geometry.coordinates[0]];
+        L.circle(ll,{radius:3218,color:"#4ea1ff",weight:1,opacity:.28,fill:false,dashArray:"4 5"}).addTo(g); // 2mi
+        L.circle(ll,{radius:1609,color:"#4fd6a0",weight:1,opacity:.4,fillColor:"#4fd6a0",fillOpacity:.05}).addTo(g); // 1mi
+      });
+      return g;
+    }
+  },
+  composite: {
+    label:"Composite priority index", legend:"choropleth", pal:"composite",
+    optional:true, desc:"Blended need/opportunity score + tiers", requires:["composite"],
+    dom:[0,1], unit:"score", fmt:v=>fmtN(v),
+    build(){
+      const j=store.composite;
+      // feature-detect the score field & optional tier field
+      const props0=(j.features[0]||{}).properties||{};
+      const scoreKey=["composite_index","composite","score","priority_score","index","value"].find(k=>k in props0);
+      const tierKey=["tier","priority_tier","rank_tier","class"].find(k=>k in props0);
+      let mn=Infinity,mx=-Infinity;
+      if(scoreKey) j.features.forEach(f=>{const v=+f.properties[scoreKey]; if(!isNaN(v)){mn=Math.min(mn,v);mx=Math.max(mx,v);}});
+      if(!isFinite(mn)){mn=0;mx=1;}
+      this.dom=[mn,mx]; this.fmt=v=>fmtN(v);
+      return L.geoJSON(j,{
+        style:f=>{const v=scoreKey?+f.properties[scoreKey]:null;
+          const s=choStyle(v,"composite",[mn,mx]);
+          if(tierKey && f.properties[tierKey]!=null){ s.weight=1.1; s.color="#ffffff55"; }
+          return s;},
+        onEachFeature:(f,l)=>{const p=f.properties;
+          let h=`<div class="pp-t">${p.geoid?("Tract "+String(p.geoid).slice(-6)):"Area"}</div>`;
+          if(scoreKey) h+=`<div class="pp-r">${scoreKey.replace(/_/g,' ')}: <b>${fmtN(+p[scoreKey])}</b></div>`;
+          if(tierKey)  h+=`<div class="pp-r">Tier: <b>${esc(String(p[tierKey]))}</b></div>`;
+          l.bindPopup(h);}
+      });
+    }
+  },
+  candidates: {
+    label:"Placement candidates", legend:"points",
+    optional:true, desc:"Recommended new naloxone sites (clustered)", requires:["candidates"],
+    build(){ return buildCandidateLayer(store.candidates); }
+  }
+};
+
+/* shared choropleth style */
+function choStyle(v,pal,dom,sqrt){
+  const t=norm(v,dom[0],dom[1],sqrt);
+  const c=PAL[pal](t);
+  return {fillColor: c||"#20262f", fillOpacity: c?0.72:0.14,
+          weight:0.4, color:"#0b0e1388", opacity:1};
+}
+function joinToTracts(lookup){
+  const fn = typeof lookup==="function"?lookup:(g=>lookup[g]);
+  return {type:"FeatureCollection", features: tractGeoFeatures.map(f=>({
+    type:"Feature", geometry:f.geometry,
+    properties: Object.assign({geoid:f.properties.geoid}, fn(f.properties.geoid)||{})
+  }))};
+}
+function fmtN(x){return (x==null||isNaN(x))?"—":(+x).toFixed(x!=null&&Math.abs(x)<1?4:2).replace(/\.?0+$/,"");}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+/* ---------- placement candidate layer: zoom-gated grid clustering ---------- */
+function buildCandidateLayer(fc){
+  const pts=(fc.features||[]).filter(f=>f.geometry && f.geometry.type==="Point")
+    .map(f=>({ll:[f.geometry.coordinates[1],f.geometry.coordinates[0]],p:f.properties||{}}));
+  const g=L.layerGroup();
+  function render(){
+    g.clearLayers();
+    if(!map.hasLayer(g)) return;
+    const z=map.getZoom();
+    if(pts.length<=500 || z>=13){
+      const b=map.getBounds();
+      pts.forEach(pt=>{ if(!b.contains(pt.ll)) return;
+        const pr=pt.p, id=pr.name||pr.id||pr.rank||"site";
+        let h=`<div class="pp-t">${esc(String(id))}</div>`;
+        if(pr.address||pr.zip) h+=`<div class="pp-r">${esc(pr.address||"")}${pr.zip?" · "+esc(String(pr.zip)):""}</div>`;
+        ["category","source","score","priority_score","tier","open_24h","reason","rationale","nearest_dist_mi"].forEach(k=>{
+          if(k in pr && pr[k]!=null && pr[k]!=="") h+=`<div class="pp-r">${k.replace(/_/g,' ')}: <b>${esc(String(pr[k]))}</b></div>`;});
+        L.circleMarker(pt.ll,{radius:5,color:"#fff",weight:1.4,fillColor:"#ffd24d",fillOpacity:.9})
+          .bindPopup(h).addTo(g);
+      });
+    } else {
+      // grid cluster into ~60px cells
+      const cell=60, cells={};
+      pts.forEach(pt=>{ const s=map.latLngToContainerPoint(pt.ll);
+        const key=Math.floor(s.x/cell)+"_"+Math.floor(s.y/cell);
+        (cells[key]=cells[key]||[]).push(pt); });
+      Object.values(cells).forEach(arr=>{
+        let la=0,lo=0; arr.forEach(pt=>{la+=pt.ll[0];lo+=pt.ll[1];});
+        const c=[la/arr.length,lo/arr.length], n=arr.length, r=Math.min(30,14+Math.log2(n+1)*4);
+        L.marker(c,{icon:L.divIcon({className:"",html:`<div class="cluster-icon" style="width:${r*2}px;height:${r*2}px">${n}</div>`,iconSize:[r*2,r*2]})})
+          .on("click",()=>map.setView(c,Math.min(15,map.getZoom()+2))).addTo(g);
+      });
+    }
+  }
+  g.on("add",()=>{ render(); map.on("moveend zoomend",render); });
+  g.on("remove",()=>{ map.off("moveend zoomend",render); });
+  return g;
+}
+
+/* ============================================================
+   MAP + LAYER TOGGLING
+   ============================================================ */
+function initMap(){
+  map=L.map("map",{zoomControl:true,preferCanvas:false}).setView([32.78,-96.80],10);
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{
+    attribution:'&copy; OpenStreetMap &copy; CARTO', subdomains:"abcd", maxZoom:19
+  }).addTo(map);
+}
+function getLayer(id){
+  if(built[id]) return built[id];
+  const def=LAYERS[id];
+  if(!def) return null;
+  if(!def.requires.every(k=>avail[k])) return null;
+  built[id]=def.build();
+  return built[id];
+}
+// z-ordering: choropleths bottom, hatch/points/radii above
+const ORDER=["mortality","svi","poverty","distance","dart","blight","composite","suppressed","radii","naloxone","candidates"];
+function setLayer(id,on){
+  const lyr=getLayer(id); if(!lyr) return;
+  if(on){ if(!activeLayers[id]){ lyr.addTo(map); activeLayers[id]=lyr; } }
+  else { if(activeLayers[id]){ map.removeLayer(lyr); delete activeLayers[id]; } }
+  reorder(); renderLegend();
+}
+function reorder(){
+  ORDER.forEach(id=>{ if(activeLayers[id] && activeLayers[id].bringToFront) activeLayers[id].bringToFront(); });
+}
+
+/* ============================================================
+   TABS + PANELS
+   ============================================================ */
+const TABS={
+  overview:   {name:"Overview",    layers:["mortality","suppressed","svi","poverty","naloxone","radii"], on:["mortality"]},
+  placement:  {name:"Placement",   layers:["distance","naloxone","radii","composite","candidates"],       on:["distance","naloxone"]},
+  environment:{name:"Environment", layers:["dart","blight","svi"],                                         on:["dart"]},
+  insights:   {name:"Insights",    layers:["mortality"],                                                   on:["mortality"], panel:"insights"},
+  about:      {name:"About",       layers:[],                                                              on:[],            panel:"about"}
+};
+let curTab="overview";
+const onState={}; // id -> bool (persisted across tab switches)
+
+function switchTab(t){
+  curTab=t;
+  document.querySelectorAll(".tab").forEach(el=>el.classList.toggle("active",el.dataset.t===t));
+  // remove any active layer not in this tab
+  Object.keys(activeLayers).forEach(id=>{ if(!TABS[t].layers.includes(id)) setLayer(id,false); });
+  // apply defaults on first entry
+  if(!TABS[t]._init){ TABS[t]._init=true; TABS[t].on.forEach(id=>{ onState[id]=true; }); }
+  // apply on-state for this tab's layers
+  TABS[t].layers.forEach(id=>{ if(onState[id] && layerReady(id)) setLayer(id,true); });
+  renderPanel();
+  if(window.innerWidth<=760) document.getElementById("sidebar").classList.remove("open");
+}
+function layerReady(id){ return LAYERS[id] && LAYERS[id].requires.every(k=>avail[k]); }
+
+function renderPanel(){
+  const el=document.getElementById("panel");
+  const tab=TABS[curTab];
+  if(tab.panel==="insights"){ el.innerHTML=insightsHTML(); drawSpark(); return; }
+  if(tab.panel==="about"){ el.innerHTML=aboutHTML(); return; }
+  // layer toggles + legend
+  let h=`<div class="sec-h">Layers</div>`;
+  tab.layers.forEach(id=>{
+    const def=LAYERS[id], ready=layerReady(id), on=!!activeLayers[id];
+    let badge = "";
+    if(!ready){ badge = def.optional?`<span class="pending">pending</span>`:`<span class="pending" style="color:var(--danger);border-color:#ff6b5e55">unavailable</span>`; }
+    h+=`<div class="toggle ${on?"on":""} ${ready?"":"disabled"}" data-id="${id}">
+      <div class="sw"></div>
+      <div class="tx"><div class="tt">${def.label} ${badge}</div><div class="dd">${def.desc}</div></div>
+    </div>`;
+  });
+  h+=`<div class="sec-h">Legend</div><div id="legend"></div>`;
+  el.innerHTML=h;
+  el.querySelectorAll(".toggle").forEach(t=>{
+    t.addEventListener("click",()=>{
+      const id=t.dataset.id; if(!layerReady(id)) return;
+      const now=!activeLayers[id]; onState[id]=now; setLayer(id,now);
+      t.classList.toggle("on",now);
+    });
+  });
+  renderLegend();
+}
+
+function renderLegend(){
+  const box=document.getElementById("legend"); if(!box) return;
+  let h="";
+  ORDER.forEach(id=>{
+    if(!activeLayers[id]) return;
+    const def=LAYERS[id];
+    if(def.legend==="choropleth"){
+      const grad=gradientCSS(def.pal);
+      const a=def.dom[0], b=def.dom[1], mid=def.sqrt?null:(a+b)/2;
+      h+=`<div class="legend-box"><div class="lt">${def.label} <span style="color:var(--ink-faint);font-weight:400">(${def.unit})</span></div>
+        <div class="grad" style="background:${grad}"></div>
+        <div class="grad-lab"><span>${def.fmt(a)}</span>${mid!=null?`<span>${def.fmt(mid)}</span>`:`<span></span>`}<span>${def.fmt(b)}</span></div>
+        ${def.sqrt?'<div class="legend-note">Square-root scale (skewed counts).</div>':''}</div>`;
+    } else if(def.legend==="hatch"){
+      h+=`<div class="legend-box"><div class="lt" style="display:flex;align-items:center;gap:7px"><span class="hatch-swatch"></span>Suppressed counts</div>
+        <div class="legend-note">Diagonal hatch = tracts where the death count (1–9) is masked by CDC/NCHS confidentiality. The model-based <b>rate</b> is still shown in the mortality layer.</div></div>`;
+    } else if(def.legend==="points"){
+      let rows="";
+      if(id==="naloxone"){ Object.keys(CAT).forEach(k=>{ rows+=`<div class="cat-row"><span class="cat-dot" style="background:${CAT[k].color}"></span>${CAT[k].label}</div>`; }); }
+      else { rows=`<div class="cat-row"><span class="cat-dot" style="background:#ffd24d"></span>Candidate site</div>`; }
+      h+=`<div class="legend-box"><div class="lt">${def.label}</div>${rows}</div>`;
+    } else if(def.legend==="radii"){
+      h+=`<div class="legend-box"><div class="lt">Coverage radii</div>
+        <div class="cat-row"><span class="cat-dot" style="background:#4fd6a0;border-color:#4fd6a0"></span>1 mile</div>
+        <div class="cat-row"><span class="cat-dot" style="background:transparent;border:1px dashed #4ea1ff"></span>2 miles</div>
+        <div class="legend-note">Straight-line rings; Dallas is car-dependent, so these overstate walkable access.</div></div>`;
+    }
+  });
+  if(!h) h=`<div class="legend-note">No layers active.</div>`;
+  box.innerHTML=h;
+}
+function gradientCSS(pal){
+  const s=PAL[pal]; const stops=[];
+  for(let i=0;i<=6;i++){ stops.push(s(i/6)+" "+Math.round(i/6*100)+"%"); }
+  return "linear-gradient(90deg,"+stops.join(",")+")";
+}
+
+/* ============================================================
+   INSIGHTS PANEL
+   ============================================================ */
+function insightsHTML(){
+  const m=store.mortMeta.sources, v=store.vsrr, w=store.walk, cov=store.coverage.summary;
+  const latest=+v[v.length-1].provisional_drug_overdose_deaths;
+  const latestEnd=v[v.length-1].period_end;
+  let peak=0,peakEnd=""; v.forEach(r=>{const x=+r.provisional_drug_overdose_deaths; if(x>peak){peak=x;peakEnd=r.period_end;}});
+  const first=+v[0].provisional_drug_overdose_deaths;
+  const catCounts={};
+  store.nalox.features.forEach(f=>{const c=f.properties.category||"other"; catCounts[c]=(catCounts[c]||0)+1;});
+  const maxCat=Math.max(...Object.values(catCounts));
+  const w1=cov.pct_tracts_within_1mi_any, w2=cov.pct_tracts_within_2mi_any;
+  let h=`<div class="sec-h">Headline (live from data)</div><div class="kpi-grid">
+    <div class="kpi"><div class="v">${latest}</div><div class="l">Drug-OD deaths, 12-mo ending <b>${latestEnd}</b></div></div>
+    <div class="kpi"><div class="v">${peak}</div><div class="l">Peak 12-mo total (${peakEnd})</div></div>
+    <div class="kpi"><div class="v">${w1}%</div><div class="l">Tracts within <b>1 mi</b> of any supply</div></div>
+    <div class="kpi"><div class="v">${w2}%</div><div class="l">Tracts within <b>2 mi</b> of any supply</div></div>
+    <div class="kpi"><div class="v">${cov.dist_nearest_any_m.median_mi} mi</div><div class="l">Median tract distance to nearest naloxone</div></div>
+    <div class="kpi"><div class="v">${cov.n_supply_247}</div><div class="l">of ${cov.n_supply_any} sites open <b>24/7</b></div></div>
+    <div class="kpi wide"><div class="v">${w.metrics.a_pct_tracts_centroid_within_500m}%</div><div class="l">Tracts whose centroid is within 500 m of supply — the Chicago "walkable coverage" proxy (${w.metrics.c_pct_population_within_500m}% of population)</div></div>
+  </div>`;
+  h+=`<div class="spark-wrap"><div class="st">Provisional drug-OD deaths — 12-month rolling</div>
+    <div class="ss">Monthly county totals, Jan 2020 – ${latestEnd}. Shaded tail = most recent 6 months, subject to upward revision (toxicology lag).</div>
+    <svg id="spark" width="100%" height="86" viewBox="0 0 320 86" preserveAspectRatio="none"></svg>
+    <div class="grad-lab" style="margin-top:4px"><span>${v[0].period_end.slice(0,7)}</span><span>${latestEnd.slice(0,7)}</span></div></div>`;
+  h+=`<div class="sec-h">Naloxone supply by category (n=${store.nalox.features.length})</div><div class="bars">`;
+  Object.keys(catCounts).sort((a,b)=>catCounts[b]-catCounts[a]).forEach(c=>{
+    const cs=catStyle(c);
+    h+=`<div class="bar-row"><div class="bl">${cs.label}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${catCounts[c]/maxCat*100}%;background:${cs.color}"></div></div>
+      <div class="bn">${catCounts[c]}</div></div>`;
+  });
+  h+=`</div><div class="legend-note">1 site is a mobile organization with no fixed coordinates (not mapped). Aggregated data only — no point-level death locations exist in this dataset.</div>`;
+  return h;
+}
+function drawSpark(){
+  const svg=document.getElementById("spark"); if(!svg) return;
+  const v=store.vsrr.map(r=>+r.provisional_drug_overdose_deaths);
+  const n=v.length, W=320,H=86,pad=6;
+  const mn=Math.min(...v), mx=Math.max(...v);
+  const x=i=>pad+(W-2*pad)*i/(n-1);
+  const y=val=>H-pad-(H-2*pad)*(val-mn)/(mx-mn||1);
+  const provStart=n-6;
+  let solid="",dash="",area="M "+x(0)+" "+H;
+  v.forEach((val,i)=>{ const cmd=(i<=provStart?"L":"L")+" "+x(i).toFixed(1)+" "+y(val).toFixed(1);
+    if(i<=provStart) solid+=(solid?"L":"M")+" "+x(i).toFixed(1)+" "+y(val).toFixed(1)+" ";
+    if(i>=provStart) dash+=(i===provStart?"M":"L")+" "+x(i).toFixed(1)+" "+y(val).toFixed(1)+" ";
+    area+=" L "+x(i).toFixed(1)+" "+y(val).toFixed(1);
+  });
+  area+=" L "+x(n-1)+" "+H+" Z";
+  const provX=x(provStart);
+  svg.innerHTML=`
+    <rect x="${provX}" y="0" width="${W-provX}" height="${H}" fill="rgba(255,180,84,0.08)"></rect>
+    <path d="${area}" fill="url(#sparkfill)" opacity="0.5"></path>
+    <defs><linearGradient id="sparkfill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff6b5e" stop-opacity="0.5"></stop>
+      <stop offset="1" stop-color="#ff6b5e" stop-opacity="0"></stop></linearGradient></defs>
+    <path d="${solid}" fill="none" stroke="#ff8c5a" stroke-width="1.8"></path>
+    <path d="${dash}" fill="none" stroke="#ffb454" stroke-width="1.8" stroke-dasharray="3 3"></path>
+    <circle cx="${x(n-1).toFixed(1)}" cy="${y(v[n-1]).toFixed(1)}" r="3" fill="#ffe08a"></circle>`;
+}
+
+/* ============================================================
+   ABOUT PANEL
+   ============================================================ */
+function aboutHTML(){
+  const mm=store.mortMeta, ctx=store.ctxMeta.sources||{};
+  const S=mm.sources;
+  function src(name,meta){ return `<div class="src"><div class="sn">${name}</div><div class="sm">${meta}</div></div>`; }
+  return `<div class="prose">
+    <h4>What this is</h4>
+    <p>A decision-support map for targeting <b>naloxone placement</b> and harm-reduction outreach across Dallas County's 645 census tracts. It blends overdose mortality, social vulnerability, existing supply, and access gaps.</p>
+
+    <h4>Privacy</h4>
+    <p>All layers are <b>aggregated</b> (tract or county level). Dallas County does not publish address-level overdose deaths, and none are synthesized here. The "walkable coverage" figures are areal/centroid proxies, not death-point coverage.</p>
+
+    <h4>Data sources &amp; vintages</h4>
+    ${src("CDC VSRR — provisional county OD deaths", `Dataset gb4e-yj24 · ${S.vsrr_county.row_count} monthly rows · data as of <b>${S.vsrr_county.data_as_of}</b> · latest 12-mo total ${S.vsrr_county.latest_deaths_12mo_ending} (${S.vsrr_county.latest_month}).`)}
+    ${src("CDC tract OD death rates (model-based)", `Dataset 4day-mt2f · period <b>${S.tract_rates.period}</b> · data as of ${S.tract_rates.data_as_of} · rates per 100k, spatially smoothed.`)}
+    ${src("CDC/ATSDR Social Vulnerability Index", `${(ctx.svi&&ctx.svi.vintage)||"SVI 2022 (ACS 2018–2022)"} · 645 tracts.`)}
+    ${src("ACS 5-year — poverty &amp; uninsured", `${(ctx.acs_tract&&ctx.acs_tract.vintage)||"ACS 2020–2024 (released Jan 2026)"} · tables S1701 / S2701.`)}
+    ${src("Naloxone supply locations", `${store.nalox.features.length} sites · categories from ArcGIS / harm-reduction sources · field-verified dates per site.`)}
+    ${src("DART transit stops", `${(ctx.dart_gtfs&&ctx.dart_gtfs.n_stops)||"~6,974"} GTFS stops · ½-mile buffer around tract centroid.`)}
+    ${avail.builtenv?src("Dallas 311 blight indicators", `Illegal dumping / graffiti / litter requests · last 24 months · ${(store.builtenv.meta.sources["311"]&&store.builtenv.meta.sources["311"].rows_matched_to_tract)||""} matched to tracts.`):""}
+    ${src("Tract geometry", `${(S.tract_geometry&&S.tract_geometry.vintage)||"TIGER/Line 2024"} · county FIPS 48113.`)}
+
+    <h4>Data lag caveat</h4>
+    <p>${mm.lag_note} Mortality data runs through <b>Dec 2025</b>; treat the most recent ~6 months as an undercount.</p>
+
+    <h4>Suppression</h4>
+    <p>${mm.suppressed_tract_count} of 645 tracts have their death <b>count</b> suppressed (1–9 masked by NCHS confidentiality). Model-based <b>rates</b> are still published for those tracts and are what the mortality layer shows. Hatched overlay marks the suppressed tracts.</p>
+
+    <h4>Texas policy context</h4>
+    <p>Naloxone is legally available in Texas via a <b>statewide standing order (SB 1462, 2015)</b> — no individual prescription is required to obtain or distribute it. Texas has <b>no comprehensive Good Samaritan overdose-immunity law</b> (only a narrow, first-offense limited defense), which can deter bystanders from calling 911. Siting and stocking naloxone at the locations recommended here is legal.</p>
+
+    <h4>Method notes</h4>
+    <p>Distances are straight-line from each tract's geometric centroid (population-weighted centroids unavailable) to the nearest supply point, projected to EPSG:32138. Coverage rings are Euclidean and overstate real walk access in a car-dependent county.</p>
+    <p style="color:var(--ink-faint);font-size:11px;margin-top:12px">Pulled ${mm.pulled_at.slice(0,10)} · Build ${mm.run_date}.</p>
+  </div>`;
+}
+
+/* ============================================================
+   BANNER
+   ============================================================ */
+function renderBanner(){
+  const mm=store.mortMeta;
+  const asOf = mm.vintages ? mm.vintages.tract_data_as_of : (mm.sources.tract_rates.data_as_of);
+  document.getElementById("stamp").innerHTML=
+    `<span class="chip">Mortality through <b>Dec 2025</b></span>
+     <span class="chip">Tract data <b>${asOf}</b></span>
+     <span class="chip">Pulled <b>${mm.pulled_at.slice(0,10)}</b></span>`;
+  document.getElementById("lag").innerHTML=
+    `⚠ Provisional data — recent months are undercounted due to toxicology/reporting lag. Counts of 1–9 are CDC-suppressed. Aggregated tract/county data only.`;
+}
+
+/* ============================================================
+   BOOT
+   ============================================================ */
+async function boot(){
+  initMap();
+  // required
+  await Promise.all([
+    getJSON("tracts",true), getJSON("svi",true), getJSON("nalox",true),
+    getJSON("coverage",true), getJSON("walk",true), getJSON("vsrr",true),
+    getJSON("mortMeta",true), getJSON("ctxMeta",true),
+    // optional / feature-detected
+    getJSON("builtenv",false), getJSON("composite",false), getJSON("candidates",false)
+  ]);
+
+  if(avail.tracts) tractGeoFeatures=store.tracts.features;
+  if(avail.coverage) store.coverage.tracts.forEach(t=>{covByGeoid[t.geoid]=t;});
+  if(avail.svi) store.svi.features.forEach(f=>{sviByGeoid[f.properties.geoid]=f.properties;});
+
+  // guard optional layers that failed geometry expectations
+  if(avail.composite && !(store.composite&&store.composite.features&&store.composite.features.length)) avail.composite=false;
+  if(avail.candidates && !(store.candidates&&store.candidates.features)) avail.candidates=false;
+
+  renderBanner();
+  // tabs
+  const tabsEl=document.getElementById("tabs");
+  tabsEl.innerHTML=Object.keys(TABS).map(k=>`<div class="tab" data-t="${k}">${TABS[k].name}</div>`).join("");
+  tabsEl.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>switchTab(t.dataset.t)));
+  document.getElementById("menu-btn").addEventListener("click",()=>document.getElementById("sidebar").classList.toggle("open"));
+
+  switchTab("overview");
+  // fit to tracts
+  try{ const b=getLayer("mortality").getBounds(); if(b.isValid()) map.fitBounds(b,{padding:[10,10]}); }catch(e){}
+  document.getElementById("loading").style.display="none";
+}
+boot();
+</script>

@@ -1,0 +1,174 @@
+{
+  "generated_at_utc": "2026-07-23T23:11:51.253867+00:00",
+  "run_date": "2026-07-23",
+  "sources": {
+    "tiger": {
+      "url": "https://www2.census.gov/geo/tiger/TIGER2024/TRACT/tl_2024_48_tract.zip",
+      "vintage": "TIGER2024",
+      "n_tracts_dallas": 645
+    },
+    "svi": {
+      "url": "https://onemap.cdc.gov/onemapservices/rest/services/SVI/CDC_ATSDR_Social_Vulnerability_Index_2022_USA/MapServer/2/query",
+      "vintage": "SVI 2022 (ACS 2018-2022 vintage)",
+      "n_tracts": 645,
+      "raw_snapshot": "data/raw/svi/svi2022_dallas_tract_2026-07-23.json"
+    },
+    "acs_tract": {
+      "url": "https://api.census.gov/data/2024/acs/acs5/subject",
+      "vintage": "ACS 2020-2024 5-year (released Jan 2026)",
+      "tables": [
+        "S1701_C03_001E (pct below poverty)",
+        "S2701_C05_001E (pct uninsured)"
+      ],
+      "n_tracts_poverty": 645,
+      "n_tracts_uninsured": 645,
+      "pull_succeeded": true
+    },
+    "acs_zcta": {
+      "url": "https://api.census.gov/data/2024/acs/acs5/subject",
+      "vintage": "ACS 2020-2024 5-year",
+      "table": "S2701_C05_001E (pct uninsured)",
+      "zcta_filter": "750xx-753xx",
+      "n_zctas": 165,
+      "output": "data/clean/uninsured_zcta.csv"
+    },
+    "vsrr": {
+      "url": "https://data.cdc.gov/resource/gb4e-yj24.json",
+      "n_rows": 72,
+      "data_as_of": "2026-07-05",
+      "period_range": [
+        "2020-01-31",
+        "2025-12-31"
+      ],
+      "output": "data/clean/vsrr.json"
+    },
+    "dart_gtfs": {
+      "url": "https://www.dart.org/transitdata/latest/google_transit.zip",
+      "n_stops": 6974,
+      "method": "0.5mi (805m) buffer around tract geometric centroid, EPSG:32138, sjoin 'within'"
+    },
+    "pit": {
+      "url": "https://housingforwardntx.org/wp-content/uploads/2026/05/2026-Point-In-Time-Count-Report.pdf",
+      "pdf_downloaded_fresh": false
+    }
+  },
+  "null_counts": {
+    "svi": {
+      "RPL_THEMES": 3,
+      "RPL_THEME1": 3,
+      "RPL_THEME2": 3,
+      "RPL_THEME3": 2,
+      "RPL_THEME4": 3,
+      "EP_POV150": 3,
+      "EP_UNINSUR": 3,
+      "E_TOTPOP": 0
+    },
+    "acs_tract_poverty": 3,
+    "acs_tract_uninsured": 3,
+    "acs_zcta_uninsured": 4,
+    "vsrr_deaths": 0,
+    "svi_tracts_final": {
+      "svi_overall": 3,
+      "svi_theme1": 3,
+      "svi_theme2": 3,
+      "svi_theme3": 2,
+      "svi_theme4": 3,
+      "pct_poverty_svi": 3,
+      "pct_uninsured_svi": 3,
+      "totpop": 0,
+      "pct_poverty_acs2024": 3,
+      "pct_uninsured_acs2024": 3,
+      "dart_stops_halfmile": 0
+    }
+  },
+  "row_counts": {
+    "tiger_dallas_tracts": 645,
+    "svi_tracts_pulled": 645,
+    "acs_tract_poverty": 645,
+    "acs_tract_uninsured": 645,
+    "acs_zcta_uninsured_dallas_area": 165,
+    "vsrr_dallas_rows": 72,
+    "dart_stops": 6974,
+    "dart_tracts_with_stop": 400,
+    "svi_tracts_geojson": 645
+  },
+  "notes": [
+    "Task brief expected ~529 Dallas County tracts; TIGER2024 actually contains 645. This is because Dallas County's tract boundaries were substantially redrawn/split for the 2020 Census (the ~529 figure is the pre-2020, 2010-vintage tract count). 645 is the correct current tract count and matches SVI2022 and ACS 2020-2024 tract counts pulled below (cross-checked, all three agree)."
+  ],
+  "svi_county_ranking": {
+    "dallas_rpl_themes": 0.8925,
+    "rank_most_vulnerable_first": 71,
+    "n_tx_counties": 254
+  },
+  "dart_stop_density_range": {
+    "min": 0,
+    "max": 84,
+    "mean": 10.82
+  },
+  "pit": {
+    "2025": {
+      "count_date": "2025-01-30",
+      "individuals": 3541,
+      "dallas_pct": 83,
+      "collin_pct": 17,
+      "source": "task brief / prior known figure"
+    },
+    "2026": {
+      "count_date": "2026-01-22",
+      "individuals": 3513,
+      "dallas_pct": 82,
+      "collin_pct": 18,
+      "source": "https://housingforwardntx.org/wp-content/uploads/2026/05/2026-Point-In-Time-Count-Report.pdf",
+      "extraction_method": "pdftotext"
+    },
+    "note": "County-level (Dallas+Collin CoC) only; NOT spatially allocated to tracts -- do not fabricate tract-level homelessness estimates from this."
+  },
+  "verification": {
+    "reload_success": true,
+    "reload_feature_count": 645,
+    "expected_tract_count_task_brief": 529,
+    "actual_tract_count": 645
+  },
+  "log_tail": [
+    "  RPL_THEMES: 3 sentinel(-999)/missing values -> null",
+    "  RPL_THEME1: 3 sentinel(-999)/missing values -> null",
+    "  RPL_THEME2: 3 sentinel(-999)/missing values -> null",
+    "  RPL_THEME3: 2 sentinel(-999)/missing values -> null",
+    "  RPL_THEME4: 3 sentinel(-999)/missing values -> null",
+    "  EP_POV150: 3 sentinel(-999)/missing values -> null",
+    "  EP_UNINSUR: 3 sentinel(-999)/missing values -> null",
+    "  E_TOTPOP: 0 sentinel(-999)/missing values -> null",
+    "Dallas County overall SVI (RPL_THEMES)=('Dallas County', 0.8925, '48113'), rank 71 of 254 TX counties (1 = most vulnerable)",
+    "\n=== 3. ACS 5-year 2020-2024 (subject tables) ===",
+    "ACS tract poverty rows: 645, uninsured rows: 645",
+    "  ACS poverty: 3 sentinel(-666666666) values -> null",
+    "  ACS uninsured: 3 sentinel(-666666666) values -> null",
+    "ACS tract poverty nulls: 3, uninsured nulls: 3",
+    "ZCTA uninsured rows (750xx-753xx): 165, nulls: 4",
+    "\n=== 4. CDC VSRR provisional county overdose deaths (Dallas) ===",
+    "VSRR rows pulled for Dallas County, TX: 72",
+    "Saved data/clean/vsrr.json (72 rows)",
+    "\n=== 5. DART GTFS stops -> tract half-mile stop counts ===",
+    "  reuse existing file: /Users/sameerilyas/Documents/GitHub/dallas research savespos/data/raw/dart/google_transit.zip (8,620,679 bytes)",
+    "DART GTFS stops.txt rows: 6974",
+    "Tracts with >=1 DART stop within 0.5mi of centroid: 400 / 645",
+    "DART stop density range per tract: min=0, max=84, mean=10.82",
+    "\n=== 6. Housing Forward NTX Point-in-Time count ===",
+    "  reuse existing file: /Users/sameerilyas/Documents/GitHub/dallas research savespos/data/raw/pit/2026-PIT-Report.pdf (1,492,752 bytes)",
+    "  extracted PIT PDF text via pdftotext (50919 chars)",
+    "  2026 PIT count extracted: 3513 individuals (Dallas 82% / Collin 18%)",
+    "\n=== 7. Merge and write svi_tracts.geojson ===",
+    "  final null check -- svi_overall: 3 / 645",
+    "  final null check -- svi_theme1: 3 / 645",
+    "  final null check -- svi_theme2: 3 / 645",
+    "  final null check -- svi_theme3: 2 / 645",
+    "  final null check -- svi_theme4: 3 / 645",
+    "  final null check -- pct_poverty_svi: 3 / 645",
+    "  final null check -- pct_uninsured_svi: 3 / 645",
+    "  final null check -- pct_poverty_acs2024: 3 / 645",
+    "  final null check -- pct_uninsured_acs2024: 3 / 645",
+    "Wrote /Users/sameerilyas/Documents/GitHub/dallas research savespos/data/clean/svi_tracts.geojson (645 features)",
+    "\n=== 8. Verification ===",
+    "Reloaded svi_tracts.geojson via geopandas: 645 features, CRS=EPSG:4326, columns=['geoid', 'svi_overall', 'svi_theme1', 'svi_theme2', 'svi_theme3', 'svi_theme4', 'pct_poverty_svi', 'pct_uninsured_svi', 'pct_poverty_acs2024', 'pct_uninsured_acs2024', 'dart_stops_halfmile', 'totpop', 'geometry']"
+  ]
+}

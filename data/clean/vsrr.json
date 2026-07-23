@@ -1,0 +1,506 @@
+[
+  {
+    "period_end": "2020-01-31",
+    "year": "2020",
+    "month": "1",
+    "provisional_drug_overdose_deaths": "352",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2020-02-29",
+    "year": "2020",
+    "month": "2",
+    "provisional_drug_overdose_deaths": "367",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2020-03-31",
+    "year": "2020",
+    "month": "3",
+    "provisional_drug_overdose_deaths": "364",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2020-04-30",
+    "year": "2020",
+    "month": "4",
+    "provisional_drug_overdose_deaths": "374",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2020-05-31",
+    "year": "2020",
+    "month": "5",
+    "provisional_drug_overdose_deaths": "392",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2020-06-30",
+    "year": "2020",
+    "month": "6",
+    "provisional_drug_overdose_deaths": "395",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2020-07-31",
+    "year": "2020",
+    "month": "7",
+    "provisional_drug_overdose_deaths": "401",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2020-08-31",
+    "year": "2020",
+    "month": "8",
+    "provisional_drug_overdose_deaths": "419",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2020-09-30",
+    "year": "2020",
+    "month": "9",
+    "provisional_drug_overdose_deaths": "435",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2020-10-31",
+    "year": "2020",
+    "month": "10",
+    "provisional_drug_overdose_deaths": "440",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2020-11-30",
+    "year": "2020",
+    "month": "11",
+    "provisional_drug_overdose_deaths": "442",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2020-12-31",
+    "year": "2020",
+    "month": "12",
+    "provisional_drug_overdose_deaths": "452",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2021-01-31",
+    "year": "2021",
+    "month": "1",
+    "provisional_drug_overdose_deaths": "462",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2021-02-28",
+    "year": "2021",
+    "month": "2",
+    "provisional_drug_overdose_deaths": "475",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2021-03-31",
+    "year": "2021",
+    "month": "3",
+    "provisional_drug_overdose_deaths": "504",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2021-04-30",
+    "year": "2021",
+    "month": "4",
+    "provisional_drug_overdose_deaths": "520",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2021-05-31",
+    "year": "2021",
+    "month": "5",
+    "provisional_drug_overdose_deaths": "525",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2021-06-30",
+    "year": "2021",
+    "month": "6",
+    "provisional_drug_overdose_deaths": "537",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2021-07-31",
+    "year": "2021",
+    "month": "7",
+    "provisional_drug_overdose_deaths": "536",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2021-08-31",
+    "year": "2021",
+    "month": "8",
+    "provisional_drug_overdose_deaths": "545",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2021-09-30",
+    "year": "2021",
+    "month": "9",
+    "provisional_drug_overdose_deaths": "562",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2021-10-31",
+    "year": "2021",
+    "month": "10",
+    "provisional_drug_overdose_deaths": "565",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2021-11-30",
+    "year": "2021",
+    "month": "11",
+    "provisional_drug_overdose_deaths": "568",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2021-12-31",
+    "year": "2021",
+    "month": "12",
+    "provisional_drug_overdose_deaths": "564",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2022-01-31",
+    "year": "2022",
+    "month": "1",
+    "provisional_drug_overdose_deaths": "565",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2022-02-28",
+    "year": "2022",
+    "month": "2",
+    "provisional_drug_overdose_deaths": "568",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2022-03-31",
+    "year": "2022",
+    "month": "3",
+    "provisional_drug_overdose_deaths": "562",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2022-04-30",
+    "year": "2022",
+    "month": "4",
+    "provisional_drug_overdose_deaths": "540",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2022-05-31",
+    "year": "2022",
+    "month": "5",
+    "provisional_drug_overdose_deaths": "536",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2022-06-30",
+    "year": "2022",
+    "month": "6",
+    "provisional_drug_overdose_deaths": "542",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2022-07-31",
+    "year": "2022",
+    "month": "7",
+    "provisional_drug_overdose_deaths": "566",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2022-08-31",
+    "year": "2022",
+    "month": "8",
+    "provisional_drug_overdose_deaths": "566",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2022-09-30",
+    "year": "2022",
+    "month": "9",
+    "provisional_drug_overdose_deaths": "555",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2022-10-31",
+    "year": "2022",
+    "month": "10",
+    "provisional_drug_overdose_deaths": "554",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2022-11-30",
+    "year": "2022",
+    "month": "11",
+    "provisional_drug_overdose_deaths": "558",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2022-12-31",
+    "year": "2022",
+    "month": "12",
+    "provisional_drug_overdose_deaths": "573",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2023-01-31",
+    "year": "2023",
+    "month": "1",
+    "provisional_drug_overdose_deaths": "580",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2023-02-28",
+    "year": "2023",
+    "month": "2",
+    "provisional_drug_overdose_deaths": "580",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2023-03-31",
+    "year": "2023",
+    "month": "3",
+    "provisional_drug_overdose_deaths": "607",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2023-04-30",
+    "year": "2023",
+    "month": "4",
+    "provisional_drug_overdose_deaths": "616",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2023-05-31",
+    "year": "2023",
+    "month": "5",
+    "provisional_drug_overdose_deaths": "636",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2023-06-30",
+    "year": "2023",
+    "month": "6",
+    "provisional_drug_overdose_deaths": "638",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2023-07-31",
+    "year": "2023",
+    "month": "7",
+    "provisional_drug_overdose_deaths": "624",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2023-08-31",
+    "year": "2023",
+    "month": "8",
+    "provisional_drug_overdose_deaths": "651",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2023-09-30",
+    "year": "2023",
+    "month": "9",
+    "provisional_drug_overdose_deaths": "653",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2023-10-31",
+    "year": "2023",
+    "month": "10",
+    "provisional_drug_overdose_deaths": "655",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2023-11-30",
+    "year": "2023",
+    "month": "11",
+    "provisional_drug_overdose_deaths": "660",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2023-12-31",
+    "year": "2023",
+    "month": "12",
+    "provisional_drug_overdose_deaths": "654",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2024-01-31",
+    "year": "2024",
+    "month": "1",
+    "provisional_drug_overdose_deaths": "665",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2024-02-29",
+    "year": "2024",
+    "month": "2",
+    "provisional_drug_overdose_deaths": "668",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2024-03-31",
+    "year": "2024",
+    "month": "3",
+    "provisional_drug_overdose_deaths": "642",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2024-04-30",
+    "year": "2024",
+    "month": "4",
+    "provisional_drug_overdose_deaths": "656",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2024-05-31",
+    "year": "2024",
+    "month": "5",
+    "provisional_drug_overdose_deaths": "638",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2024-06-30",
+    "year": "2024",
+    "month": "6",
+    "provisional_drug_overdose_deaths": "631",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2024-07-31",
+    "year": "2024",
+    "month": "7",
+    "provisional_drug_overdose_deaths": "630",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2024-08-31",
+    "year": "2024",
+    "month": "8",
+    "provisional_drug_overdose_deaths": "594",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2024-09-30",
+    "year": "2024",
+    "month": "9",
+    "provisional_drug_overdose_deaths": "576",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2024-10-31",
+    "year": "2024",
+    "month": "10",
+    "provisional_drug_overdose_deaths": "578",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2024-11-30",
+    "year": "2024",
+    "month": "11",
+    "provisional_drug_overdose_deaths": "563",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2024-12-31",
+    "year": "2024",
+    "month": "12",
+    "provisional_drug_overdose_deaths": "566",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2025-01-31",
+    "year": "2025",
+    "month": "1",
+    "provisional_drug_overdose_deaths": "566",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2025-02-28",
+    "year": "2025",
+    "month": "2",
+    "provisional_drug_overdose_deaths": "546",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2025-03-31",
+    "year": "2025",
+    "month": "3",
+    "provisional_drug_overdose_deaths": "550",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2025-04-30",
+    "year": "2025",
+    "month": "4",
+    "provisional_drug_overdose_deaths": "539",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2025-05-31",
+    "year": "2025",
+    "month": "5",
+    "provisional_drug_overdose_deaths": "535",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2025-06-30",
+    "year": "2025",
+    "month": "6",
+    "provisional_drug_overdose_deaths": "541",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2025-07-31",
+    "year": "2025",
+    "month": "7",
+    "provisional_drug_overdose_deaths": "538",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2025-08-31",
+    "year": "2025",
+    "month": "8",
+    "provisional_drug_overdose_deaths": "554",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2025-09-30",
+    "year": "2025",
+    "month": "9",
+    "provisional_drug_overdose_deaths": "574",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2025-10-31",
+    "year": "2025",
+    "month": "10",
+    "provisional_drug_overdose_deaths": "579",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2025-11-30",
+    "year": "2025",
+    "month": "11",
+    "provisional_drug_overdose_deaths": "585",
+    "data_as_of": "2026-07-05"
+  },
+  {
+    "period_end": "2025-12-31",
+    "year": "2025",
+    "month": "12",
+    "provisional_drug_overdose_deaths": "582",
+    "data_as_of": "2026-07-05"
+  }
+]

@@ -1,0 +1,10 @@
+.env
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+data/raw/geocode_cache.json
+data/raw/tiger/
+# >100MB, exceeds GitHub file limit; regenerate via scripts/build_builtenv.py
+data/raw/dallas_code_violations_*.json
+*.zip

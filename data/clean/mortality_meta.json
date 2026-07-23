@@ -1,0 +1,85 @@
+{
+  "module": "mortality",
+  "pulled_at": "2026-07-23T23:10:11.343208+00:00",
+  "run_date": "2026-07-23",
+  "caveats": [
+    "VSRR county counts are PROVISIONAL 12-month-ending totals; toxicology and death-certificate reporting lag materially affects the most recent ~6 months (counts revise upward).",
+    "Tract rates are MODEL-BASED (spatially smoothed) rates per 100,000 on census-tract aggregation units; a single modeled rate is applied to every constituent tract of an aggregation unit.",
+    "Live 4day-mt2f product provides rates for all units (with margins/CIs) rather than suppressing small-numerator rates; rate_suppressed is therefore true only for TIGER tracts absent from the CDC product.",
+    "Counts of 1-9 are suppressed per NCHS confidentiality (count_suppressed flag); rates are still provided for those.",
+    "ZIP-level mortality is not a public product; deaths_by_zip.csv is header-only by design (see sidecar README)."
+  ],
+  "sources": {
+    "vsrr_county": {
+      "resource": "https://data.cdc.gov/resource/gb4e-yj24.json",
+      "dataset": "gb4e-yj24",
+      "data_as_of": "2026-07-05",
+      "row_count": 72,
+      "date_range": [
+        "2020-01-31",
+        "2025-12-31"
+      ],
+      "latest_month": "2025-12-31",
+      "latest_deaths_12mo_ending": 582,
+      "value_range": [
+        352,
+        668
+      ],
+      "suppressed_count_cells": 0
+    },
+    "tract_rates": {
+      "resource": "https://data.cdc.gov/resource/4day-mt2f.json",
+      "dataset": "4day-mt2f",
+      "intent": "Drug_OD",
+      "data_as_of": "2026-07-22",
+      "period": "2025-01/2025-12",
+      "tx_agg_units": 1707,
+      "dallas_agg_units": 150,
+      "cdc_dallas_tracts": 645
+    },
+    "tract_geometry": {
+      "resource": "https://www2.census.gov/geo/tiger/TIGER2024/TRACT/tl_2024_48_tract.zip",
+      "vintage": "TIGER/Line 2024 (2020 census tracts)",
+      "county_fips": "48113"
+    }
+  },
+  "outputs": {
+    "deaths_dallas.csv": {
+      "rows": 72,
+      "date_range": [
+        "2020-01-31",
+        "2025-12-31"
+      ]
+    },
+    "tract_overdose.geojson": {
+      "features": 645,
+      "matched_to_cdc": 645,
+      "in_tiger_absent_from_cdc": 0,
+      "in_cdc_absent_from_tiger": 0,
+      "count_suppressed_features": 592,
+      "rate_suppressed_features": 0,
+      "rate_range_per_100k": [
+        0.0,
+        64.7
+      ],
+      "rates_present": 645,
+      "period": "2025-01/2025-12"
+    },
+    "deaths_by_zip.csv": {
+      "rows": 0,
+      "note": "header-only by design; see deaths_by_zip.README.md"
+    }
+  },
+  "vintages": {
+    "vsrr_data_as_of": "2026-07-05",
+    "tract_data_as_of": "2026-07-22",
+    "tiger": "2024"
+  },
+  "lag_note": "Provisional data. Most recent ~6 monthly points are subject to upward revision due to toxicology/reporting lag.",
+  "suppressed_tract_count": 592,
+  "row_counts": {
+    "deaths_dallas": 72,
+    "tract_overdose_features": 645,
+    "deaths_by_zip": 0
+  }
+}

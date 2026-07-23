@@ -1,0 +1,960 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "generated": "2026-07-23",
+    "county": "Dallas County, TX (GEOID 48113)",
+    "n_features": 39,
+    "n_with_geometry": 38,
+    "category_counts": {
+      "recovery_services": 4,
+      "harm_reduction": 4,
+      "nightlife_venue": 7,
+      "storefront_dispenser": 10,
+      "health_clinic": 1,
+      "otp_methadone": 13
+    },
+    "geocode_failure_rate_pct": 0.0,
+    "sources": {
+      "arcgis": "https://services3.arcgis.com/vljlarU2635mITsl/arcgis/rest/services/NarcanSites_10152024/FeatureServer/0/query?where=1%3D1&outFields=*&f=json",
+      "csv_snapshot": "data/raw/NaloxoneSites_April2026.csv",
+      "findtreatment_otp": "https://findtreatment.gov/locator/exportsAsJson/v2?sAddr=32.7767,-96.797&limitType=2&limitValue=55000&sCodes=OTP&pageSize=200&page=N"
+    },
+    "notes": [
+      "DFW Harm Reduction Access Movement is mobile/no-fixed-address; included with null geometry and mobile=true rather than a fabricated point.",
+      "Category for 'Freestanding Dispenser'/'Private Entity' raw types is inferred from organization-name keywords (bar/club/venue -> nightlife_venue; gas/liquor/smoke/convenience -> storefront_dispenser; else harm_reduction)."
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.81795199999999,
+          32.80453400000005
+        ]
+      },
+      "properties": {
+        "name": "Phoenix House",
+        "address": "2345 Reagan St",
+        "city": "Dallas",
+        "zip": "75219",
+        "type": "Recovery Support Services",
+        "category": "recovery_services",
+        "access_247": false,
+        "hours_raw": "hours based on trainings",
+        "source": "arcgis",
+        "verified_on": "2024-10-02",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.78791399999994,
+          32.78366100000005
+        ]
+      },
+      "properties": {
+        "name": "Deep Ellum Community Center",
+        "address": "2528 Elm St",
+        "city": "Dallas",
+        "zip": "75226",
+        "type": "Freestanding Dispenser",
+        "category": "harm_reduction",
+        "access_247": false,
+        "hours_raw": "M-F: 12p-7p",
+        "source": "arcgis",
+        "verified_on": "2024-10-02",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.77795999999995,
+          32.804531000000054
+        ]
+      },
+      "properties": {
+        "name": "Dallas 24 Hour Club",
+        "address": "4636 Ross Ave",
+        "city": "Dallas",
+        "zip": "75204",
+        "type": "Recovery Support Services",
+        "category": "recovery_services",
+        "access_247": false,
+        "hours_raw": "M-F: 8a-10p",
+        "source": "arcgis",
+        "verified_on": "2024-10-04",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.66558299999997,
+          32.81179800000007
+        ]
+      },
+      "properties": {
+        "name": "Nexus Recovery",
+        "address": "8733 La Prada Drive",
+        "city": "Dallas",
+        "zip": "75228",
+        "type": "Recovery Support Services",
+        "category": "recovery_services",
+        "access_247": false,
+        "hours_raw": "M-F: 7:30a-5p",
+        "source": "arcgis",
+        "verified_on": "2025-08-07",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.68223999999998,
+          32.805792000000054
+        ]
+      },
+      "properties": {
+        "name": "Nexus Recovery Center",
+        "address": "3312 N Buckner Blvd, Suite 208",
+        "city": "Dallas",
+        "zip": "75228",
+        "type": "Recovery Support Services",
+        "category": "recovery_services",
+        "access_247": false,
+        "hours_raw": "M-F: 7:30a-5p; Sat: 7a-9a",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.78411699999998,
+          32.78442600000005
+        ]
+      },
+      "properties": {
+        "name": "Club Dada",
+        "address": "2720 Elm St",
+        "city": "Dallas",
+        "zip": "75226",
+        "type": "Private Entity",
+        "category": "nightlife_venue",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.78357299999999,
+          32.78514100000007
+        ]
+      },
+      "properties": {
+        "name": "Reno's Bar",
+        "address": "210 N Crowdus St",
+        "city": "Dallas",
+        "zip": "75226",
+        "type": "Private Entity",
+        "category": "nightlife_venue",
+        "access_247": false,
+        "hours_raw": "M-Sun: 2p-2a",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.94550099999998,
+          32.87421600000005
+        ]
+      },
+      "properties": {
+        "name": "Backstage at Toyota Music Pavillion",
+        "address": "316 W Las Colinas Blvd",
+        "city": "Irving",
+        "zip": "75039",
+        "type": "Private Entity",
+        "category": "nightlife_venue",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.78394399999996,
+          32.78395900000004
+        ]
+      },
+      "properties": {
+        "name": "Everything Ellum",
+        "address": "2715 Main St",
+        "city": "Dallas",
+        "zip": "75226",
+        "type": "Private Entity",
+        "category": "harm_reduction",
+        "access_247": false,
+        "hours_raw": "M-Sun: 11a-8p",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.80525399999999,
+          32.68114600000007
+        ]
+      },
+      "properties": {
+        "name": "Homeward Bound, Inc.",
+        "address": "5300 University Hills Blvd",
+        "city": "Dallas",
+        "zip": "75241",
+        "type": "Freestanding Dispenser",
+        "category": "harm_reduction",
+        "access_247": false,
+        "hours_raw": "M-F: 8a-4:30 pm",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76363599999996,
+          32.69730300000003
+        ]
+      },
+      "properties": {
+        "name": "Stop and Shop",
+        "address": "3195 S Great Trinity Forest Way",
+        "city": "Dallas",
+        "zip": "75216",
+        "type": "Private Entity",
+        "category": "storefront_dispenser",
+        "access_247": false,
+        "hours_raw": "M-Sun: 1p-7p",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.71896699999996,
+          32.90928100000008
+        ]
+      },
+      "properties": {
+        "name": "American Dollar Plus",
+        "address": "9770 Forest Ln",
+        "city": "Dallas",
+        "zip": "75243",
+        "type": "Private Entity",
+        "category": "storefront_dispenser",
+        "access_247": false,
+        "hours_raw": "M-Sun: 9a-10p",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.61196199999995,
+          32.81112900000005
+        ]
+      },
+      "properties": {
+        "name": "80 Food Mart Beer and Vape",
+        "address": "1111 N Town East Blvd",
+        "city": "Mesquite",
+        "zip": "75150",
+        "type": "Private Entity",
+        "category": "storefront_dispenser",
+        "access_247": false,
+        "hours_raw": "M-F: 7a-12a; Sat: 7a-1a; Sun: 8a-11p",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.60247999999996,
+          32.85839500000003
+        ]
+      },
+      "properties": {
+        "name": "Chevron",
+        "address": "4646 Broadway Blvd",
+        "city": "Garland",
+        "zip": "75043",
+        "type": "Freestanding Dispenser",
+        "category": "storefront_dispenser",
+        "access_247": false,
+        "hours_raw": "Sun-Th: 5a-1a; Fri-Sat: 5:30a-2a",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.64668599999999,
+          32.73427700000008
+        ]
+      },
+      "properties": {
+        "name": "ED & OG Smoke Shop",
+        "address": "10325 Lake June Rd, Ste 580",
+        "city": "Dallas",
+        "zip": "75217",
+        "type": "Private Entity",
+        "category": "storefront_dispenser",
+        "access_247": false,
+        "hours_raw": "M-Sun: 10a-1a",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.75421099999994,
+          32.75485500000008
+        ]
+      },
+      "properties": {
+        "name": "Hatcher Food Store (Beer and Wine)",
+        "address": "2702 Elsie Faye Heggins St",
+        "city": "Dallas",
+        "zip": "75215",
+        "type": "Private Entity",
+        "category": "storefront_dispenser",
+        "access_247": false,
+        "hours_raw": "M-F: 7a-12a; Sat: 7a-1a; Sun: 8a-11p",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76566999999994,
+          32.77730200000008
+        ]
+      },
+      "properties": {
+        "name": "Shell",
+        "address": "3305 Grand Ave",
+        "city": "Dallas",
+        "zip": "75210",
+        "type": "Freestanding Dispenser",
+        "category": "storefront_dispenser",
+        "access_247": true,
+        "hours_raw": "24/7",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76435199999997,
+          32.794831000000045
+        ]
+      },
+      "properties": {
+        "name": "Puff n Stuff",
+        "address": "4815 Columbia Ave",
+        "city": "Dallas",
+        "zip": "75226",
+        "type": "Private Entity",
+        "category": "storefront_dispenser",
+        "access_247": false,
+        "hours_raw": "M-F: 10a-10p; Sat: 10a-11p; Sun: 12p-10p",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.84037699999999,
+          32.81765800000005
+        ]
+      },
+      "properties": {
+        "name": "Arcadia Liquor",
+        "address": "2214 Inwood Rd",
+        "city": "Dallas",
+        "zip": "75235",
+        "type": "Private Entity",
+        "category": "storefront_dispenser",
+        "access_247": false,
+        "hours_raw": "M-Sat: 10a-9p",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.81069999999994,
+          32.81038600000005
+        ]
+      },
+      "properties": {
+        "name": "Station 4",
+        "address": "3911 Cedar Springs Rd",
+        "city": "Dallas",
+        "zip": "75219",
+        "type": "Private Entity",
+        "category": "nightlife_venue",
+        "access_247": false,
+        "hours_raw": "W-Sat: 9p-4a",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.81077199999999,
+          32.81044600000007
+        ]
+      },
+      "properties": {
+        "name": "JR's Bar and Grill",
+        "address": "3923 Cedar Springs Rd",
+        "city": "Dallas",
+        "zip": "75219",
+        "type": "Private Entity",
+        "category": "nightlife_venue",
+        "access_247": false,
+        "hours_raw": "M: 12 p-1a; Tue-F: 11a-1a; Sat: 11a-2a; Sun: 12a-2a",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.81065299999995,
+          32.81034500000004
+        ]
+      },
+      "properties": {
+        "name": "TMC",
+        "address": "3903 Cedar Springs Rd",
+        "city": "Dallas",
+        "zip": "75219",
+        "type": "Private Entity",
+        "category": "nightlife_venue",
+        "access_247": false,
+        "hours_raw": "M-Sun: 2p-2a",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.81142199999994,
+          32.81065300000006
+        ]
+      },
+      "properties": {
+        "name": "Sue Ellen's",
+        "address": "3014 Throckmorton St",
+        "city": "Dallas",
+        "zip": "75219",
+        "type": "Private Entity",
+        "category": "nightlife_venue",
+        "access_247": false,
+        "hours_raw": "M-Sun: 2p-2a",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.81073599999996,
+          32.81041600000003
+        ]
+      },
+      "properties": {
+        "name": "Pandacorn Caf\u00e9",
+        "address": "3917 Cedar Springs Rd",
+        "city": "Dallas",
+        "zip": "75219",
+        "type": "Private Entity",
+        "category": "storefront_dispenser",
+        "access_247": false,
+        "hours_raw": "M-Sun: 7a-10p",
+        "source": "arcgis",
+        "verified_on": "2026-02-12",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.62845968599999,
+          32.90683217900005
+        ]
+      },
+      "properties": {
+        "name": "Dallas County Health and Human Services Garland Clinic",
+        "address": "206 Carver St",
+        "city": "Garland",
+        "zip": "75040",
+        "type": "Community Health Clinic",
+        "category": "health_clinic",
+        "access_247": false,
+        "hours_raw": "M-F: 8a-5p",
+        "source": "arcgis",
+        "verified_on": "2026-03-10",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7668274,
+          32.7711162
+        ]
+      },
+      "properties": {
+        "name": "STEP MED LLC",
+        "address": "2929 Martin Luther King Jr. Blvd.",
+        "city": "Dallas",
+        "zip": "75215",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.822859,
+          32.794586
+        ]
+      },
+      "properties": {
+        "name": "West Texas Counseling And Rehabilitation of Dallas",
+        "address": "1808 Market Center Blvd",
+        "city": "Dallas",
+        "zip": "75207",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.8050416,
+          32.715885
+        ]
+      },
+      "properties": {
+        "name": "Life's Second Chance Treatment Center",
+        "address": "2615 S Lancaster Rd",
+        "city": "Dallas",
+        "zip": "75216",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.8729647,
+          32.755815
+        ]
+      },
+      "properties": {
+        "name": "Metro Treatment of Texas L.P.",
+        "address": "1050 N. Westmoreland Road",
+        "city": "Dallas",
+        "zip": "75211-2416",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.8669818,
+          32.8265262
+        ]
+      },
+      "properties": {
+        "name": "Cagnollatti and Henderson Inc",
+        "address": "1451 Empire Central Drive",
+        "city": "Dallas",
+        "zip": "75247",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.856795,
+          32.6797
+        ]
+      },
+      "properties": {
+        "name": "Cross Roads Recovery, Inc.",
+        "address": "5552 South Hampton Rd.",
+        "city": "Dallas",
+        "zip": "75232",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.959672,
+          32.821228
+        ]
+      },
+      "properties": {
+        "name": "West Texas Counseling and Rehabilitation Program of Irving, Inc.",
+        "address": "1116 West Pioneer Dr.",
+        "city": "Irving",
+        "zip": "75061",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.673121,
+          32.878684
+        ]
+      },
+      "properties": {
+        "name": "West Texas Counseling and Rehabilitation Program of Garland, Inc.",
+        "address": "2848 West Kingsley Rd., Suite B",
+        "city": "Garland",
+        "zip": "75041",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.614809,
+          32.769112
+        ]
+      },
+      "properties": {
+        "name": "Inspired Hope Group LLC",
+        "address": "1228 W. Scyene Road #230",
+        "city": "Mesquite",
+        "zip": "75149",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.9030543,
+          32.9203573
+        ]
+      },
+      "properties": {
+        "name": "Anchor of Hope Opioid Treatment Program Inc.",
+        "address": "2307 Springlake Road",
+        "city": "Farmers Branch",
+        "zip": "75234",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.8317219,
+          32.9532392
+        ]
+      },
+      "properties": {
+        "name": "SEMPER HEALTHCARE SERVICES INC.",
+        "address": "15080 E. BELTWOOD PARKWAY",
+        "city": "ADDISON",
+        "zip": "75001",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5942991,
+          32.8381885
+        ]
+      },
+      "properties": {
+        "name": "Garland Treatment Center, Inc.",
+        "address": "6246 Broadway Blvd., Suite 102",
+        "city": "Garland",
+        "zip": "75043",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.0793098,
+          32.5773964
+        ]
+      },
+      "properties": {
+        "name": "TX OTP",
+        "address": "2100 N. State Hwy 360, Suite 1904",
+        "city": "Grand Prairie",
+        "zip": "75050",
+        "type": "Opioid Treatment Program (OTP)",
+        "category": "otp_methadone",
+        "access_247": false,
+        "hours_raw": null,
+        "source": "findtreatment",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "name": "DFW Harm Reduction Access Movement",
+        "address": null,
+        "city": "Dallas",
+        "zip": null,
+        "type": "Risk Reduction Group",
+        "category": "harm_reduction",
+        "access_247": true,
+        "hours_raw": "24/7",
+        "source": "arcgis",
+        "verified_on": "2025-08-27",
+        "geocode_method": "not_applicable_mobile",
+        "mobile": true,
+        "mobile_note": "No physical address; org conducts mobile outreach across DFW. Geometry intentionally set to null rather than using a placeholder point."
+      }
+    }
+  ]
+}

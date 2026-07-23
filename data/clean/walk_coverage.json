@@ -1,0 +1,4541 @@
+{
+  "generated": "2026-07-23",
+  "status": "ok",
+  "method_note": "Chicago's original metric is % of overdose DEATH POINTS within 500m of a naloxone supply location. Dallas County only publishes tract-level (not address-level) overdose rates, so no death points exist to test. This output instead reports: (a) the % of Dallas County census tracts whose GEOMETRIC centroid (population-weighted centroid not available) falls within 500m of any naloxone supply point -- a coarse areal proxy that says nothing about where residents/deaths are distributed within a tract; (b) a rate-weighted variant summing od_death_rate_per_100k over covered tracts and dividing by the county-wide sum, which up-weights tracts with higher modeled overdose rates but is NOT population- or death-count-weighted and should not be read as '% of deaths near supply'; (c) % of county population within 500m of supply (population assigned to the tract centroid, not distributed within the tract), computed only if data/clean/svi_tracts.geojson provides tract population -- otherwise skipped and noted. All three are approximations made necessary by the lack of point-level mortality data and should be reported as such.",
+  "walk_radius_m": 500.0,
+  "crs_used": "EPSG:32138",
+  "n_tracts": 645,
+  "n_supply_points_used": 38,
+  "metrics": {
+    "a_pct_tracts_centroid_within_500m": 1.71,
+    "b_pct_rate_weighted_within_500m": 2.43,
+    "c_pct_population_within_500m": 1.42
+  },
+  "metric_b_detail": {
+    "sum_rate_covered": 291.0,
+    "sum_rate_total": 11973.4,
+    "n_tracts_with_rate": 645
+  },
+  "metric_c_detail": {
+    "total_population": 2604053,
+    "population_within_500m": 37003,
+    "n_tracts_with_pop": 645
+  },
+  "tracts": [
+    {
+      "geoid": "48113016638",
+      "dist_centroid_to_nearest_supply_m": 5864.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.6,
+      "totpop": 1644
+    },
+    {
+      "geoid": "48113013630",
+      "dist_centroid_to_nearest_supply_m": 2532.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 2315
+    },
+    {
+      "geoid": "48113012211",
+      "dist_centroid_to_nearest_supply_m": 749.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.7,
+      "totpop": 4435
+    },
+    {
+      "geoid": "48113012400",
+      "dist_centroid_to_nearest_supply_m": 2499.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 29.1,
+      "totpop": 4900
+    },
+    {
+      "geoid": "48113016513",
+      "dist_centroid_to_nearest_supply_m": 8722.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 5908
+    },
+    {
+      "geoid": "48113016517",
+      "dist_centroid_to_nearest_supply_m": 6007.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.6,
+      "totpop": 5385
+    },
+    {
+      "geoid": "48113016518",
+      "dist_centroid_to_nearest_supply_m": 6310.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 6140
+    },
+    {
+      "geoid": "48113016519",
+      "dist_centroid_to_nearest_supply_m": 7786.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 2320
+    },
+    {
+      "geoid": "48113016607",
+      "dist_centroid_to_nearest_supply_m": 4049.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 3593
+    },
+    {
+      "geoid": "48113016610",
+      "dist_centroid_to_nearest_supply_m": 7929.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 27.1,
+      "totpop": 3904
+    },
+    {
+      "geoid": "48113013609",
+      "dist_centroid_to_nearest_supply_m": 5173.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.9,
+      "totpop": 3578
+    },
+    {
+      "geoid": "48113013610",
+      "dist_centroid_to_nearest_supply_m": 5558.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.5,
+      "totpop": 4144
+    },
+    {
+      "geoid": "48113013611",
+      "dist_centroid_to_nearest_supply_m": 3211.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.5,
+      "totpop": 2829
+    },
+    {
+      "geoid": "48113015306",
+      "dist_centroid_to_nearest_supply_m": 4123.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.9,
+      "totpop": 6149
+    },
+    {
+      "geoid": "48113015403",
+      "dist_centroid_to_nearest_supply_m": 9479.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.1,
+      "totpop": 3325
+    },
+    {
+      "geoid": "48113015404",
+      "dist_centroid_to_nearest_supply_m": 10381.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.1,
+      "totpop": 4199
+    },
+    {
+      "geoid": "48113015500",
+      "dist_centroid_to_nearest_supply_m": 8854.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.1,
+      "totpop": 3811
+    },
+    {
+      "geoid": "48113015600",
+      "dist_centroid_to_nearest_supply_m": 7787.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.6,
+      "totpop": 5815
+    },
+    {
+      "geoid": "48113007914",
+      "dist_centroid_to_nearest_supply_m": 4247.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 3876
+    },
+    {
+      "geoid": "48113013625",
+      "dist_centroid_to_nearest_supply_m": 1536.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 3161
+    },
+    {
+      "geoid": "48113018134",
+      "dist_centroid_to_nearest_supply_m": 8627.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.2,
+      "totpop": 4931
+    },
+    {
+      "geoid": "48113017605",
+      "dist_centroid_to_nearest_supply_m": 2265.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.9,
+      "totpop": 3913
+    },
+    {
+      "geoid": "48113011701",
+      "dist_centroid_to_nearest_supply_m": 2865.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 30.2,
+      "totpop": 6712
+    },
+    {
+      "geoid": "48113011702",
+      "dist_centroid_to_nearest_supply_m": 3269.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 30.2,
+      "totpop": 5743
+    },
+    {
+      "geoid": "48113012000",
+      "dist_centroid_to_nearest_supply_m": 2651.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.9,
+      "totpop": 10373
+    },
+    {
+      "geoid": "48113012206",
+      "dist_centroid_to_nearest_supply_m": 3221.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 5607
+    },
+    {
+      "geoid": "48113012207",
+      "dist_centroid_to_nearest_supply_m": 2206.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.7,
+      "totpop": 7224
+    },
+    {
+      "geoid": "48113012208",
+      "dist_centroid_to_nearest_supply_m": 3794.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 2611
+    },
+    {
+      "geoid": "48113010704",
+      "dist_centroid_to_nearest_supply_m": 4245.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.7,
+      "totpop": 6331
+    },
+    {
+      "geoid": "48113980100",
+      "dist_centroid_to_nearest_supply_m": 2677.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 53.0,
+      "totpop": 0
+    },
+    {
+      "geoid": "48113000605",
+      "dist_centroid_to_nearest_supply_m": 326.8,
+      "within_500m": true,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 2304
+    },
+    {
+      "geoid": "48113016407",
+      "dist_centroid_to_nearest_supply_m": 12860.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 6871
+    },
+    {
+      "geoid": "48113007101",
+      "dist_centroid_to_nearest_supply_m": 3649.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 2136
+    },
+    {
+      "geoid": "48113018002",
+      "dist_centroid_to_nearest_supply_m": 2815.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.4,
+      "totpop": 3688
+    },
+    {
+      "geoid": "48113009105",
+      "dist_centroid_to_nearest_supply_m": 4187.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.9,
+      "totpop": 3715
+    },
+    {
+      "geoid": "48113012210",
+      "dist_centroid_to_nearest_supply_m": 1053.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.5,
+      "totpop": 4197
+    },
+    {
+      "geoid": "48113009610",
+      "dist_centroid_to_nearest_supply_m": 2540.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.4,
+      "totpop": 4886
+    },
+    {
+      "geoid": "48113014121",
+      "dist_centroid_to_nearest_supply_m": 5631.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 10.6,
+      "totpop": 5092
+    },
+    {
+      "geoid": "48113004201",
+      "dist_centroid_to_nearest_supply_m": 4033.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.9,
+      "totpop": 4056
+    },
+    {
+      "geoid": "48113017102",
+      "dist_centroid_to_nearest_supply_m": 8409.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.5,
+      "totpop": 6871
+    },
+    {
+      "geoid": "48113011105",
+      "dist_centroid_to_nearest_supply_m": 3751.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.9,
+      "totpop": 5586
+    },
+    {
+      "geoid": "48113005901",
+      "dist_centroid_to_nearest_supply_m": 1357.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.6,
+      "totpop": 5291
+    },
+    {
+      "geoid": "48113006001",
+      "dist_centroid_to_nearest_supply_m": 3027.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 31.9,
+      "totpop": 3680
+    },
+    {
+      "geoid": "48113006002",
+      "dist_centroid_to_nearest_supply_m": 2934.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 31.9,
+      "totpop": 6148
+    },
+    {
+      "geoid": "48113006200",
+      "dist_centroid_to_nearest_supply_m": 2798.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.1,
+      "totpop": 6315
+    },
+    {
+      "geoid": "48113006301",
+      "dist_centroid_to_nearest_supply_m": 3778.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 6208
+    },
+    {
+      "geoid": "48113006302",
+      "dist_centroid_to_nearest_supply_m": 4104.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 4079
+    },
+    {
+      "geoid": "48113006501",
+      "dist_centroid_to_nearest_supply_m": 3200.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.7,
+      "totpop": 5658
+    },
+    {
+      "geoid": "48113006502",
+      "dist_centroid_to_nearest_supply_m": 3824.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.7,
+      "totpop": 4162
+    },
+    {
+      "geoid": "48113011300",
+      "dist_centroid_to_nearest_supply_m": 1876.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.4,
+      "totpop": 5698
+    },
+    {
+      "geoid": "48113002100",
+      "dist_centroid_to_nearest_supply_m": 1407.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.2,
+      "totpop": 2922
+    },
+    {
+      "geoid": "48113001202",
+      "dist_centroid_to_nearest_supply_m": 2805.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 43.7,
+      "totpop": 3744
+    },
+    {
+      "geoid": "48113001203",
+      "dist_centroid_to_nearest_supply_m": 2086.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 43.7,
+      "totpop": 1218
+    },
+    {
+      "geoid": "48113016903",
+      "dist_centroid_to_nearest_supply_m": 15754.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.5,
+      "totpop": 6549
+    },
+    {
+      "geoid": "48113016617",
+      "dist_centroid_to_nearest_supply_m": 8053.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 5271
+    },
+    {
+      "geoid": "48113008703",
+      "dist_centroid_to_nearest_supply_m": 1887.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.9,
+      "totpop": 3855
+    },
+    {
+      "geoid": "48113014002",
+      "dist_centroid_to_nearest_supply_m": 2848.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 38.9,
+      "totpop": 1706
+    },
+    {
+      "geoid": "48113014124",
+      "dist_centroid_to_nearest_supply_m": 6446.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.8,
+      "totpop": 3926
+    },
+    {
+      "geoid": "48113014209",
+      "dist_centroid_to_nearest_supply_m": 1903.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 3308
+    },
+    {
+      "geoid": "48113018508",
+      "dist_centroid_to_nearest_supply_m": 538.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 1805
+    },
+    {
+      "geoid": "48113015304",
+      "dist_centroid_to_nearest_supply_m": 5487.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.9,
+      "totpop": 4523
+    },
+    {
+      "geoid": "48113016406",
+      "dist_centroid_to_nearest_supply_m": 13886.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 4592
+    },
+    {
+      "geoid": "48113018205",
+      "dist_centroid_to_nearest_supply_m": 2321.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.2,
+      "totpop": 4169
+    },
+    {
+      "geoid": "48113011500",
+      "dist_centroid_to_nearest_supply_m": 2447.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 34.0,
+      "totpop": 4907
+    },
+    {
+      "geoid": "48113005902",
+      "dist_centroid_to_nearest_supply_m": 2105.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.6,
+      "totpop": 4786
+    },
+    {
+      "geoid": "48113007601",
+      "dist_centroid_to_nearest_supply_m": 7266.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.7,
+      "totpop": 1745
+    },
+    {
+      "geoid": "48113007604",
+      "dist_centroid_to_nearest_supply_m": 7547.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.7,
+      "totpop": 2846
+    },
+    {
+      "geoid": "48113007605",
+      "dist_centroid_to_nearest_supply_m": 7522.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.7,
+      "totpop": 1605
+    },
+    {
+      "geoid": "48113007801",
+      "dist_centroid_to_nearest_supply_m": 6883.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.6,
+      "totpop": 2315
+    },
+    {
+      "geoid": "48113007805",
+      "dist_centroid_to_nearest_supply_m": 3718.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 2509
+    },
+    {
+      "geoid": "48113004700",
+      "dist_centroid_to_nearest_supply_m": 4116.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.9,
+      "totpop": 2727
+    },
+    {
+      "geoid": "48113004800",
+      "dist_centroid_to_nearest_supply_m": 3298.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.9,
+      "totpop": 2561
+    },
+    {
+      "geoid": "48113005000",
+      "dist_centroid_to_nearest_supply_m": 3445.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.9,
+      "totpop": 3372
+    },
+    {
+      "geoid": "48113005100",
+      "dist_centroid_to_nearest_supply_m": 3557.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.6,
+      "totpop": 2595
+    },
+    {
+      "geoid": "48113005200",
+      "dist_centroid_to_nearest_supply_m": 2668.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.6,
+      "totpop": 4561
+    },
+    {
+      "geoid": "48113002500",
+      "dist_centroid_to_nearest_supply_m": 2060.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 64.7,
+      "totpop": 5602
+    },
+    {
+      "geoid": "48113019019",
+      "dist_centroid_to_nearest_supply_m": 980.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.0,
+      "totpop": 7477
+    },
+    {
+      "geoid": "48113005400",
+      "dist_centroid_to_nearest_supply_m": 1719.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.1,
+      "totpop": 5336
+    },
+    {
+      "geoid": "48113005500",
+      "dist_centroid_to_nearest_supply_m": 1152.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 32.7,
+      "totpop": 4182
+    },
+    {
+      "geoid": "48113005300",
+      "dist_centroid_to_nearest_supply_m": 2687.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.6,
+      "totpop": 6606
+    },
+    {
+      "geoid": "48113005600",
+      "dist_centroid_to_nearest_supply_m": 1523.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 31.9,
+      "totpop": 7850
+    },
+    {
+      "geoid": "48113013624",
+      "dist_centroid_to_nearest_supply_m": 1387.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 4315
+    },
+    {
+      "geoid": "48113005700",
+      "dist_centroid_to_nearest_supply_m": 1901.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.6,
+      "totpop": 5299
+    },
+    {
+      "geoid": "48113007815",
+      "dist_centroid_to_nearest_supply_m": 4803.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 5044
+    },
+    {
+      "geoid": "48113007819",
+      "dist_centroid_to_nearest_supply_m": 6149.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.1,
+      "totpop": 2311
+    },
+    {
+      "geoid": "48113007902",
+      "dist_centroid_to_nearest_supply_m": 5764.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 5077
+    },
+    {
+      "geoid": "48113002200",
+      "dist_centroid_to_nearest_supply_m": 550.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 27.9,
+      "totpop": 2507
+    },
+    {
+      "geoid": "48113002400",
+      "dist_centroid_to_nearest_supply_m": 676.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 43.7,
+      "totpop": 2890
+    },
+    {
+      "geoid": "48113008000",
+      "dist_centroid_to_nearest_supply_m": 5240.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 7316
+    },
+    {
+      "geoid": "48113008200",
+      "dist_centroid_to_nearest_supply_m": 3914.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 29.1,
+      "totpop": 3777
+    },
+    {
+      "geoid": "48113011401",
+      "dist_centroid_to_nearest_supply_m": 2427.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.4,
+      "totpop": 5718
+    },
+    {
+      "geoid": "48113008802",
+      "dist_centroid_to_nearest_supply_m": 1761.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 32.7,
+      "totpop": 5337
+    },
+    {
+      "geoid": "48113009603",
+      "dist_centroid_to_nearest_supply_m": 3988.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.8,
+      "totpop": 4997
+    },
+    {
+      "geoid": "48113009604",
+      "dist_centroid_to_nearest_supply_m": 4334.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.8,
+      "totpop": 4489
+    },
+    {
+      "geoid": "48113009605",
+      "dist_centroid_to_nearest_supply_m": 3445.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.4,
+      "totpop": 3506
+    },
+    {
+      "geoid": "48113009607",
+      "dist_centroid_to_nearest_supply_m": 4141.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.4,
+      "totpop": 3522
+    },
+    {
+      "geoid": "48113009608",
+      "dist_centroid_to_nearest_supply_m": 4350.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.4,
+      "totpop": 3010
+    },
+    {
+      "geoid": "48113009609",
+      "dist_centroid_to_nearest_supply_m": 5583.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.7,
+      "totpop": 3357
+    },
+    {
+      "geoid": "48113009611",
+      "dist_centroid_to_nearest_supply_m": 3198.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.4,
+      "totpop": 3618
+    },
+    {
+      "geoid": "48113009702",
+      "dist_centroid_to_nearest_supply_m": 5170.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.7,
+      "totpop": 2944
+    },
+    {
+      "geoid": "48113009202",
+      "dist_centroid_to_nearest_supply_m": 2643.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.9,
+      "totpop": 5889
+    },
+    {
+      "geoid": "48113009301",
+      "dist_centroid_to_nearest_supply_m": 4390.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.9,
+      "totpop": 5491
+    },
+    {
+      "geoid": "48113009304",
+      "dist_centroid_to_nearest_supply_m": 5311.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.2,
+      "totpop": 8451
+    },
+    {
+      "geoid": "48113008500",
+      "dist_centroid_to_nearest_supply_m": 3994.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.8,
+      "totpop": 4086
+    },
+    {
+      "geoid": "48113008604",
+      "dist_centroid_to_nearest_supply_m": 2310.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 32.7,
+      "totpop": 2590
+    },
+    {
+      "geoid": "48113008701",
+      "dist_centroid_to_nearest_supply_m": 142.9,
+      "within_500m": true,
+      "od_death_rate_per_100k": 24.9,
+      "totpop": 5337
+    },
+    {
+      "geoid": "48113008704",
+      "dist_centroid_to_nearest_supply_m": 1691.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.9,
+      "totpop": 4301
+    },
+    {
+      "geoid": "48113008801",
+      "dist_centroid_to_nearest_supply_m": 1202.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 32.7,
+      "totpop": 2703
+    },
+    {
+      "geoid": "48113009802",
+      "dist_centroid_to_nearest_supply_m": 5055.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.7,
+      "totpop": 5673
+    },
+    {
+      "geoid": "48113009104",
+      "dist_centroid_to_nearest_supply_m": 4411.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.9,
+      "totpop": 3653
+    },
+    {
+      "geoid": "48113018144",
+      "dist_centroid_to_nearest_supply_m": 10407.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.2,
+      "totpop": 4279
+    },
+    {
+      "geoid": "48113016524",
+      "dist_centroid_to_nearest_supply_m": 9331.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 2549
+    },
+    {
+      "geoid": "48113018146",
+      "dist_centroid_to_nearest_supply_m": 3719.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.2,
+      "totpop": 3297
+    },
+    {
+      "geoid": "48113018507",
+      "dist_centroid_to_nearest_supply_m": 524.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 3906
+    },
+    {
+      "geoid": "48113019045",
+      "dist_centroid_to_nearest_supply_m": 2213.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.9,
+      "totpop": 2572
+    },
+    {
+      "geoid": "48113019047",
+      "dist_centroid_to_nearest_supply_m": 4642.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.6,
+      "totpop": 4290
+    },
+    {
+      "geoid": "48113012802",
+      "dist_centroid_to_nearest_supply_m": 3277.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.6,
+      "totpop": 5003
+    },
+    {
+      "geoid": "48113016530",
+      "dist_centroid_to_nearest_supply_m": 10621.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.1,
+      "totpop": 3297
+    },
+    {
+      "geoid": "48113008402",
+      "dist_centroid_to_nearest_supply_m": 4199.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 3678
+    },
+    {
+      "geoid": "48113016531",
+      "dist_centroid_to_nearest_supply_m": 7004.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 3263
+    },
+    {
+      "geoid": "48113019051",
+      "dist_centroid_to_nearest_supply_m": 7370.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.6,
+      "totpop": 4843
+    },
+    {
+      "geoid": "48113019216",
+      "dist_centroid_to_nearest_supply_m": 7361.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.1,
+      "totpop": 3864
+    },
+    {
+      "geoid": "48113008101",
+      "dist_centroid_to_nearest_supply_m": 3932.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.5,
+      "totpop": 1626
+    },
+    {
+      "geoid": "48113018151",
+      "dist_centroid_to_nearest_supply_m": 5790.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.6,
+      "totpop": 3610
+    },
+    {
+      "geoid": "48113013202",
+      "dist_centroid_to_nearest_supply_m": 5470.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.5,
+      "totpop": 5071
+    },
+    {
+      "geoid": "48113013012",
+      "dist_centroid_to_nearest_supply_m": 3887.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.9,
+      "totpop": 2626
+    },
+    {
+      "geoid": "48113008102",
+      "dist_centroid_to_nearest_supply_m": 3027.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.5,
+      "totpop": 4068
+    },
+    {
+      "geoid": "48113016527",
+      "dist_centroid_to_nearest_supply_m": 11915.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.2,
+      "totpop": 4764
+    },
+    {
+      "geoid": "48113000801",
+      "dist_centroid_to_nearest_supply_m": 487.6,
+      "within_500m": true,
+      "od_death_rate_per_100k": 27.9,
+      "totpop": 3874
+    },
+    {
+      "geoid": "48113000902",
+      "dist_centroid_to_nearest_supply_m": 658.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 2575
+    },
+    {
+      "geoid": "48113014142",
+      "dist_centroid_to_nearest_supply_m": 4422.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.6,
+      "totpop": 2091
+    },
+    {
+      "geoid": "48113012801",
+      "dist_centroid_to_nearest_supply_m": 2365.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.6,
+      "totpop": 2598
+    },
+    {
+      "geoid": "48113021200",
+      "dist_centroid_to_nearest_supply_m": 6395.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 27.2,
+      "totpop": 4674
+    },
+    {
+      "geoid": "48113007915",
+      "dist_centroid_to_nearest_supply_m": 6512.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.1,
+      "totpop": 1596
+    },
+    {
+      "geoid": "48113012502",
+      "dist_centroid_to_nearest_supply_m": 2162.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 29.1,
+      "totpop": 3016
+    },
+    {
+      "geoid": "48113012501",
+      "dist_centroid_to_nearest_supply_m": 1845.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 29.1,
+      "totpop": 3393
+    },
+    {
+      "geoid": "48113016635",
+      "dist_centroid_to_nearest_supply_m": 4340.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.6,
+      "totpop": 3916
+    },
+    {
+      "geoid": "48113016534",
+      "dist_centroid_to_nearest_supply_m": 4313.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.4,
+      "totpop": 3457
+    },
+    {
+      "geoid": "48113007702",
+      "dist_centroid_to_nearest_supply_m": 7148.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.6,
+      "totpop": 3252
+    },
+    {
+      "geoid": "48113007830",
+      "dist_centroid_to_nearest_supply_m": 5870.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.1,
+      "totpop": 3026
+    },
+    {
+      "geoid": "48113013808",
+      "dist_centroid_to_nearest_supply_m": 3176.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.9,
+      "totpop": 2503
+    },
+    {
+      "geoid": "48113014704",
+      "dist_centroid_to_nearest_supply_m": 3041.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 5310
+    },
+    {
+      "geoid": "48113007206",
+      "dist_centroid_to_nearest_supply_m": 3818.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 25.0,
+      "totpop": 3244
+    },
+    {
+      "geoid": "48113016420",
+      "dist_centroid_to_nearest_supply_m": 14288.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.4,
+      "totpop": 4169
+    },
+    {
+      "geoid": "48113010001",
+      "dist_centroid_to_nearest_supply_m": 989.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 2124
+    },
+    {
+      "geoid": "48113007831",
+      "dist_centroid_to_nearest_supply_m": 5839.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.1,
+      "totpop": 2350
+    },
+    {
+      "geoid": "48113016532",
+      "dist_centroid_to_nearest_supply_m": 8429.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 2021
+    },
+    {
+      "geoid": "48113013807",
+      "dist_centroid_to_nearest_supply_m": 3670.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.9,
+      "totpop": 3012
+    },
+    {
+      "geoid": "48113014157",
+      "dist_centroid_to_nearest_supply_m": 7476.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.8,
+      "totpop": 2193
+    },
+    {
+      "geoid": "48113014156",
+      "dist_centroid_to_nearest_supply_m": 6153.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.8,
+      "totpop": 4147
+    },
+    {
+      "geoid": "48113014141",
+      "dist_centroid_to_nearest_supply_m": 4650.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.6,
+      "totpop": 2191
+    },
+    {
+      "geoid": "48113014314",
+      "dist_centroid_to_nearest_supply_m": 2255.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.5,
+      "totpop": 2636
+    },
+    {
+      "geoid": "48113014318",
+      "dist_centroid_to_nearest_supply_m": 2769.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.8,
+      "totpop": 2269
+    },
+    {
+      "geoid": "48113014155",
+      "dist_centroid_to_nearest_supply_m": 5760.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 10.6,
+      "totpop": 5611
+    },
+    {
+      "geoid": "48113014158",
+      "dist_centroid_to_nearest_supply_m": 3439.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.2,
+      "totpop": 3300
+    },
+    {
+      "geoid": "48113014409",
+      "dist_centroid_to_nearest_supply_m": 6203.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 3370
+    },
+    {
+      "geoid": "48113014410",
+      "dist_centroid_to_nearest_supply_m": 5072.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 2662
+    },
+    {
+      "geoid": "48113014316",
+      "dist_centroid_to_nearest_supply_m": 3186.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.8,
+      "totpop": 4926
+    },
+    {
+      "geoid": "48113015406",
+      "dist_centroid_to_nearest_supply_m": 8724.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.1,
+      "totpop": 3265
+    },
+    {
+      "geoid": "48113014140",
+      "dist_centroid_to_nearest_supply_m": 5288.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.3,
+      "totpop": 2978
+    },
+    {
+      "geoid": "48113014154",
+      "dist_centroid_to_nearest_supply_m": 5221.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.3,
+      "totpop": 3723
+    },
+    {
+      "geoid": "48113014147",
+      "dist_centroid_to_nearest_supply_m": 6347.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.3,
+      "totpop": 2433
+    },
+    {
+      "geoid": "48113014153",
+      "dist_centroid_to_nearest_supply_m": 4519.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.3,
+      "totpop": 4523
+    },
+    {
+      "geoid": "48113015101",
+      "dist_centroid_to_nearest_supply_m": 3318.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.9,
+      "totpop": 4039
+    },
+    {
+      "geoid": "48113015208",
+      "dist_centroid_to_nearest_supply_m": 3778.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.9,
+      "totpop": 4176
+    },
+    {
+      "geoid": "48113015002",
+      "dist_centroid_to_nearest_supply_m": 4194.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.9,
+      "totpop": 2938
+    },
+    {
+      "geoid": "48113014144",
+      "dist_centroid_to_nearest_supply_m": 1478.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.5,
+      "totpop": 5532
+    },
+    {
+      "geoid": "48113014313",
+      "dist_centroid_to_nearest_supply_m": 844.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.5,
+      "totpop": 2807
+    },
+    {
+      "geoid": "48113014320",
+      "dist_centroid_to_nearest_supply_m": 2291.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.5,
+      "totpop": 2983
+    },
+    {
+      "geoid": "48113016634",
+      "dist_centroid_to_nearest_supply_m": 5456.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 27.1,
+      "totpop": 4744
+    },
+    {
+      "geoid": "48113007203",
+      "dist_centroid_to_nearest_supply_m": 3332.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 25.0,
+      "totpop": 3512
+    },
+    {
+      "geoid": "48113019215",
+      "dist_centroid_to_nearest_supply_m": 6459.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.9,
+      "totpop": 2384
+    },
+    {
+      "geoid": "48113019214",
+      "dist_centroid_to_nearest_supply_m": 5600.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.9,
+      "totpop": 5676
+    },
+    {
+      "geoid": "48113013729",
+      "dist_centroid_to_nearest_supply_m": 3092.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 38.9,
+      "totpop": 7033
+    },
+    {
+      "geoid": "48113002001",
+      "dist_centroid_to_nearest_supply_m": 3650.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.9,
+      "totpop": 2492
+    },
+    {
+      "geoid": "48113010002",
+      "dist_centroid_to_nearest_supply_m": 2578.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 4980
+    },
+    {
+      "geoid": "48113000705",
+      "dist_centroid_to_nearest_supply_m": 2076.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 2204
+    },
+    {
+      "geoid": "48113016636",
+      "dist_centroid_to_nearest_supply_m": 7122.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.6,
+      "totpop": 2394
+    },
+    {
+      "geoid": "48113016528",
+      "dist_centroid_to_nearest_supply_m": 9685.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.2,
+      "totpop": 5230
+    },
+    {
+      "geoid": "48113016526",
+      "dist_centroid_to_nearest_supply_m": 9596.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.2,
+      "totpop": 5508
+    },
+    {
+      "geoid": "48113016419",
+      "dist_centroid_to_nearest_supply_m": 13798.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.4,
+      "totpop": 4941
+    },
+    {
+      "geoid": "48113016204",
+      "dist_centroid_to_nearest_supply_m": 12374.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 5295
+    },
+    {
+      "geoid": "48113016536",
+      "dist_centroid_to_nearest_supply_m": 4214.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 2673
+    },
+    {
+      "geoid": "48113000706",
+      "dist_centroid_to_nearest_supply_m": 2549.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.3,
+      "totpop": 2023
+    },
+    {
+      "geoid": "48113001901",
+      "dist_centroid_to_nearest_supply_m": 1438.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.2,
+      "totpop": 3848
+    },
+    {
+      "geoid": "48113001801",
+      "dist_centroid_to_nearest_supply_m": 1112.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 2460
+    },
+    {
+      "geoid": "48113000703",
+      "dist_centroid_to_nearest_supply_m": 1551.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 2940
+    },
+    {
+      "geoid": "48113001802",
+      "dist_centroid_to_nearest_supply_m": 1422.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 3051
+    },
+    {
+      "geoid": "48113000610",
+      "dist_centroid_to_nearest_supply_m": 1597.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.3,
+      "totpop": 2401
+    },
+    {
+      "geoid": "48113000407",
+      "dist_centroid_to_nearest_supply_m": 933.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 2187
+    },
+    {
+      "geoid": "48113000408",
+      "dist_centroid_to_nearest_supply_m": 1434.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 2301
+    },
+    {
+      "geoid": "48113016533",
+      "dist_centroid_to_nearest_supply_m": 6793.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.4,
+      "totpop": 3257
+    },
+    {
+      "geoid": "48113016535",
+      "dist_centroid_to_nearest_supply_m": 5779.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 3416
+    },
+    {
+      "geoid": "48113003103",
+      "dist_centroid_to_nearest_supply_m": 658.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 27.9,
+      "totpop": 2781
+    },
+    {
+      "geoid": "48113010809",
+      "dist_centroid_to_nearest_supply_m": 5151.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.7,
+      "totpop": 5574
+    },
+    {
+      "geoid": "48113006701",
+      "dist_centroid_to_nearest_supply_m": 2133.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.7,
+      "totpop": 4800
+    },
+    {
+      "geoid": "48113014149",
+      "dist_centroid_to_nearest_supply_m": 5297.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.6,
+      "totpop": 4011
+    },
+    {
+      "geoid": "48113007916",
+      "dist_centroid_to_nearest_supply_m": 6453.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.1,
+      "totpop": 1359
+    },
+    {
+      "geoid": "48113013631",
+      "dist_centroid_to_nearest_supply_m": 2825.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 1752
+    },
+    {
+      "geoid": "48113013107",
+      "dist_centroid_to_nearest_supply_m": 5352.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.7,
+      "totpop": 4386
+    },
+    {
+      "geoid": "48113019049",
+      "dist_centroid_to_nearest_supply_m": 4687.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.9,
+      "totpop": 4585
+    },
+    {
+      "geoid": "48113980200",
+      "dist_centroid_to_nearest_supply_m": 8229.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.1,
+      "totpop": 1428
+    },
+    {
+      "geoid": "48113018150",
+      "dist_centroid_to_nearest_supply_m": 8699.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.2,
+      "totpop": 3921
+    },
+    {
+      "geoid": "48113016708",
+      "dist_centroid_to_nearest_supply_m": 6366.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.9,
+      "totpop": 6979
+    },
+    {
+      "geoid": "48113020800",
+      "dist_centroid_to_nearest_supply_m": 230.5,
+      "within_500m": true,
+      "od_death_rate_per_100k": 34.0,
+      "totpop": 7874
+    },
+    {
+      "geoid": "48113000802",
+      "dist_centroid_to_nearest_supply_m": 1170.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 3224
+    },
+    {
+      "geoid": "48113001602",
+      "dist_centroid_to_nearest_supply_m": 1151.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 27.9,
+      "totpop": 2639
+    },
+    {
+      "geoid": "48113020401",
+      "dist_centroid_to_nearest_supply_m": 529.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 27.9,
+      "totpop": 2650
+    },
+    {
+      "geoid": "48113015207",
+      "dist_centroid_to_nearest_supply_m": 3085.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.9,
+      "totpop": 3581
+    },
+    {
+      "geoid": "48113015102",
+      "dist_centroid_to_nearest_supply_m": 1906.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.9,
+      "totpop": 2671
+    },
+    {
+      "geoid": "48113015001",
+      "dist_centroid_to_nearest_supply_m": 2985.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.9,
+      "totpop": 5468
+    },
+    {
+      "geoid": "48113014143",
+      "dist_centroid_to_nearest_supply_m": 3115.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.1,
+      "totpop": 4494
+    },
+    {
+      "geoid": "48113010906",
+      "dist_centroid_to_nearest_supply_m": 2339.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 3666
+    },
+    {
+      "geoid": "48113002002",
+      "dist_centroid_to_nearest_supply_m": 4221.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.9,
+      "totpop": 2966
+    },
+    {
+      "geoid": "48113000607",
+      "dist_centroid_to_nearest_supply_m": 1181.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 1877
+    },
+    {
+      "geoid": "48113016203",
+      "dist_centroid_to_nearest_supply_m": 13013.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 2056
+    },
+    {
+      "geoid": "48113016421",
+      "dist_centroid_to_nearest_supply_m": 12285.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.4,
+      "totpop": 3222
+    },
+    {
+      "geoid": "48113016414",
+      "dist_centroid_to_nearest_supply_m": 12243.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.8,
+      "totpop": 2009
+    },
+    {
+      "geoid": "48113000501",
+      "dist_centroid_to_nearest_supply_m": 237.6,
+      "within_500m": true,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 1945
+    },
+    {
+      "geoid": "48113000503",
+      "dist_centroid_to_nearest_supply_m": 463.9,
+      "within_500m": true,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 2059
+    },
+    {
+      "geoid": "48113000502",
+      "dist_centroid_to_nearest_supply_m": 667.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 2188
+    },
+    {
+      "geoid": "48113010905",
+      "dist_centroid_to_nearest_supply_m": 2989.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 3502
+    },
+    {
+      "geoid": "48113000409",
+      "dist_centroid_to_nearest_supply_m": 1024.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 4157
+    },
+    {
+      "geoid": "48113001902",
+      "dist_centroid_to_nearest_supply_m": 1283.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.2,
+      "totpop": 4667
+    },
+    {
+      "geoid": "48113000704",
+      "dist_centroid_to_nearest_supply_m": 1306.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 3406
+    },
+    {
+      "geoid": "48113001705",
+      "dist_centroid_to_nearest_supply_m": 1216.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.2,
+      "totpop": 2823
+    },
+    {
+      "geoid": "48113000609",
+      "dist_centroid_to_nearest_supply_m": 2261.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.3,
+      "totpop": 1606
+    },
+    {
+      "geoid": "48113000611",
+      "dist_centroid_to_nearest_supply_m": 1479.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 2042
+    },
+    {
+      "geoid": "48113003102",
+      "dist_centroid_to_nearest_supply_m": 1593.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.2,
+      "totpop": 1482
+    },
+    {
+      "geoid": "48113010808",
+      "dist_centroid_to_nearest_supply_m": 5338.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.7,
+      "totpop": 3305
+    },
+    {
+      "geoid": "48113006702",
+      "dist_centroid_to_nearest_supply_m": 1522.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.6,
+      "totpop": 2425
+    },
+    {
+      "geoid": "48113010806",
+      "dist_centroid_to_nearest_supply_m": 2267.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 3812
+    },
+    {
+      "geoid": "48113011004",
+      "dist_centroid_to_nearest_supply_m": 790.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 2529
+    },
+    {
+      "geoid": "48113011003",
+      "dist_centroid_to_nearest_supply_m": 915.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 4771
+    },
+    {
+      "geoid": "48113013628",
+      "dist_centroid_to_nearest_supply_m": 866.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 5667
+    },
+    {
+      "geoid": "48113013629",
+      "dist_centroid_to_nearest_supply_m": 2359.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 2707
+    },
+    {
+      "geoid": "48113014145",
+      "dist_centroid_to_nearest_supply_m": 4864.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.2,
+      "totpop": 1295
+    },
+    {
+      "geoid": "48113016711",
+      "dist_centroid_to_nearest_supply_m": 3587.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.4,
+      "totpop": 2053
+    },
+    {
+      "geoid": "48113011201",
+      "dist_centroid_to_nearest_supply_m": 3311.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.9,
+      "totpop": 4346
+    },
+    {
+      "geoid": "48113016707",
+      "dist_centroid_to_nearest_supply_m": 7913.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.9,
+      "totpop": 5096
+    },
+    {
+      "geoid": "48113007829",
+      "dist_centroid_to_nearest_supply_m": 3999.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 2507
+    },
+    {
+      "geoid": "48113019044",
+      "dist_centroid_to_nearest_supply_m": 3262.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.0,
+      "totpop": 3497
+    },
+    {
+      "geoid": "48113019046",
+      "dist_centroid_to_nearest_supply_m": 4356.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.6,
+      "totpop": 3081
+    },
+    {
+      "geoid": "48113012212",
+      "dist_centroid_to_nearest_supply_m": 2335.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 5298
+    },
+    {
+      "geoid": "48113016706",
+      "dist_centroid_to_nearest_supply_m": 8651.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 2359
+    },
+    {
+      "geoid": "48113019048",
+      "dist_centroid_to_nearest_supply_m": 4065.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.9,
+      "totpop": 3995
+    },
+    {
+      "geoid": "48113017816",
+      "dist_centroid_to_nearest_supply_m": 2655.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.8,
+      "totpop": 5710
+    },
+    {
+      "geoid": "48113007832",
+      "dist_centroid_to_nearest_supply_m": 5596.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.1,
+      "totpop": 2551
+    },
+    {
+      "geoid": "48113018152",
+      "dist_centroid_to_nearest_supply_m": 4129.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.4,
+      "totpop": 5477
+    },
+    {
+      "geoid": "48113000901",
+      "dist_centroid_to_nearest_supply_m": 1423.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 2426
+    },
+    {
+      "geoid": "48113000608",
+      "dist_centroid_to_nearest_supply_m": 798.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 2427
+    },
+    {
+      "geoid": "48113012213",
+      "dist_centroid_to_nearest_supply_m": 2086.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 2024
+    },
+    {
+      "geoid": "48113010807",
+      "dist_centroid_to_nearest_supply_m": 3676.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.4,
+      "totpop": 4835
+    },
+    {
+      "geoid": "48113016415",
+      "dist_centroid_to_nearest_supply_m": 10630.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 4930
+    },
+    {
+      "geoid": "48113007701",
+      "dist_centroid_to_nearest_supply_m": 6790.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.6,
+      "totpop": 1971
+    },
+    {
+      "geoid": "48113013728",
+      "dist_centroid_to_nearest_supply_m": 3155.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.0,
+      "totpop": 5136
+    },
+    {
+      "geoid": "48113010003",
+      "dist_centroid_to_nearest_supply_m": 1747.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 3702
+    },
+    {
+      "geoid": "48113016418",
+      "dist_centroid_to_nearest_supply_m": 13614.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.4,
+      "totpop": 4641
+    },
+    {
+      "geoid": "48113013201",
+      "dist_centroid_to_nearest_supply_m": 5249.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.8,
+      "totpop": 2525
+    },
+    {
+      "geoid": "48113013106",
+      "dist_centroid_to_nearest_supply_m": 5532.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.7,
+      "totpop": 1565
+    },
+    {
+      "geoid": "48113016417",
+      "dist_centroid_to_nearest_supply_m": 9639.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 5152
+    },
+    {
+      "geoid": "48113014146",
+      "dist_centroid_to_nearest_supply_m": 4717.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.2,
+      "totpop": 2413
+    },
+    {
+      "geoid": "48113013627",
+      "dist_centroid_to_nearest_supply_m": 2397.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.5,
+      "totpop": 1673
+    },
+    {
+      "geoid": "48113007205",
+      "dist_centroid_to_nearest_supply_m": 4076.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 25.0,
+      "totpop": 4947
+    },
+    {
+      "geoid": "48113007204",
+      "dist_centroid_to_nearest_supply_m": 3870.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 25.0,
+      "totpop": 4326
+    },
+    {
+      "geoid": "48113000410",
+      "dist_centroid_to_nearest_supply_m": 1870.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 53.0,
+      "totpop": 4416
+    },
+    {
+      "geoid": "48113014160",
+      "dist_centroid_to_nearest_supply_m": 4900.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.2,
+      "totpop": 2455
+    },
+    {
+      "geoid": "48113016637",
+      "dist_centroid_to_nearest_supply_m": 6052.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.6,
+      "totpop": 2921
+    },
+    {
+      "geoid": "48113014159",
+      "dist_centroid_to_nearest_supply_m": 4553.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.1,
+      "totpop": 2709
+    },
+    {
+      "geoid": "48113014150",
+      "dist_centroid_to_nearest_supply_m": 5942.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.8,
+      "totpop": 1545
+    },
+    {
+      "geoid": "48113014152",
+      "dist_centroid_to_nearest_supply_m": 3408.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.1,
+      "totpop": 3641
+    },
+    {
+      "geoid": "48113014317",
+      "dist_centroid_to_nearest_supply_m": 1961.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.8,
+      "totpop": 1977
+    },
+    {
+      "geoid": "48113014151",
+      "dist_centroid_to_nearest_supply_m": 4363.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.1,
+      "totpop": 4288
+    },
+    {
+      "geoid": "48113014319",
+      "dist_centroid_to_nearest_supply_m": 2361.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.5,
+      "totpop": 3011
+    },
+    {
+      "geoid": "48113014148",
+      "dist_centroid_to_nearest_supply_m": 5853.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.3,
+      "totpop": 3603
+    },
+    {
+      "geoid": "48113014315",
+      "dist_centroid_to_nearest_supply_m": 2221.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.8,
+      "totpop": 2566
+    },
+    {
+      "geoid": "48113014161",
+      "dist_centroid_to_nearest_supply_m": 6344.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.3,
+      "totpop": 3416
+    },
+    {
+      "geoid": "48113015405",
+      "dist_centroid_to_nearest_supply_m": 7720.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.1,
+      "totpop": 2553
+    },
+    {
+      "geoid": "48113014139",
+      "dist_centroid_to_nearest_supply_m": 5575.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.3,
+      "totpop": 2545
+    },
+    {
+      "geoid": "48113014903",
+      "dist_centroid_to_nearest_supply_m": 2041.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.9,
+      "totpop": 4059
+    },
+    {
+      "geoid": "48113014208",
+      "dist_centroid_to_nearest_supply_m": 1426.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 1878
+    },
+    {
+      "geoid": "48113016633",
+      "dist_centroid_to_nearest_supply_m": 10260.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 7264
+    },
+    {
+      "geoid": "48113011603",
+      "dist_centroid_to_nearest_supply_m": 4932.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 30.2,
+      "totpop": 3609
+    },
+    {
+      "geoid": "48113014207",
+      "dist_centroid_to_nearest_supply_m": 413.8,
+      "within_500m": true,
+      "od_death_rate_per_100k": 12.5,
+      "totpop": 1755
+    },
+    {
+      "geoid": "48113017005",
+      "dist_centroid_to_nearest_supply_m": 9948.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.2,
+      "totpop": 5403
+    },
+    {
+      "geoid": "48113017009",
+      "dist_centroid_to_nearest_supply_m": 8803.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.7,
+      "totpop": 4912
+    },
+    {
+      "geoid": "48113017007",
+      "dist_centroid_to_nearest_supply_m": 10857.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.2,
+      "totpop": 5911
+    },
+    {
+      "geoid": "48113017706",
+      "dist_centroid_to_nearest_supply_m": 2609.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.6,
+      "totpop": 4941
+    },
+    {
+      "geoid": "48113017817",
+      "dist_centroid_to_nearest_supply_m": 972.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 45.0,
+      "totpop": 3011
+    },
+    {
+      "geoid": "48113018158",
+      "dist_centroid_to_nearest_supply_m": 6060.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.6,
+      "totpop": 4385
+    },
+    {
+      "geoid": "48113017313",
+      "dist_centroid_to_nearest_supply_m": 8903.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 4792
+    },
+    {
+      "geoid": "48113018154",
+      "dist_centroid_to_nearest_supply_m": 9458.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.4,
+      "totpop": 4830
+    },
+    {
+      "geoid": "48113018157",
+      "dist_centroid_to_nearest_supply_m": 5818.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.4,
+      "totpop": 4197
+    },
+    {
+      "geoid": "48113018300",
+      "dist_centroid_to_nearest_supply_m": 2679.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.5,
+      "totpop": 7079
+    },
+    {
+      "geoid": "48113018401",
+      "dist_centroid_to_nearest_supply_m": 1771.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 4364
+    },
+    {
+      "geoid": "48113018402",
+      "dist_centroid_to_nearest_supply_m": 3153.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 4313
+    },
+    {
+      "geoid": "48113018403",
+      "dist_centroid_to_nearest_supply_m": 2858.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 1581
+    },
+    {
+      "geoid": "48113018600",
+      "dist_centroid_to_nearest_supply_m": 2747.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.6,
+      "totpop": 3925
+    },
+    {
+      "geoid": "48113018700",
+      "dist_centroid_to_nearest_supply_m": 1210.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.6,
+      "totpop": 7107
+    },
+    {
+      "geoid": "48113018143",
+      "dist_centroid_to_nearest_supply_m": 9093.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.4,
+      "totpop": 6465
+    },
+    {
+      "geoid": "48113019101",
+      "dist_centroid_to_nearest_supply_m": 4532.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.2,
+      "totpop": 1157
+    },
+    {
+      "geoid": "48113016416",
+      "dist_centroid_to_nearest_supply_m": 6850.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.2,
+      "totpop": 3277
+    },
+    {
+      "geoid": "48113016525",
+      "dist_centroid_to_nearest_supply_m": 6046.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 2139
+    },
+    {
+      "geoid": "48113017818",
+      "dist_centroid_to_nearest_supply_m": 1502.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 45.0,
+      "totpop": 3639
+    },
+    {
+      "geoid": "48113017705",
+      "dist_centroid_to_nearest_supply_m": 2307.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.9,
+      "totpop": 3083
+    },
+    {
+      "geoid": "48113016710",
+      "dist_centroid_to_nearest_supply_m": 4375.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.4,
+      "totpop": 5573
+    },
+    {
+      "geoid": "48113008401",
+      "dist_centroid_to_nearest_supply_m": 4466.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.8,
+      "totpop": 5200
+    },
+    {
+      "geoid": "48113018148",
+      "dist_centroid_to_nearest_supply_m": 548.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.4,
+      "totpop": 5085
+    },
+    {
+      "geoid": "48113018156",
+      "dist_centroid_to_nearest_supply_m": 4442.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.5,
+      "totpop": 5481
+    },
+    {
+      "geoid": "48113016629",
+      "dist_centroid_to_nearest_supply_m": 11448.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.1,
+      "totpop": 2728
+    },
+    {
+      "geoid": "48113018153",
+      "dist_centroid_to_nearest_supply_m": 7268.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.6,
+      "totpop": 7511
+    },
+    {
+      "geoid": "48113011202",
+      "dist_centroid_to_nearest_supply_m": 1231.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.9,
+      "totpop": 2381
+    },
+    {
+      "geoid": "48113009001",
+      "dist_centroid_to_nearest_supply_m": 4390.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.5,
+      "totpop": 5791
+    },
+    {
+      "geoid": "48113016630",
+      "dist_centroid_to_nearest_supply_m": 10158.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.0,
+      "totpop": 6619
+    },
+    {
+      "geoid": "48113007834",
+      "dist_centroid_to_nearest_supply_m": 949.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 2416
+    },
+    {
+      "geoid": "48113007835",
+      "dist_centroid_to_nearest_supply_m": 1411.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 2661
+    },
+    {
+      "geoid": "48113017819",
+      "dist_centroid_to_nearest_supply_m": 2004.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 45.0,
+      "totpop": 2124
+    },
+    {
+      "geoid": "48113018159",
+      "dist_centroid_to_nearest_supply_m": 4479.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.6,
+      "totpop": 5322
+    },
+    {
+      "geoid": "48113009203",
+      "dist_centroid_to_nearest_supply_m": 2569.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.3,
+      "totpop": 4409
+    },
+    {
+      "geoid": "48113009002",
+      "dist_centroid_to_nearest_supply_m": 3210.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.5,
+      "totpop": 4556
+    },
+    {
+      "geoid": "48113019102",
+      "dist_centroid_to_nearest_supply_m": 4406.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.2,
+      "totpop": 4570
+    },
+    {
+      "geoid": "48113007833",
+      "dist_centroid_to_nearest_supply_m": 5425.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.1,
+      "totpop": 2887
+    },
+    {
+      "geoid": "48113017312",
+      "dist_centroid_to_nearest_supply_m": 4254.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.3,
+      "totpop": 4835
+    },
+    {
+      "geoid": "48113012102",
+      "dist_centroid_to_nearest_supply_m": 4219.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.5,
+      "totpop": 3184
+    },
+    {
+      "geoid": "48113016805",
+      "dist_centroid_to_nearest_supply_m": 9283.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.5,
+      "totpop": 4285
+    },
+    {
+      "geoid": "48113016529",
+      "dist_centroid_to_nearest_supply_m": 11826.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.2,
+      "totpop": 3521
+    },
+    {
+      "geoid": "48113011604",
+      "dist_centroid_to_nearest_supply_m": 5102.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 30.2,
+      "totpop": 3686
+    },
+    {
+      "geoid": "48113018145",
+      "dist_centroid_to_nearest_supply_m": 4916.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.0,
+      "totpop": 5195
+    },
+    {
+      "geoid": "48113018149",
+      "dist_centroid_to_nearest_supply_m": 9657.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.2,
+      "totpop": 3329
+    },
+    {
+      "geoid": "48113017010",
+      "dist_centroid_to_nearest_supply_m": 8429.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.7,
+      "totpop": 5813
+    },
+    {
+      "geoid": "48113017309",
+      "dist_centroid_to_nearest_supply_m": 8037.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 2959
+    },
+    {
+      "geoid": "48113018801",
+      "dist_centroid_to_nearest_supply_m": 2143.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.4,
+      "totpop": 4574
+    },
+    {
+      "geoid": "48113018802",
+      "dist_centroid_to_nearest_supply_m": 1318.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.6,
+      "totpop": 1710
+    },
+    {
+      "geoid": "48113018900",
+      "dist_centroid_to_nearest_supply_m": 3082.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.6,
+      "totpop": 5803
+    },
+    {
+      "geoid": "48113019013",
+      "dist_centroid_to_nearest_supply_m": 3791.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.6,
+      "totpop": 5034
+    },
+    {
+      "geoid": "48113019016",
+      "dist_centroid_to_nearest_supply_m": 2449.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 2600
+    },
+    {
+      "geoid": "48113019020",
+      "dist_centroid_to_nearest_supply_m": 5281.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.9,
+      "totpop": 7396
+    },
+    {
+      "geoid": "48113019023",
+      "dist_centroid_to_nearest_supply_m": 5491.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.0,
+      "totpop": 5307
+    },
+    {
+      "geoid": "48113019024",
+      "dist_centroid_to_nearest_supply_m": 4122.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.9,
+      "totpop": 3801
+    },
+    {
+      "geoid": "48113019025",
+      "dist_centroid_to_nearest_supply_m": 4379.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.4,
+      "totpop": 4369
+    },
+    {
+      "geoid": "48113019026",
+      "dist_centroid_to_nearest_supply_m": 3590.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.4,
+      "totpop": 5550
+    },
+    {
+      "geoid": "48113019027",
+      "dist_centroid_to_nearest_supply_m": 5871.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.1,
+      "totpop": 7261
+    },
+    {
+      "geoid": "48113019028",
+      "dist_centroid_to_nearest_supply_m": 6639.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.0,
+      "totpop": 3733
+    },
+    {
+      "geoid": "48113021100",
+      "dist_centroid_to_nearest_supply_m": 3265.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 32.7,
+      "totpop": 4652
+    },
+    {
+      "geoid": "48113016632",
+      "dist_centroid_to_nearest_supply_m": 10807.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 3721
+    },
+    {
+      "geoid": "48113016628",
+      "dist_centroid_to_nearest_supply_m": 10804.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 4583
+    },
+    {
+      "geoid": "48113011901",
+      "dist_centroid_to_nearest_supply_m": 1123.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.3,
+      "totpop": 3939
+    },
+    {
+      "geoid": "48113011902",
+      "dist_centroid_to_nearest_supply_m": 1024.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.3,
+      "totpop": 4415
+    },
+    {
+      "geoid": "48113009204",
+      "dist_centroid_to_nearest_supply_m": 2601.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.3,
+      "totpop": 2545
+    },
+    {
+      "geoid": "48113011802",
+      "dist_centroid_to_nearest_supply_m": 1269.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.9,
+      "totpop": 4548
+    },
+    {
+      "geoid": "48113017307",
+      "dist_centroid_to_nearest_supply_m": 5538.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.3,
+      "totpop": 3786
+    },
+    {
+      "geoid": "48113016627",
+      "dist_centroid_to_nearest_supply_m": 11058.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 2716
+    },
+    {
+      "geoid": "48113011801",
+      "dist_centroid_to_nearest_supply_m": 1044.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.9,
+      "totpop": 4970
+    },
+    {
+      "geoid": "48113001601",
+      "dist_centroid_to_nearest_supply_m": 1165.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 27.9,
+      "totpop": 2440
+    },
+    {
+      "geoid": "48113007828",
+      "dist_centroid_to_nearest_supply_m": 3031.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 4912
+    },
+    {
+      "geoid": "48113013013",
+      "dist_centroid_to_nearest_supply_m": 4493.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.9,
+      "totpop": 4380
+    },
+    {
+      "geoid": "48113002703",
+      "dist_centroid_to_nearest_supply_m": 2212.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 64.7,
+      "totpop": 5828
+    },
+    {
+      "geoid": "48113020900",
+      "dist_centroid_to_nearest_supply_m": 1761.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 34.0,
+      "totpop": 2209
+    },
+    {
+      "geoid": "48113018147",
+      "dist_centroid_to_nearest_supply_m": 1959.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.2,
+      "totpop": 5052
+    },
+    {
+      "geoid": "48113021000",
+      "dist_centroid_to_nearest_supply_m": 3175.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.9,
+      "totpop": 5853
+    },
+    {
+      "geoid": "48113017308",
+      "dist_centroid_to_nearest_supply_m": 5609.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.3,
+      "totpop": 4685
+    },
+    {
+      "geoid": "48113017203",
+      "dist_centroid_to_nearest_supply_m": 3654.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.9,
+      "totpop": 5545
+    },
+    {
+      "geoid": "48113017311",
+      "dist_centroid_to_nearest_supply_m": 3540.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.3,
+      "totpop": 3026
+    },
+    {
+      "geoid": "48113017314",
+      "dist_centroid_to_nearest_supply_m": 6108.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.3,
+      "totpop": 8926
+    },
+    {
+      "geoid": "48113017006",
+      "dist_centroid_to_nearest_supply_m": 16419.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.2,
+      "totpop": 6086
+    },
+    {
+      "geoid": "48113012101",
+      "dist_centroid_to_nearest_supply_m": 3520.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.9,
+      "totpop": 3039
+    },
+    {
+      "geoid": "48113017820",
+      "dist_centroid_to_nearest_supply_m": 2045.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.4,
+      "totpop": 4400
+    },
+    {
+      "geoid": "48113016806",
+      "dist_centroid_to_nearest_supply_m": 9312.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.5,
+      "totpop": 5736
+    },
+    {
+      "geoid": "48113016631",
+      "dist_centroid_to_nearest_supply_m": 10748.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.0,
+      "totpop": 5785
+    },
+    {
+      "geoid": "48113020402",
+      "dist_centroid_to_nearest_supply_m": 1697.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 6288
+    },
+    {
+      "geoid": "48113017204",
+      "dist_centroid_to_nearest_supply_m": 4131.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.2,
+      "totpop": 5043
+    },
+    {
+      "geoid": "48113017315",
+      "dist_centroid_to_nearest_supply_m": 5418.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.2,
+      "totpop": 6545
+    },
+    {
+      "geoid": "48113017310",
+      "dist_centroid_to_nearest_supply_m": 7346.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 3605
+    },
+    {
+      "geoid": "48113017008",
+      "dist_centroid_to_nearest_supply_m": 11890.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.7,
+      "totpop": 5958
+    },
+    {
+      "geoid": "48113018155",
+      "dist_centroid_to_nearest_supply_m": 9984.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.4,
+      "totpop": 5513
+    },
+    {
+      "geoid": "48113017815",
+      "dist_centroid_to_nearest_supply_m": 2246.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 45.0,
+      "totpop": 3415
+    },
+    {
+      "geoid": "48113016709",
+      "dist_centroid_to_nearest_supply_m": 6119.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 3633
+    },
+    {
+      "geoid": "48113019029",
+      "dist_centroid_to_nearest_supply_m": 5795.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.0,
+      "totpop": 5836
+    },
+    {
+      "geoid": "48113019031",
+      "dist_centroid_to_nearest_supply_m": 8244.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.9,
+      "totpop": 5192
+    },
+    {
+      "geoid": "48113019034",
+      "dist_centroid_to_nearest_supply_m": 1440.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.3,
+      "totpop": 4645
+    },
+    {
+      "geoid": "48113019035",
+      "dist_centroid_to_nearest_supply_m": 742.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 6383
+    },
+    {
+      "geoid": "48113019036",
+      "dist_centroid_to_nearest_supply_m": 7994.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.9,
+      "totpop": 2598
+    },
+    {
+      "geoid": "48113019037",
+      "dist_centroid_to_nearest_supply_m": 6826.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.9,
+      "totpop": 3117
+    },
+    {
+      "geoid": "48113019202",
+      "dist_centroid_to_nearest_supply_m": 4895.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.2,
+      "totpop": 4976
+    },
+    {
+      "geoid": "48113019203",
+      "dist_centroid_to_nearest_supply_m": 5772.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.2,
+      "totpop": 3826
+    },
+    {
+      "geoid": "48113017101",
+      "dist_centroid_to_nearest_supply_m": 6100.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.2,
+      "totpop": 6973
+    },
+    {
+      "geoid": "48113017201",
+      "dist_centroid_to_nearest_supply_m": 2301.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.9,
+      "totpop": 6065
+    },
+    {
+      "geoid": "48113019205",
+      "dist_centroid_to_nearest_supply_m": 6872.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.1,
+      "totpop": 4748
+    },
+    {
+      "geoid": "48113019208",
+      "dist_centroid_to_nearest_supply_m": 5017.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.5,
+      "totpop": 5764
+    },
+    {
+      "geoid": "48113017400",
+      "dist_centroid_to_nearest_supply_m": 2679.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.3,
+      "totpop": 5155
+    },
+    {
+      "geoid": "48113017704",
+      "dist_centroid_to_nearest_supply_m": 855.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.9,
+      "totpop": 6279
+    },
+    {
+      "geoid": "48113017500",
+      "dist_centroid_to_nearest_supply_m": 1293.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.9,
+      "totpop": 3823
+    },
+    {
+      "geoid": "48113017805",
+      "dist_centroid_to_nearest_supply_m": 3239.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.8,
+      "totpop": 5910
+    },
+    {
+      "geoid": "48113017806",
+      "dist_centroid_to_nearest_supply_m": 1302.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.8,
+      "totpop": 4989
+    },
+    {
+      "geoid": "48113017602",
+      "dist_centroid_to_nearest_supply_m": 2433.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.9,
+      "totpop": 4093
+    },
+    {
+      "geoid": "48113019210",
+      "dist_centroid_to_nearest_supply_m": 8016.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.2,
+      "totpop": 4639
+    },
+    {
+      "geoid": "48113019211",
+      "dist_centroid_to_nearest_supply_m": 6799.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.2,
+      "totpop": 5777
+    },
+    {
+      "geoid": "48113019301",
+      "dist_centroid_to_nearest_supply_m": 5757.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 3403
+    },
+    {
+      "geoid": "48113019400",
+      "dist_centroid_to_nearest_supply_m": 4493.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 4454
+    },
+    {
+      "geoid": "48113019501",
+      "dist_centroid_to_nearest_supply_m": 5372.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.6,
+      "totpop": 7496
+    },
+    {
+      "geoid": "48113017811",
+      "dist_centroid_to_nearest_supply_m": 1042.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 45.0,
+      "totpop": 5086
+    },
+    {
+      "geoid": "48113017812",
+      "dist_centroid_to_nearest_supply_m": 1115.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 45.0,
+      "totpop": 2263
+    },
+    {
+      "geoid": "48113017808",
+      "dist_centroid_to_nearest_supply_m": 1465.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 4096
+    },
+    {
+      "geoid": "48113017814",
+      "dist_centroid_to_nearest_supply_m": 1242.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 45.0,
+      "totpop": 4880
+    },
+    {
+      "geoid": "48113017900",
+      "dist_centroid_to_nearest_supply_m": 1210.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.4,
+      "totpop": 4957
+    },
+    {
+      "geoid": "48113019502",
+      "dist_centroid_to_nearest_supply_m": 3795.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 4074
+    },
+    {
+      "geoid": "48113019600",
+      "dist_centroid_to_nearest_supply_m": 3117.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.3,
+      "totpop": 2419
+    },
+    {
+      "geoid": "48113019700",
+      "dist_centroid_to_nearest_supply_m": 2805.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.3,
+      "totpop": 1567
+    },
+    {
+      "geoid": "48113019800",
+      "dist_centroid_to_nearest_supply_m": 2092.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.3,
+      "totpop": 4854
+    },
+    {
+      "geoid": "48113019900",
+      "dist_centroid_to_nearest_supply_m": 2449.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.7,
+      "totpop": 3799
+    },
+    {
+      "geoid": "48113013607",
+      "dist_centroid_to_nearest_supply_m": 5052.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.9,
+      "totpop": 3657
+    },
+    {
+      "geoid": "48113015900",
+      "dist_centroid_to_nearest_supply_m": 9408.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.6,
+      "totpop": 3380
+    },
+    {
+      "geoid": "48113012604",
+      "dist_centroid_to_nearest_supply_m": 4171.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 6533
+    },
+    {
+      "geoid": "48113013010",
+      "dist_centroid_to_nearest_supply_m": 1280.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.6,
+      "totpop": 4926
+    },
+    {
+      "geoid": "48113013622",
+      "dist_centroid_to_nearest_supply_m": 1971.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 3036
+    },
+    {
+      "geoid": "48113013621",
+      "dist_centroid_to_nearest_supply_m": 2415.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.5,
+      "totpop": 3899
+    },
+    {
+      "geoid": "48113014135",
+      "dist_centroid_to_nearest_supply_m": 9535.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.3,
+      "totpop": 4768
+    },
+    {
+      "geoid": "48113014134",
+      "dist_centroid_to_nearest_supply_m": 10205.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.3,
+      "totpop": 4207
+    },
+    {
+      "geoid": "48113016626",
+      "dist_centroid_to_nearest_supply_m": 12891.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.1,
+      "totpop": 4445
+    },
+    {
+      "geoid": "48113016621",
+      "dist_centroid_to_nearest_supply_m": 12416.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.6,
+      "totpop": 6140
+    },
+    {
+      "geoid": "48113016623",
+      "dist_centroid_to_nearest_supply_m": 13340.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.6,
+      "totpop": 7960
+    },
+    {
+      "geoid": "48113018142",
+      "dist_centroid_to_nearest_supply_m": 4845.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.6,
+      "totpop": 4289
+    },
+    {
+      "geoid": "48113018141",
+      "dist_centroid_to_nearest_supply_m": 6080.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.6,
+      "totpop": 3072
+    },
+    {
+      "geoid": "48113018137",
+      "dist_centroid_to_nearest_supply_m": 4195.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.6,
+      "totpop": 4837
+    },
+    {
+      "geoid": "48113018138",
+      "dist_centroid_to_nearest_supply_m": 1829.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.5,
+      "totpop": 5045
+    },
+    {
+      "geoid": "48113018140",
+      "dist_centroid_to_nearest_supply_m": 6567.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.5,
+      "totpop": 6192
+    },
+    {
+      "geoid": "48113019042",
+      "dist_centroid_to_nearest_supply_m": 7879.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.1,
+      "totpop": 7660
+    },
+    {
+      "geoid": "48113019050",
+      "dist_centroid_to_nearest_supply_m": 7005.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.1,
+      "totpop": 3071
+    },
+    {
+      "geoid": "48113019052",
+      "dist_centroid_to_nearest_supply_m": 7943.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.2,
+      "totpop": 1009
+    },
+    {
+      "geoid": "48113019053",
+      "dist_centroid_to_nearest_supply_m": 6485.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.2,
+      "totpop": 1517
+    },
+    {
+      "geoid": "48113019039",
+      "dist_centroid_to_nearest_supply_m": 4268.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.9,
+      "totpop": 5895
+    },
+    {
+      "geoid": "48113019213",
+      "dist_centroid_to_nearest_supply_m": 4508.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.3,
+      "totpop": 3464
+    },
+    {
+      "geoid": "48113013726",
+      "dist_centroid_to_nearest_supply_m": 1836.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.9,
+      "totpop": 2900
+    },
+    {
+      "geoid": "48113016624",
+      "dist_centroid_to_nearest_supply_m": 13532.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.0,
+      "totpop": 3501
+    },
+    {
+      "geoid": "48113016622",
+      "dist_centroid_to_nearest_supply_m": 13950.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.6,
+      "totpop": 4307
+    },
+    {
+      "geoid": "48113010903",
+      "dist_centroid_to_nearest_supply_m": 2840.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 3975
+    },
+    {
+      "geoid": "48113001703",
+      "dist_centroid_to_nearest_supply_m": 1760.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.2,
+      "totpop": 3129
+    },
+    {
+      "geoid": "48113019212",
+      "dist_centroid_to_nearest_supply_m": 4731.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.3,
+      "totpop": 3129
+    },
+    {
+      "geoid": "48113020300",
+      "dist_centroid_to_nearest_supply_m": 344.7,
+      "within_500m": true,
+      "od_death_rate_per_100k": 64.7,
+      "totpop": 2271
+    },
+    {
+      "geoid": "48113020500",
+      "dist_centroid_to_nearest_supply_m": 3080.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.0,
+      "totpop": 6148
+    },
+    {
+      "geoid": "48113020600",
+      "dist_centroid_to_nearest_supply_m": 6353.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.7,
+      "totpop": 2024
+    },
+    {
+      "geoid": "48113020700",
+      "dist_centroid_to_nearest_supply_m": 3859.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.0,
+      "totpop": 5023
+    },
+    {
+      "geoid": "48113012301",
+      "dist_centroid_to_nearest_supply_m": 1063.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.7,
+      "totpop": 5073
+    },
+    {
+      "geoid": "48113012302",
+      "dist_centroid_to_nearest_supply_m": 671.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.7,
+      "totpop": 8814
+    },
+    {
+      "geoid": "48113013626",
+      "dist_centroid_to_nearest_supply_m": 2402.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 2912
+    },
+    {
+      "geoid": "48113011002",
+      "dist_centroid_to_nearest_supply_m": 2316.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.9,
+      "totpop": 3707
+    },
+    {
+      "geoid": "48113011101",
+      "dist_centroid_to_nearest_supply_m": 2494.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 4682
+    },
+    {
+      "geoid": "48113011103",
+      "dist_centroid_to_nearest_supply_m": 2718.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.9,
+      "totpop": 3442
+    },
+    {
+      "geoid": "48113011104",
+      "dist_centroid_to_nearest_supply_m": 3673.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.9,
+      "totpop": 4620
+    },
+    {
+      "geoid": "48113010101",
+      "dist_centroid_to_nearest_supply_m": 2543.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.0,
+      "totpop": 4212
+    },
+    {
+      "geoid": "48113010102",
+      "dist_centroid_to_nearest_supply_m": 1684.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.0,
+      "totpop": 3177
+    },
+    {
+      "geoid": "48113010500",
+      "dist_centroid_to_nearest_supply_m": 2651.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.9,
+      "totpop": 3280
+    },
+    {
+      "geoid": "48113010601",
+      "dist_centroid_to_nearest_supply_m": 4262.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.9,
+      "totpop": 5551
+    },
+    {
+      "geoid": "48113010602",
+      "dist_centroid_to_nearest_supply_m": 4362.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.9,
+      "totpop": 2932
+    },
+    {
+      "geoid": "48113020100",
+      "dist_centroid_to_nearest_supply_m": 3845.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 2104
+    },
+    {
+      "geoid": "48113020200",
+      "dist_centroid_to_nearest_supply_m": 3439.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.2,
+      "totpop": 4385
+    },
+    {
+      "geoid": "48113014128",
+      "dist_centroid_to_nearest_supply_m": 5232.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.6,
+      "totpop": 4194
+    },
+    {
+      "geoid": "48113016522",
+      "dist_centroid_to_nearest_supply_m": 9438.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.2,
+      "totpop": 5179
+    },
+    {
+      "geoid": "48113017606",
+      "dist_centroid_to_nearest_supply_m": 1878.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.9,
+      "totpop": 4855
+    },
+    {
+      "geoid": "48113000606",
+      "dist_centroid_to_nearest_supply_m": 1097.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 3095
+    },
+    {
+      "geoid": "48113016803",
+      "dist_centroid_to_nearest_supply_m": 10195.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.2,
+      "totpop": 5873
+    },
+    {
+      "geoid": "48113007812",
+      "dist_centroid_to_nearest_supply_m": 3386.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 2780
+    },
+    {
+      "geoid": "48113009803",
+      "dist_centroid_to_nearest_supply_m": 5536.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.1,
+      "totpop": 2248
+    },
+    {
+      "geoid": "48113013717",
+      "dist_centroid_to_nearest_supply_m": 4292.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 38.9,
+      "totpop": 2952
+    },
+    {
+      "geoid": "48113006100",
+      "dist_centroid_to_nearest_supply_m": 2225.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 4850
+    },
+    {
+      "geoid": "48113017604",
+      "dist_centroid_to_nearest_supply_m": 2837.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.9,
+      "totpop": 3602
+    },
+    {
+      "geoid": "48113007809",
+      "dist_centroid_to_nearest_supply_m": 5817.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.2,
+      "totpop": 3138
+    },
+    {
+      "geoid": "48113019033",
+      "dist_centroid_to_nearest_supply_m": 2582.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.0,
+      "totpop": 4272
+    },
+    {
+      "geoid": "48113013618",
+      "dist_centroid_to_nearest_supply_m": 6081.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.1,
+      "totpop": 2879
+    },
+    {
+      "geoid": "48113009900",
+      "dist_centroid_to_nearest_supply_m": 3801.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.1,
+      "totpop": 6024
+    },
+    {
+      "geoid": "48113009804",
+      "dist_centroid_to_nearest_supply_m": 4953.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.1,
+      "totpop": 7341
+    },
+    {
+      "geoid": "48113016516",
+      "dist_centroid_to_nearest_supply_m": 4927.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 5591
+    },
+    {
+      "geoid": "48113018132",
+      "dist_centroid_to_nearest_supply_m": 1513.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.5,
+      "totpop": 6268
+    },
+    {
+      "geoid": "48113009103",
+      "dist_centroid_to_nearest_supply_m": 4924.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.9,
+      "totpop": 3538
+    },
+    {
+      "geoid": "48113001504",
+      "dist_centroid_to_nearest_supply_m": 611.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 27.9,
+      "totpop": 2713
+    },
+    {
+      "geoid": "48113014308",
+      "dist_centroid_to_nearest_supply_m": 2519.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.8,
+      "totpop": 4629
+    },
+    {
+      "geoid": "48113006800",
+      "dist_centroid_to_nearest_supply_m": 795.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.2,
+      "totpop": 5078
+    },
+    {
+      "geoid": "48113006900",
+      "dist_centroid_to_nearest_supply_m": 941.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.2,
+      "totpop": 3837
+    },
+    {
+      "geoid": "48113009701",
+      "dist_centroid_to_nearest_supply_m": 4334.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.1,
+      "totpop": 4919
+    },
+    {
+      "geoid": "48113014603",
+      "dist_centroid_to_nearest_supply_m": 1242.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 2023
+    },
+    {
+      "geoid": "48113016618",
+      "dist_centroid_to_nearest_supply_m": 8639.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 4856
+    },
+    {
+      "geoid": "48113016619",
+      "dist_centroid_to_nearest_supply_m": 7561.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 27.1,
+      "totpop": 3416
+    },
+    {
+      "geoid": "48113018130",
+      "dist_centroid_to_nearest_supply_m": 2960.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 3862
+    },
+    {
+      "geoid": "48113019032",
+      "dist_centroid_to_nearest_supply_m": 2824.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.0,
+      "totpop": 4824
+    },
+    {
+      "geoid": "48113000100",
+      "dist_centroid_to_nearest_supply_m": 3498.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 43.7,
+      "totpop": 3994
+    },
+    {
+      "geoid": "48113000201",
+      "dist_centroid_to_nearest_supply_m": 3684.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.0,
+      "totpop": 2872
+    },
+    {
+      "geoid": "48113000202",
+      "dist_centroid_to_nearest_supply_m": 3241.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.0,
+      "totpop": 3817
+    },
+    {
+      "geoid": "48113000300",
+      "dist_centroid_to_nearest_supply_m": 2847.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.3,
+      "totpop": 4325
+    },
+    {
+      "geoid": "48113000401",
+      "dist_centroid_to_nearest_supply_m": 1246.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 4649
+    },
+    {
+      "geoid": "48113000405",
+      "dist_centroid_to_nearest_supply_m": 909.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.0,
+      "totpop": 1971
+    },
+    {
+      "geoid": "48113001001",
+      "dist_centroid_to_nearest_supply_m": 1851.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 1454
+    },
+    {
+      "geoid": "48113001002",
+      "dist_centroid_to_nearest_supply_m": 1245.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 2106
+    },
+    {
+      "geoid": "48113001102",
+      "dist_centroid_to_nearest_supply_m": 2435.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.0,
+      "totpop": 2615
+    },
+    {
+      "geoid": "48113001204",
+      "dist_centroid_to_nearest_supply_m": 1555.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 43.7,
+      "totpop": 2095
+    },
+    {
+      "geoid": "48113001301",
+      "dist_centroid_to_nearest_supply_m": 1656.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 43.7,
+      "totpop": 2626
+    },
+    {
+      "geoid": "48113001302",
+      "dist_centroid_to_nearest_supply_m": 627.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 43.7,
+      "totpop": 2790
+    },
+    {
+      "geoid": "48113001400",
+      "dist_centroid_to_nearest_supply_m": 1445.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 43.7,
+      "totpop": 3161
+    },
+    {
+      "geoid": "48113001101",
+      "dist_centroid_to_nearest_supply_m": 1669.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.0,
+      "totpop": 3597
+    },
+    {
+      "geoid": "48113001502",
+      "dist_centroid_to_nearest_supply_m": 472.2,
+      "within_500m": true,
+      "od_death_rate_per_100k": 43.7,
+      "totpop": 2668
+    },
+    {
+      "geoid": "48113001503",
+      "dist_centroid_to_nearest_supply_m": 202.8,
+      "within_500m": true,
+      "od_death_rate_per_100k": 27.9,
+      "totpop": 1545
+    },
+    {
+      "geoid": "48113012209",
+      "dist_centroid_to_nearest_supply_m": 2171.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.5,
+      "totpop": 2306
+    },
+    {
+      "geoid": "48113016620",
+      "dist_centroid_to_nearest_supply_m": 9306.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 5845
+    },
+    {
+      "geoid": "48113016409",
+      "dist_centroid_to_nearest_supply_m": 12246.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.4,
+      "totpop": 4029
+    },
+    {
+      "geoid": "48113009303",
+      "dist_centroid_to_nearest_supply_m": 4793.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.2,
+      "totpop": 4164
+    },
+    {
+      "geoid": "48113016902",
+      "dist_centroid_to_nearest_supply_m": 8092.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.2,
+      "totpop": 6619
+    },
+    {
+      "geoid": "48113011601",
+      "dist_centroid_to_nearest_supply_m": 5793.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.2,
+      "totpop": 4526
+    },
+    {
+      "geoid": "48113019302",
+      "dist_centroid_to_nearest_supply_m": 4453.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 5752
+    },
+    {
+      "geoid": "48113014601",
+      "dist_centroid_to_nearest_supply_m": 1519.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.8,
+      "totpop": 2228
+    },
+    {
+      "geoid": "48113004600",
+      "dist_centroid_to_nearest_supply_m": 2921.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.6,
+      "totpop": 1821
+    },
+    {
+      "geoid": "48113007102",
+      "dist_centroid_to_nearest_supply_m": 3038.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 53.0,
+      "totpop": 4800
+    },
+    {
+      "geoid": "48113007301",
+      "dist_centroid_to_nearest_supply_m": 5245.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.6,
+      "totpop": 1783
+    },
+    {
+      "geoid": "48113007302",
+      "dist_centroid_to_nearest_supply_m": 4523.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 53.0,
+      "totpop": 3973
+    },
+    {
+      "geoid": "48113003700",
+      "dist_centroid_to_nearest_supply_m": 1023.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 64.7,
+      "totpop": 3295
+    },
+    {
+      "geoid": "48113007810",
+      "dist_centroid_to_nearest_supply_m": 1907.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 4219
+    },
+    {
+      "geoid": "48113007903",
+      "dist_centroid_to_nearest_supply_m": 5436.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 1958
+    },
+    {
+      "geoid": "48113007906",
+      "dist_centroid_to_nearest_supply_m": 6187.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 2155
+    },
+    {
+      "geoid": "48113016802",
+      "dist_centroid_to_nearest_supply_m": 12827.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 21.2,
+      "totpop": 5094
+    },
+    {
+      "geoid": "48113016704",
+      "dist_centroid_to_nearest_supply_m": 7607.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 4152
+    },
+    {
+      "geoid": "48113018105",
+      "dist_centroid_to_nearest_supply_m": 1590.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.6,
+      "totpop": 6033
+    },
+    {
+      "geoid": "48113018001",
+      "dist_centroid_to_nearest_supply_m": 3110.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.4,
+      "totpop": 7218
+    },
+    {
+      "geoid": "48113018110",
+      "dist_centroid_to_nearest_supply_m": 2477.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.2,
+      "totpop": 5715
+    },
+    {
+      "geoid": "48113018203",
+      "dist_centroid_to_nearest_supply_m": 2135.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.5,
+      "totpop": 6263
+    },
+    {
+      "geoid": "48113018204",
+      "dist_centroid_to_nearest_supply_m": 610.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.5,
+      "totpop": 4818
+    },
+    {
+      "geoid": "48113018206",
+      "dist_centroid_to_nearest_supply_m": 2489.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.2,
+      "totpop": 4081
+    },
+    {
+      "geoid": "48113017703",
+      "dist_centroid_to_nearest_supply_m": 1869.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.9,
+      "totpop": 6067
+    },
+    {
+      "geoid": "48113008705",
+      "dist_centroid_to_nearest_supply_m": 1857.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 24.9,
+      "totpop": 1653
+    },
+    {
+      "geoid": "48113010701",
+      "dist_centroid_to_nearest_supply_m": 2573.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 27.2,
+      "totpop": 6037
+    },
+    {
+      "geoid": "48113013901",
+      "dist_centroid_to_nearest_supply_m": 1402.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.0,
+      "totpop": 4023
+    },
+    {
+      "geoid": "48113004202",
+      "dist_centroid_to_nearest_supply_m": 2324.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.2,
+      "totpop": 1825
+    },
+    {
+      "geoid": "48113004300",
+      "dist_centroid_to_nearest_supply_m": 2900.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.0,
+      "totpop": 5119
+    },
+    {
+      "geoid": "48113004400",
+      "dist_centroid_to_nearest_supply_m": 2670.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.2,
+      "totpop": 3736
+    },
+    {
+      "geoid": "48113004500",
+      "dist_centroid_to_nearest_supply_m": 1455.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 26.6,
+      "totpop": 5734
+    },
+    {
+      "geoid": "48113018120",
+      "dist_centroid_to_nearest_supply_m": 4386.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.4,
+      "totpop": 5274
+    },
+    {
+      "geoid": "48113013615",
+      "dist_centroid_to_nearest_supply_m": 3151.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 5442
+    },
+    {
+      "geoid": "48113013617",
+      "dist_centroid_to_nearest_supply_m": 4599.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.0,
+      "totpop": 2838
+    },
+    {
+      "geoid": "48113013619",
+      "dist_centroid_to_nearest_supply_m": 3995.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.0,
+      "totpop": 5012
+    },
+    {
+      "geoid": "48113018121",
+      "dist_centroid_to_nearest_supply_m": 2709.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.6,
+      "totpop": 5060
+    },
+    {
+      "geoid": "48113018126",
+      "dist_centroid_to_nearest_supply_m": 2538.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.1,
+      "totpop": 6734
+    },
+    {
+      "geoid": "48113018127",
+      "dist_centroid_to_nearest_supply_m": 3501.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 2769
+    },
+    {
+      "geoid": "48113013715",
+      "dist_centroid_to_nearest_supply_m": 4123.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.0,
+      "totpop": 2323
+    },
+    {
+      "geoid": "48113013716",
+      "dist_centroid_to_nearest_supply_m": 5376.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 38.9,
+      "totpop": 5243
+    },
+    {
+      "geoid": "48113013718",
+      "dist_centroid_to_nearest_supply_m": 4541.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 38.9,
+      "totpop": 4316
+    },
+    {
+      "geoid": "48113013719",
+      "dist_centroid_to_nearest_supply_m": 6980.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 38.9,
+      "totpop": 4446
+    },
+    {
+      "geoid": "48113013720",
+      "dist_centroid_to_nearest_supply_m": 5993.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.0,
+      "totpop": 5769
+    },
+    {
+      "geoid": "48113018128",
+      "dist_centroid_to_nearest_supply_m": 558.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.4,
+      "totpop": 5172
+    },
+    {
+      "geoid": "48113018129",
+      "dist_centroid_to_nearest_supply_m": 1798.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 4269
+    },
+    {
+      "geoid": "48113013721",
+      "dist_centroid_to_nearest_supply_m": 4374.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.0,
+      "totpop": 5271
+    },
+    {
+      "geoid": "48113013722",
+      "dist_centroid_to_nearest_supply_m": 3551.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.0,
+      "totpop": 4579
+    },
+    {
+      "geoid": "48113013725",
+      "dist_centroid_to_nearest_supply_m": 1720.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.5,
+      "totpop": 4330
+    },
+    {
+      "geoid": "48113013804",
+      "dist_centroid_to_nearest_supply_m": 3908.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.4,
+      "totpop": 2979
+    },
+    {
+      "geoid": "48113013902",
+      "dist_centroid_to_nearest_supply_m": 2349.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.0,
+      "totpop": 4063
+    },
+    {
+      "geoid": "48113014001",
+      "dist_centroid_to_nearest_supply_m": 1574.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.0,
+      "totpop": 4624
+    },
+    {
+      "geoid": "48113019040",
+      "dist_centroid_to_nearest_supply_m": 3155.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.3,
+      "totpop": 8018
+    },
+    {
+      "geoid": "48113018506",
+      "dist_centroid_to_nearest_supply_m": 2583.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.8,
+      "totpop": 3300
+    },
+    {
+      "geoid": "48113010904",
+      "dist_centroid_to_nearest_supply_m": 1505.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 22.1,
+      "totpop": 4264
+    },
+    {
+      "geoid": "48113014132",
+      "dist_centroid_to_nearest_supply_m": 4944.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 10.6,
+      "totpop": 2895
+    },
+    {
+      "geoid": "48113018501",
+      "dist_centroid_to_nearest_supply_m": 1183.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.5,
+      "totpop": 4830
+    },
+    {
+      "geoid": "48113014119",
+      "dist_centroid_to_nearest_supply_m": 8883.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.0,
+      "totpop": 4245
+    },
+    {
+      "geoid": "48113014120",
+      "dist_centroid_to_nearest_supply_m": 7471.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.0,
+      "totpop": 5430
+    },
+    {
+      "geoid": "48113014123",
+      "dist_centroid_to_nearest_supply_m": 8073.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 10.6,
+      "totpop": 5986
+    },
+    {
+      "geoid": "48113014126",
+      "dist_centroid_to_nearest_supply_m": 10620.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.0,
+      "totpop": 7145
+    },
+    {
+      "geoid": "48113014203",
+      "dist_centroid_to_nearest_supply_m": 2962.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.8,
+      "totpop": 2998
+    },
+    {
+      "geoid": "48113014204",
+      "dist_centroid_to_nearest_supply_m": 3722.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 2800
+    },
+    {
+      "geoid": "48113014306",
+      "dist_centroid_to_nearest_supply_m": 3426.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.3,
+      "totpop": 6253
+    },
+    {
+      "geoid": "48113012601",
+      "dist_centroid_to_nearest_supply_m": 2916.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 5872
+    },
+    {
+      "geoid": "48113012701",
+      "dist_centroid_to_nearest_supply_m": 2938.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.6,
+      "totpop": 5327
+    },
+    {
+      "geoid": "48113012702",
+      "dist_centroid_to_nearest_supply_m": 3258.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 29.1,
+      "totpop": 3260
+    },
+    {
+      "geoid": "48113012900",
+      "dist_centroid_to_nearest_supply_m": 4830.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.6,
+      "totpop": 4321
+    },
+    {
+      "geoid": "48113014310",
+      "dist_centroid_to_nearest_supply_m": 3798.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.2,
+      "totpop": 4760
+    },
+    {
+      "geoid": "48113014405",
+      "dist_centroid_to_nearest_supply_m": 2678.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 3529
+    },
+    {
+      "geoid": "48113014406",
+      "dist_centroid_to_nearest_supply_m": 2346.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 5069
+    },
+    {
+      "geoid": "48113014407",
+      "dist_centroid_to_nearest_supply_m": 3986.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 4953
+    },
+    {
+      "geoid": "48113014408",
+      "dist_centroid_to_nearest_supply_m": 4060.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 3999
+    },
+    {
+      "geoid": "48113014309",
+      "dist_centroid_to_nearest_supply_m": 4544.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.2,
+      "totpop": 6242
+    },
+    {
+      "geoid": "48113013620",
+      "dist_centroid_to_nearest_supply_m": 1773.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.5,
+      "totpop": 6241
+    },
+    {
+      "geoid": "48113006402",
+      "dist_centroid_to_nearest_supply_m": 3138.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.3,
+      "totpop": 4995
+    },
+    {
+      "geoid": "48113010804",
+      "dist_centroid_to_nearest_supply_m": 3760.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.3,
+      "totpop": 4980
+    },
+    {
+      "geoid": "48113010805",
+      "dist_centroid_to_nearest_supply_m": 4116.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.4,
+      "totpop": 5260
+    },
+    {
+      "geoid": "48113006401",
+      "dist_centroid_to_nearest_supply_m": 3434.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.3,
+      "totpop": 2797
+    },
+    {
+      "geoid": "48113013104",
+      "dist_centroid_to_nearest_supply_m": 5878.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.7,
+      "totpop": 1920
+    },
+    {
+      "geoid": "48113019041",
+      "dist_centroid_to_nearest_supply_m": 2298.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.3,
+      "totpop": 2370
+    },
+    {
+      "geoid": "48113007823",
+      "dist_centroid_to_nearest_supply_m": 4643.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 2695
+    },
+    {
+      "geoid": "48113007822",
+      "dist_centroid_to_nearest_supply_m": 5654.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 1932
+    },
+    {
+      "geoid": "48113007821",
+      "dist_centroid_to_nearest_supply_m": 4913.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 3637
+    },
+    {
+      "geoid": "48113013011",
+      "dist_centroid_to_nearest_supply_m": 1808.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.9,
+      "totpop": 4301
+    },
+    {
+      "geoid": "48113007827",
+      "dist_centroid_to_nearest_supply_m": 2878.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.8,
+      "totpop": 2905
+    },
+    {
+      "geoid": "48113013005",
+      "dist_centroid_to_nearest_supply_m": 3016.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.9,
+      "totpop": 4489
+    },
+    {
+      "geoid": "48113013007",
+      "dist_centroid_to_nearest_supply_m": 2190.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.9,
+      "totpop": 3095
+    },
+    {
+      "geoid": "48113013008",
+      "dist_centroid_to_nearest_supply_m": 2623.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.8,
+      "totpop": 3046
+    },
+    {
+      "geoid": "48113013009",
+      "dist_centroid_to_nearest_supply_m": 2508.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.8,
+      "totpop": 4804
+    },
+    {
+      "geoid": "48113013101",
+      "dist_centroid_to_nearest_supply_m": 5664.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.7,
+      "totpop": 2828
+    },
+    {
+      "geoid": "48113007826",
+      "dist_centroid_to_nearest_supply_m": 4451.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 1340
+    },
+    {
+      "geoid": "48113007824",
+      "dist_centroid_to_nearest_supply_m": 3920.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.1,
+      "totpop": 1852
+    },
+    {
+      "geoid": "48113007825",
+      "dist_centroid_to_nearest_supply_m": 2266.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.8,
+      "totpop": 4917
+    },
+    {
+      "geoid": "48113013102",
+      "dist_centroid_to_nearest_supply_m": 6400.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.7,
+      "totpop": 2104
+    },
+    {
+      "geoid": "48113014501",
+      "dist_centroid_to_nearest_supply_m": 1379.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 4747
+    },
+    {
+      "geoid": "48113014502",
+      "dist_centroid_to_nearest_supply_m": 264.5,
+      "within_500m": true,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 5371
+    },
+    {
+      "geoid": "48113014602",
+      "dist_centroid_to_nearest_supply_m": 2009.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 4767
+    },
+    {
+      "geoid": "48113014701",
+      "dist_centroid_to_nearest_supply_m": 3443.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 4417
+    },
+    {
+      "geoid": "48113007910",
+      "dist_centroid_to_nearest_supply_m": 6014.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 2940
+    },
+    {
+      "geoid": "48113007909",
+      "dist_centroid_to_nearest_supply_m": 5530.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 2205
+    },
+    {
+      "geoid": "48113013806",
+      "dist_centroid_to_nearest_supply_m": 1980.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.9,
+      "totpop": 3776
+    },
+    {
+      "geoid": "48113013727",
+      "dist_centroid_to_nearest_supply_m": 1624.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.5,
+      "totpop": 3913
+    },
+    {
+      "geoid": "48113014205",
+      "dist_centroid_to_nearest_supply_m": 2026.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 1684
+    },
+    {
+      "geoid": "48113016412",
+      "dist_centroid_to_nearest_supply_m": 12344.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.8,
+      "totpop": 5085
+    },
+    {
+      "geoid": "48113013300",
+      "dist_centroid_to_nearest_supply_m": 6562.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.7,
+      "totpop": 1715
+    },
+    {
+      "geoid": "48113013400",
+      "dist_centroid_to_nearest_supply_m": 5979.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 13.7,
+      "totpop": 1682
+    },
+    {
+      "geoid": "48113013500",
+      "dist_centroid_to_nearest_supply_m": 5646.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.7,
+      "totpop": 2580
+    },
+    {
+      "geoid": "48113013605",
+      "dist_centroid_to_nearest_supply_m": 5434.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.1,
+      "totpop": 5041
+    },
+    {
+      "geoid": "48113013606",
+      "dist_centroid_to_nearest_supply_m": 3415.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.0,
+      "totpop": 5789
+    },
+    {
+      "geoid": "48113013608",
+      "dist_centroid_to_nearest_supply_m": 3857.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 17.5,
+      "totpop": 2375
+    },
+    {
+      "geoid": "48113015202",
+      "dist_centroid_to_nearest_supply_m": 1037.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 3033
+    },
+    {
+      "geoid": "48113015205",
+      "dist_centroid_to_nearest_supply_m": 1258.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.9,
+      "totpop": 3485
+    },
+    {
+      "geoid": "48113015206",
+      "dist_centroid_to_nearest_supply_m": 1958.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 20.9,
+      "totpop": 4900
+    },
+    {
+      "geoid": "48113015303",
+      "dist_centroid_to_nearest_supply_m": 6078.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 1760
+    },
+    {
+      "geoid": "48113015305",
+      "dist_centroid_to_nearest_supply_m": 2714.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 4292
+    },
+    {
+      "geoid": "48113009101",
+      "dist_centroid_to_nearest_supply_m": 5105.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.8,
+      "totpop": 5572
+    },
+    {
+      "geoid": "48113009401",
+      "dist_centroid_to_nearest_supply_m": 5214.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 53.0,
+      "totpop": 3312
+    },
+    {
+      "geoid": "48113009402",
+      "dist_centroid_to_nearest_supply_m": 5438.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 53.0,
+      "totpop": 2374
+    },
+    {
+      "geoid": "48113009500",
+      "dist_centroid_to_nearest_supply_m": 6342.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.7,
+      "totpop": 2097
+    },
+    {
+      "geoid": "48113012603",
+      "dist_centroid_to_nearest_supply_m": 3308.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 1836
+    },
+    {
+      "geoid": "48113014138",
+      "dist_centroid_to_nearest_supply_m": 2910.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.5,
+      "totpop": 4063
+    },
+    {
+      "geoid": "48113014130",
+      "dist_centroid_to_nearest_supply_m": 3899.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.6,
+      "totpop": 4118
+    },
+    {
+      "geoid": "48113007912",
+      "dist_centroid_to_nearest_supply_m": 6402.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.1,
+      "totpop": 2188
+    },
+    {
+      "geoid": "48113013805",
+      "dist_centroid_to_nearest_supply_m": 2619.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.9,
+      "totpop": 3981
+    },
+    {
+      "geoid": "48113016521",
+      "dist_centroid_to_nearest_supply_m": 9025.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.4,
+      "totpop": 7341
+    },
+    {
+      "geoid": "48113018505",
+      "dist_centroid_to_nearest_supply_m": 556.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 3776
+    },
+    {
+      "geoid": "48113980000",
+      "dist_centroid_to_nearest_supply_m": 7001.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.1,
+      "totpop": 0
+    },
+    {
+      "geoid": "48113007913",
+      "dist_centroid_to_nearest_supply_m": 4960.2,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.7,
+      "totpop": 2669
+    },
+    {
+      "geoid": "48113018133",
+      "dist_centroid_to_nearest_supply_m": 5912.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.5,
+      "totpop": 3820
+    },
+    {
+      "geoid": "48113020000",
+      "dist_centroid_to_nearest_supply_m": 12138.8,
+      "within_500m": false,
+      "od_death_rate_per_100k": 11.3,
+      "totpop": 5688
+    },
+    {
+      "geoid": "48113018135",
+      "dist_centroid_to_nearest_supply_m": 7158.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 23.0,
+      "totpop": 4814
+    },
+    {
+      "geoid": "48113019018",
+      "dist_centroid_to_nearest_supply_m": 1913.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.9,
+      "totpop": 5025
+    },
+    {
+      "geoid": "48113015700",
+      "dist_centroid_to_nearest_supply_m": 7178.1,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.6,
+      "totpop": 2684
+    },
+    {
+      "geoid": "48113016001",
+      "dist_centroid_to_nearest_supply_m": 10453.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 4044
+    },
+    {
+      "geoid": "48113016002",
+      "dist_centroid_to_nearest_supply_m": 10121.6,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 3747
+    },
+    {
+      "geoid": "48113016100",
+      "dist_centroid_to_nearest_supply_m": 12257.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 3759
+    },
+    {
+      "geoid": "48113016201",
+      "dist_centroid_to_nearest_supply_m": 11439.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.4,
+      "totpop": 4094
+    },
+    {
+      "geoid": "48113016301",
+      "dist_centroid_to_nearest_supply_m": 10819.0,
+      "within_500m": false,
+      "od_death_rate_per_100k": 12.6,
+      "totpop": 6717
+    },
+    {
+      "geoid": "48113016410",
+      "dist_centroid_to_nearest_supply_m": 11060.3,
+      "within_500m": false,
+      "od_death_rate_per_100k": 19.8,
+      "totpop": 4803
+    },
+    {
+      "geoid": "48113016302",
+      "dist_centroid_to_nearest_supply_m": 11848.7,
+      "within_500m": false,
+      "od_death_rate_per_100k": 15.8,
+      "totpop": 1945
+    },
+    {
+      "geoid": "48113016511",
+      "dist_centroid_to_nearest_supply_m": 10498.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 16.2,
+      "totpop": 4805
+    },
+    {
+      "geoid": "48113016615",
+      "dist_centroid_to_nearest_supply_m": 13623.4,
+      "within_500m": false,
+      "od_death_rate_per_100k": 14.0,
+      "totpop": 4602
+    },
+    {
+      "geoid": "48113016616",
+      "dist_centroid_to_nearest_supply_m": 12348.5,
+      "within_500m": false,
+      "od_death_rate_per_100k": 0.0,
+      "totpop": 5725
+    },
+    {
+      "geoid": "48113018111",
+      "dist_centroid_to_nearest_supply_m": 1808.9,
+      "within_500m": false,
+      "od_death_rate_per_100k": 18.1,
+      "totpop": 6646
+    }
+  ]
+}

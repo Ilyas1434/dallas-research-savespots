@@ -1,0 +1,578 @@
+[
+  [
+    "OFFICE BUILDING",
+    6189
+  ],
+  [
+    "OFFICE SHOWROOM/WAREHOUSE",
+    2870
+  ],
+  [
+    "GEN MERCHANDISE OR FOOD STORE < 3500 SQ. FT.",
+    2257
+  ],
+  [
+    "MULTI-FAMILY DWELLING",
+    2007
+  ],
+  [
+    "RESTAURANT WITHOUT DRIVE-IN SERVICE",
+    1685
+  ],
+  [
+    "PERSONAL SERVICE USE",
+    1392
+  ],
+  [
+    "MEDICAL CLINIC OR AMBULATORY SURGICAL CENTER",
+    826
+  ],
+  [
+    "WAREHOUSE",
+    535
+  ],
+  [
+    "VEHICLE DISPLAY,SALES AND SERVICE",
+    477
+  ],
+  [
+    "GEN MERCHANDISE OR FOOD STORE > 3500 SQ. FT.",
+    462
+  ],
+  [
+    "AUTO SERVICE CENTER",
+    383
+  ],
+  [
+    "VEHICLE OR ENGINE REPAIR OR MAINTENANCE",
+    344
+  ],
+  [
+    "(null)",
+    300
+  ],
+  [
+    "COMMERCIAL AMUSEMENT (INSIDE)",
+    287
+  ],
+  [
+    "CHURCH, SYNAGOGUE, TEMPLE, MOSQUE",
+    262
+  ],
+  [
+    "TOWER/ANTENNA FOR CELLULAR COMMUNICATION",
+    234
+  ],
+  [
+    "RESTAURANT WITH DRIVE-IN SERVICE",
+    233
+  ],
+  [
+    "INDUSTRIAL (INSIDE)",
+    194
+  ],
+  [
+    "PUBLIC OR PRIVATE SCHOOL",
+    188
+  ],
+  [
+    "HOTEL",
+    163
+  ],
+  [
+    "INDUSTRIAL (INSIDE) FOR LIGHT MANUFACTURING",
+    116
+  ],
+  [
+    "GEN MERCHANDISE (NO FOOD) STORE < 3500 SQ. FT",
+    94
+  ],
+  [
+    "MACHINERY, HEAVY EQUIP. OR TRUCK SALES & SERVICE",
+    91
+  ],
+  [
+    "ALCOHOLIC BEVERAGE ESTABLISHMENT",
+    88
+  ],
+  [
+    "DRY CLEANING OR LAUNDRY STORE",
+    85
+  ],
+  [
+    "CHILD CARE FACILITY",
+    78
+  ],
+  [
+    "MINI-WAREHOUSE",
+    77
+  ],
+  [
+    "ELECTRONICS SERVICE CENTER",
+    76
+  ],
+  [
+    "FINANCIAL INSTITUTION WITHOUT DRIVE-IN WINDOW",
+    76
+  ],
+  [
+    "COMMERCIAL PARKING LOT OR GARAGE",
+    75
+  ],
+  [
+    "CATERING SERVICE",
+    70
+  ],
+  [
+    "FURNITURE STORE",
+    66
+  ],
+  [
+    "PUBLIC PARK, PLAYGROUND, OR GOLF COURSE",
+    62
+  ],
+  [
+    "PRIVATE RECREATION CENTER, CLUB OR AREA",
+    60
+  ],
+  [
+    "CONVALESCENT & NURSING HOMES & RELATED INSTITUTION",
+    57
+  ],
+  [
+    "RETIREMENT HOUSING",
+    55
+  ],
+  [
+    "TEMPORARY RETAIL USE (INCLUDES CHRISTMAS TREE LOT)",
+    55
+  ],
+  [
+    "AIRPORT OR LANDING FIELD",
+    54
+  ],
+  [
+    "ANIMAL SHELTER OR CLINIC",
+    54
+  ],
+  [
+    "FINANCIAL INSTITUTION WITH DRIVE-IN WINDOW",
+    50
+  ],
+  [
+    "TEMPORARY CONSTRUCTION OFFICE",
+    49
+  ],
+  [
+    "SHELL BUILDING",
+    45
+  ],
+  [
+    "CAR WASH",
+    44
+  ],
+  [
+    "LIQUOR STORE",
+    41
+  ],
+  [
+    "COLLEGE, UNIVERSITY, OR SEMINARY",
+    37
+  ],
+  [
+    "CUSTOM WOODWORKING, FURNITURE CONSTRUCTION OR REP",
+    34
+  ],
+  [
+    "MIXED INCOME MULTI-FAMILY",
+    34
+  ],
+  [
+    "CUSTOM BUSINESS SERVICES",
+    29
+  ],
+  [
+    "BUSINESS SCHOOL",
+    28
+  ],
+  [
+    "HOSPITAL",
+    27
+  ],
+  [
+    "COMMERCIAL MOTOR VEHICLE PARKING",
+    27
+  ],
+  [
+    "COMMUNITY SERVICE CENTER",
+    25
+  ],
+  [
+    "PARAPHERNALIA SHOP",
+    25
+  ],
+  [
+    "Motor Vehicle Fueling Station",
+    21
+  ],
+  [
+    "COUNTRY CLUB WITH PRIVATE MEMBERSHIP",
+    19
+  ],
+  [
+    "CROP PRODUCTION",
+    16
+  ],
+  [
+    "OUTSIDE STORAGE",
+    16
+  ],
+  [
+    "HOME IMPROVEMENT CENTER/ BLDG MATERIALS SALES YARD",
+    15
+  ],
+  [
+    "THEATER",
+    15
+  ],
+  [
+    "INDUSTRIAL (OUTSIDE)",
+    15
+  ],
+  [
+    "MACHINE OR WELDING SHOP",
+    14
+  ],
+  [
+    "ART GALLERY",
+    14
+  ],
+  [
+    "NURSERY, GARDEN SHOP, OR PLANT SALES",
+    14
+  ],
+  [
+    "TECHNICAL SCHOOL",
+    14
+  ],
+  [
+    "JOB OR LITHOGRAPHIC PRINTING",
+    14
+  ],
+  [
+    "MEDICAL OR SCIENTIFIC LABORATORY",
+    13
+  ],
+  [
+    "UTILITY OR GOVERNMENTAL INSTALLATION (OTHER)",
+    12
+  ],
+  [
+    "FREIGHT TERMINAL",
+    12
+  ],
+  [
+    "TEMPORARY CONCRETE OR ASPHALT BATCHING PLANT",
+    12
+  ],
+  [
+    "MORTUARY, FUNERAL HOME, OR COMM. WEDDING CHAPEL",
+    12
+  ],
+  [
+    "PERSONAL SERVICES",
+    11
+  ],
+  [
+    "PAWN SHOP",
+    11
+  ],
+  [
+    "CONTRACTOR'S MAINTENANCE YARD",
+    11
+  ],
+  [
+    "VACANT FLOOR SPACE",
+    11
+  ],
+  [
+    "MUSEUM",
+    11
+  ],
+  [
+    "LOCAL UTILITIES",
+    11
+  ],
+  [
+    "FOOD OR BEVERAGE STORE  <= 3,500 SQ. FT.",
+    11
+  ],
+  [
+    "RESIDENTIAL HOTEL",
+    11
+  ],
+  [
+    "ADULT DAY CARE FACILITY",
+    10
+  ],
+  [
+    "BUILDING REPAIR & MAINTENANCE SHOP",
+    9
+  ],
+  [
+    "Alcoholic beverage manufacturing",
+    9
+  ],
+  [
+    "GEN MERCHANDISE OR FOOD STORE>=100000 SQ FT",
+    9
+  ],
+  [
+    "INDUSTRIAL (INSIDE) POTENTIALLY INCOMPATIBLE",
+    8
+  ],
+  [
+    "SURFACE PARKING",
+    8
+  ],
+  [
+    "MOTEL",
+    7
+  ],
+  [
+    "GROUP RESIDENTIAL FACILITY",
+    7
+  ],
+  [
+    "TOOL OR EQUIPMENT RENTAL",
+    7
+  ],
+  [
+    "TEMP SALES OFFICE - REAL ESTATE",
+    7
+  ],
+  [
+    "PRIMARY SCHOOL",
+    7
+  ],
+  [
+    "TRANSIT PASSENGER SHELTER",
+    6
+  ],
+  [
+    "HOUSEHOLD EQUIPMENT & APPLIANCE REPAIR",
+    6
+  ],
+  [
+    "OUTSIDE SALVAGE & RECLAMATION",
+    6
+  ],
+  [
+    "SECONDARY SCHOOL",
+    5
+  ],
+  [
+    "PRIVATE STABLE",
+    5
+  ],
+  [
+    "SINGLE FAMILY DWELLING",
+    5
+  ],
+  [
+    "LIBRARY",
+    5
+  ],
+  [
+    "COLLEGE DORMITORY",
+    4
+  ],
+  [
+    "Truck Stop",
+    4
+  ],
+  [
+    "FITNESS CENTER",
+    4
+  ],
+  [
+    "VEHICLE STORAGE LOT",
+    4
+  ],
+  [
+    "SHOPPING CENTER",
+    4
+  ],
+  [
+    "FOSTER HOME",
+    4
+  ],
+  [
+    "FIRE STATION",
+    4
+  ],
+  [
+    "DENTIST",
+    3
+  ],
+  [
+    "MANUFACTURED HOME PARK",
+    3
+  ],
+  [
+    "INDUSTRIAL (OUTSIDE) POTENTIALLY INCOMPATIBLE",
+    3
+  ],
+  [
+    "REFUSE TRANSFER STATION",
+    3
+  ],
+  [
+    "METAL SALVAGE FACILITY",
+    3
+  ],
+  [
+    "RECYCLING COLLECTION CENTER",
+    3
+  ],
+  [
+    "COMMERCIAL CLEANING OR LAUNDRY PLANT",
+    3
+  ],
+  [
+    "COMMERCIAL BUS STATION AND TERMINAL",
+    3
+  ],
+  [
+    "FAIRGROUNDS",
+    3
+  ],
+  [
+    "CEMETERY OR MAUSOLEUM",
+    3
+  ],
+  [
+    "SAND, GRAVEL, OR EARTH SALES AND STORAGE",
+    3
+  ],
+  [
+    "COMMERCIAL AMUSEMENT (OUTSIDE)",
+    2
+  ],
+  [
+    "NURSERY SCHOOL",
+    2
+  ],
+  [
+    "PLANT NURSERY/GARDEN CENTER",
+    2
+  ],
+  [
+    "MUNICIPAL SERVICE CENTER",
+    2
+  ],
+  [
+    "POLICE STATION",
+    2
+  ],
+  [
+    "DEPARTMENT STORES-RETAIL",
+    2
+  ],
+  [
+    "BEER WINE & DIS ALCO BEV-WHL",
+    1
+  ],
+  [
+    "MISCELLANEOUS",
+    1
+  ],
+  [
+    "ADVERTISING SERVICES GENERAL",
+    1
+  ],
+  [
+    "RECYCLING BUY BACK CENTER",
+    1
+  ],
+  [
+    "GROUP HOME OR SHELTER",
+    1
+  ],
+  [
+    "COMMUNICATIONS",
+    1
+  ],
+  [
+    "Historic House Museum and Meeting Space",
+    1
+  ],
+  [
+    "OTHER AUTO SERVICES",
+    1
+  ],
+  [
+    "WATER TREATMENT PLANT",
+    1
+  ],
+  [
+    "COMMERCIAL STABLE",
+    1
+  ],
+  [
+    "OTHER TRNSP,CONMUN & UTILITIES",
+    1
+  ],
+  [
+    "CONV FROM 2 FAMILY TO SFD",
+    1
+  ],
+  [
+    "COMMERCIAL",
+    1
+  ],
+  [
+    "SEWAGE TREATMENT PLANT",
+    1
+  ],
+  [
+    "AUTO AUCTION",
+    1
+  ],
+  [
+    "TWO FAMILY DWELLING",
+    1
+  ],
+  [
+    "TRADE CENTER",
+    1
+  ],
+  [
+    "BANK RELATED FUNCTIONS",
+    1
+  ],
+  [
+    "RETAIL TRADE APPAREL & ACCES NO LONGER USED",
+    1
+  ],
+  [
+    "BUS OR RAIL TRANSIT VEHICLE MAINTANCE OR STORAGE",
+    1
+  ],
+  [
+    "Kiosk sign located on public property",
+    1
+  ],
+  [
+    "OVERNIGHT GENERAL PURPOSE SHELTER",
+    1
+  ],
+  [
+    "OTHER ADVERTIS SERV, NEC",
+    1
+  ],
+  [
+    "UTILITIES",
+    1
+  ]
+]

@@ -1,0 +1,357 @@
+{
+  "generated_at": "2026-07-23T23:35:09.353980+00:00",
+  "phase": "Phase 3.5 - Published-Baseline Validation",
+  "denominator": {
+    "county_population": 2604053,
+    "source": "sum of totpop across svi_tracts.geojson (ACS 2020-2024 5-year), ~2.6M"
+  },
+  "crude_mortality_by_year": {
+    "2020": {
+      "deaths_12mo_ending_dec": 452,
+      "crude_rate_per_100k": 17.36
+    },
+    "2021": {
+      "deaths_12mo_ending_dec": 564,
+      "crude_rate_per_100k": 21.66
+    },
+    "2022": {
+      "deaths_12mo_ending_dec": 573,
+      "crude_rate_per_100k": 22.0
+    },
+    "2023": {
+      "deaths_12mo_ending_dec": 654,
+      "crude_rate_per_100k": 25.11
+    },
+    "2024": {
+      "deaths_12mo_ending_dec": 566,
+      "crude_rate_per_100k": 21.74
+    },
+    "2025": {
+      "deaths_12mo_ending_dec": 582,
+      "crude_rate_per_100k": 22.35
+    }
+  },
+  "comparisons": [
+    {
+      "metric": "Crude OD mortality rate, 2018 -> 2024 (+61%)",
+      "prior_value": "12.9 -> 20.8 per 100k (2018-2024)",
+      "our_value": "2024 (12-mo ending Dec) = 21.74 per 100k; 2018 not computable",
+      "delta": "our 2024 crude rate is close to prior 20.8; 2018 baseline unavailable",
+      "reproducible": "partial",
+      "explanation": "VSRR provisional county series starts 2020-01, so the 2018 baseline cannot be computed from the pipeline. Our 2024 crude rate (21.74/100k) uses VSRR 12-month-ending-Dec deaths (566) over ACS 2020-2024 total population (2,604,053). Small delta vs prior 20.8 is expected: prior used a different denominator vintage and VSRR counts are provisional and revise upward."
+    },
+    {
+      "metric": "Death rate +81%, 2019 -> 2023",
+      "prior_value": "+81% (2019-2023)",
+      "our_value": "2020 -> 2023 crude rate 17.36 -> 25.11 per 100k (+44.7% on counts 452 -> 654)",
+      "delta": "different (shorter) window; 2019 not computable",
+      "reproducible": "partial",
+      "explanation": "2019 predates the VSRR series (starts 2020-01), so the exact 2019->2023 change is not computable. The computable 2020->2023 change is +44.7%. It is smaller than the prior +81% largely because 2020 (our earliest year) already sits above the 2019 baseline the prior figure started from."
+    },
+    {
+      "metric": "Fentanyl share of opioid deaths, 11.4% (2018) -> 79.8% (2023)",
+      "prior_value": "11.4% -> 79.8%",
+      "our_value": "not independently reproducible",
+      "delta": "n/a",
+      "reproducible": "no",
+      "explanation": "VSRR county file has no drug-specific breakdown for Dallas. Source: DCHHS OD2A annual report."
+    },
+    {
+      "metric": "Fentanyl deaths +1,550%, 2016 -> 2024",
+      "prior_value": "+1,550%",
+      "our_value": "not independently reproducible",
+      "delta": "n/a",
+      "reproducible": "no",
+      "explanation": "No drug-specific or pre-2020 data in pipeline. Source: DCHHS OD2A annual report."
+    },
+    {
+      "metric": "Opioid-stimulant combo deaths +260%, 2018 -> 2024",
+      "prior_value": "+260%",
+      "our_value": "not independently reproducible",
+      "delta": "n/a",
+      "reproducible": "no",
+      "explanation": "No drug-combination breakdown in pipeline. Source: DCHHS OD2A annual report."
+    },
+    {
+      "metric": "Hospital OD encounters, 2,419 (2018) -> 3,818 (2023)",
+      "prior_value": "2,419 -> 3,818",
+      "our_value": "not independently reproducible",
+      "delta": "n/a",
+      "reproducible": "no",
+      "explanation": "Non-fatal / hospitalization data are county-level and outside pipeline sources. Source: DCHHS OD2A annual report."
+    },
+    {
+      "metric": "11 ZIP codes suppressed by DSHS",
+      "prior_value": "11 ZIPs suppressed",
+      "our_value": "DSHS publishes NO ZIP-level mortality; suppression now manifests as CDC tract-count suppression (592/645 tracts, count_suppressed=true)",
+      "delta": "suppression mechanism changed / re-expressed",
+      "reproducible": "reinterpreted",
+      "explanation": "There is no current public DSHS ZIP-level mortality product to suppress ZIPs within. Confidentiality suppression appears in the CDC NCHS tract product as count suppression: 592 of 645 Dallas tracts carry count_suppressed=true (counts 1-9 withheld per NCHS rules), while model-based rates are still published. The prior '11 suppressed ZIPs' framing is superseded by tract-level count suppression."
+    }
+  ],
+  "zip_tier_comparison": [
+    {
+      "zip": "75215",
+      "prior_tier": 1,
+      "our_modal_tier": 2,
+      "our_mean_composite": 0.4628,
+      "tier_of_mean_composite": 1,
+      "n_constituent_tracts": 6,
+      "n_scored_tracts": 6,
+      "weighting": "population (areal-apportioned)",
+      "tier_share": {
+        "1": 0.479,
+        "2": 0.521
+      },
+      "agree": false
+    },
+    {
+      "zip": "75210",
+      "prior_tier": 1,
+      "our_modal_tier": 1,
+      "our_mean_composite": 0.4674,
+      "tier_of_mean_composite": 1,
+      "n_constituent_tracts": 4,
+      "n_scored_tracts": 4,
+      "weighting": "population (areal-apportioned)",
+      "tier_share": {
+        "1": 0.849,
+        "2": 0.151
+      },
+      "agree": true
+    },
+    {
+      "zip": "75211",
+      "prior_tier": 1,
+      "our_modal_tier": 2,
+      "our_mean_composite": 0.4045,
+      "tier_of_mean_composite": 2,
+      "n_constituent_tracts": 19,
+      "n_scored_tracts": 19,
+      "weighting": "population (areal-apportioned)",
+      "tier_share": {
+        "1": 0.284,
+        "2": 0.593,
+        "3": 0.122
+      },
+      "agree": false
+    },
+    {
+      "zip": "75212",
+      "prior_tier": 1,
+      "our_modal_tier": 2,
+      "our_mean_composite": 0.3916,
+      "tier_of_mean_composite": 2,
+      "n_constituent_tracts": 7,
+      "n_scored_tracts": 7,
+      "weighting": "population (areal-apportioned)",
+      "tier_share": {
+        "1": 0.232,
+        "2": 0.595,
+        "3": 0.173
+      },
+      "agree": false
+    },
+    {
+      "zip": "75203",
+      "prior_tier": 1,
+      "our_modal_tier": 2,
+      "our_mean_composite": 0.436,
+      "tier_of_mean_composite": 1,
+      "n_constituent_tracts": 10,
+      "n_scored_tracts": 10,
+      "weighting": "population (areal-apportioned)",
+      "tier_share": {
+        "1": 0.346,
+        "2": 0.645,
+        "3": 0.009
+      },
+      "agree": false
+    },
+    {
+      "zip": "75224",
+      "prior_tier": 1,
+      "our_modal_tier": 2,
+      "our_mean_composite": 0.4078,
+      "tier_of_mean_composite": 2,
+      "n_constituent_tracts": 11,
+      "n_scored_tracts": 11,
+      "weighting": "population (areal-apportioned)",
+      "tier_share": {
+        "1": 0.421,
+        "2": 0.579
+      },
+      "agree": false
+    },
+    {
+      "zip": "75201",
+      "prior_tier": 2,
+      "our_modal_tier": 3,
+      "our_mean_composite": 0.2325,
+      "tier_of_mean_composite": 3,
+      "n_constituent_tracts": 9,
+      "n_scored_tracts": 9,
+      "weighting": "population (areal-apportioned)",
+      "tier_share": {
+        "2": 0.042,
+        "3": 0.958
+      },
+      "agree": false
+    },
+    {
+      "zip": "75204",
+      "prior_tier": 2,
+      "our_modal_tier": 3,
+      "our_mean_composite": 0.2573,
+      "tier_of_mean_composite": 3,
+      "n_constituent_tracts": 15,
+      "n_scored_tracts": 15,
+      "weighting": "population (areal-apportioned)",
+      "tier_share": {
+        "3": 1.0
+      },
+      "agree": false
+    },
+    {
+      "zip": "75226",
+      "prior_tier": 2,
+      "our_modal_tier": 2,
+      "our_mean_composite": 0.3532,
+      "tier_of_mean_composite": 2,
+      "n_constituent_tracts": 5,
+      "n_scored_tracts": 5,
+      "weighting": "population (areal-apportioned)",
+      "tier_share": {
+        "1": 0.043,
+        "2": 0.835,
+        "3": 0.122
+      },
+      "agree": true
+    },
+    {
+      "zip": "75217",
+      "prior_tier": 3,
+      "our_modal_tier": 1,
+      "our_mean_composite": 0.4713,
+      "tier_of_mean_composite": 1,
+      "n_constituent_tracts": 22,
+      "n_scored_tracts": 22,
+      "weighting": "population (areal-apportioned)",
+      "tier_share": {
+        "1": 0.755,
+        "2": 0.245
+      },
+      "agree": false
+    },
+    {
+      "zip": "75227",
+      "prior_tier": 3,
+      "our_modal_tier": 2,
+      "our_mean_composite": 0.41,
+      "tier_of_mean_composite": 2,
+      "n_constituent_tracts": 13,
+      "n_scored_tracts": 13,
+      "weighting": "population (areal-apportioned)",
+      "tier_share": {
+        "1": 0.299,
+        "2": 0.626,
+        "3": 0.075
+      },
+      "agree": false
+    }
+  ],
+  "ordering_verdict": {
+    "our_ranking_high_to_low": [
+      [
+        "75217",
+        0.4713,
+        1,
+        3
+      ],
+      [
+        "75210",
+        0.4674,
+        1,
+        1
+      ],
+      [
+        "75215",
+        0.4628,
+        1,
+        1
+      ],
+      [
+        "75203",
+        0.436,
+        1,
+        1
+      ],
+      [
+        "75227",
+        0.41,
+        2,
+        3
+      ],
+      [
+        "75224",
+        0.4078,
+        2,
+        1
+      ],
+      [
+        "75211",
+        0.4045,
+        2,
+        1
+      ],
+      [
+        "75212",
+        0.3916,
+        2,
+        1
+      ],
+      [
+        "75226",
+        0.3532,
+        2,
+        2
+      ],
+      [
+        "75204",
+        0.2573,
+        3,
+        2
+      ],
+      [
+        "75201",
+        0.2325,
+        3,
+        2
+      ]
+    ],
+    "prior_tier1_mean_composite": 0.4284,
+    "prior_tier3_mean_composite": 0.4406,
+    "prior_tier1_still_higher_than_tier3": false,
+    "prior_tier1_zips_in_our_tier1_modal": "1/6",
+    "prior_tier1_zips_in_our_tier1_by_mean": "3/6",
+    "prior_tier1_zips_remaining_high_or_moderate": "6/6",
+    "newly_elevated_prior_tier3_zips": [
+      [
+        "75217",
+        0.4713,
+        1
+      ],
+      [
+        "75227",
+        0.41,
+        2
+      ]
+    ],
+    "verdict_summary": "Prior Tier-1 South/West Dallas ZIPs remain elevated: 6/6 stay in our Tier 1-2 band (none drop to Tier 3), so the core high-vulnerability geography holds. Exact tier labels shift because the composite adds naloxone-distance and transit-access layers absent from the prior ZIP analysis: these promote peripheral southeast Dallas (e.g. 75217) into the highest tier and drop affluent downtown/uptown (75201, 75204) to Tier 3. Relative ordering is broadly preserved for deprivation-driven ZIPs but the composite is not a pure re-labeling of the prior ZIP tiers."
+  },
+  "zip_mapping_method": "Prior ZIP (ZCTA) mapped to constituent tracts via Census 2020 ZCTA-to-tract relationship file (tab20_zcta520_tract20_natl). Tract population apportioned to each ZCTA by land-area share (AREALAND_PART / AREALAND_TRACT); composite averaged with those population weights; modal tier = tier holding the largest population share. Excluded (zero-pop) tracts dropped.",
+  "notes": [
+    "Prior analysis double-assigned ZIP 75212; our modal-tier mapping is unambiguous (exactly one tier per ZIP).",
+    "This validation does NOT overwrite pipeline outputs and does NOT force baselines to match."
+  ]
+}
