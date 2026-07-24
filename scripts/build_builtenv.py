@@ -39,7 +39,6 @@ Output: data/clean/builtenv_index.json
 Run: ./venv/bin/python scripts/build_builtenv.py
 """
 import datetime
-import json
 import os
 import sys
 
@@ -50,11 +49,11 @@ from pyproj import Transformer
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import (
-    REPO_ROOT, DATA_RAW, DATA_CLEAN, log, ensure_dirs, socrata_paginate,
-    save_json, dated_raw_path, load_dallas_tracts,
+    DATA_CLEAN, log, ensure_dirs, socrata_paginate,
+    save_json, dated_raw_path, load_dallas_tracts, pipeline_date,
 )
 
-TODAY = datetime.date(2026, 7, 23)
+TODAY = pipeline_date()
 WINDOW_START_311 = TODAY - datetime.timedelta(days=730)  # ~24 months
 DATE_STR = TODAY.isoformat()
 

@@ -1,19 +1,16 @@
 #!/usr/bin/env python3
 """
-build_naloxone.py
+Build the Dallas County naloxone supply inventory.
 
-Builds data/clean/naloxone_locations.geojson for Dallas County, TX by merging:
-  1. DSHS ArcGIS live feed (NarcanSites) - source of truth
-  2. Local CSV snapshot (data/raw/NaloxoneSites_April2026.csv) - may have newer rows
-  3. SAMHSA findtreatment.gov Opioid Treatment Programs (methadone clinics)
+Merges three sources into data/clean/naloxone_locations.geojson:
+  1. Texas DSHS ArcGIS NarcanSites live feed (source of truth)
+  2. data/raw/NaloxoneSites_April2026.csv local snapshot (may carry newer rows)
+  3. SAMHSA findtreatment.gov opioid treatment programs
 
-Run standalone from repo root:
-    ./venv/bin/python scripts/build_naloxone.py
+Sites without usable coordinates are emitted with null geometry and flagged,
+never given a placeholder point.
 
-Outputs:
-    data/raw/narcansites_arcgis_<DATE>.json      (raw ArcGIS snapshot)
-    data/raw/geocode_cache_naloxone.json         (geocode cache, persisted across runs)
-    data/clean/naloxone_locations.geojson        (final output)
+Run: ./venv/bin/python scripts/build_naloxone.py
 """
 
 import json
@@ -31,16 +28,19 @@ from dotenv import load_dotenv
 
 try:
     import geopandas as gpd
-    from shapely.geometry import Point, shape
+    from shapely.geometry import Point
 except ImportError:
     print("FATAL: geopandas/shapely required. pip install -r requirements.txt", file=sys.stderr)
     raise
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import pipeline_date  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_RAW = REPO_ROOT / "data" / "raw"
 DATA_CLEAN = REPO_ROOT / "data" / "clean"
 TIGER_DIR = DATA_RAW / "tiger"
-TODAY = date(2026, 7, 23)  # pipeline "as-of" date per task spec
+TODAY = pipeline_date()
 TODAY_STR = TODAY.isoformat()
 
 ARCGIS_URL = (
@@ -113,9 +113,6 @@ def norm_key(name, address):
     return f"{n}|{a}"
 
 
-# ---------------------------------------------------------------------------
-# Step 1: fetch ArcGIS live feed, snapshot raw
-# ---------------------------------------------------------------------------
 def fetch_arcgis():
     snap_path = DATA_RAW / f"narcansites_arcgis_{TODAY_STR}.json"
     log(f"[arcgis] GET {ARCGIS_URL}")
@@ -137,7 +134,6 @@ def fetch_arcgis():
         geom = feat.get("geometry") or {}
         attrs["_lat"] = geom.get("y")
         attrs["_lon"] = geom.get("x")
-        # normalize full_ field name discrepancy vs CSV's "full"
         if "full_" in attrs and "full" not in attrs:
             attrs["full"] = attrs["full_"]
         attrs["_source"] = "arcgis"
@@ -145,9 +141,6 @@ def fetch_arcgis():
     return rows
 
 
-# ---------------------------------------------------------------------------
-# Step 2: load local CSV snapshot
-# ---------------------------------------------------------------------------
 def load_csv():
     if not CSV_PATH.exists():
         log(f"[csv] WARNING: {CSV_PATH} not found, skipping CSV source")
@@ -181,9 +174,6 @@ def load_csv():
     return rows
 
 
-# ---------------------------------------------------------------------------
-# Step 3: SAMHSA findtreatment.gov OTPs
-# ---------------------------------------------------------------------------
 def fetch_samhsa_otps():
     all_rows = []
     page = 1
@@ -203,11 +193,9 @@ def fetch_samhsa_otps():
     log(f"[samhsa] fetched {len(all_rows)} rows across {total_pages} page(s) "
         f"(recordCount={d.get('recordCount')})")
 
-    # authoritative OTP filter: typeFacility == 'OTP'
     otp_rows = [r for r in all_rows if r.get("typeFacility") == "OTP"]
     log(f"[samhsa] rows tagged typeFacility=='OTP': {len(otp_rows)}")
 
-    # dedupe by name+street+zip
     seen = set()
     deduped = []
     for r in otp_rows:
@@ -243,9 +231,6 @@ def fetch_samhsa_otps():
     return rows
 
 
-# ---------------------------------------------------------------------------
-# County polygon (Dallas County, GEOID 48113) for point-in-polygon verification
-# ---------------------------------------------------------------------------
 def get_dallas_county_polygon():
     zpath = TIGER_DIR / "tl_2024_us_county.zip"
     if not zpath.exists():
@@ -266,9 +251,6 @@ def get_dallas_county_polygon():
     return poly, gdf.crs
 
 
-# ---------------------------------------------------------------------------
-# Geocoding
-# ---------------------------------------------------------------------------
 def load_geocode_cache():
     if GEOCODE_CACHE_PATH.exists():
         return json.loads(GEOCODE_CACHE_PATH.read_text())
@@ -333,9 +315,6 @@ def geocode_address(address_str, cache, api_key):
     return lat, lon, method
 
 
-# ---------------------------------------------------------------------------
-# Category / access classification
-# ---------------------------------------------------------------------------
 def classify_category(source, raw_type, org_name, hours_raw=None):
     if source == "findtreatment":
         return "otp_methadone"
@@ -385,9 +364,6 @@ def pd_isnan(x):
         return False
 
 
-# ---------------------------------------------------------------------------
-# Merge logic
-# ---------------------------------------------------------------------------
 def parse_verified_on(v):
     if v is None:
         return None
@@ -479,17 +455,16 @@ def main():
     log("=" * 70)
     log("STEP 5: Filter to Dallas County")
     log("=" * 70)
-    county_poly, county_crs = get_dallas_county_polygon()
+    county_poly, _ = get_dallas_county_polygon()
 
     dallas_rows = []
     mobile_rows = []
     for row in all_rows:
         org = row.get("Organization") or row.get("name1") or ""
         city = norm_text(row.get("City"))
-        addr = row.get("Address")
         lat, lon = row.get("_lat"), row.get("_lon")
 
-        # Special case: DFW Harm Reduction Access Movement -- mobile, no physical address
+        # Mobile outreach org with no physical address; kept, but never geocoded.
         if "dfw harm reduction access movement" in norm_text(org):
             row["_mobile"] = True
             row["_in_dallas"] = True  # organization explicitly serves DFW/Dallas
@@ -509,9 +484,8 @@ def main():
         if in_whitelist or in_polygon:
             row["_in_dallas"] = True
             dallas_rows.append(row)
-        # else: not in whitelist and (no coords yet, or coords outside polygon) -> drop
-        # (records with no coords AND non-whitelisted city are out-of-scope; we do not
-        #  geocode every statewide row just to check county membership)
+        # Rows outside the whitelist with no coords (or coords outside the polygon)
+        # are out of scope; statewide rows are not geocoded just to test membership.
 
     log(f"[filter] Dallas County candidates (whitelist city or point-in-polygon): {len(dallas_rows)}")
     log(f"[filter] mobile/no-address special-case rows: {len(mobile_rows)}")
@@ -545,17 +519,16 @@ def main():
             n_google += 1
         else:
             n_failed += 1
-        # verify point-in-polygon after geocode; if outside Dallas County, drop later
     save_geocode_cache(cache)
 
     log(f"[geocode] source_coords={n_source} census={n_census} google={n_google} failed={n_failed}")
 
-    # re-verify point-in-polygon for newly geocoded rows; drop rows confirmed outside county
+    # Re-test membership for rows geocoded above; drop those confirmed outside.
     final_rows = []
     dropped_outside = 0
     for row in dallas_rows:
         if row.get("_lat") is None or row.get("_lon") is None:
-            final_rows.append(row)  # keep with failed geocode; reported, not silently dropped
+            final_rows.append(row)  # failed geocode is reported, never silently dropped
             continue
         city = norm_text(row.get("City"))
         if city in DALLAS_CITY_WHITELIST:
@@ -574,7 +547,6 @@ def main():
 
     final_rows.extend(mobile_rows)
 
-    n_dallas_scope = len([r for r in final_rows if not r.get("_mobile")])
     n_geocode_attempted = n_census + n_google + n_failed
     geocode_fail_rate = (n_failed / n_geocode_attempted * 100) if n_geocode_attempted else 0.0
     log(f"[geocode] failure rate among rows needing geocoding: {geocode_fail_rate:.1f}%")
@@ -677,7 +649,6 @@ def main():
         log(f"  {cat}: {cnt}")
     log(f"Geocode failure rate: {geocode_fail_rate:.1f}%")
 
-    # Validate: reload and confirm it parses
     check = json.loads(out_path.read_text())
     assert check["type"] == "FeatureCollection"
     log(f"[validate] reloaded OK, {len(check['features'])} features")

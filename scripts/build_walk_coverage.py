@@ -31,6 +31,7 @@ Output:
 """
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -49,6 +50,9 @@ SVI_PATH = DATA_CLEAN / "svi_tracts.geojson"
 
 PROJECTED_CRS = "EPSG:32138"  # NAD83 / Texas North Central, unit = metre
 WALK_RADIUS_M = 500.0
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import pipeline_date  # noqa: E402
 
 METHOD_NOTE = (
     "Chicago's original metric is % of overdose DEATH POINTS within 500m of a naloxone "
@@ -74,7 +78,7 @@ def log(msg):
 
 def write_stub(reason):
     out = {
-        "generated": "2026-07-23",
+        "generated": pipeline_date().isoformat(),
         "status": "failed",
         "reason": reason,
         "method_note": METHOD_NOTE,
@@ -219,7 +223,7 @@ def main():
             "(data/clean/svi_tracts.geojson absent or missing 'totpop')")
 
     out = {
-        "generated": "2026-07-23",
+        "generated": pipeline_date().isoformat(),
         "status": "ok",
         "method_note": METHOD_NOTE,
         "walk_radius_m": WALK_RADIUS_M,

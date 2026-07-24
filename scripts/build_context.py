@@ -28,7 +28,6 @@ Run:
 
 from __future__ import annotations
 
-import io
 import json
 import os
 import re
@@ -43,10 +42,6 @@ import pandas as pd
 import requests
 from dotenv import load_dotenv
 from shapely.geometry import Point
-
-# --------------------------------------------------------------------------
-# Setup
-# --------------------------------------------------------------------------
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = REPO_ROOT / "data" / "raw"

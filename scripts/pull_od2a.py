@@ -38,9 +38,12 @@ import subprocess
 import sys
 import time
 import urllib.request
-from datetime import date, datetime, timezone
+from datetime import date
 
 import requests
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import USER_AGENT  # noqa: E402
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_RAW = os.path.join(REPO_ROOT, "data", "raw")
@@ -61,8 +64,7 @@ ZIPS_GEOJSON = os.path.join(DATA_CLEAN, "od2a_zips.geojson")
 
 TODAY = date.today().isoformat()
 
-# Census TIGERweb ArcGIS REST -- 2020 Census ZIP Code Tabulation Areas layer
-# (layer id 1 discovered via ?f=json; field ZCTA5 confirmed).
+# TIGERweb layer 1 is the 2020 ZCTA layer; its ZCTA5 field carries the code.
 TIGERWEB_ZCTA = (
     "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/"
     "PUMA_TAD_TAZ_UGA_ZCTA/MapServer/1/query"
@@ -84,7 +86,7 @@ def atomic_download(url, dest_path, timeout=300):
     tmp_path = dest_path + ".tmp"
     log(f"Downloading {url} -> {dest_path}")
     req = urllib.request.Request(
-        url, headers={"User-Agent": "dallas-research-savespos/1.0"}
+        url, headers={"User-Agent": USER_AGENT}
     )
     with urllib.request.urlopen(req, timeout=timeout) as r, open(tmp_path, "wb") as f:
         while True:

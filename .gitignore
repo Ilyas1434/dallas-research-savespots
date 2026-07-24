@@ -1,11 +1,36 @@
+# Secrets and local environment
 .env
+.env.local
 venv/
+.venv/
+.vercel/
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+.pytest_cache/
+
+# OS
 .DS_Store
-data/raw/geocode_cache.json
-data/raw/tiger/
-# >100MB, exceeds GitHub file limit; regenerate via scripts/build_builtenv.py
-data/raw/dallas_code_violations_*.json
+
+# Large or regenerable inputs. Every path here is re-downloaded automatically
+# by the script that needs it, so a fresh clone still reproduces the outputs.
 *.zip
-.vercel
+data/raw/tiger/
+data/raw/dart/
+data/raw/zcta/
+data/raw/geocode_cache.json
+
+# Exceeds GitHub's 100 MB file limit; regenerate via scripts/build_builtenv.py
+data/raw/dallas_code_violations_*.json
+
+# Intermediates
+*.tmp
+
+# Third-party source documents and cached API responses.
+# Each is re-downloaded automatically by the script that needs it; they are not
+# redistributed here (upstream copyright / API terms of service).
+data/raw/places_cache.json
+data/raw/pit/
+data/raw/od2a/*.pdf

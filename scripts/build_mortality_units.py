@@ -1,52 +1,45 @@
 #!/usr/bin/env python
 """
-build_mortality_units.py -- publish CDC drug-OD mortality at its NATIVE
-reporting geography (aggregation units), not smeared across constituent
-tracts.
+Publish CDC drug-overdose mortality at its native reporting geography.
 
-Why: tract_overdose.geojson (built by pull_mortality.py) explodes each CDC
-4day-mt2f aggregation unit's single model-based rate onto every one of its
-constituent census tracts. That is useful for tract-level joins elsewhere in
-the pipeline, but it visually flattens variance -- 150 real units of
-signal get spread across 645 tracts that all show identical values within a
-unit. This script dissolves the constituent tracts back into their true CDC
-aggregation-unit polygons and publishes ONE feature per unit, at CDC's own
-resolution.
+pull_mortality.py explodes each CDC 4day-mt2f aggregation unit's single
+model-based rate onto all of its constituent census tracts, which is what the
+tract-level joins downstream need but which visually smears 150 units of real
+signal across 645 tracts. This script dissolves those tracts back into the true
+aggregation-unit polygons and publishes one feature per unit -- the finest
+mortality geography Texas suppression actually permits.
 
-Inputs (read-only; nothing here re-pulls from CDC or modifies other outputs):
-  - data/raw/tract_drug_od_2026-07-23.json   (raw CDC 4day-mt2f snapshot,
-    period=TTM, intent=Drug_OD, all of Texas -- filtered here to Dallas Co.)
-  - data/raw/tiger/tl_2024_48_tract.zip       (TIGER/Line 2024 TX tracts,
-    filtered to COUNTYFP=113)
+Reads the newest data/raw/tract_drug_od_*.json snapshot written by
+pull_mortality.py; never re-pulls from CDC, and never touches
+data/clean/tract_overdose.geojson, whose tract-level shape the composite index
+depends on.
 
-Output:
-  - data/clean/mortality_units.geojson  (150 features expected)
-  - data/clean/mortality_units_meta.json
+Outputs: data/clean/mortality_units.geojson, mortality_units_meta.json
 
-Does NOT touch data/clean/tract_overdose.geojson -- the composite index
-depends on that file's tract-level shape and must not be changed here.
-
-Run standalone from repo root:
-    ./venv/bin/python scripts/build_mortality_units.py
+Run: ./venv/bin/python scripts/build_mortality_units.py
 """
 
 import json
 import os
 import statistics
+import sys
 from datetime import datetime, timezone
 
 import geopandas as gpd
 
-REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RAW = os.path.join(REPO, "data", "raw")
-CLEAN = os.path.join(REPO, "data", "clean")
-TIGER_ZIP = os.path.join(RAW, "tiger", "tl_2024_48_tract.zip")
-RAW_SNAPSHOT = os.path.join(RAW, "tract_drug_od_2026-07-23.json")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import (  # noqa: E402
+    DATA_CLEAN as CLEAN,
+    DATA_RAW as RAW,
+    REPO_ROOT as REPO,
+    TIGER_ZIP,
+    DALLAS_COUNTYFP,
+    DALLAS_FIPS,
+    DALLAS_STATEFP,
+    latest_raw_path,
+)
 
-DALLAS_FIPS = "48113"
-DALLAS_COUNTYFP = "113"
-DALLAS_STATEFP = "48"
-
+EXPECTED_UNITS = 150
 SOURCE_LABEL = "CDC 4day-mt2f (native aggregation units)"
 
 MONTHS = {
@@ -82,9 +75,9 @@ def parse_ci(ci_str):
         return None, None
 
 
-def load_raw_units():
-    log(f"=== Loading raw CDC snapshot: {RAW_SNAPSHOT} ===")
-    with open(RAW_SNAPSHOT) as f:
+def load_raw_units(snapshot):
+    log(f"=== Loading raw CDC snapshot: {snapshot} ===")
+    with open(snapshot) as f:
         rows = json.load(f)
     log(f"  total TX agg-unit rows in snapshot: {len(rows)}")
 
@@ -241,7 +234,13 @@ def main():
     pulled_at = datetime.now(timezone.utc).isoformat()
     log(f"build_mortality_units.py -- {pulled_at}")
 
-    units = load_raw_units()
+    snapshot = latest_raw_path("tract_drug_od")
+    if not snapshot:
+        raise SystemExit(
+            f"No data/raw/tract_drug_od_*.json snapshot found in {RAW}; "
+            "run scripts/pull_mortality.py first")
+
+    units = load_raw_units(snapshot)
     tracts_gdf = load_dallas_tracts()
     gdf = build_units_geodataframe(units, tracts_gdf)
     gdf = fix_invalid_geometries(gdf)
@@ -283,7 +282,7 @@ def main():
         "source": {
             "resource": "https://data.cdc.gov/resource/4day-mt2f.json",
             "dataset": "4day-mt2f",
-            "raw_snapshot": os.path.relpath(RAW_SNAPSHOT, REPO),
+            "raw_snapshot": os.path.relpath(snapshot, REPO),
             "intent": "Drug_OD",
             "period": period,
             "data_as_of": data_as_of,
@@ -296,7 +295,7 @@ def main():
         "outputs": {
             "mortality_units.geojson": {
                 "features": len(out),
-                "expected_features": 150,
+                "expected_features": EXPECTED_UNITS,
                 "valid_geometries": n_valid_geom,
                 "count_suppressed_units": n_suppressed,
                 "rate_quartiles_per_100k": qs,

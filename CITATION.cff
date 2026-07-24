@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+title: >-
+  dallas-naloxone-access: measured block-level naloxone access and
+  placement analysis for Dallas County, Texas
+message: >-
+  If you use this software or its derived data, please cite both the
+  repository and the accompanying paper.
+type: software
+authors:
+  - given-names: Ali
+    name-particle: I.
+    family-names: Ilyas
+    email: research@savespots.org
+    affiliation: SaveSpots National Harm Reduction Program
+repository-code: "https://github.com/Ilyas1434/dallas-research-savespots"
+abstract: >-
+  An open, reproducible pipeline that measures the straight-line distance from
+  every populated 2020 census block in Dallas County, Texas to every fixed
+  naloxone access point, builds a five-layer tract-level composite
+  vulnerability index with disclosed weights and reported sensitivity, and
+  ranks candidate storefronts by need multiplied by measured reach among
+  currently unserved residents. Because Texas mortality confidentiality rules
+  suppress overdose death counts at fine geography, access is treated as the
+  primary measured quantity and modelled mortality as one input among five.
+keywords:
+  - harm reduction
+  - naloxone access
+  - opioid overdose
+  - spatial accessibility
+  - data suppression
+  - geographic health disparities
+license: MIT
+version: 1.0.0
+date-released: 2026-07-24
+preferred-citation:
+  type: article
+  title: >-
+    Measured Naloxone Access Deserts and Modeled Overdose Vulnerability in
+    Dallas County, Texas: A Block-Level Geographic Analysis Under Mortality
+    Data Suppression
+  authors:
+    - given-names: Ali
+      name-particle: I.
+      family-names: Ilyas
+      affiliation: SaveSpots National Harm Reduction Program
+  year: 2026
+  month: 7
