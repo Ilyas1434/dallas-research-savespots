@@ -65,7 +65,12 @@ jobs:
           cache: pip
 
       # geopandas ships manylinux wheels bundling GEOS/GDAL/PROJ via pyogrio,
-      # so no apt packages or system libraries are needed.
+      # so no apt packages are needed for it. pull_od2a (monthly) shells out to
+      # `pdftotext` (poppler-utils) to read the DCHHS surveillance report PDF,
+      # which is not a Python dependency and is not preinstalled on the runner.
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
+
       - name: Install dependencies
         run: pip install -r requirements.txt
 
