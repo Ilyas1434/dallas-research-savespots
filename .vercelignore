@@ -1,0 +1,6 @@
+venv
+.git
+data/raw
+figures/*.pdf
+.env
+scripts/__pycache__

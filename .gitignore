@@ -8,3 +8,4 @@ data/raw/tiger/
 # >100MB, exceeds GitHub file limit; regenerate via scripts/build_builtenv.py
 data/raw/dallas_code_violations_*.json
 *.zip
+.vercel
