@@ -1,37 +1,25 @@
 name: Refresh Dallas overdose data
 
-# Two cadences, both keyless (NO repository secrets are used anywhere in
-# this workflow):
+# Two cadences, both keyless. No repository secrets are configured or used.
 #
-#   1. daily-refresh (daily, off-peak UTC) runs ./refresh.sh -- the 5-step
-#      keyless-safe chain: pull_mortality, build_naloxone,
-#      build_coverage_gap, build_walk_coverage, build_composite. See
-#      refresh.sh for full cadence reasoning per step.
+#   daily    scripts/run_all.sh daily -- re-pulls CDC mortality and the naloxone
+#            supply feed, then re-derives the local layers built from them.
+#   monthly  scripts/run_all.sh monthly -- the daily chain plus the slower-moving
+#            open registries and the baseline validation. build_context needs
+#            CENSUS_API_KEY and so is skipped here by design; its outputs move on
+#            an annual source cadence and are refreshed by hand.
 #
-#   2. monthly-full-refresh (1st of month, off-peak UTC) runs
-#      ./scripts/run_all.sh -- the full 9-step pipeline in dependency
-#      order, INCLUDING the slower-cadence open steps (build_builtenv,
-#      build_candidates, validate_baselines). build_context is KEYED
-#      (requires CENSUS_API_KEY) and is deliberately EXCLUDED from this
-#      no-secrets workflow: run_all.sh detects the missing key and skips
-#      that one step cleanly (WARNING, not a failure) rather than needing a
-#      separate maintenance script. Its committed outputs
-#      (svi_tracts.geojson, context_meta.json, uninsured_zcta.csv) are
-#      annual/semi-annual in source cadence and are refreshed by a human
-#      running `./venv/bin/python scripts/build_context.py` locally with a
-#      CENSUS_API_KEY in .env, on an as-needed basis (see README).
-#      build_candidates' optional Google-geocoding fallback is likewise
-#      keyed and simply skips (0 records currently need it; see README).
+# The block-access, placement-ranking, and figure-export stages run only under
+# the `full` profile, locally. They pull a statewide TIGER block file and emit
+# the manuscript artefacts, which is not work for a scheduled job.
 #
-# Both jobs commit any resulting changes under data/clean/ back to the
-# repository as github-actions[bot], only if something actually changed.
+# Both jobs commit changes under data/clean/ back to the repository, and only
+# when something actually changed.
 
 on:
   schedule:
-    # Daily keyless chain -- 08:17 UTC (~02-03am US Central), off-peak.
-    - cron: "17 8 * * *"
-    # Monthly fuller keyless chain -- 1st of month, 09:43 UTC, off-peak.
-    - cron: "43 9 1 * *"
+    - cron: "17 8 * * *"    # daily, 08:17 UTC (~02-03am US Central)
+    - cron: "43 9 1 * *"    # monthly, 1st at 09:43 UTC
   workflow_dispatch:
     inputs:
       mode:
@@ -51,64 +39,38 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  daily-refresh:
-    if: >-
-      github.event_name == 'schedule' && github.event.schedule == '17 8 * * *' ||
-      github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'daily'
+  refresh:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        # geopandas>=0.14 ships manylinux wheels with GEOS/GDAL/PROJ bundled
-        # via pyogrio -- installs cleanly on ubuntu-latest, no apt packages
-        # or system libraries needed.
-        run: pip install -r requirements.txt
-
-      - name: Run daily refresh chain (keyless)
-        run: bash refresh.sh
-
-      - name: Commit and push data changes
-        if: always()
+      - name: Select profile
+        id: profile
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/clean
-          if git diff --cached --quiet; then
-            echo "No data changes to commit."
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "name=${{ github.event.inputs.mode }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "43 9 1 * *" ]; then
+            echo "name=monthly" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "Automated daily data refresh ($(date -u +%Y-%m-%d))"
-            git push
+            echo "name=daily" >> "$GITHUB_OUTPUT"
           fi
 
-  monthly-full-refresh:
-    if: >-
-      github.event_name == 'schedule' && github.event.schedule == '43 9 1 * *' ||
-      github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'monthly'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Python 3.11
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: pip
 
+      # geopandas ships manylinux wheels bundling GEOS/GDAL/PROJ via pyogrio,
+      # so no apt packages or system libraries are needed.
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run full pipeline minus keyed steps (no secrets in this workflow)
-        run: bash scripts/run_all.sh
+      - name: Run pipeline (${{ steps.profile.outputs.name }})
+        run: bash scripts/run_all.sh "${{ steps.profile.outputs.name }}"
 
-      - name: Commit and push data changes
-        if: always()
+      - name: Commit data changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -116,6 +78,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
-            git commit -m "Automated monthly full data refresh ($(date -u +%Y-%m-%d))"
+            git commit -m "Automated ${{ steps.profile.outputs.name }} data refresh ($(date -u +%Y-%m-%d))"
             git push
           fi

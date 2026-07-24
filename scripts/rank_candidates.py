@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
 """
-PLACEMENT RANKING module (NEED x REACH) for the Dallas County naloxone pipeline.
+Placement ranking (NEED x REACH).
 
-Ranks storefront placement candidates by combining:
-  - REACH (measured): unserved residents within a half-mile walk of the storefront.
-  - NEED (two variants): composite 5-layer index vs. mortality-free grounded index.
+Ranks candidate storefronts by combining:
+  REACH (measured) -- currently unserved residents within a half-mile walk.
+  NEED (two variants) -- the five-layer composite index, and a mortality-free
+  "grounded" index, so the ranking can be checked against a specification that
+  contains no suppressed mortality input at all.
 
-Outputs:
-  data/clean/placement_ranked.geojson
-  data/clean/placement_ranked.csv
-  data/clean/placement_ranked_meta.json
+Inputs (data/clean/): placement_candidates.geojson, block_access.csv,
+composite_index.geojson, svi_tracts.geojson, block_access_tracts.geojson
 
-All numbers are measured counts, geometric measurements, or clearly-labeled
-index scores. No invented figures.
+Outputs (data/clean/): placement_ranked.geojson, placement_ranked.csv,
+placement_ranked_meta.json
+
+Run: ./venv/bin/python scripts/rank_candidates.py
 """
 import json
+import os
+import sys
 import time
-from datetime import date
 
 import numpy as np
 import pandas as pd
@@ -24,15 +27,15 @@ import geopandas as gpd
 from scipy.spatial import cKDTree
 from scipy.stats import spearmanr
 
-# ---- constants -------------------------------------------------------------
-ROOT = "/Users/sameerilyas/Documents/GitHub/dallas research savespos"
-CLEAN = f"{ROOT}/data/clean"
-MILE_M = 1609.344          # 1 mile: "currently unserved" threshold on nearest supply
-HALF_MILE_WALK_M = 805.0   # half-mile walk radius around a storefront (per spec)
-PROJ_CRS = "EPSG:32138"    # Texas North Central, meters
-GEN_DATE = "2026-07-24"
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import DATA_CLEAN as CLEAN, pipeline_date
 
-# The measured REACH definition, stated verbatim for the meta method statement.
+MILE_M = 1609.344          # "currently unserved" threshold on nearest supply
+HALF_MILE_WALK_M = 805.0   # walk radius around a candidate storefront
+PROJ_CRS = "EPSG:32138"    # NAD83 / Texas North Central, metres
+N_GREEDY_PICKS = 50
+EXPECTED_RANKED_TRACTS = 643
+
 REACH_DEFINITION = (
     "REACH for each candidate is the sum of block population over 2020 census "
     "blocks that are (a) currently unserved (distance to nearest naloxone supply "
@@ -51,33 +54,29 @@ def main():
     t0 = time.time()
     timings = {}
 
-    # ---- LOAD --------------------------------------------------------------
     log("Loading inputs...", t0)
-    cand = gpd.read_file(f"{CLEAN}/placement_candidates.geojson")
-    blocks = pd.read_csv(f"{CLEAN}/block_access.csv")
-    comp = gpd.read_file(f"{CLEAN}/composite_index.geojson")
-    svi = gpd.read_file(f"{CLEAN}/svi_tracts.geojson")
-    bat = gpd.read_file(f"{CLEAN}/block_access_tracts.geojson")
+    cand = gpd.read_file(os.path.join(CLEAN, "placement_candidates.geojson"))
+    blocks = pd.read_csv(os.path.join(CLEAN, "block_access.csv"))
+    comp = gpd.read_file(os.path.join(CLEAN, "composite_index.geojson"))
+    svi = gpd.read_file(os.path.join(CLEAN, "svi_tracts.geojson"))
+    bat = gpd.read_file(os.path.join(CLEAN, "block_access_tracts.geojson"))
     timings["load"] = round(time.time() - t0, 2)
     log(f"Loaded: {len(cand)} candidates, {len(blocks)} blocks, {len(comp)} tracts", t0)
 
     n_total = len(cand)
-
-    # dist_nearest_any_m in the spec == dist_supply_m in block_access.csv
-    # (verified: dist_supply_m<=1609.344 matches within_1mi_supply exactly, and
-    #  its pop-weighted tract mean tracks composite raw_dist_nearest_any_m).
     DIST_COL = "dist_supply_m"
 
-    # ---- EXCLUSIONS --------------------------------------------------------
-    # (1) null geoid -> outside county tracts. (2) geoid in an excluded tract
-    # (zero/null population) -> no valid NEED.
+    # Excluded: candidates with a null geoid (outside county tracts) and those in
+    # a zero-population tract, which carries no NEED score.
     for g in (comp, svi, bat):
         g["geoid"] = g["geoid"].astype(str)
     cand["geoid"] = cand["geoid"].astype("string")  # keep <NA> distinct from 'nan'
 
     ranked_tracts = set(comp.loc[~comp["excluded"], "geoid"])
     excluded_tracts = set(comp.loc[comp["excluded"], "geoid"])
-    assert len(ranked_tracts) == 643, f"expected 643 ranked tracts, got {len(ranked_tracts)}"
+    if len(ranked_tracts) != EXPECTED_RANKED_TRACTS:
+        log(f"  NOTE: {len(ranked_tracts)} ranked tracts "
+            f"(published vintage had {EXPECTED_RANKED_TRACTS})", t0)
 
     null_geoid_mask = cand["geoid"].isna()
     n_null_geoid = int(null_geoid_mask.sum())
@@ -93,26 +92,22 @@ def main():
         f"= {n_null_geoid + n_excluded_tract}; ranking {n_ranked}", t0)
     assert n_ranked == n_total - n_null_geoid - n_excluded_tract
 
-    # ---- 1. REACH (measured) ----------------------------------------------
     log("Computing REACH via cKDTree...", t0)
     t = time.time()
     unserved = blocks.loc[blocks[DIST_COL] > MILE_M].copy().reset_index(drop=True)
     log(f"  unserved populated blocks: {len(unserved)} "
         f"({int(unserved['pop'].sum())} residents)", t0)
 
-    # project unserved block internal points
     bpts = gpd.GeoSeries(
         gpd.points_from_xy(unserved["intpt_lon"], unserved["intpt_lat"]),
         crs="EPSG:4326").to_crs(PROJ_CRS)
     block_xy = np.column_stack([bpts.x.values, bpts.y.values])
     block_pop = unserved["pop"].to_numpy()
 
-    # project candidate points
     cpts = r.geometry.to_crs(PROJ_CRS)
     cand_xy = np.column_stack([cpts.x.values, cpts.y.values])
 
     tree = cKDTree(block_xy)
-    # list of unserved-block indices within 805 m of each candidate
     neighbor_lists = tree.query_ball_point(cand_xy, r=HALF_MILE_WALK_M)
     reach_raw = np.array([int(block_pop[idx].sum()) if idx else 0
                           for idx in neighbor_lists], dtype=np.int64)
@@ -121,17 +116,11 @@ def main():
     log(f"  REACH done. max={reach_raw.max()} mean={reach_raw.mean():.1f} "
         f"nonzero={(reach_raw>0).sum()}", t0)
 
-    # ---- 2. NEED variants --------------------------------------------------
     log("Building NEED variants...", t0)
 
-    # need_composite = existing composite_score (5-layer; includes CDC model-based
-    # mortality). Joined on tract geoid.
     comp_score = comp.set_index("geoid")["composite_score"]
     r["need_composite"] = r["geoid"].map(comp_score).astype(float)
 
-    # need_grounded = equal-weight mean of min-max-normalized layers across the 643
-    # ranked tracts. Layers: pct_poverty_acs2024, pct_uninsured_acs2024,
-    # svi_overall, pct_pop_beyond_1mi. NO mortality input.
     tr = pd.DataFrame({"geoid": sorted(ranked_tracts)})
     svi_cols = ["pct_poverty_acs2024", "pct_uninsured_acs2024", "svi_overall"]
     tr = tr.merge(svi[["geoid"] + svi_cols], on="geoid", how="left")
@@ -143,7 +132,8 @@ def main():
         v = tr[col].astype(float)
         lo, hi = v.min(), v.max()
         norm[col] = (v - lo) / (hi - lo) if hi > lo else 0.0
-    # equal-weight mean over AVAILABLE layers (nulls -> mean of remaining)
+    # Equal weight over available layers only; a null layer is dropped from that
+    # tract's mean rather than imputed, and flagged via data_completeness.
     tr["need_grounded"] = norm.mean(axis=1, skipna=True)
     tr["n_layers_available"] = norm.notna().sum(axis=1).astype(int)
     tr["data_completeness"] = tr["n_layers_available"].map(
@@ -156,10 +146,8 @@ def main():
     n_partial = int((tr["n_layers_available"] < len(grounded_layers)).sum())
     log(f"  grounded index built; {n_partial} tracts with partial layers", t0)
 
-    # tier passthrough
     r["tier"] = r["geoid"].map(comp.set_index("geoid")["tier"])
 
-    # ---- 3. SCORES ---------------------------------------------------------
     log("Normalizing and scoring...", t0)
 
     def minmax(s):
@@ -168,12 +156,12 @@ def main():
 
     nNEEDc = minmax(r["need_composite"])
     nNEEDg = minmax(r["need_grounded"])
-    nREACH = minmax(r["reach_raw"].astype(float))  # min-max on raw reach (skewed)
+    nREACH = minmax(r["reach_raw"].astype(float))
 
     r["rank_score_composite"] = nNEEDc * nREACH
     r["rank_score_grounded"] = nNEEDg * nREACH
 
-    # ranks: 1 = best; ties broken by reach_raw desc
+    # Rank 1 = best; ties broken by raw reach descending.
     def make_rank(score_col):
         order = r.sort_values([score_col, "reach_raw"], ascending=[False, False]).index
         rank = pd.Series(np.arange(1, len(order) + 1), index=order)
@@ -189,17 +177,17 @@ def main():
     both_top50 = top50_c & top50_g
     r["in_top50_both"] = r.index.isin(both_top50)
 
-    # ---- 4. AGREEMENT STATS ------------------------------------------------
     rho, pval = spearmanr(r["rank_composite"], r["rank_grounded"])
     overlap50 = len(both_top50)
     overlap100 = len(top100_c & top100_g)
     log(f"  Spearman rho={rho:.4f}, top50 overlap={overlap50}, "
         f"top100 overlap={overlap100}", t0)
 
-    # ---- 5. GREEDY COVERAGE-GAIN (measured, de-overlapped) -----------------
+    # Rank-agnostic greedy coverage: repeatedly take the candidate covering the
+    # most not-yet-covered unserved residents. Its ordering differs from the
+    # NEED x REACH ranking above and is reported separately.
     log("Running pure-reach greedy coverage...", t0)
     t = time.time()
-    # candidate -> set of unserved-block indices within 805 m
     cover = [set(idx) for idx in neighbor_lists]
     covered = np.zeros(len(unserved), dtype=bool)
     remaining = set(range(n_ranked))
@@ -207,9 +195,8 @@ def main():
     r["greedy_pick_order"] = pd.Series(pd.NA, index=r.index, dtype="Int64")
     greedy_picks = []
     cum_new = 0
-    N_PICKS = 50
     ridx = r.index.to_numpy()  # positional -> DataFrame index
-    for pick in range(1, N_PICKS + 1):
+    for pick in range(1, N_GREEDY_PICKS + 1):
         best_i, best_gain, best_blocks = -1, -1, None
         for i in remaining:
             new_blocks = [b for b in cover[i] if not covered[b]]
@@ -249,12 +236,10 @@ def main():
     }
     log(f"  greedy: 10={cum_at(10)} 25={cum_at(25)} 50={cum_at(50)}", t0)
 
-    # validate greedy monotone
     cums = [p["cumulative_newly_covered"] for p in greedy_picks]
     assert all(cums[i] <= cums[i + 1] for i in range(len(cums) - 1)), "greedy not monotone"
     assert all(p["newly_covered_unserved_residents"] > 0 for p in greedy_picks)
 
-    # ---- 6. PER-CATEGORY TOP-10 (by rank_score_composite) ------------------
     per_cat = {}
     for catv, grp in r.groupby("category"):
         top = grp.sort_values(["rank_score_composite", "reach_raw"],
@@ -266,7 +251,8 @@ def main():
             "rank_score_composite": round(float(row["rank_score_composite"]), 6),
         } for _, row in top.iterrows()]
 
-    # ---- SANITY CHECK: recompute top pick reach independently ---------------
+    # Independent brute-force recomputation of the top pick's reach, as a check
+    # on the KD-tree radius join.
     top_idx = r.sort_values(["rank_composite"]).index[0]
     tp = r.loc[top_idx]
     tp_pt = gpd.GeoSeries([tp.geometry], crs="EPSG:4326").to_crs(PROJ_CRS).iloc[0]
@@ -277,7 +263,6 @@ def main():
         f"vs manual brute-force={manual_reach} -> {'OK' if sanity_ok else 'MISMATCH'}", t0)
     assert sanity_ok, "KDTree reach join sanity check failed"
 
-    # ---- OUTPUTS -----------------------------------------------------------
     log("Writing outputs...", t0)
     out_cols = ["name", "address", "zip", "category", "geoid", "tier",
                 "reach_raw", "need_composite", "need_grounded",
@@ -286,15 +271,12 @@ def main():
                 "greedy_pick_order", "data_completeness"]
     out = r[out_cols + ["geometry"]].copy()
 
-    # geojson
-    gj_path = f"{CLEAN}/placement_ranked.geojson"
+    gj_path = os.path.join(CLEAN, "placement_ranked.geojson")
     out.to_file(gj_path, driver="GeoJSON")
 
-    # csv (no geometry), sorted by rank_composite
-    csv_path = f"{CLEAN}/placement_ranked.csv"
+    csv_path = os.path.join(CLEAN, "placement_ranked.csv")
     out.drop(columns="geometry").sort_values("rank_composite").to_csv(csv_path, index=False)
 
-    # top-10 composite for meta + final message
     top10_comp = r.sort_values("rank_composite").head(10)
     top10_list = [{
         "rank_composite": int(row["rank_composite"]), "name": row["name"],
@@ -306,7 +288,7 @@ def main():
     } for _, row in top10_comp.iterrows()]
 
     meta = {
-        "generated_date": GEN_DATE,
+        "generated_date": pipeline_date().isoformat(),
         "module": "PLACEMENT RANKING (NEED x REACH)",
         "method_statement": {
             "reach_definition": REACH_DEFINITION,
@@ -325,10 +307,11 @@ def main():
                 "Existing 5-layer composite_score from composite_index.geojson. "
                 "INCLUDES CDC model-based (modeled) overdose mortality as one layer."),
             "need_grounded": (
-                "Equal-weight mean of min-max-normalized layers across the 643 ranked "
-                "tracts: pct_poverty_acs2024, pct_uninsured_acs2024, svi_overall, "
-                "pct_pop_beyond_1mi. Contains NO mortality input. Nulls handled by "
-                "averaging over available layers; data_completeness flags partials."),
+                f"Equal-weight mean of min-max-normalized layers across the "
+                f"{len(ranked_tracts)} ranked tracts: pct_poverty_acs2024, "
+                "pct_uninsured_acs2024, svi_overall, pct_pop_beyond_1mi. Contains NO "
+                "mortality input. Nulls handled by averaging over available layers; "
+                "data_completeness flags partials."),
             "grounded_layers": grounded_layers,
             "grounded_partial_completeness_tracts": n_partial,
         },
@@ -357,9 +340,10 @@ def main():
         "greedy_coverage_gain": {
             "method": (
                 "Rank-agnostic pure-reach greedy: iteratively pick the candidate "
-                "covering the most currently-uncovered unserved residents (within 805 m), "
-                "remove those blocks from the pool, repeat 50 times. De-overlapped, "
-                "pure block-count arithmetic. Each pick's both-variant ranks recorded."),
+                f"covering the most currently-uncovered unserved residents (within "
+                f"{HALF_MILE_WALK_M:.0f} m), remove those blocks from the pool, repeat "
+                f"{N_GREEDY_PICKS} times. De-overlapped, pure block-count arithmetic. "
+                "Each pick's both-variant ranks recorded."),
             "cumulative_summary": coverage_gain_summary,
             "picks": greedy_picks,
         },
@@ -381,11 +365,10 @@ def main():
         "timings_sec": timings,
     }
 
-    meta_path = f"{CLEAN}/placement_ranked_meta.json"
+    meta_path = os.path.join(CLEAN, "placement_ranked_meta.json")
     with open(meta_path, "w") as f:
         json.dump(meta, f, indent=2, default=str)
 
-    # ---- VALIDATION --------------------------------------------------------
     chk = gpd.read_file(gj_path)
     assert len(chk) == n_ranked, f"geojson has {len(chk)} feats, expected {n_ranked}"
     assert chk["rank_composite"].notna().all()
@@ -404,7 +387,7 @@ def main():
     for x in top10_list:
         print(f"  {x['rank_composite']:2d}. {x['name']}  [{x['category']}]  "
               f"reach={x['reach_raw']}  (grounded rank {x['rank_grounded']})")
-    print(f"\nGreedy coverage-gain (newly-served unserved residents, de-overlapped):")
+    print("\nGreedy coverage-gain (newly-served unserved residents, de-overlapped):")
     print(f"  after 10 sites: {cum_at(10):,}")
     print(f"  after 25 sites: {cum_at(25):,}")
     print(f"  after 50 sites: {cum_at(50):,}")

@@ -1,58 +1,35 @@
 #!/usr/bin/env python
 """
-build_candidates.py -- PLACEMENT CANDIDATES module.
+Build the candidate-storefront universe for naloxone placement.
 
-Builds the candidate-storefront universe for naloxone-box placement in
-Dallas County by merging four sources:
+Merges four sources, deduplicates across them, and joins each survivor to its
+Dallas County tract. This is the raw candidate universe only -- ranking happens
+in rank_candidates.py.
 
-  1. Dallas Certificates of Occupancy (CO) -- dallasopendata 9qet-qt9e.
-     Filtered to plausible everyday-storefront land_use values (see
-     LANDUSE_CATEGORY_MAP below; full distinct land_use frequency table is
-     logged to data/raw/co_landuse_distinct_<date>.json for auditability).
-     NOTE (deviation from spec): lat/lon are NOT top-level `latitude`/
-     `longitude` fields as the task brief assumed -- they live in a nested
-     `geolocation` object ({"latitude":..., "longitude":...}). Handled here.
-     Also: CO is a permit-approval registry, not a current-occupancy
-     registry, so the same street address can have several CO rows over
-     the years as tenants change. We keep only the MOST RECENT CO
-     (by date_issued) per unique normalized address to avoid representing
-     one physical storefront as several stacked candidates.
+  1. Dallas Certificates of Occupancy (9qet-qt9e), filtered to everyday-
+     storefront land_use values via LANDUSE_CATEGORY_MAP. CO is a permit
+     registry rather than a current-occupancy registry, so one address
+     accumulates rows as tenants change; only the most recent CO per
+     normalized address is kept. Coordinates live in a nested `geolocation`
+     object, not top-level lat/lon fields.
+  2. TABC alcohol licences (kguh-7q9z), filtered to off-premise retail types.
+     The source carries no coordinates, so addresses go through the Census
+     batch geocoder with an optional Google fallback, cached in
+     data/raw/geocode_cache_tabc.json. Failure rates above 10% are flagged.
+  3. OpenStreetMap Overpass, scoped by Dallas County's OSM area id. The area
+     id is used rather than a name query because Iowa also has a Dallas County.
+  4. Dallas Public Library branches (2ksy-mdcf).
 
-  2. TABC alcohol licenses (data.texas.gov kguh-7q9z), filtered to
-     off-premise retail license types verified against the TABC's own
-     published license/permit type list (see TABC_OFFPREMISE_TYPES).
-     No lat/lon in source -> geocoded via Census Bureau batch geocoder,
-     with Google Geocoding API fallback for unmatched addresses. Results
-     cached to data/raw/geocode_cache_tabc.json (never re-geocode a cached
-     address). Failure-rate is reported; >10% triggers a PING.
+`open_24h` is set only where a source states it (OSM opening_hours="24/7", or
+a fuelling-station land use); it is otherwise null and never guessed.
 
-  3. OSM Overpass, Dallas County only (relation 1837698 -> area id
-     3601837698 -- resolved via Nominatim; NOTE: a naive
-     area["name"="Dallas County"] query is ambiguous, since Iowa also has a
-     "Dallas County" -- confirmed by a stray Iowa node in an early test
-     query). Tags: shop=convenience, amenity=fuel, shop=alcohol,
-     shop=hairdresser|beauty, shop=laundry, amenity=library. Known thin
-     coverage (~140 convenience nodes county-wide per brief; confirmed low
-     counts below).
-
-  4. Dallas Public Library branches (dallasopendata 2ksy-mdcf, 30 rows,
-     has lat/lon directly).
-
-Output:
-  data/clean/placement_candidates.geojson
-  data/clean/placement_candidates.csv
-
-Properties per candidate: name, address, zip, category, source (list),
-lat, lon, geoid (Dallas-County tract spatial join; null if outside county),
-open_24h (bool or null -- only knowable from OSM opening_hours=="24/7" tag
-or CO land_use "Motor Vehicle Fueling Station" combined with OSM 24/7 tag;
-otherwise null, never guessed).
-
-NO ranking / composite score here -- this is the raw candidate universe.
+Outputs: data/clean/placement_candidates.{geojson,csv},
+placement_candidates_meta.json
 
 Run: ./venv/bin/python scripts/build_candidates.py
 """
-import datetime
+import csv
+import io
 import json
 import math
 import os
@@ -68,14 +45,17 @@ from dotenv import load_dotenv
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import (
-    REPO_ROOT, DATA_RAW, DATA_CLEAN, log, ensure_dirs, socrata_paginate,
-    save_json, dated_raw_path, load_dallas_tracts,
+    REPO_ROOT, DATA_RAW, DATA_CLEAN, USER_AGENT, log, ensure_dirs,
+    socrata_paginate, save_json, dated_raw_path, load_dallas_tracts,
+    pipeline_date,
 )
 
 load_dotenv(os.path.join(REPO_ROOT, ".env"))
 
-TODAY = datetime.date(2026, 7, 23)
+TODAY = pipeline_date()
 DATE_STR = TODAY.isoformat()
+GEOCODE_FAIL_PING_THRESHOLD = 0.10
+DEDUPE_PROXIMITY_M = 50
 
 URL_CO = "https://www.dallasopendata.com/resource/9qet-qt9e.json"
 URL_TABC = "https://data.texas.gov/resource/kguh-7q9z.json"
@@ -90,13 +70,10 @@ GEOCODE_CACHE_PATH = os.path.join(DATA_RAW, "geocode_cache_tabc.json")
 
 CENSUS_BATCH_URL = "https://geocoding.geo.census.gov/geocoder/locations/addressbatch"
 
-# ---------------------------------------------------------------------------
-# CO land_use -> candidate category mapping (documented, from distinct-value
-# inspection of the live dataset on 2026-07-23; see build log / raw dump).
-# Only categories relevant to "everyday storefront" naloxone placement are
-# included; everything else (offices, warehouses, schools, churches, auto
-# repair, hotels, multi-family, etc.) is explicitly excluded and logged.
-# ---------------------------------------------------------------------------
+# Only everyday-storefront land uses are mapped. Everything else (offices,
+# warehouses, schools, churches, auto repair, hotels, multi-family) is excluded
+# and counted in the run log; the full distinct-value frequency table is dumped
+# to data/raw/co_landuse_distinct_<date>.json each run.
 LANDUSE_CATEGORY_MAP = {
     "Motor Vehicle Fueling Station": "gas_station",
     "GEN MERCHANDISE OR FOOD STORE < 3500 SQ. FT.": "convenience_corner_store",
@@ -115,25 +92,16 @@ LANDUSE_CATEGORY_MAP = {
     "COMMERCIAL AMUSEMENT (INSIDE)": "other_storefront",
 }
 
-# TABC license types verified against https://www.tabc.texas.gov/services/
-# tabc-licenses-permits/tabc-license-permit-types/ (fetched 2026-07-23).
-# Off-premise retail set: P (Package Store), Q (Wine-Only Package Store),
-# BQ (Wine & Malt Beverage Retailer's OFF-Premise), BF (Retail Dealer's
-# OFF-Premise malt beverage license). BG (Wine and Malt Beverage Retailer's
-# Permit) is documented by TABC as covering BOTH on- and off-premise sale --
-# included here (with this caveat logged) because in practice it is the
-# license type used by many Dallas convenience/grocery stores selling beer
-# & wine for off-premise consumption, which is the population of interest.
+# Off-premise retail permit classes, per TABC's published permit-type list:
+# P (package store), Q (wine-only package store), BQ and BF (off-premise wine /
+# malt beverage retailer). BG covers both on- and off-premise sale but is the
+# class most Dallas convenience and grocery stores hold for off-premise beer and
+# wine, so it is included with the caveat recorded below.
 TABC_OFFPREMISE_TYPES = {"P", "Q", "BQ", "BF", "BG"}
 TABC_OFFPREMISE_CAVEAT = (
     "BG ('Wine and Malt Beverage Retailer's Permit') is TABC-documented as on-AND-off-premise; "
     "included as off-premise-retail-like per brief's 'etc.' allowance, flagged here."
 )
-# Excluded on-premise / wholesale / manufacturing / temporary / transport types
-# (not off-premise retail storefronts): MB, NT, N, NE, NB, TR, G, W, C, S, BW,
-# BE, PR, D, BB, X, BC, FC, J/JD, ET, AW, CD, and any unmapped/unknown codes
-# encountered at runtime (logged below).
-
 OSM_CATEGORY_MAP = {
     ("shop", "convenience"): "convenience_corner_store",
     ("amenity", "fuel"): "gas_station",
@@ -150,9 +118,6 @@ CANDIDATE_CATEGORIES = [
 ]
 
 
-# ===========================================================================
-# 1. Certificates of Occupancy
-# ===========================================================================
 def fetch_co():
     log("Fetching Dallas Certificates of Occupancy (full pull, all land_use)...")
     params = {"$select": "co,business_name,address,zip_code,land_use,occupancy,sq_ft,"
@@ -161,7 +126,6 @@ def fetch_co():
     log(f"CO: fetched {len(rows)} total rows")
     save_json(rows, dated_raw_path("dallas_co_full", DATE_STR))
 
-    # log distinct land_use frequency for auditability
     landuse_counts = {}
     for r in rows:
         lu = r.get("land_use") or "(null)"
@@ -250,9 +214,6 @@ def process_co(rows):
     return df.drop(columns=["_date_issued"])
 
 
-# ===========================================================================
-# 2. TABC
-# ===========================================================================
 def fetch_tabc():
     log("Fetching TABC licenses, txcounty=Dallas...")
     params = {"$where": "txcounty='Dallas'"}
@@ -297,10 +258,9 @@ def save_geocode_cache(cache):
 
 
 def census_batch_geocode(addr_records):
-    """addr_records: list of (id, street, city, state, zip). Returns {id: (lat,lon) or None}."""
-    import io
+    """addr_records: (id, street, city, state, zip). Returns {id: (lat, lon) or None}."""
     results = {}
-    CHUNK = 9000  # stay under the 10k limit
+    CHUNK = 9000  # Census batch endpoint caps at 10,000 addresses per submission
     for i in range(0, len(addr_records), CHUNK):
         chunk = addr_records[i:i + CHUNK]
         buf = io.StringIO()
@@ -320,9 +280,8 @@ def census_batch_geocode(addr_records):
             continue
         text = resp.text
         for line in text.splitlines():
-            # CSV: id,"input address",match,matchtype,"matched address","lon,lat",tigerlineid,side
-            # NOTE: the coordinate field is a single quoted "lon,lat" string, not two
-            # separate CSV columns -- verified against a live sample response.
+            # id,"input",match,matchtype,"matched","lon,lat",tigerlineid,side --
+            # the coordinate is one quoted "lon,lat" field, not two columns.
             parts = next(_csv_split(line))
             if len(parts) < 3:
                 continue
@@ -342,8 +301,7 @@ def census_batch_geocode(addr_records):
 
 
 def _csv_split(line):
-    import csv as _csv
-    yield next(_csv.reader([line]))
+    yield next(csv.reader([line]))
 
 
 def google_geocode(address, api_key, session):
@@ -401,7 +359,7 @@ def geocode_tabc(tabc_rows):
                 full_addr = f"{addr}, {city}, {state} {zipc}"
                 try:
                     res = google_geocode(full_addr, api_key, session)
-                except Exception as e:
+                except Exception:
                     res = None
                 if res:
                     cache[key] = {"lat": res[0], "lon": res[1], "method": "google"}
@@ -417,7 +375,6 @@ def geocode_tabc(tabc_rows):
 
         save_geocode_cache(cache)
 
-    # assemble final geocoded rows
     out = []
     n_fail = 0
     for idx, r in enumerate(tabc_rows):
@@ -430,6 +387,8 @@ def geocode_tabc(tabc_rows):
             "name": r.get("aimstradename") or r.get("aimsownername"),
             "address": r.get("locationaddress", "").strip(),
             "zip": (r.get("zip") or "")[:5],
+            # Licence-derived, not a verified storefront type: a restaurant holding
+            # an off-premise beer/wine permit also lands here.
             "category": "liquor_store",
             "source": "TABC",
             "lat": entry["lat"], "lon": entry["lon"],
@@ -441,14 +400,11 @@ def geocode_tabc(tabc_rows):
     fail_rate = n_fail / len(tabc_rows) if tabc_rows else 0
     log(f"TABC geocode: {n_fail}/{len(tabc_rows)} addresses FAILED to geocode "
         f"({fail_rate*100:.1f}% failure rate)")
-    if fail_rate > 0.10:
+    if fail_rate > GEOCODE_FAIL_PING_THRESHOLD:
         log(f"*** PING: TABC geocode failure rate {fail_rate*100:.1f}% exceeds 10% threshold ***")
     return pd.DataFrame(out), fail_rate, n_fail, len(tabc_rows)
 
 
-# ===========================================================================
-# 3. OSM Overpass
-# ===========================================================================
 def fetch_overpass():
     query = f"""
 [out:json][timeout:180];
@@ -464,7 +420,7 @@ area({DALLAS_COUNTY_OVERPASS_AREA})->.a;
 );
 out center;
 """.strip()
-    headers = {"User-Agent": "dallas-research-savespos/1.0 (naloxone placement research script)"}
+    headers = {"User-Agent": USER_AGENT}
     last_err = None
     for attempt in range(6):
         endpoint = OVERPASS_ENDPOINTS[attempt % len(OVERPASS_ENDPOINTS)]
@@ -528,9 +484,6 @@ def process_osm(elements):
     return pd.DataFrame(kept)
 
 
-# ===========================================================================
-# 4. Libraries
-# ===========================================================================
 def fetch_libraries():
     log("Fetching Dallas library branches...")
     rows = requests.get(URL_LIBRARIES, timeout=60).json()
@@ -561,10 +514,6 @@ def fetch_libraries():
     return pd.DataFrame(kept)
 
 
-# ===========================================================================
-# Dedupe: exact (norm_name, norm_addr) match, then ~50m proximity for
-# same norm_name across sources.
-# ===========================================================================
 def haversine_m(lat1, lon1, lat2, lon2):
     R = 6371000
     p1, p2 = math.radians(lat1), math.radians(lat2)
@@ -578,7 +527,6 @@ def dedupe(df):
     df = df.reset_index(drop=True)
     df["_key"] = df["_norm_name"] + "||" + df["_norm_addr"]
 
-    # pass 1: exact (name, address) merge
     groups = {}
     order = []
     for idx, row in df.iterrows():
@@ -589,10 +537,9 @@ def dedupe(df):
         groups[k].append(idx)
 
     merged_records = []
-    consumed = set()
     keys_list = list(order)
-    # pass 2: within same norm_name (possibly different key because address
-    # normalization differs), merge across ~50m proximity
+    # Second pass: rows sharing a normalized name but differing in address
+    # normalization are merged when their points sit within DEDUPE_PROXIMITY_M.
     name_index = {}
     for k in keys_list:
         name = k.split("||", 1)[0]
@@ -605,9 +552,8 @@ def dedupe(df):
             continue
         name = k.split("||", 1)[0]
         candidate_keys = name_index.get(name, [k])
-        # union rows across candidate_keys that are within 50m of the
-        # representative point of k (only for non-trivial names, avoid
-        # merging many unrelated "(unnamed ...)" placeholders)
+        # Unnamed placeholders are never proximity-merged; many unrelated
+        # "(unnamed ...)" rows would otherwise collapse into one candidate.
         base_rows = groups[k]
         base_pt = df.loc[base_rows[0], ["lat", "lon"]]
         merged_idx = list(base_rows)
@@ -622,7 +568,7 @@ def dedupe(df):
                     d = haversine_m(base_pt["lat"], base_pt["lon"], other_pt["lat"], other_pt["lon"])
                 except Exception:
                     continue
-                if d <= 50:
+                if d <= DEDUPE_PROXIMITY_M:
                     merged_idx.extend(other_rows)
                     visited_keys.add(ck)
         final_groups.append(merged_idx)
@@ -631,14 +577,11 @@ def dedupe(df):
         sub = df.loc[idxs]
         rep = sub.iloc[0]
         sources = sorted(set(sub["source"].tolist()))
-        # prefer non-null open_24h True > False > None
         open_24h_vals = [v for v in sub["open_24h"].tolist() if v is not None]
         open_24h = True if True in open_24h_vals else (False if False in open_24h_vals else None)
-        # prefer the longest/most descriptive name & address among the group
         best_name = max(sub["name"].fillna(""), key=len) or None
         best_addr = max(sub["address"].fillna(""), key=len) or None
         best_zip = next((z for z in sub["zip"].tolist() if z), None)
-        # category: prefer first non-"other_storefront" category if any
         cats = sub["category"].tolist()
         cat = next((c for c in cats if c != "other_storefront"), cats[0])
         merged_records.append({
@@ -655,9 +598,6 @@ def dedupe(df):
     return out_df
 
 
-# ===========================================================================
-# Main
-# ===========================================================================
 def main():
     ensure_dirs()
     log("=== PLACEMENT CANDIDATES build starting ===")
@@ -683,7 +623,6 @@ def main():
 
     deduped = dedupe(all_df)
 
-    # spatial join to Dallas tract
     geom = [Point(xy) for xy in zip(deduped["lon"], deduped["lat"])]
     gdf = gpd.GeoDataFrame(deduped, geometry=geom, crs="EPSG:4326")
     joined = gpd.sjoin(gdf, tracts[["geoid", "geometry"]], how="left", predicate="within")
@@ -694,7 +633,6 @@ def main():
 
     joined = joined.drop(columns=["index_right"], errors="ignore")
 
-    # final counts
     log("=== Candidate counts by category (post-dedupe) ===")
     cat_counts = joined["category"].value_counts().to_dict()
     for c in CANDIDATE_CATEGORIES:
@@ -708,13 +646,11 @@ def main():
     for s, c in sorted(src_counts.items(), key=lambda kv: -kv[1]):
         log(f"  {s}: {c}")
 
-    # write outputs
     out_geojson_path = os.path.join(DATA_CLEAN, "placement_candidates.geojson")
     out_csv_path = os.path.join(DATA_CLEAN, "placement_candidates.csv")
 
     export_gdf = joined.copy()
     export_gdf["source"] = export_gdf["source"].apply(lambda s: ";".join(s))
-    export_gdf = export_gdf.rename(columns={"geoid": "geoid"})
     export_cols = ["name", "address", "zip", "category", "source", "lat", "lon",
                    "geoid", "open_24h", "n_source_rows_merged", "geometry"]
     export_gdf = export_gdf[export_cols]
@@ -726,7 +662,7 @@ def main():
     log(f"Wrote {out_csv_path} ({os.path.getsize(out_csv_path):,} bytes)")
 
     meta = {
-        "generated": datetime.datetime.now().isoformat(),
+        "generated": DATE_STR,
         "counts": {
             "co_rows_fetched": len(co_rows),
             "co_kept_after_landuse_filter_and_addr_collapse": len(co_df),
@@ -745,7 +681,8 @@ def main():
             "by_source": src_counts,
         },
         "ping_flags": (
-            ["TABC geocode failure rate exceeds 10%"] if tabc_fail_rate > 0.10 else []
+            ["TABC geocode failure rate exceeds 10%"]
+            if tabc_fail_rate > GEOCODE_FAIL_PING_THRESHOLD else []
         ),
     }
     save_json(meta, os.path.join(DATA_CLEAN, "placement_candidates_meta.json"))

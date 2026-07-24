@@ -1,23 +1,23 @@
 #!/usr/bin/env python
 """
-MORTALITY module — Dallas County overdose surveillance pipeline.
+Pull Dallas County overdose mortality from CDC and build the tract layer.
 
-Pulls three LIVE sources (source of truth), writes dated raw snapshots to
-data/raw/, and emits cleaned contract outputs to data/clean/.
+Sources
+  1. CDC VSRR provisional county drug-overdose deaths (Socrata gb4e-yj24),
+     as a monthly 12-month-ending series for FIPS 48113.
+  2. CDC drug-overdose death rates by census tract (4day-mt2f). Rows are
+     model-based aggregation units whose `name` field lists their constituent
+     tract GEOIDs; each unit's rate is exploded onto its Dallas tracts.
+  3. TIGER/Line 2024 Texas tract geometries, filtered to COUNTYFP=113.
 
-Sources (verified live 2026-07-23):
-  1. CDC VSRR provisional county drug-OD deaths (monthly, 12-month-ending)
-     Socrata gb4e-yj24 -> Dallas County (FIPS 48113) monthly series.
-  2. CDC drug-OD death rates by census tract (4day-mt2f). Rows are
-     model-based AGGREGATION UNITS (a `geoid` like "TX-0153-0344") whose
-     `name` field lists the constituent 11-digit census tract GEOIDs. We
-     explode each unit's rate onto its constituent Dallas (48113) tracts.
-  3. TIGER/Line 2024 Texas tract geometries -> filter COUNTYFP=113.
+Dated raw snapshots go to data/raw/. Nothing is imputed; suppression is
+recorded explicitly, and deaths_by_zip.csv is emitted header-only because no
+public ZIP-level mortality product exists for Dallas.
 
-NEVER fabricates or imputes. Suppression is recorded explicitly.
+Outputs (data/clean/): deaths_dallas.csv, tract_overdose.geojson,
+deaths_by_zip.csv, deaths_by_zip.README.md, mortality_meta.json
 
-Run standalone from repo root:
-    ./venv/bin/python scripts/pull_mortality.py
+Run: ./venv/bin/python scripts/pull_mortality.py
 """
 
 import json
@@ -29,9 +29,6 @@ from datetime import datetime, timezone
 import requests
 import geopandas as gpd
 
-# ----------------------------------------------------------------------------
-# Paths / constants
-# ----------------------------------------------------------------------------
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(REPO, "data", "raw")
 RAW_TIGER = os.path.join(RAW, "tiger")
@@ -64,9 +61,6 @@ def ensure_dirs():
         os.makedirs(d, exist_ok=True)
 
 
-# ----------------------------------------------------------------------------
-# Source 1: VSRR county monthly series
-# ----------------------------------------------------------------------------
 def pull_vsrr():
     log("\n=== Source 1: CDC VSRR provisional county OD deaths (gb4e-yj24) ===")
     params = {
@@ -83,13 +77,12 @@ def pull_vsrr():
         json.dump(rows, f, indent=1)
     log(f"raw snapshot -> {raw_path} ({len(rows)} rows)")
 
-    # Build clean monthly series
     out_rows = []
     suppressed = 0
     for x in rows:
         me = x.get("monthendingdate", "")[:10]
         raw_count = x.get("provisional_drug_overdose")
-        # Socrata omits suppressed/null numeric cells entirely.
+        # Socrata omits suppressed or null numeric cells entirely.
         if raw_count is None:
             count = None
             is_supp = True
@@ -143,9 +136,6 @@ def pull_vsrr():
     }
 
 
-# ----------------------------------------------------------------------------
-# Source 2: tract-level drug OD rates
-# ----------------------------------------------------------------------------
 def _period_from_range(ttm):
     # "January, 2025 to December, 2025" -> "2025-01/2025-12"
     try:
@@ -176,8 +166,8 @@ def pull_tract():
         json.dump(rows, f, indent=1)
     log(f"raw snapshot -> {raw_path} ({len(rows)} TX agg-unit rows)")
 
-    # Explode aggregation units onto constituent Dallas (48113) tracts.
-    # Each unit's model-based rate applies to all its constituent tracts.
+    # Each unit's single model-based rate is exploded onto all its constituent
+    # Dallas tracts, which is what the tract-level joins downstream expect.
     tract_map = {}
     units_with_dallas = 0
     period = None
@@ -195,9 +185,8 @@ def pull_tract():
 
         count_sup = x.get("count_sup")
         rate_raw = x.get("rate")
-        # In the live product a model-based rate is provided for EVERY unit
-        # (including small-count ones, which carry a margin/CI). Rate is only
-        # "suppressed" when absent entirely.
+        # The live product publishes a rate for every unit, including small-count
+        # ones (which carry a CI), so a rate counts as suppressed only if absent.
         rate = float(rate_raw) if rate_raw is not None else None
         rate_suppressed = rate is None
         count_suppressed = (count_sup == "1-9")
@@ -227,9 +216,6 @@ def pull_tract():
     }
 
 
-# ----------------------------------------------------------------------------
-# Source 3: TIGER geometries
-# ----------------------------------------------------------------------------
 def ensure_tiger():
     log("\n=== Source 3: TIGER/Line 2024 TX tract geometries ===")
     if os.path.exists(TIGER_ZIP) and _valid_zip(TIGER_ZIP):
@@ -259,9 +245,6 @@ def _valid_zip(path):
         return False
 
 
-# ----------------------------------------------------------------------------
-# Build tract_overdose.geojson (contract output)
-# ----------------------------------------------------------------------------
 def build_geojson(tiger_zip, tract_map, tmeta):
     log("\n=== Build tract_overdose.geojson ===")
     g = gpd.read_file(tiger_zip)
@@ -309,7 +292,6 @@ def build_geojson(tiger_zip, tract_map, tmeta):
             "data_as_of": data_as_of,
         })
 
-    # Attach properties in TIGER order, keep only geometry + contract props.
     out = dal[["geometry"]].copy().reset_index(drop=True)
     for key in ["geoid", "od_death_rate_per_100k", "count_suppressed",
                 "rate_suppressed", "period", "source", "data_as_of"]:
@@ -346,15 +328,12 @@ def build_geojson(tiger_zip, tract_map, tmeta):
     }
 
 
-# ----------------------------------------------------------------------------
-# deaths_by_zip.csv — honest decision (no ZIP-level mortality exists)
-# ----------------------------------------------------------------------------
 def write_zip_placeholder():
     log("\n=== deaths_by_zip.csv (honest placeholder) ===")
     csv_path = os.path.join(CLEAN, "deaths_by_zip.csv")
-    # Header only. DSHS/CDC publish county-level mortality; the tract product
-    # is FINER than ZIP and no public honest tract->ZIP crosswalk is available
-    # without gated data (HUD USPS crosswalk requires signup). We do NOT invent.
+    # Header only. The tract product is finer than ZIP, and the one public
+    # tract-to-ZIP crosswalk (HUD USPS) is gated behind signup, so no ZIP-level
+    # mortality is produced rather than backing one into existence.
     header = ("zip,od_death_rate_per_100k,count_suppressed,rate_suppressed,"
               "period,source,data_as_of\n")
     with open(csv_path, "w") as f:
@@ -388,9 +367,6 @@ def write_zip_placeholder():
     return {"csv": csv_path, "readme": readme_path, "rows": 0}
 
 
-# ----------------------------------------------------------------------------
-# helpers
-# ----------------------------------------------------------------------------
 def _write_csv(path, rows, cols):
     import csv
     tmp = path + ".tmp"
@@ -402,9 +378,6 @@ def _write_csv(path, rows, cols):
     os.replace(tmp, path)
 
 
-# ----------------------------------------------------------------------------
-# main
-# ----------------------------------------------------------------------------
 def main():
     ensure_dirs()
     log(f"MORTALITY pull — {PULLED_AT}")

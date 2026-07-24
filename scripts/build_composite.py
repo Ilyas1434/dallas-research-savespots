@@ -1,22 +1,18 @@
 """
-build_composite.py -- COMPOSITE VULNERABILITY INDEX (Phase 3)
+Composite tract-level overdose-vulnerability index.
 
-Builds a census-tract composite overdose-vulnerability index for Dallas County
-from 5 layers, min-max normalized, equal-weighted (CDC SVI convention), tiered
-via Jenks natural breaks (3 tiers, Tier 1 = highest vulnerability), with a
-weight-sensitivity analysis.
+Five layers, min-max normalized and equal-weighted following the CDC/ATSDR SVI
+convention, tiered by Jenks natural breaks with Tier 1 highest. Two re-weighted
+variants re-run the whole pipeline (renormalized weights, recomputed breaks) and
+are compared tract by tract, so the tiering's sensitivity to the weight choice is
+reported rather than assumed.
 
-Inputs  (data/clean/):
-  tract_overdose.geojson  -- od_death_rate_per_100k, count_suppressed
-  svi_tracts.geojson      -- pct_poverty_acs2024, pct_uninsured_acs2024,
-                             dart_stops_halfmile, totpop  (+ geometry)
-  coverage_gap.json       -- dist_nearest_any_m
+Inputs (data/clean/): tract_overdose.geojson, svi_tracts.geojson,
+coverage_gap.json
 
-Outputs (data/clean/):
-  composite_index.geojson -- 645 features w/ score, tier, normalized+raw layers
-  composite_methods.json  -- machine-readable methodology + sensitivity
+Outputs (data/clean/): composite_index.geojson, composite_methods.json
 
-Run from repo root:  ./venv/bin/python scripts/build_composite.py
+Run: ./venv/bin/python scripts/build_composite.py
 """
 import json
 import os
@@ -33,11 +29,8 @@ def load_json(name):
         return json.load(f)
 
 
-# ---------------------------------------------------------------------------
-# Layer specification: (key, source_file, vintage, direction)
-#   direction "up"   -> higher raw value = higher vulnerability
-#   direction "down" -> lower raw value  = higher vulnerability (inverted)
-# ---------------------------------------------------------------------------
+# direction "up": higher raw value means higher vulnerability.
+# direction "down": lower raw value means higher vulnerability (inverted below).
 LAYERS = [
     {
         "key": "od_death_rate_per_100k",
@@ -77,7 +70,7 @@ LAYERS = [
 ]
 LAYER_KEYS = [layer["key"] for layer in LAYERS]
 
-# Weight variants. Base (unnormalized) weights are renormalized to sum to 1.
+# Base weights; renormalized to sum to 1 before use.
 WEIGHT_VARIANTS = {
     "primary_equal": {k: 1.0 for k in LAYER_KEYS},
     "mortality_doubled": {**{k: 1.0 for k in LAYER_KEYS}, "od_death_rate_per_100k": 2.0},
@@ -177,7 +170,7 @@ def assign_tiers(scores_by_geoid):
             jenks_class = 1
         else:
             jenks_class = 2
-        return 3 - jenks_class  # class2(high)->Tier1, class0(low)->Tier3
+        return 3 - jenks_class  # highest Jenks class becomes Tier 1
 
     tier_map = {g: tier_of(scores_by_geoid[g]) for g in geoids}
     return tier_map, breaks
@@ -195,14 +188,13 @@ def main():
 
     stats = compute_minmax(records, ranked_geoids)
 
-    # Normalized layer values (computed once; independent of weights).
+    # Normalization is weight-independent, so it is done once for all variants.
     for g in ranked_geoids:
         rec = records[g]
         rec["norm"] = {k: normalize_value(rec["raw"][k], k, stats) for k in LAYER_KEYS}
         n_avail = sum(1 for k in LAYER_KEYS if rec["norm"][k] is not None)
         rec["data_completeness"] = "complete" if n_avail == len(LAYER_KEYS) else f"partial ({n_avail}/{len(LAYER_KEYS)})"
 
-    # Composite + tiers for every weight variant.
     variant_results = {}
     for vname, base_w in WEIGHT_VARIANTS.items():
         w = normalize_weights(base_w)
@@ -220,7 +212,6 @@ def main():
 
     primary = variant_results["primary_equal"]
 
-    # ---- Sensitivity: tier agreement vs primary ------------------------------
     sensitivity = {}
     for vname, res in variant_results.items():
         if vname == "primary_equal":
@@ -252,7 +243,6 @@ def main():
             "flips": flip_list,
         }
 
-    # ---- Write composite_index.geojson --------------------------------------
     features = []
     tier_counts = {1: 0, 2: 0, 3: 0}
     for g in geoids:
@@ -262,7 +252,7 @@ def main():
             "count_suppressed": rec["count_suppressed"],
             "totpop": rec["totpop"],
         }
-        # raw layer values (always present for transparency)
+        # Raw layer values are always emitted, including for excluded tracts.
         for k in LAYER_KEYS:
             props[f"raw_{k}"] = rec["raw"][k]
 
@@ -299,7 +289,6 @@ def main():
     with open(os.path.join(CLEAN, "composite_index.geojson"), "w") as f:
         json.dump(out_geojson, f)
 
-    # ---- Write composite_methods.json ---------------------------------------
     layer_null_counts = {
         k: sum(1 for g in ranked_geoids if records[g]["raw"][k] is None) for k in LAYER_KEYS
     }
@@ -417,7 +406,6 @@ def main():
     with open(os.path.join(CLEAN, "composite_methods.json"), "w") as f:
         json.dump(methods, f, indent=2)
 
-    # ---- console summary -----------------------------------------------------
     print("=== COMPOSITE INDEX BUILT ===")
     print(f"tracts total={len(geoids)} ranked={len(ranked_geoids)} excluded={len(excluded_geoids)}")
     print(f"excluded geoids: {excluded_geoids}")

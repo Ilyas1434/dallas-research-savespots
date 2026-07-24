@@ -1,42 +1,47 @@
 """
-validate_baselines.py -- PUBLISHED-BASELINE VALIDATION (Phase 3.5)
+Check previously published baselines against what this pipeline can reproduce.
 
-Checks prior SaveSpots published baselines against what is INDEPENDENTLY
-reproducible from the current pipeline. Does NOT force-match and does NOT
-overwrite pipeline outputs; deltas are explained by source / window / vintage.
+Nothing here is forced to match and no pipeline output is overwritten; each
+delta is attributed to a difference in source, window, or vintage.
 
-Reproducible here:
-  - Crude OD mortality rate from VSRR 12-month-ending December counts / ACS pop
-  - Spatial mapping of our tract tiers up to the prior ZIP (ZCTA) tiers
+Reproducible: crude overdose mortality from VSRR 12-month-ending December counts
+over ACS population, and the spatial mapping of tract tiers up to the prior
+ZIP-level tiers.
 
-NOT reproducible (labeled as such, no fake verification):
-  - Fentanyl share / fentanyl-death growth / opioid-stimulant combo / hospital OD
-    (drug-specific + hospitalization figures -- source: DCHHS OD2A annual report)
-  - Any 2018/2019 baseline year (VSRR county series starts 2020-01)
+Not reproducible, and labelled as such rather than approximated: drug-specific
+figures (fentanyl share and growth, opioid-stimulant combinations), hospital
+overdose encounters, and any pre-2020 baseline year, since the VSRR county
+series begins 2020-01 and carries no drug breakdown. Those come from the DCHHS
+OD2A annual report.
 
-Outputs (data/clean/):
-  baseline_comparison.json
-  baseline_comparison.md
+Inputs include data/clean/vsrr.json, written by build_context.py.
 
-Run:  ./venv/bin/python scripts/validate_baselines.py
+Outputs (data/clean/): baseline_comparison.json, baseline_comparison.md
+
+Run: ./venv/bin/python scripts/validate_baselines.py
 """
 import csv
 import json
 import os
+import sys
 import datetime
 from collections import defaultdict
 
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import DATA_RAW, REPO_ROOT, atomic_download  # noqa: E402
+
 CLEAN = os.path.join(REPO_ROOT, "data", "clean")
-REL_FILE = os.path.join(REPO_ROOT, "data", "raw", "zcta", "tab20_zcta520_tract20_natl.txt")
+REL_FILE = os.path.join(DATA_RAW, "zcta", "tab20_zcta520_tract20_natl.txt")
+REL_URL = ("https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/"
+           "tab20_zcta520_tract20_natl.txt")
 
 PRIOR_ZIP_TIERS = {
     "75215": 1, "75210": 1, "75211": 1, "75212": 1, "75203": 1, "75224": 1,
     "75201": 2, "75204": 2, "75226": 2,
     "75217": 3, "75227": 3,
 }
-# Prior analysis double-assigned 75212 (appeared in more than one tier); our
-# spatial mapping yields exactly one modal tier per ZIP.
+# The prior analysis assigned 75212 to more than one tier; the modal mapping
+# below yields exactly one tier per ZIP.
 
 
 def load_json(name):
@@ -44,9 +49,6 @@ def load_json(name):
         return json.load(f)
 
 
-# ---------------------------------------------------------------------------
-# 1. Crude OD mortality from VSRR 12-month-ending December counts
-# ---------------------------------------------------------------------------
 def crude_mortality():
     vsrr = load_json("vsrr.json")
     svi = load_json("svi_tracts.geojson")
@@ -66,11 +68,6 @@ def crude_mortality():
     return county_pop, dec, rates
 
 
-# ---------------------------------------------------------------------------
-# 2. Map our tract tiers -> prior ZIP (ZCTA) tiers
-#    Tract population apportioned to ZCTA by land-area share (AREALAND_PART /
-#    AREALAND_TRACT). Weighted mean composite + population-weighted modal tier.
-# ---------------------------------------------------------------------------
 def tier_of_score(score, breaks):
     if score is None:
         return None
@@ -83,14 +80,19 @@ def tier_of_score(score, breaks):
 
 
 def zip_tier_mapping():
+    """Map tract tiers up to prior ZIP tiers. Tract population is apportioned to
+    each ZCTA by land-area share, then the composite is averaged with those
+    weights and the modal tier is the one holding the largest population share."""
     comp = load_json("composite_index.geojson")
     methods = load_json("composite_methods.json")
     primary_breaks = methods["tiers"]["cutoffs"]["primary_equal"]["breaks"]
     by_geoid = {f["properties"]["geoid"]: f["properties"] for f in comp["features"]}
 
-    # ZCTA -> list of (tract_geoid, alloc_pop_weight)
     zcta_tracts = defaultdict(list)
     want = set(PRIOR_ZIP_TIERS)
+    if not os.path.exists(REL_FILE):
+        os.makedirs(os.path.dirname(REL_FILE), exist_ok=True)
+        atomic_download(REL_URL, REL_FILE)
     with open(REL_FILE, encoding="utf-8-sig") as f:
         rd = csv.DictReader(f, delimiter="|")
         for row in rd:
@@ -120,7 +122,7 @@ def zip_tier_mapping():
         parts = zcta_tracts.get(z, [])
         scored = [p for p in parts if p["composite_score"] is not None and not p["excluded"]]
 
-        # population-weighted (fallback to area-weighted if zero pop allocated)
+        # Population-weighted, falling back to area weights if no population lands here.
         pop_w = sum(p["alloc_pop"] for p in scored)
         area_w = sum(p["area_part"] for p in scored)
         use_pop = pop_w > 0
@@ -164,11 +166,9 @@ def ordering_verdict(zip_rows):
     prior_t3 = [r for r in scored if r["prior_tier"] == 3]
     mean_t1 = sum(r["our_mean_composite"] for r in prior_t1) / len(prior_t1) if prior_t1 else None
     mean_t3 = sum(r["our_mean_composite"] for r in prior_t3) / len(prior_t3) if prior_t3 else None
-    # how many of prior Tier-1 land in our top tier (modal, and by mean-composite tier)
     t1_hold_modal = sum(1 for r in prior_t1 if r["our_modal_tier"] == 1)
     t1_hold_mean = sum(1 for r in prior_t1 if r["tier_of_mean_composite"] == 1)
     t1_not_low = sum(1 for r in prior_t1 if r["tier_of_mean_composite"] in (1, 2))
-    # ZIPs the composite newly elevates: prior Tier-3 that we now score high
     newly_elevated = [(r["zip"], r["our_mean_composite"], r["tier_of_mean_composite"])
                       for r in scored if r["prior_tier"] == 3 and r["tier_of_mean_composite"] in (1, 2)]
     return {

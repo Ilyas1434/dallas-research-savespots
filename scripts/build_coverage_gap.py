@@ -1,31 +1,20 @@
 #!/usr/bin/env python3
 """
-build_coverage_gap.py
+Tract-centroid distance to the nearest naloxone supply point.
 
-For each Dallas County census tract, computes distance from the tract's
-geometric centroid to the nearest naloxone supply point, split by:
-  - any supply
-  - 24/7 supply
-  - storefront/dispenser supply
+Reports three layers per tract -- nearest any supply, nearest 24/7 supply, and
+nearest storefront dispenser -- measured in EPSG:32138. Tract geometry comes
+from tract_overdose.geojson when present so the mortality attributes ride
+along; otherwise it falls back to raw TIGER geometry and records the missing
+dependency in the output.
 
-Depends on:
-  data/clean/tract_overdose.geojson   (built by the mortality module; contract:
-      properties geoid, od_death_rate_per_100k, count_suppressed,
-      rate_suppressed, period)
-  data/clean/naloxone_locations.geojson (built by scripts/build_naloxone.py)
+Output: data/clean/coverage_gap.json
 
-If tract_overdose.geojson is absent, this script still runs the distance-only
-layer using TIGER 2024 tract geometry for Dallas County (COUNTYFP 113) as a
-fallback, and notes the missing dependency in the output.
-
-Run standalone from repo root:
-    ./venv/bin/python scripts/build_coverage_gap.py
-
-Output:
-    data/clean/coverage_gap.json
+Run: ./venv/bin/python scripts/build_coverage_gap.py
 """
 
 import json
+import os
 import statistics
 import sys
 from pathlib import Path
@@ -48,10 +37,11 @@ NALOXONE_PATH = DATA_CLEAN / "naloxone_locations.geojson"
 TRACT_ZIP_URL = "https://www2.census.gov/geo/tiger/TIGER2024/TRACT/tl_2024_48_tract.zip"
 DALLAS_COUNTYFP = "113"
 
-# Projected CRS in meters covering North Texas (per task spec).
 PROJECTED_CRS = "EPSG:32138"  # NAD83 / Texas North Central, unit = metre
-
 MILE_IN_M = 1609.344
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from common import pipeline_date  # noqa: E402
 
 
 def log(msg):
@@ -116,7 +106,7 @@ def main():
     except FileNotFoundError as e:
         log(f"[FATAL] {e}")
         out = {
-            "generated": "2026-07-23",
+            "generated": pipeline_date().isoformat(),
             "status": "failed",
             "reason": str(e),
         }
@@ -138,7 +128,7 @@ def main():
     tracts_proj["centroid"] = tracts_proj.geometry.centroid
 
     any_supply = supply_proj
-    supply_247 = supply_proj[supply_proj["access_247"] == True]  # noqa: E712
+    supply_247 = supply_proj[supply_proj["access_247"].fillna(False).astype(bool)]
     supply_storefront = supply_proj[supply_proj["category"] == "storefront_dispenser"]
 
     log(f"[supply] any={len(any_supply)}  24/7={len(supply_247)}  storefront/dispenser={len(supply_storefront)}")
@@ -176,7 +166,6 @@ def main():
 
     log(f"[distance] computed for {len(records)} tracts")
 
-    # summary stats
     def summary_stats(key):
         vals = [r[key] for r in records if r[key] is not None]
         if not vals:
@@ -226,7 +215,7 @@ def main():
     log(f"% tracts with any supply within 2mi: {summary['pct_tracts_within_2mi_any']}%")
 
     out = {
-        "generated": "2026-07-23",
+        "generated": pipeline_date().isoformat(),
         "status": "ok",
         "method_note": (
             "Distances computed from each tract's GEOMETRIC centroid (population-weighted "
@@ -246,7 +235,6 @@ def main():
     tmp.replace(out_path)
     log(f"[output] wrote {out_path.relative_to(REPO_ROOT)}")
 
-    # validate
     check = json.loads(out_path.read_text())
     assert check["status"] == "ok"
     assert len(check["tracts"]) == len(records)
