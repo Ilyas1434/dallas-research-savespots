@@ -1,0 +1,6504 @@
+{
+  "method": "100% measured, not modeled. Every value is a count of people (Census 2020 PL P1_001N block population) or a straight-line (Euclidean) distance in meters computed in EPSG:32138. Block locations are the Census Bureau internal points (INTPTLAT20/INTPTLON20). No modeling, estimation, or interpolation. A resident is 'beyond X mi' if their block's internal point is farther than X miles from the nearest relevant site (nearest-neighbor via scipy.cKDTree).",
+  "generated": "2026-07-23",
+  "crs_measurement": "EPSG:32138",
+  "thresholds_m": {
+    "1mi": 1609.344,
+    "2mi": 3218.688,
+    "5mi": 8046.72,
+    "dart": 805.0
+  },
+  "inputs": {
+    "census_pl_snapshot": "data/raw/census/pl2020_block_dallas_2026-07-23.json",
+    "tiger_blocks": "data/raw/tiger/tl_2024_48_tabblock20.zip",
+    "naloxone_locations": "data/clean/naloxone_locations.geojson",
+    "dart_gtfs": "data/raw/dart/google_transit.zip"
+  },
+  "counts": {
+    "total_blocks": 38180,
+    "populated_blocks": 25682,
+    "supply_points_total": 38,
+    "supply_points_247": 1,
+    "supply_points_otp": 13,
+    "dart_stops": 6974,
+    "supply_points_skipped_no_coords": [
+      {
+        "name": "DFW Harm Reduction Access Movement",
+        "category": "harm_reduction",
+        "access_247": true
+      }
+    ]
+  },
+  "population": {
+    "county_pop_from_2020_blocks": 2613539,
+    "county_pop_acs2024_reference": 2604053,
+    "block2020_minus_acs2024": 9486,
+    "note": "Block sum is the exact 2020 decennial census count; ACS 2024 is a later survey estimate shown only for cross-check."
+  },
+  "headline": {
+    "residents_beyond_1mi_supply": 2196211,
+    "pct_beyond_1mi_supply": 84.03,
+    "residents_beyond_2mi_supply": 1506855,
+    "pct_beyond_2mi_supply": 57.66,
+    "residents_beyond_5mi_supply": 394283,
+    "pct_beyond_5mi_supply": 15.09,
+    "residents_beyond_5mi_247": 2254279,
+    "pct_beyond_5mi_247": 86.25,
+    "residents_beyond_5mi_247_caveat": "Measured against 1 24/7 site(s) that have coordinates. 1 listed supply point(s) lack coordinates and are unmeasurable; if any 24/7 site among them were geocoded this desert could shrink.",
+    "stranded_population": 902611,
+    "stranded_blocks": 9779,
+    "stranded_definition": "pop>0 AND nearest supply >1609.344m (1mi) AND nearest DART stop >805m"
+  },
+  "tract_rollup": {
+    "48113000100": {
+      "pop": 4473,
+      "residents_beyond_1mi": 4473,
+      "residents_beyond_2mi": 2958,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 1264,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 66.13,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000201": {
+      "pop": 3173,
+      "residents_beyond_1mi": 3173,
+      "residents_beyond_2mi": 2413,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 76.05,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000202": {
+      "pop": 3794,
+      "residents_beyond_1mi": 3794,
+      "residents_beyond_2mi": 1600,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 42.17,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000300": {
+      "pop": 4592,
+      "residents_beyond_1mi": 4592,
+      "residents_beyond_2mi": 1309,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 28.51,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000401": {
+      "pop": 4972,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 132,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 2.65
+    },
+    "48113000405": {
+      "pop": 2231,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000407": {
+      "pop": 2083,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 407,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 19.54
+    },
+    "48113000408": {
+      "pop": 2188,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000409": {
+      "pop": 3919,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3919,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113000410": {
+      "pop": 4854,
+      "residents_beyond_1mi": 1582,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4854,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 32.59,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113000501": {
+      "pop": 1950,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000502": {
+      "pop": 2491,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000503": {
+      "pop": 2752,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000605": {
+      "pop": 2404,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000606": {
+      "pop": 3170,
+      "residents_beyond_1mi": 345,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 10.88,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000607": {
+      "pop": 2144,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000608": {
+      "pop": 2177,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000609": {
+      "pop": 1878,
+      "residents_beyond_1mi": 1878,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 317,
+      "stranded_pop": 38,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 16.88
+    },
+    "48113000610": {
+      "pop": 1926,
+      "residents_beyond_1mi": 1407,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 128,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 73.05,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 6.65
+    },
+    "48113000611": {
+      "pop": 2428,
+      "residents_beyond_1mi": 1092,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 44.98,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000703": {
+      "pop": 3117,
+      "residents_beyond_1mi": 614,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 19.7,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000704": {
+      "pop": 2971,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000705": {
+      "pop": 1848,
+      "residents_beyond_1mi": 1848,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000706": {
+      "pop": 2252,
+      "residents_beyond_1mi": 2252,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000801": {
+      "pop": 3602,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000802": {
+      "pop": 3294,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000901": {
+      "pop": 2591,
+      "residents_beyond_1mi": 221,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 8.53,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113000902": {
+      "pop": 2812,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001001": {
+      "pop": 1910,
+      "residents_beyond_1mi": 1862,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 97.49,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001002": {
+      "pop": 2116,
+      "residents_beyond_1mi": 396,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 18.71,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001101": {
+      "pop": 3812,
+      "residents_beyond_1mi": 1611,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 42.26,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001102": {
+      "pop": 2405,
+      "residents_beyond_1mi": 2405,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001202": {
+      "pop": 3616,
+      "residents_beyond_1mi": 3616,
+      "residents_beyond_2mi": 1664,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 46.02,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001203": {
+      "pop": 1370,
+      "residents_beyond_1mi": 1370,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001204": {
+      "pop": 2284,
+      "residents_beyond_1mi": 972,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 42.56,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001301": {
+      "pop": 2715,
+      "residents_beyond_1mi": 1505,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 55.43,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001302": {
+      "pop": 2608,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001400": {
+      "pop": 3377,
+      "residents_beyond_1mi": 878,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 26.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001502": {
+      "pop": 2752,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001503": {
+      "pop": 1958,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001504": {
+      "pop": 2494,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001601": {
+      "pop": 3249,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001602": {
+      "pop": 2446,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001703": {
+      "pop": 4555,
+      "residents_beyond_1mi": 1924,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 42.24,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001705": {
+      "pop": 3113,
+      "residents_beyond_1mi": 1908,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 61.29,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001801": {
+      "pop": 2763,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001802": {
+      "pop": 3390,
+      "residents_beyond_1mi": 265,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 7.82,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001901": {
+      "pop": 4064,
+      "residents_beyond_1mi": 1354,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 33.32,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113001902": {
+      "pop": 5978,
+      "residents_beyond_1mi": 969,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 16.21,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113002001": {
+      "pop": 2726,
+      "residents_beyond_1mi": 2726,
+      "residents_beyond_2mi": 2726,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113002002": {
+      "pop": 2473,
+      "residents_beyond_1mi": 2473,
+      "residents_beyond_2mi": 2473,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113002100": {
+      "pop": 2720,
+      "residents_beyond_1mi": 566,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 20.81,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113002200": {
+      "pop": 2860,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113002400": {
+      "pop": 3477,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113002500": {
+      "pop": 5701,
+      "residents_beyond_1mi": 3216,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 56.41,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113002703": {
+      "pop": 5519,
+      "residents_beyond_1mi": 3906,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 70.77,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113003102": {
+      "pop": 1286,
+      "residents_beyond_1mi": 141,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 10.96,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113003103": {
+      "pop": 2508,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113003700": {
+      "pop": 3607,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113004201": {
+      "pop": 4501,
+      "residents_beyond_1mi": 4501,
+      "residents_beyond_2mi": 4450,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 98.87,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113004202": {
+      "pop": 2317,
+      "residents_beyond_1mi": 2317,
+      "residents_beyond_2mi": 76,
+      "residents_no247_5mi": 1362,
+      "stranded_pop": 62,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 3.28,
+      "pct_pop_no247_5mi": 58.78
+    },
+    "48113004300": {
+      "pop": 5459,
+      "residents_beyond_1mi": 5459,
+      "residents_beyond_2mi": 254,
+      "residents_no247_5mi": 140,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 4.65,
+      "pct_pop_no247_5mi": 2.56
+    },
+    "48113004400": {
+      "pop": 3272,
+      "residents_beyond_1mi": 3272,
+      "residents_beyond_2mi": 728,
+      "residents_no247_5mi": 815,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 22.25,
+      "pct_pop_no247_5mi": 24.91
+    },
+    "48113004500": {
+      "pop": 5409,
+      "residents_beyond_1mi": 2392,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5409,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 44.22,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113004600": {
+      "pop": 1877,
+      "residents_beyond_1mi": 1877,
+      "residents_beyond_2mi": 532,
+      "residents_no247_5mi": 968,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 28.34,
+      "pct_pop_no247_5mi": 51.57
+    },
+    "48113004700": {
+      "pop": 2551,
+      "residents_beyond_1mi": 2551,
+      "residents_beyond_2mi": 2551,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113004800": {
+      "pop": 2461,
+      "residents_beyond_1mi": 2461,
+      "residents_beyond_2mi": 1689,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 68.63,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113005000": {
+      "pop": 3395,
+      "residents_beyond_1mi": 3395,
+      "residents_beyond_2mi": 2723,
+      "residents_no247_5mi": 283,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 80.21,
+      "pct_pop_no247_5mi": 8.34
+    },
+    "48113005100": {
+      "pop": 2551,
+      "residents_beyond_1mi": 2551,
+      "residents_beyond_2mi": 2458,
+      "residents_no247_5mi": 2357,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 96.35,
+      "pct_pop_no247_5mi": 92.4
+    },
+    "48113005200": {
+      "pop": 4051,
+      "residents_beyond_1mi": 4051,
+      "residents_beyond_2mi": 363,
+      "residents_no247_5mi": 4051,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 8.96,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113005300": {
+      "pop": 6579,
+      "residents_beyond_1mi": 6579,
+      "residents_beyond_2mi": 934,
+      "residents_no247_5mi": 6579,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 14.2,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113005400": {
+      "pop": 5402,
+      "residents_beyond_1mi": 3165,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 722,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 58.59,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 13.37
+    },
+    "48113005500": {
+      "pop": 4134,
+      "residents_beyond_1mi": 643,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 177,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 15.55,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 4.28
+    },
+    "48113005600": {
+      "pop": 7020,
+      "residents_beyond_1mi": 3062,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 6999,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 43.62,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 99.7
+    },
+    "48113005700": {
+      "pop": 5522,
+      "residents_beyond_1mi": 1612,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5522,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 29.19,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113005901": {
+      "pop": 5704,
+      "residents_beyond_1mi": 1299,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5704,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 22.77,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113005902": {
+      "pop": 4146,
+      "residents_beyond_1mi": 3169,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4146,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 76.44,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006001": {
+      "pop": 3790,
+      "residents_beyond_1mi": 3790,
+      "residents_beyond_2mi": 230,
+      "residents_no247_5mi": 3790,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 6.07,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006002": {
+      "pop": 5669,
+      "residents_beyond_1mi": 5669,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5669,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006100": {
+      "pop": 4465,
+      "residents_beyond_1mi": 3966,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4465,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 88.82,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006200": {
+      "pop": 6217,
+      "residents_beyond_1mi": 6217,
+      "residents_beyond_2mi": 1259,
+      "residents_no247_5mi": 5421,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 20.25,
+      "pct_pop_no247_5mi": 87.2
+    },
+    "48113006301": {
+      "pop": 5695,
+      "residents_beyond_1mi": 5695,
+      "residents_beyond_2mi": 5536,
+      "residents_no247_5mi": 5695,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 97.21,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006302": {
+      "pop": 4142,
+      "residents_beyond_1mi": 4142,
+      "residents_beyond_2mi": 4142,
+      "residents_no247_5mi": 4142,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006401": {
+      "pop": 2352,
+      "residents_beyond_1mi": 2352,
+      "residents_beyond_2mi": 1850,
+      "residents_no247_5mi": 2352,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 78.66,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006402": {
+      "pop": 4929,
+      "residents_beyond_1mi": 4929,
+      "residents_beyond_2mi": 2786,
+      "residents_no247_5mi": 4929,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 56.52,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006501": {
+      "pop": 5400,
+      "residents_beyond_1mi": 5400,
+      "residents_beyond_2mi": 2649,
+      "residents_no247_5mi": 5400,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 49.06,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006502": {
+      "pop": 3585,
+      "residents_beyond_1mi": 3585,
+      "residents_beyond_2mi": 3424,
+      "residents_no247_5mi": 3585,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 95.51,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006701": {
+      "pop": 4196,
+      "residents_beyond_1mi": 2906,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4196,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 69.26,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006702": {
+      "pop": 2605,
+      "residents_beyond_1mi": 1110,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2605,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 42.61,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006800": {
+      "pop": 5012,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5012,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113006900": {
+      "pop": 3562,
+      "residents_beyond_1mi": 48,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3562,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 1.35,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007101": {
+      "pop": 2164,
+      "residents_beyond_1mi": 2164,
+      "residents_beyond_2mi": 1805,
+      "residents_no247_5mi": 2164,
+      "stranded_pop": 1832,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 83.41,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007102": {
+      "pop": 5441,
+      "residents_beyond_1mi": 5441,
+      "residents_beyond_2mi": 2471,
+      "residents_no247_5mi": 5441,
+      "stranded_pop": 4885,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 45.41,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007203": {
+      "pop": 3144,
+      "residents_beyond_1mi": 3144,
+      "residents_beyond_2mi": 3117,
+      "residents_no247_5mi": 3144,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 99.14,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007204": {
+      "pop": 4485,
+      "residents_beyond_1mi": 4485,
+      "residents_beyond_2mi": 4485,
+      "residents_no247_5mi": 4485,
+      "stranded_pop": 1195,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007205": {
+      "pop": 4421,
+      "residents_beyond_1mi": 4421,
+      "residents_beyond_2mi": 4421,
+      "residents_no247_5mi": 4421,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007206": {
+      "pop": 2325,
+      "residents_beyond_1mi": 2325,
+      "residents_beyond_2mi": 2325,
+      "residents_no247_5mi": 2325,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007301": {
+      "pop": 2108,
+      "residents_beyond_1mi": 2108,
+      "residents_beyond_2mi": 2108,
+      "residents_no247_5mi": 2108,
+      "stranded_pop": 1080,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007302": {
+      "pop": 3949,
+      "residents_beyond_1mi": 3949,
+      "residents_beyond_2mi": 3949,
+      "residents_no247_5mi": 3949,
+      "stranded_pop": 1944,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007601": {
+      "pop": 1894,
+      "residents_beyond_1mi": 1894,
+      "residents_beyond_2mi": 1894,
+      "residents_no247_5mi": 1894,
+      "stranded_pop": 1894,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007604": {
+      "pop": 3078,
+      "residents_beyond_1mi": 3078,
+      "residents_beyond_2mi": 3078,
+      "residents_no247_5mi": 3078,
+      "stranded_pop": 1927,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007605": {
+      "pop": 1501,
+      "residents_beyond_1mi": 1501,
+      "residents_beyond_2mi": 1501,
+      "residents_no247_5mi": 1501,
+      "stranded_pop": 456,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007701": {
+      "pop": 2498,
+      "residents_beyond_1mi": 2498,
+      "residents_beyond_2mi": 2498,
+      "residents_no247_5mi": 2498,
+      "stranded_pop": 147,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007702": {
+      "pop": 3546,
+      "residents_beyond_1mi": 3546,
+      "residents_beyond_2mi": 3546,
+      "residents_no247_5mi": 3546,
+      "stranded_pop": 833,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007801": {
+      "pop": 2430,
+      "residents_beyond_1mi": 2430,
+      "residents_beyond_2mi": 2430,
+      "residents_no247_5mi": 2430,
+      "stranded_pop": 748,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007805": {
+      "pop": 3225,
+      "residents_beyond_1mi": 3225,
+      "residents_beyond_2mi": 2694,
+      "residents_no247_5mi": 3225,
+      "stranded_pop": 1562,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 83.53,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007809": {
+      "pop": 2847,
+      "residents_beyond_1mi": 2847,
+      "residents_beyond_2mi": 2847,
+      "residents_no247_5mi": 2847,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007810": {
+      "pop": 5286,
+      "residents_beyond_1mi": 2975,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5286,
+      "stranded_pop": 128,
+      "pct_pop_beyond_1mi": 56.28,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007812": {
+      "pop": 3212,
+      "residents_beyond_1mi": 3212,
+      "residents_beyond_2mi": 1232,
+      "residents_no247_5mi": 3212,
+      "stranded_pop": 3072,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 38.36,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007815": {
+      "pop": 5080,
+      "residents_beyond_1mi": 5080,
+      "residents_beyond_2mi": 5080,
+      "residents_no247_5mi": 5080,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007819": {
+      "pop": 2275,
+      "residents_beyond_1mi": 2275,
+      "residents_beyond_2mi": 2275,
+      "residents_no247_5mi": 2275,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007821": {
+      "pop": 4095,
+      "residents_beyond_1mi": 4095,
+      "residents_beyond_2mi": 4095,
+      "residents_no247_5mi": 4095,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007822": {
+      "pop": 2110,
+      "residents_beyond_1mi": 2110,
+      "residents_beyond_2mi": 2110,
+      "residents_no247_5mi": 2110,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007823": {
+      "pop": 2976,
+      "residents_beyond_1mi": 2976,
+      "residents_beyond_2mi": 2976,
+      "residents_no247_5mi": 2976,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007824": {
+      "pop": 1969,
+      "residents_beyond_1mi": 1969,
+      "residents_beyond_2mi": 1926,
+      "residents_no247_5mi": 1969,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 97.82,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007825": {
+      "pop": 4935,
+      "residents_beyond_1mi": 4642,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4935,
+      "stranded_pop": 669,
+      "pct_pop_beyond_1mi": 94.06,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007826": {
+      "pop": 1698,
+      "residents_beyond_1mi": 1698,
+      "residents_beyond_2mi": 1698,
+      "residents_no247_5mi": 1698,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007827": {
+      "pop": 2784,
+      "residents_beyond_1mi": 2784,
+      "residents_beyond_2mi": 1649,
+      "residents_no247_5mi": 2784,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 59.23,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007828": {
+      "pop": 4047,
+      "residents_beyond_1mi": 4047,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4047,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007829": {
+      "pop": 2602,
+      "residents_beyond_1mi": 2602,
+      "residents_beyond_2mi": 2602,
+      "residents_no247_5mi": 2602,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007830": {
+      "pop": 2153,
+      "residents_beyond_1mi": 2153,
+      "residents_beyond_2mi": 2153,
+      "residents_no247_5mi": 2153,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007831": {
+      "pop": 2946,
+      "residents_beyond_1mi": 2946,
+      "residents_beyond_2mi": 2946,
+      "residents_no247_5mi": 2946,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007832": {
+      "pop": 2677,
+      "residents_beyond_1mi": 2677,
+      "residents_beyond_2mi": 2677,
+      "residents_no247_5mi": 2677,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007833": {
+      "pop": 2539,
+      "residents_beyond_1mi": 2539,
+      "residents_beyond_2mi": 2539,
+      "residents_no247_5mi": 2539,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007834": {
+      "pop": 2916,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2916,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007835": {
+      "pop": 2881,
+      "residents_beyond_1mi": 24,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2881,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.83,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007902": {
+      "pop": 5433,
+      "residents_beyond_1mi": 5433,
+      "residents_beyond_2mi": 5433,
+      "residents_no247_5mi": 3711,
+      "stranded_pop": 1265,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 68.3
+    },
+    "48113007903": {
+      "pop": 2175,
+      "residents_beyond_1mi": 2175,
+      "residents_beyond_2mi": 2175,
+      "residents_no247_5mi": 1265,
+      "stranded_pop": 260,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 58.16
+    },
+    "48113007906": {
+      "pop": 2597,
+      "residents_beyond_1mi": 2597,
+      "residents_beyond_2mi": 2597,
+      "residents_no247_5mi": 2597,
+      "stranded_pop": 40,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007909": {
+      "pop": 2179,
+      "residents_beyond_1mi": 2179,
+      "residents_beyond_2mi": 2179,
+      "residents_no247_5mi": 2179,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007910": {
+      "pop": 2953,
+      "residents_beyond_1mi": 2953,
+      "residents_beyond_2mi": 2953,
+      "residents_no247_5mi": 2953,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007912": {
+      "pop": 2112,
+      "residents_beyond_1mi": 2112,
+      "residents_beyond_2mi": 2112,
+      "residents_no247_5mi": 2112,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007913": {
+      "pop": 3286,
+      "residents_beyond_1mi": 3286,
+      "residents_beyond_2mi": 3286,
+      "residents_no247_5mi": 1327,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 40.38
+    },
+    "48113007914": {
+      "pop": 3499,
+      "residents_beyond_1mi": 3499,
+      "residents_beyond_2mi": 3499,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113007915": {
+      "pop": 2048,
+      "residents_beyond_1mi": 2048,
+      "residents_beyond_2mi": 2048,
+      "residents_no247_5mi": 2048,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113007916": {
+      "pop": 1244,
+      "residents_beyond_1mi": 1244,
+      "residents_beyond_2mi": 1244,
+      "residents_no247_5mi": 1244,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113008000": {
+      "pop": 7652,
+      "residents_beyond_1mi": 7652,
+      "residents_beyond_2mi": 7359,
+      "residents_no247_5mi": 335,
+      "stranded_pop": 4399,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 96.17,
+      "pct_pop_no247_5mi": 4.38
+    },
+    "48113008101": {
+      "pop": 1841,
+      "residents_beyond_1mi": 1841,
+      "residents_beyond_2mi": 1841,
+      "residents_no247_5mi": 608,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 33.03
+    },
+    "48113008102": {
+      "pop": 4647,
+      "residents_beyond_1mi": 4647,
+      "residents_beyond_2mi": 2120,
+      "residents_no247_5mi": 501,
+      "stranded_pop": 827,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 45.62,
+      "pct_pop_no247_5mi": 10.78
+    },
+    "48113008200": {
+      "pop": 4156,
+      "residents_beyond_1mi": 4156,
+      "residents_beyond_2mi": 3843,
+      "residents_no247_5mi": 4156,
+      "stranded_pop": 573,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 92.47,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113008401": {
+      "pop": 5219,
+      "residents_beyond_1mi": 5219,
+      "residents_beyond_2mi": 5219,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113008402": {
+      "pop": 4322,
+      "residents_beyond_1mi": 4322,
+      "residents_beyond_2mi": 4200,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 97.18,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113008500": {
+      "pop": 4815,
+      "residents_beyond_1mi": 4815,
+      "residents_beyond_2mi": 4815,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113008604": {
+      "pop": 3247,
+      "residents_beyond_1mi": 3247,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113008701": {
+      "pop": 5132,
+      "residents_beyond_1mi": 1174,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3254,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 22.88,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 63.41
+    },
+    "48113008703": {
+      "pop": 3479,
+      "residents_beyond_1mi": 2627,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2703,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 75.51,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 77.69
+    },
+    "48113008704": {
+      "pop": 3929,
+      "residents_beyond_1mi": 1106,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3929,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 28.15,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113008705": {
+      "pop": 1715,
+      "residents_beyond_1mi": 876,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 1715,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 51.08,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113008801": {
+      "pop": 2717,
+      "residents_beyond_1mi": 738,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 69,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 27.16,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 2.54
+    },
+    "48113008802": {
+      "pop": 5736,
+      "residents_beyond_1mi": 3679,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 1622,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 64.14,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 28.28
+    },
+    "48113009001": {
+      "pop": 4711,
+      "residents_beyond_1mi": 4711,
+      "residents_beyond_2mi": 4711,
+      "residents_no247_5mi": 4531,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 96.18
+    },
+    "48113009002": {
+      "pop": 4108,
+      "residents_beyond_1mi": 4108,
+      "residents_beyond_2mi": 2867,
+      "residents_no247_5mi": 4108,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 69.79,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009101": {
+      "pop": 5736,
+      "residents_beyond_1mi": 5736,
+      "residents_beyond_2mi": 5736,
+      "residents_no247_5mi": 160,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 2.79
+    },
+    "48113009103": {
+      "pop": 3641,
+      "residents_beyond_1mi": 3641,
+      "residents_beyond_2mi": 3641,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113009104": {
+      "pop": 3529,
+      "residents_beyond_1mi": 3529,
+      "residents_beyond_2mi": 3529,
+      "residents_no247_5mi": 789,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 22.36
+    },
+    "48113009105": {
+      "pop": 4038,
+      "residents_beyond_1mi": 4038,
+      "residents_beyond_2mi": 4038,
+      "residents_no247_5mi": 2439,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 60.4
+    },
+    "48113009202": {
+      "pop": 6115,
+      "residents_beyond_1mi": 6115,
+      "residents_beyond_2mi": 743,
+      "residents_no247_5mi": 6115,
+      "stranded_pop": 1458,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 12.15,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009203": {
+      "pop": 3609,
+      "residents_beyond_1mi": 3609,
+      "residents_beyond_2mi": 221,
+      "residents_no247_5mi": 3609,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 6.12,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009204": {
+      "pop": 3038,
+      "residents_beyond_1mi": 3038,
+      "residents_beyond_2mi": 327,
+      "residents_no247_5mi": 3038,
+      "stranded_pop": 152,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 10.76,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009301": {
+      "pop": 4786,
+      "residents_beyond_1mi": 4786,
+      "residents_beyond_2mi": 4786,
+      "residents_no247_5mi": 3740,
+      "stranded_pop": 376,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 78.14
+    },
+    "48113009303": {
+      "pop": 4054,
+      "residents_beyond_1mi": 4054,
+      "residents_beyond_2mi": 4054,
+      "residents_no247_5mi": 1024,
+      "stranded_pop": 2590,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 25.26
+    },
+    "48113009304": {
+      "pop": 6749,
+      "residents_beyond_1mi": 6749,
+      "residents_beyond_2mi": 6749,
+      "residents_no247_5mi": 6606,
+      "stranded_pop": 62,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 97.88
+    },
+    "48113009401": {
+      "pop": 3487,
+      "residents_beyond_1mi": 3487,
+      "residents_beyond_2mi": 3487,
+      "residents_no247_5mi": 3487,
+      "stranded_pop": 1873,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009402": {
+      "pop": 2660,
+      "residents_beyond_1mi": 2660,
+      "residents_beyond_2mi": 2660,
+      "residents_no247_5mi": 2660,
+      "stranded_pop": 1393,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009500": {
+      "pop": 2375,
+      "residents_beyond_1mi": 2375,
+      "residents_beyond_2mi": 2375,
+      "residents_no247_5mi": 2375,
+      "stranded_pop": 2375,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009603": {
+      "pop": 4454,
+      "residents_beyond_1mi": 4454,
+      "residents_beyond_2mi": 4219,
+      "residents_no247_5mi": 4454,
+      "stranded_pop": 2548,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 94.72,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009604": {
+      "pop": 4809,
+      "residents_beyond_1mi": 4809,
+      "residents_beyond_2mi": 4809,
+      "residents_no247_5mi": 4809,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009605": {
+      "pop": 3471,
+      "residents_beyond_1mi": 3471,
+      "residents_beyond_2mi": 3336,
+      "residents_no247_5mi": 3471,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 96.11,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009607": {
+      "pop": 3559,
+      "residents_beyond_1mi": 3559,
+      "residents_beyond_2mi": 3559,
+      "residents_no247_5mi": 3559,
+      "stranded_pop": 1815,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009608": {
+      "pop": 3218,
+      "residents_beyond_1mi": 3218,
+      "residents_beyond_2mi": 3218,
+      "residents_no247_5mi": 3218,
+      "stranded_pop": 1259,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009609": {
+      "pop": 3184,
+      "residents_beyond_1mi": 3184,
+      "residents_beyond_2mi": 3184,
+      "residents_no247_5mi": 3184,
+      "stranded_pop": 2563,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009610": {
+      "pop": 4623,
+      "residents_beyond_1mi": 4623,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4623,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009611": {
+      "pop": 3497,
+      "residents_beyond_1mi": 3497,
+      "residents_beyond_2mi": 1777,
+      "residents_no247_5mi": 3497,
+      "stranded_pop": 478,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 50.81,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009701": {
+      "pop": 4675,
+      "residents_beyond_1mi": 4675,
+      "residents_beyond_2mi": 4675,
+      "residents_no247_5mi": 4675,
+      "stranded_pop": 51,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009702": {
+      "pop": 3245,
+      "residents_beyond_1mi": 3245,
+      "residents_beyond_2mi": 3245,
+      "residents_no247_5mi": 3245,
+      "stranded_pop": 2920,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009802": {
+      "pop": 5582,
+      "residents_beyond_1mi": 5582,
+      "residents_beyond_2mi": 5582,
+      "residents_no247_5mi": 5582,
+      "stranded_pop": 115,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009803": {
+      "pop": 2051,
+      "residents_beyond_1mi": 2051,
+      "residents_beyond_2mi": 2051,
+      "residents_no247_5mi": 2051,
+      "stranded_pop": 12,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009804": {
+      "pop": 7233,
+      "residents_beyond_1mi": 7233,
+      "residents_beyond_2mi": 7233,
+      "residents_no247_5mi": 7233,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113009900": {
+      "pop": 6273,
+      "residents_beyond_1mi": 6273,
+      "residents_beyond_2mi": 1480,
+      "residents_no247_5mi": 6273,
+      "stranded_pop": 2273,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 23.59,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010001": {
+      "pop": 2600,
+      "residents_beyond_1mi": 154,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2467,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 5.92,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 94.88
+    },
+    "48113010002": {
+      "pop": 4174,
+      "residents_beyond_1mi": 4174,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113010003": {
+      "pop": 3254,
+      "residents_beyond_1mi": 356,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 394,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 10.94,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 12.11
+    },
+    "48113010101": {
+      "pop": 5069,
+      "residents_beyond_1mi": 5069,
+      "residents_beyond_2mi": 114,
+      "residents_no247_5mi": 2269,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 2.25,
+      "pct_pop_no247_5mi": 44.76
+    },
+    "48113010102": {
+      "pop": 2679,
+      "residents_beyond_1mi": 2424,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 90.48,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113010500": {
+      "pop": 3201,
+      "residents_beyond_1mi": 3201,
+      "residents_beyond_2mi": 1920,
+      "residents_no247_5mi": 3201,
+      "stranded_pop": 435,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 59.98,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010601": {
+      "pop": 5540,
+      "residents_beyond_1mi": 5540,
+      "residents_beyond_2mi": 5540,
+      "residents_no247_5mi": 5540,
+      "stranded_pop": 3252,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010602": {
+      "pop": 3135,
+      "residents_beyond_1mi": 3135,
+      "residents_beyond_2mi": 3135,
+      "residents_no247_5mi": 3135,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010701": {
+      "pop": 5543,
+      "residents_beyond_1mi": 4538,
+      "residents_beyond_2mi": 3036,
+      "residents_no247_5mi": 5543,
+      "stranded_pop": 1180,
+      "pct_pop_beyond_1mi": 81.87,
+      "pct_pop_beyond_2mi": 54.77,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010704": {
+      "pop": 5242,
+      "residents_beyond_1mi": 5242,
+      "residents_beyond_2mi": 5242,
+      "residents_no247_5mi": 5242,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010804": {
+      "pop": 4655,
+      "residents_beyond_1mi": 4655,
+      "residents_beyond_2mi": 3955,
+      "residents_no247_5mi": 4655,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 84.96,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010805": {
+      "pop": 5578,
+      "residents_beyond_1mi": 5578,
+      "residents_beyond_2mi": 5578,
+      "residents_no247_5mi": 5578,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010806": {
+      "pop": 3512,
+      "residents_beyond_1mi": 3362,
+      "residents_beyond_2mi": 36,
+      "residents_no247_5mi": 3512,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 95.73,
+      "pct_pop_beyond_2mi": 1.03,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010807": {
+      "pop": 4074,
+      "residents_beyond_1mi": 4074,
+      "residents_beyond_2mi": 3468,
+      "residents_no247_5mi": 4074,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 85.13,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010808": {
+      "pop": 3616,
+      "residents_beyond_1mi": 3616,
+      "residents_beyond_2mi": 3616,
+      "residents_no247_5mi": 3616,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010809": {
+      "pop": 5630,
+      "residents_beyond_1mi": 5630,
+      "residents_beyond_2mi": 5630,
+      "residents_no247_5mi": 5630,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010903": {
+      "pop": 3368,
+      "residents_beyond_1mi": 3368,
+      "residents_beyond_2mi": 2088,
+      "residents_no247_5mi": 3368,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 62.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010904": {
+      "pop": 3714,
+      "residents_beyond_1mi": 2675,
+      "residents_beyond_2mi": 1103,
+      "residents_no247_5mi": 3714,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 72.02,
+      "pct_pop_beyond_2mi": 29.7,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010905": {
+      "pop": 2501,
+      "residents_beyond_1mi": 2501,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2501,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113010906": {
+      "pop": 4528,
+      "residents_beyond_1mi": 4286,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4528,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 94.66,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011002": {
+      "pop": 3099,
+      "residents_beyond_1mi": 3099,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3099,
+      "stranded_pop": 548,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011003": {
+      "pop": 4221,
+      "residents_beyond_1mi": 267,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4221,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 6.33,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011004": {
+      "pop": 2473,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2473,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011101": {
+      "pop": 4458,
+      "residents_beyond_1mi": 3647,
+      "residents_beyond_2mi": 1081,
+      "residents_no247_5mi": 4458,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 81.81,
+      "pct_pop_beyond_2mi": 24.25,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011103": {
+      "pop": 3948,
+      "residents_beyond_1mi": 3948,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3948,
+      "stranded_pop": 679,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011104": {
+      "pop": 3844,
+      "residents_beyond_1mi": 3844,
+      "residents_beyond_2mi": 2517,
+      "residents_no247_5mi": 3844,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 65.48,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011105": {
+      "pop": 4726,
+      "residents_beyond_1mi": 4726,
+      "residents_beyond_2mi": 4111,
+      "residents_no247_5mi": 4726,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 86.99,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011201": {
+      "pop": 3990,
+      "residents_beyond_1mi": 3990,
+      "residents_beyond_2mi": 1002,
+      "residents_no247_5mi": 3990,
+      "stranded_pop": 1239,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 25.11,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011202": {
+      "pop": 2890,
+      "residents_beyond_1mi": 219,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2890,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 7.58,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011300": {
+      "pop": 5417,
+      "residents_beyond_1mi": 1910,
+      "residents_beyond_2mi": 26,
+      "residents_no247_5mi": 5417,
+      "stranded_pop": 3,
+      "pct_pop_beyond_1mi": 35.26,
+      "pct_pop_beyond_2mi": 0.48,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011401": {
+      "pop": 5935,
+      "residents_beyond_1mi": 5935,
+      "residents_beyond_2mi": 21,
+      "residents_no247_5mi": 5935,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.35,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011500": {
+      "pop": 4588,
+      "residents_beyond_1mi": 3982,
+      "residents_beyond_2mi": 486,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 353,
+      "pct_pop_beyond_1mi": 86.79,
+      "pct_pop_beyond_2mi": 10.59,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113011601": {
+      "pop": 4492,
+      "residents_beyond_1mi": 4492,
+      "residents_beyond_2mi": 4492,
+      "residents_no247_5mi": 4492,
+      "stranded_pop": 1342,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011603": {
+      "pop": 3709,
+      "residents_beyond_1mi": 3709,
+      "residents_beyond_2mi": 3709,
+      "residents_no247_5mi": 3709,
+      "stranded_pop": 3153,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011604": {
+      "pop": 3939,
+      "residents_beyond_1mi": 3939,
+      "residents_beyond_2mi": 3939,
+      "residents_no247_5mi": 3939,
+      "stranded_pop": 3939,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011701": {
+      "pop": 6420,
+      "residents_beyond_1mi": 6420,
+      "residents_beyond_2mi": 3086,
+      "residents_no247_5mi": 6420,
+      "stranded_pop": 5132,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 48.07,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011702": {
+      "pop": 5704,
+      "residents_beyond_1mi": 5704,
+      "residents_beyond_2mi": 2246,
+      "residents_no247_5mi": 5704,
+      "stranded_pop": 4179,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 39.38,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011801": {
+      "pop": 5632,
+      "residents_beyond_1mi": 44,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5632,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.78,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011802": {
+      "pop": 4336,
+      "residents_beyond_1mi": 581,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4336,
+      "stranded_pop": 505,
+      "pct_pop_beyond_1mi": 13.4,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011901": {
+      "pop": 4771,
+      "residents_beyond_1mi": 122,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4771,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 2.56,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113011902": {
+      "pop": 5165,
+      "residents_beyond_1mi": 273,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5165,
+      "stranded_pop": 273,
+      "pct_pop_beyond_1mi": 5.29,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012000": {
+      "pop": 11383,
+      "residents_beyond_1mi": 11383,
+      "residents_beyond_2mi": 744,
+      "residents_no247_5mi": 11383,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 6.54,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012101": {
+      "pop": 3607,
+      "residents_beyond_1mi": 3607,
+      "residents_beyond_2mi": 3596,
+      "residents_no247_5mi": 3607,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 99.7,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012102": {
+      "pop": 3274,
+      "residents_beyond_1mi": 3274,
+      "residents_beyond_2mi": 3274,
+      "residents_no247_5mi": 3274,
+      "stranded_pop": 23,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012206": {
+      "pop": 4830,
+      "residents_beyond_1mi": 4830,
+      "residents_beyond_2mi": 2621,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 54.27,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113012207": {
+      "pop": 7254,
+      "residents_beyond_1mi": 7254,
+      "residents_beyond_2mi": 87,
+      "residents_no247_5mi": 62,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 1.2,
+      "pct_pop_no247_5mi": 0.85
+    },
+    "48113012208": {
+      "pop": 2530,
+      "residents_beyond_1mi": 2530,
+      "residents_beyond_2mi": 2530,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113012209": {
+      "pop": 2704,
+      "residents_beyond_1mi": 2654,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 216,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 98.15,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 7.99
+    },
+    "48113012210": {
+      "pop": 3930,
+      "residents_beyond_1mi": 660,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2393,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 16.79,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 60.89
+    },
+    "48113012211": {
+      "pop": 4513,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 1302,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 28.85
+    },
+    "48113012212": {
+      "pop": 3462,
+      "residents_beyond_1mi": 2896,
+      "residents_beyond_2mi": 594,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 83.65,
+      "pct_pop_beyond_2mi": 17.16,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113012213": {
+      "pop": 2404,
+      "residents_beyond_1mi": 2196,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 91.35,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113012301": {
+      "pop": 4748,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4748,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012302": {
+      "pop": 8092,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 8092,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012400": {
+      "pop": 5156,
+      "residents_beyond_1mi": 5026,
+      "residents_beyond_2mi": 460,
+      "residents_no247_5mi": 5156,
+      "stranded_pop": 91,
+      "pct_pop_beyond_1mi": 97.48,
+      "pct_pop_beyond_2mi": 8.92,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012501": {
+      "pop": 3674,
+      "residents_beyond_1mi": 2495,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3674,
+      "stranded_pop": 429,
+      "pct_pop_beyond_1mi": 67.91,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012502": {
+      "pop": 4111,
+      "residents_beyond_1mi": 3224,
+      "residents_beyond_2mi": 42,
+      "residents_no247_5mi": 4111,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 78.42,
+      "pct_pop_beyond_2mi": 1.02,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012601": {
+      "pop": 5783,
+      "residents_beyond_1mi": 5783,
+      "residents_beyond_2mi": 3506,
+      "residents_no247_5mi": 5783,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 60.63,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012603": {
+      "pop": 2020,
+      "residents_beyond_1mi": 2020,
+      "residents_beyond_2mi": 1300,
+      "residents_no247_5mi": 2020,
+      "stranded_pop": 486,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 64.36,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012604": {
+      "pop": 5626,
+      "residents_beyond_1mi": 5626,
+      "residents_beyond_2mi": 5626,
+      "residents_no247_5mi": 5626,
+      "stranded_pop": 48,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012701": {
+      "pop": 6462,
+      "residents_beyond_1mi": 6418,
+      "residents_beyond_2mi": 3618,
+      "residents_no247_5mi": 6462,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 99.32,
+      "pct_pop_beyond_2mi": 55.99,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012702": {
+      "pop": 3049,
+      "residents_beyond_1mi": 3049,
+      "residents_beyond_2mi": 1855,
+      "residents_no247_5mi": 3049,
+      "stranded_pop": 76,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 60.84,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012801": {
+      "pop": 2730,
+      "residents_beyond_1mi": 2730,
+      "residents_beyond_2mi": 91,
+      "residents_no247_5mi": 2730,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 3.33,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012802": {
+      "pop": 5009,
+      "residents_beyond_1mi": 5009,
+      "residents_beyond_2mi": 2526,
+      "residents_no247_5mi": 5009,
+      "stranded_pop": 1000,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 50.43,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113012900": {
+      "pop": 4828,
+      "residents_beyond_1mi": 4828,
+      "residents_beyond_2mi": 4828,
+      "residents_no247_5mi": 4828,
+      "stranded_pop": 2880,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013005": {
+      "pop": 4295,
+      "residents_beyond_1mi": 4295,
+      "residents_beyond_2mi": 1289,
+      "residents_no247_5mi": 4295,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 30.01,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013007": {
+      "pop": 3510,
+      "residents_beyond_1mi": 3360,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3510,
+      "stranded_pop": 158,
+      "pct_pop_beyond_1mi": 95.73,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013008": {
+      "pop": 3738,
+      "residents_beyond_1mi": 3738,
+      "residents_beyond_2mi": 412,
+      "residents_no247_5mi": 3738,
+      "stranded_pop": 90,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 11.02,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013009": {
+      "pop": 4825,
+      "residents_beyond_1mi": 3965,
+      "residents_beyond_2mi": 233,
+      "residents_no247_5mi": 4825,
+      "stranded_pop": 321,
+      "pct_pop_beyond_1mi": 82.18,
+      "pct_pop_beyond_2mi": 4.83,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013010": {
+      "pop": 4691,
+      "residents_beyond_1mi": 1130,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4691,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 24.09,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013011": {
+      "pop": 4274,
+      "residents_beyond_1mi": 1481,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4274,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 34.65,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013012": {
+      "pop": 2602,
+      "residents_beyond_1mi": 2602,
+      "residents_beyond_2mi": 2602,
+      "residents_no247_5mi": 2602,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013013": {
+      "pop": 4410,
+      "residents_beyond_1mi": 4410,
+      "residents_beyond_2mi": 4410,
+      "residents_no247_5mi": 4410,
+      "stranded_pop": 992,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013101": {
+      "pop": 2757,
+      "residents_beyond_1mi": 2757,
+      "residents_beyond_2mi": 2757,
+      "residents_no247_5mi": 2757,
+      "stranded_pop": 985,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013102": {
+      "pop": 1928,
+      "residents_beyond_1mi": 1928,
+      "residents_beyond_2mi": 1928,
+      "residents_no247_5mi": 1928,
+      "stranded_pop": 669,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013104": {
+      "pop": 1641,
+      "residents_beyond_1mi": 1641,
+      "residents_beyond_2mi": 1641,
+      "residents_no247_5mi": 1641,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013106": {
+      "pop": 1340,
+      "residents_beyond_1mi": 1340,
+      "residents_beyond_2mi": 1340,
+      "residents_no247_5mi": 1340,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013107": {
+      "pop": 4475,
+      "residents_beyond_1mi": 4475,
+      "residents_beyond_2mi": 4475,
+      "residents_no247_5mi": 4475,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013201": {
+      "pop": 2754,
+      "residents_beyond_1mi": 2754,
+      "residents_beyond_2mi": 2754,
+      "residents_no247_5mi": 2754,
+      "stranded_pop": 550,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013202": {
+      "pop": 5342,
+      "residents_beyond_1mi": 5342,
+      "residents_beyond_2mi": 5342,
+      "residents_no247_5mi": 5342,
+      "stranded_pop": 64,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013300": {
+      "pop": 2064,
+      "residents_beyond_1mi": 2064,
+      "residents_beyond_2mi": 2064,
+      "residents_no247_5mi": 2064,
+      "stranded_pop": 981,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013400": {
+      "pop": 2068,
+      "residents_beyond_1mi": 2068,
+      "residents_beyond_2mi": 2068,
+      "residents_no247_5mi": 2068,
+      "stranded_pop": 412,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013500": {
+      "pop": 2562,
+      "residents_beyond_1mi": 2562,
+      "residents_beyond_2mi": 2562,
+      "residents_no247_5mi": 2562,
+      "stranded_pop": 2281,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013605": {
+      "pop": 5709,
+      "residents_beyond_1mi": 5709,
+      "residents_beyond_2mi": 5709,
+      "residents_no247_5mi": 5709,
+      "stranded_pop": 280,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013606": {
+      "pop": 5434,
+      "residents_beyond_1mi": 5434,
+      "residents_beyond_2mi": 3538,
+      "residents_no247_5mi": 5434,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 65.11,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013607": {
+      "pop": 3538,
+      "residents_beyond_1mi": 3538,
+      "residents_beyond_2mi": 3538,
+      "residents_no247_5mi": 3538,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013608": {
+      "pop": 2570,
+      "residents_beyond_1mi": 2570,
+      "residents_beyond_2mi": 2260,
+      "residents_no247_5mi": 2570,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 87.94,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013609": {
+      "pop": 3993,
+      "residents_beyond_1mi": 3993,
+      "residents_beyond_2mi": 3993,
+      "residents_no247_5mi": 3993,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013610": {
+      "pop": 4797,
+      "residents_beyond_1mi": 4797,
+      "residents_beyond_2mi": 4797,
+      "residents_no247_5mi": 4797,
+      "stranded_pop": 519,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013611": {
+      "pop": 2887,
+      "residents_beyond_1mi": 2887,
+      "residents_beyond_2mi": 1356,
+      "residents_no247_5mi": 2887,
+      "stranded_pop": 375,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 46.97,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013615": {
+      "pop": 5351,
+      "residents_beyond_1mi": 5351,
+      "residents_beyond_2mi": 45,
+      "residents_no247_5mi": 5351,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.84,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013617": {
+      "pop": 2953,
+      "residents_beyond_1mi": 2953,
+      "residents_beyond_2mi": 2953,
+      "residents_no247_5mi": 2953,
+      "stranded_pop": 1236,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013618": {
+      "pop": 3271,
+      "residents_beyond_1mi": 3271,
+      "residents_beyond_2mi": 3271,
+      "residents_no247_5mi": 3271,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013619": {
+      "pop": 5414,
+      "residents_beyond_1mi": 5414,
+      "residents_beyond_2mi": 5208,
+      "residents_no247_5mi": 5414,
+      "stranded_pop": 1812,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 96.2,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013620": {
+      "pop": 6205,
+      "residents_beyond_1mi": 5523,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 6205,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 89.01,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013621": {
+      "pop": 4423,
+      "residents_beyond_1mi": 4423,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4423,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013622": {
+      "pop": 2672,
+      "residents_beyond_1mi": 2592,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2672,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 97.01,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013624": {
+      "pop": 4106,
+      "residents_beyond_1mi": 2325,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4106,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 56.62,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013625": {
+      "pop": 2860,
+      "residents_beyond_1mi": 589,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2860,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 20.59,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013626": {
+      "pop": 3003,
+      "residents_beyond_1mi": 3003,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3003,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013627": {
+      "pop": 1585,
+      "residents_beyond_1mi": 1585,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 1585,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013628": {
+      "pop": 6306,
+      "residents_beyond_1mi": 1535,
+      "residents_beyond_2mi": 392,
+      "residents_no247_5mi": 6306,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 24.34,
+      "pct_pop_beyond_2mi": 6.22,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013629": {
+      "pop": 2217,
+      "residents_beyond_1mi": 2217,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2217,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013630": {
+      "pop": 2154,
+      "residents_beyond_1mi": 2154,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2154,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013631": {
+      "pop": 2097,
+      "residents_beyond_1mi": 2097,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2097,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013715": {
+      "pop": 2338,
+      "residents_beyond_1mi": 2338,
+      "residents_beyond_2mi": 2338,
+      "residents_no247_5mi": 2338,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013716": {
+      "pop": 5078,
+      "residents_beyond_1mi": 5078,
+      "residents_beyond_2mi": 5078,
+      "residents_no247_5mi": 5078,
+      "stranded_pop": 3219,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013717": {
+      "pop": 2671,
+      "residents_beyond_1mi": 2671,
+      "residents_beyond_2mi": 2671,
+      "residents_no247_5mi": 2671,
+      "stranded_pop": 660,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013718": {
+      "pop": 4579,
+      "residents_beyond_1mi": 4579,
+      "residents_beyond_2mi": 4579,
+      "residents_no247_5mi": 4579,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013719": {
+      "pop": 4257,
+      "residents_beyond_1mi": 4257,
+      "residents_beyond_2mi": 4257,
+      "residents_no247_5mi": 4257,
+      "stranded_pop": 1743,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013720": {
+      "pop": 5613,
+      "residents_beyond_1mi": 5613,
+      "residents_beyond_2mi": 5613,
+      "residents_no247_5mi": 5613,
+      "stranded_pop": 685,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013721": {
+      "pop": 5988,
+      "residents_beyond_1mi": 5988,
+      "residents_beyond_2mi": 5970,
+      "residents_no247_5mi": 5988,
+      "stranded_pop": 5809,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 99.7,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013722": {
+      "pop": 4640,
+      "residents_beyond_1mi": 4640,
+      "residents_beyond_2mi": 2743,
+      "residents_no247_5mi": 4640,
+      "stranded_pop": 4349,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 59.12,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013725": {
+      "pop": 3748,
+      "residents_beyond_1mi": 3708,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3748,
+      "stranded_pop": 1988,
+      "pct_pop_beyond_1mi": 98.93,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013726": {
+      "pop": 2854,
+      "residents_beyond_1mi": 1813,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2854,
+      "stranded_pop": 883,
+      "pct_pop_beyond_1mi": 63.52,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013727": {
+      "pop": 3790,
+      "residents_beyond_1mi": 2551,
+      "residents_beyond_2mi": 1211,
+      "residents_no247_5mi": 3790,
+      "stranded_pop": 12,
+      "pct_pop_beyond_1mi": 67.31,
+      "pct_pop_beyond_2mi": 31.95,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013728": {
+      "pop": 5064,
+      "residents_beyond_1mi": 5064,
+      "residents_beyond_2mi": 1968,
+      "residents_no247_5mi": 5064,
+      "stranded_pop": 2110,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 38.86,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013729": {
+      "pop": 7353,
+      "residents_beyond_1mi": 7353,
+      "residents_beyond_2mi": 3802,
+      "residents_no247_5mi": 7353,
+      "stranded_pop": 77,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 51.71,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013804": {
+      "pop": 3404,
+      "residents_beyond_1mi": 3404,
+      "residents_beyond_2mi": 3051,
+      "residents_no247_5mi": 3404,
+      "stranded_pop": 619,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 89.63,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013805": {
+      "pop": 4101,
+      "residents_beyond_1mi": 4101,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4101,
+      "stranded_pop": 3469,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013806": {
+      "pop": 3628,
+      "residents_beyond_1mi": 3625,
+      "residents_beyond_2mi": 45,
+      "residents_no247_5mi": 3628,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 99.92,
+      "pct_pop_beyond_2mi": 1.24,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013807": {
+      "pop": 2778,
+      "residents_beyond_1mi": 2778,
+      "residents_beyond_2mi": 2006,
+      "residents_no247_5mi": 2778,
+      "stranded_pop": 2369,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 72.21,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013808": {
+      "pop": 2856,
+      "residents_beyond_1mi": 2856,
+      "residents_beyond_2mi": 1928,
+      "residents_no247_5mi": 2856,
+      "stranded_pop": 1967,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 67.51,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013901": {
+      "pop": 3283,
+      "residents_beyond_1mi": 1940,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3283,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 59.09,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113013902": {
+      "pop": 4278,
+      "residents_beyond_1mi": 4278,
+      "residents_beyond_2mi": 128,
+      "residents_no247_5mi": 4278,
+      "stranded_pop": 664,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 2.99,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014001": {
+      "pop": 4274,
+      "residents_beyond_1mi": 2843,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4274,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 66.52,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014002": {
+      "pop": 1985,
+      "residents_beyond_1mi": 1557,
+      "residents_beyond_2mi": 252,
+      "residents_no247_5mi": 1985,
+      "stranded_pop": 241,
+      "pct_pop_beyond_1mi": 78.44,
+      "pct_pop_beyond_2mi": 12.7,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014119": {
+      "pop": 4655,
+      "residents_beyond_1mi": 4655,
+      "residents_beyond_2mi": 4655,
+      "residents_no247_5mi": 4655,
+      "stranded_pop": 3608,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014120": {
+      "pop": 5177,
+      "residents_beyond_1mi": 5177,
+      "residents_beyond_2mi": 5177,
+      "residents_no247_5mi": 5177,
+      "stranded_pop": 4931,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014121": {
+      "pop": 5466,
+      "residents_beyond_1mi": 5466,
+      "residents_beyond_2mi": 5466,
+      "residents_no247_5mi": 5466,
+      "stranded_pop": 3508,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014123": {
+      "pop": 6234,
+      "residents_beyond_1mi": 6234,
+      "residents_beyond_2mi": 6234,
+      "residents_no247_5mi": 6234,
+      "stranded_pop": 6234,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014124": {
+      "pop": 4971,
+      "residents_beyond_1mi": 4971,
+      "residents_beyond_2mi": 4971,
+      "residents_no247_5mi": 4971,
+      "stranded_pop": 3490,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014126": {
+      "pop": 6994,
+      "residents_beyond_1mi": 6994,
+      "residents_beyond_2mi": 6994,
+      "residents_no247_5mi": 6994,
+      "stranded_pop": 6994,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014128": {
+      "pop": 4257,
+      "residents_beyond_1mi": 4257,
+      "residents_beyond_2mi": 4257,
+      "residents_no247_5mi": 4257,
+      "stranded_pop": 156,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014130": {
+      "pop": 5185,
+      "residents_beyond_1mi": 5185,
+      "residents_beyond_2mi": 5185,
+      "residents_no247_5mi": 5185,
+      "stranded_pop": 1663,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014132": {
+      "pop": 2628,
+      "residents_beyond_1mi": 2628,
+      "residents_beyond_2mi": 2628,
+      "residents_no247_5mi": 2628,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014134": {
+      "pop": 4156,
+      "residents_beyond_1mi": 4156,
+      "residents_beyond_2mi": 4156,
+      "residents_no247_5mi": 4156,
+      "stranded_pop": 4156,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014135": {
+      "pop": 4809,
+      "residents_beyond_1mi": 4809,
+      "residents_beyond_2mi": 4809,
+      "residents_no247_5mi": 4809,
+      "stranded_pop": 4809,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014138": {
+      "pop": 4621,
+      "residents_beyond_1mi": 4621,
+      "residents_beyond_2mi": 1202,
+      "residents_no247_5mi": 4621,
+      "stranded_pop": 647,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 26.01,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014139": {
+      "pop": 2949,
+      "residents_beyond_1mi": 2949,
+      "residents_beyond_2mi": 2949,
+      "residents_no247_5mi": 2949,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014140": {
+      "pop": 2329,
+      "residents_beyond_1mi": 2329,
+      "residents_beyond_2mi": 2329,
+      "residents_no247_5mi": 2329,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014141": {
+      "pop": 2144,
+      "residents_beyond_1mi": 2144,
+      "residents_beyond_2mi": 2144,
+      "residents_no247_5mi": 2144,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014142": {
+      "pop": 2320,
+      "residents_beyond_1mi": 2320,
+      "residents_beyond_2mi": 2320,
+      "residents_no247_5mi": 2320,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014143": {
+      "pop": 4682,
+      "residents_beyond_1mi": 4682,
+      "residents_beyond_2mi": 1435,
+      "residents_no247_5mi": 4682,
+      "stranded_pop": 1296,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 30.65,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014144": {
+      "pop": 5471,
+      "residents_beyond_1mi": 2450,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5471,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 44.78,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014145": {
+      "pop": 1424,
+      "residents_beyond_1mi": 1424,
+      "residents_beyond_2mi": 1424,
+      "residents_no247_5mi": 1424,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014146": {
+      "pop": 2257,
+      "residents_beyond_1mi": 2257,
+      "residents_beyond_2mi": 2257,
+      "residents_no247_5mi": 2257,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014147": {
+      "pop": 2105,
+      "residents_beyond_1mi": 2105,
+      "residents_beyond_2mi": 2105,
+      "residents_no247_5mi": 2105,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014148": {
+      "pop": 3367,
+      "residents_beyond_1mi": 3367,
+      "residents_beyond_2mi": 3367,
+      "residents_no247_5mi": 3367,
+      "stranded_pop": 735,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014149": {
+      "pop": 3647,
+      "residents_beyond_1mi": 3647,
+      "residents_beyond_2mi": 3647,
+      "residents_no247_5mi": 3647,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014150": {
+      "pop": 1676,
+      "residents_beyond_1mi": 1676,
+      "residents_beyond_2mi": 1676,
+      "residents_no247_5mi": 1676,
+      "stranded_pop": 700,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014151": {
+      "pop": 4424,
+      "residents_beyond_1mi": 4424,
+      "residents_beyond_2mi": 3871,
+      "residents_no247_5mi": 4424,
+      "stranded_pop": 3871,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 87.5,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014152": {
+      "pop": 3369,
+      "residents_beyond_1mi": 3369,
+      "residents_beyond_2mi": 3339,
+      "residents_no247_5mi": 3369,
+      "stranded_pop": 111,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 99.11,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014153": {
+      "pop": 3982,
+      "residents_beyond_1mi": 3982,
+      "residents_beyond_2mi": 3982,
+      "residents_no247_5mi": 3982,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014154": {
+      "pop": 3525,
+      "residents_beyond_1mi": 3525,
+      "residents_beyond_2mi": 3525,
+      "residents_no247_5mi": 3525,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014155": {
+      "pop": 5437,
+      "residents_beyond_1mi": 5437,
+      "residents_beyond_2mi": 5437,
+      "residents_no247_5mi": 5437,
+      "stranded_pop": 576,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014156": {
+      "pop": 4158,
+      "residents_beyond_1mi": 4158,
+      "residents_beyond_2mi": 4158,
+      "residents_no247_5mi": 4158,
+      "stranded_pop": 2033,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014157": {
+      "pop": 1914,
+      "residents_beyond_1mi": 1914,
+      "residents_beyond_2mi": 1914,
+      "residents_no247_5mi": 1914,
+      "stranded_pop": 1914,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014158": {
+      "pop": 3090,
+      "residents_beyond_1mi": 3090,
+      "residents_beyond_2mi": 2803,
+      "residents_no247_5mi": 3090,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 90.71,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014159": {
+      "pop": 3014,
+      "residents_beyond_1mi": 3014,
+      "residents_beyond_2mi": 3002,
+      "residents_no247_5mi": 3014,
+      "stranded_pop": 3002,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 99.6,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014160": {
+      "pop": 2760,
+      "residents_beyond_1mi": 2760,
+      "residents_beyond_2mi": 2760,
+      "residents_no247_5mi": 2760,
+      "stranded_pop": 1432,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014161": {
+      "pop": 3122,
+      "residents_beyond_1mi": 3122,
+      "residents_beyond_2mi": 3122,
+      "residents_no247_5mi": 3122,
+      "stranded_pop": 130,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014203": {
+      "pop": 3441,
+      "residents_beyond_1mi": 3441,
+      "residents_beyond_2mi": 93,
+      "residents_no247_5mi": 3441,
+      "stranded_pop": 565,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 2.7,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014204": {
+      "pop": 2905,
+      "residents_beyond_1mi": 2905,
+      "residents_beyond_2mi": 1733,
+      "residents_no247_5mi": 2905,
+      "stranded_pop": 2248,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 59.66,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014205": {
+      "pop": 1925,
+      "residents_beyond_1mi": 1811,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 1925,
+      "stranded_pop": 1468,
+      "pct_pop_beyond_1mi": 94.08,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014207": {
+      "pop": 2656,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2656,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014208": {
+      "pop": 2706,
+      "residents_beyond_1mi": 464,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2706,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 17.15,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014209": {
+      "pop": 4047,
+      "residents_beyond_1mi": 900,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4047,
+      "stranded_pop": 148,
+      "pct_pop_beyond_1mi": 22.24,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014306": {
+      "pop": 5978,
+      "residents_beyond_1mi": 5978,
+      "residents_beyond_2mi": 4580,
+      "residents_no247_5mi": 5978,
+      "stranded_pop": 3641,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 76.61,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014308": {
+      "pop": 4275,
+      "residents_beyond_1mi": 4275,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4275,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014309": {
+      "pop": 5000,
+      "residents_beyond_1mi": 5000,
+      "residents_beyond_2mi": 5000,
+      "residents_no247_5mi": 5000,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014310": {
+      "pop": 4965,
+      "residents_beyond_1mi": 4965,
+      "residents_beyond_2mi": 4965,
+      "residents_no247_5mi": 4965,
+      "stranded_pop": 1411,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014313": {
+      "pop": 3582,
+      "residents_beyond_1mi": 897,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3582,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 25.04,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014314": {
+      "pop": 3103,
+      "residents_beyond_1mi": 3103,
+      "residents_beyond_2mi": 13,
+      "residents_no247_5mi": 3103,
+      "stranded_pop": 222,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.42,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014315": {
+      "pop": 3166,
+      "residents_beyond_1mi": 3166,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3166,
+      "stranded_pop": 1002,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014316": {
+      "pop": 3918,
+      "residents_beyond_1mi": 3918,
+      "residents_beyond_2mi": 1377,
+      "residents_no247_5mi": 3918,
+      "stranded_pop": 3288,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 35.15,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014317": {
+      "pop": 1647,
+      "residents_beyond_1mi": 1577,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 1647,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 95.75,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014318": {
+      "pop": 2817,
+      "residents_beyond_1mi": 2817,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2817,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014319": {
+      "pop": 2664,
+      "residents_beyond_1mi": 2664,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2664,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014320": {
+      "pop": 2747,
+      "residents_beyond_1mi": 2747,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2747,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014405": {
+      "pop": 4038,
+      "residents_beyond_1mi": 4038,
+      "residents_beyond_2mi": 312,
+      "residents_no247_5mi": 4038,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 7.73,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014406": {
+      "pop": 4686,
+      "residents_beyond_1mi": 4686,
+      "residents_beyond_2mi": 31,
+      "residents_no247_5mi": 4686,
+      "stranded_pop": 1664,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.66,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014407": {
+      "pop": 5461,
+      "residents_beyond_1mi": 5461,
+      "residents_beyond_2mi": 5461,
+      "residents_no247_5mi": 5461,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014408": {
+      "pop": 4373,
+      "residents_beyond_1mi": 4373,
+      "residents_beyond_2mi": 4373,
+      "residents_no247_5mi": 4373,
+      "stranded_pop": 147,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014409": {
+      "pop": 2396,
+      "residents_beyond_1mi": 2396,
+      "residents_beyond_2mi": 2396,
+      "residents_no247_5mi": 2396,
+      "stranded_pop": 2049,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014410": {
+      "pop": 2719,
+      "residents_beyond_1mi": 2719,
+      "residents_beyond_2mi": 2719,
+      "residents_no247_5mi": 2719,
+      "stranded_pop": 507,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014501": {
+      "pop": 3471,
+      "residents_beyond_1mi": 1183,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3471,
+      "stranded_pop": 339,
+      "pct_pop_beyond_1mi": 34.08,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014502": {
+      "pop": 4511,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4511,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014601": {
+      "pop": 2483,
+      "residents_beyond_1mi": 1295,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2483,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 52.15,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014602": {
+      "pop": 4883,
+      "residents_beyond_1mi": 4883,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4883,
+      "stranded_pop": 2045,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014603": {
+      "pop": 1890,
+      "residents_beyond_1mi": 197,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 1890,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 10.42,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014701": {
+      "pop": 4669,
+      "residents_beyond_1mi": 4669,
+      "residents_beyond_2mi": 2621,
+      "residents_no247_5mi": 4669,
+      "stranded_pop": 4669,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 56.14,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014704": {
+      "pop": 5742,
+      "residents_beyond_1mi": 5742,
+      "residents_beyond_2mi": 1200,
+      "residents_no247_5mi": 5742,
+      "stranded_pop": 4913,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 20.9,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113014903": {
+      "pop": 3998,
+      "residents_beyond_1mi": 2405,
+      "residents_beyond_2mi": 161,
+      "residents_no247_5mi": 3998,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 60.16,
+      "pct_pop_beyond_2mi": 4.03,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015001": {
+      "pop": 5186,
+      "residents_beyond_1mi": 5186,
+      "residents_beyond_2mi": 2759,
+      "residents_no247_5mi": 5186,
+      "stranded_pop": 233,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 53.2,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015002": {
+      "pop": 3054,
+      "residents_beyond_1mi": 3054,
+      "residents_beyond_2mi": 2253,
+      "residents_no247_5mi": 3054,
+      "stranded_pop": 1207,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 73.77,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015101": {
+      "pop": 4319,
+      "residents_beyond_1mi": 4319,
+      "residents_beyond_2mi": 1912,
+      "residents_no247_5mi": 4319,
+      "stranded_pop": 3637,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 44.27,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015102": {
+      "pop": 2417,
+      "residents_beyond_1mi": 2417,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2417,
+      "stranded_pop": 278,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015202": {
+      "pop": 3525,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3525,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015205": {
+      "pop": 3983,
+      "residents_beyond_1mi": 569,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3983,
+      "stranded_pop": 569,
+      "pct_pop_beyond_1mi": 14.29,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015206": {
+      "pop": 4205,
+      "residents_beyond_1mi": 3806,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4205,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 90.51,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015207": {
+      "pop": 4022,
+      "residents_beyond_1mi": 4022,
+      "residents_beyond_2mi": 1813,
+      "residents_no247_5mi": 4022,
+      "stranded_pop": 1906,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 45.08,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015208": {
+      "pop": 3747,
+      "residents_beyond_1mi": 3747,
+      "residents_beyond_2mi": 3421,
+      "residents_no247_5mi": 3747,
+      "stranded_pop": 2996,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 91.3,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015303": {
+      "pop": 1973,
+      "residents_beyond_1mi": 1973,
+      "residents_beyond_2mi": 1973,
+      "residents_no247_5mi": 1973,
+      "stranded_pop": 1731,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015304": {
+      "pop": 3986,
+      "residents_beyond_1mi": 3986,
+      "residents_beyond_2mi": 3986,
+      "residents_no247_5mi": 3986,
+      "stranded_pop": 1105,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015305": {
+      "pop": 4460,
+      "residents_beyond_1mi": 4460,
+      "residents_beyond_2mi": 250,
+      "residents_no247_5mi": 4460,
+      "stranded_pop": 1665,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 5.61,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015306": {
+      "pop": 5559,
+      "residents_beyond_1mi": 5559,
+      "residents_beyond_2mi": 4507,
+      "residents_no247_5mi": 5559,
+      "stranded_pop": 1459,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 81.08,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015403": {
+      "pop": 3551,
+      "residents_beyond_1mi": 3551,
+      "residents_beyond_2mi": 3551,
+      "residents_no247_5mi": 3551,
+      "stranded_pop": 3551,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015404": {
+      "pop": 4446,
+      "residents_beyond_1mi": 4446,
+      "residents_beyond_2mi": 4446,
+      "residents_no247_5mi": 4446,
+      "stranded_pop": 4446,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015405": {
+      "pop": 2322,
+      "residents_beyond_1mi": 2322,
+      "residents_beyond_2mi": 2322,
+      "residents_no247_5mi": 2322,
+      "stranded_pop": 2322,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015406": {
+      "pop": 3505,
+      "residents_beyond_1mi": 3505,
+      "residents_beyond_2mi": 3505,
+      "residents_no247_5mi": 3505,
+      "stranded_pop": 3505,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015500": {
+      "pop": 3604,
+      "residents_beyond_1mi": 3604,
+      "residents_beyond_2mi": 3604,
+      "residents_no247_5mi": 3604,
+      "stranded_pop": 3604,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015600": {
+      "pop": 5087,
+      "residents_beyond_1mi": 5087,
+      "residents_beyond_2mi": 5087,
+      "residents_no247_5mi": 5087,
+      "stranded_pop": 5087,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015700": {
+      "pop": 2499,
+      "residents_beyond_1mi": 2499,
+      "residents_beyond_2mi": 2499,
+      "residents_no247_5mi": 2499,
+      "stranded_pop": 2499,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113015900": {
+      "pop": 3509,
+      "residents_beyond_1mi": 3509,
+      "residents_beyond_2mi": 3509,
+      "residents_no247_5mi": 3509,
+      "stranded_pop": 3509,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016001": {
+      "pop": 4624,
+      "residents_beyond_1mi": 4624,
+      "residents_beyond_2mi": 4624,
+      "residents_no247_5mi": 4624,
+      "stranded_pop": 4624,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016002": {
+      "pop": 2945,
+      "residents_beyond_1mi": 2945,
+      "residents_beyond_2mi": 2945,
+      "residents_no247_5mi": 2945,
+      "stranded_pop": 2945,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016100": {
+      "pop": 3867,
+      "residents_beyond_1mi": 3867,
+      "residents_beyond_2mi": 3867,
+      "residents_no247_5mi": 3867,
+      "stranded_pop": 3867,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016201": {
+      "pop": 4564,
+      "residents_beyond_1mi": 4564,
+      "residents_beyond_2mi": 4564,
+      "residents_no247_5mi": 4564,
+      "stranded_pop": 4564,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016203": {
+      "pop": 2189,
+      "residents_beyond_1mi": 2189,
+      "residents_beyond_2mi": 2189,
+      "residents_no247_5mi": 2189,
+      "stranded_pop": 2189,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016204": {
+      "pop": 4156,
+      "residents_beyond_1mi": 4156,
+      "residents_beyond_2mi": 4156,
+      "residents_no247_5mi": 4156,
+      "stranded_pop": 4156,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016301": {
+      "pop": 6801,
+      "residents_beyond_1mi": 6801,
+      "residents_beyond_2mi": 6801,
+      "residents_no247_5mi": 6801,
+      "stranded_pop": 6801,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016302": {
+      "pop": 2123,
+      "residents_beyond_1mi": 2123,
+      "residents_beyond_2mi": 2123,
+      "residents_no247_5mi": 2123,
+      "stranded_pop": 2123,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016406": {
+      "pop": 4919,
+      "residents_beyond_1mi": 4919,
+      "residents_beyond_2mi": 4919,
+      "residents_no247_5mi": 4919,
+      "stranded_pop": 4919,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016407": {
+      "pop": 6796,
+      "residents_beyond_1mi": 6796,
+      "residents_beyond_2mi": 6796,
+      "residents_no247_5mi": 6796,
+      "stranded_pop": 6796,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016409": {
+      "pop": 3848,
+      "residents_beyond_1mi": 3848,
+      "residents_beyond_2mi": 3848,
+      "residents_no247_5mi": 3848,
+      "stranded_pop": 3848,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016410": {
+      "pop": 4264,
+      "residents_beyond_1mi": 4264,
+      "residents_beyond_2mi": 4264,
+      "residents_no247_5mi": 4264,
+      "stranded_pop": 4264,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016412": {
+      "pop": 4487,
+      "residents_beyond_1mi": 4487,
+      "residents_beyond_2mi": 4487,
+      "residents_no247_5mi": 4487,
+      "stranded_pop": 4487,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016414": {
+      "pop": 2163,
+      "residents_beyond_1mi": 2163,
+      "residents_beyond_2mi": 2163,
+      "residents_no247_5mi": 2163,
+      "stranded_pop": 2163,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016415": {
+      "pop": 4858,
+      "residents_beyond_1mi": 4858,
+      "residents_beyond_2mi": 4858,
+      "residents_no247_5mi": 4858,
+      "stranded_pop": 4858,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016416": {
+      "pop": 3116,
+      "residents_beyond_1mi": 3116,
+      "residents_beyond_2mi": 3116,
+      "residents_no247_5mi": 3116,
+      "stranded_pop": 3116,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016417": {
+      "pop": 6213,
+      "residents_beyond_1mi": 6213,
+      "residents_beyond_2mi": 6213,
+      "residents_no247_5mi": 6213,
+      "stranded_pop": 6213,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016418": {
+      "pop": 4724,
+      "residents_beyond_1mi": 4724,
+      "residents_beyond_2mi": 4724,
+      "residents_no247_5mi": 4724,
+      "stranded_pop": 4724,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016419": {
+      "pop": 5520,
+      "residents_beyond_1mi": 5520,
+      "residents_beyond_2mi": 5520,
+      "residents_no247_5mi": 5520,
+      "stranded_pop": 5520,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016420": {
+      "pop": 3168,
+      "residents_beyond_1mi": 3168,
+      "residents_beyond_2mi": 3168,
+      "residents_no247_5mi": 3168,
+      "stranded_pop": 3168,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016421": {
+      "pop": 3824,
+      "residents_beyond_1mi": 3824,
+      "residents_beyond_2mi": 3824,
+      "residents_no247_5mi": 3824,
+      "stranded_pop": 3824,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016511": {
+      "pop": 4335,
+      "residents_beyond_1mi": 4335,
+      "residents_beyond_2mi": 4335,
+      "residents_no247_5mi": 4335,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016513": {
+      "pop": 5275,
+      "residents_beyond_1mi": 5275,
+      "residents_beyond_2mi": 5275,
+      "residents_no247_5mi": 5275,
+      "stranded_pop": 2579,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016516": {
+      "pop": 5637,
+      "residents_beyond_1mi": 5637,
+      "residents_beyond_2mi": 5637,
+      "residents_no247_5mi": 5637,
+      "stranded_pop": 3718,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016517": {
+      "pop": 4602,
+      "residents_beyond_1mi": 4602,
+      "residents_beyond_2mi": 4602,
+      "residents_no247_5mi": 4602,
+      "stranded_pop": 4332,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016518": {
+      "pop": 5350,
+      "residents_beyond_1mi": 5350,
+      "residents_beyond_2mi": 5350,
+      "residents_no247_5mi": 5350,
+      "stranded_pop": 5350,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016519": {
+      "pop": 2486,
+      "residents_beyond_1mi": 2486,
+      "residents_beyond_2mi": 2486,
+      "residents_no247_5mi": 2486,
+      "stranded_pop": 1382,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016521": {
+      "pop": 7794,
+      "residents_beyond_1mi": 7794,
+      "residents_beyond_2mi": 7794,
+      "residents_no247_5mi": 7794,
+      "stranded_pop": 4822,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016522": {
+      "pop": 3700,
+      "residents_beyond_1mi": 3700,
+      "residents_beyond_2mi": 3700,
+      "residents_no247_5mi": 3700,
+      "stranded_pop": 3700,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016524": {
+      "pop": 3078,
+      "residents_beyond_1mi": 3078,
+      "residents_beyond_2mi": 3078,
+      "residents_no247_5mi": 3078,
+      "stranded_pop": 3078,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016525": {
+      "pop": 2452,
+      "residents_beyond_1mi": 2452,
+      "residents_beyond_2mi": 2452,
+      "residents_no247_5mi": 2452,
+      "stranded_pop": 2452,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016526": {
+      "pop": 3710,
+      "residents_beyond_1mi": 3710,
+      "residents_beyond_2mi": 3710,
+      "residents_no247_5mi": 3710,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016527": {
+      "pop": 4326,
+      "residents_beyond_1mi": 4326,
+      "residents_beyond_2mi": 4326,
+      "residents_no247_5mi": 4326,
+      "stranded_pop": 3739,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016528": {
+      "pop": 4893,
+      "residents_beyond_1mi": 4893,
+      "residents_beyond_2mi": 4893,
+      "residents_no247_5mi": 4893,
+      "stranded_pop": 1952,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016529": {
+      "pop": 3374,
+      "residents_beyond_1mi": 3374,
+      "residents_beyond_2mi": 3374,
+      "residents_no247_5mi": 3374,
+      "stranded_pop": 3038,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016530": {
+      "pop": 4276,
+      "residents_beyond_1mi": 4276,
+      "residents_beyond_2mi": 4276,
+      "residents_no247_5mi": 4276,
+      "stranded_pop": 4276,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016531": {
+      "pop": 3425,
+      "residents_beyond_1mi": 3425,
+      "residents_beyond_2mi": 3425,
+      "residents_no247_5mi": 3425,
+      "stranded_pop": 3425,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016532": {
+      "pop": 2493,
+      "residents_beyond_1mi": 2493,
+      "residents_beyond_2mi": 2493,
+      "residents_no247_5mi": 2493,
+      "stranded_pop": 2493,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016533": {
+      "pop": 3862,
+      "residents_beyond_1mi": 3862,
+      "residents_beyond_2mi": 3862,
+      "residents_no247_5mi": 3862,
+      "stranded_pop": 3862,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016534": {
+      "pop": 3588,
+      "residents_beyond_1mi": 3588,
+      "residents_beyond_2mi": 3588,
+      "residents_no247_5mi": 3588,
+      "stranded_pop": 860,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016535": {
+      "pop": 3757,
+      "residents_beyond_1mi": 3757,
+      "residents_beyond_2mi": 3757,
+      "residents_no247_5mi": 3757,
+      "stranded_pop": 3757,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016536": {
+      "pop": 3193,
+      "residents_beyond_1mi": 3193,
+      "residents_beyond_2mi": 3193,
+      "residents_no247_5mi": 3193,
+      "stranded_pop": 620,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016607": {
+      "pop": 3643,
+      "residents_beyond_1mi": 3643,
+      "residents_beyond_2mi": 3643,
+      "residents_no247_5mi": 3643,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016610": {
+      "pop": 4790,
+      "residents_beyond_1mi": 4790,
+      "residents_beyond_2mi": 4790,
+      "residents_no247_5mi": 4790,
+      "stranded_pop": 4790,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016615": {
+      "pop": 4218,
+      "residents_beyond_1mi": 4218,
+      "residents_beyond_2mi": 4218,
+      "residents_no247_5mi": 4218,
+      "stranded_pop": 4218,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016616": {
+      "pop": 6403,
+      "residents_beyond_1mi": 6403,
+      "residents_beyond_2mi": 6403,
+      "residents_no247_5mi": 6403,
+      "stranded_pop": 6403,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016617": {
+      "pop": 4514,
+      "residents_beyond_1mi": 4514,
+      "residents_beyond_2mi": 4514,
+      "residents_no247_5mi": 4514,
+      "stranded_pop": 4514,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016618": {
+      "pop": 5290,
+      "residents_beyond_1mi": 5290,
+      "residents_beyond_2mi": 5290,
+      "residents_no247_5mi": 5290,
+      "stranded_pop": 5290,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016619": {
+      "pop": 3731,
+      "residents_beyond_1mi": 3731,
+      "residents_beyond_2mi": 3731,
+      "residents_no247_5mi": 3731,
+      "stranded_pop": 3731,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016620": {
+      "pop": 5688,
+      "residents_beyond_1mi": 5688,
+      "residents_beyond_2mi": 5688,
+      "residents_no247_5mi": 5688,
+      "stranded_pop": 5688,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016621": {
+      "pop": 7560,
+      "residents_beyond_1mi": 7560,
+      "residents_beyond_2mi": 7560,
+      "residents_no247_5mi": 7560,
+      "stranded_pop": 7309,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016622": {
+      "pop": 3907,
+      "residents_beyond_1mi": 3907,
+      "residents_beyond_2mi": 3907,
+      "residents_no247_5mi": 3907,
+      "stranded_pop": 2303,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016623": {
+      "pop": 8279,
+      "residents_beyond_1mi": 8279,
+      "residents_beyond_2mi": 8279,
+      "residents_no247_5mi": 8279,
+      "stranded_pop": 8279,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016624": {
+      "pop": 3436,
+      "residents_beyond_1mi": 3436,
+      "residents_beyond_2mi": 3436,
+      "residents_no247_5mi": 3436,
+      "stranded_pop": 3436,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016626": {
+      "pop": 5019,
+      "residents_beyond_1mi": 5019,
+      "residents_beyond_2mi": 5019,
+      "residents_no247_5mi": 5019,
+      "stranded_pop": 5019,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016627": {
+      "pop": 1657,
+      "residents_beyond_1mi": 1657,
+      "residents_beyond_2mi": 1657,
+      "residents_no247_5mi": 1657,
+      "stranded_pop": 1657,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016628": {
+      "pop": 5131,
+      "residents_beyond_1mi": 5131,
+      "residents_beyond_2mi": 5131,
+      "residents_no247_5mi": 5131,
+      "stranded_pop": 5131,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016629": {
+      "pop": 3158,
+      "residents_beyond_1mi": 3158,
+      "residents_beyond_2mi": 3158,
+      "residents_no247_5mi": 3158,
+      "stranded_pop": 3158,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016630": {
+      "pop": 6288,
+      "residents_beyond_1mi": 6288,
+      "residents_beyond_2mi": 6288,
+      "residents_no247_5mi": 6288,
+      "stranded_pop": 6288,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016631": {
+      "pop": 5087,
+      "residents_beyond_1mi": 5087,
+      "residents_beyond_2mi": 5087,
+      "residents_no247_5mi": 5087,
+      "stranded_pop": 5087,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016632": {
+      "pop": 3244,
+      "residents_beyond_1mi": 3244,
+      "residents_beyond_2mi": 3244,
+      "residents_no247_5mi": 3244,
+      "stranded_pop": 3244,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016633": {
+      "pop": 6305,
+      "residents_beyond_1mi": 6305,
+      "residents_beyond_2mi": 6305,
+      "residents_no247_5mi": 6305,
+      "stranded_pop": 6305,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016634": {
+      "pop": 3537,
+      "residents_beyond_1mi": 3537,
+      "residents_beyond_2mi": 3537,
+      "residents_no247_5mi": 3537,
+      "stranded_pop": 3202,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016635": {
+      "pop": 4022,
+      "residents_beyond_1mi": 4022,
+      "residents_beyond_2mi": 4022,
+      "residents_no247_5mi": 4022,
+      "stranded_pop": 667,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016636": {
+      "pop": 2927,
+      "residents_beyond_1mi": 2927,
+      "residents_beyond_2mi": 2927,
+      "residents_no247_5mi": 2927,
+      "stranded_pop": 2927,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016637": {
+      "pop": 3186,
+      "residents_beyond_1mi": 3186,
+      "residents_beyond_2mi": 3186,
+      "residents_no247_5mi": 3186,
+      "stranded_pop": 2333,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016638": {
+      "pop": 1983,
+      "residents_beyond_1mi": 1983,
+      "residents_beyond_2mi": 1983,
+      "residents_no247_5mi": 1983,
+      "stranded_pop": 1777,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016704": {
+      "pop": 4485,
+      "residents_beyond_1mi": 4485,
+      "residents_beyond_2mi": 4485,
+      "residents_no247_5mi": 4485,
+      "stranded_pop": 4485,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016706": {
+      "pop": 2513,
+      "residents_beyond_1mi": 2513,
+      "residents_beyond_2mi": 2513,
+      "residents_no247_5mi": 2513,
+      "stranded_pop": 2513,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016707": {
+      "pop": 4521,
+      "residents_beyond_1mi": 4521,
+      "residents_beyond_2mi": 4521,
+      "residents_no247_5mi": 4521,
+      "stranded_pop": 4521,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016708": {
+      "pop": 6654,
+      "residents_beyond_1mi": 6654,
+      "residents_beyond_2mi": 6654,
+      "residents_no247_5mi": 6654,
+      "stranded_pop": 6654,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016709": {
+      "pop": 4532,
+      "residents_beyond_1mi": 4532,
+      "residents_beyond_2mi": 4532,
+      "residents_no247_5mi": 4532,
+      "stranded_pop": 4469,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016710": {
+      "pop": 4667,
+      "residents_beyond_1mi": 4667,
+      "residents_beyond_2mi": 4667,
+      "residents_no247_5mi": 4667,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016711": {
+      "pop": 2421,
+      "residents_beyond_1mi": 2421,
+      "residents_beyond_2mi": 2158,
+      "residents_no247_5mi": 2421,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 89.14,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016802": {
+      "pop": 5465,
+      "residents_beyond_1mi": 5465,
+      "residents_beyond_2mi": 5465,
+      "residents_no247_5mi": 5465,
+      "stranded_pop": 5465,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016803": {
+      "pop": 6580,
+      "residents_beyond_1mi": 6580,
+      "residents_beyond_2mi": 6580,
+      "residents_no247_5mi": 6580,
+      "stranded_pop": 6580,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016805": {
+      "pop": 2928,
+      "residents_beyond_1mi": 2928,
+      "residents_beyond_2mi": 2928,
+      "residents_no247_5mi": 2928,
+      "stranded_pop": 2928,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016806": {
+      "pop": 5636,
+      "residents_beyond_1mi": 5636,
+      "residents_beyond_2mi": 5636,
+      "residents_no247_5mi": 5636,
+      "stranded_pop": 5636,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016902": {
+      "pop": 7363,
+      "residents_beyond_1mi": 7363,
+      "residents_beyond_2mi": 7363,
+      "residents_no247_5mi": 7363,
+      "stranded_pop": 7363,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113016903": {
+      "pop": 6851,
+      "residents_beyond_1mi": 6851,
+      "residents_beyond_2mi": 6851,
+      "residents_no247_5mi": 6851,
+      "stranded_pop": 6851,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017005": {
+      "pop": 4958,
+      "residents_beyond_1mi": 4958,
+      "residents_beyond_2mi": 4958,
+      "residents_no247_5mi": 4958,
+      "stranded_pop": 4958,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017006": {
+      "pop": 5698,
+      "residents_beyond_1mi": 5698,
+      "residents_beyond_2mi": 5698,
+      "residents_no247_5mi": 5698,
+      "stranded_pop": 5698,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017007": {
+      "pop": 4983,
+      "residents_beyond_1mi": 4983,
+      "residents_beyond_2mi": 4983,
+      "residents_no247_5mi": 4983,
+      "stranded_pop": 4983,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017008": {
+      "pop": 8361,
+      "residents_beyond_1mi": 8361,
+      "residents_beyond_2mi": 8361,
+      "residents_no247_5mi": 8361,
+      "stranded_pop": 8361,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017009": {
+      "pop": 5842,
+      "residents_beyond_1mi": 5842,
+      "residents_beyond_2mi": 5842,
+      "residents_no247_5mi": 5842,
+      "stranded_pop": 5842,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017010": {
+      "pop": 6573,
+      "residents_beyond_1mi": 6573,
+      "residents_beyond_2mi": 6573,
+      "residents_no247_5mi": 6573,
+      "stranded_pop": 6573,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017101": {
+      "pop": 5987,
+      "residents_beyond_1mi": 5987,
+      "residents_beyond_2mi": 5987,
+      "residents_no247_5mi": 5987,
+      "stranded_pop": 5987,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017102": {
+      "pop": 6070,
+      "residents_beyond_1mi": 6070,
+      "residents_beyond_2mi": 6070,
+      "residents_no247_5mi": 6070,
+      "stranded_pop": 6070,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017201": {
+      "pop": 6268,
+      "residents_beyond_1mi": 6227,
+      "residents_beyond_2mi": 396,
+      "residents_no247_5mi": 6268,
+      "stranded_pop": 6227,
+      "pct_pop_beyond_1mi": 99.35,
+      "pct_pop_beyond_2mi": 6.32,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017203": {
+      "pop": 4808,
+      "residents_beyond_1mi": 4808,
+      "residents_beyond_2mi": 2583,
+      "residents_no247_5mi": 4808,
+      "stranded_pop": 4808,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 53.72,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017204": {
+      "pop": 4532,
+      "residents_beyond_1mi": 4532,
+      "residents_beyond_2mi": 4532,
+      "residents_no247_5mi": 4532,
+      "stranded_pop": 4532,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017307": {
+      "pop": 4383,
+      "residents_beyond_1mi": 4383,
+      "residents_beyond_2mi": 4383,
+      "residents_no247_5mi": 4383,
+      "stranded_pop": 4383,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017308": {
+      "pop": 4243,
+      "residents_beyond_1mi": 4243,
+      "residents_beyond_2mi": 4243,
+      "residents_no247_5mi": 4243,
+      "stranded_pop": 4243,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017309": {
+      "pop": 3381,
+      "residents_beyond_1mi": 3381,
+      "residents_beyond_2mi": 3381,
+      "residents_no247_5mi": 3381,
+      "stranded_pop": 3381,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017310": {
+      "pop": 3603,
+      "residents_beyond_1mi": 3603,
+      "residents_beyond_2mi": 3603,
+      "residents_no247_5mi": 3603,
+      "stranded_pop": 3603,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017311": {
+      "pop": 3863,
+      "residents_beyond_1mi": 3863,
+      "residents_beyond_2mi": 3129,
+      "residents_no247_5mi": 3863,
+      "stranded_pop": 3863,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 81.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017312": {
+      "pop": 4073,
+      "residents_beyond_1mi": 4073,
+      "residents_beyond_2mi": 4073,
+      "residents_no247_5mi": 4073,
+      "stranded_pop": 4073,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017313": {
+      "pop": 3535,
+      "residents_beyond_1mi": 3535,
+      "residents_beyond_2mi": 3535,
+      "residents_no247_5mi": 3535,
+      "stranded_pop": 3535,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017314": {
+      "pop": 8020,
+      "residents_beyond_1mi": 8020,
+      "residents_beyond_2mi": 8020,
+      "residents_no247_5mi": 8020,
+      "stranded_pop": 8020,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017315": {
+      "pop": 7379,
+      "residents_beyond_1mi": 7379,
+      "residents_beyond_2mi": 7379,
+      "residents_no247_5mi": 7379,
+      "stranded_pop": 7379,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017400": {
+      "pop": 5680,
+      "residents_beyond_1mi": 5680,
+      "residents_beyond_2mi": 1730,
+      "residents_no247_5mi": 5680,
+      "stranded_pop": 5680,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 30.46,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017500": {
+      "pop": 3823,
+      "residents_beyond_1mi": 2518,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3823,
+      "stranded_pop": 2518,
+      "pct_pop_beyond_1mi": 65.86,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017602": {
+      "pop": 4361,
+      "residents_beyond_1mi": 4039,
+      "residents_beyond_2mi": 15,
+      "residents_no247_5mi": 4361,
+      "stranded_pop": 2203,
+      "pct_pop_beyond_1mi": 92.62,
+      "pct_pop_beyond_2mi": 0.34,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017604": {
+      "pop": 3425,
+      "residents_beyond_1mi": 3425,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3425,
+      "stranded_pop": 3425,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017605": {
+      "pop": 3941,
+      "residents_beyond_1mi": 3941,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3941,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017606": {
+      "pop": 5211,
+      "residents_beyond_1mi": 3988,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5211,
+      "stranded_pop": 3726,
+      "pct_pop_beyond_1mi": 76.53,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017703": {
+      "pop": 4996,
+      "residents_beyond_1mi": 2820,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4996,
+      "stranded_pop": 2820,
+      "pct_pop_beyond_1mi": 56.45,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017704": {
+      "pop": 6376,
+      "residents_beyond_1mi": 872,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 6376,
+      "stranded_pop": 872,
+      "pct_pop_beyond_1mi": 13.68,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017705": {
+      "pop": 3097,
+      "residents_beyond_1mi": 3097,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3097,
+      "stranded_pop": 3097,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017706": {
+      "pop": 5224,
+      "residents_beyond_1mi": 5224,
+      "residents_beyond_2mi": 783,
+      "residents_no247_5mi": 5224,
+      "stranded_pop": 5224,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 14.99,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017805": {
+      "pop": 6565,
+      "residents_beyond_1mi": 6565,
+      "residents_beyond_2mi": 761,
+      "residents_no247_5mi": 6565,
+      "stranded_pop": 6565,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 11.59,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017806": {
+      "pop": 5228,
+      "residents_beyond_1mi": 2873,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5228,
+      "stranded_pop": 2873,
+      "pct_pop_beyond_1mi": 54.95,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017808": {
+      "pop": 5146,
+      "residents_beyond_1mi": 1686,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5146,
+      "stranded_pop": 1686,
+      "pct_pop_beyond_1mi": 32.76,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017811": {
+      "pop": 4688,
+      "residents_beyond_1mi": 741,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4688,
+      "stranded_pop": 741,
+      "pct_pop_beyond_1mi": 15.81,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017812": {
+      "pop": 2438,
+      "residents_beyond_1mi": 385,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2438,
+      "stranded_pop": 385,
+      "pct_pop_beyond_1mi": 15.79,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017814": {
+      "pop": 5527,
+      "residents_beyond_1mi": 1806,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5527,
+      "stranded_pop": 1806,
+      "pct_pop_beyond_1mi": 32.68,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017815": {
+      "pop": 3285,
+      "residents_beyond_1mi": 3285,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3285,
+      "stranded_pop": 3285,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017816": {
+      "pop": 4289,
+      "residents_beyond_1mi": 4289,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4289,
+      "stranded_pop": 4289,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017817": {
+      "pop": 3222,
+      "residents_beyond_1mi": 1468,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3222,
+      "stranded_pop": 1468,
+      "pct_pop_beyond_1mi": 45.56,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017818": {
+      "pop": 3661,
+      "residents_beyond_1mi": 838,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3661,
+      "stranded_pop": 838,
+      "pct_pop_beyond_1mi": 22.89,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017819": {
+      "pop": 2551,
+      "residents_beyond_1mi": 2551,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2551,
+      "stranded_pop": 2551,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017820": {
+      "pop": 3215,
+      "residents_beyond_1mi": 2764,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3215,
+      "stranded_pop": 2764,
+      "pct_pop_beyond_1mi": 85.97,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113017900": {
+      "pop": 5412,
+      "residents_beyond_1mi": 2787,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5412,
+      "stranded_pop": 2787,
+      "pct_pop_beyond_1mi": 51.5,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018001": {
+      "pop": 7529,
+      "residents_beyond_1mi": 7529,
+      "residents_beyond_2mi": 2875,
+      "residents_no247_5mi": 7529,
+      "stranded_pop": 5862,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 38.19,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018002": {
+      "pop": 3745,
+      "residents_beyond_1mi": 3745,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3745,
+      "stranded_pop": 3745,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018105": {
+      "pop": 5880,
+      "residents_beyond_1mi": 3759,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5880,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 63.93,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018110": {
+      "pop": 5423,
+      "residents_beyond_1mi": 4625,
+      "residents_beyond_2mi": 327,
+      "residents_no247_5mi": 5423,
+      "stranded_pop": 2963,
+      "pct_pop_beyond_1mi": 85.28,
+      "pct_pop_beyond_2mi": 6.03,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018111": {
+      "pop": 6879,
+      "residents_beyond_1mi": 3782,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 6879,
+      "stranded_pop": 1449,
+      "pct_pop_beyond_1mi": 54.98,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018120": {
+      "pop": 5142,
+      "residents_beyond_1mi": 5142,
+      "residents_beyond_2mi": 3856,
+      "residents_no247_5mi": 5142,
+      "stranded_pop": 1494,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 74.99,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018121": {
+      "pop": 5764,
+      "residents_beyond_1mi": 5764,
+      "residents_beyond_2mi": 531,
+      "residents_no247_5mi": 5764,
+      "stranded_pop": 2668,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 9.21,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018126": {
+      "pop": 6894,
+      "residents_beyond_1mi": 6894,
+      "residents_beyond_2mi": 1180,
+      "residents_no247_5mi": 6894,
+      "stranded_pop": 699,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 17.12,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018127": {
+      "pop": 3264,
+      "residents_beyond_1mi": 3264,
+      "residents_beyond_2mi": 2541,
+      "residents_no247_5mi": 3264,
+      "stranded_pop": 83,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 77.85,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018128": {
+      "pop": 5913,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5913,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018129": {
+      "pop": 4504,
+      "residents_beyond_1mi": 3436,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4504,
+      "stranded_pop": 1447,
+      "pct_pop_beyond_1mi": 76.29,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018130": {
+      "pop": 4532,
+      "residents_beyond_1mi": 4532,
+      "residents_beyond_2mi": 1082,
+      "residents_no247_5mi": 4532,
+      "stranded_pop": 1779,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 23.87,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018132": {
+      "pop": 5343,
+      "residents_beyond_1mi": 2104,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5343,
+      "stranded_pop": 2104,
+      "pct_pop_beyond_1mi": 39.38,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018133": {
+      "pop": 3916,
+      "residents_beyond_1mi": 3916,
+      "residents_beyond_2mi": 3916,
+      "residents_no247_5mi": 3916,
+      "stranded_pop": 3142,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018134": {
+      "pop": 5570,
+      "residents_beyond_1mi": 5570,
+      "residents_beyond_2mi": 5570,
+      "residents_no247_5mi": 5570,
+      "stranded_pop": 5570,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018135": {
+      "pop": 5182,
+      "residents_beyond_1mi": 5182,
+      "residents_beyond_2mi": 5182,
+      "residents_no247_5mi": 5182,
+      "stranded_pop": 5182,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018137": {
+      "pop": 4145,
+      "residents_beyond_1mi": 4145,
+      "residents_beyond_2mi": 2420,
+      "residents_no247_5mi": 4145,
+      "stranded_pop": 4145,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 58.38,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018138": {
+      "pop": 4985,
+      "residents_beyond_1mi": 3147,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4985,
+      "stranded_pop": 3147,
+      "pct_pop_beyond_1mi": 63.13,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018140": {
+      "pop": 5572,
+      "residents_beyond_1mi": 5572,
+      "residents_beyond_2mi": 5572,
+      "residents_no247_5mi": 5572,
+      "stranded_pop": 5498,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018141": {
+      "pop": 4245,
+      "residents_beyond_1mi": 4245,
+      "residents_beyond_2mi": 4013,
+      "residents_no247_5mi": 4245,
+      "stranded_pop": 4245,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 94.53,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018142": {
+      "pop": 3916,
+      "residents_beyond_1mi": 3916,
+      "residents_beyond_2mi": 2128,
+      "residents_no247_5mi": 3916,
+      "stranded_pop": 3916,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 54.34,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018143": {
+      "pop": 6836,
+      "residents_beyond_1mi": 6836,
+      "residents_beyond_2mi": 6836,
+      "residents_no247_5mi": 6836,
+      "stranded_pop": 6836,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018144": {
+      "pop": 4458,
+      "residents_beyond_1mi": 4458,
+      "residents_beyond_2mi": 4458,
+      "residents_no247_5mi": 4458,
+      "stranded_pop": 4458,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018145": {
+      "pop": 4089,
+      "residents_beyond_1mi": 4089,
+      "residents_beyond_2mi": 4089,
+      "residents_no247_5mi": 4089,
+      "stranded_pop": 4089,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018146": {
+      "pop": 3564,
+      "residents_beyond_1mi": 3564,
+      "residents_beyond_2mi": 3564,
+      "residents_no247_5mi": 3564,
+      "stranded_pop": 3564,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018147": {
+      "pop": 3737,
+      "residents_beyond_1mi": 2697,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3737,
+      "stranded_pop": 2697,
+      "pct_pop_beyond_1mi": 72.17,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018148": {
+      "pop": 5372,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5372,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018149": {
+      "pop": 3970,
+      "residents_beyond_1mi": 3970,
+      "residents_beyond_2mi": 3970,
+      "residents_no247_5mi": 3970,
+      "stranded_pop": 3970,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018150": {
+      "pop": 4248,
+      "residents_beyond_1mi": 4248,
+      "residents_beyond_2mi": 4248,
+      "residents_no247_5mi": 4248,
+      "stranded_pop": 4248,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018151": {
+      "pop": 3960,
+      "residents_beyond_1mi": 3960,
+      "residents_beyond_2mi": 3960,
+      "residents_no247_5mi": 3960,
+      "stranded_pop": 951,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018152": {
+      "pop": 6203,
+      "residents_beyond_1mi": 6203,
+      "residents_beyond_2mi": 4912,
+      "residents_no247_5mi": 6203,
+      "stranded_pop": 499,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 79.19,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018153": {
+      "pop": 6044,
+      "residents_beyond_1mi": 6044,
+      "residents_beyond_2mi": 6044,
+      "residents_no247_5mi": 6044,
+      "stranded_pop": 6044,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018154": {
+      "pop": 5595,
+      "residents_beyond_1mi": 5595,
+      "residents_beyond_2mi": 5595,
+      "residents_no247_5mi": 5595,
+      "stranded_pop": 5595,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018155": {
+      "pop": 5526,
+      "residents_beyond_1mi": 5526,
+      "residents_beyond_2mi": 5526,
+      "residents_no247_5mi": 5526,
+      "stranded_pop": 5526,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018156": {
+      "pop": 4744,
+      "residents_beyond_1mi": 4744,
+      "residents_beyond_2mi": 4744,
+      "residents_no247_5mi": 4744,
+      "stranded_pop": 4744,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018157": {
+      "pop": 3583,
+      "residents_beyond_1mi": 3583,
+      "residents_beyond_2mi": 3583,
+      "residents_no247_5mi": 3583,
+      "stranded_pop": 3583,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018158": {
+      "pop": 4186,
+      "residents_beyond_1mi": 4186,
+      "residents_beyond_2mi": 3678,
+      "residents_no247_5mi": 4186,
+      "stranded_pop": 4186,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 87.86,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018159": {
+      "pop": 5199,
+      "residents_beyond_1mi": 5059,
+      "residents_beyond_2mi": 3149,
+      "residents_no247_5mi": 5199,
+      "stranded_pop": 5059,
+      "pct_pop_beyond_1mi": 97.31,
+      "pct_pop_beyond_2mi": 60.57,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018203": {
+      "pop": 6636,
+      "residents_beyond_1mi": 3797,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 6636,
+      "stranded_pop": 3474,
+      "pct_pop_beyond_1mi": 57.22,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018204": {
+      "pop": 4504,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4504,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018205": {
+      "pop": 4355,
+      "residents_beyond_1mi": 4355,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4355,
+      "stranded_pop": 902,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018206": {
+      "pop": 4700,
+      "residents_beyond_1mi": 4195,
+      "residents_beyond_2mi": 358,
+      "residents_no247_5mi": 4700,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 89.26,
+      "pct_pop_beyond_2mi": 7.62,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018300": {
+      "pop": 7632,
+      "residents_beyond_1mi": 7317,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 7632,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 95.87,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018401": {
+      "pop": 5222,
+      "residents_beyond_1mi": 3493,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5222,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 66.89,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018402": {
+      "pop": 4417,
+      "residents_beyond_1mi": 4417,
+      "residents_beyond_2mi": 1401,
+      "residents_no247_5mi": 4417,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 31.72,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018403": {
+      "pop": 1047,
+      "residents_beyond_1mi": 1047,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 1047,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018501": {
+      "pop": 3985,
+      "residents_beyond_1mi": 1768,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3985,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 44.37,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018505": {
+      "pop": 3876,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3876,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018506": {
+      "pop": 2771,
+      "residents_beyond_1mi": 72,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2771,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 2.6,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018507": {
+      "pop": 3934,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3934,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018508": {
+      "pop": 1429,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 1429,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018600": {
+      "pop": 3948,
+      "residents_beyond_1mi": 3948,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3948,
+      "stranded_pop": 282,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018700": {
+      "pop": 6720,
+      "residents_beyond_1mi": 1704,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 6720,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 25.36,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018801": {
+      "pop": 4576,
+      "residents_beyond_1mi": 4474,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4576,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 97.77,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018802": {
+      "pop": 1566,
+      "residents_beyond_1mi": 438,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 1566,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 27.97,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113018900": {
+      "pop": 6363,
+      "residents_beyond_1mi": 6363,
+      "residents_beyond_2mi": 3116,
+      "residents_no247_5mi": 6363,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 48.97,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019013": {
+      "pop": 5133,
+      "residents_beyond_1mi": 5133,
+      "residents_beyond_2mi": 5133,
+      "residents_no247_5mi": 5133,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019016": {
+      "pop": 2699,
+      "residents_beyond_1mi": 2699,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2699,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019018": {
+      "pop": 5157,
+      "residents_beyond_1mi": 2954,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5157,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 57.28,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019019": {
+      "pop": 7113,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 7113,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019020": {
+      "pop": 5611,
+      "residents_beyond_1mi": 5611,
+      "residents_beyond_2mi": 5611,
+      "residents_no247_5mi": 5611,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019023": {
+      "pop": 5028,
+      "residents_beyond_1mi": 5028,
+      "residents_beyond_2mi": 5028,
+      "residents_no247_5mi": 5028,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019024": {
+      "pop": 4164,
+      "residents_beyond_1mi": 4164,
+      "residents_beyond_2mi": 4164,
+      "residents_no247_5mi": 4164,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019025": {
+      "pop": 4912,
+      "residents_beyond_1mi": 4912,
+      "residents_beyond_2mi": 4912,
+      "residents_no247_5mi": 4912,
+      "stranded_pop": 1456,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019026": {
+      "pop": 5534,
+      "residents_beyond_1mi": 5534,
+      "residents_beyond_2mi": 4076,
+      "residents_no247_5mi": 5534,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 73.65,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019027": {
+      "pop": 6375,
+      "residents_beyond_1mi": 6375,
+      "residents_beyond_2mi": 6375,
+      "residents_no247_5mi": 6375,
+      "stranded_pop": 282,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019028": {
+      "pop": 3708,
+      "residents_beyond_1mi": 3708,
+      "residents_beyond_2mi": 3708,
+      "residents_no247_5mi": 3708,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019029": {
+      "pop": 6525,
+      "residents_beyond_1mi": 6525,
+      "residents_beyond_2mi": 6525,
+      "residents_no247_5mi": 6525,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019031": {
+      "pop": 6345,
+      "residents_beyond_1mi": 6345,
+      "residents_beyond_2mi": 6345,
+      "residents_no247_5mi": 6345,
+      "stranded_pop": 375,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019032": {
+      "pop": 4258,
+      "residents_beyond_1mi": 4258,
+      "residents_beyond_2mi": 907,
+      "residents_no247_5mi": 4258,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 21.3,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019033": {
+      "pop": 4422,
+      "residents_beyond_1mi": 4422,
+      "residents_beyond_2mi": 174,
+      "residents_no247_5mi": 4422,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 3.93,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019034": {
+      "pop": 4525,
+      "residents_beyond_1mi": 1157,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 4525,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 25.57,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019035": {
+      "pop": 5310,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 5310,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019036": {
+      "pop": 2847,
+      "residents_beyond_1mi": 2847,
+      "residents_beyond_2mi": 2847,
+      "residents_no247_5mi": 2847,
+      "stranded_pop": 1232,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019037": {
+      "pop": 3531,
+      "residents_beyond_1mi": 3531,
+      "residents_beyond_2mi": 3531,
+      "residents_no247_5mi": 3531,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019039": {
+      "pop": 6606,
+      "residents_beyond_1mi": 6606,
+      "residents_beyond_2mi": 5382,
+      "residents_no247_5mi": 6606,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 81.47,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019040": {
+      "pop": 6968,
+      "residents_beyond_1mi": 6968,
+      "residents_beyond_2mi": 1892,
+      "residents_no247_5mi": 6968,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 27.15,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019041": {
+      "pop": 2363,
+      "residents_beyond_1mi": 2363,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 2363,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019042": {
+      "pop": 8230,
+      "residents_beyond_1mi": 8230,
+      "residents_beyond_2mi": 8230,
+      "residents_no247_5mi": 8230,
+      "stranded_pop": 2431,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019044": {
+      "pop": 4066,
+      "residents_beyond_1mi": 4066,
+      "residents_beyond_2mi": 2305,
+      "residents_no247_5mi": 4066,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 56.69,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019045": {
+      "pop": 3153,
+      "residents_beyond_1mi": 3153,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 3153,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019046": {
+      "pop": 3691,
+      "residents_beyond_1mi": 3691,
+      "residents_beyond_2mi": 3691,
+      "residents_no247_5mi": 3691,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019047": {
+      "pop": 3543,
+      "residents_beyond_1mi": 3543,
+      "residents_beyond_2mi": 3543,
+      "residents_no247_5mi": 3543,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019048": {
+      "pop": 3299,
+      "residents_beyond_1mi": 3299,
+      "residents_beyond_2mi": 3299,
+      "residents_no247_5mi": 3299,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019049": {
+      "pop": 4092,
+      "residents_beyond_1mi": 4092,
+      "residents_beyond_2mi": 4092,
+      "residents_no247_5mi": 4092,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019050": {
+      "pop": 2902,
+      "residents_beyond_1mi": 2902,
+      "residents_beyond_2mi": 2902,
+      "residents_no247_5mi": 2902,
+      "stranded_pop": 2393,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019051": {
+      "pop": 5423,
+      "residents_beyond_1mi": 5423,
+      "residents_beyond_2mi": 5423,
+      "residents_no247_5mi": 5423,
+      "stranded_pop": 5321,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019052": {
+      "pop": 1102,
+      "residents_beyond_1mi": 1102,
+      "residents_beyond_2mi": 1102,
+      "residents_no247_5mi": 1102,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019053": {
+      "pop": 1657,
+      "residents_beyond_1mi": 1657,
+      "residents_beyond_2mi": 1657,
+      "residents_no247_5mi": 1657,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019101": {
+      "pop": 1438,
+      "residents_beyond_1mi": 1438,
+      "residents_beyond_2mi": 1438,
+      "residents_no247_5mi": 1438,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019102": {
+      "pop": 5008,
+      "residents_beyond_1mi": 5008,
+      "residents_beyond_2mi": 5008,
+      "residents_no247_5mi": 5008,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019202": {
+      "pop": 4714,
+      "residents_beyond_1mi": 4714,
+      "residents_beyond_2mi": 4714,
+      "residents_no247_5mi": 4714,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019203": {
+      "pop": 3957,
+      "residents_beyond_1mi": 3957,
+      "residents_beyond_2mi": 3957,
+      "residents_no247_5mi": 3957,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019205": {
+      "pop": 4588,
+      "residents_beyond_1mi": 4588,
+      "residents_beyond_2mi": 4588,
+      "residents_no247_5mi": 4588,
+      "stranded_pop": 86,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019208": {
+      "pop": 5932,
+      "residents_beyond_1mi": 5932,
+      "residents_beyond_2mi": 5932,
+      "residents_no247_5mi": 5932,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019210": {
+      "pop": 4338,
+      "residents_beyond_1mi": 4338,
+      "residents_beyond_2mi": 4338,
+      "residents_no247_5mi": 4338,
+      "stranded_pop": 712,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019211": {
+      "pop": 5077,
+      "residents_beyond_1mi": 5077,
+      "residents_beyond_2mi": 5077,
+      "residents_no247_5mi": 5077,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019212": {
+      "pop": 3044,
+      "residents_beyond_1mi": 3044,
+      "residents_beyond_2mi": 3044,
+      "residents_no247_5mi": 3044,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019213": {
+      "pop": 3232,
+      "residents_beyond_1mi": 3232,
+      "residents_beyond_2mi": 3232,
+      "residents_no247_5mi": 3232,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019214": {
+      "pop": 5284,
+      "residents_beyond_1mi": 5284,
+      "residents_beyond_2mi": 5284,
+      "residents_no247_5mi": 5284,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019215": {
+      "pop": 2880,
+      "residents_beyond_1mi": 2880,
+      "residents_beyond_2mi": 2880,
+      "residents_no247_5mi": 2880,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019216": {
+      "pop": 3992,
+      "residents_beyond_1mi": 3992,
+      "residents_beyond_2mi": 3992,
+      "residents_no247_5mi": 3992,
+      "stranded_pop": 94,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019301": {
+      "pop": 3098,
+      "residents_beyond_1mi": 3098,
+      "residents_beyond_2mi": 3098,
+      "residents_no247_5mi": 3098,
+      "stranded_pop": 1003,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019302": {
+      "pop": 6342,
+      "residents_beyond_1mi": 6342,
+      "residents_beyond_2mi": 6342,
+      "residents_no247_5mi": 1060,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 16.71
+    },
+    "48113019400": {
+      "pop": 4290,
+      "residents_beyond_1mi": 4290,
+      "residents_beyond_2mi": 4290,
+      "residents_no247_5mi": 1869,
+      "stranded_pop": 736,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 43.57
+    },
+    "48113019501": {
+      "pop": 7096,
+      "residents_beyond_1mi": 7096,
+      "residents_beyond_2mi": 7096,
+      "residents_no247_5mi": 7096,
+      "stranded_pop": 830,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113019502": {
+      "pop": 4457,
+      "residents_beyond_1mi": 4457,
+      "residents_beyond_2mi": 3652,
+      "residents_no247_5mi": 3434,
+      "stranded_pop": 271,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 81.94,
+      "pct_pop_no247_5mi": 77.05
+    },
+    "48113019600": {
+      "pop": 2369,
+      "residents_beyond_1mi": 2369,
+      "residents_beyond_2mi": 980,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 41.37,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113019700": {
+      "pop": 1966,
+      "residents_beyond_1mi": 1961,
+      "residents_beyond_2mi": 820,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 662,
+      "pct_pop_beyond_1mi": 99.75,
+      "pct_pop_beyond_2mi": 41.71,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113019800": {
+      "pop": 4529,
+      "residents_beyond_1mi": 3472,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 123,
+      "stranded_pop": 1496,
+      "pct_pop_beyond_1mi": 76.66,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 2.72
+    },
+    "48113019900": {
+      "pop": 3884,
+      "residents_beyond_1mi": 3884,
+      "residents_beyond_2mi": 76,
+      "residents_no247_5mi": 3884,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 1.96,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113020000": {
+      "pop": 5779,
+      "residents_beyond_1mi": 5779,
+      "residents_beyond_2mi": 5779,
+      "residents_no247_5mi": 5779,
+      "stranded_pop": 5779,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113020100": {
+      "pop": 2428,
+      "residents_beyond_1mi": 2428,
+      "residents_beyond_2mi": 2284,
+      "residents_no247_5mi": 2428,
+      "stranded_pop": 1418,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 94.07,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113020200": {
+      "pop": 4416,
+      "residents_beyond_1mi": 4416,
+      "residents_beyond_2mi": 1498,
+      "residents_no247_5mi": 3431,
+      "stranded_pop": 868,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 33.92,
+      "pct_pop_no247_5mi": 77.69
+    },
+    "48113020300": {
+      "pop": 2784,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113020401": {
+      "pop": 2225,
+      "residents_beyond_1mi": 0,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 0.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113020402": {
+      "pop": 6079,
+      "residents_beyond_1mi": 1547,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 25,
+      "pct_pop_beyond_1mi": 25.45,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113020500": {
+      "pop": 5259,
+      "residents_beyond_1mi": 5028,
+      "residents_beyond_2mi": 2783,
+      "residents_no247_5mi": 5259,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 95.61,
+      "pct_pop_beyond_2mi": 52.92,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113020600": {
+      "pop": 2478,
+      "residents_beyond_1mi": 2478,
+      "residents_beyond_2mi": 2478,
+      "residents_no247_5mi": 2478,
+      "stranded_pop": 902,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113020700": {
+      "pop": 5178,
+      "residents_beyond_1mi": 5178,
+      "residents_beyond_2mi": 2897,
+      "residents_no247_5mi": 5178,
+      "stranded_pop": 3760,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 55.95,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113020800": {
+      "pop": 6593,
+      "residents_beyond_1mi": 104,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 1.58,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113020900": {
+      "pop": 2751,
+      "residents_beyond_1mi": 782,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 3,
+      "pct_pop_beyond_1mi": 28.43,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113021000": {
+      "pop": 5547,
+      "residents_beyond_1mi": 5126,
+      "residents_beyond_2mi": 1310,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 92.41,
+      "pct_pop_beyond_2mi": 23.62,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113021100": {
+      "pop": 4087,
+      "residents_beyond_1mi": 4087,
+      "residents_beyond_2mi": 1081,
+      "residents_no247_5mi": 0,
+      "stranded_pop": 22,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 26.45,
+      "pct_pop_no247_5mi": 0.0
+    },
+    "48113021200": {
+      "pop": 5716,
+      "residents_beyond_1mi": 5716,
+      "residents_beyond_2mi": 5716,
+      "residents_no247_5mi": 5716,
+      "stranded_pop": 2781,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113980000": {
+      "pop": 3,
+      "residents_beyond_1mi": 3,
+      "residents_beyond_2mi": 3,
+      "residents_no247_5mi": 3,
+      "stranded_pop": 3,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113980100": {
+      "pop": 40,
+      "residents_beyond_1mi": 40,
+      "residents_beyond_2mi": 0,
+      "residents_no247_5mi": 40,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 0.0,
+      "pct_pop_no247_5mi": 100.0
+    },
+    "48113980200": {
+      "pop": 3858,
+      "residents_beyond_1mi": 3858,
+      "residents_beyond_2mi": 3858,
+      "residents_no247_5mi": 3858,
+      "stranded_pop": 0,
+      "pct_pop_beyond_1mi": 100.0,
+      "pct_pop_beyond_2mi": 100.0,
+      "pct_pop_no247_5mi": 100.0
+    }
+  }
+}

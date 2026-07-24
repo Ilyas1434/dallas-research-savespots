@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Dallas County Overdose Intelligence Map</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -200,7 +201,11 @@ const F = {
   ctxMeta:   "context_meta.json",
   builtenv:  "builtenv_index.json",       // present now (blight/311) — still feature-detected
   composite: "composite_index.geojson",   // may not exist yet
-  candidates:"placement_candidates.geojson"// may not exist yet
+  candidates:"placement_candidates.geojson",// may not exist yet
+  blockTracts:"block_access_tracts.geojson",   // MEASURED access rollups (block pop x distance)
+  blockSummary:"block_access_summary.json",    // measured headline stats
+  mortUnits: "mortality_units.geojson",        // CDC mortality at native 150 aggregation units
+  od2a:      "od2a_zips.geojson"               // DCHHS-published ZIP facts (observed, cited)
 };
 
 const store = {};      // loaded json by key
@@ -245,6 +250,13 @@ const PAL = {
 // normalize value into 0..1 within [min,max]; optional sqrt for skewed counts
 function norm(v,min,max,sqrt){ if(v==null||isNaN(v)) return null; let t=(v-min)/(max-min); t=Math.max(0,Math.min(1,t)); return sqrt?Math.sqrt(t):t; }
 
+/* quantile-binned classing (kills the flat-wall problem on skewed data) */
+const ACCESS_BINS=['#1e4f7a','#3a86b5','#e0a13e','#e8632e','#d42a2a']; // cool = served, hot = desert
+function quantBreaks(vals,k){ const s=[...vals].filter(v=>v!=null&&!isNaN(v)).sort((a,b)=>a-b);
+  const br=[]; for(let i=1;i<k;i++){ br.push(s[Math.min(s.length-1,Math.floor(s.length*i/k))]); } return br; }
+function binColor(v,breaks,colors){ if(v==null||isNaN(v)) return null;
+  let i=0; while(i<breaks.length && v>=breaks[i]) i++; return colors[i]; }
+
 /* naloxone category styling */
 const CAT = {
   otp_methadone:        {label:"OTP / methadone",       color:"#4ea1ff"},
@@ -260,17 +272,65 @@ function catStyle(c){ return CAT[c] || {label:c||"Other", color:"#9aa7b8"}; }
    LAYER DEFINITIONS  (built lazily on first use)
    ============================================================ */
 const LAYERS = {
+  access: {
+    label:"Naloxone access desert", legend:"bins", colors:ACCESS_BINS,
+    desc:"% of residents &gt;1 mi from any naloxone point — measured: 2020 census block population × straight-line distance. No modeling.",
+    requires:["blockTracts"], unit:"% residents &gt;1 mi", fmt:v=>Math.round(v)+"%",
+    build(){
+      // fixed classes, not quantiles: most tracts sit at exactly 100% beyond 1 mi,
+      // so quantile breaks collapse. Classes: served / mostly served / split / mostly desert / total desert.
+      this.breaks=[5,50,95,99.95];
+      const br=this.breaks;
+      return L.geoJSON(store.blockTracts,{
+        style:f=>{const c=binColor(f.properties.pct_pop_beyond_1mi,br,ACCESS_BINS);
+          return {fillColor:c||"#20262f", fillOpacity:c?0.78:0.14, weight:0.4, color:"#0b0e1388", opacity:1};},
+        onEachFeature:(f,l)=>{const p=f.properties;
+          l.bindPopup(`<div class="pp-t">Tract ${String(p.geoid).slice(-6)} · pop ${(p.pop||0).toLocaleString()}</div>
+            <div class="pp-r">Residents &gt;1 mi from naloxone: <b>${p.pct_pop_beyond_1mi==null?"—":p.pct_pop_beyond_1mi.toFixed(0)+"%"}</b> (${(p.residents_beyond_1mi||0).toLocaleString()})</div>
+            <div class="pp-r">Residents &gt;2 mi: <b>${p.pct_pop_beyond_2mi==null?"—":p.pct_pop_beyond_2mi.toFixed(0)+"%"}</b></div>
+            <div class="pp-r">No 24/7 site within 5 mi: <b>${p.pct_pop_no247_5mi==null?"—":p.pct_pop_no247_5mi.toFixed(0)+"%"}</b></div>
+            <div class="pp-r">Stranded (no supply ≤1 mi, no DART ≤½ mi): <b>${(p.stranded_pop||0).toLocaleString()}</b></div>
+            <div class="pp-r" style="font-size:11px;margin-top:3px;color:#4fd6a0">Measured — block counts × distance. Not modeled.</div>`);}
+      });
+    }
+  },
   mortality: {
     label:"Overdose mortality", legend:"choropleth", pal:"mortality",
-    desc:"Model-based death rate per 100k (2025)", requires:["tracts"],
+    desc:"CDC published rate per 100k (2025) — model-based due to count suppression", requires:["tracts"],
     dom:[0,64.7], unit:"per 100k", fmt:v=>v.toFixed(1)+" / 100k",
     build(){
-      return L.geoJSON(store.tracts, {
+      // prefer CDC's native 150 aggregation units (real unit-to-unit spread) over the tract-inherited copy
+      const useUnits = !!avail.mortUnits;
+      const src = useUnits ? store.mortUnits : store.tracts;
+      this.desc = useUnits ? "CDC published rates at native aggregation units (150) — model-based" : this.desc;
+      return L.geoJSON(src, {
         style:f=>choStyle(f.properties.od_death_rate_per_100k, "mortality",[0,64.7]),
         onEachFeature:(f,l)=>{const p=f.properties;
-          l.bindPopup(`<div class="pp-t">Tract ${p.geoid.slice(-6)}</div>
-            <div class="pp-r"><b>${p.od_death_rate_per_100k.toFixed(1)}</b> deaths / 100k</div>
+          const title = useUnits ? `CDC unit ${esc(p.unit_id||"")} (${p.n_tracts} tracts)` : `Tract ${String(p.geoid).slice(-6)}`;
+          const ci = (p.ci_low!=null&&p.ci_high!=null)?`<div class="pp-r" style="font-size:11px">95% CI ${p.ci_low}–${p.ci_high}</div>`:"";
+          l.bindPopup(`<div class="pp-t">${title}</div>
+            <div class="pp-r"><b>${(+p.od_death_rate_per_100k).toFixed(1)}</b> deaths / 100k${useUnits?" (CDC model-based)":""}</div>${ci}
             ${p.count_suppressed?'<div class="pp-r" style="margin-top:4px;font-size:11px;color:#ffb454">Death count 1–9 suppressed (CDC); model-based rate shown.</div>':''}`);}
+      });
+    }
+  },
+  od2a: {
+    label:"DCHHS published ZIP rankings", legend:"od2a", optional:true,
+    desc:"County's own 2024 report: top death-residence &amp; opioid-ED ZIPs — observed, page-cited", requires:["od2a"],
+    build(){
+      return L.geoJSON(store.od2a,{
+        style:f=>{const p=f.properties;
+          const isDeath=p.od2a_death_residence_rank_2016_2024!=null;
+          const isEd=p.od2a_opioid_ed_visits_rank_2024!=null;
+          return {fill:isDeath, fillColor:"#ff6b5e", fillOpacity:isDeath?0.18:0,
+                  color:isDeath?"#ff6b5e":(isEd?"#ffb454":"#6b7789"),
+                  weight:isDeath||isEd?2.2:1, dashArray:isEd&&!isDeath?"6 4":null, opacity:.9};},
+        onEachFeature:(f,l)=>{const p=f.properties;
+          let h=`<div class="pp-t">ZIP ${esc(p.zcta)}</div>`;
+          if(p.od2a_death_residence_rank_2016_2024!=null) h+=`<div class="pp-r">OD death residence rank (2016–2024): <b>#${p.od2a_death_residence_rank_2016_2024}</b></div>`;
+          if(p.od2a_opioid_ed_visits_rank_2024!=null) h+=`<div class="pp-r">Opioid ED-visit rank (2024): <b>#${p.od2a_opioid_ed_visits_rank_2024}</b></div>`;
+          h+=`<div class="pp-r" style="font-size:11px;margin-top:3px">${esc(p.source||"")}</div>`;
+          l.bindPopup(h);}
       });
     }
   },
@@ -373,7 +433,7 @@ const LAYERS = {
       store.nalox.features.forEach(f=>{
         if(!f.geometry) return; // mobile org: null geometry, intentionally not placed
         const p=f.properties, cs=catStyle(p.category), ll=[f.geometry.coordinates[1],f.geometry.coordinates[0]];
-        L.circleMarker(ll,{radius:6,color:"#0b0e13",weight:1.5,fillColor:cs.color,fillOpacity:.95})
+        L.circleMarker(ll,{radius:7,color:"#ffffff",weight:2,fillColor:cs.color,fillOpacity:1})
          .bindPopup(`<div class="pp-t">${esc(p.name)}</div>
             <div class="pp-r">${esc(p.address||"")}${p.city?", "+esc(p.city):""} ${p.zip||""}</div>
             ${p.hours_raw?`<div class="pp-r" style="margin-top:3px">Hours: ${esc(p.hours_raw)}</div>`:""}
@@ -507,7 +567,7 @@ function getLayer(id){
   return built[id];
 }
 // z-ordering: choropleths bottom, hatch/points/radii above
-const ORDER=["mortality","svi","poverty","distance","dart","blight","composite","suppressed","radii","naloxone","candidates"];
+const ORDER=["access","mortality","svi","poverty","distance","dart","blight","composite","suppressed","od2a","radii","naloxone","candidates"];
 function setLayer(id,on){
   const lyr=getLayer(id); if(!lyr) return;
   if(on){ if(!activeLayers[id]){ lyr.addTo(map); activeLayers[id]=lyr; } }
@@ -522,7 +582,7 @@ function reorder(){
    TABS + PANELS
    ============================================================ */
 const TABS={
-  overview:   {name:"Overview",    layers:["mortality","suppressed","svi","poverty","naloxone","radii"], on:["mortality"]},
+  overview:   {name:"Overview",    layers:["access","naloxone","od2a","mortality","suppressed","svi","poverty","radii"], on:["access","naloxone"]},
   placement:  {name:"Placement",   layers:["distance","naloxone","radii","composite","candidates"],       on:["distance","naloxone"]},
   environment:{name:"Environment", layers:["dart","blight","svi"],                                         on:["dart"]},
   insights:   {name:"Insights",    layers:["mortality"],                                                   on:["mortality"], panel:"insights"},
@@ -551,7 +611,23 @@ function renderPanel(){
   if(tab.panel==="insights"){ el.innerHTML=insightsHTML(); drawSpark(); return; }
   if(tab.panel==="about"){ el.innerHTML=aboutHTML(); return; }
   // layer toggles + legend
-  let h=`<div class="sec-h">Layers</div>`;
+  let h="";
+  if(curTab==="overview" && avail.blockSummary){
+    const s=store.blockSummary.headline;
+    h+=`<div class="legend-box" style="border-color:#d42a2a55">
+      <div class="lt" style="font-size:13px">The access desert — measured, not modeled</div>
+      <div style="font-size:12px;line-height:1.5;color:var(--ink-dim);margin-top:2px">
+        <b style="color:var(--ink);font-size:15px">${s.pct_beyond_1mi_supply.toFixed(0)}%</b> of Dallas County —
+        <b style="color:var(--ink)">${s.residents_beyond_1mi_supply.toLocaleString()}</b> residents — live
+        more than a mile from any naloxone access point.</div>
+      <div style="font-size:11px;line-height:1.5;color:var(--ink-dim);margin-top:6px">
+        ${s.pct_beyond_5mi_247.toFixed(0)}% (${s.residents_beyond_5mi_247.toLocaleString()}) are &gt;5 mi from a 24/7 site —
+        the county has one geocoded fixed 24/7 point. ${s.stranded_population.toLocaleString()} people are
+        <b>stranded</b>: no supply within 1 mi and no DART stop within ½ mi.</div>
+      <div class="legend-note">2020 census block populations × straight-line distance (EPSG:32138). Every number is a count or a measurement.</div>
+    </div>`;
+  }
+  h+=`<div class="sec-h">Layers</div>`;
   tab.layers.forEach(id=>{
     const def=LAYERS[id], ready=layerReady(id), on=!!activeLayers[id];
     let badge = "";
@@ -586,6 +662,20 @@ function renderLegend(){
         <div class="grad" style="background:${grad}"></div>
         <div class="grad-lab"><span>${def.fmt(a)}</span>${mid!=null?`<span>${def.fmt(mid)}</span>`:`<span></span>`}<span>${def.fmt(b)}</span></div>
         ${def.sqrt?'<div class="legend-note">Square-root scale (skewed counts).</div>':''}</div>`;
+    } else if(def.legend==="bins"){
+      const br=def.breaks||[], cols=def.colors||ACCESS_BINS;
+      let rows="";
+      cols.forEach((c,i)=>{
+        const lo=i===0?0:br[i-1], hi=i<br.length?br[i]:100;
+        rows+=`<div class="cat-row"><span class="cat-dot" style="background:${c};border-radius:3px"></span>${def.fmt(lo)} – ${def.fmt(hi)}</div>`;
+      });
+      h+=`<div class="legend-box"><div class="lt">${def.label} <span style="color:var(--ink-faint);font-weight:400">(${def.unit})</span></div>
+        ${rows}<div class="legend-note">Fixed classes; top class = 100% of residents beyond 1 mi (total desert). Measured from census-block populations and distances — no modeling.</div></div>`;
+    } else if(def.legend==="od2a"){
+      h+=`<div class="legend-box"><div class="lt">DCHHS published ZIPs</div>
+        <div class="cat-row"><span class="cat-dot" style="background:#ff6b5e33;border:2px solid #ff6b5e;border-radius:3px"></span>Top OD death-residence ZIP (2016–2024)</div>
+        <div class="cat-row"><span class="cat-dot" style="background:transparent;border:2px dashed #ffb454;border-radius:3px"></span>Top opioid ED-visit ZIP (2024)</div>
+        <div class="legend-note">Observed rankings from the DCHHS OD2A 2024 Annual Surveillance Report (page-cited in popups). Counts per ZIP were not published.</div></div>`;
     } else if(def.legend==="hatch"){
       h+=`<div class="legend-box"><div class="lt" style="display:flex;align-items:center;gap:7px"><span class="hatch-swatch"></span>Suppressed counts</div>
         <div class="legend-note">Diagonal hatch = tracts where the death count (1–9) is masked by CDC/NCHS confidentiality. The model-based <b>rate</b> is still shown in the mortality layer.</div></div>`;
@@ -623,7 +713,16 @@ function insightsHTML(){
   store.nalox.features.forEach(f=>{const c=f.properties.category||"other"; catCounts[c]=(catCounts[c]||0)+1;});
   const maxCat=Math.max(...Object.values(catCounts));
   const w1=cov.pct_tracts_within_1mi_any, w2=cov.pct_tracts_within_2mi_any;
-  let h=`<div class="sec-h">Headline (live from data)</div><div class="kpi-grid">
+  let h="";
+  if(avail.blockSummary){
+    const s=store.blockSummary.headline;
+    h+=`<div class="sec-h">Measured access (2020 blocks × distance — no modeling)</div><div class="kpi-grid">
+      <div class="kpi wide"><div class="v">${s.pct_beyond_1mi_supply.toFixed(0)}% · ${(s.residents_beyond_1mi_supply/1e6).toFixed(1)}M people</div><div class="l">live &gt;1 mile from ANY naloxone access point</div></div>
+      <div class="kpi"><div class="v">${s.pct_beyond_5mi_247.toFixed(0)}%</div><div class="l">&gt;5 mi from a 24/7 site (county has <b>1</b> geocoded fixed 24/7 point)</div></div>
+      <div class="kpi"><div class="v">${(s.stranded_population/1e3).toFixed(0)}k</div><div class="l">stranded: no supply ≤1 mi AND no DART stop ≤½ mi</div></div>
+    </div>`;
+  }
+  h+=`<div class="sec-h">Headline (live from data)</div><div class="kpi-grid">
     <div class="kpi"><div class="v">${latest}</div><div class="l">Drug-OD deaths, 12-mo ending <b>${latestEnd}</b></div></div>
     <div class="kpi"><div class="v">${peak}</div><div class="l">Peak 12-mo total (${peakEnd})</div></div>
     <div class="kpi"><div class="v">${w1}%</div><div class="l">Tracts within <b>1 mi</b> of any supply</div></div>
@@ -684,8 +783,12 @@ function aboutHTML(){
     <h4>What this is</h4>
     <p>A decision-support map for targeting <b>naloxone placement</b> and harm-reduction outreach across Dallas County's 645 census tracts. It blends overdose mortality, social vulnerability, existing supply, and access gaps.</p>
 
+    <h4>Measured vs modeled — read this first</h4>
+    <p><b>Measured layers</b> (pure counts and geometry, no statistical modeling): naloxone access desert (2020 census block populations × straight-line distance), supply sites, coverage radii, distance-to-supply, DART stops, 311 blight counts, DCHHS published ZIP rankings.</p>
+    <p><b>Modeled/official-statistic layers</b>, labeled as such: overdose mortality rates are CDC <b>model-based</b> values — Texas suppresses death counts of 1–9, covering 592 of 645 tracts, so CDC publishes smoothed rates at 150 aggregation units instead. SVI/ACS are official survey statistics. The composite tiers blend both and are secondary here.</p>
+
     <h4>Privacy</h4>
-    <p>All layers are <b>aggregated</b> (tract or county level). Dallas County does not publish address-level overdose deaths, and none are synthesized here. The "walkable coverage" figures are areal/centroid proxies, not death-point coverage.</p>
+    <p>All layers are <b>aggregated</b> (block-rollup, tract, or county level). Dallas County does not publish address-level overdose deaths, and none are synthesized here. The "walkable coverage" figures are areal/centroid proxies, not death-point coverage.</p>
 
     <h4>Data sources &amp; vintages</h4>
     ${src("CDC VSRR — provisional county OD deaths", `Dataset gb4e-yj24 · ${S.vsrr_county.row_count} monthly rows · data as of <b>${S.vsrr_county.data_as_of}</b> · latest 12-mo total ${S.vsrr_county.latest_deaths_12mo_ending} (${S.vsrr_county.latest_month}).`)}
@@ -737,8 +840,12 @@ async function boot(){
     getJSON("coverage",true), getJSON("walk",true), getJSON("vsrr",true),
     getJSON("mortMeta",true), getJSON("ctxMeta",true),
     // optional / feature-detected
-    getJSON("builtenv",false), getJSON("composite",false), getJSON("candidates",false)
+    getJSON("builtenv",false), getJSON("composite",false), getJSON("candidates",false),
+    getJSON("blockTracts",false), getJSON("blockSummary",false),
+    getJSON("mortUnits",false), getJSON("od2a",false)
   ]);
+  // if the measured access layer is missing, fall back to the old mortality landing view
+  if(!avail.blockTracts){ TABS.overview.on=["mortality"]; }
 
   if(avail.tracts) tractGeoFeatures=store.tracts.features;
   if(avail.coverage) store.coverage.tracts.forEach(t=>{covByGeoid[t.geoid]=t;});
@@ -757,7 +864,8 @@ async function boot(){
 
   switchTab("overview");
   // fit to tracts
-  try{ const b=getLayer("mortality").getBounds(); if(b.isValid()) map.fitBounds(b,{padding:[10,10]}); }catch(e){}
+  try{ const base=getLayer(avail.blockTracts?"access":"mortality");
+    const b=base.getBounds(); if(b.isValid()) map.fitBounds(b,{padding:[10,10]}); }catch(e){}
   document.getElementById("loading").style.display="none";
 }
 boot();
