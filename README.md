@@ -1,5 +1,7 @@
 # Dallas County Overdose Intelligence & Naloxone Placement
 
+> **Full findings:** see [`report.md`](report.md) — the comprehensive final report (measured access desert, mortality findings, composite index, ranked placement recommendations, figures, limitations, reproducibility).
+
 ## Mission
 
 This repository builds an open, reproducible data pipeline that maps overdose

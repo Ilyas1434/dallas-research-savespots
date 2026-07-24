@@ -130,6 +130,9 @@
   .cluster-icon{background:rgba(78,161,255,.85); border:2px solid #fff; border-radius:50%;
     color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center;
     font-size:12px; box-shadow:0 2px 8px #0007}
+  .leaflet-tooltip.rank-lbl{background:#ffd24d; color:#1a1400; border:1px solid #a8791f;
+    font-weight:700; font-size:10.5px; padding:1px 5px; border-radius:9px; box-shadow:0 1px 4px #0007}
+  .leaflet-tooltip.rank-lbl::before{border-top-color:#ffd24d}
 
   /* mobile */
   #menu-btn{display:none; position:absolute; top:10px; left:10px; z-index:1300;
@@ -205,7 +208,9 @@ const F = {
   blockTracts:"block_access_tracts.geojson",   // MEASURED access rollups (block pop x distance)
   blockSummary:"block_access_summary.json",    // measured headline stats
   mortUnits: "mortality_units.geojson",        // CDC mortality at native 150 aggregation units
-  od2a:      "od2a_zips.geojson"               // DCHHS-published ZIP facts (observed, cited)
+  od2a:      "od2a_zips.geojson",              // DCHHS-published ZIP facts (observed, cited)
+  rankedPlace:"placement_ranked.geojson",      // NEED x REACH ranked candidates — may not exist yet
+  rankedMeta: "placement_ranked_meta.json"     // greedy coverage gain + agreement stats — may not exist yet
 };
 
 const store = {};      // loaded json by key
@@ -487,9 +492,14 @@ const LAYERS = {
     }
   },
   candidates: {
-    label:"Placement candidates", legend:"points",
-    optional:true, desc:"Recommended new naloxone sites (clustered)", requires:["candidates"],
+    label:"Placement candidates (full universe)", legend:"points",
+    optional:true, desc:"All scored candidate storefronts (clustered)", requires:["candidates"],
     build(){ return buildCandidateLayer(store.candidates); }
+  },
+  ranked: {
+    label:"Ranked placement (NEED × REACH)", legend:"ranked",
+    optional:true, desc:"Top 100 by rank_composite — size = unserved reach, gold = agrees with grounded top-50", requires:["rankedPlace"],
+    build(){ return buildRankedLayer(store.rankedPlace); }
   }
 };
 
@@ -549,6 +559,48 @@ function buildCandidateLayer(fc){
   return g;
 }
 
+/* ---------- ranked placement layer: top-100 by rank_composite, sized by reach ---------- */
+function buildRankedLayer(fc){
+  const feats=(fc.features||[]).filter(f=>f.geometry && f.geometry.type==="Point"
+    && f.properties && f.properties.rank_composite!=null && f.properties.rank_composite<=100);
+  feats.sort((a,b)=>a.properties.rank_composite-b.properties.rank_composite);
+  let mn=Infinity,mx=-Infinity;
+  feats.forEach(f=>{const r=+f.properties.reach_raw||0; mn=Math.min(mn,r); mx=Math.max(mx,r);});
+  if(!isFinite(mn)){mn=0;mx=1;}
+  function rScale(v){ const t=mx>mn?Math.sqrt(Math.max(0,v-mn)/(mx-mn)):0.5; return 5+t*11; }
+  const g=L.layerGroup();
+  feats.forEach(f=>{
+    const p=f.properties, ll=[f.geometry.coordinates[1],f.geometry.coordinates[0]];
+    const both=!!p.in_top50_both, r=rScale(+p.reach_raw||0);
+    const marker=L.circleMarker(ll,{
+      radius:r, weight:both?1.5:2, color:"#ffd24d",
+      fillColor:"#ffd24d", fillOpacity:both?0.85:0.06, opacity:1
+    });
+    const tierTxt = p.tier!=null ? (+p.tier).toFixed(0) : "—";
+    marker.bindPopup(`<div class="pp-t">${esc(p.name||"Unnamed site")}</div>
+      <div class="pp-r">${esc(p.address||"")}${p.zip?" · "+esc(String(p.zip)):""}</div>
+      <div class="pp-r">${esc((p.category||"").replace(/_/g,' '))}</div>
+      <div class="pp-r" style="margin-top:4px">~<b>${(p.reach_raw||0).toLocaleString()}</b> unserved residents within ½ mi walk</div>
+      <div class="pp-r">Rank (composite): <b>#${p.rank_composite}</b> · Rank (grounded): <b>#${p.rank_grounded}</b></div>
+      <div class="pp-r">Tier: <b>${tierTxt}</b>${both?' · <span style="color:#ffd24d">agrees w/ grounded top-50</span>':''}</div>
+      ${p.greedy_pick_order!=null?`<div class="pp-r" style="color:#4fd6a0">Greedy pick order: <b>#${p.greedy_pick_order}</b></div>`:""}`);
+    if(p.rank_composite<=10){
+      marker.bindTooltip(String(p.rank_composite),{permanent:true, direction:"top", offset:[0,-r-1], className:"rank-lbl", opacity:0.95});
+    }
+    marker.addTo(g);
+  });
+  function updateLabels(){
+    if(!map) return; const z=map.getZoom();
+    g.eachLayer(l=>{ if(!l.getTooltip()) return;
+      if(z>=12){ if(!l.isTooltipOpen()) l.openTooltip(); }
+      else { if(l.isTooltipOpen()) l.closeTooltip(); }
+    });
+  }
+  g.on("add",()=>{ updateLabels(); map.on("zoomend",updateLabels); });
+  g.on("remove",()=>{ map.off("zoomend",updateLabels); });
+  return g;
+}
+
 /* ============================================================
    MAP + LAYER TOGGLING
    ============================================================ */
@@ -567,7 +619,7 @@ function getLayer(id){
   return built[id];
 }
 // z-ordering: choropleths bottom, hatch/points/radii above
-const ORDER=["access","mortality","svi","poverty","distance","dart","blight","composite","suppressed","od2a","radii","naloxone","candidates"];
+const ORDER=["access","mortality","svi","poverty","distance","dart","blight","composite","suppressed","od2a","radii","naloxone","candidates","ranked"];
 function setLayer(id,on){
   const lyr=getLayer(id); if(!lyr) return;
   if(on){ if(!activeLayers[id]){ lyr.addTo(map); activeLayers[id]=lyr; } }
@@ -583,7 +635,7 @@ function reorder(){
    ============================================================ */
 const TABS={
   overview:   {name:"Overview",    layers:["access","naloxone","od2a","mortality","suppressed","svi","poverty","radii"], on:["access","naloxone"]},
-  placement:  {name:"Placement",   layers:["distance","naloxone","radii","composite","candidates"],       on:["distance","naloxone"]},
+  placement:  {name:"Placement",   layers:["ranked","distance","naloxone","radii","composite","candidates"], on:["ranked","naloxone","distance"]},
   environment:{name:"Environment", layers:["dart","blight","svi"],                                         on:["dart"]},
   insights:   {name:"Insights",    layers:["mortality"],                                                   on:["mortality"], panel:"insights"},
   about:      {name:"About",       layers:[],                                                              on:[],            panel:"about"}
@@ -625,6 +677,23 @@ function renderPanel(){
         the county has one geocoded fixed 24/7 point. ${s.stranded_population.toLocaleString()} people are
         <b>stranded</b>: no supply within 1 mi and no DART stop within ½ mi.</div>
       <div class="legend-note">2020 census block populations × straight-line distance (EPSG:32138). Every number is a count or a measurement.</div>
+    </div>`;
+  }
+  if(curTab==="placement" && avail.rankedMeta){
+    const cs=store.rankedMeta.greedy_coverage_gain.cumulative_summary;
+    const ag=store.rankedMeta.agreement_stats;
+    h+=`<div class="legend-box" style="border-color:#ffd24d55">
+      <div class="lt" style="font-size:13px">Where the next naloxone box should go</div>
+      <div style="font-size:12px;line-height:1.5;color:var(--ink-dim);margin-top:2px">
+        Top <b style="color:var(--ink)">25</b> storefronts would put
+        <b style="color:var(--ink);font-size:15px">${cs.after_25_sites.toLocaleString()}</b>
+        currently-unserved residents within a half-mile walk of naloxone.</div>
+      <div style="font-size:11px;line-height:1.6;color:var(--ink-dim);margin-top:6px">
+        <div>Top 10 sites → <b style="color:var(--ink)">${cs.after_10_sites.toLocaleString()}</b> newly served</div>
+        <div>Top 25 sites → <b style="color:var(--ink)">${cs.after_25_sites.toLocaleString()}</b> newly served</div>
+        <div>Top 50 sites → <b style="color:var(--ink)">${cs.after_50_sites.toLocaleString()}</b> newly served</div>
+      </div>
+      <div class="legend-note">Reach measured from 2020 census blocks; NEED×REACH ranking; two variants agree (Spearman ${ag.spearman_rho_composite_vs_grounded.toFixed(2)}).</div>
     </div>`;
   }
   h+=`<div class="sec-h">Layers</div>`;
@@ -689,6 +758,11 @@ function renderLegend(){
         <div class="cat-row"><span class="cat-dot" style="background:#4fd6a0;border-color:#4fd6a0"></span>1 mile</div>
         <div class="cat-row"><span class="cat-dot" style="background:transparent;border:1px dashed #4ea1ff"></span>2 miles</div>
         <div class="legend-note">Straight-line rings; Dallas is car-dependent, so these overstate walkable access.</div></div>`;
+    } else if(def.legend==="ranked"){
+      h+=`<div class="legend-box"><div class="lt">Ranked placement (top 100)</div>
+        <div class="cat-row"><span class="cat-dot" style="background:#ffd24d;border-color:#ffd24d"></span>Solid — agrees with grounded-NEED top 50</div>
+        <div class="cat-row"><span class="cat-dot" style="background:transparent;border:2px solid #ffd24d"></span>Outline — composite top 100 only</div>
+        <div class="legend-note">Marker size = unserved residents within a ½-mile walk (sqrt scale). Gold rank badges (top 10) appear at zoom ≥ 12 to keep the county view uncluttered.</div></div>`;
     }
   });
   if(!h) h=`<div class="legend-note">No layers active.</div>`;
@@ -720,6 +794,14 @@ function insightsHTML(){
       <div class="kpi wide"><div class="v">${s.pct_beyond_1mi_supply.toFixed(0)}% · ${(s.residents_beyond_1mi_supply/1e6).toFixed(1)}M people</div><div class="l">live &gt;1 mile from ANY naloxone access point</div></div>
       <div class="kpi"><div class="v">${s.pct_beyond_5mi_247.toFixed(0)}%</div><div class="l">&gt;5 mi from a 24/7 site (county has <b>1</b> geocoded fixed 24/7 point)</div></div>
       <div class="kpi"><div class="v">${(s.stranded_population/1e3).toFixed(0)}k</div><div class="l">stranded: no supply ≤1 mi AND no DART stop ≤½ mi</div></div>
+    </div>`;
+  }
+  if(avail.rankedMeta){
+    const cs=store.rankedMeta.greedy_coverage_gain.cumulative_summary, ag=store.rankedMeta.agreement_stats;
+    h+=`<div class="sec-h">Placement (NEED × REACH ranking)</div><div class="kpi-grid">
+      <div class="kpi wide"><div class="v">${cs.after_50_sites.toLocaleString()}</div><div class="l">newly-served residents from the top 50 ranked storefronts (greedy, de-overlapped)</div></div>
+      <div class="kpi"><div class="v">${ag.spearman_rho_composite_vs_grounded.toFixed(2)}</div><div class="l">Spearman agreement — composite vs. grounded NEED variant</div></div>
+      <div class="kpi"><div class="v">${ag.top50_overlap_count}/50</div><div class="l">Top-50 site overlap between the two ranking variants</div></div>
     </div>`;
   }
   h+=`<div class="sec-h">Headline (live from data)</div><div class="kpi-grid">
@@ -842,7 +924,8 @@ async function boot(){
     // optional / feature-detected
     getJSON("builtenv",false), getJSON("composite",false), getJSON("candidates",false),
     getJSON("blockTracts",false), getJSON("blockSummary",false),
-    getJSON("mortUnits",false), getJSON("od2a",false)
+    getJSON("mortUnits",false), getJSON("od2a",false),
+    getJSON("rankedPlace",false), getJSON("rankedMeta",false)
   ]);
   // if the measured access layer is missing, fall back to the old mortality landing view
   if(!avail.blockTracts){ TABS.overview.on=["mortality"]; }
@@ -854,6 +937,8 @@ async function boot(){
   // guard optional layers that failed geometry expectations
   if(avail.composite && !(store.composite&&store.composite.features&&store.composite.features.length)) avail.composite=false;
   if(avail.candidates && !(store.candidates&&store.candidates.features)) avail.candidates=false;
+  if(avail.rankedPlace && !(store.rankedPlace&&store.rankedPlace.features&&store.rankedPlace.features.length)) avail.rankedPlace=false;
+  if(avail.rankedMeta && !(store.rankedMeta&&store.rankedMeta.greedy_coverage_gain&&store.rankedMeta.agreement_stats)) avail.rankedMeta=false;
 
   renderBanner();
   // tabs
@@ -862,7 +947,9 @@ async function boot(){
   tabsEl.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>switchTab(t.dataset.t)));
   document.getElementById("menu-btn").addEventListener("click",()=>document.getElementById("sidebar").classList.toggle("open"));
 
-  switchTab("overview");
+  // lightweight ?tab= URL param support (e.g. ?tab=placement) — falls back to overview
+  const qsTab=new URLSearchParams(location.search).get("tab");
+  switchTab((qsTab && TABS[qsTab]) ? qsTab : "overview");
   // fit to tracts
   try{ const base=getLayer(avail.blockTracts?"access":"mortality");
     const b=base.getBounds(); if(b.isValid()) map.fitBounds(b,{padding:[10,10]}); }catch(e){}

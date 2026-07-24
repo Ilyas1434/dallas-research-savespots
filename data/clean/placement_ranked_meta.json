@@ -1,0 +1,1515 @@
+{
+  "generated_date": "2026-07-24",
+  "module": "PLACEMENT RANKING (NEED x REACH)",
+  "method_statement": {
+    "reach_definition": "REACH for each candidate is the sum of block population over 2020 census blocks that are (a) currently unserved (distance to nearest naloxone supply > 1609.344 m, i.e. > 1 mile) AND (b) within 805 m of the candidate storefront. This is 'unserved residents within a half-mile walk of this storefront.' Computed with a cKDTree spatial join in EPSG:32138 (both candidate points and block internal points projected to meters).",
+    "unserved_threshold_m": 1609.344,
+    "walk_radius_m": 805.0,
+    "projection": "EPSG:32138",
+    "block_distance_column_used": "dist_supply_m",
+    "block_distance_column_note": "block_access.csv has no literal 'dist_nearest_any_m'; the spec's 'distance to nearest any supply' is dist_supply_m (verified: dist_supply_m<=1609.344 matches within_1mi_supply exactly, and its pop-weighted tract mean tracks composite raw_dist_nearest_any_m)."
+  },
+  "need_variants": {
+    "need_composite": "Existing 5-layer composite_score from composite_index.geojson. INCLUDES CDC model-based (modeled) overdose mortality as one layer.",
+    "need_grounded": "Equal-weight mean of min-max-normalized layers across the 643 ranked tracts: pct_poverty_acs2024, pct_uninsured_acs2024, svi_overall, pct_pop_beyond_1mi. Contains NO mortality input. Nulls handled by averaging over available layers; data_completeness flags partials.",
+    "grounded_layers": [
+      "pct_poverty_acs2024",
+      "pct_uninsured_acs2024",
+      "svi_overall",
+      "pct_pop_beyond_1mi"
+    ],
+    "grounded_partial_completeness_tracts": 1
+  },
+  "normalization": {
+    "need_and_reach": "NEED and REACH each min-max normalized to 0-1 across the ranked candidates. rank_score_composite = norm(need_composite) x norm(reach_raw); rank_score_grounded = norm(need_grounded) x norm(reach_raw).",
+    "reach_raw_emitted": "reach_raw (integer residents) emitted alongside so no information is lost by normalization.",
+    "skew_note": "REACH is heavily right-skewed: mean=2994.3, median=2774.5, max=17437, 773 of 5428 candidates have reach_raw=0. Normalization is on the raw values (not log/rank transformed).",
+    "tie_break": "Ranks: 1=best; ties broken by reach_raw descending."
+  },
+  "agreement_stats": {
+    "spearman_rho_composite_vs_grounded": 0.96589,
+    "spearman_pvalue": 0.0,
+    "top50_overlap_count": 45,
+    "top100_overlap_count": 91,
+    "n_ranked_candidates": 5428
+  },
+  "greedy_coverage_gain": {
+    "method": "Rank-agnostic pure-reach greedy: iteratively pick the candidate covering the most currently-uncovered unserved residents (within 805 m), remove those blocks from the pool, repeat 50 times. De-overlapped, pure block-count arithmetic. Each pick's both-variant ranks recorded.",
+    "cumulative_summary": {
+      "after_10_sites": 117922,
+      "after_25_sites": 231806,
+      "after_50_sites": 388927,
+      "total_unserved_residents": 2196211
+    },
+    "picks": [
+      {
+        "pick_order": 1,
+        "name": "BURMESE ASIAN GROCERY STORE",
+        "address": "8361 PARK LN Ste:100",
+        "zip": "75231",
+        "category": "convenience_corner_store",
+        "geoid": "48113007815",
+        "newly_covered_unserved_residents": 17437,
+        "cumulative_newly_covered": 17437,
+        "rank_composite": 7,
+        "rank_grounded": 3
+      },
+      {
+        "pick_order": 2,
+        "name": "ODAA  BEAUTY SUPPLY LLC",
+        "address": "5555 PRESTON OAKS RD Ste:1B",
+        "zip": "75254",
+        "category": "convenience_corner_store",
+        "geoid": "48113013629",
+        "newly_covered_unserved_residents": 14423,
+        "cumulative_newly_covered": 31860,
+        "rank_composite": 90,
+        "rank_grounded": 48
+      },
+      {
+        "pick_order": 3,
+        "name": "SUPER FUELS LOMBARDY LLC",
+        "address": "3400 LOMBARDY LN STE 108",
+        "zip": "75220",
+        "category": "liquor_store",
+        "geoid": "48113007205",
+        "newly_covered_unserved_residents": 14289,
+        "cumulative_newly_covered": 46149,
+        "rank_composite": 1,
+        "rank_grounded": 5
+      },
+      {
+        "pick_order": 4,
+        "name": "CORNER FOOD #9",
+        "address": "4002 N BELT LINE ROAD SUITE 101",
+        "zip": "75038",
+        "category": "liquor_store",
+        "geoid": "48113014309",
+        "newly_covered_unserved_residents": 13247,
+        "cumulative_newly_covered": 59396,
+        "rank_composite": 59,
+        "rank_grounded": 49
+      },
+      {
+        "pick_order": 5,
+        "name": "LAVANDERIA",
+        "address": "8202 SPRING VALLEY RD Ste:400",
+        "zip": "75240",
+        "category": "laundromat",
+        "geoid": "48113019208",
+        "newly_covered_unserved_residents": 12753,
+        "cumulative_newly_covered": 72149,
+        "rank_composite": 30,
+        "rank_grounded": 44
+      },
+      {
+        "pick_order": 6,
+        "name": "French Nails Luxury Spa & Bar",
+        "address": null,
+        "zip": "None",
+        "category": "barbershop_beauty",
+        "geoid": "48113013107",
+        "newly_covered_unserved_residents": 9769,
+        "cumulative_newly_covered": 81918,
+        "rank_composite": 238,
+        "rank_grounded": 224
+      },
+      {
+        "pick_order": 7,
+        "name": "ROYAL THAI RESTAURANT",
+        "address": "5500 GREENVILLE AVENUE SUITE 608",
+        "zip": "75206",
+        "category": "liquor_store",
+        "geoid": "48113007909",
+        "newly_covered_unserved_residents": 9683,
+        "cumulative_newly_covered": 91601,
+        "rank_composite": 513,
+        "rank_grounded": 340
+      },
+      {
+        "pick_order": 8,
+        "name": "DAILY MART",
+        "address": "2963 BELLE STARR DRIVE",
+        "zip": "75227",
+        "category": "liquor_store",
+        "geoid": "48113012000",
+        "newly_covered_unserved_residents": 9113,
+        "cumulative_newly_covered": 100714,
+        "rank_composite": 95,
+        "rank_grounded": 107
+      },
+      {
+        "pick_order": 9,
+        "name": "CHILLY MART",
+        "address": "9401 N MACARTHUR BLVD",
+        "zip": "75063",
+        "category": "liquor_store",
+        "geoid": "48113014128",
+        "newly_covered_unserved_residents": 8697,
+        "cumulative_newly_covered": 109411,
+        "rank_composite": 501,
+        "rank_grounded": 509
+      },
+      {
+        "pick_order": 10,
+        "name": "TRAK 10",
+        "address": "3420 W WALNUT ST",
+        "zip": "75042",
+        "category": "liquor_store",
+        "geoid": "48113019013",
+        "newly_covered_unserved_residents": 8511,
+        "cumulative_newly_covered": 117922,
+        "rank_composite": 88,
+        "rank_grounded": 86
+      },
+      {
+        "pick_order": 11,
+        "name": "Fox",
+        "address": null,
+        "zip": "None",
+        "category": "gas_station",
+        "geoid": "48113014161",
+        "newly_covered_unserved_residents": 8288,
+        "cumulative_newly_covered": 126210,
+        "rank_composite": 145,
+        "rank_grounded": 250
+      },
+      {
+        "pick_order": 12,
+        "name": "SHS Nursery Inc",
+        "address": "900 E. Grauwyler Road",
+        "zip": "75061",
+        "category": "liquor_store",
+        "geoid": "48113014704",
+        "newly_covered_unserved_residents": 8234,
+        "cumulative_newly_covered": 134444,
+        "rank_composite": 158,
+        "rank_grounded": 152
+      },
+      {
+        "pick_order": 13,
+        "name": "OLIVELLA'S",
+        "address": "3406 MCFARLIN BOULEVARD",
+        "zip": "75205",
+        "category": "liquor_store",
+        "geoid": "48113019400",
+        "newly_covered_unserved_residents": 8147,
+        "cumulative_newly_covered": 142591,
+        "rank_composite": 961,
+        "rank_grounded": 941
+      },
+      {
+        "pick_order": 14,
+        "name": "4243 W PIONEER DRIVE",
+        "address": "4243 W Pioneer Dr",
+        "zip": "75061",
+        "category": "liquor_store",
+        "geoid": "48113014407",
+        "newly_covered_unserved_residents": 8126,
+        "cumulative_newly_covered": 150717,
+        "rank_composite": 152,
+        "rank_grounded": 122
+      },
+      {
+        "pick_order": 15,
+        "name": "WINCO FOODS",
+        "address": "1122 W CENTERVILLE RD",
+        "zip": "75041",
+        "category": "liquor_store",
+        "geoid": "48113018127",
+        "newly_covered_unserved_residents": 7724,
+        "cumulative_newly_covered": 158441,
+        "rank_composite": 178,
+        "rank_grounded": 200
+      },
+      {
+        "pick_order": 16,
+        "name": "WRAP AND GO",
+        "address": "3121 DAWES DR",
+        "zip": "75211",
+        "category": "convenience_corner_store",
+        "geoid": "48113006402",
+        "newly_covered_unserved_residents": 7701,
+        "cumulative_newly_covered": 166142,
+        "rank_composite": 331,
+        "rank_grounded": 222
+      },
+      {
+        "pick_order": 17,
+        "name": "A-LIST CBD",
+        "address": "13021 COIT RD Ste:226",
+        "zip": "75240",
+        "category": "convenience_corner_store",
+        "geoid": "48113013610",
+        "newly_covered_unserved_residents": 7692,
+        "cumulative_newly_covered": 173834,
+        "rank_composite": 239,
+        "rank_grounded": 283
+      },
+      {
+        "pick_order": 18,
+        "name": "Rochelle Food Mart",
+        "address": "1101 W Rochelle Rd",
+        "zip": "75062",
+        "category": "liquor_store",
+        "geoid": "48113014316",
+        "newly_covered_unserved_residents": 7510,
+        "cumulative_newly_covered": 181344,
+        "rank_composite": 340,
+        "rank_grounded": 327
+      },
+      {
+        "pick_order": 19,
+        "name": "SOULS BOUTIQUE",
+        "address": "880 W KIEST BLVD Ste:105",
+        "zip": "75224",
+        "category": "convenience_corner_store",
+        "geoid": "48113006001",
+        "newly_covered_unserved_residents": 7486,
+        "cumulative_newly_covered": 188830,
+        "rank_composite": 182,
+        "rank_grounded": 186
+      },
+      {
+        "pick_order": 20,
+        "name": "AT HOME STORES, LLC",
+        "address": "6051 SKILLMAN ST",
+        "zip": "75231",
+        "category": "grocery_food_mart",
+        "geoid": "48113007819",
+        "newly_covered_unserved_residents": 7482,
+        "cumulative_newly_covered": 196312,
+        "rank_composite": 211,
+        "rank_grounded": 117
+      },
+      {
+        "pick_order": 21,
+        "name": "FINLEY FOOD MART",
+        "address": "3329 N STORY ROAD",
+        "zip": "75062",
+        "category": "liquor_store",
+        "geoid": "48113014306",
+        "newly_covered_unserved_residents": 7337,
+        "cumulative_newly_covered": 203649,
+        "rank_composite": 268,
+        "rank_grounded": 220
+      },
+      {
+        "pick_order": 22,
+        "name": "7-ELEVEN CONVENIENCE STORE #21261A",
+        "address": "230 W PIONEER PKWY",
+        "zip": "75051",
+        "category": "liquor_store",
+        "geoid": "48113016203",
+        "newly_covered_unserved_residents": 7299,
+        "cumulative_newly_covered": 210948,
+        "rank_composite": 91,
+        "rank_grounded": 162
+      },
+      {
+        "pick_order": 23,
+        "name": "THERAPEUTIC SPA",
+        "address": "13237 MONTFORT DR Ste:A",
+        "zip": "75240",
+        "category": "barbershop_beauty",
+        "geoid": "48113013628",
+        "newly_covered_unserved_residents": 7065,
+        "cumulative_newly_covered": 218013,
+        "rank_composite": 836,
+        "rank_grounded": 1609
+      },
+      {
+        "pick_order": 24,
+        "name": "Tortas Las Tortugas",
+        "address": "14510 Josey Ln Ste 201",
+        "zip": "75234",
+        "category": "liquor_store",
+        "geoid": "48113013728",
+        "newly_covered_unserved_residents": 6905,
+        "cumulative_newly_covered": 224918,
+        "rank_composite": 247,
+        "rank_grounded": 223
+      },
+      {
+        "pick_order": 25,
+        "name": "Family Dollar #23653",
+        "address": "4444 W ILLINOIS AVE STE 216",
+        "zip": "75211",
+        "category": "liquor_store",
+        "geoid": "48113010809",
+        "newly_covered_unserved_residents": 6888,
+        "cumulative_newly_covered": 231806,
+        "rank_composite": 256,
+        "rank_grounded": 214
+      },
+      {
+        "pick_order": 26,
+        "name": "My Thai & Vegan",
+        "address": "6550 North MacArthur Blvd Suite 150",
+        "zip": "75039",
+        "category": "liquor_store",
+        "geoid": "48113014143",
+        "newly_covered_unserved_residents": 6741,
+        "cumulative_newly_covered": 238547,
+        "rank_composite": 1459,
+        "rank_grounded": 1862
+      },
+      {
+        "pick_order": 27,
+        "name": "TWICE THE ICE",
+        "address": "9041 FOREST LN",
+        "zip": "75243",
+        "category": "convenience_corner_store",
+        "geoid": "48113007805",
+        "newly_covered_unserved_residents": 6708,
+        "cumulative_newly_covered": 245255,
+        "rank_composite": 543,
+        "rank_grounded": 391
+      },
+      {
+        "pick_order": 28,
+        "name": "STAR FOOD MART",
+        "address": "4201 W WALNUT ST",
+        "zip": "75042",
+        "category": "liquor_store",
+        "geoid": "48113019032",
+        "newly_covered_unserved_residents": 6668,
+        "cumulative_newly_covered": 251923,
+        "rank_composite": 263,
+        "rank_grounded": 218
+      },
+      {
+        "pick_order": 29,
+        "name": "QuikTrip #907",
+        "address": "3011 N SHILOH ROAD",
+        "zip": "75044",
+        "category": "liquor_store",
+        "geoid": "48113019029",
+        "newly_covered_unserved_residents": 6649,
+        "cumulative_newly_covered": 258572,
+        "rank_composite": 1035,
+        "rank_grounded": 374
+      },
+      {
+        "pick_order": 30,
+        "name": "TX FOOD MART",
+        "address": "13350 AUDELIA RD Ste:110",
+        "zip": "75243",
+        "category": "convenience_corner_store",
+        "geoid": "48113019018",
+        "newly_covered_unserved_residents": 6644,
+        "cumulative_newly_covered": 265216,
+        "rank_composite": 1304,
+        "rank_grounded": 985
+      },
+      {
+        "pick_order": 31,
+        "name": "ASURION TECH REPAIR & SOLUTIONS",
+        "address": "5920 BELT LINE RD Ste:315",
+        "zip": "75254",
+        "category": "other_storefront",
+        "geoid": "48113013622",
+        "newly_covered_unserved_residents": 6638,
+        "cumulative_newly_covered": 271854,
+        "rank_composite": 1405,
+        "rank_grounded": 675
+      },
+      {
+        "pick_order": 32,
+        "name": "CLIFF STOP",
+        "address": "2418 W CLARENDON DR",
+        "zip": "75211",
+        "category": "convenience_corner_store",
+        "geoid": "48113005300",
+        "newly_covered_unserved_residents": 6567,
+        "cumulative_newly_covered": 278421,
+        "rank_composite": 448,
+        "rank_grounded": 298
+      },
+      {
+        "pick_order": 33,
+        "name": "FRUTTI",
+        "address": "2915 COMMUNITY DR Ste:103",
+        "zip": "75220",
+        "category": "convenience_corner_store",
+        "geoid": "48113007204",
+        "newly_covered_unserved_residents": 6540,
+        "cumulative_newly_covered": 284961,
+        "rank_composite": 40,
+        "rank_grounded": 50
+      },
+      {
+        "pick_order": 34,
+        "name": "LOVESAC",
+        "address": "3207 KNOX ST",
+        "zip": "75205",
+        "category": "convenience_corner_store",
+        "geoid": "48113000706",
+        "newly_covered_unserved_residents": 6477,
+        "cumulative_newly_covered": 291438,
+        "rank_composite": 1759,
+        "rank_grounded": 1606
+      },
+      {
+        "pick_order": 35,
+        "name": "VALLEY RANCH LIQUORS",
+        "address": "8600 N MACARTHUR BOULEVARD #160",
+        "zip": "75063",
+        "category": "liquor_store",
+        "geoid": "48113014130",
+        "newly_covered_unserved_residents": 6427,
+        "cumulative_newly_covered": 297865,
+        "rank_composite": 559,
+        "rank_grounded": 973
+      },
+      {
+        "pick_order": 36,
+        "name": "7-ELEVEN CONVENIENCE STORE #36382B",
+        "address": "822 E CAMP WISDOM RD",
+        "zip": "75116",
+        "category": "liquor_store",
+        "geoid": "48113016516",
+        "newly_covered_unserved_residents": 6373,
+        "cumulative_newly_covered": 304238,
+        "rank_composite": 311,
+        "rank_grounded": 333
+      },
+      {
+        "pick_order": 37,
+        "name": "SPEED KING WASH & DRY",
+        "address": "10100 BRUTON RD Ste:301",
+        "zip": "75217",
+        "category": "laundromat",
+        "geoid": "48113011901",
+        "newly_covered_unserved_residents": 6349,
+        "cumulative_newly_covered": 310587,
+        "rank_composite": 643,
+        "rank_grounded": 1243
+      },
+      {
+        "pick_order": 38,
+        "name": "CIRCLE K #2742419",
+        "address": "5401 N MACARTHUR BOULEVARD",
+        "zip": "75038",
+        "category": "liquor_store",
+        "geoid": "48113014319",
+        "newly_covered_unserved_residents": 6320,
+        "cumulative_newly_covered": 316907,
+        "rank_composite": 1472,
+        "rank_grounded": 672
+      },
+      {
+        "pick_order": 39,
+        "name": "YADI'S BEAUTY SALON",
+        "address": "7330 LAKE JUNE RD",
+        "zip": "75217",
+        "category": "barbershop_beauty",
+        "geoid": "48113009301",
+        "newly_covered_unserved_residents": 6315,
+        "cumulative_newly_covered": 323222,
+        "rank_composite": 190,
+        "rank_grounded": 284
+      },
+      {
+        "pick_order": 40,
+        "name": "Good Spirits LLC #4260",
+        "address": "2165 East Buckingham Rd",
+        "zip": "75081",
+        "category": "liquor_store",
+        "geoid": "48113019024",
+        "newly_covered_unserved_residents": 6157,
+        "cumulative_newly_covered": 329379,
+        "rank_composite": 512,
+        "rank_grounded": 666
+      },
+      {
+        "pick_order": 41,
+        "name": "Artistik Edge Hair Studio",
+        "address": null,
+        "zip": "None",
+        "category": "barbershop_beauty",
+        "geoid": "48113007826",
+        "newly_covered_unserved_residents": 6122,
+        "cumulative_newly_covered": 335501,
+        "rank_composite": 991,
+        "rank_grounded": 1707
+      },
+      {
+        "pick_order": 42,
+        "name": "BRIANNAS WAREHOUSE",
+        "address": "931 W JEFFERSON BLVD Ste:A",
+        "zip": "75208",
+        "category": "convenience_corner_store",
+        "geoid": "48113004600",
+        "newly_covered_unserved_residents": 6094,
+        "cumulative_newly_covered": 341595,
+        "rank_composite": 1754,
+        "rank_grounded": 1164
+      },
+      {
+        "pick_order": 43,
+        "name": "The Family Salon & Barbershop",
+        "address": "3021 North Belt Line Road",
+        "zip": "None",
+        "category": "barbershop_beauty",
+        "geoid": "48113014153",
+        "newly_covered_unserved_residents": 6091,
+        "cumulative_newly_covered": 347686,
+        "rank_composite": 408,
+        "rank_grounded": 548
+      },
+      {
+        "pick_order": 44,
+        "name": "La Villita Nails",
+        "address": null,
+        "zip": "None",
+        "category": "barbershop_beauty",
+        "geoid": "48113014143",
+        "newly_covered_unserved_residents": 6007,
+        "cumulative_newly_covered": 353693,
+        "rank_composite": 1777,
+        "rank_grounded": 2088
+      },
+      {
+        "pick_order": 45,
+        "name": "OLMO MARKET",
+        "address": "2111 S EDGEFIELD AVE",
+        "zip": "75224",
+        "category": "convenience_corner_store",
+        "geoid": "48113006302",
+        "newly_covered_unserved_residents": 5992,
+        "cumulative_newly_covered": 359685,
+        "rank_composite": 732,
+        "rank_grounded": 981
+      },
+      {
+        "pick_order": 46,
+        "name": "KAHLO'S MS BEAUTY SALON",
+        "address": "1133 N ZANG BLVD Ste:104",
+        "zip": "75203",
+        "category": "barbershop_beauty",
+        "geoid": "48113002001",
+        "newly_covered_unserved_residents": 5935,
+        "cumulative_newly_covered": 365620,
+        "rank_composite": 936,
+        "rank_grounded": 709
+      },
+      {
+        "pick_order": 47,
+        "name": "COCKRELL HILL TEXACO",
+        "address": "4201.5 W JEFFERSON BLVD",
+        "zip": "75211",
+        "category": "liquor_store",
+        "geoid": "48113019900",
+        "newly_covered_unserved_residents": 5865,
+        "cumulative_newly_covered": 371485,
+        "rank_composite": 1197,
+        "rank_grounded": 409
+      },
+      {
+        "pick_order": 48,
+        "name": "7-ELEVEN CONVENIENCE STORE #35403B",
+        "address": "5671 E MOCKINGBIRD LN",
+        "zip": "75206",
+        "category": "liquor_store",
+        "geoid": "48113000300",
+        "newly_covered_unserved_residents": 5838,
+        "cumulative_newly_covered": 377323,
+        "rank_composite": 1772,
+        "rank_grounded": 1859
+      },
+      {
+        "pick_order": 49,
+        "name": "STOP & SAVE FOOD MART",
+        "address": "3033 S WESTMORELAND RD",
+        "zip": "75233",
+        "category": "convenience_corner_store",
+        "geoid": "48113010805",
+        "newly_covered_unserved_residents": 5824,
+        "cumulative_newly_covered": 383147,
+        "rank_composite": 299,
+        "rank_grounded": 257
+      },
+      {
+        "pick_order": 50,
+        "name": "CLASSE EATS & SWEETS",
+        "address": "7634 GREAT TRINITY FOREST WAY",
+        "zip": "75217",
+        "category": "convenience_corner_store",
+        "geoid": "48113009304",
+        "newly_covered_unserved_residents": 5780,
+        "cumulative_newly_covered": 388927,
+        "rank_composite": 179,
+        "rank_grounded": 206
+      }
+    ]
+  },
+  "per_category_top10_by_composite": {
+    "barbershop_beauty": [
+      {
+        "name": "LIRAS BARBER SHOP",
+        "address": "3400 LOMBARDY LN",
+        "zip": "75220",
+        "geoid": "48113007205",
+        "reach_raw": 14066,
+        "rank_composite": 3,
+        "rank_score_composite": 0.670722
+      },
+      {
+        "name": "NEW ELEGANT SALON SPA",
+        "address": "9730 WEBB CHAPEL RD Ste:B",
+        "zip": "75220",
+        "geoid": "48113009804",
+        "reach_raw": 13099,
+        "rank_composite": 21,
+        "rank_score_composite": 0.561783
+      },
+      {
+        "name": "Hair Pro Salon",
+        "address": "8451 Park Lane",
+        "zip": "None",
+        "geoid": "48113007821",
+        "reach_raw": 16489,
+        "rank_composite": 36,
+        "rank_score_composite": 0.495046
+      },
+      {
+        "name": "Express Hair Salon",
+        "address": null,
+        "zip": "None",
+        "geoid": "48113007832",
+        "reach_raw": 16828,
+        "rank_composite": 38,
+        "rank_score_composite": 0.494666
+      },
+      {
+        "name": "DBA 3 ESTRELLAS SALON BARBER",
+        "address": "8282 SPRING VALLEY RD Ste:260",
+        "zip": "75240",
+        "geoid": "48113019208",
+        "reach_raw": 12540,
+        "rank_composite": 39,
+        "rank_score_composite": 0.490577
+      },
+      {
+        "name": "BARBY'S SALON",
+        "address": "9656 OVERLAKE DR",
+        "zip": "75220",
+        "geoid": "48113007204",
+        "reach_raw": 10096,
+        "rank_composite": 61,
+        "rank_score_composite": 0.417852
+      },
+      {
+        "name": "Suarez Hair Salon",
+        "address": "6874 Shady Brook Lane",
+        "zip": "None",
+        "geoid": "48113007830",
+        "reach_raw": 13808,
+        "rank_composite": 75,
+        "rank_score_composite": 0.401417
+      },
+      {
+        "name": "LA PRINCIPAL BARBER SHOP",
+        "address": "3021 LOMBARDY LN Ste:103",
+        "zip": "75220",
+        "geoid": "48113007204",
+        "reach_raw": 9318,
+        "rank_composite": 81,
+        "rank_score_composite": 0.385652
+      },
+      {
+        "name": "D CROWN NAIL BAR",
+        "address": "9659 WEBB CHAPEL RD",
+        "zip": "75220",
+        "geoid": "48113009802",
+        "reach_raw": 11469,
+        "rank_composite": 86,
+        "rank_score_composite": 0.376185
+      },
+      {
+        "name": "ARCENIO'S BARBER ACADEMY",
+        "address": "14215 COIT RD Ste:126",
+        "zip": "75254",
+        "geoid": "48113019214",
+        "reach_raw": 9145,
+        "rank_composite": 110,
+        "rank_score_composite": 0.330828
+      }
+    ],
+    "convenience_corner_store": [
+      {
+        "name": "7-ELEVEN CONVENIENCE STORE # 38111A",
+        "address": "9707 WEBB CHAPEL ROAD",
+        "zip": "75220",
+        "geoid": "48113007206",
+        "reach_raw": 11959,
+        "rank_composite": 6,
+        "rank_score_composite": 0.622151
+      },
+      {
+        "name": "BURMESE ASIAN GROCERY STORE",
+        "address": "8361 PARK LN Ste:100",
+        "zip": "75231",
+        "geoid": "48113007815",
+        "reach_raw": 17437,
+        "rank_composite": 7,
+        "rank_score_composite": 0.611313
+      },
+      {
+        "name": "MARU GROCERY LLC",
+        "address": "8353 PARK LN",
+        "zip": "75231",
+        "geoid": "48113007815",
+        "reach_raw": 17437,
+        "rank_composite": 8,
+        "rank_score_composite": 0.611313
+      },
+      {
+        "name": "1 ABC BEER WINE",
+        "address": "9625 WEBB CHAPEL ROAD SUITE 100A",
+        "zip": "75220",
+        "geoid": "48113007206",
+        "reach_raw": 11694,
+        "rank_composite": 9,
+        "rank_score_composite": 0.608365
+      },
+      {
+        "name": "PERFURMS AGUIRRE",
+        "address": "3460 WEBB CHAPEL EXT Ste:5",
+        "zip": "75220",
+        "geoid": "48113007205",
+        "reach_raw": 12256,
+        "rank_composite": 14,
+        "rank_score_composite": 0.584414
+      },
+      {
+        "name": "METRO BY T-MOBILE - KJ MOBILE",
+        "address": "3440 WEBB CHAPEL EXT",
+        "zip": "75220",
+        "geoid": "48113007205",
+        "reach_raw": 12256,
+        "rank_composite": 15,
+        "rank_score_composite": 0.584414
+      },
+      {
+        "name": "BONITO FOOD STORE",
+        "address": "7020 FAIR OAKS AVE Ste:100 A",
+        "zip": "75231",
+        "geoid": "48113007815",
+        "reach_raw": 16047,
+        "rank_composite": 20,
+        "rank_score_composite": 0.562582
+      },
+      {
+        "name": "SISTER'S FOOD TO GO",
+        "address": "8336 PARK LN Ste:B",
+        "zip": "75231",
+        "geoid": "48113007815",
+        "reach_raw": 15836,
+        "rank_composite": 22,
+        "rank_score_composite": 0.555184
+      },
+      {
+        "name": "NEVERIA TROPICANA",
+        "address": "9430 LARGA DR Ste:201",
+        "zip": "75220",
+        "geoid": "48113007206",
+        "reach_raw": 10671,
+        "rank_composite": 23,
+        "rank_score_composite": 0.555145
+      },
+      {
+        "name": "JP DISCOUNT BEER & WINE",
+        "address": "9757 WEBB CHAPEL RD",
+        "zip": "75220",
+        "geoid": "48113009804",
+        "reach_raw": 12514,
+        "rank_composite": 26,
+        "rank_score_composite": 0.536694
+      }
+    ],
+    "gas_station": [
+      {
+        "name": "Shamrock",
+        "address": null,
+        "zip": "None",
+        "geoid": "48113019208",
+        "reach_raw": 10912,
+        "rank_composite": 55,
+        "rank_score_composite": 0.426888
+      },
+      {
+        "name": "(unnamed gas_station)",
+        "address": null,
+        "zip": "None",
+        "geoid": "48113014701",
+        "reach_raw": 8056,
+        "rank_composite": 136,
+        "rank_score_composite": 0.283463
+      },
+      {
+        "name": "Fox",
+        "address": null,
+        "zip": "None",
+        "geoid": "48113014161",
+        "reach_raw": 8288,
+        "rank_composite": 145,
+        "rank_score_composite": 0.271949
+      },
+      {
+        "name": "Texaco",
+        "address": null,
+        "zip": "None",
+        "geoid": "48113015403",
+        "reach_raw": 5313,
+        "rank_composite": 234,
+        "rank_score_composite": 0.226511
+      },
+      {
+        "name": "ILLINOIS FOOD MART",
+        "address": "4404 W ILLINOIS AVE",
+        "zip": "75211",
+        "geoid": "48113010809",
+        "reach_raw": 6601,
+        "rank_composite": 294,
+        "rank_score_composite": 0.207834
+      },
+      {
+        "name": "7-Eleven",
+        "address": null,
+        "zip": "None",
+        "geoid": "48113002002",
+        "reach_raw": 5263,
+        "rank_composite": 509,
+        "rank_score_composite": 0.167068
+      },
+      {
+        "name": "Texaco",
+        "address": "9401 North MacArthur Boulevard",
+        "zip": "None",
+        "geoid": "48113014128",
+        "reach_raw": 8606,
+        "rank_composite": 520,
+        "rank_score_composite": 0.166332
+      },
+      {
+        "name": "Shamrock",
+        "address": "1701 South Belt Line Road",
+        "zip": "75051",
+        "geoid": "48113016201",
+        "reach_raw": 4004,
+        "rank_composite": 538,
+        "rank_score_composite": 0.16465
+      },
+      {
+        "name": "Shell",
+        "address": "1746 South Carrier Parkway",
+        "zip": "75051",
+        "geoid": "48113016100",
+        "reach_raw": 3160,
+        "rank_composite": 802,
+        "rank_score_composite": 0.145549
+      },
+      {
+        "name": "Chevron",
+        "address": "8600 North MacArthur Boulevard",
+        "zip": "75063",
+        "geoid": "48113014130",
+        "reach_raw": 7155,
+        "rank_composite": 989,
+        "rank_score_composite": 0.137305
+      }
+    ],
+    "grocery_food_mart": [
+      {
+        "name": "SHOE PALACE",
+        "address": "9683 WEBB CHAPEL RD",
+        "zip": "75220",
+        "geoid": "48113007206",
+        "reach_raw": 11446,
+        "rank_composite": 13,
+        "rank_score_composite": 0.595463
+      },
+      {
+        "name": "CONOCO",
+        "address": "9763 WEBB CHAPEL RD",
+        "zip": "75220",
+        "geoid": "48113009804",
+        "reach_raw": 12838,
+        "rank_composite": 24,
+        "rank_score_composite": 0.550589
+      },
+      {
+        "name": "SAM'S CLUB #8248",
+        "address": "9461 WEBB CHAPEL RD",
+        "zip": "75220",
+        "geoid": "48113007206",
+        "reach_raw": 9058,
+        "rank_composite": 44,
+        "rank_score_composite": 0.47123
+      },
+      {
+        "name": "COSTCO BUSINESS CENTER",
+        "address": "8282 PARK LN",
+        "zip": "75231",
+        "geoid": "48113007815",
+        "reach_raw": 12767,
+        "rank_composite": 53,
+        "rank_score_composite": 0.44759
+      },
+      {
+        "name": "FAMILY DOLLAR",
+        "address": "9554 SCYENE RD",
+        "zip": "75227",
+        "geoid": "48113012000",
+        "reach_raw": 9007,
+        "rank_composite": 99,
+        "rank_score_composite": 0.35681
+      },
+      {
+        "name": "QUIK TRIP - STORE #933",
+        "address": "7104 GREENVILLE AVE",
+        "zip": "75231",
+        "geoid": "48113007815",
+        "reach_raw": 10118,
+        "rank_composite": 100,
+        "rank_score_composite": 0.354721
+      },
+      {
+        "name": "ACADEMY SPORTS & OUTDOORS",
+        "address": "6375 E NORTHWEST HWY",
+        "zip": "75231",
+        "geoid": "48113007819",
+        "reach_raw": 13768,
+        "rank_composite": 121,
+        "rank_score_composite": 0.3035
+      },
+      {
+        "name": "RED BIRD",
+        "address": "3641 W NORTHWEST HWY Ste:140",
+        "zip": "75220",
+        "geoid": "48113007206",
+        "reach_raw": 5260,
+        "rank_composite": 142,
+        "rank_score_composite": 0.273644
+      },
+      {
+        "name": "QUIK TRIP - STORE #904",
+        "address": "6060 SKILLMAN ST",
+        "zip": "75231",
+        "geoid": "48113007809",
+        "reach_raw": 9705,
+        "rank_composite": 185,
+        "rank_score_composite": 0.248262
+      },
+      {
+        "name": "AT HOME STORES, LLC",
+        "address": "6051 SKILLMAN ST",
+        "zip": "75231",
+        "geoid": "48113007819",
+        "reach_raw": 10769,
+        "rank_composite": 211,
+        "rank_score_composite": 0.237391
+      }
+    ],
+    "laundromat": [
+      {
+        "name": "Coin Laundry",
+        "address": null,
+        "zip": "None",
+        "geoid": "48113009804",
+        "reach_raw": 13940,
+        "rank_composite": 12,
+        "rank_score_composite": 0.597851
+      },
+      {
+        "name": "LAVANDERIA",
+        "address": "8202 SPRING VALLEY RD Ste:400",
+        "zip": "75240",
+        "geoid": "48113019208",
+        "reach_raw": 12753,
+        "rank_composite": 30,
+        "rank_score_composite": 0.49891
+      },
+      {
+        "name": "Aqua Wash",
+        "address": null,
+        "zip": "None",
+        "geoid": "48113019208",
+        "reach_raw": 11662,
+        "rank_composite": 49,
+        "rank_score_composite": 0.456229
+      },
+      {
+        "name": "Rapido Lavanderia",
+        "address": null,
+        "zip": "None",
+        "geoid": "48113014153",
+        "reach_raw": 12117,
+        "rank_composite": 96,
+        "rank_score_composite": 0.360525
+      },
+      {
+        "name": "FIESTAR LAUNDRY LLC DBA WONDER WASH",
+        "address": "8028 SPRING VALLEY RD",
+        "zip": "75240",
+        "geoid": "48113019208",
+        "reach_raw": 8309,
+        "rank_composite": 112,
+        "rank_score_composite": 0.325056
+      },
+      {
+        "name": "Magic Coin Laundry and Dry Cleaning",
+        "address": "7879 Spring Valley Road",
+        "zip": "75254",
+        "geoid": "48113013609",
+        "reach_raw": 8759,
+        "rank_composite": 157,
+        "rank_score_composite": 0.266471
+      },
+      {
+        "name": "(unnamed laundromat)",
+        "address": null,
+        "zip": "None",
+        "geoid": "48113016407",
+        "reach_raw": 6213,
+        "rank_composite": 177,
+        "rank_score_composite": 0.252082
+      },
+      {
+        "name": "Laundromat Lavanderia Fox",
+        "address": "10120 Harry Hines Boulevard",
+        "zip": "75220",
+        "geoid": "48113009900",
+        "reach_raw": 6391,
+        "rank_composite": 282,
+        "rank_score_composite": 0.209651
+      },
+      {
+        "name": "Laundry Wash",
+        "address": null,
+        "zip": "None",
+        "geoid": "48113013622",
+        "reach_raw": 11520,
+        "rank_composite": 298,
+        "rank_score_composite": 0.206705
+      },
+      {
+        "name": "S&S Laundry",
+        "address": "1901 North Josey Lane",
+        "zip": "75006",
+        "geoid": "48113013718",
+        "reach_raw": 5226,
+        "rank_composite": 313,
+        "rank_score_composite": 0.200474
+      }
+    ],
+    "library": [
+      {
+        "name": "VICKERY MEADOW BRANCH LIBRARY",
+        "address": "8333 PARK LN",
+        "zip": "75231",
+        "geoid": "48113007815",
+        "reach_raw": 16110,
+        "rank_composite": 19,
+        "rank_score_composite": 0.56479
+      },
+      {
+        "name": "Vickery Park",
+        "address": "8333 Park Lane",
+        "zip": "75231",
+        "geoid": "48113007815",
+        "reach_raw": 14308,
+        "rank_composite": 29,
+        "rank_score_composite": 0.501615
+      },
+      {
+        "name": "Bachman Lake",
+        "address": "9480 Webb Chapel Rd.",
+        "zip": "75220",
+        "geoid": "48113009802",
+        "reach_raw": 8386,
+        "rank_composite": 141,
+        "rank_score_composite": 0.275062
+      },
+      {
+        "name": "Pleasant Grove",
+        "address": "7310 Lake June Road",
+        "zip": "75217",
+        "geoid": "48113009301",
+        "reach_raw": 6218,
+        "rank_composite": 196,
+        "rank_score_composite": 0.241027
+      },
+      {
+        "name": "Highland Hills",
+        "address": "3624 Simpson Stuart Road",
+        "zip": "75241",
+        "geoid": "48113020200",
+        "reach_raw": 5541,
+        "rank_composite": 352,
+        "rank_score_composite": 0.192983
+      },
+      {
+        "name": "Forest Green",
+        "address": "9015 Forest Lane",
+        "zip": "75243",
+        "geoid": "48113007828",
+        "reach_raw": 6334,
+        "rank_composite": 595,
+        "rank_score_composite": 0.160828
+      },
+      {
+        "name": "East Branch Library",
+        "address": "440 South Nursery Road",
+        "zip": "75060",
+        "geoid": "48113014903",
+        "reach_raw": 5037,
+        "rank_composite": 846,
+        "rank_score_composite": 0.143734
+      },
+      {
+        "name": "FOREST GREEN BRANCH LIBRARY",
+        "address": "9619 GREENVILLE AVE",
+        "zip": "75243",
+        "geoid": "48113007805",
+        "reach_raw": 5718,
+        "rank_composite": 928,
+        "rank_score_composite": 0.14021
+      },
+      {
+        "name": "Skyline",
+        "address": "6006 Everglade Road",
+        "zip": "75227",
+        "geoid": "48113012207",
+        "reach_raw": 4492,
+        "rank_composite": 1025,
+        "rank_score_composite": 0.135824
+      },
+      {
+        "name": "Hampton-Illinois",
+        "address": "2951 South Hampton Road",
+        "zip": "75224",
+        "geoid": "48113010804",
+        "reach_raw": 3166,
+        "rank_composite": 1116,
+        "rank_score_composite": 0.132014
+      }
+    ],
+    "liquor_store": [
+      {
+        "name": "SUPER FUELS LOMBARDY LLC",
+        "address": "3400 LOMBARDY LN STE 108",
+        "zip": "75220",
+        "geoid": "48113007205",
+        "reach_raw": 14289,
+        "rank_composite": 1,
+        "rank_score_composite": 0.681355
+      },
+      {
+        "name": "LA MICHOACANA MEAT MARKET DALLAS #30",
+        "address": "3380 LOMBARDY LANE",
+        "zip": "75220",
+        "geoid": "48113007205",
+        "reach_raw": 14231,
+        "rank_composite": 2,
+        "rank_score_composite": 0.67859
+      },
+      {
+        "name": "FIESTA MART #77",
+        "address": "3460 WEBB CHAPEL EXTENSION",
+        "zip": "75220",
+        "geoid": "48113007206",
+        "reach_raw": 12256,
+        "rank_composite": 4,
+        "rank_score_composite": 0.637602
+      },
+      {
+        "name": "Fiesta Mart Fuel Station #177",
+        "address": "3434 Webb Chapel Ext",
+        "zip": "75220",
+        "geoid": "48113007206",
+        "reach_raw": 12256,
+        "rank_composite": 5,
+        "rank_score_composite": 0.637602
+      },
+      {
+        "name": "FIESTA MART #32",
+        "address": "9727 WEBB CHAPEL RD",
+        "zip": "75220",
+        "geoid": "48113009804",
+        "reach_raw": 14156,
+        "rank_composite": 10,
+        "rank_score_composite": 0.607115
+      },
+      {
+        "name": "EL PARAISO RESTAURANTE",
+        "address": "3373 LOMBARDY LANE",
+        "zip": "75220",
+        "geoid": "48113009804",
+        "reach_raw": 14118,
+        "rank_composite": 11,
+        "rank_score_composite": 0.605485
+      },
+      {
+        "name": "ICE HOUSE BEVERAGE #2",
+        "address": "9430 LARGA DRIVE SUITE 101",
+        "zip": "75220",
+        "geoid": "48113007206",
+        "reach_raw": 11143,
+        "rank_composite": 16,
+        "rank_score_composite": 0.5797
+      },
+      {
+        "name": "CHILLY MART #11",
+        "address": "9763 WEBB CHAPEL ROAD",
+        "zip": "75220",
+        "geoid": "48113009804",
+        "reach_raw": 13481,
+        "rank_composite": 17,
+        "rank_score_composite": 0.578166
+      },
+      {
+        "name": "Royal Chopstix",
+        "address": "9625 Webb Chapel Rd Suite 400",
+        "zip": "75220",
+        "geoid": "48113007206",
+        "reach_raw": 11062,
+        "rank_composite": 18,
+        "rank_score_composite": 0.575486
+      },
+      {
+        "name": "JP Discount Beer & Wine Beverages",
+        "address": "9757 Webb Chapel Rd",
+        "zip": "75220",
+        "geoid": "48113009804",
+        "reach_raw": 12800,
+        "rank_composite": 25,
+        "rank_score_composite": 0.54896
+      }
+    ],
+    "other_storefront": [
+      {
+        "name": "#1 CHAMPION BILLARD & GAMES",
+        "address": "9530 OVERLAKE DR Ste:D",
+        "zip": "75220",
+        "geoid": "48113007204",
+        "reach_raw": 10074,
+        "rank_composite": 62,
+        "rank_score_composite": 0.416942
+      },
+      {
+        "name": "METRO BY T-MOBILE",
+        "address": "6889 SHADY BROOK LN",
+        "zip": "75231",
+        "geoid": "48113007819",
+        "reach_raw": 13476,
+        "rank_composite": 126,
+        "rank_score_composite": 0.297064
+      },
+      {
+        "name": "B & D SMOKE & VAPOR",
+        "address": "7015 GREENVILLE AVE Ste:100",
+        "zip": "75231",
+        "geoid": "48113007822",
+        "reach_raw": 11518,
+        "rank_composite": 198,
+        "rank_score_composite": 0.240434
+      },
+      {
+        "name": "CASH AMERICA",
+        "address": "14031 COIT RD",
+        "zip": "75240",
+        "geoid": "48113013610",
+        "reach_raw": 7779,
+        "rank_composite": 237,
+        "rank_score_composite": 0.224301
+      },
+      {
+        "name": "TU MODA",
+        "address": "1150 W KIEST BLVD Ste:360",
+        "zip": "75224",
+        "geoid": "48113006100",
+        "reach_raw": 6451,
+        "rank_composite": 241,
+        "rank_score_composite": 0.221192
+      },
+      {
+        "name": "MD & ASSOCIATES",
+        "address": "3535 MARVIN D LOVE FWY Ste:100",
+        "zip": "75224",
+        "geoid": "48113006001",
+        "reach_raw": 6653,
+        "rank_composite": 242,
+        "rank_score_composite": 0.221102
+      },
+      {
+        "name": "ILLINOIS EVENTS",
+        "address": "4444 W ILLINOIS AVE Ste:105",
+        "zip": "75211",
+        "geoid": "48113010809",
+        "reach_raw": 6699,
+        "rank_composite": 276,
+        "rank_score_composite": 0.21092
+      },
+      {
+        "name": "JOY ROOM",
+        "address": "2014 S BUCKNER BLVD Ste:150",
+        "zip": "75217",
+        "geoid": "48113009104",
+        "reach_raw": 4876,
+        "rank_composite": 277,
+        "rank_score_composite": 0.21084
+      },
+      {
+        "name": "LUCKY ROOM",
+        "address": "2010 S BUCKNER BLVD Ste:B",
+        "zip": "75217",
+        "geoid": "48113009104",
+        "reach_raw": 4876,
+        "rank_composite": 278,
+        "rank_score_composite": 0.21084
+      },
+      {
+        "name": "VALU+PAWN",
+        "address": "8726 LAKE JUNE RD",
+        "zip": "75217",
+        "geoid": "48113009202",
+        "reach_raw": 5410,
+        "rank_composite": 280,
+        "rank_score_composite": 0.210345
+      }
+    ]
+  },
+  "exclusions": {
+    "total_candidates": 5538,
+    "excluded_total": 110,
+    "null_geoid_outside_county_tracts": 100,
+    "in_excluded_tract_zero_or_null_population": 10,
+    "ranked_candidates": 5428
+  },
+  "sanity_check": {
+    "top_pick_name": "SUPER FUELS LOMBARDY LLC",
+    "kdtree_reach": 14289,
+    "brute_force_reach": 14289,
+    "match": true
+  },
+  "top10_by_composite": [
+    {
+      "rank_composite": 1,
+      "name": "SUPER FUELS LOMBARDY LLC",
+      "address": "3400 LOMBARDY LN STE 108",
+      "zip": "75220",
+      "category": "liquor_store",
+      "geoid": "48113007205",
+      "reach_raw": 14289,
+      "rank_score_composite": 0.681355,
+      "rank_grounded": 5
+    },
+    {
+      "rank_composite": 2,
+      "name": "LA MICHOACANA MEAT MARKET DALLAS #30",
+      "address": "3380 LOMBARDY LANE",
+      "zip": "75220",
+      "category": "liquor_store",
+      "geoid": "48113007205",
+      "reach_raw": 14231,
+      "rank_score_composite": 0.67859,
+      "rank_grounded": 6
+    },
+    {
+      "rank_composite": 3,
+      "name": "LIRAS BARBER SHOP",
+      "address": "3400 LOMBARDY LN",
+      "zip": "75220",
+      "category": "barbershop_beauty",
+      "geoid": "48113007205",
+      "reach_raw": 14066,
+      "rank_score_composite": 0.670722,
+      "rank_grounded": 7
+    },
+    {
+      "rank_composite": 4,
+      "name": "FIESTA MART #77",
+      "address": "3460 WEBB CHAPEL EXTENSION",
+      "zip": "75220",
+      "category": "liquor_store",
+      "geoid": "48113007206",
+      "reach_raw": 12256,
+      "rank_score_composite": 0.637602,
+      "rank_grounded": 12
+    },
+    {
+      "rank_composite": 5,
+      "name": "Fiesta Mart Fuel Station #177",
+      "address": "3434 Webb Chapel Ext",
+      "zip": "75220",
+      "category": "liquor_store",
+      "geoid": "48113007206",
+      "reach_raw": 12256,
+      "rank_score_composite": 0.637602,
+      "rank_grounded": 13
+    },
+    {
+      "rank_composite": 6,
+      "name": "7-ELEVEN CONVENIENCE STORE # 38111A",
+      "address": "9707 WEBB CHAPEL ROAD",
+      "zip": "75220",
+      "category": "convenience_corner_store",
+      "geoid": "48113007206",
+      "reach_raw": 11959,
+      "rank_score_composite": 0.622151,
+      "rank_grounded": 22
+    },
+    {
+      "rank_composite": 7,
+      "name": "BURMESE ASIAN GROCERY STORE",
+      "address": "8361 PARK LN Ste:100",
+      "zip": "75231",
+      "category": "convenience_corner_store",
+      "geoid": "48113007815",
+      "reach_raw": 17437,
+      "rank_score_composite": 0.611313,
+      "rank_grounded": 3
+    },
+    {
+      "rank_composite": 8,
+      "name": "MARU GROCERY LLC",
+      "address": "8353 PARK LN",
+      "zip": "75231",
+      "category": "convenience_corner_store",
+      "geoid": "48113007815",
+      "reach_raw": 17437,
+      "rank_score_composite": 0.611313,
+      "rank_grounded": 4
+    },
+    {
+      "rank_composite": 9,
+      "name": "1 ABC BEER WINE",
+      "address": "9625 WEBB CHAPEL ROAD SUITE 100A",
+      "zip": "75220",
+      "category": "convenience_corner_store",
+      "geoid": "48113007206",
+      "reach_raw": 11694,
+      "rank_score_composite": 0.608365,
+      "rank_grounded": 24
+    },
+    {
+      "rank_composite": 10,
+      "name": "FIESTA MART #32",
+      "address": "9727 WEBB CHAPEL RD",
+      "zip": "75220",
+      "category": "liquor_store",
+      "geoid": "48113009804",
+      "reach_raw": 14156,
+      "rank_score_composite": 0.607115,
+      "rank_grounded": 14
+    }
+  ],
+  "timings_sec": {
+    "load": 0.32,
+    "reach": 0.05,
+    "greedy": 0.61
+  }
+}
