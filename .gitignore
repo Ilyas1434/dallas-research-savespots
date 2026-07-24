@@ -27,3 +27,10 @@ data/raw/dallas_code_violations_*.json
 
 # Intermediates
 *.tmp
+
+# Third-party source documents and cached API responses.
+# Each is re-downloaded automatically by the script that needs it; they are not
+# redistributed here (upstream copyright / API terms of service).
+data/raw/places_cache.json
+data/raw/pit/
+data/raw/od2a/*.pdf
