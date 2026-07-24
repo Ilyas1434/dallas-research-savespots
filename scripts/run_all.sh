@@ -18,6 +18,10 @@
 # only under `full`. They need a statewide TIGER block download and produce the
 # manuscript artefacts, so they are a deliberate local step rather than CI work.
 #
+# build_public_data runs in every profile. It re-derives the redacted placement
+# layers the deployed map reads from the full ones under data/clean, so the
+# public build can never drift back to naming a candidate storefront.
+#
 # A stage that fails does not stop the run: later stages that do not depend on
 # it still execute, failures are collected, and the script exits non-zero if any
 # stage that actually ran failed. A stage whose script is missing, or whose
@@ -108,6 +112,7 @@ run_step   build_composite        full,daily,monthly
 run_step   build_block_access     full
 run_step   rank_candidates        full
 run_step   validate_baselines     full,monthly
+run_step   build_public_data      full,daily,monthly
 run_step   export_figures         full
 
 echo ""

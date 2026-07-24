@@ -192,25 +192,30 @@
      "pending" and is disabled; appears automatically when built.
    ============================================================ */
 
-const DATA = "../data/clean/";  // resolves to /data/clean on Vercel "/" rewrite and locally under /map/index.html
+const DATA = "../data/";  // resolves to /data on Vercel "/" rewrite and locally under /map/index.html
+// clean/  = full analytical outputs, tract-level or coarser.
+// public/ = redacted placement layers, emitted by scripts/build_public_data.py.
+//           The ranking names real businesses that have never been contacted,
+//           so the deployed map reads only the tract-aggregated copies. Nothing
+//           served here can be resolved to a specific storefront.
 const F = {
-  tracts:    "tract_overdose.geojson",
-  svi:       "svi_tracts.geojson",
-  nalox:     "naloxone_locations.geojson",
-  coverage:  "coverage_gap.json",
-  walk:      "walk_coverage.json",
-  vsrr:      "vsrr.json",
-  mortMeta:  "mortality_meta.json",
-  ctxMeta:   "context_meta.json",
-  builtenv:  "builtenv_index.json",       // present now (blight/311) — still feature-detected
-  composite: "composite_index.geojson",   // may not exist yet
-  candidates:"placement_candidates.geojson",// may not exist yet
-  blockTracts:"block_access_tracts.geojson",   // MEASURED access rollups (block pop x distance)
-  blockSummary:"block_access_summary.json",    // measured headline stats
-  mortUnits: "mortality_units.geojson",        // CDC mortality at native 150 aggregation units
-  od2a:      "od2a_zips.geojson",              // DCHHS-published ZIP facts (observed, cited)
-  rankedPlace:"placement_ranked.geojson",      // NEED x REACH ranked candidates — may not exist yet
-  rankedMeta: "placement_ranked_meta.json"     // greedy coverage gain + agreement stats — may not exist yet
+  tracts:    "clean/tract_overdose.geojson",
+  svi:       "clean/svi_tracts.geojson",
+  nalox:     "clean/naloxone_locations.geojson",   // existing supply — published public resources, unredacted
+  coverage:  "clean/coverage_gap.json",
+  walk:      "clean/walk_coverage.json",
+  vsrr:      "clean/vsrr.json",
+  mortMeta:  "clean/mortality_meta.json",
+  ctxMeta:   "clean/context_meta.json",
+  builtenv:  "clean/builtenv_index.json",       // present now (blight/311) — still feature-detected
+  composite: "clean/composite_index.geojson",   // may not exist yet
+  blockTracts:"clean/block_access_tracts.geojson",   // MEASURED access rollups (block pop x distance)
+  blockSummary:"clean/block_access_summary.json",    // measured headline stats
+  mortUnits: "clean/mortality_units.geojson",        // CDC mortality at native 150 aggregation units
+  od2a:      "clean/od2a_zips.geojson",              // DCHHS-published ZIP facts (observed, cited)
+  candidates:"public/placement_universe_tracts.geojson",    // candidate universe as per-tract counts
+  rankedPlace:"public/placement_opportunity_tracts.geojson",// NEED x REACH opportunity, aggregated by tract
+  rankedMeta: "public/placement_ranked_meta.json"           // greedy coverage gain + agreement stats, de-identified
 };
 
 const store = {};      // loaded json by key
@@ -492,14 +497,14 @@ const LAYERS = {
     }
   },
   candidates: {
-    label:"Placement candidates (full universe)", legend:"points",
-    optional:true, desc:"All scored candidate storefronts (clustered)", requires:["candidates"],
-    build(){ return buildCandidateLayer(store.candidates); }
+    label:"Candidate density (per tract)", legend:"points",
+    optional:true, desc:"How many scored candidate storefronts each tract holds — counts only, no individual sites", requires:["candidates"],
+    build(){ return buildUniverseLayer(store.candidates); }
   },
   ranked: {
-    label:"Ranked placement (NEED × REACH)", legend:"ranked",
-    optional:true, desc:"Top 100 by rank_composite — size = unserved reach, gold = agrees with grounded top-50", requires:["rankedPlace"],
-    build(){ return buildRankedLayer(store.rankedPlace); }
+    label:"Placement opportunity (NEED × REACH)", legend:"ranked",
+    optional:true, desc:"Per tract: unserved residents the best available storefront there would newly reach", requires:["rankedPlace"],
+    build(){ return buildOpportunityLayer(store.rankedPlace, this); }
   }
 };
 
@@ -520,78 +525,83 @@ function joinToTracts(lookup){
 function fmtN(x){return (x==null||isNaN(x))?"—":(+x).toFixed(x!=null&&Math.abs(x)<1?4:2).replace(/\.?0+$/,"");}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 
-/* ---------- placement candidate layer: zoom-gated grid clustering ---------- */
-function buildCandidateLayer(fc){
-  const pts=(fc.features||[]).filter(f=>f.geometry && f.geometry.type==="Point")
-    .map(f=>({ll:[f.geometry.coordinates[1],f.geometry.coordinates[0]],p:f.properties||{}}));
+/* ---------- placement layers: tract-aggregated, de-identified ----------------
+   The public build never receives candidate names, addresses or coordinates.
+   Both layers below read data/public/*, where every candidate has been rolled
+   up to the representative point of its 2020 census tract. A visitor can see
+   which tract is the best place to put the next naloxone box, and how many
+   currently-unserved residents that would newly reach — never which
+   storefront. See scripts/build_public_data.py.
+   ---------------------------------------------------------------------------- */
+
+/* Candidate universe as a per-tract count bubble. */
+function buildUniverseLayer(fc){
+  const feats=(fc.features||[]).filter(f=>f.geometry&&f.geometry.type==="Point");
   const g=L.layerGroup();
-  function render(){
-    g.clearLayers();
-    if(!map.hasLayer(g)) return;
-    const z=map.getZoom();
-    if(pts.length<=500 || z>=13){
-      const b=map.getBounds();
-      pts.forEach(pt=>{ if(!b.contains(pt.ll)) return;
-        const pr=pt.p, id=pr.name||pr.id||pr.rank||"site";
-        let h=`<div class="pp-t">${esc(String(id))}</div>`;
-        if(pr.address||pr.zip) h+=`<div class="pp-r">${esc(pr.address||"")}${pr.zip?" · "+esc(String(pr.zip)):""}</div>`;
-        ["category","source","score","priority_score","tier","open_24h","reason","rationale","nearest_dist_mi"].forEach(k=>{
-          if(k in pr && pr[k]!=null && pr[k]!=="") h+=`<div class="pp-r">${k.replace(/_/g,' ')}: <b>${esc(String(pr[k]))}</b></div>`;});
-        L.circleMarker(pt.ll,{radius:5,color:"#fff",weight:1.4,fillColor:"#ffd24d",fillOpacity:.9})
-          .bindPopup(h).addTo(g);
-      });
-    } else {
-      // grid cluster into ~60px cells
-      const cell=60, cells={};
-      pts.forEach(pt=>{ const s=map.latLngToContainerPoint(pt.ll);
-        const key=Math.floor(s.x/cell)+"_"+Math.floor(s.y/cell);
-        (cells[key]=cells[key]||[]).push(pt); });
-      Object.values(cells).forEach(arr=>{
-        let la=0,lo=0; arr.forEach(pt=>{la+=pt.ll[0];lo+=pt.ll[1];});
-        const c=[la/arr.length,lo/arr.length], n=arr.length, r=Math.min(30,14+Math.log2(n+1)*4);
-        L.marker(c,{icon:L.divIcon({className:"",html:`<div class="cluster-icon" style="width:${r*2}px;height:${r*2}px">${n}</div>`,iconSize:[r*2,r*2]})})
-          .on("click",()=>map.setView(c,Math.min(15,map.getZoom()+2))).addTo(g);
-      });
-    }
-  }
-  g.on("add",()=>{ render(); map.on("moveend zoomend",render); });
-  g.on("remove",()=>{ map.off("moveend zoomend",render); });
+  feats.forEach(f=>{
+    const p=f.properties||{}, n=+p.n_candidates||0;
+    const ll=[f.geometry.coordinates[1],f.geometry.coordinates[0]];
+    const r=Math.min(28,12+Math.log2(n+1)*3.4);
+    L.marker(ll,{icon:L.divIcon({className:"",
+      html:`<div class="cluster-icon" style="width:${r*2}px;height:${r*2}px">${n}</div>`,
+      iconSize:[r*2,r*2]})})
+      .bindPopup(`<div class="pp-t">Tract ${esc(String(p.geoid).slice(-6))}</div>
+        <div class="pp-r"><b>${n.toLocaleString()}</b> candidate storefront${n===1?"":"s"} scored in this tract</div>
+        <div class="pp-r" style="font-size:11px;margin-top:4px;color:var(--ink-dim)">Counts only. Individual businesses are not shown: none of these owners has been asked.</div>`)
+      .addTo(g);
+  });
   return g;
 }
 
-/* ---------- ranked placement layer: top-100 by rank_composite, sized by reach ---------- */
-function buildRankedLayer(fc){
-  const feats=(fc.features||[]).filter(f=>f.geometry && f.geometry.type==="Point"
-    && f.properties && f.properties.rank_composite!=null && f.properties.rank_composite<=100);
-  feats.sort((a,b)=>a.properties.rank_composite-b.properties.rank_composite);
+/* Opportunity surface: tract choropleth on best-site reach, with the tracts
+   holding a composite top-100 site called out and rank-badged. */
+const OPP_BINS=['#3a2a08','#6b4a10','#a8761c','#d9a52c','#ffd24d'];
+function buildOpportunityLayer(fc, def){
+  const feats=(fc.features||[]).filter(f=>f.geometry&&f.geometry.type==="Point"&&f.properties
+    && f.properties.best_site_reach!=null);
+  const reaches=feats.map(f=>+f.properties.best_site_reach||0);
+  const breaks=quantBreaks(reaches.filter(v=>v>0),OPP_BINS.length);
+  if(def) def.breaks=breaks;   // the legend reads the same quantile cuts
+
   let mn=Infinity,mx=-Infinity;
-  feats.forEach(f=>{const r=+f.properties.reach_raw||0; mn=Math.min(mn,r); mx=Math.max(mx,r);});
+  reaches.forEach(r=>{mn=Math.min(mn,r);mx=Math.max(mx,r);});
   if(!isFinite(mn)){mn=0;mx=1;}
-  function rScale(v){ const t=mx>mn?Math.sqrt(Math.max(0,v-mn)/(mx-mn)):0.5; return 5+t*11; }
+  function rScale(v){ const t=mx>mn?Math.sqrt(Math.max(0,v-mn)/(mx-mn)):0.5; return 4+t*13; }
+
+  // top-100-holding tracts last, so their badges sit above the surface
+  feats.sort((a,b)=>((+a.properties.n_top100>0)?1:0)-((+b.properties.n_top100>0)?1:0));
+
   const g=L.layerGroup();
   feats.forEach(f=>{
     const p=f.properties, ll=[f.geometry.coordinates[1],f.geometry.coordinates[0]];
-    const both=!!p.in_top50_both, r=rScale(+p.reach_raw||0);
+    const reach=+p.best_site_reach||0;
+    const top=(+p.n_top100||0)>0, both=(+p.n_top50_both||0)>0;
+    const r=rScale(reach), fill=binColor(reach,breaks,OPP_BINS)||OPP_BINS[0];
     const marker=L.circleMarker(ll,{
-      radius:r, weight:both?1.5:2, color:"#ffd24d",
-      fillColor:"#ffd24d", fillOpacity:both?0.85:0.06, opacity:1
+      radius:r,
+      weight: top?2:0.6,
+      color: top?"#ffd24d":"#0b0e13aa",
+      fillColor: both?"#ffd24d":fill,
+      fillOpacity: top?0.85:0.62,
+      opacity:1
     });
-    const tierTxt = p.tier!=null ? (+p.tier).toFixed(0) : "—";
-    marker.bindPopup(`<div class="pp-t">${esc(p.name||"Unnamed site")}</div>
-      <div class="pp-r">${esc(p.address||"")}${p.zip?" · "+esc(String(p.zip)):""}</div>
-      <div class="pp-r">${esc((p.category||"").replace(/_/g,' '))}</div>
-      <div class="pp-r" style="margin-top:4px">~<b>${(p.reach_raw||0).toLocaleString()}</b> unserved residents within ½ mi walk</div>
-      <div class="pp-r">Rank (composite): <b>#${p.rank_composite}</b> · Rank (grounded): <b>#${p.rank_grounded}</b></div>
-      <div class="pp-r">Tier: <b>${tierTxt}</b>${both?' · <span style="color:#ffd24d">agrees w/ grounded top-50</span>':''}</div>
-      ${p.greedy_pick_order!=null?`<div class="pp-r" style="color:#4fd6a0">Greedy pick order: <b>#${p.greedy_pick_order}</b></div>`:""}`);
-    if(p.rank_composite<=10){
-      marker.bindTooltip(String(p.rank_composite),{permanent:true, direction:"top", offset:[0,-r-1], className:"rank-lbl", opacity:0.95});
+    marker.bindPopup(`<div class="pp-t">Tract ${esc(String(p.geoid).slice(-6))}${p.totpop?` · pop ${(+p.totpop).toLocaleString()}`:""}</div>
+      <div class="pp-r" style="margin-top:2px">Placing naloxone at the best available storefront in this tract would newly reach
+        ~<b>${reach.toLocaleString()}</b> currently-unserved residents within a ½-mile walk.</div>
+      <div class="pp-r" style="margin-top:4px"><b>${(+p.n_candidates).toLocaleString()}</b> ranked candidate${+p.n_candidates===1?"":"s"} here${top?` · <b>${p.n_top100}</b> in the composite top 100`:""}</div>
+      <div class="pp-r">Best rank — composite <b>#${p.best_rank_composite}</b> · grounded <b>#${p.best_rank_grounded}</b></div>
+      <div class="pp-r">Tract tier: <b>${p.tier==null?"—":(+p.tier).toFixed(0)}</b>${both?` · <span style="color:#ffd24d">${p.n_top50_both} site${+p.n_top50_both===1?"":"s"} in both top-50 lists</span>`:""}</div>
+      ${p.best_greedy_pick_order!=null?`<div class="pp-r" style="color:#4fd6a0">Earliest greedy pick here: <b>#${p.best_greedy_pick_order}</b></div>`:""}
+      <div class="pp-r" style="font-size:11px;margin-top:4px;color:var(--ink-dim)">Aggregated to the census tract. The specific business is deliberately not shown — none of these owners has been contacted.</div>`);
+    if(top && p.best_rank_composite<=10){
+      marker.bindTooltip(String(p.best_rank_composite),{permanent:true, direction:"top", offset:[0,-r-1], className:"rank-lbl", opacity:0.95});
     }
     marker.addTo(g);
   });
+
   function updateLabels(){
     if(!map) return; const z=map.getZoom();
-    g.eachLayer(l=>{ if(!l.getTooltip()) return;
+    g.eachLayer(l=>{ if(!l.getTooltip || !l.getTooltip()) return;
       if(z>=12){ if(!l.isTooltipOpen()) l.openTooltip(); }
       else { if(l.isTooltipOpen()) l.closeTooltip(); }
     });
@@ -751,7 +761,8 @@ function renderLegend(){
     } else if(def.legend==="points"){
       let rows="";
       if(id==="naloxone"){ Object.keys(CAT).forEach(k=>{ rows+=`<div class="cat-row"><span class="cat-dot" style="background:${CAT[k].color}"></span>${CAT[k].label}</div>`; }); }
-      else { rows=`<div class="cat-row"><span class="cat-dot" style="background:#ffd24d"></span>Candidate site</div>`; }
+      else { rows=`<div class="cat-row"><span class="cat-dot" style="background:#ffd24d"></span>Candidate storefronts in the tract</div>
+        <div class="legend-note">Bubble label is the count of scored candidates in that census tract. Individual businesses are not published: the ranking names real owners who have never been contacted.</div>`; }
       h+=`<div class="legend-box"><div class="lt">${def.label}</div>${rows}</div>`;
     } else if(def.legend==="radii"){
       h+=`<div class="legend-box"><div class="lt">Coverage radii</div>
@@ -759,10 +770,17 @@ function renderLegend(){
         <div class="cat-row"><span class="cat-dot" style="background:transparent;border:1px dashed #4ea1ff"></span>2 miles</div>
         <div class="legend-note">Straight-line rings; Dallas is car-dependent, so these overstate walkable access.</div></div>`;
     } else if(def.legend==="ranked"){
-      h+=`<div class="legend-box"><div class="lt">Ranked placement (top 100)</div>
-        <div class="cat-row"><span class="cat-dot" style="background:#ffd24d;border-color:#ffd24d"></span>Solid — agrees with grounded-NEED top 50</div>
-        <div class="cat-row"><span class="cat-dot" style="background:transparent;border:2px solid #ffd24d"></span>Outline — composite top 100 only</div>
-        <div class="legend-note">Marker size = unserved residents within a ½-mile walk (sqrt scale). Gold rank badges (top 10) appear at zoom ≥ 12 to keep the county view uncluttered.</div></div>`;
+      let orows="";
+      OPP_BINS.forEach((c,i)=>{
+        const lo=i===0?1:Math.round(def.breaks?def.breaks[i-1]:0);
+        const hi=(def.breaks&&i<def.breaks.length)?Math.round(def.breaks[i]):null;
+        orows+=`<div class="cat-row"><span class="cat-dot" style="background:${c};border-radius:3px"></span>${lo.toLocaleString()}${hi==null?"+":" – "+hi.toLocaleString()}</div>`;
+      });
+      h+=`<div class="legend-box"><div class="lt">Placement opportunity <span style="color:var(--ink-faint);font-weight:400">(unserved residents newly reached)</span></div>
+        ${orows}
+        <div class="cat-row" style="margin-top:5px"><span class="cat-dot" style="background:#ffd24d;border-color:#ffd24d"></span>Holds a site in both top-50 lists</div>
+        <div class="cat-row"><span class="cat-dot" style="background:transparent;border:2px solid #ffd24d"></span>Holds a composite top-100 site</div>
+        <div class="legend-note">Shading = residents the single best candidate in that tract would newly bring within a ½-mile walk. Marker size uses the same quantity (sqrt scale); rank badges (top 10) appear at zoom ≥ 12. Aggregated to census tracts — no individual business is identified anywhere in this map.</div></div>`;
     }
   });
   if(!h) h=`<div class="legend-note">No layers active.</div>`;

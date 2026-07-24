@@ -1,0 +1,460 @@
+{
+  "generated_date": "2026-07-24",
+  "module": "PLACEMENT RANKING (NEED x REACH)",
+  "method_statement": {
+    "reach_definition": "REACH for each candidate is the sum of block population over 2020 census blocks that are (a) currently unserved (distance to nearest naloxone supply > 1609.344 m, i.e. > 1 mile) AND (b) within 805 m of the candidate storefront. This is 'unserved residents within a half-mile walk of this storefront.' Computed with a cKDTree spatial join in EPSG:32138 (both candidate points and block internal points projected to meters).",
+    "unserved_threshold_m": 1609.344,
+    "walk_radius_m": 805.0,
+    "projection": "EPSG:32138",
+    "block_distance_column_used": "dist_supply_m",
+    "block_distance_column_note": "block_access.csv has no literal 'dist_nearest_any_m'; the spec's 'distance to nearest any supply' is dist_supply_m (verified: dist_supply_m<=1609.344 matches within_1mi_supply exactly, and its pop-weighted tract mean tracks composite raw_dist_nearest_any_m)."
+  },
+  "need_variants": {
+    "need_composite": "Existing 5-layer composite_score from composite_index.geojson. INCLUDES CDC model-based (modeled) overdose mortality as one layer.",
+    "need_grounded": "Equal-weight mean of min-max-normalized layers across the 643 ranked tracts: pct_poverty_acs2024, pct_uninsured_acs2024, svi_overall, pct_pop_beyond_1mi. Contains NO mortality input. Nulls handled by averaging over available layers; data_completeness flags partials.",
+    "grounded_layers": [
+      "pct_poverty_acs2024",
+      "pct_uninsured_acs2024",
+      "svi_overall",
+      "pct_pop_beyond_1mi"
+    ],
+    "grounded_partial_completeness_tracts": 1
+  },
+  "normalization": {
+    "need_and_reach": "NEED and REACH each min-max normalized to 0-1 across the ranked candidates. rank_score_composite = norm(need_composite) x norm(reach_raw); rank_score_grounded = norm(need_grounded) x norm(reach_raw).",
+    "reach_raw_emitted": "reach_raw (integer residents) emitted alongside so no information is lost by normalization.",
+    "skew_note": "REACH is heavily right-skewed: mean=2994.3, median=2774.5, max=17437, 773 of 5428 candidates have reach_raw=0. Normalization is on the raw values (not log/rank transformed).",
+    "tie_break": "Ranks: 1=best; ties broken by reach_raw descending."
+  },
+  "agreement_stats": {
+    "spearman_rho_composite_vs_grounded": 0.96589,
+    "spearman_pvalue": 0.0,
+    "top50_overlap_count": 45,
+    "top100_overlap_count": 91,
+    "n_ranked_candidates": 5428
+  },
+  "greedy_coverage_gain": {
+    "method": "Rank-agnostic pure-reach greedy: iteratively pick the candidate covering the most currently-uncovered unserved residents (within 805 m), remove those blocks from the pool, repeat 50 times. De-overlapped, pure block-count arithmetic. Each pick's both-variant ranks recorded.",
+    "cumulative_summary": {
+      "after_10_sites": 117922,
+      "after_25_sites": 231806,
+      "after_50_sites": 388927,
+      "total_unserved_residents": 2196211
+    },
+    "picks": [
+      {
+        "pick_order": 1,
+        "geoid": "48113007815",
+        "newly_covered_unserved_residents": 17437,
+        "cumulative_newly_covered": 17437,
+        "rank_composite": 7,
+        "rank_grounded": 3
+      },
+      {
+        "pick_order": 2,
+        "geoid": "48113013629",
+        "newly_covered_unserved_residents": 14423,
+        "cumulative_newly_covered": 31860,
+        "rank_composite": 90,
+        "rank_grounded": 48
+      },
+      {
+        "pick_order": 3,
+        "geoid": "48113007205",
+        "newly_covered_unserved_residents": 14289,
+        "cumulative_newly_covered": 46149,
+        "rank_composite": 1,
+        "rank_grounded": 5
+      },
+      {
+        "pick_order": 4,
+        "geoid": "48113014309",
+        "newly_covered_unserved_residents": 13247,
+        "cumulative_newly_covered": 59396,
+        "rank_composite": 59,
+        "rank_grounded": 49
+      },
+      {
+        "pick_order": 5,
+        "geoid": "48113019208",
+        "newly_covered_unserved_residents": 12753,
+        "cumulative_newly_covered": 72149,
+        "rank_composite": 30,
+        "rank_grounded": 44
+      },
+      {
+        "pick_order": 6,
+        "geoid": "48113013107",
+        "newly_covered_unserved_residents": 9769,
+        "cumulative_newly_covered": 81918,
+        "rank_composite": 238,
+        "rank_grounded": 224
+      },
+      {
+        "pick_order": 7,
+        "geoid": "48113007909",
+        "newly_covered_unserved_residents": 9683,
+        "cumulative_newly_covered": 91601,
+        "rank_composite": 513,
+        "rank_grounded": 340
+      },
+      {
+        "pick_order": 8,
+        "geoid": "48113012000",
+        "newly_covered_unserved_residents": 9113,
+        "cumulative_newly_covered": 100714,
+        "rank_composite": 95,
+        "rank_grounded": 107
+      },
+      {
+        "pick_order": 9,
+        "geoid": "48113014128",
+        "newly_covered_unserved_residents": 8697,
+        "cumulative_newly_covered": 109411,
+        "rank_composite": 501,
+        "rank_grounded": 509
+      },
+      {
+        "pick_order": 10,
+        "geoid": "48113019013",
+        "newly_covered_unserved_residents": 8511,
+        "cumulative_newly_covered": 117922,
+        "rank_composite": 88,
+        "rank_grounded": 86
+      },
+      {
+        "pick_order": 11,
+        "geoid": "48113014161",
+        "newly_covered_unserved_residents": 8288,
+        "cumulative_newly_covered": 126210,
+        "rank_composite": 145,
+        "rank_grounded": 250
+      },
+      {
+        "pick_order": 12,
+        "geoid": "48113014704",
+        "newly_covered_unserved_residents": 8234,
+        "cumulative_newly_covered": 134444,
+        "rank_composite": 158,
+        "rank_grounded": 152
+      },
+      {
+        "pick_order": 13,
+        "geoid": "48113019400",
+        "newly_covered_unserved_residents": 8147,
+        "cumulative_newly_covered": 142591,
+        "rank_composite": 961,
+        "rank_grounded": 941
+      },
+      {
+        "pick_order": 14,
+        "geoid": "48113014407",
+        "newly_covered_unserved_residents": 8126,
+        "cumulative_newly_covered": 150717,
+        "rank_composite": 152,
+        "rank_grounded": 122
+      },
+      {
+        "pick_order": 15,
+        "geoid": "48113018127",
+        "newly_covered_unserved_residents": 7724,
+        "cumulative_newly_covered": 158441,
+        "rank_composite": 178,
+        "rank_grounded": 200
+      },
+      {
+        "pick_order": 16,
+        "geoid": "48113006402",
+        "newly_covered_unserved_residents": 7701,
+        "cumulative_newly_covered": 166142,
+        "rank_composite": 331,
+        "rank_grounded": 222
+      },
+      {
+        "pick_order": 17,
+        "geoid": "48113013610",
+        "newly_covered_unserved_residents": 7692,
+        "cumulative_newly_covered": 173834,
+        "rank_composite": 239,
+        "rank_grounded": 283
+      },
+      {
+        "pick_order": 18,
+        "geoid": "48113014316",
+        "newly_covered_unserved_residents": 7510,
+        "cumulative_newly_covered": 181344,
+        "rank_composite": 340,
+        "rank_grounded": 327
+      },
+      {
+        "pick_order": 19,
+        "geoid": "48113006001",
+        "newly_covered_unserved_residents": 7486,
+        "cumulative_newly_covered": 188830,
+        "rank_composite": 182,
+        "rank_grounded": 186
+      },
+      {
+        "pick_order": 20,
+        "geoid": "48113007819",
+        "newly_covered_unserved_residents": 7482,
+        "cumulative_newly_covered": 196312,
+        "rank_composite": 211,
+        "rank_grounded": 117
+      },
+      {
+        "pick_order": 21,
+        "geoid": "48113014306",
+        "newly_covered_unserved_residents": 7337,
+        "cumulative_newly_covered": 203649,
+        "rank_composite": 268,
+        "rank_grounded": 220
+      },
+      {
+        "pick_order": 22,
+        "geoid": "48113016203",
+        "newly_covered_unserved_residents": 7299,
+        "cumulative_newly_covered": 210948,
+        "rank_composite": 91,
+        "rank_grounded": 162
+      },
+      {
+        "pick_order": 23,
+        "geoid": "48113013628",
+        "newly_covered_unserved_residents": 7065,
+        "cumulative_newly_covered": 218013,
+        "rank_composite": 836,
+        "rank_grounded": 1609
+      },
+      {
+        "pick_order": 24,
+        "geoid": "48113013728",
+        "newly_covered_unserved_residents": 6905,
+        "cumulative_newly_covered": 224918,
+        "rank_composite": 247,
+        "rank_grounded": 223
+      },
+      {
+        "pick_order": 25,
+        "geoid": "48113010809",
+        "newly_covered_unserved_residents": 6888,
+        "cumulative_newly_covered": 231806,
+        "rank_composite": 256,
+        "rank_grounded": 214
+      },
+      {
+        "pick_order": 26,
+        "geoid": "48113014143",
+        "newly_covered_unserved_residents": 6741,
+        "cumulative_newly_covered": 238547,
+        "rank_composite": 1459,
+        "rank_grounded": 1862
+      },
+      {
+        "pick_order": 27,
+        "geoid": "48113007805",
+        "newly_covered_unserved_residents": 6708,
+        "cumulative_newly_covered": 245255,
+        "rank_composite": 543,
+        "rank_grounded": 391
+      },
+      {
+        "pick_order": 28,
+        "geoid": "48113019032",
+        "newly_covered_unserved_residents": 6668,
+        "cumulative_newly_covered": 251923,
+        "rank_composite": 263,
+        "rank_grounded": 218
+      },
+      {
+        "pick_order": 29,
+        "geoid": "48113019029",
+        "newly_covered_unserved_residents": 6649,
+        "cumulative_newly_covered": 258572,
+        "rank_composite": 1035,
+        "rank_grounded": 374
+      },
+      {
+        "pick_order": 30,
+        "geoid": "48113019018",
+        "newly_covered_unserved_residents": 6644,
+        "cumulative_newly_covered": 265216,
+        "rank_composite": 1304,
+        "rank_grounded": 985
+      },
+      {
+        "pick_order": 31,
+        "geoid": "48113013622",
+        "newly_covered_unserved_residents": 6638,
+        "cumulative_newly_covered": 271854,
+        "rank_composite": 1405,
+        "rank_grounded": 675
+      },
+      {
+        "pick_order": 32,
+        "geoid": "48113005300",
+        "newly_covered_unserved_residents": 6567,
+        "cumulative_newly_covered": 278421,
+        "rank_composite": 448,
+        "rank_grounded": 298
+      },
+      {
+        "pick_order": 33,
+        "geoid": "48113007204",
+        "newly_covered_unserved_residents": 6540,
+        "cumulative_newly_covered": 284961,
+        "rank_composite": 40,
+        "rank_grounded": 50
+      },
+      {
+        "pick_order": 34,
+        "geoid": "48113000706",
+        "newly_covered_unserved_residents": 6477,
+        "cumulative_newly_covered": 291438,
+        "rank_composite": 1759,
+        "rank_grounded": 1606
+      },
+      {
+        "pick_order": 35,
+        "geoid": "48113014130",
+        "newly_covered_unserved_residents": 6427,
+        "cumulative_newly_covered": 297865,
+        "rank_composite": 559,
+        "rank_grounded": 973
+      },
+      {
+        "pick_order": 36,
+        "geoid": "48113016516",
+        "newly_covered_unserved_residents": 6373,
+        "cumulative_newly_covered": 304238,
+        "rank_composite": 311,
+        "rank_grounded": 333
+      },
+      {
+        "pick_order": 37,
+        "geoid": "48113011901",
+        "newly_covered_unserved_residents": 6349,
+        "cumulative_newly_covered": 310587,
+        "rank_composite": 643,
+        "rank_grounded": 1243
+      },
+      {
+        "pick_order": 38,
+        "geoid": "48113014319",
+        "newly_covered_unserved_residents": 6320,
+        "cumulative_newly_covered": 316907,
+        "rank_composite": 1472,
+        "rank_grounded": 672
+      },
+      {
+        "pick_order": 39,
+        "geoid": "48113009301",
+        "newly_covered_unserved_residents": 6315,
+        "cumulative_newly_covered": 323222,
+        "rank_composite": 190,
+        "rank_grounded": 284
+      },
+      {
+        "pick_order": 40,
+        "geoid": "48113019024",
+        "newly_covered_unserved_residents": 6157,
+        "cumulative_newly_covered": 329379,
+        "rank_composite": 512,
+        "rank_grounded": 666
+      },
+      {
+        "pick_order": 41,
+        "geoid": "48113007826",
+        "newly_covered_unserved_residents": 6122,
+        "cumulative_newly_covered": 335501,
+        "rank_composite": 991,
+        "rank_grounded": 1707
+      },
+      {
+        "pick_order": 42,
+        "geoid": "48113004600",
+        "newly_covered_unserved_residents": 6094,
+        "cumulative_newly_covered": 341595,
+        "rank_composite": 1754,
+        "rank_grounded": 1164
+      },
+      {
+        "pick_order": 43,
+        "geoid": "48113014153",
+        "newly_covered_unserved_residents": 6091,
+        "cumulative_newly_covered": 347686,
+        "rank_composite": 408,
+        "rank_grounded": 548
+      },
+      {
+        "pick_order": 44,
+        "geoid": "48113014143",
+        "newly_covered_unserved_residents": 6007,
+        "cumulative_newly_covered": 353693,
+        "rank_composite": 1777,
+        "rank_grounded": 2088
+      },
+      {
+        "pick_order": 45,
+        "geoid": "48113006302",
+        "newly_covered_unserved_residents": 5992,
+        "cumulative_newly_covered": 359685,
+        "rank_composite": 732,
+        "rank_grounded": 981
+      },
+      {
+        "pick_order": 46,
+        "geoid": "48113002001",
+        "newly_covered_unserved_residents": 5935,
+        "cumulative_newly_covered": 365620,
+        "rank_composite": 936,
+        "rank_grounded": 709
+      },
+      {
+        "pick_order": 47,
+        "geoid": "48113019900",
+        "newly_covered_unserved_residents": 5865,
+        "cumulative_newly_covered": 371485,
+        "rank_composite": 1197,
+        "rank_grounded": 409
+      },
+      {
+        "pick_order": 48,
+        "geoid": "48113000300",
+        "newly_covered_unserved_residents": 5838,
+        "cumulative_newly_covered": 377323,
+        "rank_composite": 1772,
+        "rank_grounded": 1859
+      },
+      {
+        "pick_order": 49,
+        "geoid": "48113010805",
+        "newly_covered_unserved_residents": 5824,
+        "cumulative_newly_covered": 383147,
+        "rank_composite": 299,
+        "rank_grounded": 257
+      },
+      {
+        "pick_order": 50,
+        "geoid": "48113009304",
+        "newly_covered_unserved_residents": 5780,
+        "cumulative_newly_covered": 388927,
+        "rank_composite": 179,
+        "rank_grounded": 206
+      }
+    ]
+  },
+  "exclusions": {
+    "total_candidates": 5538,
+    "excluded_total": 110,
+    "null_geoid_outside_county_tracts": 100,
+    "in_excluded_tract_zero_or_null_population": 10,
+    "ranked_candidates": 5428
+  },
+  "sanity_check": {
+    "kdtree_reach": 14289,
+    "brute_force_reach": 14289,
+    "match": true
+  },
+  "redaction": "Public copy of data/clean/placement_ranked_meta.json. Candidate names, addresses, ZIPs and business categories removed, and the per-site top-10 listings dropped; wall-clock timings dropped. Ranking numbers, greedy coverage gains and agreement statistics are unchanged."
+}

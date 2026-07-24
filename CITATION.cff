@@ -12,6 +12,10 @@ authors:
     family-names: Ilyas
     email: research@savespots.org
     affiliation: SaveSpots National Harm Reduction Program
+  - given-names: Sameer
+    family-names: Ilyas
+    email: research@savespots.org
+    affiliation: SaveSpots National Harm Reduction Program
 repository-code: "https://github.com/Ilyas1434/dallas-research-savespots"
 abstract: >-
   An open, reproducible pipeline that measures the straight-line distance from
@@ -41,6 +45,9 @@ preferred-citation:
   authors:
     - given-names: Ali
       name-particle: I.
+      family-names: Ilyas
+      affiliation: SaveSpots National Harm Reduction Program
+    - given-names: Sameer
       family-names: Ilyas
       affiliation: SaveSpots National Harm Reduction Program
   year: 2026

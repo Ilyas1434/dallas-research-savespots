@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Ali I. Ilyas
+Copyright (c) 2026 SaveSpots National Harm Reduction Program
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,8 +24,9 @@ SOFTWARE.
 
 The code in this repository is licensed under the MIT License above.
 
-Derived data products under `data/clean/` are released under CC BY 4.0
-(https://creativecommons.org/licenses/by/4.0/). Upstream inputs under
+Derived data products under `data/clean/` and `data/public/` are released under
+CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/); the full text is in
+[`LICENSE-DATA`](LICENSE-DATA). Upstream inputs under
 `data/raw/` remain governed by the terms of their original publishers (U.S.
 Census Bureau, CDC/NCHS, Texas DSHS, Texas ABC, Dallas Open Data, DART,
 SAMHSA, and OpenStreetMap contributors); OpenStreetMap data is ODbL-licensed.

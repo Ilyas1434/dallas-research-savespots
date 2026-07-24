@@ -214,18 +214,34 @@ metadata alongside the numbers themselves.
 This project publishes only aggregated, tract-level-or-coarser health data. No
 point-level or individual overdose records are collected, stored, or displayed
 anywhere in this repository or the map. NCHS confidentiality suppression is
-preserved and surfaced, never overridden or estimated around. The only
-point-level data here are public commercial and institutional addresses —
-clinics, stores, libraries — never residences or individuals. Any contributor
-adding a source must maintain this rule.
+preserved and surfaced, never overridden or estimated around.
+
+The placement ranking is a separate case. `data/clean/placement_candidates.*`
+and `placement_ranked.*` name 5,428 real storefronts, with street addresses and
+exact coordinates, ranked as naloxone placement targets — none of these owners
+has been contacted. That full data stays in the repository (it is what makes
+the ranking reproducible), but it is not what the deployed map shows.
+`scripts/build_public_data.py` derives `data/public/`, where every candidate is
+rolled up to its 2020 census tract's representative point: no name, address,
+category, or exact coordinate survives. The public map answers "which tract
+would most benefit from a new naloxone site, and how many currently-unserved
+residents would that reach" — never "which storefront." `data/public/` is
+excluded from `.vercelignore`; the named files are not shipped to the CDN at
+all. Existing naloxone supply points (`naloxone_locations.geojson`) are
+published public resources, not candidates, and are shown unredacted. Any
+contributor adding a source must maintain this rule.
 
 ## Map
 
 `map/index.html` is a self-contained Leaflet page deployed as a static site via
-Vercel. `vercel.json` rewrites `/` to it and marks `data/clean/*` responses
+Vercel. `vercel.json` rewrites `/` to it and marks `data/*` responses
 `must-revalidate` so the map always reads the latest committed data rather than
-a stale CDN copy. A Vercel project connected to this repository picks up each
-automated refresh with no manual redeploy.
+a stale CDN copy. It reads tract-level and coarser layers from `data/clean/`
+directly, and reads the placement/candidate layers from the de-identified
+`data/public/` copies described above. A Vercel project connected to this
+repository picks up each automated refresh with no manual redeploy; every
+refresh profile regenerates `data/public/` from `data/clean/` so the two can
+never drift out of sync.
 
 ## Citation
 
@@ -234,6 +250,8 @@ accompanying paper.
 
 ## License
 
-Code is MIT. Derived data under `data/clean/` is CC BY 4.0. Upstream inputs
-remain under their publishers' terms; OpenStreetMap data is ODbL. See
-[`LICENSE`](LICENSE).
+Code is MIT. Derived data outputs under `data/clean/` and `data/public/` are
+CC BY 4.0 — see [`LICENSE-DATA`](LICENSE-DATA). Upstream inputs under
+`data/raw/` remain under their original publishers' terms (U.S. Census Bureau,
+CDC/NCHS, Texas DSHS, Texas ABC, Dallas Open Data, DART, SAMHSA), cited per
+file; OpenStreetMap data is ODbL. See [`LICENSE`](LICENSE).

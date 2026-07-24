@@ -13,8 +13,10 @@ name: Refresh Dallas overdose data
 # the `full` profile, locally. They pull a statewide TIGER block file and emit
 # the manuscript artefacts, which is not work for a scheduled job.
 #
-# Both jobs commit changes under data/clean/ back to the repository, and only
-# when something actually changed.
+# Both jobs commit changes under data/clean/ and data/public/ back to the
+# repository, and only when something actually changed. data/public/ holds the
+# redacted placement layers the deployed map reads; build_public_data re-derives
+# them in every profile so they cannot fall out of step with data/clean/.
 
 on:
   schedule:
@@ -74,7 +76,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/clean
+          git add data/clean data/public
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else

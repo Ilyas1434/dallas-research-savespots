@@ -1,6 +1,44 @@
+# What does NOT go to the CDN.
+#
+# The deployed site is one static page (map/index.html) plus the tract-level
+# data it fetches. Everything else in this repository exists for reproduction
+# and review on GitHub, not for serving.
+
+# Local environment and build detritus
 venv
 .git
-data/raw
-figures/*.pdf
 .env
+.vercel
+.claude
+.DS_Store
 scripts/__pycache__
+
+# Pipeline source. The map is a self-contained Leaflet page with no build step,
+# so nothing here is needed at runtime. Reproduction happens from the repo.
+scripts
+.github
+requirements.txt
+refresh.sh
+.gitattributes
+
+# Working drafts. Their numbers no longer all match the final manuscript, and
+# they should not be served next to a published preprint.
+report.md
+insights.md
+
+# Candidate identifiability. These name 5,428 real businesses, with street
+# addresses and exact coordinates, ranked as naloxone placement targets; none
+# of those owners has been contacted. They stay in the repository so the
+# ranking is reproducible, but the deployed map reads the tract-aggregated
+# copies under data/public/ instead. See scripts/build_public_data.py.
+data/clean/placement_candidates.csv
+data/clean/placement_candidates.geojson
+data/clean/placement_candidates_meta.json
+data/clean/placement_ranked.csv
+data/clean/placement_ranked.geojson
+data/clean/placement_ranked_meta.json
+
+# Upstream inputs and large intermediates the map never fetches.
+data/raw
+data/clean/block_access.csv
+figures/*.pdf
