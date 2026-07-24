@@ -1,6 +1,6 @@
 {
   "module": "mortality_units",
-  "pulled_at": "2026-07-24T16:59:15.446394+00:00",
+  "pulled_at": "2026-07-24T17:07:01.990537+00:00",
   "description": "CDC drug-overdose death rates published at CDC's NATIVE reporting geography (4day-mt2f aggregation units), one feature per unit. Companion to tract_overdose.geojson, which explodes the same rates onto constituent census tracts for tract-level joins elsewhere in the pipeline and therefore visually smears variance across ~4.3 tracts per unit on average.",
   "method_note": "CDC's native reporting geography; rates are CDC's published model-based values, shown here without downscaling.",
   "source": {
