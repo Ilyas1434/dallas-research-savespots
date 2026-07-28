@@ -1,13 +1,13 @@
 {
   "type": "FeatureCollection",
   "properties": {
-    "generated": "2026-07-27",
+    "generated": "2026-07-28",
     "county": "Dallas County, TX (GEOID 48113)",
-    "n_features": 39,
-    "n_with_geometry": 38,
+    "n_features": 40,
+    "n_with_geometry": 39,
     "category_counts": {
       "recovery_services": 4,
-      "harm_reduction": 4,
+      "harm_reduction": 5,
       "nightlife_venue": 7,
       "storefront_dispenser": 10,
       "health_clinic": 1,
@@ -621,6 +621,30 @@
         "hours_raw": "M-F: 8a-5p",
         "source": "arcgis",
         "verified_on": "2026-03-10",
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.56661125999995,
+          32.844691468000065
+        ]
+      },
+      "properties": {
+        "name": "BeCause Cullen",
+        "address": "4221 Blue Creek Drive",
+        "city": "Garland",
+        "zip": "75043",
+        "type": "Freestanding Dispenser",
+        "category": "harm_reduction",
+        "access_247": true,
+        "hours_raw": "24/7",
+        "source": "arcgis",
+        "verified_on": "2026-05-19",
         "geocode_method": "source_coords",
         "mobile": false
       }

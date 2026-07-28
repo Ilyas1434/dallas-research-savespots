@@ -12606,7 +12606,7 @@
         "need_grounded": 0.380323,
         "tier": 2,
         "tier_label": "Tier 2 (moderate vulnerability)",
-        "composite_score": 0.348707,
+        "composite_score": 0.345777,
         "totpop": 6268
       },
       "geometry": {
@@ -12658,7 +12658,7 @@
         "need_grounded": 0.438308,
         "tier": 2,
         "tier_label": "Tier 2 (moderate vulnerability)",
-        "composite_score": 0.421582,
+        "composite_score": 0.406772,
         "totpop": 4931
       },
       "geometry": {
@@ -12684,7 +12684,7 @@
         "need_grounded": 0.430471,
         "tier": 2,
         "tier_label": "Tier 2 (moderate vulnerability)",
-        "composite_score": 0.430343,
+        "composite_score": 0.407525,
         "totpop": 4814
       },
       "geometry": {
@@ -12708,9 +12708,9 @@
         "best_greedy_pick_order": null,
         "need_composite": 0.361464,
         "need_grounded": 0.511279,
-        "tier": 2,
-        "tier_label": "Tier 2 (moderate vulnerability)",
-        "composite_score": 0.361464,
+        "tier": 3,
+        "tier_label": "Tier 3 (lower vulnerability)",
+        "composite_score": 0.336939,
         "totpop": 4837
       },
       "geometry": {
@@ -12736,7 +12736,7 @@
         "need_grounded": 0.482183,
         "tier": 2,
         "tier_label": "Tier 2 (moderate vulnerability)",
-        "composite_score": 0.363186,
+        "composite_score": 0.360468,
         "totpop": 5045
       },
       "geometry": {
@@ -12786,9 +12786,9 @@
         "best_greedy_pick_order": null,
         "need_composite": 0.445011,
         "need_grounded": 0.572004,
-        "tier": 1,
-        "tier_label": "Tier 1 (highest vulnerability)",
-        "composite_score": 0.445011,
+        "tier": 2,
+        "tier_label": "Tier 2 (moderate vulnerability)",
+        "composite_score": 0.412555,
         "totpop": 3072
       },
       "geometry": {
@@ -12814,7 +12814,7 @@
         "need_grounded": 0.462608,
         "tier": 2,
         "tier_label": "Tier 2 (moderate vulnerability)",
-        "composite_score": 0.386573,
+        "composite_score": 0.354444,
         "totpop": 4289
       },
       "geometry": {
@@ -12866,7 +12866,7 @@
         "need_grounded": 0.332313,
         "tier": 2,
         "tier_label": "Tier 2 (moderate vulnerability)",
-        "composite_score": 0.368095,
+        "composite_score": 0.358339,
         "totpop": 5195
       },
       "geometry": {
@@ -12944,7 +12944,7 @@
         "need_grounded": 0.393772,
         "tier": 1,
         "tier_label": "Tier 1 (highest vulnerability)",
-        "composite_score": 0.454954,
+        "composite_score": 0.448297,
         "totpop": 3329
       },
       "geometry": {
@@ -13204,7 +13204,7 @@
         "need_grounded": 0.293514,
         "tier": 3,
         "tier_label": "Tier 3 (lower vulnerability)",
-        "composite_score": 0.31741,
+        "composite_score": 0.30633,
         "totpop": 5322
       },
       "geometry": {

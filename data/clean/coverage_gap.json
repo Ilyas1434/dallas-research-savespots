@@ -1,32 +1,32 @@
 {
-  "generated": "2026-07-27",
+  "generated": "2026-07-28",
   "status": "ok",
   "method_note": "Distances computed from each tract's GEOMETRIC centroid (population-weighted centroid not available) to the nearest naloxone supply point, projected to EPSG:32138 (NAD83 / Texas North Central, unit=metre). Dallas is car-dependent; distances are recorded raw with no capping.",
   "mortality_join": "joined",
   "crs_used": "EPSG:32138",
   "summary": {
     "n_tracts": 645,
-    "n_supply_any": 38,
-    "n_supply_247": 1,
+    "n_supply_any": 39,
+    "n_supply_247": 2,
     "n_supply_storefront": 10,
     "dist_nearest_any_m": {
       "n": 645,
-      "mean_m": 4430.5,
-      "median_m": 3760.5,
+      "mean_m": 4410.4,
+      "median_m": 3718.6,
       "min_m": 142.9,
       "max_m": 16419.9,
-      "mean_mi": 2.75,
-      "median_mi": 2.34,
+      "mean_mi": 2.74,
+      "median_mi": 2.31,
       "max_mi": 10.2
     },
     "dist_nearest_247_m": {
       "n": 645,
-      "mean_m": 15849.2,
-      "median_m": 16203.6,
+      "mean_m": 14217.8,
+      "median_m": 13459.5,
       "min_m": 344.7,
       "max_m": 33317.0,
-      "mean_mi": 9.85,
-      "median_mi": 10.07,
+      "mean_mi": 8.83,
+      "median_mi": 8.36,
       "max_mi": 20.7
     },
     "dist_nearest_storefront_m": {
@@ -39,8 +39,8 @@
       "median_mi": 4.29,
       "max_mi": 17.35
     },
-    "pct_tracts_within_1mi_any": 16.6,
-    "pct_tracts_within_2mi_any": 43.4
+    "pct_tracts_within_1mi_any": 16.7,
+    "pct_tracts_within_2mi_any": 43.7
   },
   "tracts": [
     {
@@ -225,8 +225,8 @@
     },
     {
       "geoid": "48113018134",
-      "dist_nearest_any_m": 8627.4,
-      "dist_nearest_247_m": 26342.6,
+      "dist_nearest_any_m": 7422.1,
+      "dist_nearest_247_m": 7422.1,
       "dist_nearest_storefront_m": 8627.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -343,7 +343,7 @@
     {
       "geoid": "48113018002",
       "dist_nearest_any_m": 2815.8,
-      "dist_nearest_247_m": 13174.6,
+      "dist_nearest_247_m": 6929.4,
       "dist_nearest_storefront_m": 2815.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -604,7 +604,7 @@
     {
       "geoid": "48113018205",
       "dist_nearest_any_m": 2321.9,
-      "dist_nearest_247_m": 18719.9,
+      "dist_nearest_247_m": 6714.5,
       "dist_nearest_storefront_m": 3600.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -730,7 +730,7 @@
     {
       "geoid": "48113019019",
       "dist_nearest_any_m": 980.6,
-      "dist_nearest_247_m": 16039.3,
+      "dist_nearest_247_m": 15489.6,
       "dist_nearest_storefront_m": 980.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -1036,7 +1036,7 @@
     {
       "geoid": "48113018144",
       "dist_nearest_any_m": 10407.2,
-      "dist_nearest_247_m": 28845.8,
+      "dist_nearest_247_m": 11139.1,
       "dist_nearest_storefront_m": 11534.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -1054,7 +1054,7 @@
     {
       "geoid": "48113018146",
       "dist_nearest_any_m": 3719.3,
-      "dist_nearest_247_m": 21222.5,
+      "dist_nearest_247_m": 4601.6,
       "dist_nearest_storefront_m": 3719.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -1072,7 +1072,7 @@
     {
       "geoid": "48113019045",
       "dist_nearest_any_m": 2213.9,
-      "dist_nearest_247_m": 17290.1,
+      "dist_nearest_247_m": 15487.9,
       "dist_nearest_storefront_m": 2213.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -1081,7 +1081,7 @@
     {
       "geoid": "48113019047",
       "dist_nearest_any_m": 4642.0,
-      "dist_nearest_247_m": 18711.8,
+      "dist_nearest_247_m": 13613.3,
       "dist_nearest_storefront_m": 4642.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -1126,7 +1126,7 @@
     {
       "geoid": "48113019051",
       "dist_nearest_any_m": 7370.5,
-      "dist_nearest_247_m": 25918.6,
+      "dist_nearest_247_m": 14732.2,
       "dist_nearest_storefront_m": 12160.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -1153,7 +1153,7 @@
     {
       "geoid": "48113018151",
       "dist_nearest_any_m": 5790.2,
-      "dist_nearest_247_m": 24877.2,
+      "dist_nearest_247_m": 12558.7,
       "dist_nearest_storefront_m": 10599.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -1225,7 +1225,7 @@
     {
       "geoid": "48113012801",
       "dist_nearest_any_m": 2365.9,
-      "dist_nearest_247_m": 11829.6,
+      "dist_nearest_247_m": 11495.7,
       "dist_nearest_storefront_m": 6061.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -1252,7 +1252,7 @@
     {
       "geoid": "48113012502",
       "dist_nearest_any_m": 2162.4,
-      "dist_nearest_247_m": 10758.5,
+      "dist_nearest_247_m": 9792.8,
       "dist_nearest_storefront_m": 5857.0,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -1261,7 +1261,7 @@
     {
       "geoid": "48113012501",
       "dist_nearest_any_m": 1845.2,
-      "dist_nearest_247_m": 11160.4,
+      "dist_nearest_247_m": 9197.6,
       "dist_nearest_storefront_m": 5136.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -1846,7 +1846,7 @@
     {
       "geoid": "48113019049",
       "dist_nearest_any_m": 4687.9,
-      "dist_nearest_247_m": 20908.2,
+      "dist_nearest_247_m": 13669.9,
       "dist_nearest_storefront_m": 6862.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -1864,7 +1864,7 @@
     {
       "geoid": "48113018150",
       "dist_nearest_any_m": 8699.2,
-      "dist_nearest_247_m": 26773.3,
+      "dist_nearest_247_m": 9082.0,
       "dist_nearest_storefront_m": 9384.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2215,7 +2215,7 @@
     {
       "geoid": "48113019044",
       "dist_nearest_any_m": 3262.9,
-      "dist_nearest_247_m": 18045.6,
+      "dist_nearest_247_m": 14874.6,
       "dist_nearest_storefront_m": 3262.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2224,7 +2224,7 @@
     {
       "geoid": "48113019046",
       "dist_nearest_any_m": 4356.5,
-      "dist_nearest_247_m": 17993.5,
+      "dist_nearest_247_m": 13076.7,
       "dist_nearest_storefront_m": 4356.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2251,7 +2251,7 @@
     {
       "geoid": "48113019048",
       "dist_nearest_any_m": 4065.5,
-      "dist_nearest_247_m": 20189.7,
+      "dist_nearest_247_m": 13063.8,
       "dist_nearest_storefront_m": 6443.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2260,7 +2260,7 @@
     {
       "geoid": "48113017816",
       "dist_nearest_any_m": 2655.4,
-      "dist_nearest_247_m": 11531.4,
+      "dist_nearest_247_m": 9090.4,
       "dist_nearest_storefront_m": 3492.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -2278,7 +2278,7 @@
     {
       "geoid": "48113018152",
       "dist_nearest_any_m": 4129.9,
-      "dist_nearest_247_m": 23105.0,
+      "dist_nearest_247_m": 11723.1,
       "dist_nearest_storefront_m": 9371.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2611,7 +2611,7 @@
     {
       "geoid": "48113017009",
       "dist_nearest_any_m": 8803.7,
-      "dist_nearest_247_m": 20841.2,
+      "dist_nearest_247_m": 17159.5,
       "dist_nearest_storefront_m": 8803.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2620,7 +2620,7 @@
     {
       "geoid": "48113017007",
       "dist_nearest_any_m": 10857.1,
-      "dist_nearest_247_m": 22675.0,
+      "dist_nearest_247_m": 19524.1,
       "dist_nearest_storefront_m": 10857.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2629,7 +2629,7 @@
     {
       "geoid": "48113017706",
       "dist_nearest_any_m": 2609.8,
-      "dist_nearest_247_m": 16664.8,
+      "dist_nearest_247_m": 7992.2,
       "dist_nearest_storefront_m": 4613.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -2638,7 +2638,7 @@
     {
       "geoid": "48113017817",
       "dist_nearest_any_m": 972.7,
-      "dist_nearest_247_m": 13962.5,
+      "dist_nearest_247_m": 6612.0,
       "dist_nearest_storefront_m": 972.7,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -2647,7 +2647,7 @@
     {
       "geoid": "48113018158",
       "dist_nearest_any_m": 6060.8,
-      "dist_nearest_247_m": 20097.4,
+      "dist_nearest_247_m": 7449.7,
       "dist_nearest_storefront_m": 6731.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2656,7 +2656,7 @@
     {
       "geoid": "48113017313",
       "dist_nearest_any_m": 8903.7,
-      "dist_nearest_247_m": 22398.7,
+      "dist_nearest_247_m": 13459.5,
       "dist_nearest_storefront_m": 10565.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2665,7 +2665,7 @@
     {
       "geoid": "48113018154",
       "dist_nearest_any_m": 9458.7,
-      "dist_nearest_247_m": 28646.6,
+      "dist_nearest_247_m": 14863.8,
       "dist_nearest_storefront_m": 13596.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2674,7 +2674,7 @@
     {
       "geoid": "48113018157",
       "dist_nearest_any_m": 5818.9,
-      "dist_nearest_247_m": 24952.6,
+      "dist_nearest_247_m": 10195.0,
       "dist_nearest_storefront_m": 8955.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2683,7 +2683,7 @@
     {
       "geoid": "48113018300",
       "dist_nearest_any_m": 2679.4,
-      "dist_nearest_247_m": 16648.5,
+      "dist_nearest_247_m": 8496.0,
       "dist_nearest_storefront_m": 4878.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -2692,7 +2692,7 @@
     {
       "geoid": "48113018401",
       "dist_nearest_any_m": 1771.4,
-      "dist_nearest_247_m": 14589.0,
+      "dist_nearest_247_m": 8903.7,
       "dist_nearest_storefront_m": 5243.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -2701,7 +2701,7 @@
     {
       "geoid": "48113018402",
       "dist_nearest_any_m": 3153.9,
-      "dist_nearest_247_m": 15721.4,
+      "dist_nearest_247_m": 7532.4,
       "dist_nearest_storefront_m": 3848.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -2710,7 +2710,7 @@
     {
       "geoid": "48113018403",
       "dist_nearest_any_m": 2858.9,
-      "dist_nearest_247_m": 14219.1,
+      "dist_nearest_247_m": 8083.2,
       "dist_nearest_storefront_m": 4527.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -2719,7 +2719,7 @@
     {
       "geoid": "48113018600",
       "dist_nearest_any_m": 2747.5,
-      "dist_nearest_247_m": 17126.2,
+      "dist_nearest_247_m": 10571.1,
       "dist_nearest_storefront_m": 5840.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -2728,7 +2728,7 @@
     {
       "geoid": "48113018700",
       "dist_nearest_any_m": 1210.3,
-      "dist_nearest_247_m": 18135.8,
+      "dist_nearest_247_m": 9323.0,
       "dist_nearest_storefront_m": 5939.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -2737,7 +2737,7 @@
     {
       "geoid": "48113018143",
       "dist_nearest_any_m": 9093.4,
-      "dist_nearest_247_m": 28098.2,
+      "dist_nearest_247_m": 11792.7,
       "dist_nearest_storefront_m": 11427.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2773,7 +2773,7 @@
     {
       "geoid": "48113017818",
       "dist_nearest_any_m": 1502.5,
-      "dist_nearest_247_m": 14061.7,
+      "dist_nearest_247_m": 7008.3,
       "dist_nearest_storefront_m": 1502.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -2782,7 +2782,7 @@
     {
       "geoid": "48113017705",
       "dist_nearest_any_m": 2307.0,
-      "dist_nearest_247_m": 15411.0,
+      "dist_nearest_247_m": 7220.8,
       "dist_nearest_storefront_m": 2887.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -2809,7 +2809,7 @@
     {
       "geoid": "48113018148",
       "dist_nearest_any_m": 548.5,
-      "dist_nearest_247_m": 18242.3,
+      "dist_nearest_247_m": 3242.6,
       "dist_nearest_storefront_m": 548.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -2818,7 +2818,7 @@
     {
       "geoid": "48113018156",
       "dist_nearest_any_m": 4442.4,
-      "dist_nearest_247_m": 22950.5,
+      "dist_nearest_247_m": 7836.6,
       "dist_nearest_storefront_m": 6483.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2836,7 +2836,7 @@
     {
       "geoid": "48113018153",
       "dist_nearest_any_m": 7268.8,
-      "dist_nearest_247_m": 26398.2,
+      "dist_nearest_247_m": 13464.3,
       "dist_nearest_storefront_m": 11795.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2890,7 +2890,7 @@
     {
       "geoid": "48113017819",
       "dist_nearest_any_m": 2004.5,
-      "dist_nearest_247_m": 13215.5,
+      "dist_nearest_247_m": 6908.4,
       "dist_nearest_storefront_m": 2004.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -2898,8 +2898,8 @@
     },
     {
       "geoid": "48113018159",
-      "dist_nearest_any_m": 4479.6,
-      "dist_nearest_247_m": 20016.4,
+      "dist_nearest_any_m": 3577.8,
+      "dist_nearest_247_m": 3577.8,
       "dist_nearest_storefront_m": 5217.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2926,7 +2926,7 @@
     {
       "geoid": "48113019102",
       "dist_nearest_any_m": 4406.7,
-      "dist_nearest_247_m": 19451.8,
+      "dist_nearest_247_m": 18611.2,
       "dist_nearest_storefront_m": 4406.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2944,7 +2944,7 @@
     {
       "geoid": "48113017312",
       "dist_nearest_any_m": 4254.7,
-      "dist_nearest_247_m": 18148.9,
+      "dist_nearest_247_m": 10336.7,
       "dist_nearest_storefront_m": 7049.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2988,8 +2988,8 @@
     },
     {
       "geoid": "48113018145",
-      "dist_nearest_any_m": 4916.8,
-      "dist_nearest_247_m": 22646.4,
+      "dist_nearest_any_m": 4122.8,
+      "dist_nearest_247_m": 4122.8,
       "dist_nearest_storefront_m": 4916.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -2997,8 +2997,8 @@
     },
     {
       "geoid": "48113018149",
-      "dist_nearest_any_m": 9657.6,
-      "dist_nearest_247_m": 27399.1,
+      "dist_nearest_any_m": 9115.8,
+      "dist_nearest_247_m": 9115.8,
       "dist_nearest_storefront_m": 9836.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3007,7 +3007,7 @@
     {
       "geoid": "48113017010",
       "dist_nearest_any_m": 8429.8,
-      "dist_nearest_247_m": 20170.7,
+      "dist_nearest_247_m": 18362.2,
       "dist_nearest_storefront_m": 8429.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3016,7 +3016,7 @@
     {
       "geoid": "48113017309",
       "dist_nearest_any_m": 8037.2,
-      "dist_nearest_247_m": 21730.4,
+      "dist_nearest_247_m": 12456.4,
       "dist_nearest_storefront_m": 10066.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3025,7 +3025,7 @@
     {
       "geoid": "48113018801",
       "dist_nearest_any_m": 2143.7,
-      "dist_nearest_247_m": 20305.3,
+      "dist_nearest_247_m": 11056.8,
       "dist_nearest_storefront_m": 7852.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -3034,7 +3034,7 @@
     {
       "geoid": "48113018802",
       "dist_nearest_any_m": 1318.6,
-      "dist_nearest_247_m": 19054.9,
+      "dist_nearest_247_m": 10251.8,
       "dist_nearest_storefront_m": 7015.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -3043,7 +3043,7 @@
     {
       "geoid": "48113018900",
       "dist_nearest_any_m": 3082.2,
-      "dist_nearest_247_m": 18818.5,
+      "dist_nearest_247_m": 11926.2,
       "dist_nearest_storefront_m": 5893.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -3052,7 +3052,7 @@
     {
       "geoid": "48113019013",
       "dist_nearest_any_m": 3791.1,
-      "dist_nearest_247_m": 17295.5,
+      "dist_nearest_247_m": 12594.8,
       "dist_nearest_storefront_m": 4198.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3070,7 +3070,7 @@
     {
       "geoid": "48113019020",
       "dist_nearest_any_m": 5281.5,
-      "dist_nearest_247_m": 19786.7,
+      "dist_nearest_247_m": 14429.4,
       "dist_nearest_storefront_m": 5281.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3079,7 +3079,7 @@
     {
       "geoid": "48113019023",
       "dist_nearest_any_m": 5491.6,
-      "dist_nearest_247_m": 20684.2,
+      "dist_nearest_247_m": 16735.3,
       "dist_nearest_storefront_m": 5491.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3088,7 +3088,7 @@
     {
       "geoid": "48113019024",
       "dist_nearest_any_m": 4122.3,
-      "dist_nearest_247_m": 19153.1,
+      "dist_nearest_247_m": 15607.9,
       "dist_nearest_storefront_m": 4122.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3097,7 +3097,7 @@
     {
       "geoid": "48113019025",
       "dist_nearest_any_m": 4379.3,
-      "dist_nearest_247_m": 22652.9,
+      "dist_nearest_247_m": 12720.6,
       "dist_nearest_storefront_m": 9303.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3106,7 +3106,7 @@
     {
       "geoid": "48113019026",
       "dist_nearest_any_m": 3590.4,
-      "dist_nearest_247_m": 21381.1,
+      "dist_nearest_247_m": 12370.2,
       "dist_nearest_storefront_m": 8102.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3115,7 +3115,7 @@
     {
       "geoid": "48113019027",
       "dist_nearest_any_m": 5871.5,
-      "dist_nearest_247_m": 22757.6,
+      "dist_nearest_247_m": 14618.5,
       "dist_nearest_storefront_m": 8467.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3124,7 +3124,7 @@
     {
       "geoid": "48113019028",
       "dist_nearest_any_m": 6639.6,
-      "dist_nearest_247_m": 21582.4,
+      "dist_nearest_247_m": 15985.4,
       "dist_nearest_storefront_m": 6639.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3196,7 +3196,7 @@
     {
       "geoid": "48113017307",
       "dist_nearest_any_m": 5538.3,
-      "dist_nearest_247_m": 19635.8,
+      "dist_nearest_247_m": 9762.3,
       "dist_nearest_storefront_m": 7880.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3268,7 +3268,7 @@
     {
       "geoid": "48113018147",
       "dist_nearest_any_m": 1959.7,
-      "dist_nearest_247_m": 19689.0,
+      "dist_nearest_247_m": 3057.2,
       "dist_nearest_storefront_m": 1959.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -3286,7 +3286,7 @@
     {
       "geoid": "48113017308",
       "dist_nearest_any_m": 5609.6,
-      "dist_nearest_247_m": 19357.0,
+      "dist_nearest_247_m": 11177.9,
       "dist_nearest_storefront_m": 7926.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3295,7 +3295,7 @@
     {
       "geoid": "48113017203",
       "dist_nearest_any_m": 3654.4,
-      "dist_nearest_247_m": 15569.4,
+      "dist_nearest_247_m": 12888.9,
       "dist_nearest_storefront_m": 3654.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3304,7 +3304,7 @@
     {
       "geoid": "48113017311",
       "dist_nearest_any_m": 3540.3,
-      "dist_nearest_247_m": 17655.2,
+      "dist_nearest_247_m": 9311.0,
       "dist_nearest_storefront_m": 6368.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3313,7 +3313,7 @@
     {
       "geoid": "48113017314",
       "dist_nearest_any_m": 6108.5,
-      "dist_nearest_247_m": 18741.2,
+      "dist_nearest_247_m": 13271.6,
       "dist_nearest_storefront_m": 6756.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3322,7 +3322,7 @@
     {
       "geoid": "48113017006",
       "dist_nearest_any_m": 16419.9,
-      "dist_nearest_247_m": 27155.9,
+      "dist_nearest_247_m": 26413.5,
       "dist_nearest_storefront_m": 16419.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3340,7 +3340,7 @@
     {
       "geoid": "48113017820",
       "dist_nearest_any_m": 2045.3,
-      "dist_nearest_247_m": 11980.0,
+      "dist_nearest_247_m": 8179.6,
       "dist_nearest_storefront_m": 2985.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -3376,7 +3376,7 @@
     {
       "geoid": "48113017204",
       "dist_nearest_any_m": 4131.0,
-      "dist_nearest_247_m": 16099.6,
+      "dist_nearest_247_m": 15622.3,
       "dist_nearest_storefront_m": 4131.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3385,7 +3385,7 @@
     {
       "geoid": "48113017315",
       "dist_nearest_any_m": 5418.4,
-      "dist_nearest_247_m": 17534.2,
+      "dist_nearest_247_m": 14998.0,
       "dist_nearest_storefront_m": 5418.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3394,7 +3394,7 @@
     {
       "geoid": "48113017310",
       "dist_nearest_any_m": 7346.7,
-      "dist_nearest_247_m": 20955.9,
+      "dist_nearest_247_m": 12315.4,
       "dist_nearest_storefront_m": 9272.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3403,7 +3403,7 @@
     {
       "geoid": "48113017008",
       "dist_nearest_any_m": 11890.3,
-      "dist_nearest_247_m": 23954.4,
+      "dist_nearest_247_m": 18642.6,
       "dist_nearest_storefront_m": 11890.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3412,7 +3412,7 @@
     {
       "geoid": "48113018155",
       "dist_nearest_any_m": 9984.9,
-      "dist_nearest_247_m": 29235.0,
+      "dist_nearest_247_m": 13881.2,
       "dist_nearest_storefront_m": 13183.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3421,7 +3421,7 @@
     {
       "geoid": "48113017815",
       "dist_nearest_any_m": 2246.1,
-      "dist_nearest_247_m": 12691.9,
+      "dist_nearest_247_m": 7842.2,
       "dist_nearest_storefront_m": 2246.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -3439,7 +3439,7 @@
     {
       "geoid": "48113019029",
       "dist_nearest_any_m": 5795.4,
-      "dist_nearest_247_m": 21104.4,
+      "dist_nearest_247_m": 14791.1,
       "dist_nearest_storefront_m": 6542.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3448,7 +3448,7 @@
     {
       "geoid": "48113019031",
       "dist_nearest_any_m": 8244.8,
-      "dist_nearest_247_m": 23378.7,
+      "dist_nearest_247_m": 17554.4,
       "dist_nearest_storefront_m": 8244.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3475,7 +3475,7 @@
     {
       "geoid": "48113019036",
       "dist_nearest_any_m": 7994.4,
-      "dist_nearest_247_m": 23265.8,
+      "dist_nearest_247_m": 18839.6,
       "dist_nearest_storefront_m": 7994.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3484,7 +3484,7 @@
     {
       "geoid": "48113019037",
       "dist_nearest_any_m": 6826.4,
-      "dist_nearest_247_m": 22068.5,
+      "dist_nearest_247_m": 17713.5,
       "dist_nearest_storefront_m": 6826.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3511,7 +3511,7 @@
     {
       "geoid": "48113017101",
       "dist_nearest_any_m": 6100.1,
-      "dist_nearest_247_m": 17831.4,
+      "dist_nearest_247_m": 17171.1,
       "dist_nearest_storefront_m": 6100.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3520,7 +3520,7 @@
     {
       "geoid": "48113017201",
       "dist_nearest_any_m": 2301.0,
-      "dist_nearest_247_m": 14424.3,
+      "dist_nearest_247_m": 14345.6,
       "dist_nearest_storefront_m": 2301.0,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -3547,7 +3547,7 @@
     {
       "geoid": "48113017400",
       "dist_nearest_any_m": 2679.1,
-      "dist_nearest_247_m": 16525.9,
+      "dist_nearest_247_m": 10152.4,
       "dist_nearest_storefront_m": 5710.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -3556,7 +3556,7 @@
     {
       "geoid": "48113017704",
       "dist_nearest_any_m": 855.9,
-      "dist_nearest_247_m": 14606.2,
+      "dist_nearest_247_m": 8667.0,
       "dist_nearest_storefront_m": 3951.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -3565,7 +3565,7 @@
     {
       "geoid": "48113017500",
       "dist_nearest_any_m": 1293.8,
-      "dist_nearest_247_m": 14862.6,
+      "dist_nearest_247_m": 10312.4,
       "dist_nearest_storefront_m": 4483.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -3574,7 +3574,7 @@
     {
       "geoid": "48113017805",
       "dist_nearest_any_m": 3239.5,
-      "dist_nearest_247_m": 10930.4,
+      "dist_nearest_247_m": 10126.8,
       "dist_nearest_storefront_m": 4483.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3583,7 +3583,7 @@
     {
       "geoid": "48113017806",
       "dist_nearest_any_m": 1302.5,
-      "dist_nearest_247_m": 10319.8,
+      "dist_nearest_247_m": 9914.7,
       "dist_nearest_storefront_m": 4557.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -3592,7 +3592,7 @@
     {
       "geoid": "48113017602",
       "dist_nearest_any_m": 2433.9,
-      "dist_nearest_247_m": 11728.5,
+      "dist_nearest_247_m": 10729.1,
       "dist_nearest_storefront_m": 4098.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -3601,7 +3601,7 @@
     {
       "geoid": "48113019210",
       "dist_nearest_any_m": 8016.0,
-      "dist_nearest_247_m": 22866.2,
+      "dist_nearest_247_m": 21406.8,
       "dist_nearest_storefront_m": 8016.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3610,7 +3610,7 @@
     {
       "geoid": "48113019211",
       "dist_nearest_any_m": 6799.9,
-      "dist_nearest_247_m": 21554.3,
+      "dist_nearest_247_m": 20769.2,
       "dist_nearest_storefront_m": 6799.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3646,7 +3646,7 @@
     {
       "geoid": "48113017811",
       "dist_nearest_any_m": 1042.0,
-      "dist_nearest_247_m": 15590.1,
+      "dist_nearest_247_m": 4692.6,
       "dist_nearest_storefront_m": 1042.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -3655,7 +3655,7 @@
     {
       "geoid": "48113017812",
       "dist_nearest_any_m": 1115.9,
-      "dist_nearest_247_m": 14166.7,
+      "dist_nearest_247_m": 6023.3,
       "dist_nearest_storefront_m": 1115.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -3664,7 +3664,7 @@
     {
       "geoid": "48113017808",
       "dist_nearest_any_m": 1465.2,
-      "dist_nearest_247_m": 16003.6,
+      "dist_nearest_247_m": 4080.9,
       "dist_nearest_storefront_m": 2151.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -3673,7 +3673,7 @@
     {
       "geoid": "48113017814",
       "dist_nearest_any_m": 1242.8,
-      "dist_nearest_247_m": 15450.5,
+      "dist_nearest_247_m": 5808.6,
       "dist_nearest_storefront_m": 1242.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -3682,7 +3682,7 @@
     {
       "geoid": "48113017900",
       "dist_nearest_any_m": 1210.3,
-      "dist_nearest_247_m": 11318.3,
+      "dist_nearest_247_m": 8771.4,
       "dist_nearest_storefront_m": 4060.3,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -3754,7 +3754,7 @@
     {
       "geoid": "48113012604",
       "dist_nearest_any_m": 4171.4,
-      "dist_nearest_247_m": 13471.7,
+      "dist_nearest_247_m": 7526.4,
       "dist_nearest_storefront_m": 4388.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3763,7 +3763,7 @@
     {
       "geoid": "48113013010",
       "dist_nearest_any_m": 1280.9,
-      "dist_nearest_247_m": 12921.5,
+      "dist_nearest_247_m": 10965.4,
       "dist_nearest_storefront_m": 5767.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -3834,17 +3834,17 @@
     },
     {
       "geoid": "48113018142",
-      "dist_nearest_any_m": 4845.3,
-      "dist_nearest_247_m": 22101.7,
+      "dist_nearest_any_m": 2230.5,
+      "dist_nearest_247_m": 2230.5,
       "dist_nearest_storefront_m": 5833.6,
       "supply_within_1mi": false,
-      "supply_within_2mi": false,
+      "supply_within_2mi": true,
       "od_death_rate_per_100k": 13.6
     },
     {
       "geoid": "48113018141",
-      "dist_nearest_any_m": 6080.7,
-      "dist_nearest_247_m": 23490.4,
+      "dist_nearest_any_m": 3439.2,
+      "dist_nearest_247_m": 3439.2,
       "dist_nearest_storefront_m": 6335.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3852,26 +3852,26 @@
     },
     {
       "geoid": "48113018137",
-      "dist_nearest_any_m": 4195.6,
-      "dist_nearest_247_m": 21649.2,
+      "dist_nearest_any_m": 2199.6,
+      "dist_nearest_247_m": 2199.6,
       "dist_nearest_storefront_m": 4195.6,
       "supply_within_1mi": false,
-      "supply_within_2mi": false,
+      "supply_within_2mi": true,
       "od_death_rate_per_100k": 13.6
     },
     {
       "geoid": "48113018138",
-      "dist_nearest_any_m": 1829.4,
-      "dist_nearest_247_m": 19038.9,
+      "dist_nearest_any_m": 1608.2,
+      "dist_nearest_247_m": 1608.2,
       "dist_nearest_storefront_m": 2078.1,
-      "supply_within_1mi": false,
+      "supply_within_1mi": true,
       "supply_within_2mi": true,
       "od_death_rate_per_100k": 16.5
     },
     {
       "geoid": "48113018140",
       "dist_nearest_any_m": 6567.2,
-      "dist_nearest_247_m": 24872.4,
+      "dist_nearest_247_m": 8274.7,
       "dist_nearest_storefront_m": 7827.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3880,7 +3880,7 @@
     {
       "geoid": "48113019042",
       "dist_nearest_any_m": 7879.8,
-      "dist_nearest_247_m": 24307.1,
+      "dist_nearest_247_m": 16537.5,
       "dist_nearest_storefront_m": 9531.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3889,7 +3889,7 @@
     {
       "geoid": "48113019050",
       "dist_nearest_any_m": 7005.5,
-      "dist_nearest_247_m": 24774.6,
+      "dist_nearest_247_m": 15161.8,
       "dist_nearest_storefront_m": 10583.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3898,7 +3898,7 @@
     {
       "geoid": "48113019052",
       "dist_nearest_any_m": 7943.6,
-      "dist_nearest_247_m": 23159.7,
+      "dist_nearest_247_m": 19952.5,
       "dist_nearest_storefront_m": 7943.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3907,7 +3907,7 @@
     {
       "geoid": "48113019053",
       "dist_nearest_any_m": 6485.9,
-      "dist_nearest_247_m": 21691.2,
+      "dist_nearest_247_m": 19162.2,
       "dist_nearest_storefront_m": 6485.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -3916,7 +3916,7 @@
     {
       "geoid": "48113019039",
       "dist_nearest_any_m": 4268.0,
-      "dist_nearest_247_m": 19539.9,
+      "dist_nearest_247_m": 17349.6,
       "dist_nearest_storefront_m": 4268.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -4168,7 +4168,7 @@
     {
       "geoid": "48113017606",
       "dist_nearest_any_m": 1878.9,
-      "dist_nearest_247_m": 12999.3,
+      "dist_nearest_247_m": 11331.4,
       "dist_nearest_storefront_m": 3028.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -4231,7 +4231,7 @@
     {
       "geoid": "48113017604",
       "dist_nearest_any_m": 2837.6,
-      "dist_nearest_247_m": 14446.0,
+      "dist_nearest_247_m": 12428.9,
       "dist_nearest_storefront_m": 2837.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -4249,7 +4249,7 @@
     {
       "geoid": "48113019033",
       "dist_nearest_any_m": 2582.4,
-      "dist_nearest_247_m": 16554.1,
+      "dist_nearest_247_m": 13935.1,
       "dist_nearest_storefront_m": 2582.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -4293,8 +4293,8 @@
     },
     {
       "geoid": "48113018132",
-      "dist_nearest_any_m": 1513.6,
-      "dist_nearest_247_m": 18829.5,
+      "dist_nearest_any_m": 1275.1,
+      "dist_nearest_247_m": 1275.1,
       "dist_nearest_storefront_m": 3166.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -4384,7 +4384,7 @@
     {
       "geoid": "48113018130",
       "dist_nearest_any_m": 2960.6,
-      "dist_nearest_247_m": 14637.8,
+      "dist_nearest_247_m": 5622.3,
       "dist_nearest_storefront_m": 3080.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -4393,7 +4393,7 @@
     {
       "geoid": "48113019032",
       "dist_nearest_any_m": 2824.2,
-      "dist_nearest_247_m": 17304.7,
+      "dist_nearest_247_m": 14405.7,
       "dist_nearest_storefront_m": 2824.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -4708,7 +4708,7 @@
     {
       "geoid": "48113018105",
       "dist_nearest_any_m": 1590.4,
-      "dist_nearest_247_m": 20807.1,
+      "dist_nearest_247_m": 9739.3,
       "dist_nearest_storefront_m": 7007.2,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -4717,7 +4717,7 @@
     {
       "geoid": "48113018001",
       "dist_nearest_any_m": 3110.2,
-      "dist_nearest_247_m": 12938.1,
+      "dist_nearest_247_m": 7407.5,
       "dist_nearest_storefront_m": 3943.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -4726,7 +4726,7 @@
     {
       "geoid": "48113018110",
       "dist_nearest_any_m": 2477.7,
-      "dist_nearest_247_m": 19077.3,
+      "dist_nearest_247_m": 5241.4,
       "dist_nearest_storefront_m": 2477.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -4735,7 +4735,7 @@
     {
       "geoid": "48113018203",
       "dist_nearest_any_m": 2135.8,
-      "dist_nearest_247_m": 20356.4,
+      "dist_nearest_247_m": 7379.4,
       "dist_nearest_storefront_m": 4870.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -4744,7 +4744,7 @@
     {
       "geoid": "48113018204",
       "dist_nearest_any_m": 610.2,
-      "dist_nearest_247_m": 19036.1,
+      "dist_nearest_247_m": 8410.9,
       "dist_nearest_storefront_m": 5285.4,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -4753,7 +4753,7 @@
     {
       "geoid": "48113018206",
       "dist_nearest_any_m": 2489.6,
-      "dist_nearest_247_m": 17607.4,
+      "dist_nearest_247_m": 7154.1,
       "dist_nearest_storefront_m": 3677.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -4762,7 +4762,7 @@
     {
       "geoid": "48113017703",
       "dist_nearest_any_m": 1869.8,
-      "dist_nearest_247_m": 13946.0,
+      "dist_nearest_247_m": 8058.5,
       "dist_nearest_storefront_m": 2843.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -4834,7 +4834,7 @@
     {
       "geoid": "48113018120",
       "dist_nearest_any_m": 4386.5,
-      "dist_nearest_247_m": 23640.6,
+      "dist_nearest_247_m": 10213.3,
       "dist_nearest_storefront_m": 8399.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -4870,7 +4870,7 @@
     {
       "geoid": "48113018121",
       "dist_nearest_any_m": 2709.9,
-      "dist_nearest_247_m": 21842.0,
+      "dist_nearest_247_m": 8871.8,
       "dist_nearest_storefront_m": 6671.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -4879,7 +4879,7 @@
     {
       "geoid": "48113018126",
       "dist_nearest_any_m": 2538.7,
-      "dist_nearest_247_m": 15660.2,
+      "dist_nearest_247_m": 6115.1,
       "dist_nearest_storefront_m": 2538.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -4888,7 +4888,7 @@
     {
       "geoid": "48113018127",
       "dist_nearest_any_m": 3501.5,
-      "dist_nearest_247_m": 14501.4,
+      "dist_nearest_247_m": 6867.5,
       "dist_nearest_storefront_m": 3501.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -4942,7 +4942,7 @@
     {
       "geoid": "48113018128",
       "dist_nearest_any_m": 558.7,
-      "dist_nearest_247_m": 17217.7,
+      "dist_nearest_247_m": 3840.2,
       "dist_nearest_storefront_m": 558.7,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -4951,7 +4951,7 @@
     {
       "geoid": "48113018129",
       "dist_nearest_any_m": 1798.7,
-      "dist_nearest_247_m": 16168.7,
+      "dist_nearest_247_m": 4267.0,
       "dist_nearest_storefront_m": 1826.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -5023,7 +5023,7 @@
     {
       "geoid": "48113018506",
       "dist_nearest_any_m": 2583.8,
-      "dist_nearest_247_m": 14682.7,
+      "dist_nearest_247_m": 13400.3,
       "dist_nearest_storefront_m": 2583.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -5050,7 +5050,7 @@
     {
       "geoid": "48113018501",
       "dist_nearest_any_m": 1183.2,
-      "dist_nearest_247_m": 15244.3,
+      "dist_nearest_247_m": 10954.2,
       "dist_nearest_storefront_m": 5000.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
@@ -5122,7 +5122,7 @@
     {
       "geoid": "48113012601",
       "dist_nearest_any_m": 2916.6,
-      "dist_nearest_247_m": 13090.3,
+      "dist_nearest_247_m": 8828.1,
       "dist_nearest_storefront_m": 5414.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -5131,7 +5131,7 @@
     {
       "geoid": "48113012701",
       "dist_nearest_any_m": 2938.6,
-      "dist_nearest_247_m": 12051.5,
+      "dist_nearest_247_m": 9936.6,
       "dist_nearest_storefront_m": 6579.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -5140,7 +5140,7 @@
     {
       "geoid": "48113012702",
       "dist_nearest_any_m": 3258.5,
-      "dist_nearest_247_m": 10876.8,
+      "dist_nearest_247_m": 10267.7,
       "dist_nearest_storefront_m": 6798.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -5302,7 +5302,7 @@
     {
       "geoid": "48113013011",
       "dist_nearest_any_m": 1808.7,
-      "dist_nearest_247_m": 13120.9,
+      "dist_nearest_247_m": 12348.2,
       "dist_nearest_storefront_m": 4247.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -5329,7 +5329,7 @@
     {
       "geoid": "48113013007",
       "dist_nearest_any_m": 2190.4,
-      "dist_nearest_247_m": 12245.4,
+      "dist_nearest_247_m": 12232.8,
       "dist_nearest_storefront_m": 4981.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -5626,7 +5626,7 @@
     {
       "geoid": "48113012603",
       "dist_nearest_any_m": 3308.0,
-      "dist_nearest_247_m": 12327.3,
+      "dist_nearest_247_m": 8534.9,
       "dist_nearest_storefront_m": 5403.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -5707,7 +5707,7 @@
     {
       "geoid": "48113018133",
       "dist_nearest_any_m": 5912.8,
-      "dist_nearest_247_m": 23329.2,
+      "dist_nearest_247_m": 6186.3,
       "dist_nearest_storefront_m": 5912.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -5724,8 +5724,8 @@
     },
     {
       "geoid": "48113018135",
-      "dist_nearest_any_m": 7158.1,
-      "dist_nearest_247_m": 24826.6,
+      "dist_nearest_any_m": 5301.0,
+      "dist_nearest_247_m": 5301.0,
       "dist_nearest_storefront_m": 7158.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
@@ -5734,7 +5734,7 @@
     {
       "geoid": "48113019018",
       "dist_nearest_any_m": 1913.9,
-      "dist_nearest_247_m": 17180.4,
+      "dist_nearest_247_m": 16220.4,
       "dist_nearest_storefront_m": 1913.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
@@ -5842,7 +5842,7 @@
     {
       "geoid": "48113018111",
       "dist_nearest_any_m": 1808.9,
-      "dist_nearest_247_m": 17057.4,
+      "dist_nearest_247_m": 5473.1,
       "dist_nearest_storefront_m": 1808.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,

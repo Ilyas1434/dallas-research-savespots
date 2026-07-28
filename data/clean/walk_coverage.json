@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-27",
+  "generated": "2026-07-28",
   "status": "ok",
   "method_note": "Chicago's original metric is % of overdose DEATH POINTS within 500m of a naloxone supply location. Dallas County only publishes tract-level (not address-level) overdose rates, so no death points exist to test. This output instead reports: (a) the % of Dallas County census tracts whose GEOMETRIC centroid (population-weighted centroid not available) falls within 500m of any naloxone supply point -- a coarse areal proxy that says nothing about where residents/deaths are distributed within a tract; (b) a rate-weighted variant summing od_death_rate_per_100k over covered tracts and dividing by the county-wide sum, which up-weights tracts with higher modeled overdose rates but is NOT population- or death-count-weighted and should not be read as '% of deaths near supply'; (c) % of county population within 500m of supply (population assigned to the tract centroid, not distributed within the tract), computed only if data/clean/svi_tracts.geojson provides tract population -- otherwise skipped and noted. All three are approximations made necessary by the lack of point-level mortality data and should be reported as such.",
   "walk_radius_m": 500.0,
   "crs_used": "EPSG:32138",
   "n_tracts": 645,
-  "n_supply_points_used": 38,
+  "n_supply_points_used": 39,
   "metrics": {
     "a_pct_tracts_centroid_within_500m": 1.71,
     "b_pct_rate_weighted_within_500m": 2.43,
@@ -164,7 +164,7 @@
     },
     {
       "geoid": "48113018134",
-      "dist_centroid_to_nearest_supply_m": 8627.4,
+      "dist_centroid_to_nearest_supply_m": 7422.1,
       "within_500m": false,
       "od_death_rate_per_100k": 18.2,
       "totpop": 4931
@@ -2243,7 +2243,7 @@
     },
     {
       "geoid": "48113018159",
-      "dist_centroid_to_nearest_supply_m": 4479.6,
+      "dist_centroid_to_nearest_supply_m": 3577.8,
       "within_500m": false,
       "od_death_rate_per_100k": 13.6,
       "totpop": 5322
@@ -2313,14 +2313,14 @@
     },
     {
       "geoid": "48113018145",
-      "dist_centroid_to_nearest_supply_m": 4916.8,
+      "dist_centroid_to_nearest_supply_m": 4122.8,
       "within_500m": false,
       "od_death_rate_per_100k": 23.0,
       "totpop": 5195
     },
     {
       "geoid": "48113018149",
-      "dist_centroid_to_nearest_supply_m": 9657.6,
+      "dist_centroid_to_nearest_supply_m": 9115.8,
       "within_500m": false,
       "od_death_rate_per_100k": 18.2,
       "totpop": 3329
@@ -2971,28 +2971,28 @@
     },
     {
       "geoid": "48113018142",
-      "dist_centroid_to_nearest_supply_m": 4845.3,
+      "dist_centroid_to_nearest_supply_m": 2230.5,
       "within_500m": false,
       "od_death_rate_per_100k": 13.6,
       "totpop": 4289
     },
     {
       "geoid": "48113018141",
-      "dist_centroid_to_nearest_supply_m": 6080.7,
+      "dist_centroid_to_nearest_supply_m": 3439.2,
       "within_500m": false,
       "od_death_rate_per_100k": 13.6,
       "totpop": 3072
     },
     {
       "geoid": "48113018137",
-      "dist_centroid_to_nearest_supply_m": 4195.6,
+      "dist_centroid_to_nearest_supply_m": 2199.6,
       "within_500m": false,
       "od_death_rate_per_100k": 13.6,
       "totpop": 4837
     },
     {
       "geoid": "48113018138",
-      "dist_centroid_to_nearest_supply_m": 1829.4,
+      "dist_centroid_to_nearest_supply_m": 1608.2,
       "within_500m": false,
       "od_death_rate_per_100k": 16.5,
       "totpop": 5045
@@ -3328,7 +3328,7 @@
     },
     {
       "geoid": "48113018132",
-      "dist_centroid_to_nearest_supply_m": 1513.6,
+      "dist_centroid_to_nearest_supply_m": 1275.1,
       "within_500m": false,
       "od_death_rate_per_100k": 16.5,
       "totpop": 6268
@@ -4441,7 +4441,7 @@
     },
     {
       "geoid": "48113018135",
-      "dist_centroid_to_nearest_supply_m": 7158.1,
+      "dist_centroid_to_nearest_supply_m": 5301.0,
       "within_500m": false,
       "od_death_rate_per_100k": 23.0,
       "totpop": 4814
