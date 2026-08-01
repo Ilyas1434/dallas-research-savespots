@@ -1,6 +1,6 @@
 # Published-Baseline Validation (Phase 3.5)
 
-_Generated 2026-07-24T17:07:52.652351+00:00_
+_Generated 2026-08-01T11:09:51.128327+00:00_
 
 **County population denominator:** 2,604,053 (sum of totpop across svi_tracts.geojson (ACS 2020-2024 5-year), ~2.6M)
 
