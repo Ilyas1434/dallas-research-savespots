@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-02",
+  "generated": "2026-08-04",
   "status": "ok",
   "method_note": "Distances computed from each tract's GEOMETRIC centroid (population-weighted centroid not available) to the nearest naloxone supply point, projected to EPSG:32138 (NAD83 / Texas North Central, unit=metre). Dallas is car-dependent; distances are recorded raw with no capping.",
   "mortality_join": "joined",
