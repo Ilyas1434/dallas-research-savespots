@@ -1,7 +1,7 @@
 {
   "module": "mortality",
-  "pulled_at": "2026-08-08T08:59:29.385322+00:00",
-  "run_date": "2026-08-08",
+  "pulled_at": "2026-08-10T09:48:03.394837+00:00",
+  "run_date": "2026-08-10",
   "caveats": [
     "VSRR county counts are PROVISIONAL 12-month-ending totals; toxicology and death-certificate reporting lag materially affects the most recent ~6 months (counts revise upward).",
     "Tract rates are MODEL-BASED (spatially smoothed) rates per 100,000 on census-tract aggregation units; a single modeled rate is applied to every constituent tract of an aggregation unit.",
