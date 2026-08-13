@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-12",
+  "generated": "2026-08-13",
   "status": "ok",
   "method_note": "Distances computed from each tract's GEOMETRIC centroid (population-weighted centroid not available) to the nearest naloxone supply point, projected to EPSG:32138 (NAD83 / Texas North Central, unit=metre). Dallas is car-dependent; distances are recorded raw with no capping.",
   "mortality_join": "joined",
@@ -50,7 +50,7 @@
       "dist_nearest_storefront_m": 12959.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 26.6
+      "od_death_rate_per_100k": 23.5
     },
     {
       "geoid": "48113013630",
@@ -59,7 +59,7 @@
       "dist_nearest_storefront_m": 9086.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 19.9
     },
     {
       "geoid": "48113012211",
@@ -68,7 +68,7 @@
       "dist_nearest_storefront_m": 7101.2,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.7
+      "od_death_rate_per_100k": 28.4
     },
     {
       "geoid": "48113012400",
@@ -77,7 +77,7 @@
       "dist_nearest_storefront_m": 7079.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 29.1
+      "od_death_rate_per_100k": 31.9
     },
     {
       "geoid": "48113016513",
@@ -86,7 +86,7 @@
       "dist_nearest_storefront_m": 17356.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 19.5
     },
     {
       "geoid": "48113016517",
@@ -95,7 +95,7 @@
       "dist_nearest_storefront_m": 14309.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 26.6
+      "od_death_rate_per_100k": 23.5
     },
     {
       "geoid": "48113016518",
@@ -104,7 +104,7 @@
       "dist_nearest_storefront_m": 15162.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 19.5
     },
     {
       "geoid": "48113016519",
@@ -113,7 +113,7 @@
       "dist_nearest_storefront_m": 16696.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 19.5
     },
     {
       "geoid": "48113016607",
@@ -122,7 +122,7 @@
       "dist_nearest_storefront_m": 12508.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 24.3
     },
     {
       "geoid": "48113016610",
@@ -131,7 +131,7 @@
       "dist_nearest_storefront_m": 11496.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 27.1
+      "od_death_rate_per_100k": 26.1
     },
     {
       "geoid": "48113013609",
@@ -140,7 +140,7 @@
       "dist_nearest_storefront_m": 6747.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.9
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113013610",
@@ -149,7 +149,7 @@
       "dist_nearest_storefront_m": 6057.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 21.5
+      "od_death_rate_per_100k": 24.6
     },
     {
       "geoid": "48113013611",
@@ -158,7 +158,7 @@
       "dist_nearest_storefront_m": 11856.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.5
+      "od_death_rate_per_100k": 15.7
     },
     {
       "geoid": "48113015306",
@@ -167,7 +167,7 @@
       "dist_nearest_storefront_m": 13928.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.9
+      "od_death_rate_per_100k": 17.4
     },
     {
       "geoid": "48113015403",
@@ -176,7 +176,7 @@
       "dist_nearest_storefront_m": 18554.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.1
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113015404",
@@ -185,7 +185,7 @@
       "dist_nearest_storefront_m": 19203.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.1
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113015500",
@@ -194,7 +194,7 @@
       "dist_nearest_storefront_m": 17201.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.1
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113015600",
@@ -203,7 +203,7 @@
       "dist_nearest_storefront_m": 15254.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.6
+      "od_death_rate_per_100k": 14.8
     },
     {
       "geoid": "48113007914",
@@ -212,7 +212,7 @@
       "dist_nearest_storefront_m": 5225.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113013625",
@@ -221,7 +221,7 @@
       "dist_nearest_storefront_m": 10202.7,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113018134",
@@ -230,7 +230,7 @@
       "dist_nearest_storefront_m": 8627.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.2
+      "od_death_rate_per_100k": 17.1
     },
     {
       "geoid": "48113017605",
@@ -239,7 +239,7 @@
       "dist_nearest_storefront_m": 2265.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 24.9
+      "od_death_rate_per_100k": 25.8
     },
     {
       "geoid": "48113011701",
@@ -248,7 +248,7 @@
       "dist_nearest_storefront_m": 2865.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 30.2
+      "od_death_rate_per_100k": 26.7
     },
     {
       "geoid": "48113011702",
@@ -257,7 +257,7 @@
       "dist_nearest_storefront_m": 3269.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 30.2
+      "od_death_rate_per_100k": 26.7
     },
     {
       "geoid": "48113012000",
@@ -266,7 +266,7 @@
       "dist_nearest_storefront_m": 2651.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 24.9
+      "od_death_rate_per_100k": 25.8
     },
     {
       "geoid": "48113012206",
@@ -275,7 +275,7 @@
       "dist_nearest_storefront_m": 5322.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 23.0
     },
     {
       "geoid": "48113012207",
@@ -284,7 +284,7 @@
       "dist_nearest_storefront_m": 6740.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.7
+      "od_death_rate_per_100k": 28.4
     },
     {
       "geoid": "48113012208",
@@ -293,7 +293,7 @@
       "dist_nearest_storefront_m": 3992.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 23.0
     },
     {
       "geoid": "48113010704",
@@ -302,7 +302,7 @@
       "dist_nearest_storefront_m": 11426.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.7
+      "od_death_rate_per_100k": 25.5
     },
     {
       "geoid": "48113980100",
@@ -320,7 +320,7 @@
       "dist_nearest_storefront_m": 334.3,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113016407",
@@ -329,7 +329,7 @@
       "dist_nearest_storefront_m": 19250.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.4
     },
     {
       "geoid": "48113007101",
@@ -347,7 +347,7 @@
       "dist_nearest_storefront_m": 2815.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.4
+      "od_death_rate_per_100k": 29.9
     },
     {
       "geoid": "48113009105",
@@ -356,7 +356,7 @@
       "dist_nearest_storefront_m": 4187.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 26.9
+      "od_death_rate_per_100k": 26.4
     },
     {
       "geoid": "48113012210",
@@ -365,7 +365,7 @@
       "dist_nearest_storefront_m": 7046.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.5
+      "od_death_rate_per_100k": 26.2
     },
     {
       "geoid": "48113009610",
@@ -374,7 +374,7 @@
       "dist_nearest_storefront_m": 10345.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 18.4
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113014121",
@@ -383,7 +383,7 @@
       "dist_nearest_storefront_m": 18191.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 10.6
+      "od_death_rate_per_100k": 10.8
     },
     {
       "geoid": "48113004201",
@@ -392,7 +392,7 @@
       "dist_nearest_storefront_m": 6002.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.9
+      "od_death_rate_per_100k": 28.4
     },
     {
       "geoid": "48113017102",
@@ -401,7 +401,7 @@
       "dist_nearest_storefront_m": 8409.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.5
+      "od_death_rate_per_100k": 22.1
     },
     {
       "geoid": "48113011105",
@@ -410,7 +410,7 @@
       "dist_nearest_storefront_m": 7726.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 21.9
+      "od_death_rate_per_100k": 25.9
     },
     {
       "geoid": "48113005901",
@@ -419,7 +419,7 @@
       "dist_nearest_storefront_m": 4208.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.6
+      "od_death_rate_per_100k": 27.0
     },
     {
       "geoid": "48113006001",
@@ -428,7 +428,7 @@
       "dist_nearest_storefront_m": 6847.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 31.9
+      "od_death_rate_per_100k": 34.1
     },
     {
       "geoid": "48113006002",
@@ -437,7 +437,7 @@
       "dist_nearest_storefront_m": 6278.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 31.9
+      "od_death_rate_per_100k": 34.1
     },
     {
       "geoid": "48113006200",
@@ -446,7 +446,7 @@
       "dist_nearest_storefront_m": 7171.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 21.1
+      "od_death_rate_per_100k": 30.8
     },
     {
       "geoid": "48113006301",
@@ -455,7 +455,7 @@
       "dist_nearest_storefront_m": 8156.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 33.5
     },
     {
       "geoid": "48113006302",
@@ -464,7 +464,7 @@
       "dist_nearest_storefront_m": 8441.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 33.5
     },
     {
       "geoid": "48113006501",
@@ -473,7 +473,7 @@
       "dist_nearest_storefront_m": 10704.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.7
+      "od_death_rate_per_100k": 25.5
     },
     {
       "geoid": "48113006502",
@@ -482,7 +482,7 @@
       "dist_nearest_storefront_m": 11301.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.7
+      "od_death_rate_per_100k": 25.5
     },
     {
       "geoid": "48113011300",
@@ -491,7 +491,7 @@
       "dist_nearest_storefront_m": 4555.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.4
+      "od_death_rate_per_100k": 25.2
     },
     {
       "geoid": "48113002100",
@@ -500,7 +500,7 @@
       "dist_nearest_storefront_m": 2994.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.2
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113001202",
@@ -509,7 +509,7 @@
       "dist_nearest_storefront_m": 2805.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 43.7
+      "od_death_rate_per_100k": 51.6
     },
     {
       "geoid": "48113001203",
@@ -518,7 +518,7 @@
       "dist_nearest_storefront_m": 2086.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 43.7
+      "od_death_rate_per_100k": 51.6
     },
     {
       "geoid": "48113016903",
@@ -527,7 +527,7 @@
       "dist_nearest_storefront_m": 15754.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.5
+      "od_death_rate_per_100k": 22.1
     },
     {
       "geoid": "48113016617",
@@ -536,7 +536,7 @@
       "dist_nearest_storefront_m": 15004.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 18.2
     },
     {
       "geoid": "48113008703",
@@ -545,7 +545,7 @@
       "dist_nearest_storefront_m": 1887.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 24.9
+      "od_death_rate_per_100k": 38.8
     },
     {
       "geoid": "48113014002",
@@ -563,7 +563,7 @@
       "dist_nearest_storefront_m": 17929.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.8
+      "od_death_rate_per_100k": 12.4
     },
     {
       "geoid": "48113014209",
@@ -572,7 +572,7 @@
       "dist_nearest_storefront_m": 9768.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113018508",
@@ -581,7 +581,7 @@
       "dist_nearest_storefront_m": 538.7,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 13.0
     },
     {
       "geoid": "48113015304",
@@ -590,7 +590,7 @@
       "dist_nearest_storefront_m": 15156.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.9
+      "od_death_rate_per_100k": 17.4
     },
     {
       "geoid": "48113016406",
@@ -599,7 +599,7 @@
       "dist_nearest_storefront_m": 20314.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.4
     },
     {
       "geoid": "48113018205",
@@ -608,7 +608,7 @@
       "dist_nearest_storefront_m": 3600.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 11.2
+      "od_death_rate_per_100k": 15.4
     },
     {
       "geoid": "48113011500",
@@ -617,7 +617,7 @@
       "dist_nearest_storefront_m": 2447.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 34.0
+      "od_death_rate_per_100k": 35.4
     },
     {
       "geoid": "48113005902",
@@ -626,7 +626,7 @@
       "dist_nearest_storefront_m": 5169.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.6
+      "od_death_rate_per_100k": 27.0
     },
     {
       "geoid": "48113007601",
@@ -635,7 +635,7 @@
       "dist_nearest_storefront_m": 7837.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.7
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113007604",
@@ -644,7 +644,7 @@
       "dist_nearest_storefront_m": 7547.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.7
+      "od_death_rate_per_100k": 16.3
     },
     {
       "geoid": "48113007605",
@@ -653,7 +653,7 @@
       "dist_nearest_storefront_m": 8172.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.7
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113007801",
@@ -662,7 +662,7 @@
       "dist_nearest_storefront_m": 6883.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.6
+      "od_death_rate_per_100k": 14.0
     },
     {
       "geoid": "48113007805",
@@ -671,7 +671,7 @@
       "dist_nearest_storefront_m": 3718.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 14.7
     },
     {
       "geoid": "48113004700",
@@ -680,7 +680,7 @@
       "dist_nearest_storefront_m": 6957.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.9
+      "od_death_rate_per_100k": 28.4
     },
     {
       "geoid": "48113004800",
@@ -689,7 +689,7 @@
       "dist_nearest_storefront_m": 6062.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.9
+      "od_death_rate_per_100k": 28.4
     },
     {
       "geoid": "48113005000",
@@ -698,7 +698,7 @@
       "dist_nearest_storefront_m": 7363.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.9
+      "od_death_rate_per_100k": 28.4
     },
     {
       "geoid": "48113005100",
@@ -707,7 +707,7 @@
       "dist_nearest_storefront_m": 8484.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 26.6
+      "od_death_rate_per_100k": 32.7
     },
     {
       "geoid": "48113005200",
@@ -716,7 +716,7 @@
       "dist_nearest_storefront_m": 8599.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 26.6
+      "od_death_rate_per_100k": 32.7
     },
     {
       "geoid": "48113002500",
@@ -725,7 +725,7 @@
       "dist_nearest_storefront_m": 2060.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 64.7
+      "od_death_rate_per_100k": 58.8
     },
     {
       "geoid": "48113019019",
@@ -734,7 +734,7 @@
       "dist_nearest_storefront_m": 980.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.0
+      "od_death_rate_per_100k": 15.9
     },
     {
       "geoid": "48113005400",
@@ -743,7 +743,7 @@
       "dist_nearest_storefront_m": 6042.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 21.1
+      "od_death_rate_per_100k": 30.8
     },
     {
       "geoid": "48113005500",
@@ -752,7 +752,7 @@
       "dist_nearest_storefront_m": 4570.1,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 32.7
+      "od_death_rate_per_100k": 35.1
     },
     {
       "geoid": "48113005300",
@@ -761,7 +761,7 @@
       "dist_nearest_storefront_m": 9452.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 26.6
+      "od_death_rate_per_100k": 32.7
     },
     {
       "geoid": "48113005600",
@@ -770,7 +770,7 @@
       "dist_nearest_storefront_m": 5615.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 31.9
+      "od_death_rate_per_100k": 34.1
     },
     {
       "geoid": "48113013624",
@@ -779,7 +779,7 @@
       "dist_nearest_storefront_m": 10234.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113005700",
@@ -788,7 +788,7 @@
       "dist_nearest_storefront_m": 3413.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.6
+      "od_death_rate_per_100k": 27.0
     },
     {
       "geoid": "48113007815",
@@ -797,7 +797,7 @@
       "dist_nearest_storefront_m": 4803.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 14.7
     },
     {
       "geoid": "48113007819",
@@ -806,7 +806,7 @@
       "dist_nearest_storefront_m": 6149.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.1
+      "od_death_rate_per_100k": 13.8
     },
     {
       "geoid": "48113007902",
@@ -815,7 +815,7 @@
       "dist_nearest_storefront_m": 6192.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 17.5
     },
     {
       "geoid": "48113002200",
@@ -824,7 +824,7 @@
       "dist_nearest_storefront_m": 1691.4,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 27.9
+      "od_death_rate_per_100k": 25.7
     },
     {
       "geoid": "48113002400",
@@ -833,7 +833,7 @@
       "dist_nearest_storefront_m": 676.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 43.7
+      "od_death_rate_per_100k": 51.6
     },
     {
       "geoid": "48113008000",
@@ -842,7 +842,7 @@
       "dist_nearest_storefront_m": 5240.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 17.5
     },
     {
       "geoid": "48113008200",
@@ -851,7 +851,7 @@
       "dist_nearest_storefront_m": 7961.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 29.1
+      "od_death_rate_per_100k": 31.9
     },
     {
       "geoid": "48113011401",
@@ -860,7 +860,7 @@
       "dist_nearest_storefront_m": 2427.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.4
+      "od_death_rate_per_100k": 25.2
     },
     {
       "geoid": "48113008802",
@@ -869,7 +869,7 @@
       "dist_nearest_storefront_m": 2658.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 32.7
+      "od_death_rate_per_100k": 35.1
     },
     {
       "geoid": "48113009603",
@@ -878,7 +878,7 @@
       "dist_nearest_storefront_m": 10223.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.8
+      "od_death_rate_per_100k": 20.1
     },
     {
       "geoid": "48113009604",
@@ -887,7 +887,7 @@
       "dist_nearest_storefront_m": 8640.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.8
+      "od_death_rate_per_100k": 20.1
     },
     {
       "geoid": "48113009605",
@@ -896,7 +896,7 @@
       "dist_nearest_storefront_m": 10790.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.4
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113009607",
@@ -905,7 +905,7 @@
       "dist_nearest_storefront_m": 9678.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.4
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113009608",
@@ -914,7 +914,7 @@
       "dist_nearest_storefront_m": 10915.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.4
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113009609",
@@ -923,7 +923,7 @@
       "dist_nearest_storefront_m": 9417.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.7
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113009611",
@@ -932,7 +932,7 @@
       "dist_nearest_storefront_m": 9961.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 18.4
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113009702",
@@ -941,7 +941,7 @@
       "dist_nearest_storefront_m": 8133.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.7
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113009202",
@@ -950,7 +950,7 @@
       "dist_nearest_storefront_m": 2643.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 21.9
+      "od_death_rate_per_100k": 26.6
     },
     {
       "geoid": "48113009301",
@@ -959,7 +959,7 @@
       "dist_nearest_storefront_m": 4390.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 26.9
+      "od_death_rate_per_100k": 26.4
     },
     {
       "geoid": "48113009304",
@@ -968,7 +968,7 @@
       "dist_nearest_storefront_m": 5311.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.2
+      "od_death_rate_per_100k": 24.3
     },
     {
       "geoid": "48113008500",
@@ -977,7 +977,7 @@
       "dist_nearest_storefront_m": 5816.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.8
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113008604",
@@ -986,7 +986,7 @@
       "dist_nearest_storefront_m": 2310.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 32.7
+      "od_death_rate_per_100k": 35.1
     },
     {
       "geoid": "48113008701",
@@ -995,7 +995,7 @@
       "dist_nearest_storefront_m": 142.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 24.9
+      "od_death_rate_per_100k": 38.8
     },
     {
       "geoid": "48113008704",
@@ -1004,7 +1004,7 @@
       "dist_nearest_storefront_m": 1691.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 24.9
+      "od_death_rate_per_100k": 38.8
     },
     {
       "geoid": "48113008801",
@@ -1013,7 +1013,7 @@
       "dist_nearest_storefront_m": 3630.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 32.7
+      "od_death_rate_per_100k": 35.1
     },
     {
       "geoid": "48113009802",
@@ -1022,7 +1022,7 @@
       "dist_nearest_storefront_m": 6278.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.7
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113009104",
@@ -1031,7 +1031,7 @@
       "dist_nearest_storefront_m": 4411.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 26.9
+      "od_death_rate_per_100k": 26.4
     },
     {
       "geoid": "48113018144",
@@ -1040,7 +1040,7 @@
       "dist_nearest_storefront_m": 11534.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.2
+      "od_death_rate_per_100k": 17.1
     },
     {
       "geoid": "48113016524",
@@ -1058,7 +1058,7 @@
       "dist_nearest_storefront_m": 3719.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.2
+      "od_death_rate_per_100k": 15.4
     },
     {
       "geoid": "48113018507",
@@ -1067,7 +1067,7 @@
       "dist_nearest_storefront_m": 524.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 13.0
     },
     {
       "geoid": "48113019045",
@@ -1076,7 +1076,7 @@
       "dist_nearest_storefront_m": 2213.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.9
+      "od_death_rate_per_100k": 14.1
     },
     {
       "geoid": "48113019047",
@@ -1085,7 +1085,7 @@
       "dist_nearest_storefront_m": 4642.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.6
+      "od_death_rate_per_100k": 19.4
     },
     {
       "geoid": "48113012802",
@@ -1094,7 +1094,7 @@
       "dist_nearest_storefront_m": 6964.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.6
+      "od_death_rate_per_100k": 23.1
     },
     {
       "geoid": "48113016530",
@@ -1103,7 +1103,7 @@
       "dist_nearest_storefront_m": 18804.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 21.1
+      "od_death_rate_per_100k": 19.3
     },
     {
       "geoid": "48113008402",
@@ -1112,7 +1112,7 @@
       "dist_nearest_storefront_m": 4199.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 23.0
     },
     {
       "geoid": "48113016531",
@@ -1121,7 +1121,7 @@
       "dist_nearest_storefront_m": 15536.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 19.5
     },
     {
       "geoid": "48113019051",
@@ -1130,7 +1130,7 @@
       "dist_nearest_storefront_m": 12160.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.6
+      "od_death_rate_per_100k": 9.5
     },
     {
       "geoid": "48113019216",
@@ -1139,7 +1139,7 @@
       "dist_nearest_storefront_m": 7361.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.1
+      "od_death_rate_per_100k": 11.0
     },
     {
       "geoid": "48113008101",
@@ -1148,7 +1148,7 @@
       "dist_nearest_storefront_m": 5948.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.5
+      "od_death_rate_per_100k": 26.2
     },
     {
       "geoid": "48113018151",
@@ -1157,7 +1157,7 @@
       "dist_nearest_storefront_m": 10599.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.6
+      "od_death_rate_per_100k": 9.5
     },
     {
       "geoid": "48113013202",
@@ -1166,7 +1166,7 @@
       "dist_nearest_storefront_m": 5470.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 21.5
+      "od_death_rate_per_100k": 24.6
     },
     {
       "geoid": "48113013012",
@@ -1175,7 +1175,7 @@
       "dist_nearest_storefront_m": 4210.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.9
+      "od_death_rate_per_100k": 15.6
     },
     {
       "geoid": "48113008102",
@@ -1184,7 +1184,7 @@
       "dist_nearest_storefront_m": 5662.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.5
+      "od_death_rate_per_100k": 26.2
     },
     {
       "geoid": "48113016527",
@@ -1193,7 +1193,7 @@
       "dist_nearest_storefront_m": 20895.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.2
+      "od_death_rate_per_100k": 13.9
     },
     {
       "geoid": "48113000801",
@@ -1202,7 +1202,7 @@
       "dist_nearest_storefront_m": 2115.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 27.9
+      "od_death_rate_per_100k": 25.7
     },
     {
       "geoid": "48113000902",
@@ -1211,7 +1211,7 @@
       "dist_nearest_storefront_m": 2112.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 16.1
     },
     {
       "geoid": "48113014142",
@@ -1220,7 +1220,7 @@
       "dist_nearest_storefront_m": 16146.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.6
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113012801",
@@ -1229,7 +1229,7 @@
       "dist_nearest_storefront_m": 6061.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 23.6
+      "od_death_rate_per_100k": 23.1
     },
     {
       "geoid": "48113021200",
@@ -1238,7 +1238,7 @@
       "dist_nearest_storefront_m": 12198.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 27.2
+      "od_death_rate_per_100k": 25.2
     },
     {
       "geoid": "48113007915",
@@ -1247,7 +1247,7 @@
       "dist_nearest_storefront_m": 6512.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.1
+      "od_death_rate_per_100k": 13.8
     },
     {
       "geoid": "48113012502",
@@ -1256,7 +1256,7 @@
       "dist_nearest_storefront_m": 5857.0,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 29.1
+      "od_death_rate_per_100k": 31.9
     },
     {
       "geoid": "48113012501",
@@ -1265,7 +1265,7 @@
       "dist_nearest_storefront_m": 5136.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 29.1
+      "od_death_rate_per_100k": 31.9
     },
     {
       "geoid": "48113016635",
@@ -1274,7 +1274,7 @@
       "dist_nearest_storefront_m": 11878.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 26.6
+      "od_death_rate_per_100k": 23.5
     },
     {
       "geoid": "48113016534",
@@ -1283,7 +1283,7 @@
       "dist_nearest_storefront_m": 12936.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 20.4
+      "od_death_rate_per_100k": 24.4
     },
     {
       "geoid": "48113007702",
@@ -1292,7 +1292,7 @@
       "dist_nearest_storefront_m": 7162.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.6
+      "od_death_rate_per_100k": 14.0
     },
     {
       "geoid": "48113007830",
@@ -1301,7 +1301,7 @@
       "dist_nearest_storefront_m": 5870.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.1
+      "od_death_rate_per_100k": 13.8
     },
     {
       "geoid": "48113013808",
@@ -1319,7 +1319,7 @@
       "dist_nearest_storefront_m": 8155.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.1
     },
     {
       "geoid": "48113007206",
@@ -1328,7 +1328,7 @@
       "dist_nearest_storefront_m": 5233.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 25.0
+      "od_death_rate_per_100k": 30.9
     },
     {
       "geoid": "48113016420",
@@ -1337,7 +1337,7 @@
       "dist_nearest_storefront_m": 21096.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113010001",
@@ -1346,7 +1346,7 @@
       "dist_nearest_storefront_m": 1689.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 21.6
     },
     {
       "geoid": "48113007831",
@@ -1355,7 +1355,7 @@
       "dist_nearest_storefront_m": 5839.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.1
+      "od_death_rate_per_100k": 13.8
     },
     {
       "geoid": "48113016532",
@@ -1364,7 +1364,7 @@
       "dist_nearest_storefront_m": 16687.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 19.5
     },
     {
       "geoid": "48113013807",
@@ -1382,7 +1382,7 @@
       "dist_nearest_storefront_m": 18736.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.8
+      "od_death_rate_per_100k": 12.4
     },
     {
       "geoid": "48113014156",
@@ -1391,7 +1391,7 @@
       "dist_nearest_storefront_m": 17860.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.8
+      "od_death_rate_per_100k": 12.4
     },
     {
       "geoid": "48113014141",
@@ -1400,7 +1400,7 @@
       "dist_nearest_storefront_m": 16660.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.6
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113014314",
@@ -1409,7 +1409,7 @@
       "dist_nearest_storefront_m": 13012.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.5
+      "od_death_rate_per_100k": 12.4
     },
     {
       "geoid": "48113014318",
@@ -1418,7 +1418,7 @@
       "dist_nearest_storefront_m": 11862.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.8
+      "od_death_rate_per_100k": 15.0
     },
     {
       "geoid": "48113014155",
@@ -1427,7 +1427,7 @@
       "dist_nearest_storefront_m": 17688.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 10.6
+      "od_death_rate_per_100k": 10.8
     },
     {
       "geoid": "48113014158",
@@ -1436,7 +1436,7 @@
       "dist_nearest_storefront_m": 14543.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.2
+      "od_death_rate_per_100k": 9.6
     },
     {
       "geoid": "48113014409",
@@ -1445,7 +1445,7 @@
       "dist_nearest_storefront_m": 17370.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 0.0
+      "od_death_rate_per_100k": 11.4
     },
     {
       "geoid": "48113014410",
@@ -1454,7 +1454,7 @@
       "dist_nearest_storefront_m": 16240.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 0.0
+      "od_death_rate_per_100k": 11.4
     },
     {
       "geoid": "48113014316",
@@ -1463,7 +1463,7 @@
       "dist_nearest_storefront_m": 12657.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.8
+      "od_death_rate_per_100k": 15.0
     },
     {
       "geoid": "48113015406",
@@ -1472,7 +1472,7 @@
       "dist_nearest_storefront_m": 18501.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.1
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113014140",
@@ -1481,7 +1481,7 @@
       "dist_nearest_storefront_m": 15752.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.3
+      "od_death_rate_per_100k": 9.2
     },
     {
       "geoid": "48113014154",
@@ -1490,7 +1490,7 @@
       "dist_nearest_storefront_m": 15806.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.3
+      "od_death_rate_per_100k": 9.2
     },
     {
       "geoid": "48113014147",
@@ -1499,7 +1499,7 @@
       "dist_nearest_storefront_m": 16815.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.3
+      "od_death_rate_per_100k": 9.2
     },
     {
       "geoid": "48113014153",
@@ -1508,7 +1508,7 @@
       "dist_nearest_storefront_m": 15080.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.3
+      "od_death_rate_per_100k": 9.2
     },
     {
       "geoid": "48113015101",
@@ -1517,7 +1517,7 @@
       "dist_nearest_storefront_m": 10545.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.9
+      "od_death_rate_per_100k": 17.6
     },
     {
       "geoid": "48113015208",
@@ -1526,7 +1526,7 @@
       "dist_nearest_storefront_m": 12782.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 20.9
+      "od_death_rate_per_100k": 22.5
     },
     {
       "geoid": "48113015002",
@@ -1535,7 +1535,7 @@
       "dist_nearest_storefront_m": 9734.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.9
+      "od_death_rate_per_100k": 17.6
     },
     {
       "geoid": "48113014144",
@@ -1544,7 +1544,7 @@
       "dist_nearest_storefront_m": 12473.1,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.5
+      "od_death_rate_per_100k": 12.4
     },
     {
       "geoid": "48113014313",
@@ -1553,7 +1553,7 @@
       "dist_nearest_storefront_m": 12347.4,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.5
+      "od_death_rate_per_100k": 12.4
     },
     {
       "geoid": "48113014320",
@@ -1562,7 +1562,7 @@
       "dist_nearest_storefront_m": 13862.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.5
+      "od_death_rate_per_100k": 12.4
     },
     {
       "geoid": "48113016634",
@@ -1571,7 +1571,7 @@
       "dist_nearest_storefront_m": 10578.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 27.1
+      "od_death_rate_per_100k": 26.1
     },
     {
       "geoid": "48113007203",
@@ -1580,7 +1580,7 @@
       "dist_nearest_storefront_m": 5384.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 25.0
+      "od_death_rate_per_100k": 30.9
     },
     {
       "geoid": "48113019215",
@@ -1589,7 +1589,7 @@
       "dist_nearest_storefront_m": 6488.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.9
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113019214",
@@ -1598,7 +1598,7 @@
       "dist_nearest_storefront_m": 5600.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.9
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113013729",
@@ -1616,7 +1616,7 @@
       "dist_nearest_storefront_m": 5108.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.9
+      "od_death_rate_per_100k": 28.4
     },
     {
       "geoid": "48113010002",
@@ -1625,7 +1625,7 @@
       "dist_nearest_storefront_m": 4180.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 23.5
     },
     {
       "geoid": "48113000705",
@@ -1634,7 +1634,7 @@
       "dist_nearest_storefront_m": 2146.0,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 16.1
     },
     {
       "geoid": "48113016636",
@@ -1643,7 +1643,7 @@
       "dist_nearest_storefront_m": 14945.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 26.6
+      "od_death_rate_per_100k": 23.5
     },
     {
       "geoid": "48113016528",
@@ -1652,7 +1652,7 @@
       "dist_nearest_storefront_m": 18627.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.2
+      "od_death_rate_per_100k": 13.9
     },
     {
       "geoid": "48113016526",
@@ -1661,7 +1661,7 @@
       "dist_nearest_storefront_m": 18401.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.2
+      "od_death_rate_per_100k": 13.9
     },
     {
       "geoid": "48113016419",
@@ -1670,7 +1670,7 @@
       "dist_nearest_storefront_m": 21827.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113016204",
@@ -1679,7 +1679,7 @@
       "dist_nearest_storefront_m": 18989.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.4
     },
     {
       "geoid": "48113016536",
@@ -1688,7 +1688,7 @@
       "dist_nearest_storefront_m": 13159.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 24.3
     },
     {
       "geoid": "48113000706",
@@ -1706,7 +1706,7 @@
       "dist_nearest_storefront_m": 1831.2,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.2
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113001801",
@@ -1715,7 +1715,7 @@
       "dist_nearest_storefront_m": 1123.3,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113000703",
@@ -1724,7 +1724,7 @@
       "dist_nearest_storefront_m": 1557.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 16.1
     },
     {
       "geoid": "48113001802",
@@ -1733,7 +1733,7 @@
       "dist_nearest_storefront_m": 1444.3,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113000610",
@@ -1751,7 +1751,7 @@
       "dist_nearest_storefront_m": 933.4,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 21.6
     },
     {
       "geoid": "48113000408",
@@ -1760,7 +1760,7 @@
       "dist_nearest_storefront_m": 1434.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 21.6
     },
     {
       "geoid": "48113016533",
@@ -1769,7 +1769,7 @@
       "dist_nearest_storefront_m": 15101.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 20.4
+      "od_death_rate_per_100k": 24.4
     },
     {
       "geoid": "48113016535",
@@ -1778,7 +1778,7 @@
       "dist_nearest_storefront_m": 14730.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 24.3
     },
     {
       "geoid": "48113003103",
@@ -1787,7 +1787,7 @@
       "dist_nearest_storefront_m": 2701.4,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 27.9
+      "od_death_rate_per_100k": 25.7
     },
     {
       "geoid": "48113010809",
@@ -1796,7 +1796,7 @@
       "dist_nearest_storefront_m": 12592.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.7
+      "od_death_rate_per_100k": 25.5
     },
     {
       "geoid": "48113006701",
@@ -1805,7 +1805,7 @@
       "dist_nearest_storefront_m": 9387.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.7
+      "od_death_rate_per_100k": 25.5
     },
     {
       "geoid": "48113014149",
@@ -1814,7 +1814,7 @@
       "dist_nearest_storefront_m": 16262.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.6
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113007916",
@@ -1823,7 +1823,7 @@
       "dist_nearest_storefront_m": 6532.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.1
+      "od_death_rate_per_100k": 13.8
     },
     {
       "geoid": "48113013631",
@@ -1832,7 +1832,7 @@
       "dist_nearest_storefront_m": 8811.0,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 19.9
     },
     {
       "geoid": "48113013107",
@@ -1841,7 +1841,7 @@
       "dist_nearest_storefront_m": 5352.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.7
+      "od_death_rate_per_100k": 16.3
     },
     {
       "geoid": "48113019049",
@@ -1850,7 +1850,7 @@
       "dist_nearest_storefront_m": 6862.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.9
+      "od_death_rate_per_100k": 17.3
     },
     {
       "geoid": "48113980200",
@@ -1859,7 +1859,7 @@
       "dist_nearest_storefront_m": 8623.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.1
+      "od_death_rate_per_100k": 11.0
     },
     {
       "geoid": "48113018150",
@@ -1868,7 +1868,7 @@
       "dist_nearest_storefront_m": 9384.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.2
+      "od_death_rate_per_100k": 17.1
     },
     {
       "geoid": "48113016708",
@@ -1877,7 +1877,7 @@
       "dist_nearest_storefront_m": 8604.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.9
+      "od_death_rate_per_100k": 19.5
     },
     {
       "geoid": "48113020800",
@@ -1886,7 +1886,7 @@
       "dist_nearest_storefront_m": 230.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 34.0
+      "od_death_rate_per_100k": 35.4
     },
     {
       "geoid": "48113000802",
@@ -1895,7 +1895,7 @@
       "dist_nearest_storefront_m": 2106.4,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 16.1
     },
     {
       "geoid": "48113001602",
@@ -1904,7 +1904,7 @@
       "dist_nearest_storefront_m": 2250.4,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 27.9
+      "od_death_rate_per_100k": 25.7
     },
     {
       "geoid": "48113020401",
@@ -1913,7 +1913,7 @@
       "dist_nearest_storefront_m": 1334.7,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 27.9
+      "od_death_rate_per_100k": 25.7
     },
     {
       "geoid": "48113015207",
@@ -1922,7 +1922,7 @@
       "dist_nearest_storefront_m": 12057.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.9
+      "od_death_rate_per_100k": 22.5
     },
     {
       "geoid": "48113015102",
@@ -1931,7 +1931,7 @@
       "dist_nearest_storefront_m": 10657.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.9
+      "od_death_rate_per_100k": 22.5
     },
     {
       "geoid": "48113015001",
@@ -1940,7 +1940,7 @@
       "dist_nearest_storefront_m": 8921.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.9
+      "od_death_rate_per_100k": 17.6
     },
     {
       "geoid": "48113014143",
@@ -1949,7 +1949,7 @@
       "dist_nearest_storefront_m": 13853.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.1
+      "od_death_rate_per_100k": 9.9
     },
     {
       "geoid": "48113010906",
@@ -1958,7 +1958,7 @@
       "dist_nearest_storefront_m": 10187.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113002002",
@@ -1967,7 +1967,7 @@
       "dist_nearest_storefront_m": 5350.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.9
+      "od_death_rate_per_100k": 28.4
     },
     {
       "geoid": "48113000607",
@@ -1976,7 +1976,7 @@
       "dist_nearest_storefront_m": 1183.2,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113016203",
@@ -1985,7 +1985,7 @@
       "dist_nearest_storefront_m": 19695.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.4
     },
     {
       "geoid": "48113016421",
@@ -1994,7 +1994,7 @@
       "dist_nearest_storefront_m": 19141.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113016414",
@@ -2003,7 +2003,7 @@
       "dist_nearest_storefront_m": 22761.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.8
+      "od_death_rate_per_100k": 16.2
     },
     {
       "geoid": "48113000501",
@@ -2012,7 +2012,7 @@
       "dist_nearest_storefront_m": 306.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113000503",
@@ -2021,7 +2021,7 @@
       "dist_nearest_storefront_m": 506.3,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113000502",
@@ -2030,7 +2030,7 @@
       "dist_nearest_storefront_m": 768.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113010905",
@@ -2039,7 +2039,7 @@
       "dist_nearest_storefront_m": 11159.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 24.3
     },
     {
       "geoid": "48113000409",
@@ -2048,7 +2048,7 @@
       "dist_nearest_storefront_m": 1024.2,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 21.6
     },
     {
       "geoid": "48113001902",
@@ -2057,7 +2057,7 @@
       "dist_nearest_storefront_m": 2253.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.2
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113000704",
@@ -2066,7 +2066,7 @@
       "dist_nearest_storefront_m": 1315.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113001705",
@@ -2075,7 +2075,7 @@
       "dist_nearest_storefront_m": 2467.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.2
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113000609",
@@ -2093,7 +2093,7 @@
       "dist_nearest_storefront_m": 1539.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 21.6
     },
     {
       "geoid": "48113003102",
@@ -2102,7 +2102,7 @@
       "dist_nearest_storefront_m": 3572.7,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.2
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113010808",
@@ -2111,7 +2111,7 @@
       "dist_nearest_storefront_m": 12768.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.7
+      "od_death_rate_per_100k": 25.5
     },
     {
       "geoid": "48113006702",
@@ -2120,7 +2120,7 @@
       "dist_nearest_storefront_m": 9013.3,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 26.6
+      "od_death_rate_per_100k": 32.7
     },
     {
       "geoid": "48113010806",
@@ -2129,7 +2129,7 @@
       "dist_nearest_storefront_m": 9758.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113011004",
@@ -2138,7 +2138,7 @@
       "dist_nearest_storefront_m": 8487.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113011003",
@@ -2147,7 +2147,7 @@
       "dist_nearest_storefront_m": 8052.2,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113013628",
@@ -2156,7 +2156,7 @@
       "dist_nearest_storefront_m": 10754.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113013629",
@@ -2165,7 +2165,7 @@
       "dist_nearest_storefront_m": 9300.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 19.9
     },
     {
       "geoid": "48113014145",
@@ -2174,7 +2174,7 @@
       "dist_nearest_storefront_m": 15098.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.2
+      "od_death_rate_per_100k": 9.6
     },
     {
       "geoid": "48113016711",
@@ -2183,7 +2183,7 @@
       "dist_nearest_storefront_m": 4848.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.4
+      "od_death_rate_per_100k": 25.2
     },
     {
       "geoid": "48113011201",
@@ -2192,7 +2192,7 @@
       "dist_nearest_storefront_m": 6901.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 21.9
+      "od_death_rate_per_100k": 25.9
     },
     {
       "geoid": "48113016707",
@@ -2201,7 +2201,7 @@
       "dist_nearest_storefront_m": 10087.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.9
+      "od_death_rate_per_100k": 19.5
     },
     {
       "geoid": "48113007829",
@@ -2210,7 +2210,7 @@
       "dist_nearest_storefront_m": 3999.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 23.0
     },
     {
       "geoid": "48113019044",
@@ -2219,7 +2219,7 @@
       "dist_nearest_storefront_m": 3262.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.0
+      "od_death_rate_per_100k": 15.9
     },
     {
       "geoid": "48113019046",
@@ -2228,7 +2228,7 @@
       "dist_nearest_storefront_m": 4356.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.6
+      "od_death_rate_per_100k": 19.4
     },
     {
       "geoid": "48113012212",
@@ -2237,7 +2237,7 @@
       "dist_nearest_storefront_m": 5547.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 23.0
     },
     {
       "geoid": "48113016706",
@@ -2246,7 +2246,7 @@
       "dist_nearest_storefront_m": 9948.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 21.4
     },
     {
       "geoid": "48113019048",
@@ -2255,7 +2255,7 @@
       "dist_nearest_storefront_m": 6443.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.9
+      "od_death_rate_per_100k": 17.3
     },
     {
       "geoid": "48113017816",
@@ -2264,7 +2264,7 @@
       "dist_nearest_storefront_m": 3492.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.8
+      "od_death_rate_per_100k": 28.6
     },
     {
       "geoid": "48113007832",
@@ -2273,7 +2273,7 @@
       "dist_nearest_storefront_m": 5596.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.1
+      "od_death_rate_per_100k": 13.8
     },
     {
       "geoid": "48113018152",
@@ -2282,7 +2282,7 @@
       "dist_nearest_storefront_m": 9371.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.4
+      "od_death_rate_per_100k": 15.9
     },
     {
       "geoid": "48113000901",
@@ -2291,7 +2291,7 @@
       "dist_nearest_storefront_m": 2575.3,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 16.1
     },
     {
       "geoid": "48113000608",
@@ -2300,7 +2300,7 @@
       "dist_nearest_storefront_m": 840.4,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113012213",
@@ -2309,7 +2309,7 @@
       "dist_nearest_storefront_m": 5708.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 23.0
     },
     {
       "geoid": "48113010807",
@@ -2318,7 +2318,7 @@
       "dist_nearest_storefront_m": 11677.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 20.4
+      "od_death_rate_per_100k": 24.4
     },
     {
       "geoid": "48113016415",
@@ -2336,7 +2336,7 @@
       "dist_nearest_storefront_m": 6797.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.6
+      "od_death_rate_per_100k": 14.0
     },
     {
       "geoid": "48113013728",
@@ -2345,7 +2345,7 @@
       "dist_nearest_storefront_m": 14383.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 11.0
+      "od_death_rate_per_100k": 14.1
     },
     {
       "geoid": "48113010003",
@@ -2354,7 +2354,7 @@
       "dist_nearest_storefront_m": 2628.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 21.6
     },
     {
       "geoid": "48113016418",
@@ -2363,7 +2363,7 @@
       "dist_nearest_storefront_m": 22544.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113013201",
@@ -2372,7 +2372,7 @@
       "dist_nearest_storefront_m": 7175.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.8
+      "od_death_rate_per_100k": 20.1
     },
     {
       "geoid": "48113013106",
@@ -2381,7 +2381,7 @@
       "dist_nearest_storefront_m": 5532.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.7
+      "od_death_rate_per_100k": 16.3
     },
     {
       "geoid": "48113016417",
@@ -2399,7 +2399,7 @@
       "dist_nearest_storefront_m": 15250.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.2
+      "od_death_rate_per_100k": 9.6
     },
     {
       "geoid": "48113013627",
@@ -2408,7 +2408,7 @@
       "dist_nearest_storefront_m": 12414.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.5
+      "od_death_rate_per_100k": 15.7
     },
     {
       "geoid": "48113007205",
@@ -2417,7 +2417,7 @@
       "dist_nearest_storefront_m": 5685.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 25.0
+      "od_death_rate_per_100k": 30.9
     },
     {
       "geoid": "48113007204",
@@ -2426,7 +2426,7 @@
       "dist_nearest_storefront_m": 5701.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 25.0
+      "od_death_rate_per_100k": 30.9
     },
     {
       "geoid": "48113000410",
@@ -2444,7 +2444,7 @@
       "dist_nearest_storefront_m": 16053.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.2
+      "od_death_rate_per_100k": 9.6
     },
     {
       "geoid": "48113016637",
@@ -2453,7 +2453,7 @@
       "dist_nearest_storefront_m": 13692.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 26.6
+      "od_death_rate_per_100k": 23.5
     },
     {
       "geoid": "48113014159",
@@ -2462,7 +2462,7 @@
       "dist_nearest_storefront_m": 16221.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.1
+      "od_death_rate_per_100k": 9.9
     },
     {
       "geoid": "48113014150",
@@ -2471,7 +2471,7 @@
       "dist_nearest_storefront_m": 17051.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.8
+      "od_death_rate_per_100k": 12.4
     },
     {
       "geoid": "48113014152",
@@ -2480,7 +2480,7 @@
       "dist_nearest_storefront_m": 14769.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.1
+      "od_death_rate_per_100k": 9.9
     },
     {
       "geoid": "48113014317",
@@ -2489,7 +2489,7 @@
       "dist_nearest_storefront_m": 11425.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.8
+      "od_death_rate_per_100k": 15.0
     },
     {
       "geoid": "48113014151",
@@ -2498,7 +2498,7 @@
       "dist_nearest_storefront_m": 15958.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.1
+      "od_death_rate_per_100k": 9.9
     },
     {
       "geoid": "48113014319",
@@ -2507,7 +2507,7 @@
       "dist_nearest_storefront_m": 14011.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.5
+      "od_death_rate_per_100k": 12.4
     },
     {
       "geoid": "48113014148",
@@ -2516,7 +2516,7 @@
       "dist_nearest_storefront_m": 16666.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.3
+      "od_death_rate_per_100k": 9.2
     },
     {
       "geoid": "48113014315",
@@ -2525,7 +2525,7 @@
       "dist_nearest_storefront_m": 12119.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.8
+      "od_death_rate_per_100k": 15.0
     },
     {
       "geoid": "48113014161",
@@ -2534,7 +2534,7 @@
       "dist_nearest_storefront_m": 16777.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.3
+      "od_death_rate_per_100k": 9.2
     },
     {
       "geoid": "48113015405",
@@ -2543,7 +2543,7 @@
       "dist_nearest_storefront_m": 17376.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.1
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113014139",
@@ -2552,7 +2552,7 @@
       "dist_nearest_storefront_m": 15808.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.3
+      "od_death_rate_per_100k": 9.2
     },
     {
       "geoid": "48113014903",
@@ -2561,7 +2561,7 @@
       "dist_nearest_storefront_m": 9450.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.9
+      "od_death_rate_per_100k": 17.6
     },
     {
       "geoid": "48113014208",
@@ -2570,7 +2570,7 @@
       "dist_nearest_storefront_m": 10324.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113016633",
@@ -2579,7 +2579,7 @@
       "dist_nearest_storefront_m": 16333.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 18.2
     },
     {
       "geoid": "48113011603",
@@ -2588,7 +2588,7 @@
       "dist_nearest_storefront_m": 4932.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 30.2
+      "od_death_rate_per_100k": 26.7
     },
     {
       "geoid": "48113014207",
@@ -2597,7 +2597,7 @@
       "dist_nearest_storefront_m": 11339.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.5
+      "od_death_rate_per_100k": 12.4
     },
     {
       "geoid": "48113017005",
@@ -2606,7 +2606,7 @@
       "dist_nearest_storefront_m": 9948.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.2
+      "od_death_rate_per_100k": 23.1
     },
     {
       "geoid": "48113017009",
@@ -2615,7 +2615,7 @@
       "dist_nearest_storefront_m": 8803.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 20.7
+      "od_death_rate_per_100k": 20.4
     },
     {
       "geoid": "48113017007",
@@ -2624,7 +2624,7 @@
       "dist_nearest_storefront_m": 10857.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.2
+      "od_death_rate_per_100k": 23.1
     },
     {
       "geoid": "48113017706",
@@ -2633,7 +2633,7 @@
       "dist_nearest_storefront_m": 4613.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.6
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113017817",
@@ -2642,7 +2642,7 @@
       "dist_nearest_storefront_m": 972.7,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 45.0
+      "od_death_rate_per_100k": 41.0
     },
     {
       "geoid": "48113018158",
@@ -2651,7 +2651,7 @@
       "dist_nearest_storefront_m": 6731.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.6
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113017313",
@@ -2669,7 +2669,7 @@
       "dist_nearest_storefront_m": 13596.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.4
+      "od_death_rate_per_100k": 10.0
     },
     {
       "geoid": "48113018157",
@@ -2678,7 +2678,7 @@
       "dist_nearest_storefront_m": 8955.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.4
+      "od_death_rate_per_100k": 15.9
     },
     {
       "geoid": "48113018300",
@@ -2687,7 +2687,7 @@
       "dist_nearest_storefront_m": 4878.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 18.5
+      "od_death_rate_per_100k": 19.5
     },
     {
       "geoid": "48113018401",
@@ -2696,7 +2696,7 @@
       "dist_nearest_storefront_m": 5243.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113018402",
@@ -2705,7 +2705,7 @@
       "dist_nearest_storefront_m": 3848.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113018403",
@@ -2714,7 +2714,7 @@
       "dist_nearest_storefront_m": 4527.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113018600",
@@ -2723,7 +2723,7 @@
       "dist_nearest_storefront_m": 5840.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.6
+      "od_death_rate_per_100k": 21.0
     },
     {
       "geoid": "48113018700",
@@ -2732,7 +2732,7 @@
       "dist_nearest_storefront_m": 5939.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.6
+      "od_death_rate_per_100k": 21.0
     },
     {
       "geoid": "48113018143",
@@ -2741,7 +2741,7 @@
       "dist_nearest_storefront_m": 11427.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.4
+      "od_death_rate_per_100k": 10.0
     },
     {
       "geoid": "48113019101",
@@ -2750,7 +2750,7 @@
       "dist_nearest_storefront_m": 4532.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.2
+      "od_death_rate_per_100k": 12.6
     },
     {
       "geoid": "48113016416",
@@ -2759,7 +2759,7 @@
       "dist_nearest_storefront_m": 25893.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.2
+      "od_death_rate_per_100k": 13.9
     },
     {
       "geoid": "48113016525",
@@ -2777,7 +2777,7 @@
       "dist_nearest_storefront_m": 1502.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 45.0
+      "od_death_rate_per_100k": 41.0
     },
     {
       "geoid": "48113017705",
@@ -2786,7 +2786,7 @@
       "dist_nearest_storefront_m": 2887.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.9
+      "od_death_rate_per_100k": 25.3
     },
     {
       "geoid": "48113016710",
@@ -2795,7 +2795,7 @@
       "dist_nearest_storefront_m": 4375.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.4
+      "od_death_rate_per_100k": 25.2
     },
     {
       "geoid": "48113008401",
@@ -2804,7 +2804,7 @@
       "dist_nearest_storefront_m": 4466.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.8
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113018148",
@@ -2813,7 +2813,7 @@
       "dist_nearest_storefront_m": 548.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.4
+      "od_death_rate_per_100k": 15.2
     },
     {
       "geoid": "48113018156",
@@ -2822,7 +2822,7 @@
       "dist_nearest_storefront_m": 6483.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.5
+      "od_death_rate_per_100k": 16.6
     },
     {
       "geoid": "48113016629",
@@ -2831,7 +2831,7 @@
       "dist_nearest_storefront_m": 19186.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 21.1
+      "od_death_rate_per_100k": 19.3
     },
     {
       "geoid": "48113018153",
@@ -2840,7 +2840,7 @@
       "dist_nearest_storefront_m": 11795.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.6
+      "od_death_rate_per_100k": 9.5
     },
     {
       "geoid": "48113011202",
@@ -2849,7 +2849,7 @@
       "dist_nearest_storefront_m": 5469.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 21.9
+      "od_death_rate_per_100k": 25.9
     },
     {
       "geoid": "48113009001",
@@ -2858,7 +2858,7 @@
       "dist_nearest_storefront_m": 4564.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.5
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113016630",
@@ -2867,7 +2867,7 @@
       "dist_nearest_storefront_m": 17723.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.0
+      "od_death_rate_per_100k": 14.2
     },
     {
       "geoid": "48113007834",
@@ -2876,7 +2876,7 @@
       "dist_nearest_storefront_m": 949.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 13.0
     },
     {
       "geoid": "48113007835",
@@ -2885,7 +2885,7 @@
       "dist_nearest_storefront_m": 1411.4,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 13.0
     },
     {
       "geoid": "48113017819",
@@ -2894,7 +2894,7 @@
       "dist_nearest_storefront_m": 2004.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 45.0
+      "od_death_rate_per_100k": 41.0
     },
     {
       "geoid": "48113018159",
@@ -2903,7 +2903,7 @@
       "dist_nearest_storefront_m": 5217.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.6
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113009203",
@@ -2912,7 +2912,7 @@
       "dist_nearest_storefront_m": 2569.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.3
+      "od_death_rate_per_100k": 20.4
     },
     {
       "geoid": "48113009002",
@@ -2921,7 +2921,7 @@
       "dist_nearest_storefront_m": 3210.0,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.5
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113019102",
@@ -2930,7 +2930,7 @@
       "dist_nearest_storefront_m": 4406.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.2
+      "od_death_rate_per_100k": 12.6
     },
     {
       "geoid": "48113007833",
@@ -2939,7 +2939,7 @@
       "dist_nearest_storefront_m": 5425.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.1
+      "od_death_rate_per_100k": 13.8
     },
     {
       "geoid": "48113017312",
@@ -2948,7 +2948,7 @@
       "dist_nearest_storefront_m": 7049.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.3
+      "od_death_rate_per_100k": 18.8
     },
     {
       "geoid": "48113012102",
@@ -2957,7 +2957,7 @@
       "dist_nearest_storefront_m": 4382.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.5
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113016805",
@@ -2966,7 +2966,7 @@
       "dist_nearest_storefront_m": 12016.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.5
+      "od_death_rate_per_100k": 20.3
     },
     {
       "geoid": "48113016529",
@@ -2975,7 +2975,7 @@
       "dist_nearest_storefront_m": 20420.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.2
+      "od_death_rate_per_100k": 13.9
     },
     {
       "geoid": "48113011604",
@@ -2984,7 +2984,7 @@
       "dist_nearest_storefront_m": 5102.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 30.2
+      "od_death_rate_per_100k": 26.7
     },
     {
       "geoid": "48113018145",
@@ -2993,7 +2993,7 @@
       "dist_nearest_storefront_m": 4916.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.0
+      "od_death_rate_per_100k": 20.9
     },
     {
       "geoid": "48113018149",
@@ -3002,7 +3002,7 @@
       "dist_nearest_storefront_m": 9836.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.2
+      "od_death_rate_per_100k": 17.1
     },
     {
       "geoid": "48113017010",
@@ -3011,7 +3011,7 @@
       "dist_nearest_storefront_m": 8429.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 20.7
+      "od_death_rate_per_100k": 20.4
     },
     {
       "geoid": "48113017309",
@@ -3029,7 +3029,7 @@
       "dist_nearest_storefront_m": 7852.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.4
+      "od_death_rate_per_100k": 15.9
     },
     {
       "geoid": "48113018802",
@@ -3038,7 +3038,7 @@
       "dist_nearest_storefront_m": 7015.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.6
+      "od_death_rate_per_100k": 21.0
     },
     {
       "geoid": "48113018900",
@@ -3047,7 +3047,7 @@
       "dist_nearest_storefront_m": 5893.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.6
+      "od_death_rate_per_100k": 19.4
     },
     {
       "geoid": "48113019013",
@@ -3056,7 +3056,7 @@
       "dist_nearest_storefront_m": 4198.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.6
+      "od_death_rate_per_100k": 19.4
     },
     {
       "geoid": "48113019016",
@@ -3065,7 +3065,7 @@
       "dist_nearest_storefront_m": 2449.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 23.0
     },
     {
       "geoid": "48113019020",
@@ -3074,7 +3074,7 @@
       "dist_nearest_storefront_m": 5281.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.9
+      "od_death_rate_per_100k": 17.3
     },
     {
       "geoid": "48113019023",
@@ -3092,7 +3092,7 @@
       "dist_nearest_storefront_m": 4122.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.9
+      "od_death_rate_per_100k": 17.3
     },
     {
       "geoid": "48113019025",
@@ -3101,7 +3101,7 @@
       "dist_nearest_storefront_m": 9303.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.4
+      "od_death_rate_per_100k": 15.9
     },
     {
       "geoid": "48113019026",
@@ -3110,7 +3110,7 @@
       "dist_nearest_storefront_m": 8102.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.4
+      "od_death_rate_per_100k": 15.9
     },
     {
       "geoid": "48113019027",
@@ -3119,7 +3119,7 @@
       "dist_nearest_storefront_m": 8467.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.1
+      "od_death_rate_per_100k": 9.9
     },
     {
       "geoid": "48113019028",
@@ -3137,7 +3137,7 @@
       "dist_nearest_storefront_m": 3265.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 32.7
+      "od_death_rate_per_100k": 35.1
     },
     {
       "geoid": "48113016632",
@@ -3146,7 +3146,7 @@
       "dist_nearest_storefront_m": 15920.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 15.7
     },
     {
       "geoid": "48113016628",
@@ -3155,7 +3155,7 @@
       "dist_nearest_storefront_m": 15003.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 15.7
     },
     {
       "geoid": "48113011901",
@@ -3164,7 +3164,7 @@
       "dist_nearest_storefront_m": 1123.3,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.3
+      "od_death_rate_per_100k": 20.4
     },
     {
       "geoid": "48113011902",
@@ -3173,7 +3173,7 @@
       "dist_nearest_storefront_m": 1024.1,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.3
+      "od_death_rate_per_100k": 20.4
     },
     {
       "geoid": "48113009204",
@@ -3182,7 +3182,7 @@
       "dist_nearest_storefront_m": 2601.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.3
+      "od_death_rate_per_100k": 20.4
     },
     {
       "geoid": "48113011802",
@@ -3191,7 +3191,7 @@
       "dist_nearest_storefront_m": 1269.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 21.9
+      "od_death_rate_per_100k": 26.6
     },
     {
       "geoid": "48113017307",
@@ -3200,7 +3200,7 @@
       "dist_nearest_storefront_m": 7880.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.3
+      "od_death_rate_per_100k": 18.8
     },
     {
       "geoid": "48113016627",
@@ -3209,7 +3209,7 @@
       "dist_nearest_storefront_m": 14219.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 15.7
     },
     {
       "geoid": "48113011801",
@@ -3218,7 +3218,7 @@
       "dist_nearest_storefront_m": 1044.1,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 18.9
+      "od_death_rate_per_100k": 23.8
     },
     {
       "geoid": "48113001601",
@@ -3227,7 +3227,7 @@
       "dist_nearest_storefront_m": 2228.3,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 27.9
+      "od_death_rate_per_100k": 25.7
     },
     {
       "geoid": "48113007828",
@@ -3236,7 +3236,7 @@
       "dist_nearest_storefront_m": 3031.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 23.0
     },
     {
       "geoid": "48113013013",
@@ -3245,7 +3245,7 @@
       "dist_nearest_storefront_m": 4493.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.9
+      "od_death_rate_per_100k": 15.6
     },
     {
       "geoid": "48113002703",
@@ -3254,7 +3254,7 @@
       "dist_nearest_storefront_m": 2212.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 64.7
+      "od_death_rate_per_100k": 58.8
     },
     {
       "geoid": "48113020900",
@@ -3263,7 +3263,7 @@
       "dist_nearest_storefront_m": 1761.0,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 34.0
+      "od_death_rate_per_100k": 35.4
     },
     {
       "geoid": "48113018147",
@@ -3272,7 +3272,7 @@
       "dist_nearest_storefront_m": 1959.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 11.2
+      "od_death_rate_per_100k": 15.4
     },
     {
       "geoid": "48113021000",
@@ -3281,7 +3281,7 @@
       "dist_nearest_storefront_m": 4827.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 23.9
+      "od_death_rate_per_100k": 28.4
     },
     {
       "geoid": "48113017308",
@@ -3290,7 +3290,7 @@
       "dist_nearest_storefront_m": 7926.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.3
+      "od_death_rate_per_100k": 18.8
     },
     {
       "geoid": "48113017203",
@@ -3299,7 +3299,7 @@
       "dist_nearest_storefront_m": 3654.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.9
+      "od_death_rate_per_100k": 23.8
     },
     {
       "geoid": "48113017311",
@@ -3308,7 +3308,7 @@
       "dist_nearest_storefront_m": 6368.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.3
+      "od_death_rate_per_100k": 18.8
     },
     {
       "geoid": "48113017314",
@@ -3317,7 +3317,7 @@
       "dist_nearest_storefront_m": 6756.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.3
+      "od_death_rate_per_100k": 18.8
     },
     {
       "geoid": "48113017006",
@@ -3326,7 +3326,7 @@
       "dist_nearest_storefront_m": 16419.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.2
+      "od_death_rate_per_100k": 23.1
     },
     {
       "geoid": "48113012101",
@@ -3335,7 +3335,7 @@
       "dist_nearest_storefront_m": 3577.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 24.9
+      "od_death_rate_per_100k": 25.8
     },
     {
       "geoid": "48113017820",
@@ -3344,7 +3344,7 @@
       "dist_nearest_storefront_m": 2985.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.4
+      "od_death_rate_per_100k": 29.9
     },
     {
       "geoid": "48113016806",
@@ -3353,7 +3353,7 @@
       "dist_nearest_storefront_m": 11308.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.5
+      "od_death_rate_per_100k": 20.3
     },
     {
       "geoid": "48113016631",
@@ -3362,7 +3362,7 @@
       "dist_nearest_storefront_m": 17464.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.0
+      "od_death_rate_per_100k": 14.2
     },
     {
       "geoid": "48113020402",
@@ -3371,7 +3371,7 @@
       "dist_nearest_storefront_m": 2789.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 23.5
     },
     {
       "geoid": "48113017204",
@@ -3380,7 +3380,7 @@
       "dist_nearest_storefront_m": 4131.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.2
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113017315",
@@ -3389,7 +3389,7 @@
       "dist_nearest_storefront_m": 5418.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.2
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113017310",
@@ -3407,7 +3407,7 @@
       "dist_nearest_storefront_m": 11890.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 20.7
+      "od_death_rate_per_100k": 20.4
     },
     {
       "geoid": "48113018155",
@@ -3416,7 +3416,7 @@
       "dist_nearest_storefront_m": 13183.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.4
+      "od_death_rate_per_100k": 10.0
     },
     {
       "geoid": "48113017815",
@@ -3425,7 +3425,7 @@
       "dist_nearest_storefront_m": 2246.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 45.0
+      "od_death_rate_per_100k": 41.0
     },
     {
       "geoid": "48113016709",
@@ -3434,7 +3434,7 @@
       "dist_nearest_storefront_m": 7098.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 21.4
     },
     {
       "geoid": "48113019029",
@@ -3452,7 +3452,7 @@
       "dist_nearest_storefront_m": 8244.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.9
+      "od_death_rate_per_100k": 12.6
     },
     {
       "geoid": "48113019034",
@@ -3461,7 +3461,7 @@
       "dist_nearest_storefront_m": 1440.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.3
+      "od_death_rate_per_100k": 17.5
     },
     {
       "geoid": "48113019035",
@@ -3479,7 +3479,7 @@
       "dist_nearest_storefront_m": 7994.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.9
+      "od_death_rate_per_100k": 12.6
     },
     {
       "geoid": "48113019037",
@@ -3488,7 +3488,7 @@
       "dist_nearest_storefront_m": 6826.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.9
+      "od_death_rate_per_100k": 12.6
     },
     {
       "geoid": "48113019202",
@@ -3497,7 +3497,7 @@
       "dist_nearest_storefront_m": 4895.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.2
+      "od_death_rate_per_100k": 12.6
     },
     {
       "geoid": "48113019203",
@@ -3506,7 +3506,7 @@
       "dist_nearest_storefront_m": 5772.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.2
+      "od_death_rate_per_100k": 12.6
     },
     {
       "geoid": "48113017101",
@@ -3515,7 +3515,7 @@
       "dist_nearest_storefront_m": 6100.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.2
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113017201",
@@ -3524,7 +3524,7 @@
       "dist_nearest_storefront_m": 2301.0,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 18.9
+      "od_death_rate_per_100k": 23.8
     },
     {
       "geoid": "48113019205",
@@ -3533,7 +3533,7 @@
       "dist_nearest_storefront_m": 8260.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.1
+      "od_death_rate_per_100k": 11.0
     },
     {
       "geoid": "48113019208",
@@ -3542,7 +3542,7 @@
       "dist_nearest_storefront_m": 5017.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 21.5
+      "od_death_rate_per_100k": 24.6
     },
     {
       "geoid": "48113017400",
@@ -3551,7 +3551,7 @@
       "dist_nearest_storefront_m": 5710.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.3
+      "od_death_rate_per_100k": 18.8
     },
     {
       "geoid": "48113017704",
@@ -3560,7 +3560,7 @@
       "dist_nearest_storefront_m": 3951.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.9
+      "od_death_rate_per_100k": 25.3
     },
     {
       "geoid": "48113017500",
@@ -3569,7 +3569,7 @@
       "dist_nearest_storefront_m": 4483.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 24.9
+      "od_death_rate_per_100k": 25.8
     },
     {
       "geoid": "48113017805",
@@ -3578,7 +3578,7 @@
       "dist_nearest_storefront_m": 4483.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.8
+      "od_death_rate_per_100k": 28.6
     },
     {
       "geoid": "48113017806",
@@ -3587,7 +3587,7 @@
       "dist_nearest_storefront_m": 4557.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.8
+      "od_death_rate_per_100k": 28.6
     },
     {
       "geoid": "48113017602",
@@ -3596,7 +3596,7 @@
       "dist_nearest_storefront_m": 4098.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 24.9
+      "od_death_rate_per_100k": 25.8
     },
     {
       "geoid": "48113019210",
@@ -3605,7 +3605,7 @@
       "dist_nearest_storefront_m": 8016.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.2
+      "od_death_rate_per_100k": 11.7
     },
     {
       "geoid": "48113019211",
@@ -3614,7 +3614,7 @@
       "dist_nearest_storefront_m": 6799.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.2
+      "od_death_rate_per_100k": 11.7
     },
     {
       "geoid": "48113019301",
@@ -3623,7 +3623,7 @@
       "dist_nearest_storefront_m": 5766.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113019400",
@@ -3641,7 +3641,7 @@
       "dist_nearest_storefront_m": 5384.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.6
+      "od_death_rate_per_100k": 14.0
     },
     {
       "geoid": "48113017811",
@@ -3650,7 +3650,7 @@
       "dist_nearest_storefront_m": 1042.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 45.0
+      "od_death_rate_per_100k": 41.0
     },
     {
       "geoid": "48113017812",
@@ -3659,7 +3659,7 @@
       "dist_nearest_storefront_m": 1115.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 45.0
+      "od_death_rate_per_100k": 41.0
     },
     {
       "geoid": "48113017808",
@@ -3677,7 +3677,7 @@
       "dist_nearest_storefront_m": 1242.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 45.0
+      "od_death_rate_per_100k": 41.0
     },
     {
       "geoid": "48113017900",
@@ -3686,7 +3686,7 @@
       "dist_nearest_storefront_m": 4060.3,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.4
+      "od_death_rate_per_100k": 29.9
     },
     {
       "geoid": "48113019502",
@@ -3731,7 +3731,7 @@
       "dist_nearest_storefront_m": 9910.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.7
+      "od_death_rate_per_100k": 25.5
     },
     {
       "geoid": "48113013607",
@@ -3740,7 +3740,7 @@
       "dist_nearest_storefront_m": 7580.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.9
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113015900",
@@ -3749,7 +3749,7 @@
       "dist_nearest_storefront_m": 15305.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.6
+      "od_death_rate_per_100k": 14.8
     },
     {
       "geoid": "48113012604",
@@ -3758,7 +3758,7 @@
       "dist_nearest_storefront_m": 4388.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113013010",
@@ -3767,7 +3767,7 @@
       "dist_nearest_storefront_m": 5767.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 23.6
+      "od_death_rate_per_100k": 23.1
     },
     {
       "geoid": "48113013622",
@@ -3776,7 +3776,7 @@
       "dist_nearest_storefront_m": 9706.0,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 19.9
     },
     {
       "geoid": "48113013621",
@@ -3785,7 +3785,7 @@
       "dist_nearest_storefront_m": 10078.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.5
+      "od_death_rate_per_100k": 15.7
     },
     {
       "geoid": "48113014135",
@@ -3794,7 +3794,7 @@
       "dist_nearest_storefront_m": 21839.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.3
+      "od_death_rate_per_100k": 9.8
     },
     {
       "geoid": "48113014134",
@@ -3803,7 +3803,7 @@
       "dist_nearest_storefront_m": 22678.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.3
+      "od_death_rate_per_100k": 9.8
     },
     {
       "geoid": "48113016626",
@@ -3812,7 +3812,7 @@
       "dist_nearest_storefront_m": 20931.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 21.1
+      "od_death_rate_per_100k": 19.3
     },
     {
       "geoid": "48113016621",
@@ -3821,7 +3821,7 @@
       "dist_nearest_storefront_m": 15958.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.6
+      "od_death_rate_per_100k": 14.5
     },
     {
       "geoid": "48113016623",
@@ -3830,7 +3830,7 @@
       "dist_nearest_storefront_m": 18751.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.6
+      "od_death_rate_per_100k": 14.5
     },
     {
       "geoid": "48113018142",
@@ -3839,7 +3839,7 @@
       "dist_nearest_storefront_m": 5833.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.6
+      "od_death_rate_per_100k": 15.3
     },
     {
       "geoid": "48113018141",
@@ -3848,7 +3848,7 @@
       "dist_nearest_storefront_m": 6335.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.6
+      "od_death_rate_per_100k": 15.3
     },
     {
       "geoid": "48113018137",
@@ -3857,7 +3857,7 @@
       "dist_nearest_storefront_m": 4195.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.6
+      "od_death_rate_per_100k": 15.3
     },
     {
       "geoid": "48113018138",
@@ -3866,7 +3866,7 @@
       "dist_nearest_storefront_m": 2078.1,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.5
+      "od_death_rate_per_100k": 16.3
     },
     {
       "geoid": "48113018140",
@@ -3875,7 +3875,7 @@
       "dist_nearest_storefront_m": 7827.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.5
+      "od_death_rate_per_100k": 16.6
     },
     {
       "geoid": "48113019042",
@@ -3884,7 +3884,7 @@
       "dist_nearest_storefront_m": 9531.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.1
+      "od_death_rate_per_100k": 9.9
     },
     {
       "geoid": "48113019050",
@@ -3893,7 +3893,7 @@
       "dist_nearest_storefront_m": 10583.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.1
+      "od_death_rate_per_100k": 9.9
     },
     {
       "geoid": "48113019052",
@@ -3902,7 +3902,7 @@
       "dist_nearest_storefront_m": 7943.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.2
+      "od_death_rate_per_100k": 11.7
     },
     {
       "geoid": "48113019053",
@@ -3911,7 +3911,7 @@
       "dist_nearest_storefront_m": 6485.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.2
+      "od_death_rate_per_100k": 11.7
     },
     {
       "geoid": "48113019039",
@@ -3920,7 +3920,7 @@
       "dist_nearest_storefront_m": 4268.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.9
+      "od_death_rate_per_100k": 14.1
     },
     {
       "geoid": "48113019213",
@@ -3929,7 +3929,7 @@
       "dist_nearest_storefront_m": 4508.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.3
+      "od_death_rate_per_100k": 17.5
     },
     {
       "geoid": "48113013726",
@@ -3947,7 +3947,7 @@
       "dist_nearest_storefront_m": 20243.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.0
+      "od_death_rate_per_100k": 14.2
     },
     {
       "geoid": "48113016622",
@@ -3956,7 +3956,7 @@
       "dist_nearest_storefront_m": 17328.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.6
+      "od_death_rate_per_100k": 14.5
     },
     {
       "geoid": "48113010903",
@@ -3965,7 +3965,7 @@
       "dist_nearest_storefront_m": 11782.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113001703",
@@ -3974,7 +3974,7 @@
       "dist_nearest_storefront_m": 1771.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.2
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113019212",
@@ -3983,7 +3983,7 @@
       "dist_nearest_storefront_m": 4731.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.3
+      "od_death_rate_per_100k": 17.5
     },
     {
       "geoid": "48113020300",
@@ -3992,7 +3992,7 @@
       "dist_nearest_storefront_m": 344.7,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 64.7
+      "od_death_rate_per_100k": 58.8
     },
     {
       "geoid": "48113020500",
@@ -4001,7 +4001,7 @@
       "dist_nearest_storefront_m": 4505.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.0
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113020600",
@@ -4010,7 +4010,7 @@
       "dist_nearest_storefront_m": 6353.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.7
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113020700",
@@ -4019,7 +4019,7 @@
       "dist_nearest_storefront_m": 15435.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.0
+      "od_death_rate_per_100k": 15.8
     },
     {
       "geoid": "48113012301",
@@ -4028,7 +4028,7 @@
       "dist_nearest_storefront_m": 5921.2,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.7
+      "od_death_rate_per_100k": 28.4
     },
     {
       "geoid": "48113012302",
@@ -4037,7 +4037,7 @@
       "dist_nearest_storefront_m": 5960.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.7
+      "od_death_rate_per_100k": 28.4
     },
     {
       "geoid": "48113013626",
@@ -4046,7 +4046,7 @@
       "dist_nearest_storefront_m": 9644.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113011002",
@@ -4055,7 +4055,7 @@
       "dist_nearest_storefront_m": 6653.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 21.9
+      "od_death_rate_per_100k": 25.9
     },
     {
       "geoid": "48113011101",
@@ -4064,7 +4064,7 @@
       "dist_nearest_storefront_m": 9045.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113011103",
@@ -4073,7 +4073,7 @@
       "dist_nearest_storefront_m": 7101.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 21.9
+      "od_death_rate_per_100k": 25.9
     },
     {
       "geoid": "48113011104",
@@ -4082,7 +4082,7 @@
       "dist_nearest_storefront_m": 8387.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 21.9
+      "od_death_rate_per_100k": 25.9
     },
     {
       "geoid": "48113010101",
@@ -4091,7 +4091,7 @@
       "dist_nearest_storefront_m": 3400.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.0
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113010102",
@@ -4100,7 +4100,7 @@
       "dist_nearest_storefront_m": 3766.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.0
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113010500",
@@ -4109,7 +4109,7 @@
       "dist_nearest_storefront_m": 6232.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.9
+      "od_death_rate_per_100k": 26.4
     },
     {
       "geoid": "48113010601",
@@ -4118,7 +4118,7 @@
       "dist_nearest_storefront_m": 6367.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.9
+      "od_death_rate_per_100k": 26.4
     },
     {
       "geoid": "48113010602",
@@ -4127,7 +4127,7 @@
       "dist_nearest_storefront_m": 8632.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.9
+      "od_death_rate_per_100k": 26.4
     },
     {
       "geoid": "48113020100",
@@ -4136,7 +4136,7 @@
       "dist_nearest_storefront_m": 6340.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.1
     },
     {
       "geoid": "48113020200",
@@ -4145,7 +4145,7 @@
       "dist_nearest_storefront_m": 3439.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 24.2
+      "od_death_rate_per_100k": 27.4
     },
     {
       "geoid": "48113014128",
@@ -4154,7 +4154,7 @@
       "dist_nearest_storefront_m": 16874.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.6
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113016522",
@@ -4163,7 +4163,7 @@
       "dist_nearest_storefront_m": 23124.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.2
+      "od_death_rate_per_100k": 13.9
     },
     {
       "geoid": "48113017606",
@@ -4172,7 +4172,7 @@
       "dist_nearest_storefront_m": 3028.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 24.9
+      "od_death_rate_per_100k": 25.8
     },
     {
       "geoid": "48113000606",
@@ -4181,7 +4181,7 @@
       "dist_nearest_storefront_m": 1099.1,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 16.7
     },
     {
       "geoid": "48113016803",
@@ -4190,7 +4190,7 @@
       "dist_nearest_storefront_m": 11223.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 21.2
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113007812",
@@ -4199,7 +4199,7 @@
       "dist_nearest_storefront_m": 3386.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 14.7
     },
     {
       "geoid": "48113009803",
@@ -4208,7 +4208,7 @@
       "dist_nearest_storefront_m": 7241.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 24.1
+      "od_death_rate_per_100k": 22.1
     },
     {
       "geoid": "48113013717",
@@ -4226,7 +4226,7 @@
       "dist_nearest_storefront_m": 7970.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113017604",
@@ -4235,7 +4235,7 @@
       "dist_nearest_storefront_m": 2837.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 18.9
+      "od_death_rate_per_100k": 23.8
     },
     {
       "geoid": "48113007809",
@@ -4244,7 +4244,7 @@
       "dist_nearest_storefront_m": 5817.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.2
+      "od_death_rate_per_100k": 17.5
     },
     {
       "geoid": "48113019033",
@@ -4253,7 +4253,7 @@
       "dist_nearest_storefront_m": 2582.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.0
+      "od_death_rate_per_100k": 15.9
     },
     {
       "geoid": "48113013618",
@@ -4262,7 +4262,7 @@
       "dist_nearest_storefront_m": 9749.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.1
+      "od_death_rate_per_100k": 11.0
     },
     {
       "geoid": "48113009900",
@@ -4271,7 +4271,7 @@
       "dist_nearest_storefront_m": 9229.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 24.1
+      "od_death_rate_per_100k": 22.1
     },
     {
       "geoid": "48113009804",
@@ -4280,7 +4280,7 @@
       "dist_nearest_storefront_m": 6550.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 24.1
+      "od_death_rate_per_100k": 22.1
     },
     {
       "geoid": "48113016516",
@@ -4289,7 +4289,7 @@
       "dist_nearest_storefront_m": 13642.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 24.3
     },
     {
       "geoid": "48113018132",
@@ -4298,7 +4298,7 @@
       "dist_nearest_storefront_m": 3166.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.5
+      "od_death_rate_per_100k": 16.3
     },
     {
       "geoid": "48113009103",
@@ -4307,7 +4307,7 @@
       "dist_nearest_storefront_m": 4924.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 26.9
+      "od_death_rate_per_100k": 26.4
     },
     {
       "geoid": "48113001504",
@@ -4316,7 +4316,7 @@
       "dist_nearest_storefront_m": 1069.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 27.9
+      "od_death_rate_per_100k": 25.7
     },
     {
       "geoid": "48113014308",
@@ -4325,7 +4325,7 @@
       "dist_nearest_storefront_m": 11109.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.8
+      "od_death_rate_per_100k": 15.0
     },
     {
       "geoid": "48113006800",
@@ -4334,7 +4334,7 @@
       "dist_nearest_storefront_m": 7436.1,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.2
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113006900",
@@ -4343,7 +4343,7 @@
       "dist_nearest_storefront_m": 6609.5,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.2
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113009701",
@@ -4352,7 +4352,7 @@
       "dist_nearest_storefront_m": 8520.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 24.1
+      "od_death_rate_per_100k": 22.1
     },
     {
       "geoid": "48113014603",
@@ -4361,7 +4361,7 @@
       "dist_nearest_storefront_m": 9947.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.1
     },
     {
       "geoid": "48113016618",
@@ -4370,7 +4370,7 @@
       "dist_nearest_storefront_m": 14233.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 18.2
     },
     {
       "geoid": "48113016619",
@@ -4379,7 +4379,7 @@
       "dist_nearest_storefront_m": 12419.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 27.1
+      "od_death_rate_per_100k": 26.1
     },
     {
       "geoid": "48113018130",
@@ -4397,7 +4397,7 @@
       "dist_nearest_storefront_m": 2824.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.0
+      "od_death_rate_per_100k": 15.9
     },
     {
       "geoid": "48113000100",
@@ -4406,7 +4406,7 @@
       "dist_nearest_storefront_m": 3498.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 43.7
+      "od_death_rate_per_100k": 51.6
     },
     {
       "geoid": "48113000201",
@@ -4415,7 +4415,7 @@
       "dist_nearest_storefront_m": 4257.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.0
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113000202",
@@ -4424,7 +4424,7 @@
       "dist_nearest_storefront_m": 4110.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.0
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113000300",
@@ -4442,7 +4442,7 @@
       "dist_nearest_storefront_m": 1246.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 21.6
     },
     {
       "geoid": "48113000405",
@@ -4451,7 +4451,7 @@
       "dist_nearest_storefront_m": 978.3,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.0
+      "od_death_rate_per_100k": 21.6
     },
     {
       "geoid": "48113001001",
@@ -4460,7 +4460,7 @@
       "dist_nearest_storefront_m": 3137.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 16.1
     },
     {
       "geoid": "48113001002",
@@ -4469,7 +4469,7 @@
       "dist_nearest_storefront_m": 2523.3,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 16.1
     },
     {
       "geoid": "48113001102",
@@ -4478,7 +4478,7 @@
       "dist_nearest_storefront_m": 2645.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.0
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113001204",
@@ -4487,7 +4487,7 @@
       "dist_nearest_storefront_m": 1555.1,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 43.7
+      "od_death_rate_per_100k": 51.6
     },
     {
       "geoid": "48113001301",
@@ -4496,7 +4496,7 @@
       "dist_nearest_storefront_m": 1656.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 43.7
+      "od_death_rate_per_100k": 51.6
     },
     {
       "geoid": "48113001302",
@@ -4505,7 +4505,7 @@
       "dist_nearest_storefront_m": 627.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 43.7
+      "od_death_rate_per_100k": 51.6
     },
     {
       "geoid": "48113001400",
@@ -4514,7 +4514,7 @@
       "dist_nearest_storefront_m": 1445.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 43.7
+      "od_death_rate_per_100k": 51.6
     },
     {
       "geoid": "48113001101",
@@ -4523,7 +4523,7 @@
       "dist_nearest_storefront_m": 2317.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.0
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113001502",
@@ -4532,7 +4532,7 @@
       "dist_nearest_storefront_m": 472.2,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 43.7
+      "od_death_rate_per_100k": 51.6
     },
     {
       "geoid": "48113001503",
@@ -4541,7 +4541,7 @@
       "dist_nearest_storefront_m": 1481.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 27.9
+      "od_death_rate_per_100k": 25.7
     },
     {
       "geoid": "48113012209",
@@ -4550,7 +4550,7 @@
       "dist_nearest_storefront_m": 5995.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 19.5
+      "od_death_rate_per_100k": 26.2
     },
     {
       "geoid": "48113016620",
@@ -4559,7 +4559,7 @@
       "dist_nearest_storefront_m": 13216.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 15.7
     },
     {
       "geoid": "48113016409",
@@ -4568,7 +4568,7 @@
       "dist_nearest_storefront_m": 20392.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113009303",
@@ -4577,7 +4577,7 @@
       "dist_nearest_storefront_m": 4793.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.2
+      "od_death_rate_per_100k": 24.3
     },
     {
       "geoid": "48113016902",
@@ -4586,7 +4586,7 @@
       "dist_nearest_storefront_m": 8092.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 24.2
+      "od_death_rate_per_100k": 27.4
     },
     {
       "geoid": "48113011601",
@@ -4595,7 +4595,7 @@
       "dist_nearest_storefront_m": 5793.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 24.2
+      "od_death_rate_per_100k": 27.4
     },
     {
       "geoid": "48113019302",
@@ -4604,7 +4604,7 @@
       "dist_nearest_storefront_m": 4735.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113014601",
@@ -4613,7 +4613,7 @@
       "dist_nearest_storefront_m": 10576.7,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.8
+      "od_death_rate_per_100k": 15.0
     },
     {
       "geoid": "48113004600",
@@ -4622,7 +4622,7 @@
       "dist_nearest_storefront_m": 7687.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 26.6
+      "od_death_rate_per_100k": 32.7
     },
     {
       "geoid": "48113007102",
@@ -4640,7 +4640,7 @@
       "dist_nearest_storefront_m": 5245.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.6
+      "od_death_rate_per_100k": 14.0
     },
     {
       "geoid": "48113007302",
@@ -4658,7 +4658,7 @@
       "dist_nearest_storefront_m": 1137.7,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 64.7
+      "od_death_rate_per_100k": 58.8
     },
     {
       "geoid": "48113007810",
@@ -4676,7 +4676,7 @@
       "dist_nearest_storefront_m": 6168.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113007906",
@@ -4685,7 +4685,7 @@
       "dist_nearest_storefront_m": 6431.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113016802",
@@ -4694,7 +4694,7 @@
       "dist_nearest_storefront_m": 14510.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 21.2
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113016704",
@@ -4703,7 +4703,7 @@
       "dist_nearest_storefront_m": 8957.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 21.4
     },
     {
       "geoid": "48113018105",
@@ -4712,7 +4712,7 @@
       "dist_nearest_storefront_m": 7007.2,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.6
+      "od_death_rate_per_100k": 17.9
     },
     {
       "geoid": "48113018001",
@@ -4721,7 +4721,7 @@
       "dist_nearest_storefront_m": 3943.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.4
+      "od_death_rate_per_100k": 29.9
     },
     {
       "geoid": "48113018110",
@@ -4730,7 +4730,7 @@
       "dist_nearest_storefront_m": 2477.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 11.2
+      "od_death_rate_per_100k": 15.4
     },
     {
       "geoid": "48113018203",
@@ -4739,7 +4739,7 @@
       "dist_nearest_storefront_m": 4870.4,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.5
+      "od_death_rate_per_100k": 16.0
     },
     {
       "geoid": "48113018204",
@@ -4748,7 +4748,7 @@
       "dist_nearest_storefront_m": 5285.4,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.5
+      "od_death_rate_per_100k": 16.0
     },
     {
       "geoid": "48113018206",
@@ -4757,7 +4757,7 @@
       "dist_nearest_storefront_m": 3677.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 11.2
+      "od_death_rate_per_100k": 15.4
     },
     {
       "geoid": "48113017703",
@@ -4766,7 +4766,7 @@
       "dist_nearest_storefront_m": 2843.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.9
+      "od_death_rate_per_100k": 25.3
     },
     {
       "geoid": "48113008705",
@@ -4775,7 +4775,7 @@
       "dist_nearest_storefront_m": 1857.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 24.9
+      "od_death_rate_per_100k": 38.8
     },
     {
       "geoid": "48113010701",
@@ -4784,7 +4784,7 @@
       "dist_nearest_storefront_m": 8747.2,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 27.2
+      "od_death_rate_per_100k": 25.2
     },
     {
       "geoid": "48113013901",
@@ -4793,7 +4793,7 @@
       "dist_nearest_storefront_m": 13659.2,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 11.0
+      "od_death_rate_per_100k": 14.1
     },
     {
       "geoid": "48113004202",
@@ -4802,7 +4802,7 @@
       "dist_nearest_storefront_m": 7191.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.2
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113004300",
@@ -4811,7 +4811,7 @@
       "dist_nearest_storefront_m": 4991.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.0
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113004400",
@@ -4820,7 +4820,7 @@
       "dist_nearest_storefront_m": 6372.1,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.2
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113004500",
@@ -4829,7 +4829,7 @@
       "dist_nearest_storefront_m": 8490.9,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 26.6
+      "od_death_rate_per_100k": 32.7
     },
     {
       "geoid": "48113018120",
@@ -4838,7 +4838,7 @@
       "dist_nearest_storefront_m": 8399.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.4
+      "od_death_rate_per_100k": 15.9
     },
     {
       "geoid": "48113013615",
@@ -4847,7 +4847,7 @@
       "dist_nearest_storefront_m": 8751.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 19.9
     },
     {
       "geoid": "48113013617",
@@ -4856,7 +4856,7 @@
       "dist_nearest_storefront_m": 10805.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.0
+      "od_death_rate_per_100k": 14.0
     },
     {
       "geoid": "48113013619",
@@ -4865,7 +4865,7 @@
       "dist_nearest_storefront_m": 9753.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.0
+      "od_death_rate_per_100k": 14.0
     },
     {
       "geoid": "48113018121",
@@ -4874,7 +4874,7 @@
       "dist_nearest_storefront_m": 6671.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.6
+      "od_death_rate_per_100k": 17.9
     },
     {
       "geoid": "48113018126",
@@ -4883,7 +4883,7 @@
       "dist_nearest_storefront_m": 2538.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 18.1
+      "od_death_rate_per_100k": 18.8
     },
     {
       "geoid": "48113018127",
@@ -4892,7 +4892,7 @@
       "dist_nearest_storefront_m": 3501.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113013715",
@@ -4901,7 +4901,7 @@
       "dist_nearest_storefront_m": 15054.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.0
+      "od_death_rate_per_100k": 14.1
     },
     {
       "geoid": "48113013716",
@@ -4937,7 +4937,7 @@
       "dist_nearest_storefront_m": 17587.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.0
+      "od_death_rate_per_100k": 15.8
     },
     {
       "geoid": "48113018128",
@@ -4946,7 +4946,7 @@
       "dist_nearest_storefront_m": 558.7,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.4
+      "od_death_rate_per_100k": 15.2
     },
     {
       "geoid": "48113018129",
@@ -4964,7 +4964,7 @@
       "dist_nearest_storefront_m": 15919.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.0
+      "od_death_rate_per_100k": 15.8
     },
     {
       "geoid": "48113013722",
@@ -4973,7 +4973,7 @@
       "dist_nearest_storefront_m": 14755.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.0
+      "od_death_rate_per_100k": 15.8
     },
     {
       "geoid": "48113013725",
@@ -4982,7 +4982,7 @@
       "dist_nearest_storefront_m": 13301.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.5
+      "od_death_rate_per_100k": 15.7
     },
     {
       "geoid": "48113013804",
@@ -4991,7 +4991,7 @@
       "dist_nearest_storefront_m": 11585.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.4
+      "od_death_rate_per_100k": 18.6
     },
     {
       "geoid": "48113013902",
@@ -5000,7 +5000,7 @@
       "dist_nearest_storefront_m": 13204.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 11.0
+      "od_death_rate_per_100k": 14.1
     },
     {
       "geoid": "48113014001",
@@ -5009,7 +5009,7 @@
       "dist_nearest_storefront_m": 11868.4,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 11.0
+      "od_death_rate_per_100k": 14.1
     },
     {
       "geoid": "48113019040",
@@ -5018,7 +5018,7 @@
       "dist_nearest_storefront_m": 3155.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.3
+      "od_death_rate_per_100k": 17.5
     },
     {
       "geoid": "48113018506",
@@ -5027,7 +5027,7 @@
       "dist_nearest_storefront_m": 2583.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.8
+      "od_death_rate_per_100k": 17.6
     },
     {
       "geoid": "48113010904",
@@ -5036,7 +5036,7 @@
       "dist_nearest_storefront_m": 10452.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 22.1
+      "od_death_rate_per_100k": 22.2
     },
     {
       "geoid": "48113014132",
@@ -5045,7 +5045,7 @@
       "dist_nearest_storefront_m": 17234.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 10.6
+      "od_death_rate_per_100k": 10.8
     },
     {
       "geoid": "48113018501",
@@ -5054,7 +5054,7 @@
       "dist_nearest_storefront_m": 5000.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 18.5
+      "od_death_rate_per_100k": 19.5
     },
     {
       "geoid": "48113014119",
@@ -5063,7 +5063,7 @@
       "dist_nearest_storefront_m": 20815.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.0
+      "od_death_rate_per_100k": 10.6
     },
     {
       "geoid": "48113014120",
@@ -5072,7 +5072,7 @@
       "dist_nearest_storefront_m": 19804.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.0
+      "od_death_rate_per_100k": 10.6
     },
     {
       "geoid": "48113014123",
@@ -5081,7 +5081,7 @@
       "dist_nearest_storefront_m": 20811.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 10.6
+      "od_death_rate_per_100k": 10.8
     },
     {
       "geoid": "48113014126",
@@ -5090,7 +5090,7 @@
       "dist_nearest_storefront_m": 21875.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.0
+      "od_death_rate_per_100k": 10.6
     },
     {
       "geoid": "48113014203",
@@ -5099,7 +5099,7 @@
       "dist_nearest_storefront_m": 10310.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 14.8
+      "od_death_rate_per_100k": 15.0
     },
     {
       "geoid": "48113014204",
@@ -5108,7 +5108,7 @@
       "dist_nearest_storefront_m": 8410.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113014306",
@@ -5117,7 +5117,7 @@
       "dist_nearest_storefront_m": 13810.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.3
+      "od_death_rate_per_100k": 9.2
     },
     {
       "geoid": "48113012601",
@@ -5126,7 +5126,7 @@
       "dist_nearest_storefront_m": 5414.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113012701",
@@ -5135,7 +5135,7 @@
       "dist_nearest_storefront_m": 6579.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 23.6
+      "od_death_rate_per_100k": 23.1
     },
     {
       "geoid": "48113012702",
@@ -5144,7 +5144,7 @@
       "dist_nearest_storefront_m": 6798.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 29.1
+      "od_death_rate_per_100k": 31.9
     },
     {
       "geoid": "48113012900",
@@ -5153,7 +5153,7 @@
       "dist_nearest_storefront_m": 6551.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.6
+      "od_death_rate_per_100k": 23.1
     },
     {
       "geoid": "48113014310",
@@ -5162,7 +5162,7 @@
       "dist_nearest_storefront_m": 13997.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.2
+      "od_death_rate_per_100k": 9.6
     },
     {
       "geoid": "48113014405",
@@ -5171,7 +5171,7 @@
       "dist_nearest_storefront_m": 13673.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 15.1
     },
     {
       "geoid": "48113014406",
@@ -5180,7 +5180,7 @@
       "dist_nearest_storefront_m": 13523.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 15.1
     },
     {
       "geoid": "48113014407",
@@ -5189,7 +5189,7 @@
       "dist_nearest_storefront_m": 15080.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 0.0
+      "od_death_rate_per_100k": 11.4
     },
     {
       "geoid": "48113014408",
@@ -5198,7 +5198,7 @@
       "dist_nearest_storefront_m": 15237.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 0.0
+      "od_death_rate_per_100k": 11.4
     },
     {
       "geoid": "48113014309",
@@ -5207,7 +5207,7 @@
       "dist_nearest_storefront_m": 14628.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.2
+      "od_death_rate_per_100k": 9.6
     },
     {
       "geoid": "48113013620",
@@ -5216,7 +5216,7 @@
       "dist_nearest_storefront_m": 10747.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.5
+      "od_death_rate_per_100k": 15.7
     },
     {
       "geoid": "48113006402",
@@ -5225,7 +5225,7 @@
       "dist_nearest_storefront_m": 10464.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 23.3
+      "od_death_rate_per_100k": 29.5
     },
     {
       "geoid": "48113010804",
@@ -5234,7 +5234,7 @@
       "dist_nearest_storefront_m": 9459.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.3
+      "od_death_rate_per_100k": 29.5
     },
     {
       "geoid": "48113010805",
@@ -5243,7 +5243,7 @@
       "dist_nearest_storefront_m": 10967.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 20.4
+      "od_death_rate_per_100k": 24.4
     },
     {
       "geoid": "48113006401",
@@ -5252,7 +5252,7 @@
       "dist_nearest_storefront_m": 9893.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.3
+      "od_death_rate_per_100k": 29.5
     },
     {
       "geoid": "48113013104",
@@ -5261,7 +5261,7 @@
       "dist_nearest_storefront_m": 5878.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.7
+      "od_death_rate_per_100k": 16.3
     },
     {
       "geoid": "48113019041",
@@ -5270,7 +5270,7 @@
       "dist_nearest_storefront_m": 2298.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.3
+      "od_death_rate_per_100k": 17.5
     },
     {
       "geoid": "48113007823",
@@ -5279,7 +5279,7 @@
       "dist_nearest_storefront_m": 4643.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 14.7
     },
     {
       "geoid": "48113007822",
@@ -5288,7 +5288,7 @@
       "dist_nearest_storefront_m": 5654.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 14.7
     },
     {
       "geoid": "48113007821",
@@ -5297,7 +5297,7 @@
       "dist_nearest_storefront_m": 4913.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 14.7
     },
     {
       "geoid": "48113013011",
@@ -5306,7 +5306,7 @@
       "dist_nearest_storefront_m": 4247.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.9
+      "od_death_rate_per_100k": 15.6
     },
     {
       "geoid": "48113007827",
@@ -5315,7 +5315,7 @@
       "dist_nearest_storefront_m": 2878.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.8
+      "od_death_rate_per_100k": 17.6
     },
     {
       "geoid": "48113013005",
@@ -5324,7 +5324,7 @@
       "dist_nearest_storefront_m": 4063.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.9
+      "od_death_rate_per_100k": 15.6
     },
     {
       "geoid": "48113013007",
@@ -5333,7 +5333,7 @@
       "dist_nearest_storefront_m": 4981.3,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.9
+      "od_death_rate_per_100k": 15.6
     },
     {
       "geoid": "48113013008",
@@ -5342,7 +5342,7 @@
       "dist_nearest_storefront_m": 2623.7,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.8
+      "od_death_rate_per_100k": 17.6
     },
     {
       "geoid": "48113013009",
@@ -5351,7 +5351,7 @@
       "dist_nearest_storefront_m": 2508.0,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.8
+      "od_death_rate_per_100k": 17.6
     },
     {
       "geoid": "48113013101",
@@ -5360,7 +5360,7 @@
       "dist_nearest_storefront_m": 5664.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.7
+      "od_death_rate_per_100k": 16.3
     },
     {
       "geoid": "48113007826",
@@ -5369,7 +5369,7 @@
       "dist_nearest_storefront_m": 4451.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 14.7
     },
     {
       "geoid": "48113007824",
@@ -5378,7 +5378,7 @@
       "dist_nearest_storefront_m": 3920.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.1
+      "od_death_rate_per_100k": 14.7
     },
     {
       "geoid": "48113007825",
@@ -5387,7 +5387,7 @@
       "dist_nearest_storefront_m": 2266.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.8
+      "od_death_rate_per_100k": 17.6
     },
     {
       "geoid": "48113013102",
@@ -5396,7 +5396,7 @@
       "dist_nearest_storefront_m": 6400.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.7
+      "od_death_rate_per_100k": 16.3
     },
     {
       "geoid": "48113014501",
@@ -5405,7 +5405,7 @@
       "dist_nearest_storefront_m": 12032.8,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 15.1
     },
     {
       "geoid": "48113014502",
@@ -5414,7 +5414,7 @@
       "dist_nearest_storefront_m": 10936.0,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.1
     },
     {
       "geoid": "48113014602",
@@ -5423,7 +5423,7 @@
       "dist_nearest_storefront_m": 9292.0,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.1
     },
     {
       "geoid": "48113014701",
@@ -5432,7 +5432,7 @@
       "dist_nearest_storefront_m": 8201.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113007910",
@@ -5441,7 +5441,7 @@
       "dist_nearest_storefront_m": 6900.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113007909",
@@ -5450,7 +5450,7 @@
       "dist_nearest_storefront_m": 6315.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113013806",
@@ -5468,7 +5468,7 @@
       "dist_nearest_storefront_m": 12853.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 13.5
+      "od_death_rate_per_100k": 15.7
     },
     {
       "geoid": "48113014205",
@@ -5477,7 +5477,7 @@
       "dist_nearest_storefront_m": 10277.5,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113016412",
@@ -5486,7 +5486,7 @@
       "dist_nearest_storefront_m": 21977.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.8
+      "od_death_rate_per_100k": 16.2
     },
     {
       "geoid": "48113013300",
@@ -5495,7 +5495,7 @@
       "dist_nearest_storefront_m": 7227.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.7
+      "od_death_rate_per_100k": 16.3
     },
     {
       "geoid": "48113013400",
@@ -5504,7 +5504,7 @@
       "dist_nearest_storefront_m": 8681.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 13.7
+      "od_death_rate_per_100k": 16.3
     },
     {
       "geoid": "48113013500",
@@ -5513,7 +5513,7 @@
       "dist_nearest_storefront_m": 9461.3,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.7
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113013605",
@@ -5522,7 +5522,7 @@
       "dist_nearest_storefront_m": 8675.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.1
+      "od_death_rate_per_100k": 11.0
     },
     {
       "geoid": "48113013606",
@@ -5531,7 +5531,7 @@
       "dist_nearest_storefront_m": 8833.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.0
+      "od_death_rate_per_100k": 14.0
     },
     {
       "geoid": "48113013608",
@@ -5540,7 +5540,7 @@
       "dist_nearest_storefront_m": 7762.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 17.5
+      "od_death_rate_per_100k": 19.9
     },
     {
       "geoid": "48113015202",
@@ -5549,7 +5549,7 @@
       "dist_nearest_storefront_m": 12208.7,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 15.1
     },
     {
       "geoid": "48113015205",
@@ -5558,7 +5558,7 @@
       "dist_nearest_storefront_m": 11966.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.9
+      "od_death_rate_per_100k": 22.5
     },
     {
       "geoid": "48113015206",
@@ -5567,7 +5567,7 @@
       "dist_nearest_storefront_m": 12076.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 20.9
+      "od_death_rate_per_100k": 22.5
     },
     {
       "geoid": "48113015303",
@@ -5576,7 +5576,7 @@
       "dist_nearest_storefront_m": 17066.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 0.0
+      "od_death_rate_per_100k": 11.4
     },
     {
       "geoid": "48113015305",
@@ -5585,7 +5585,7 @@
       "dist_nearest_storefront_m": 13613.6,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 15.1
     },
     {
       "geoid": "48113009101",
@@ -5594,7 +5594,7 @@
       "dist_nearest_storefront_m": 5105.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 18.8
+      "od_death_rate_per_100k": -999.0
     },
     {
       "geoid": "48113009401",
@@ -5621,7 +5621,7 @@
       "dist_nearest_storefront_m": 7798.6,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.7
+      "od_death_rate_per_100k": 18.7
     },
     {
       "geoid": "48113012603",
@@ -5630,7 +5630,7 @@
       "dist_nearest_storefront_m": 5403.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113014138",
@@ -5639,7 +5639,7 @@
       "dist_nearest_storefront_m": 12572.8,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.5
+      "od_death_rate_per_100k": 12.4
     },
     {
       "geoid": "48113014130",
@@ -5648,7 +5648,7 @@
       "dist_nearest_storefront_m": 15147.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.6
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113007912",
@@ -5657,7 +5657,7 @@
       "dist_nearest_storefront_m": 6967.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.1
+      "od_death_rate_per_100k": 13.8
     },
     {
       "geoid": "48113013805",
@@ -5675,7 +5675,7 @@
       "dist_nearest_storefront_m": 17833.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.4
+      "od_death_rate_per_100k": 18.9
     },
     {
       "geoid": "48113018505",
@@ -5684,7 +5684,7 @@
       "dist_nearest_storefront_m": 556.6,
       "supply_within_1mi": true,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 13.0
     },
     {
       "geoid": "48113980000",
@@ -5693,7 +5693,7 @@
       "dist_nearest_storefront_m": 18496.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.1
+      "od_death_rate_per_100k": 9.9
     },
     {
       "geoid": "48113007913",
@@ -5702,7 +5702,7 @@
       "dist_nearest_storefront_m": 5859.9,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.7
+      "od_death_rate_per_100k": 12.8
     },
     {
       "geoid": "48113018133",
@@ -5711,7 +5711,7 @@
       "dist_nearest_storefront_m": 5912.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.5
+      "od_death_rate_per_100k": 16.6
     },
     {
       "geoid": "48113020000",
@@ -5720,7 +5720,7 @@
       "dist_nearest_storefront_m": 24133.8,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 11.3
+      "od_death_rate_per_100k": 9.8
     },
     {
       "geoid": "48113018135",
@@ -5729,7 +5729,7 @@
       "dist_nearest_storefront_m": 7158.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 23.0
+      "od_death_rate_per_100k": 20.9
     },
     {
       "geoid": "48113019018",
@@ -5738,7 +5738,7 @@
       "dist_nearest_storefront_m": 1913.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 16.9
+      "od_death_rate_per_100k": 14.1
     },
     {
       "geoid": "48113015700",
@@ -5747,7 +5747,7 @@
       "dist_nearest_storefront_m": 13652.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.6
+      "od_death_rate_per_100k": 14.8
     },
     {
       "geoid": "48113016001",
@@ -5756,7 +5756,7 @@
       "dist_nearest_storefront_m": 18200.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 14.7
     },
     {
       "geoid": "48113016002",
@@ -5765,7 +5765,7 @@
       "dist_nearest_storefront_m": 17462.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 14.7
     },
     {
       "geoid": "48113016100",
@@ -5774,7 +5774,7 @@
       "dist_nearest_storefront_m": 20099.0,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 14.7
     },
     {
       "geoid": "48113016201",
@@ -5783,7 +5783,7 @@
       "dist_nearest_storefront_m": 18439.2,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.4
+      "od_death_rate_per_100k": 14.7
     },
     {
       "geoid": "48113016301",
@@ -5792,7 +5792,7 @@
       "dist_nearest_storefront_m": 17107.4,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 12.6
+      "od_death_rate_per_100k": 14.8
     },
     {
       "geoid": "48113016410",
@@ -5801,7 +5801,7 @@
       "dist_nearest_storefront_m": 24182.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 19.8
+      "od_death_rate_per_100k": 16.2
     },
     {
       "geoid": "48113016302",
@@ -5810,7 +5810,7 @@
       "dist_nearest_storefront_m": 18027.1,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 15.8
+      "od_death_rate_per_100k": 18.4
     },
     {
       "geoid": "48113016511",
@@ -5819,7 +5819,7 @@
       "dist_nearest_storefront_m": 19103.5,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 16.2
+      "od_death_rate_per_100k": 13.9
     },
     {
       "geoid": "48113016615",
@@ -5828,7 +5828,7 @@
       "dist_nearest_storefront_m": 20895.7,
       "supply_within_1mi": false,
       "supply_within_2mi": false,
-      "od_death_rate_per_100k": 14.0
+      "od_death_rate_per_100k": 14.2
     },
     {
       "geoid": "48113016616",
@@ -5846,7 +5846,7 @@
       "dist_nearest_storefront_m": 1808.9,
       "supply_within_1mi": false,
       "supply_within_2mi": true,
-      "od_death_rate_per_100k": 18.1
+      "od_death_rate_per_100k": 18.8
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "module": "mortality",
-  "pulled_at": "2026-08-12T09:32:02.234835+00:00",
-  "run_date": "2026-08-12",
+  "pulled_at": "2026-08-13T09:33:19.641443+00:00",
+  "run_date": "2026-08-13",
   "caveats": [
     "VSRR county counts are PROVISIONAL 12-month-ending totals; toxicology and death-certificate reporting lag materially affects the most recent ~6 months (counts revise upward).",
     "Tract rates are MODEL-BASED (spatially smoothed) rates per 100,000 on census-tract aggregation units; a single modeled rate is applied to every constituent tract of an aggregation unit.",
@@ -31,8 +31,8 @@
       "resource": "https://data.cdc.gov/resource/4day-mt2f.json",
       "dataset": "4day-mt2f",
       "intent": "Drug_OD",
-      "data_as_of": "2026-07-22",
-      "period": "2025-01/2025-12",
+      "data_as_of": "2026-08-12",
+      "period": "2025-02/2026-01",
       "tx_agg_units": 1707,
       "dallas_agg_units": 150,
       "cdc_dallas_tracts": 645
@@ -56,14 +56,14 @@
       "matched_to_cdc": 645,
       "in_tiger_absent_from_cdc": 0,
       "in_cdc_absent_from_tiger": 0,
-      "count_suppressed_features": 592,
+      "count_suppressed_features": 597,
       "rate_suppressed_features": 0,
       "rate_range_per_100k": [
-        0.0,
-        64.7
+        -999.0,
+        58.8
       ],
       "rates_present": 645,
-      "period": "2025-01/2025-12"
+      "period": "2025-02/2026-01"
     },
     "deaths_by_zip.csv": {
       "rows": 0,
@@ -72,11 +72,11 @@
   },
   "vintages": {
     "vsrr_data_as_of": "2026-07-05",
-    "tract_data_as_of": "2026-07-22",
+    "tract_data_as_of": "2026-08-12",
     "tiger": "2024"
   },
   "lag_note": "Provisional data. Most recent ~6 monthly points are subject to upward revision due to toxicology/reporting lag.",
-  "suppressed_tract_count": 592,
+  "suppressed_tract_count": 597,
   "row_counts": {
     "deaths_dallas": 72,
     "tract_overdose_features": 645,
