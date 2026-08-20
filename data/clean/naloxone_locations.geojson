@@ -1,13 +1,13 @@
 {
   "type": "FeatureCollection",
   "properties": {
-    "generated": "2026-08-19",
+    "generated": "2026-08-20",
     "county": "Dallas County, TX (GEOID 48113)",
-    "n_features": 40,
-    "n_with_geometry": 39,
+    "n_features": 41,
+    "n_with_geometry": 40,
     "category_counts": {
       "recovery_services": 4,
-      "harm_reduction": 5,
+      "harm_reduction": 6,
       "nightlife_venue": 7,
       "storefront_dispenser": 10,
       "health_clinic": 1,
@@ -30,8 +30,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.81795199999999,
-          32.80453400000005
+          -96.818292,
+          32.804247
         ]
       },
       "properties": {
@@ -43,7 +43,7 @@
         "category": "recovery_services",
         "access_247": false,
         "hours_raw": "hours based on trainings",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2024-10-02",
         "geocode_method": "source_coords",
         "mobile": false
@@ -54,8 +54,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.78791399999994,
-          32.78366100000005
+          -96.787858,
+          32.783676
         ]
       },
       "properties": {
@@ -67,7 +67,7 @@
         "category": "harm_reduction",
         "access_247": false,
         "hours_raw": "M-F: 12p-7p",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2024-10-02",
         "geocode_method": "source_coords",
         "mobile": false
@@ -78,8 +78,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.77795999999995,
-          32.804531000000054
+          -96.777949,
+          32.804541
         ]
       },
       "properties": {
@@ -91,7 +91,7 @@
         "category": "recovery_services",
         "access_247": false,
         "hours_raw": "M-F: 8a-10p",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2024-10-04",
         "geocode_method": "source_coords",
         "mobile": false
@@ -102,8 +102,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.66558299999997,
-          32.81179800000007
+          -96.665583,
+          32.811798
         ]
       },
       "properties": {
@@ -115,7 +115,7 @@
         "category": "recovery_services",
         "access_247": false,
         "hours_raw": "M-F: 7:30a-5p",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2025-08-07",
         "geocode_method": "source_coords",
         "mobile": false
@@ -126,32 +126,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.68223999999998,
-          32.805792000000054
-        ]
-      },
-      "properties": {
-        "name": "Nexus Recovery Center",
-        "address": "3312 N Buckner Blvd, Suite 208",
-        "city": "Dallas",
-        "zip": "75228",
-        "type": "Recovery Support Services",
-        "category": "recovery_services",
-        "access_247": false,
-        "hours_raw": "M-F: 7:30a-5p; Sat: 7a-9a",
-        "source": "arcgis",
-        "verified_on": "2026-02-12",
-        "geocode_method": "source_coords",
-        "mobile": false
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -96.78411699999998,
-          32.78442600000005
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -163,7 +139,7 @@
         "category": "nightlife_venue",
         "access_247": false,
         "hours_raw": null,
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -174,8 +150,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.78357299999999,
-          32.78514100000007
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -187,7 +163,7 @@
         "category": "nightlife_venue",
         "access_247": false,
         "hours_raw": "M-Sun: 2p-2a",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -198,8 +174,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.94550099999998,
-          32.87421600000005
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -211,7 +187,7 @@
         "category": "nightlife_venue",
         "access_247": false,
         "hours_raw": null,
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -222,8 +198,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.78394399999996,
-          32.78395900000004
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -235,7 +211,7 @@
         "category": "harm_reduction",
         "access_247": false,
         "hours_raw": "M-Sun: 11a-8p",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -246,8 +222,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.80525399999999,
-          32.68114600000007
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -259,7 +235,7 @@
         "category": "harm_reduction",
         "access_247": false,
         "hours_raw": "M-F: 8a-4:30 pm",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -270,8 +246,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.76363599999996,
-          32.69730300000003
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -283,7 +259,7 @@
         "category": "storefront_dispenser",
         "access_247": false,
         "hours_raw": "M-Sun: 1p-7p",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -294,8 +270,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.71896699999996,
-          32.90928100000008
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -307,7 +283,7 @@
         "category": "storefront_dispenser",
         "access_247": false,
         "hours_raw": "M-Sun: 9a-10p",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -318,8 +294,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.61196199999995,
-          32.81112900000005
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -331,7 +307,7 @@
         "category": "storefront_dispenser",
         "access_247": false,
         "hours_raw": "M-F: 7a-12a; Sat: 7a-1a; Sun: 8a-11p",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -342,8 +318,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.60247999999996,
-          32.85839500000003
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -355,7 +331,7 @@
         "category": "storefront_dispenser",
         "access_247": false,
         "hours_raw": "Sun-Th: 5a-1a; Fri-Sat: 5:30a-2a",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -366,8 +342,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.64668599999999,
-          32.73427700000008
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -379,7 +355,7 @@
         "category": "storefront_dispenser",
         "access_247": false,
         "hours_raw": "M-Sun: 10a-1a",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -390,8 +366,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.75421099999994,
-          32.75485500000008
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -403,7 +379,7 @@
         "category": "storefront_dispenser",
         "access_247": false,
         "hours_raw": "M-F: 7a-12a; Sat: 7a-1a; Sun: 8a-11p",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -414,8 +390,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.76566999999994,
-          32.77730200000008
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -427,7 +403,7 @@
         "category": "storefront_dispenser",
         "access_247": true,
         "hours_raw": "24/7",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -438,8 +414,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.76435199999997,
-          32.794831000000045
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -451,7 +427,7 @@
         "category": "storefront_dispenser",
         "access_247": false,
         "hours_raw": "M-F: 10a-10p; Sat: 10a-11p; Sun: 12p-10p",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -462,8 +438,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.84037699999999,
-          32.81765800000005
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -475,7 +451,7 @@
         "category": "storefront_dispenser",
         "access_247": false,
         "hours_raw": "M-Sat: 10a-9p",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -486,8 +462,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.81069999999994,
-          32.81038600000005
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -499,7 +475,7 @@
         "category": "nightlife_venue",
         "access_247": false,
         "hours_raw": "W-Sat: 9p-4a",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -510,8 +486,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.81077199999999,
-          32.81044600000007
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -523,7 +499,7 @@
         "category": "nightlife_venue",
         "access_247": false,
         "hours_raw": "M: 12 p-1a; Tue-F: 11a-1a; Sat: 11a-2a; Sun: 12a-2a",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -534,12 +510,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.81065299999995,
-          32.81034500000004
+          NaN,
+          NaN
         ]
       },
       "properties": {
-        "name": "TMC",
+        "name": "TMC ",
         "address": "3903 Cedar Springs Rd",
         "city": "Dallas",
         "zip": "75219",
@@ -547,7 +523,7 @@
         "category": "nightlife_venue",
         "access_247": false,
         "hours_raw": "M-Sun: 2p-2a",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -572,7 +548,7 @@
         "access_247": false,
         "hours_raw": "M-Sun: 2p-2a",
         "source": "arcgis",
-        "verified_on": "2026-02-12",
+        "verified_on": null,
         "geocode_method": "source_coords",
         "mobile": false
       }
@@ -582,8 +558,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.81073599999996,
-          32.81041600000003
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -595,7 +571,7 @@
         "category": "storefront_dispenser",
         "access_247": false,
         "hours_raw": "M-Sun: 7a-10p",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
@@ -606,8 +582,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.62845968599999,
-          32.90683217900005
+          NaN,
+          NaN
         ]
       },
       "properties": {
@@ -619,7 +595,7 @@
         "category": "health_clinic",
         "access_247": false,
         "hours_raw": "M-F: 8a-5p",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2026-03-10",
         "geocode_method": "source_coords",
         "mobile": false
@@ -630,8 +606,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.56661125999995,
-          32.844691468000065
+          -96.56731799999994,
+          32.84462700000006
         ]
       },
       "properties": {
@@ -644,7 +620,55 @@
         "access_247": true,
         "hours_raw": "24/7",
         "source": "arcgis",
-        "verified_on": "2026-05-19",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76781099999994,
+          32.76944100000003
+        ]
+      },
+      "properties": {
+        "name": "Your Discovery Place, Inc.",
+        "address": "2822 Martin Luther King Jr Blvd, Suite B",
+        "city": "Dallas",
+        "zip": "75215",
+        "type": "Freestanding Dispenser",
+        "category": "harm_reduction",
+        "access_247": true,
+        "hours_raw": "24/7",
+        "source": "arcgis",
+        "verified_on": null,
+        "geocode_method": "source_coords",
+        "mobile": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          NaN,
+          NaN
+        ]
+      },
+      "properties": {
+        "name": "Nexus Recovery Center",
+        "address": "3312 N Buckner Blvd, Suite 208",
+        "city": "Dallas",
+        "zip": "75228",
+        "type": "Recovery Support Services",
+        "category": "recovery_services",
+        "access_247": false,
+        "hours_raw": "M-F: 7:30a-5p; Sat: 7a-9a",
+        "source": "csv_snapshot",
+        "verified_on": "2026-02-12",
         "geocode_method": "source_coords",
         "mobile": false
       }
@@ -973,7 +997,7 @@
         "category": "harm_reduction",
         "access_247": true,
         "hours_raw": "24/7",
-        "source": "arcgis",
+        "source": "csv_snapshot",
         "verified_on": "2025-08-27",
         "geocode_method": "not_applicable_mobile",
         "mobile": true,

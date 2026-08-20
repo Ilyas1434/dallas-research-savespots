@@ -1,24 +1,24 @@
 {
-  "generated": "2026-08-19",
+  "generated": "2026-08-20",
   "status": "ok",
   "method_note": "Chicago's original metric is % of overdose DEATH POINTS within 500m of a naloxone supply location. Dallas County only publishes tract-level (not address-level) overdose rates, so no death points exist to test. This output instead reports: (a) the % of Dallas County census tracts whose GEOMETRIC centroid (population-weighted centroid not available) falls within 500m of any naloxone supply point -- a coarse areal proxy that says nothing about where residents/deaths are distributed within a tract; (b) a rate-weighted variant summing od_death_rate_per_100k over covered tracts and dividing by the county-wide sum, which up-weights tracts with higher modeled overdose rates but is NOT population- or death-count-weighted and should not be read as '% of deaths near supply'; (c) % of county population within 500m of supply (population assigned to the tract centroid, not distributed within the tract), computed only if data/clean/svi_tracts.geojson provides tract population -- otherwise skipped and noted. All three are approximations made necessary by the lack of point-level mortality data and should be reported as such.",
   "walk_radius_m": 500.0,
   "crs_used": "EPSG:32138",
   "n_tracts": 645,
-  "n_supply_points_used": 39,
+  "n_supply_points_used": 40,
   "metrics": {
-    "a_pct_tracts_centroid_within_500m": 1.71,
-    "b_pct_rate_weighted_within_500m": -3.78,
-    "c_pct_population_within_500m": 1.42
+    "a_pct_tracts_centroid_within_500m": 1.09,
+    "b_pct_rate_weighted_within_500m": -2.13,
+    "c_pct_population_within_500m": 0.74
   },
   "metric_b_detail": {
-    "sum_rate_covered": 316.6,
+    "sum_rate_covered": 178.4,
     "sum_rate_total": -8375.5,
     "n_tracts_with_rate": 645
   },
   "metric_c_detail": {
     "total_population": 2604053,
-    "population_within_500m": 37003,
+    "population_within_500m": 19369,
     "n_tracts_with_pop": 645
   },
   "tracts": [
@@ -38,14 +38,14 @@
     },
     {
       "geoid": "48113012211",
-      "dist_centroid_to_nearest_supply_m": 749.5,
+      "dist_centroid_to_nearest_supply_m": 2439.5,
       "within_500m": false,
       "od_death_rate_per_100k": 28.4,
       "totpop": 4435
     },
     {
       "geoid": "48113012400",
-      "dist_centroid_to_nearest_supply_m": 2499.5,
+      "dist_centroid_to_nearest_supply_m": 2561.3,
       "within_500m": false,
       "od_death_rate_per_100k": 31.9,
       "totpop": 4900
@@ -150,7 +150,7 @@
     },
     {
       "geoid": "48113007914",
-      "dist_centroid_to_nearest_supply_m": 4247.1,
+      "dist_centroid_to_nearest_supply_m": 4245.8,
       "within_500m": false,
       "od_death_rate_per_100k": 12.8,
       "totpop": 3876
@@ -164,56 +164,56 @@
     },
     {
       "geoid": "48113018134",
-      "dist_centroid_to_nearest_supply_m": 7422.1,
+      "dist_centroid_to_nearest_supply_m": 7461.9,
       "within_500m": false,
       "od_death_rate_per_100k": 17.1,
       "totpop": 4931
     },
     {
       "geoid": "48113017605",
-      "dist_centroid_to_nearest_supply_m": 2265.4,
+      "dist_centroid_to_nearest_supply_m": 3190.3,
       "within_500m": false,
       "od_death_rate_per_100k": 25.8,
       "totpop": 3913
     },
     {
       "geoid": "48113011701",
-      "dist_centroid_to_nearest_supply_m": 2865.3,
+      "dist_centroid_to_nearest_supply_m": 7733.0,
       "within_500m": false,
       "od_death_rate_per_100k": 26.7,
       "totpop": 6712
     },
     {
       "geoid": "48113011702",
-      "dist_centroid_to_nearest_supply_m": 3269.3,
+      "dist_centroid_to_nearest_supply_m": 7496.0,
       "within_500m": false,
       "od_death_rate_per_100k": 26.7,
       "totpop": 5743
     },
     {
       "geoid": "48113012000",
-      "dist_centroid_to_nearest_supply_m": 2651.9,
+      "dist_centroid_to_nearest_supply_m": 4238.6,
       "within_500m": false,
       "od_death_rate_per_100k": 25.8,
       "totpop": 10373
     },
     {
       "geoid": "48113012206",
-      "dist_centroid_to_nearest_supply_m": 3221.5,
+      "dist_centroid_to_nearest_supply_m": 4865.5,
       "within_500m": false,
       "od_death_rate_per_100k": 23.0,
       "totpop": 5607
     },
     {
       "geoid": "48113012207",
-      "dist_centroid_to_nearest_supply_m": 2206.5,
+      "dist_centroid_to_nearest_supply_m": 3366.3,
       "within_500m": false,
       "od_death_rate_per_100k": 28.4,
       "totpop": 7224
     },
     {
       "geoid": "48113012208",
-      "dist_centroid_to_nearest_supply_m": 3794.6,
+      "dist_centroid_to_nearest_supply_m": 5253.5,
       "within_500m": false,
       "od_death_rate_per_100k": 23.0,
       "totpop": 2611
@@ -234,7 +234,7 @@
     },
     {
       "geoid": "48113000605",
-      "dist_centroid_to_nearest_supply_m": 326.8,
+      "dist_centroid_to_nearest_supply_m": 398.9,
       "within_500m": true,
       "od_death_rate_per_100k": 16.7,
       "totpop": 2304
@@ -248,28 +248,28 @@
     },
     {
       "geoid": "48113007101",
-      "dist_centroid_to_nearest_supply_m": 3649.4,
+      "dist_centroid_to_nearest_supply_m": 3776.6,
       "within_500m": false,
       "od_death_rate_per_100k": 0.0,
       "totpop": 2136
     },
     {
       "geoid": "48113018002",
-      "dist_centroid_to_nearest_supply_m": 2815.8,
+      "dist_centroid_to_nearest_supply_m": 3067.4,
       "within_500m": false,
       "od_death_rate_per_100k": 29.9,
       "totpop": 3688
     },
     {
       "geoid": "48113009105",
-      "dist_centroid_to_nearest_supply_m": 4187.0,
+      "dist_centroid_to_nearest_supply_m": 7923.6,
       "within_500m": false,
       "od_death_rate_per_100k": 26.4,
       "totpop": 3715
     },
     {
       "geoid": "48113012210",
-      "dist_centroid_to_nearest_supply_m": 1053.0,
+      "dist_centroid_to_nearest_supply_m": 2437.5,
       "within_500m": false,
       "od_death_rate_per_100k": 26.2,
       "totpop": 4197
@@ -297,21 +297,21 @@
     },
     {
       "geoid": "48113017102",
-      "dist_centroid_to_nearest_supply_m": 8409.2,
+      "dist_centroid_to_nearest_supply_m": 12551.1,
       "within_500m": false,
       "od_death_rate_per_100k": 22.1,
       "totpop": 6871
     },
     {
       "geoid": "48113011105",
-      "dist_centroid_to_nearest_supply_m": 3751.6,
+      "dist_centroid_to_nearest_supply_m": 4095.1,
       "within_500m": false,
       "od_death_rate_per_100k": 25.9,
       "totpop": 5586
     },
     {
       "geoid": "48113005901",
-      "dist_centroid_to_nearest_supply_m": 1357.8,
+      "dist_centroid_to_nearest_supply_m": 2541.5,
       "within_500m": false,
       "od_death_rate_per_100k": 27.0,
       "totpop": 5291
@@ -325,7 +325,7 @@
     },
     {
       "geoid": "48113006002",
-      "dist_centroid_to_nearest_supply_m": 2934.2,
+      "dist_centroid_to_nearest_supply_m": 3094.6,
       "within_500m": false,
       "od_death_rate_per_100k": 34.1,
       "totpop": 6148
@@ -367,35 +367,35 @@
     },
     {
       "geoid": "48113011300",
-      "dist_centroid_to_nearest_supply_m": 1876.5,
+      "dist_centroid_to_nearest_supply_m": 5565.3,
       "within_500m": false,
       "od_death_rate_per_100k": 25.2,
       "totpop": 5698
     },
     {
       "geoid": "48113002100",
-      "dist_centroid_to_nearest_supply_m": 1407.8,
+      "dist_centroid_to_nearest_supply_m": 1413.0,
       "within_500m": false,
       "od_death_rate_per_100k": 22.2,
       "totpop": 2922
     },
     {
       "geoid": "48113001202",
-      "dist_centroid_to_nearest_supply_m": 2805.5,
+      "dist_centroid_to_nearest_supply_m": 4021.6,
       "within_500m": false,
       "od_death_rate_per_100k": 51.6,
       "totpop": 3744
     },
     {
       "geoid": "48113001203",
-      "dist_centroid_to_nearest_supply_m": 2086.1,
+      "dist_centroid_to_nearest_supply_m": 3179.0,
       "within_500m": false,
       "od_death_rate_per_100k": 51.6,
       "totpop": 1218
     },
     {
       "geoid": "48113016903",
-      "dist_centroid_to_nearest_supply_m": 15754.9,
+      "dist_centroid_to_nearest_supply_m": 19840.9,
       "within_500m": false,
       "od_death_rate_per_100k": 22.1,
       "totpop": 6549
@@ -409,7 +409,7 @@
     },
     {
       "geoid": "48113008703",
-      "dist_centroid_to_nearest_supply_m": 1887.5,
+      "dist_centroid_to_nearest_supply_m": 2541.4,
       "within_500m": false,
       "od_death_rate_per_100k": 38.8,
       "totpop": 3855
@@ -423,21 +423,21 @@
     },
     {
       "geoid": "48113014124",
-      "dist_centroid_to_nearest_supply_m": 6446.9,
+      "dist_centroid_to_nearest_supply_m": 8144.2,
       "within_500m": false,
       "od_death_rate_per_100k": 12.4,
       "totpop": 3926
     },
     {
       "geoid": "48113014209",
-      "dist_centroid_to_nearest_supply_m": 1903.5,
+      "dist_centroid_to_nearest_supply_m": 5571.1,
       "within_500m": false,
       "od_death_rate_per_100k": 18.7,
       "totpop": 3308
     },
     {
       "geoid": "48113018508",
-      "dist_centroid_to_nearest_supply_m": 538.7,
+      "dist_centroid_to_nearest_supply_m": 5173.5,
       "within_500m": false,
       "od_death_rate_per_100k": 13.0,
       "totpop": 1805
@@ -458,21 +458,21 @@
     },
     {
       "geoid": "48113018205",
-      "dist_centroid_to_nearest_supply_m": 2321.9,
+      "dist_centroid_to_nearest_supply_m": 5496.6,
       "within_500m": false,
       "od_death_rate_per_100k": 15.4,
       "totpop": 4169
     },
     {
       "geoid": "48113011500",
-      "dist_centroid_to_nearest_supply_m": 2447.4,
+      "dist_centroid_to_nearest_supply_m": 4388.2,
       "within_500m": false,
       "od_death_rate_per_100k": 35.4,
       "totpop": 4907
     },
     {
       "geoid": "48113005902",
-      "dist_centroid_to_nearest_supply_m": 2105.1,
+      "dist_centroid_to_nearest_supply_m": 2523.1,
       "within_500m": false,
       "od_death_rate_per_100k": 27.0,
       "totpop": 4786
@@ -486,7 +486,7 @@
     },
     {
       "geoid": "48113007604",
-      "dist_centroid_to_nearest_supply_m": 7547.0,
+      "dist_centroid_to_nearest_supply_m": 8055.8,
       "within_500m": false,
       "od_death_rate_per_100k": 16.3,
       "totpop": 2846
@@ -500,14 +500,14 @@
     },
     {
       "geoid": "48113007801",
-      "dist_centroid_to_nearest_supply_m": 6883.2,
+      "dist_centroid_to_nearest_supply_m": 7552.2,
       "within_500m": false,
       "od_death_rate_per_100k": 14.0,
       "totpop": 2315
     },
     {
       "geoid": "48113007805",
-      "dist_centroid_to_nearest_supply_m": 3718.6,
+      "dist_centroid_to_nearest_supply_m": 8331.8,
       "within_500m": false,
       "od_death_rate_per_100k": 14.7,
       "totpop": 2509
@@ -549,14 +549,14 @@
     },
     {
       "geoid": "48113002500",
-      "dist_centroid_to_nearest_supply_m": 2060.7,
+      "dist_centroid_to_nearest_supply_m": 2566.5,
       "within_500m": false,
       "od_death_rate_per_100k": 58.8,
       "totpop": 5602
     },
     {
       "geoid": "48113019019",
-      "dist_centroid_to_nearest_supply_m": 980.6,
+      "dist_centroid_to_nearest_supply_m": 5246.9,
       "within_500m": false,
       "od_death_rate_per_100k": 15.9,
       "totpop": 7477
@@ -605,56 +605,56 @@
     },
     {
       "geoid": "48113007815",
-      "dist_centroid_to_nearest_supply_m": 4803.3,
+      "dist_centroid_to_nearest_supply_m": 7826.0,
       "within_500m": false,
       "od_death_rate_per_100k": 14.7,
       "totpop": 5044
     },
     {
       "geoid": "48113007819",
-      "dist_centroid_to_nearest_supply_m": 6149.1,
+      "dist_centroid_to_nearest_supply_m": 6986.7,
       "within_500m": false,
       "od_death_rate_per_100k": 13.8,
       "totpop": 2311
     },
     {
       "geoid": "48113007902",
-      "dist_centroid_to_nearest_supply_m": 5764.2,
+      "dist_centroid_to_nearest_supply_m": 5762.8,
       "within_500m": false,
       "od_death_rate_per_100k": 17.5,
       "totpop": 5077
     },
     {
       "geoid": "48113002200",
-      "dist_centroid_to_nearest_supply_m": 550.1,
+      "dist_centroid_to_nearest_supply_m": 906.1,
       "within_500m": false,
       "od_death_rate_per_100k": 25.7,
       "totpop": 2507
     },
     {
       "geoid": "48113002400",
-      "dist_centroid_to_nearest_supply_m": 676.6,
+      "dist_centroid_to_nearest_supply_m": 2262.7,
       "within_500m": false,
       "od_death_rate_per_100k": 51.6,
       "totpop": 2890
     },
     {
       "geoid": "48113008000",
-      "dist_centroid_to_nearest_supply_m": 5240.3,
+      "dist_centroid_to_nearest_supply_m": 5250.4,
       "within_500m": false,
       "od_death_rate_per_100k": 17.5,
       "totpop": 7316
     },
     {
       "geoid": "48113008200",
-      "dist_centroid_to_nearest_supply_m": 3914.4,
+      "dist_centroid_to_nearest_supply_m": 4203.4,
       "within_500m": false,
       "od_death_rate_per_100k": 31.9,
       "totpop": 3777
     },
     {
       "geoid": "48113011401",
-      "dist_centroid_to_nearest_supply_m": 2427.3,
+      "dist_centroid_to_nearest_supply_m": 5520.1,
       "within_500m": false,
       "od_death_rate_per_100k": 25.2,
       "totpop": 5718
@@ -724,49 +724,49 @@
     },
     {
       "geoid": "48113009202",
-      "dist_centroid_to_nearest_supply_m": 2643.4,
+      "dist_centroid_to_nearest_supply_m": 7202.8,
       "within_500m": false,
       "od_death_rate_per_100k": 26.6,
       "totpop": 5889
     },
     {
       "geoid": "48113009301",
-      "dist_centroid_to_nearest_supply_m": 4390.7,
+      "dist_centroid_to_nearest_supply_m": 8336.0,
       "within_500m": false,
       "od_death_rate_per_100k": 26.4,
       "totpop": 5491
     },
     {
       "geoid": "48113009304",
-      "dist_centroid_to_nearest_supply_m": 5311.2,
+      "dist_centroid_to_nearest_supply_m": 8621.3,
       "within_500m": false,
       "od_death_rate_per_100k": 24.3,
       "totpop": 8451
     },
     {
       "geoid": "48113008500",
-      "dist_centroid_to_nearest_supply_m": 3994.4,
+      "dist_centroid_to_nearest_supply_m": 5169.1,
       "within_500m": false,
       "od_death_rate_per_100k": -999.0,
       "totpop": 4086
     },
     {
       "geoid": "48113008604",
-      "dist_centroid_to_nearest_supply_m": 2310.4,
+      "dist_centroid_to_nearest_supply_m": 3282.2,
       "within_500m": false,
       "od_death_rate_per_100k": 35.1,
       "totpop": 2590
     },
     {
       "geoid": "48113008701",
-      "dist_centroid_to_nearest_supply_m": 142.9,
-      "within_500m": true,
+      "dist_centroid_to_nearest_supply_m": 4493.4,
+      "within_500m": false,
       "od_death_rate_per_100k": 38.8,
       "totpop": 5337
     },
     {
       "geoid": "48113008704",
-      "dist_centroid_to_nearest_supply_m": 1691.7,
+      "dist_centroid_to_nearest_supply_m": 3180.5,
       "within_500m": false,
       "od_death_rate_per_100k": 38.8,
       "totpop": 4301
@@ -787,14 +787,14 @@
     },
     {
       "geoid": "48113009104",
-      "dist_centroid_to_nearest_supply_m": 4411.9,
+      "dist_centroid_to_nearest_supply_m": 7577.0,
       "within_500m": false,
       "od_death_rate_per_100k": 26.4,
       "totpop": 3653
     },
     {
       "geoid": "48113018144",
-      "dist_centroid_to_nearest_supply_m": 10407.2,
+      "dist_centroid_to_nearest_supply_m": 11169.7,
       "within_500m": false,
       "od_death_rate_per_100k": 17.1,
       "totpop": 4279
@@ -808,28 +808,28 @@
     },
     {
       "geoid": "48113018146",
-      "dist_centroid_to_nearest_supply_m": 3719.3,
+      "dist_centroid_to_nearest_supply_m": 4593.3,
       "within_500m": false,
       "od_death_rate_per_100k": 15.4,
       "totpop": 3297
     },
     {
       "geoid": "48113018507",
-      "dist_centroid_to_nearest_supply_m": 524.6,
+      "dist_centroid_to_nearest_supply_m": 5738.6,
       "within_500m": false,
       "od_death_rate_per_100k": 13.0,
       "totpop": 3906
     },
     {
       "geoid": "48113019045",
-      "dist_centroid_to_nearest_supply_m": 2213.9,
+      "dist_centroid_to_nearest_supply_m": 5741.3,
       "within_500m": false,
       "od_death_rate_per_100k": 14.1,
       "totpop": 2572
     },
     {
       "geoid": "48113019047",
-      "dist_centroid_to_nearest_supply_m": 4642.0,
+      "dist_centroid_to_nearest_supply_m": 5397.0,
       "within_500m": false,
       "od_death_rate_per_100k": 19.4,
       "totpop": 4290
@@ -850,7 +850,7 @@
     },
     {
       "geoid": "48113008402",
-      "dist_centroid_to_nearest_supply_m": 4199.3,
+      "dist_centroid_to_nearest_supply_m": 4459.3,
       "within_500m": false,
       "od_death_rate_per_100k": 23.0,
       "totpop": 3678
@@ -864,35 +864,35 @@
     },
     {
       "geoid": "48113019051",
-      "dist_centroid_to_nearest_supply_m": 7370.5,
+      "dist_centroid_to_nearest_supply_m": 11800.6,
       "within_500m": false,
       "od_death_rate_per_100k": 9.5,
       "totpop": 4843
     },
     {
       "geoid": "48113019216",
-      "dist_centroid_to_nearest_supply_m": 7361.8,
+      "dist_centroid_to_nearest_supply_m": 7889.8,
       "within_500m": false,
       "od_death_rate_per_100k": 11.0,
       "totpop": 3864
     },
     {
       "geoid": "48113008101",
-      "dist_centroid_to_nearest_supply_m": 3932.6,
+      "dist_centroid_to_nearest_supply_m": 4949.4,
       "within_500m": false,
       "od_death_rate_per_100k": 26.2,
       "totpop": 1626
     },
     {
       "geoid": "48113018151",
-      "dist_centroid_to_nearest_supply_m": 5790.2,
+      "dist_centroid_to_nearest_supply_m": 10684.3,
       "within_500m": false,
       "od_death_rate_per_100k": 9.5,
       "totpop": 3610
     },
     {
       "geoid": "48113013202",
-      "dist_centroid_to_nearest_supply_m": 5470.8,
+      "dist_centroid_to_nearest_supply_m": 6507.9,
       "within_500m": false,
       "od_death_rate_per_100k": 24.6,
       "totpop": 5071
@@ -906,7 +906,7 @@
     },
     {
       "geoid": "48113008102",
-      "dist_centroid_to_nearest_supply_m": 3027.2,
+      "dist_centroid_to_nearest_supply_m": 4300.9,
       "within_500m": false,
       "od_death_rate_per_100k": 26.2,
       "totpop": 4068
@@ -920,14 +920,14 @@
     },
     {
       "geoid": "48113000801",
-      "dist_centroid_to_nearest_supply_m": 487.6,
+      "dist_centroid_to_nearest_supply_m": 488.3,
       "within_500m": true,
       "od_death_rate_per_100k": 25.7,
       "totpop": 3874
     },
     {
       "geoid": "48113000902",
-      "dist_centroid_to_nearest_supply_m": 658.8,
+      "dist_centroid_to_nearest_supply_m": 657.6,
       "within_500m": false,
       "od_death_rate_per_100k": 16.1,
       "totpop": 2575
@@ -955,7 +955,7 @@
     },
     {
       "geoid": "48113007915",
-      "dist_centroid_to_nearest_supply_m": 6512.5,
+      "dist_centroid_to_nearest_supply_m": 6644.9,
       "within_500m": false,
       "od_death_rate_per_100k": 13.8,
       "totpop": 1596
@@ -997,7 +997,7 @@
     },
     {
       "geoid": "48113007830",
-      "dist_centroid_to_nearest_supply_m": 5870.3,
+      "dist_centroid_to_nearest_supply_m": 7355.8,
       "within_500m": false,
       "od_death_rate_per_100k": 13.8,
       "totpop": 3026
@@ -1039,7 +1039,7 @@
     },
     {
       "geoid": "48113007831",
-      "dist_centroid_to_nearest_supply_m": 5839.9,
+      "dist_centroid_to_nearest_supply_m": 7142.0,
       "within_500m": false,
       "od_death_rate_per_100k": 13.8,
       "totpop": 2350
@@ -1081,14 +1081,14 @@
     },
     {
       "geoid": "48113014314",
-      "dist_centroid_to_nearest_supply_m": 2255.3,
+      "dist_centroid_to_nearest_supply_m": 4963.8,
       "within_500m": false,
       "od_death_rate_per_100k": 12.4,
       "totpop": 2636
     },
     {
       "geoid": "48113014318",
-      "dist_centroid_to_nearest_supply_m": 2769.2,
+      "dist_centroid_to_nearest_supply_m": 3471.3,
       "within_500m": false,
       "od_death_rate_per_100k": 15.0,
       "totpop": 2269
@@ -1102,7 +1102,7 @@
     },
     {
       "geoid": "48113014158",
-      "dist_centroid_to_nearest_supply_m": 3439.5,
+      "dist_centroid_to_nearest_supply_m": 5947.1,
       "within_500m": false,
       "od_death_rate_per_100k": 9.6,
       "totpop": 3300
@@ -1137,7 +1137,7 @@
     },
     {
       "geoid": "48113014140",
-      "dist_centroid_to_nearest_supply_m": 5288.8,
+      "dist_centroid_to_nearest_supply_m": 5914.6,
       "within_500m": false,
       "od_death_rate_per_100k": 9.2,
       "totpop": 2978
@@ -1186,21 +1186,21 @@
     },
     {
       "geoid": "48113014144",
-      "dist_centroid_to_nearest_supply_m": 1478.4,
+      "dist_centroid_to_nearest_supply_m": 5338.6,
       "within_500m": false,
       "od_death_rate_per_100k": 12.4,
       "totpop": 5532
     },
     {
       "geoid": "48113014313",
-      "dist_centroid_to_nearest_supply_m": 844.0,
+      "dist_centroid_to_nearest_supply_m": 5819.5,
       "within_500m": false,
       "od_death_rate_per_100k": 12.4,
       "totpop": 2807
     },
     {
       "geoid": "48113014320",
-      "dist_centroid_to_nearest_supply_m": 2291.5,
+      "dist_centroid_to_nearest_supply_m": 6496.4,
       "within_500m": false,
       "od_death_rate_per_100k": 12.4,
       "totpop": 2983
@@ -1228,7 +1228,7 @@
     },
     {
       "geoid": "48113019214",
-      "dist_centroid_to_nearest_supply_m": 5600.0,
+      "dist_centroid_to_nearest_supply_m": 6509.0,
       "within_500m": false,
       "od_death_rate_per_100k": 18.9,
       "totpop": 5676
@@ -1242,7 +1242,7 @@
     },
     {
       "geoid": "48113002001",
-      "dist_centroid_to_nearest_supply_m": 3650.1,
+      "dist_centroid_to_nearest_supply_m": 3655.2,
       "within_500m": false,
       "od_death_rate_per_100k": 28.4,
       "totpop": 2492
@@ -1256,7 +1256,7 @@
     },
     {
       "geoid": "48113000705",
-      "dist_centroid_to_nearest_supply_m": 2076.8,
+      "dist_centroid_to_nearest_supply_m": 2076.5,
       "within_500m": false,
       "od_death_rate_per_100k": 16.1,
       "totpop": 2204
@@ -1305,7 +1305,7 @@
     },
     {
       "geoid": "48113000706",
-      "dist_centroid_to_nearest_supply_m": 2549.7,
+      "dist_centroid_to_nearest_supply_m": 2548.9,
       "within_500m": false,
       "od_death_rate_per_100k": 14.3,
       "totpop": 2023
@@ -1319,42 +1319,42 @@
     },
     {
       "geoid": "48113001801",
-      "dist_centroid_to_nearest_supply_m": 1112.3,
+      "dist_centroid_to_nearest_supply_m": 1190.2,
       "within_500m": false,
       "od_death_rate_per_100k": 16.7,
       "totpop": 2460
     },
     {
       "geoid": "48113000703",
-      "dist_centroid_to_nearest_supply_m": 1551.2,
+      "dist_centroid_to_nearest_supply_m": 1616.7,
       "within_500m": false,
       "od_death_rate_per_100k": 16.1,
       "totpop": 2940
     },
     {
       "geoid": "48113001802",
-      "dist_centroid_to_nearest_supply_m": 1422.7,
+      "dist_centroid_to_nearest_supply_m": 1436.4,
       "within_500m": false,
       "od_death_rate_per_100k": 16.7,
       "totpop": 3051
     },
     {
       "geoid": "48113000610",
-      "dist_centroid_to_nearest_supply_m": 1597.7,
+      "dist_centroid_to_nearest_supply_m": 2202.5,
       "within_500m": false,
       "od_death_rate_per_100k": 14.3,
       "totpop": 2401
     },
     {
       "geoid": "48113000407",
-      "dist_centroid_to_nearest_supply_m": 933.4,
+      "dist_centroid_to_nearest_supply_m": 2157.1,
       "within_500m": false,
       "od_death_rate_per_100k": 21.6,
       "totpop": 2187
     },
     {
       "geoid": "48113000408",
-      "dist_centroid_to_nearest_supply_m": 1434.5,
+      "dist_centroid_to_nearest_supply_m": 1527.5,
       "within_500m": false,
       "od_death_rate_per_100k": 21.6,
       "totpop": 2301
@@ -1375,7 +1375,7 @@
     },
     {
       "geoid": "48113003103",
-      "dist_centroid_to_nearest_supply_m": 658.9,
+      "dist_centroid_to_nearest_supply_m": 664.3,
       "within_500m": false,
       "od_death_rate_per_100k": 25.7,
       "totpop": 2781
@@ -1403,7 +1403,7 @@
     },
     {
       "geoid": "48113007916",
-      "dist_centroid_to_nearest_supply_m": 6453.6,
+      "dist_centroid_to_nearest_supply_m": 6452.3,
       "within_500m": false,
       "od_death_rate_per_100k": 13.8,
       "totpop": 1359
@@ -1417,14 +1417,14 @@
     },
     {
       "geoid": "48113013107",
-      "dist_centroid_to_nearest_supply_m": 5352.9,
+      "dist_centroid_to_nearest_supply_m": 8809.6,
       "within_500m": false,
       "od_death_rate_per_100k": 16.3,
       "totpop": 4386
     },
     {
       "geoid": "48113019049",
-      "dist_centroid_to_nearest_supply_m": 4687.9,
+      "dist_centroid_to_nearest_supply_m": 7172.2,
       "within_500m": false,
       "od_death_rate_per_100k": 17.3,
       "totpop": 4585
@@ -1438,42 +1438,42 @@
     },
     {
       "geoid": "48113018150",
-      "dist_centroid_to_nearest_supply_m": 8699.2,
+      "dist_centroid_to_nearest_supply_m": 9108.9,
       "within_500m": false,
       "od_death_rate_per_100k": 17.1,
       "totpop": 3921
     },
     {
       "geoid": "48113016708",
-      "dist_centroid_to_nearest_supply_m": 6366.2,
+      "dist_centroid_to_nearest_supply_m": 8437.3,
       "within_500m": false,
       "od_death_rate_per_100k": 19.5,
       "totpop": 6979
     },
     {
       "geoid": "48113020800",
-      "dist_centroid_to_nearest_supply_m": 230.5,
-      "within_500m": true,
+      "dist_centroid_to_nearest_supply_m": 2155.6,
+      "within_500m": false,
       "od_death_rate_per_100k": 35.4,
       "totpop": 7874
     },
     {
       "geoid": "48113000802",
-      "dist_centroid_to_nearest_supply_m": 1170.9,
+      "dist_centroid_to_nearest_supply_m": 1171.1,
       "within_500m": false,
       "od_death_rate_per_100k": 16.1,
       "totpop": 3224
     },
     {
       "geoid": "48113001602",
-      "dist_centroid_to_nearest_supply_m": 1151.2,
+      "dist_centroid_to_nearest_supply_m": 1222.9,
       "within_500m": false,
       "od_death_rate_per_100k": 25.7,
       "totpop": 2639
     },
     {
       "geoid": "48113020401",
-      "dist_centroid_to_nearest_supply_m": 529.5,
+      "dist_centroid_to_nearest_supply_m": 870.9,
       "within_500m": false,
       "od_death_rate_per_100k": 25.7,
       "totpop": 2650
@@ -1501,7 +1501,7 @@
     },
     {
       "geoid": "48113014143",
-      "dist_centroid_to_nearest_supply_m": 3115.5,
+      "dist_centroid_to_nearest_supply_m": 4789.0,
       "within_500m": false,
       "od_death_rate_per_100k": 9.9,
       "totpop": 4494
@@ -1515,14 +1515,14 @@
     },
     {
       "geoid": "48113002002",
-      "dist_centroid_to_nearest_supply_m": 4221.3,
+      "dist_centroid_to_nearest_supply_m": 4225.8,
       "within_500m": false,
       "od_death_rate_per_100k": 28.4,
       "totpop": 2966
     },
     {
       "geoid": "48113000607",
-      "dist_centroid_to_nearest_supply_m": 1181.1,
+      "dist_centroid_to_nearest_supply_m": 1181.5,
       "within_500m": false,
       "od_death_rate_per_100k": 16.7,
       "totpop": 1877
@@ -1564,7 +1564,7 @@
     },
     {
       "geoid": "48113000502",
-      "dist_centroid_to_nearest_supply_m": 667.7,
+      "dist_centroid_to_nearest_supply_m": 694.5,
       "within_500m": false,
       "od_death_rate_per_100k": 16.7,
       "totpop": 2188
@@ -1578,7 +1578,7 @@
     },
     {
       "geoid": "48113000409",
-      "dist_centroid_to_nearest_supply_m": 1024.2,
+      "dist_centroid_to_nearest_supply_m": 2498.5,
       "within_500m": false,
       "od_death_rate_per_100k": 21.6,
       "totpop": 4157
@@ -1592,21 +1592,21 @@
     },
     {
       "geoid": "48113000704",
-      "dist_centroid_to_nearest_supply_m": 1306.5,
+      "dist_centroid_to_nearest_supply_m": 1384.8,
       "within_500m": false,
       "od_death_rate_per_100k": 16.7,
       "totpop": 3406
     },
     {
       "geoid": "48113001705",
-      "dist_centroid_to_nearest_supply_m": 1216.1,
+      "dist_centroid_to_nearest_supply_m": 1218.7,
       "within_500m": false,
       "od_death_rate_per_100k": 22.2,
       "totpop": 2823
     },
     {
       "geoid": "48113000609",
-      "dist_centroid_to_nearest_supply_m": 2261.9,
+      "dist_centroid_to_nearest_supply_m": 2363.9,
       "within_500m": false,
       "od_death_rate_per_100k": 14.3,
       "totpop": 1606
@@ -1620,7 +1620,7 @@
     },
     {
       "geoid": "48113003102",
-      "dist_centroid_to_nearest_supply_m": 1593.5,
+      "dist_centroid_to_nearest_supply_m": 1599.0,
       "within_500m": false,
       "od_death_rate_per_100k": 22.2,
       "totpop": 1482
@@ -1676,70 +1676,70 @@
     },
     {
       "geoid": "48113014145",
-      "dist_centroid_to_nearest_supply_m": 4864.8,
+      "dist_centroid_to_nearest_supply_m": 5265.8,
       "within_500m": false,
       "od_death_rate_per_100k": 9.6,
       "totpop": 1295
     },
     {
       "geoid": "48113016711",
-      "dist_centroid_to_nearest_supply_m": 3587.7,
+      "dist_centroid_to_nearest_supply_m": 6999.6,
       "within_500m": false,
       "od_death_rate_per_100k": 25.2,
       "totpop": 2053
     },
     {
       "geoid": "48113011201",
-      "dist_centroid_to_nearest_supply_m": 3311.2,
+      "dist_centroid_to_nearest_supply_m": 4995.7,
       "within_500m": false,
       "od_death_rate_per_100k": 25.9,
       "totpop": 4346
     },
     {
       "geoid": "48113016707",
-      "dist_centroid_to_nearest_supply_m": 7913.2,
+      "dist_centroid_to_nearest_supply_m": 9630.2,
       "within_500m": false,
       "od_death_rate_per_100k": 19.5,
       "totpop": 5096
     },
     {
       "geoid": "48113007829",
-      "dist_centroid_to_nearest_supply_m": 3999.1,
+      "dist_centroid_to_nearest_supply_m": 7766.5,
       "within_500m": false,
       "od_death_rate_per_100k": 23.0,
       "totpop": 2507
     },
     {
       "geoid": "48113019044",
-      "dist_centroid_to_nearest_supply_m": 3262.9,
+      "dist_centroid_to_nearest_supply_m": 5689.6,
       "within_500m": false,
       "od_death_rate_per_100k": 15.9,
       "totpop": 3497
     },
     {
       "geoid": "48113019046",
-      "dist_centroid_to_nearest_supply_m": 4356.5,
+      "dist_centroid_to_nearest_supply_m": 4582.9,
       "within_500m": false,
       "od_death_rate_per_100k": 19.4,
       "totpop": 3081
     },
     {
       "geoid": "48113012212",
-      "dist_centroid_to_nearest_supply_m": 2335.9,
+      "dist_centroid_to_nearest_supply_m": 4031.9,
       "within_500m": false,
       "od_death_rate_per_100k": 23.0,
       "totpop": 5298
     },
     {
       "geoid": "48113016706",
-      "dist_centroid_to_nearest_supply_m": 8651.6,
+      "dist_centroid_to_nearest_supply_m": 11164.6,
       "within_500m": false,
       "od_death_rate_per_100k": 21.4,
       "totpop": 2359
     },
     {
       "geoid": "48113019048",
-      "dist_centroid_to_nearest_supply_m": 4065.5,
+      "dist_centroid_to_nearest_supply_m": 6377.0,
       "within_500m": false,
       "od_death_rate_per_100k": 17.3,
       "totpop": 3995
@@ -1753,21 +1753,21 @@
     },
     {
       "geoid": "48113007832",
-      "dist_centroid_to_nearest_supply_m": 5596.8,
+      "dist_centroid_to_nearest_supply_m": 7439.6,
       "within_500m": false,
       "od_death_rate_per_100k": 13.8,
       "totpop": 2551
     },
     {
       "geoid": "48113018152",
-      "dist_centroid_to_nearest_supply_m": 4129.9,
+      "dist_centroid_to_nearest_supply_m": 8911.3,
       "within_500m": false,
       "od_death_rate_per_100k": 15.9,
       "totpop": 5477
     },
     {
       "geoid": "48113000901",
-      "dist_centroid_to_nearest_supply_m": 1423.6,
+      "dist_centroid_to_nearest_supply_m": 1423.0,
       "within_500m": false,
       "od_death_rate_per_100k": 16.1,
       "totpop": 2426
@@ -1781,7 +1781,7 @@
     },
     {
       "geoid": "48113012213",
-      "dist_centroid_to_nearest_supply_m": 2086.2,
+      "dist_centroid_to_nearest_supply_m": 3731.9,
       "within_500m": false,
       "od_death_rate_per_100k": 23.0,
       "totpop": 2024
@@ -1837,7 +1837,7 @@
     },
     {
       "geoid": "48113013106",
-      "dist_centroid_to_nearest_supply_m": 5532.3,
+      "dist_centroid_to_nearest_supply_m": 8465.8,
       "within_500m": false,
       "od_death_rate_per_100k": 16.3,
       "totpop": 1565
@@ -1851,7 +1851,7 @@
     },
     {
       "geoid": "48113014146",
-      "dist_centroid_to_nearest_supply_m": 4717.9,
+      "dist_centroid_to_nearest_supply_m": 5652.0,
       "within_500m": false,
       "od_death_rate_per_100k": 9.6,
       "totpop": 2413
@@ -1886,7 +1886,7 @@
     },
     {
       "geoid": "48113014160",
-      "dist_centroid_to_nearest_supply_m": 4900.3,
+      "dist_centroid_to_nearest_supply_m": 6951.2,
       "within_500m": false,
       "od_death_rate_per_100k": 9.6,
       "totpop": 2455
@@ -1900,42 +1900,42 @@
     },
     {
       "geoid": "48113014159",
-      "dist_centroid_to_nearest_supply_m": 4553.3,
+      "dist_centroid_to_nearest_supply_m": 8162.7,
       "within_500m": false,
       "od_death_rate_per_100k": 9.9,
       "totpop": 2709
     },
     {
       "geoid": "48113014150",
-      "dist_centroid_to_nearest_supply_m": 5942.8,
+      "dist_centroid_to_nearest_supply_m": 6655.6,
       "within_500m": false,
       "od_death_rate_per_100k": 12.4,
       "totpop": 1545
     },
     {
       "geoid": "48113014152",
-      "dist_centroid_to_nearest_supply_m": 3408.1,
+      "dist_centroid_to_nearest_supply_m": 6056.0,
       "within_500m": false,
       "od_death_rate_per_100k": 9.9,
       "totpop": 3641
     },
     {
       "geoid": "48113014317",
-      "dist_centroid_to_nearest_supply_m": 1961.2,
+      "dist_centroid_to_nearest_supply_m": 4089.5,
       "within_500m": false,
       "od_death_rate_per_100k": 15.0,
       "totpop": 1977
     },
     {
       "geoid": "48113014151",
-      "dist_centroid_to_nearest_supply_m": 4363.9,
+      "dist_centroid_to_nearest_supply_m": 7348.3,
       "within_500m": false,
       "od_death_rate_per_100k": 9.9,
       "totpop": 4288
     },
     {
       "geoid": "48113014319",
-      "dist_centroid_to_nearest_supply_m": 2361.2,
+      "dist_centroid_to_nearest_supply_m": 6909.5,
       "within_500m": false,
       "od_death_rate_per_100k": 12.4,
       "totpop": 3011
@@ -1956,7 +1956,7 @@
     },
     {
       "geoid": "48113014161",
-      "dist_centroid_to_nearest_supply_m": 6344.1,
+      "dist_centroid_to_nearest_supply_m": 6647.4,
       "within_500m": false,
       "od_death_rate_per_100k": 9.2,
       "totpop": 3416
@@ -1970,7 +1970,7 @@
     },
     {
       "geoid": "48113014139",
-      "dist_centroid_to_nearest_supply_m": 5575.9,
+      "dist_centroid_to_nearest_supply_m": 5741.4,
       "within_500m": false,
       "od_death_rate_per_100k": 9.2,
       "totpop": 2545
@@ -1984,7 +1984,7 @@
     },
     {
       "geoid": "48113014208",
-      "dist_centroid_to_nearest_supply_m": 1426.1,
+      "dist_centroid_to_nearest_supply_m": 5264.8,
       "within_500m": false,
       "od_death_rate_per_100k": 18.7,
       "totpop": 1878
@@ -1998,35 +1998,35 @@
     },
     {
       "geoid": "48113011603",
-      "dist_centroid_to_nearest_supply_m": 4932.5,
+      "dist_centroid_to_nearest_supply_m": 9794.3,
       "within_500m": false,
       "od_death_rate_per_100k": 26.7,
       "totpop": 3609
     },
     {
       "geoid": "48113014207",
-      "dist_centroid_to_nearest_supply_m": 413.8,
-      "within_500m": true,
+      "dist_centroid_to_nearest_supply_m": 6156.8,
+      "within_500m": false,
       "od_death_rate_per_100k": 12.4,
       "totpop": 1755
     },
     {
       "geoid": "48113017005",
-      "dist_centroid_to_nearest_supply_m": 9948.0,
+      "dist_centroid_to_nearest_supply_m": 12879.7,
       "within_500m": false,
       "od_death_rate_per_100k": 23.1,
       "totpop": 5403
     },
     {
       "geoid": "48113017009",
-      "dist_centroid_to_nearest_supply_m": 8803.7,
+      "dist_centroid_to_nearest_supply_m": 9780.8,
       "within_500m": false,
       "od_death_rate_per_100k": 20.4,
       "totpop": 4912
     },
     {
       "geoid": "48113017007",
-      "dist_centroid_to_nearest_supply_m": 10857.1,
+      "dist_centroid_to_nearest_supply_m": 12236.0,
       "within_500m": false,
       "od_death_rate_per_100k": 23.1,
       "totpop": 5911
@@ -2040,7 +2040,7 @@
     },
     {
       "geoid": "48113017817",
-      "dist_centroid_to_nearest_supply_m": 972.7,
+      "dist_centroid_to_nearest_supply_m": 4152.2,
       "within_500m": false,
       "od_death_rate_per_100k": 41.0,
       "totpop": 3011
@@ -2061,21 +2061,21 @@
     },
     {
       "geoid": "48113018154",
-      "dist_centroid_to_nearest_supply_m": 9458.7,
+      "dist_centroid_to_nearest_supply_m": 14458.7,
       "within_500m": false,
       "od_death_rate_per_100k": 10.0,
       "totpop": 4830
     },
     {
       "geoid": "48113018157",
-      "dist_centroid_to_nearest_supply_m": 5818.9,
+      "dist_centroid_to_nearest_supply_m": 10196.0,
       "within_500m": false,
       "od_death_rate_per_100k": 15.9,
       "totpop": 4197
     },
     {
       "geoid": "48113018300",
-      "dist_centroid_to_nearest_supply_m": 2679.4,
+      "dist_centroid_to_nearest_supply_m": 2929.9,
       "within_500m": false,
       "od_death_rate_per_100k": 19.5,
       "totpop": 7079
@@ -2103,28 +2103,28 @@
     },
     {
       "geoid": "48113018600",
-      "dist_centroid_to_nearest_supply_m": 2747.5,
+      "dist_centroid_to_nearest_supply_m": 2952.4,
       "within_500m": false,
       "od_death_rate_per_100k": 21.0,
       "totpop": 3925
     },
     {
       "geoid": "48113018700",
-      "dist_centroid_to_nearest_supply_m": 1210.3,
+      "dist_centroid_to_nearest_supply_m": 4022.7,
       "within_500m": false,
       "od_death_rate_per_100k": 21.0,
       "totpop": 7107
     },
     {
       "geoid": "48113018143",
-      "dist_centroid_to_nearest_supply_m": 9093.4,
+      "dist_centroid_to_nearest_supply_m": 11811.1,
       "within_500m": false,
       "od_death_rate_per_100k": 10.0,
       "totpop": 6465
     },
     {
       "geoid": "48113019101",
-      "dist_centroid_to_nearest_supply_m": 4532.7,
+      "dist_centroid_to_nearest_supply_m": 9160.1,
       "within_500m": false,
       "od_death_rate_per_100k": 12.6,
       "totpop": 1157
@@ -2145,7 +2145,7 @@
     },
     {
       "geoid": "48113017818",
-      "dist_centroid_to_nearest_supply_m": 1502.5,
+      "dist_centroid_to_nearest_supply_m": 3265.0,
       "within_500m": false,
       "od_death_rate_per_100k": 41.0,
       "totpop": 3639
@@ -2159,28 +2159,28 @@
     },
     {
       "geoid": "48113016710",
-      "dist_centroid_to_nearest_supply_m": 4375.8,
+      "dist_centroid_to_nearest_supply_m": 7490.6,
       "within_500m": false,
       "od_death_rate_per_100k": 25.2,
       "totpop": 5573
     },
     {
       "geoid": "48113008401",
-      "dist_centroid_to_nearest_supply_m": 4466.2,
+      "dist_centroid_to_nearest_supply_m": 5356.2,
       "within_500m": false,
       "od_death_rate_per_100k": -999.0,
       "totpop": 5200
     },
     {
       "geoid": "48113018148",
-      "dist_centroid_to_nearest_supply_m": 548.5,
+      "dist_centroid_to_nearest_supply_m": 2339.9,
       "within_500m": false,
       "od_death_rate_per_100k": 15.2,
       "totpop": 5085
     },
     {
       "geoid": "48113018156",
-      "dist_centroid_to_nearest_supply_m": 4442.4,
+      "dist_centroid_to_nearest_supply_m": 7832.0,
       "within_500m": false,
       "od_death_rate_per_100k": 16.6,
       "totpop": 5481
@@ -2194,21 +2194,21 @@
     },
     {
       "geoid": "48113018153",
-      "dist_centroid_to_nearest_supply_m": 7268.8,
+      "dist_centroid_to_nearest_supply_m": 12206.1,
       "within_500m": false,
       "od_death_rate_per_100k": 9.5,
       "totpop": 7511
     },
     {
       "geoid": "48113011202",
-      "dist_centroid_to_nearest_supply_m": 1231.2,
+      "dist_centroid_to_nearest_supply_m": 4015.3,
       "within_500m": false,
       "od_death_rate_per_100k": 25.9,
       "totpop": 2381
     },
     {
       "geoid": "48113009001",
-      "dist_centroid_to_nearest_supply_m": 4390.3,
+      "dist_centroid_to_nearest_supply_m": 5143.9,
       "within_500m": false,
       "od_death_rate_per_100k": -999.0,
       "totpop": 5791
@@ -2222,56 +2222,56 @@
     },
     {
       "geoid": "48113007834",
-      "dist_centroid_to_nearest_supply_m": 949.6,
+      "dist_centroid_to_nearest_supply_m": 5193.8,
       "within_500m": false,
       "od_death_rate_per_100k": 13.0,
       "totpop": 2416
     },
     {
       "geoid": "48113007835",
-      "dist_centroid_to_nearest_supply_m": 1411.4,
+      "dist_centroid_to_nearest_supply_m": 5208.3,
       "within_500m": false,
       "od_death_rate_per_100k": 13.0,
       "totpop": 2661
     },
     {
       "geoid": "48113017819",
-      "dist_centroid_to_nearest_supply_m": 2004.5,
+      "dist_centroid_to_nearest_supply_m": 3149.6,
       "within_500m": false,
       "od_death_rate_per_100k": 41.0,
       "totpop": 2124
     },
     {
       "geoid": "48113018159",
-      "dist_centroid_to_nearest_supply_m": 3577.8,
+      "dist_centroid_to_nearest_supply_m": 3589.3,
       "within_500m": false,
       "od_death_rate_per_100k": -999.0,
       "totpop": 5322
     },
     {
       "geoid": "48113009203",
-      "dist_centroid_to_nearest_supply_m": 2569.5,
+      "dist_centroid_to_nearest_supply_m": 6506.8,
       "within_500m": false,
       "od_death_rate_per_100k": 20.4,
       "totpop": 4409
     },
     {
       "geoid": "48113009002",
-      "dist_centroid_to_nearest_supply_m": 3210.0,
+      "dist_centroid_to_nearest_supply_m": 5647.2,
       "within_500m": false,
       "od_death_rate_per_100k": -999.0,
       "totpop": 4556
     },
     {
       "geoid": "48113019102",
-      "dist_centroid_to_nearest_supply_m": 4406.7,
+      "dist_centroid_to_nearest_supply_m": 9056.1,
       "within_500m": false,
       "od_death_rate_per_100k": 12.6,
       "totpop": 4570
     },
     {
       "geoid": "48113007833",
-      "dist_centroid_to_nearest_supply_m": 5425.5,
+      "dist_centroid_to_nearest_supply_m": 7067.0,
       "within_500m": false,
       "od_death_rate_per_100k": 13.8,
       "totpop": 2887
@@ -2285,14 +2285,14 @@
     },
     {
       "geoid": "48113012102",
-      "dist_centroid_to_nearest_supply_m": 4219.0,
+      "dist_centroid_to_nearest_supply_m": 4537.8,
       "within_500m": false,
       "od_death_rate_per_100k": -999.0,
       "totpop": 3184
     },
     {
       "geoid": "48113016805",
-      "dist_centroid_to_nearest_supply_m": 9283.7,
+      "dist_centroid_to_nearest_supply_m": 9920.3,
       "within_500m": false,
       "od_death_rate_per_100k": 20.3,
       "totpop": 4285
@@ -2306,28 +2306,28 @@
     },
     {
       "geoid": "48113011604",
-      "dist_centroid_to_nearest_supply_m": 5102.1,
+      "dist_centroid_to_nearest_supply_m": 9604.5,
       "within_500m": false,
       "od_death_rate_per_100k": 26.7,
       "totpop": 3686
     },
     {
       "geoid": "48113018145",
-      "dist_centroid_to_nearest_supply_m": 4122.8,
+      "dist_centroid_to_nearest_supply_m": 4144.3,
       "within_500m": false,
       "od_death_rate_per_100k": 20.9,
       "totpop": 5195
     },
     {
       "geoid": "48113018149",
-      "dist_centroid_to_nearest_supply_m": 9115.8,
+      "dist_centroid_to_nearest_supply_m": 9149.8,
       "within_500m": false,
       "od_death_rate_per_100k": 17.1,
       "totpop": 3329
     },
     {
       "geoid": "48113017010",
-      "dist_centroid_to_nearest_supply_m": 8429.8,
+      "dist_centroid_to_nearest_supply_m": 10320.2,
       "within_500m": false,
       "od_death_rate_per_100k": 20.4,
       "totpop": 5813
@@ -2341,21 +2341,21 @@
     },
     {
       "geoid": "48113018801",
-      "dist_centroid_to_nearest_supply_m": 2143.7,
+      "dist_centroid_to_nearest_supply_m": 6123.2,
       "within_500m": false,
       "od_death_rate_per_100k": 15.9,
       "totpop": 4574
     },
     {
       "geoid": "48113018802",
-      "dist_centroid_to_nearest_supply_m": 1318.6,
+      "dist_centroid_to_nearest_supply_m": 4861.8,
       "within_500m": false,
       "od_death_rate_per_100k": 21.0,
       "totpop": 1710
     },
     {
       "geoid": "48113018900",
-      "dist_centroid_to_nearest_supply_m": 3082.2,
+      "dist_centroid_to_nearest_supply_m": 4840.9,
       "within_500m": false,
       "od_death_rate_per_100k": 19.4,
       "totpop": 5803
@@ -2369,63 +2369,63 @@
     },
     {
       "geoid": "48113019016",
-      "dist_centroid_to_nearest_supply_m": 2449.8,
+      "dist_centroid_to_nearest_supply_m": 7888.9,
       "within_500m": false,
       "od_death_rate_per_100k": 23.0,
       "totpop": 2600
     },
     {
       "geoid": "48113019020",
-      "dist_centroid_to_nearest_supply_m": 5281.5,
+      "dist_centroid_to_nearest_supply_m": 6588.3,
       "within_500m": false,
       "od_death_rate_per_100k": 17.3,
       "totpop": 7396
     },
     {
       "geoid": "48113019023",
-      "dist_centroid_to_nearest_supply_m": 5491.6,
+      "dist_centroid_to_nearest_supply_m": 8407.7,
       "within_500m": false,
       "od_death_rate_per_100k": 12.0,
       "totpop": 5307
     },
     {
       "geoid": "48113019024",
-      "dist_centroid_to_nearest_supply_m": 4122.3,
+      "dist_centroid_to_nearest_supply_m": 6816.4,
       "within_500m": false,
       "od_death_rate_per_100k": 17.3,
       "totpop": 3801
     },
     {
       "geoid": "48113019025",
-      "dist_centroid_to_nearest_supply_m": 4379.3,
+      "dist_centroid_to_nearest_supply_m": 8528.1,
       "within_500m": false,
       "od_death_rate_per_100k": 15.9,
       "totpop": 4369
     },
     {
       "geoid": "48113019026",
-      "dist_centroid_to_nearest_supply_m": 3590.4,
+      "dist_centroid_to_nearest_supply_m": 7291.2,
       "within_500m": false,
       "od_death_rate_per_100k": 15.9,
       "totpop": 5550
     },
     {
       "geoid": "48113019027",
-      "dist_centroid_to_nearest_supply_m": 5871.5,
+      "dist_centroid_to_nearest_supply_m": 8995.0,
       "within_500m": false,
       "od_death_rate_per_100k": 9.9,
       "totpop": 7261
     },
     {
       "geoid": "48113019028",
-      "dist_centroid_to_nearest_supply_m": 6639.6,
+      "dist_centroid_to_nearest_supply_m": 8599.3,
       "within_500m": false,
       "od_death_rate_per_100k": 12.0,
       "totpop": 3733
     },
     {
       "geoid": "48113021100",
-      "dist_centroid_to_nearest_supply_m": 3265.7,
+      "dist_centroid_to_nearest_supply_m": 3336.6,
       "within_500m": false,
       "od_death_rate_per_100k": 35.1,
       "totpop": 4652
@@ -2446,28 +2446,28 @@
     },
     {
       "geoid": "48113011901",
-      "dist_centroid_to_nearest_supply_m": 1123.3,
+      "dist_centroid_to_nearest_supply_m": 4894.6,
       "within_500m": false,
       "od_death_rate_per_100k": 20.4,
       "totpop": 3939
     },
     {
       "geoid": "48113011902",
-      "dist_centroid_to_nearest_supply_m": 1024.1,
+      "dist_centroid_to_nearest_supply_m": 3859.2,
       "within_500m": false,
       "od_death_rate_per_100k": 20.4,
       "totpop": 4415
     },
     {
       "geoid": "48113009204",
-      "dist_centroid_to_nearest_supply_m": 2601.1,
+      "dist_centroid_to_nearest_supply_m": 5943.5,
       "within_500m": false,
       "od_death_rate_per_100k": 20.4,
       "totpop": 2545
     },
     {
       "geoid": "48113011802",
-      "dist_centroid_to_nearest_supply_m": 1269.0,
+      "dist_centroid_to_nearest_supply_m": 6137.8,
       "within_500m": false,
       "od_death_rate_per_100k": 26.6,
       "totpop": 4548
@@ -2488,49 +2488,49 @@
     },
     {
       "geoid": "48113011801",
-      "dist_centroid_to_nearest_supply_m": 1044.1,
+      "dist_centroid_to_nearest_supply_m": 5239.7,
       "within_500m": false,
       "od_death_rate_per_100k": 23.8,
       "totpop": 4970
     },
     {
       "geoid": "48113001601",
-      "dist_centroid_to_nearest_supply_m": 1165.1,
+      "dist_centroid_to_nearest_supply_m": 1166.5,
       "within_500m": false,
       "od_death_rate_per_100k": 25.7,
       "totpop": 2440
     },
     {
       "geoid": "48113007828",
-      "dist_centroid_to_nearest_supply_m": 3031.7,
+      "dist_centroid_to_nearest_supply_m": 8254.5,
       "within_500m": false,
       "od_death_rate_per_100k": 23.0,
       "totpop": 4912
     },
     {
       "geoid": "48113013013",
-      "dist_centroid_to_nearest_supply_m": 4493.9,
+      "dist_centroid_to_nearest_supply_m": 4983.1,
       "within_500m": false,
       "od_death_rate_per_100k": 15.6,
       "totpop": 4380
     },
     {
       "geoid": "48113002703",
-      "dist_centroid_to_nearest_supply_m": 2212.6,
+      "dist_centroid_to_nearest_supply_m": 2261.6,
       "within_500m": false,
       "od_death_rate_per_100k": 58.8,
       "totpop": 5828
     },
     {
       "geoid": "48113020900",
-      "dist_centroid_to_nearest_supply_m": 1761.0,
+      "dist_centroid_to_nearest_supply_m": 2044.7,
       "within_500m": false,
       "od_death_rate_per_100k": 35.4,
       "totpop": 2209
     },
     {
       "geoid": "48113018147",
-      "dist_centroid_to_nearest_supply_m": 1959.7,
+      "dist_centroid_to_nearest_supply_m": 3027.2,
       "within_500m": false,
       "od_death_rate_per_100k": 15.4,
       "totpop": 5052
@@ -2551,7 +2551,7 @@
     },
     {
       "geoid": "48113017203",
-      "dist_centroid_to_nearest_supply_m": 3654.4,
+      "dist_centroid_to_nearest_supply_m": 3976.3,
       "within_500m": false,
       "od_death_rate_per_100k": 23.8,
       "totpop": 5545
@@ -2572,7 +2572,7 @@
     },
     {
       "geoid": "48113017006",
-      "dist_centroid_to_nearest_supply_m": 16419.9,
+      "dist_centroid_to_nearest_supply_m": 18791.1,
       "within_500m": false,
       "od_death_rate_per_100k": 23.1,
       "totpop": 6086
@@ -2593,7 +2593,7 @@
     },
     {
       "geoid": "48113016806",
-      "dist_centroid_to_nearest_supply_m": 9312.9,
+      "dist_centroid_to_nearest_supply_m": 10953.8,
       "within_500m": false,
       "od_death_rate_per_100k": 20.3,
       "totpop": 5736
@@ -2607,21 +2607,21 @@
     },
     {
       "geoid": "48113020402",
-      "dist_centroid_to_nearest_supply_m": 1697.5,
+      "dist_centroid_to_nearest_supply_m": 1700.8,
       "within_500m": false,
       "od_death_rate_per_100k": 23.5,
       "totpop": 6288
     },
     {
       "geoid": "48113017204",
-      "dist_centroid_to_nearest_supply_m": 4131.0,
+      "dist_centroid_to_nearest_supply_m": 6605.8,
       "within_500m": false,
       "od_death_rate_per_100k": 18.6,
       "totpop": 5043
     },
     {
       "geoid": "48113017315",
-      "dist_centroid_to_nearest_supply_m": 5418.4,
+      "dist_centroid_to_nearest_supply_m": 6625.1,
       "within_500m": false,
       "od_death_rate_per_100k": 18.6,
       "totpop": 6545
@@ -2635,98 +2635,98 @@
     },
     {
       "geoid": "48113017008",
-      "dist_centroid_to_nearest_supply_m": 11890.3,
+      "dist_centroid_to_nearest_supply_m": 12353.6,
       "within_500m": false,
       "od_death_rate_per_100k": 20.4,
       "totpop": 5958
     },
     {
       "geoid": "48113018155",
-      "dist_centroid_to_nearest_supply_m": 9984.9,
+      "dist_centroid_to_nearest_supply_m": 13895.2,
       "within_500m": false,
       "od_death_rate_per_100k": 10.0,
       "totpop": 5513
     },
     {
       "geoid": "48113017815",
-      "dist_centroid_to_nearest_supply_m": 2246.1,
+      "dist_centroid_to_nearest_supply_m": 3210.4,
       "within_500m": false,
       "od_death_rate_per_100k": 41.0,
       "totpop": 3415
     },
     {
       "geoid": "48113016709",
-      "dist_centroid_to_nearest_supply_m": 6119.3,
+      "dist_centroid_to_nearest_supply_m": 9451.9,
       "within_500m": false,
       "od_death_rate_per_100k": 21.4,
       "totpop": 3633
     },
     {
       "geoid": "48113019029",
-      "dist_centroid_to_nearest_supply_m": 5795.4,
+      "dist_centroid_to_nearest_supply_m": 7731.9,
       "within_500m": false,
       "od_death_rate_per_100k": 12.0,
       "totpop": 5836
     },
     {
       "geoid": "48113019031",
-      "dist_centroid_to_nearest_supply_m": 8244.8,
+      "dist_centroid_to_nearest_supply_m": 10551.1,
       "within_500m": false,
       "od_death_rate_per_100k": 12.6,
       "totpop": 5192
     },
     {
       "geoid": "48113019034",
-      "dist_centroid_to_nearest_supply_m": 1440.5,
+      "dist_centroid_to_nearest_supply_m": 6841.3,
       "within_500m": false,
       "od_death_rate_per_100k": 17.5,
       "totpop": 4645
     },
     {
       "geoid": "48113019035",
-      "dist_centroid_to_nearest_supply_m": 742.7,
+      "dist_centroid_to_nearest_supply_m": 6204.5,
       "within_500m": false,
       "od_death_rate_per_100k": 0.0,
       "totpop": 6383
     },
     {
       "geoid": "48113019036",
-      "dist_centroid_to_nearest_supply_m": 7994.4,
+      "dist_centroid_to_nearest_supply_m": 11118.2,
       "within_500m": false,
       "od_death_rate_per_100k": 12.6,
       "totpop": 2598
     },
     {
       "geoid": "48113019037",
-      "dist_centroid_to_nearest_supply_m": 6826.4,
+      "dist_centroid_to_nearest_supply_m": 9791.0,
       "within_500m": false,
       "od_death_rate_per_100k": 12.6,
       "totpop": 3117
     },
     {
       "geoid": "48113019202",
-      "dist_centroid_to_nearest_supply_m": 4895.4,
+      "dist_centroid_to_nearest_supply_m": 7854.5,
       "within_500m": false,
       "od_death_rate_per_100k": 12.6,
       "totpop": 4976
     },
     {
       "geoid": "48113019203",
-      "dist_centroid_to_nearest_supply_m": 5772.3,
+      "dist_centroid_to_nearest_supply_m": 8230.3,
       "within_500m": false,
       "od_death_rate_per_100k": 12.6,
       "totpop": 3826
     },
     {
       "geoid": "48113017101",
-      "dist_centroid_to_nearest_supply_m": 6100.1,
+      "dist_centroid_to_nearest_supply_m": 8501.3,
       "within_500m": false,
       "od_death_rate_per_100k": 18.6,
       "totpop": 6973
     },
     {
       "geoid": "48113017201",
-      "dist_centroid_to_nearest_supply_m": 2301.0,
+      "dist_centroid_to_nearest_supply_m": 4979.3,
       "within_500m": false,
       "od_death_rate_per_100k": 23.8,
       "totpop": 6065
@@ -2740,7 +2740,7 @@
     },
     {
       "geoid": "48113019208",
-      "dist_centroid_to_nearest_supply_m": 5017.2,
+      "dist_centroid_to_nearest_supply_m": 6640.3,
       "within_500m": false,
       "od_death_rate_per_100k": 24.6,
       "totpop": 5764
@@ -2789,28 +2789,28 @@
     },
     {
       "geoid": "48113019210",
-      "dist_centroid_to_nearest_supply_m": 8016.0,
+      "dist_centroid_to_nearest_supply_m": 10128.3,
       "within_500m": false,
       "od_death_rate_per_100k": 11.7,
       "totpop": 4639
     },
     {
       "geoid": "48113019211",
-      "dist_centroid_to_nearest_supply_m": 6799.9,
+      "dist_centroid_to_nearest_supply_m": 9491.4,
       "within_500m": false,
       "od_death_rate_per_100k": 11.7,
       "totpop": 5777
     },
     {
       "geoid": "48113019301",
-      "dist_centroid_to_nearest_supply_m": 5757.1,
+      "dist_centroid_to_nearest_supply_m": 5756.1,
       "within_500m": false,
       "od_death_rate_per_100k": 12.8,
       "totpop": 3403
     },
     {
       "geoid": "48113019400",
-      "dist_centroid_to_nearest_supply_m": 4493.9,
+      "dist_centroid_to_nearest_supply_m": 4498.1,
       "within_500m": false,
       "od_death_rate_per_100k": 0.0,
       "totpop": 4454
@@ -2824,14 +2824,14 @@
     },
     {
       "geoid": "48113017811",
-      "dist_centroid_to_nearest_supply_m": 1042.0,
+      "dist_centroid_to_nearest_supply_m": 2384.7,
       "within_500m": false,
       "od_death_rate_per_100k": 41.0,
       "totpop": 5086
     },
     {
       "geoid": "48113017812",
-      "dist_centroid_to_nearest_supply_m": 1115.9,
+      "dist_centroid_to_nearest_supply_m": 3502.2,
       "within_500m": false,
       "od_death_rate_per_100k": 41.0,
       "totpop": 2263
@@ -2845,7 +2845,7 @@
     },
     {
       "geoid": "48113017814",
-      "dist_centroid_to_nearest_supply_m": 1242.8,
+      "dist_centroid_to_nearest_supply_m": 3856.4,
       "within_500m": false,
       "od_death_rate_per_100k": 41.0,
       "totpop": 4880
@@ -2866,14 +2866,14 @@
     },
     {
       "geoid": "48113019600",
-      "dist_centroid_to_nearest_supply_m": 3117.1,
+      "dist_centroid_to_nearest_supply_m": 3116.4,
       "within_500m": false,
       "od_death_rate_per_100k": 14.3,
       "totpop": 2419
     },
     {
       "geoid": "48113019700",
-      "dist_centroid_to_nearest_supply_m": 2805.9,
+      "dist_centroid_to_nearest_supply_m": 2814.7,
       "within_500m": false,
       "od_death_rate_per_100k": 14.3,
       "totpop": 1567
@@ -2971,77 +2971,77 @@
     },
     {
       "geoid": "48113018142",
-      "dist_centroid_to_nearest_supply_m": 2230.5,
+      "dist_centroid_to_nearest_supply_m": 2295.9,
       "within_500m": false,
       "od_death_rate_per_100k": 15.3,
       "totpop": 4289
     },
     {
       "geoid": "48113018141",
-      "dist_centroid_to_nearest_supply_m": 3439.2,
+      "dist_centroid_to_nearest_supply_m": 3500.1,
       "within_500m": false,
       "od_death_rate_per_100k": 15.3,
       "totpop": 3072
     },
     {
       "geoid": "48113018137",
-      "dist_centroid_to_nearest_supply_m": 2199.6,
+      "dist_centroid_to_nearest_supply_m": 2231.3,
       "within_500m": false,
       "od_death_rate_per_100k": 15.3,
       "totpop": 4837
     },
     {
       "geoid": "48113018138",
-      "dist_centroid_to_nearest_supply_m": 1608.2,
+      "dist_centroid_to_nearest_supply_m": 1552.2,
       "within_500m": false,
       "od_death_rate_per_100k": 16.3,
       "totpop": 5045
     },
     {
       "geoid": "48113018140",
-      "dist_centroid_to_nearest_supply_m": 6567.2,
+      "dist_centroid_to_nearest_supply_m": 8287.2,
       "within_500m": false,
       "od_death_rate_per_100k": 16.6,
       "totpop": 6192
     },
     {
       "geoid": "48113019042",
-      "dist_centroid_to_nearest_supply_m": 7879.8,
+      "dist_centroid_to_nearest_supply_m": 10824.5,
       "within_500m": false,
       "od_death_rate_per_100k": 9.9,
       "totpop": 7660
     },
     {
       "geoid": "48113019050",
-      "dist_centroid_to_nearest_supply_m": 7005.5,
+      "dist_centroid_to_nearest_supply_m": 10840.4,
       "within_500m": false,
       "od_death_rate_per_100k": 9.9,
       "totpop": 3071
     },
     {
       "geoid": "48113019052",
-      "dist_centroid_to_nearest_supply_m": 7943.6,
+      "dist_centroid_to_nearest_supply_m": 11692.9,
       "within_500m": false,
       "od_death_rate_per_100k": 11.7,
       "totpop": 1009
     },
     {
       "geoid": "48113019053",
-      "dist_centroid_to_nearest_supply_m": 6485.9,
+      "dist_centroid_to_nearest_supply_m": 10449.5,
       "within_500m": false,
       "od_death_rate_per_100k": 11.7,
       "totpop": 1517
     },
     {
       "geoid": "48113019039",
-      "dist_centroid_to_nearest_supply_m": 4268.0,
+      "dist_centroid_to_nearest_supply_m": 8177.3,
       "within_500m": false,
       "od_death_rate_per_100k": 14.1,
       "totpop": 5895
     },
     {
       "geoid": "48113019213",
-      "dist_centroid_to_nearest_supply_m": 4508.5,
+      "dist_centroid_to_nearest_supply_m": 7432.4,
       "within_500m": false,
       "od_death_rate_per_100k": 17.5,
       "totpop": 3464
@@ -3076,21 +3076,21 @@
     },
     {
       "geoid": "48113001703",
-      "dist_centroid_to_nearest_supply_m": 1760.4,
+      "dist_centroid_to_nearest_supply_m": 1836.6,
       "within_500m": false,
       "od_death_rate_per_100k": 22.2,
       "totpop": 3129
     },
     {
       "geoid": "48113019212",
-      "dist_centroid_to_nearest_supply_m": 4731.4,
+      "dist_centroid_to_nearest_supply_m": 7038.4,
       "within_500m": false,
       "od_death_rate_per_100k": 17.5,
       "totpop": 3129
     },
     {
       "geoid": "48113020300",
-      "dist_centroid_to_nearest_supply_m": 344.7,
+      "dist_centroid_to_nearest_supply_m": 350.2,
       "within_500m": true,
       "od_death_rate_per_100k": 58.8,
       "totpop": 2271
@@ -3104,7 +3104,7 @@
     },
     {
       "geoid": "48113020600",
-      "dist_centroid_to_nearest_supply_m": 6353.8,
+      "dist_centroid_to_nearest_supply_m": 6654.3,
       "within_500m": false,
       "od_death_rate_per_100k": 18.7,
       "totpop": 2024
@@ -3125,7 +3125,7 @@
     },
     {
       "geoid": "48113012302",
-      "dist_centroid_to_nearest_supply_m": 671.6,
+      "dist_centroid_to_nearest_supply_m": 1026.1,
       "within_500m": false,
       "od_death_rate_per_100k": 28.4,
       "totpop": 8814
@@ -3209,7 +3209,7 @@
     },
     {
       "geoid": "48113020200",
-      "dist_centroid_to_nearest_supply_m": 3439.1,
+      "dist_centroid_to_nearest_supply_m": 7821.8,
       "within_500m": false,
       "od_death_rate_per_100k": 27.4,
       "totpop": 4385
@@ -3237,21 +3237,21 @@
     },
     {
       "geoid": "48113000606",
-      "dist_centroid_to_nearest_supply_m": 1097.2,
+      "dist_centroid_to_nearest_supply_m": 1139.0,
       "within_500m": false,
       "od_death_rate_per_100k": 16.7,
       "totpop": 3095
     },
     {
       "geoid": "48113016803",
-      "dist_centroid_to_nearest_supply_m": 10195.2,
+      "dist_centroid_to_nearest_supply_m": 12719.1,
       "within_500m": false,
       "od_death_rate_per_100k": 18.9,
       "totpop": 5873
     },
     {
       "geoid": "48113007812",
-      "dist_centroid_to_nearest_supply_m": 3386.1,
+      "dist_centroid_to_nearest_supply_m": 6972.4,
       "within_500m": false,
       "od_death_rate_per_100k": 14.7,
       "totpop": 2780
@@ -3279,21 +3279,21 @@
     },
     {
       "geoid": "48113017604",
-      "dist_centroid_to_nearest_supply_m": 2837.6,
+      "dist_centroid_to_nearest_supply_m": 3107.1,
       "within_500m": false,
       "od_death_rate_per_100k": 23.8,
       "totpop": 3602
     },
     {
       "geoid": "48113007809",
-      "dist_centroid_to_nearest_supply_m": 5817.6,
+      "dist_centroid_to_nearest_supply_m": 6602.4,
       "within_500m": false,
       "od_death_rate_per_100k": 17.5,
       "totpop": 3138
     },
     {
       "geoid": "48113019033",
-      "dist_centroid_to_nearest_supply_m": 2582.4,
+      "dist_centroid_to_nearest_supply_m": 4173.1,
       "within_500m": false,
       "od_death_rate_per_100k": 15.9,
       "totpop": 4272
@@ -3307,7 +3307,7 @@
     },
     {
       "geoid": "48113009900",
-      "dist_centroid_to_nearest_supply_m": 3801.5,
+      "dist_centroid_to_nearest_supply_m": 4463.5,
       "within_500m": false,
       "od_death_rate_per_100k": 22.1,
       "totpop": 6024
@@ -3328,21 +3328,21 @@
     },
     {
       "geoid": "48113018132",
-      "dist_centroid_to_nearest_supply_m": 1275.1,
+      "dist_centroid_to_nearest_supply_m": 1215.6,
       "within_500m": false,
       "od_death_rate_per_100k": 16.3,
       "totpop": 6268
     },
     {
       "geoid": "48113009103",
-      "dist_centroid_to_nearest_supply_m": 4924.9,
+      "dist_centroid_to_nearest_supply_m": 6743.1,
       "within_500m": false,
       "od_death_rate_per_100k": 26.4,
       "totpop": 3538
     },
     {
       "geoid": "48113001504",
-      "dist_centroid_to_nearest_supply_m": 611.1,
+      "dist_centroid_to_nearest_supply_m": 611.3,
       "within_500m": false,
       "od_death_rate_per_100k": 25.7,
       "totpop": 2713
@@ -3405,42 +3405,42 @@
     },
     {
       "geoid": "48113019032",
-      "dist_centroid_to_nearest_supply_m": 2824.2,
+      "dist_centroid_to_nearest_supply_m": 4938.6,
       "within_500m": false,
       "od_death_rate_per_100k": 15.9,
       "totpop": 4824
     },
     {
       "geoid": "48113000100",
-      "dist_centroid_to_nearest_supply_m": 3498.6,
+      "dist_centroid_to_nearest_supply_m": 4054.6,
       "within_500m": false,
       "od_death_rate_per_100k": 51.6,
       "totpop": 3994
     },
     {
       "geoid": "48113000201",
-      "dist_centroid_to_nearest_supply_m": 3684.6,
+      "dist_centroid_to_nearest_supply_m": 3683.2,
       "within_500m": false,
       "od_death_rate_per_100k": -999.0,
       "totpop": 2872
     },
     {
       "geoid": "48113000202",
-      "dist_centroid_to_nearest_supply_m": 3241.7,
+      "dist_centroid_to_nearest_supply_m": 3240.3,
       "within_500m": false,
       "od_death_rate_per_100k": -999.0,
       "totpop": 3817
     },
     {
       "geoid": "48113000300",
-      "dist_centroid_to_nearest_supply_m": 2847.7,
+      "dist_centroid_to_nearest_supply_m": 2846.6,
       "within_500m": false,
       "od_death_rate_per_100k": 14.3,
       "totpop": 4325
     },
     {
       "geoid": "48113000401",
-      "dist_centroid_to_nearest_supply_m": 1246.9,
+      "dist_centroid_to_nearest_supply_m": 1301.1,
       "within_500m": false,
       "od_death_rate_per_100k": 21.6,
       "totpop": 4649
@@ -3454,77 +3454,77 @@
     },
     {
       "geoid": "48113001001",
-      "dist_centroid_to_nearest_supply_m": 1851.2,
+      "dist_centroid_to_nearest_supply_m": 1850.0,
       "within_500m": false,
       "od_death_rate_per_100k": 16.1,
       "totpop": 1454
     },
     {
       "geoid": "48113001002",
-      "dist_centroid_to_nearest_supply_m": 1245.5,
+      "dist_centroid_to_nearest_supply_m": 1244.2,
       "within_500m": false,
       "od_death_rate_per_100k": 16.1,
       "totpop": 2106
     },
     {
       "geoid": "48113001102",
-      "dist_centroid_to_nearest_supply_m": 2435.6,
+      "dist_centroid_to_nearest_supply_m": 2434.1,
       "within_500m": false,
       "od_death_rate_per_100k": -999.0,
       "totpop": 2615
     },
     {
       "geoid": "48113001204",
-      "dist_centroid_to_nearest_supply_m": 1555.1,
+      "dist_centroid_to_nearest_supply_m": 2841.8,
       "within_500m": false,
       "od_death_rate_per_100k": 51.6,
       "totpop": 2095
     },
     {
       "geoid": "48113001301",
-      "dist_centroid_to_nearest_supply_m": 1656.6,
+      "dist_centroid_to_nearest_supply_m": 2363.7,
       "within_500m": false,
       "od_death_rate_per_100k": 51.6,
       "totpop": 2626
     },
     {
       "geoid": "48113001302",
-      "dist_centroid_to_nearest_supply_m": 627.0,
+      "dist_centroid_to_nearest_supply_m": 1488.6,
       "within_500m": false,
       "od_death_rate_per_100k": 51.6,
       "totpop": 2790
     },
     {
       "geoid": "48113001400",
-      "dist_centroid_to_nearest_supply_m": 1445.8,
+      "dist_centroid_to_nearest_supply_m": 1557.1,
       "within_500m": false,
       "od_death_rate_per_100k": 51.6,
       "totpop": 3161
     },
     {
       "geoid": "48113001101",
-      "dist_centroid_to_nearest_supply_m": 1669.1,
+      "dist_centroid_to_nearest_supply_m": 1667.6,
       "within_500m": false,
       "od_death_rate_per_100k": -999.0,
       "totpop": 3597
     },
     {
       "geoid": "48113001502",
-      "dist_centroid_to_nearest_supply_m": 472.2,
-      "within_500m": true,
+      "dist_centroid_to_nearest_supply_m": 1468.2,
+      "within_500m": false,
       "od_death_rate_per_100k": 51.6,
       "totpop": 2668
     },
     {
       "geoid": "48113001503",
-      "dist_centroid_to_nearest_supply_m": 202.8,
+      "dist_centroid_to_nearest_supply_m": 203.3,
       "within_500m": true,
       "od_death_rate_per_100k": 25.7,
       "totpop": 1545
     },
     {
       "geoid": "48113012209",
-      "dist_centroid_to_nearest_supply_m": 2171.1,
+      "dist_centroid_to_nearest_supply_m": 3592.5,
       "within_500m": false,
       "od_death_rate_per_100k": 26.2,
       "totpop": 2306
@@ -3545,28 +3545,28 @@
     },
     {
       "geoid": "48113009303",
-      "dist_centroid_to_nearest_supply_m": 4793.4,
+      "dist_centroid_to_nearest_supply_m": 6847.5,
       "within_500m": false,
       "od_death_rate_per_100k": 24.3,
       "totpop": 4164
     },
     {
       "geoid": "48113016902",
-      "dist_centroid_to_nearest_supply_m": 8092.4,
+      "dist_centroid_to_nearest_supply_m": 12353.0,
       "within_500m": false,
       "od_death_rate_per_100k": 27.4,
       "totpop": 6619
     },
     {
       "geoid": "48113011601",
-      "dist_centroid_to_nearest_supply_m": 5793.8,
+      "dist_centroid_to_nearest_supply_m": 9815.1,
       "within_500m": false,
       "od_death_rate_per_100k": 27.4,
       "totpop": 4526
     },
     {
       "geoid": "48113019302",
-      "dist_centroid_to_nearest_supply_m": 4453.8,
+      "dist_centroid_to_nearest_supply_m": 4452.8,
       "within_500m": false,
       "od_death_rate_per_100k": 12.8,
       "totpop": 5752
@@ -3587,70 +3587,70 @@
     },
     {
       "geoid": "48113007102",
-      "dist_centroid_to_nearest_supply_m": 3038.7,
+      "dist_centroid_to_nearest_supply_m": 3942.7,
       "within_500m": false,
       "od_death_rate_per_100k": 53.0,
       "totpop": 4800
     },
     {
       "geoid": "48113007301",
-      "dist_centroid_to_nearest_supply_m": 5245.9,
+      "dist_centroid_to_nearest_supply_m": 5445.6,
       "within_500m": false,
       "od_death_rate_per_100k": 14.0,
       "totpop": 1783
     },
     {
       "geoid": "48113007302",
-      "dist_centroid_to_nearest_supply_m": 4523.2,
+      "dist_centroid_to_nearest_supply_m": 4630.9,
       "within_500m": false,
       "od_death_rate_per_100k": 53.0,
       "totpop": 3973
     },
     {
       "geoid": "48113003700",
-      "dist_centroid_to_nearest_supply_m": 1023.5,
+      "dist_centroid_to_nearest_supply_m": 922.0,
       "within_500m": false,
       "od_death_rate_per_100k": 58.8,
       "totpop": 3295
     },
     {
       "geoid": "48113007810",
-      "dist_centroid_to_nearest_supply_m": 1907.0,
+      "dist_centroid_to_nearest_supply_m": 6914.2,
       "within_500m": false,
       "od_death_rate_per_100k": 0.0,
       "totpop": 4219
     },
     {
       "geoid": "48113007903",
-      "dist_centroid_to_nearest_supply_m": 5436.9,
+      "dist_centroid_to_nearest_supply_m": 5435.4,
       "within_500m": false,
       "od_death_rate_per_100k": 12.8,
       "totpop": 1958
     },
     {
       "geoid": "48113007906",
-      "dist_centroid_to_nearest_supply_m": 6187.2,
+      "dist_centroid_to_nearest_supply_m": 6186.1,
       "within_500m": false,
       "od_death_rate_per_100k": 12.8,
       "totpop": 2155
     },
     {
       "geoid": "48113016802",
-      "dist_centroid_to_nearest_supply_m": 12827.1,
+      "dist_centroid_to_nearest_supply_m": 14345.7,
       "within_500m": false,
       "od_death_rate_per_100k": 18.9,
       "totpop": 5094
     },
     {
       "geoid": "48113016704",
-      "dist_centroid_to_nearest_supply_m": 7607.3,
+      "dist_centroid_to_nearest_supply_m": 10278.0,
       "within_500m": false,
       "od_death_rate_per_100k": 21.4,
       "totpop": 4152
     },
     {
       "geoid": "48113018105",
-      "dist_centroid_to_nearest_supply_m": 1590.4,
+      "dist_centroid_to_nearest_supply_m": 6675.0,
       "within_500m": false,
       "od_death_rate_per_100k": 17.9,
       "totpop": 6033
@@ -3664,28 +3664,28 @@
     },
     {
       "geoid": "48113018110",
-      "dist_centroid_to_nearest_supply_m": 2477.7,
+      "dist_centroid_to_nearest_supply_m": 4785.4,
       "within_500m": false,
       "od_death_rate_per_100k": 15.4,
       "totpop": 5715
     },
     {
       "geoid": "48113018203",
-      "dist_centroid_to_nearest_supply_m": 2135.8,
+      "dist_centroid_to_nearest_supply_m": 6773.8,
       "within_500m": false,
       "od_death_rate_per_100k": 16.0,
       "totpop": 6263
     },
     {
       "geoid": "48113018204",
-      "dist_centroid_to_nearest_supply_m": 610.2,
+      "dist_centroid_to_nearest_supply_m": 5125.4,
       "within_500m": false,
       "od_death_rate_per_100k": 16.0,
       "totpop": 4818
     },
     {
       "geoid": "48113018206",
-      "dist_centroid_to_nearest_supply_m": 2489.6,
+      "dist_centroid_to_nearest_supply_m": 4376.8,
       "within_500m": false,
       "od_death_rate_per_100k": 15.4,
       "totpop": 4081
@@ -3699,7 +3699,7 @@
     },
     {
       "geoid": "48113008705",
-      "dist_centroid_to_nearest_supply_m": 1857.2,
+      "dist_centroid_to_nearest_supply_m": 4190.1,
       "within_500m": false,
       "od_death_rate_per_100k": 38.8,
       "totpop": 1653
@@ -3748,7 +3748,7 @@
     },
     {
       "geoid": "48113018120",
-      "dist_centroid_to_nearest_supply_m": 4386.5,
+      "dist_centroid_to_nearest_supply_m": 9587.7,
       "within_500m": false,
       "od_death_rate_per_100k": 15.9,
       "totpop": 5274
@@ -3776,21 +3776,21 @@
     },
     {
       "geoid": "48113018121",
-      "dist_centroid_to_nearest_supply_m": 2709.9,
+      "dist_centroid_to_nearest_supply_m": 7907.6,
       "within_500m": false,
       "od_death_rate_per_100k": 17.9,
       "totpop": 5060
     },
     {
       "geoid": "48113018126",
-      "dist_centroid_to_nearest_supply_m": 2538.7,
+      "dist_centroid_to_nearest_supply_m": 4054.1,
       "within_500m": false,
       "od_death_rate_per_100k": 18.8,
       "totpop": 6734
     },
     {
       "geoid": "48113018127",
-      "dist_centroid_to_nearest_supply_m": 3501.5,
+      "dist_centroid_to_nearest_supply_m": 4260.8,
       "within_500m": false,
       "od_death_rate_per_100k": 18.9,
       "totpop": 2769
@@ -3832,7 +3832,7 @@
     },
     {
       "geoid": "48113018128",
-      "dist_centroid_to_nearest_supply_m": 558.7,
+      "dist_centroid_to_nearest_supply_m": 2099.8,
       "within_500m": false,
       "od_death_rate_per_100k": 15.2,
       "totpop": 5172
@@ -3888,14 +3888,14 @@
     },
     {
       "geoid": "48113019040",
-      "dist_centroid_to_nearest_supply_m": 3155.8,
+      "dist_centroid_to_nearest_supply_m": 8551.8,
       "within_500m": false,
       "od_death_rate_per_100k": 17.5,
       "totpop": 8018
     },
     {
       "geoid": "48113018506",
-      "dist_centroid_to_nearest_supply_m": 2583.8,
+      "dist_centroid_to_nearest_supply_m": 2895.1,
       "within_500m": false,
       "od_death_rate_per_100k": 17.6,
       "totpop": 3300
@@ -3958,7 +3958,7 @@
     },
     {
       "geoid": "48113014204",
-      "dist_centroid_to_nearest_supply_m": 3722.3,
+      "dist_centroid_to_nearest_supply_m": 4364.3,
       "within_500m": false,
       "od_death_rate_per_100k": 18.7,
       "totpop": 2800
@@ -4000,7 +4000,7 @@
     },
     {
       "geoid": "48113014310",
-      "dist_centroid_to_nearest_supply_m": 3798.0,
+      "dist_centroid_to_nearest_supply_m": 4650.4,
       "within_500m": false,
       "od_death_rate_per_100k": 9.6,
       "totpop": 4760
@@ -4035,7 +4035,7 @@
     },
     {
       "geoid": "48113014309",
-      "dist_centroid_to_nearest_supply_m": 4544.2,
+      "dist_centroid_to_nearest_supply_m": 4849.5,
       "within_500m": false,
       "od_death_rate_per_100k": 9.6,
       "totpop": 6242
@@ -4077,35 +4077,35 @@
     },
     {
       "geoid": "48113013104",
-      "dist_centroid_to_nearest_supply_m": 5878.9,
+      "dist_centroid_to_nearest_supply_m": 8763.9,
       "within_500m": false,
       "od_death_rate_per_100k": 16.3,
       "totpop": 1920
     },
     {
       "geoid": "48113019041",
-      "dist_centroid_to_nearest_supply_m": 2298.3,
+      "dist_centroid_to_nearest_supply_m": 7513.0,
       "within_500m": false,
       "od_death_rate_per_100k": 17.5,
       "totpop": 2370
     },
     {
       "geoid": "48113007823",
-      "dist_centroid_to_nearest_supply_m": 4643.7,
+      "dist_centroid_to_nearest_supply_m": 8678.7,
       "within_500m": false,
       "od_death_rate_per_100k": 14.7,
       "totpop": 2695
     },
     {
       "geoid": "48113007822",
-      "dist_centroid_to_nearest_supply_m": 5654.5,
+      "dist_centroid_to_nearest_supply_m": 8181.7,
       "within_500m": false,
       "od_death_rate_per_100k": 14.7,
       "totpop": 1932
     },
     {
       "geoid": "48113007821",
-      "dist_centroid_to_nearest_supply_m": 4913.2,
+      "dist_centroid_to_nearest_supply_m": 7107.4,
       "within_500m": false,
       "od_death_rate_per_100k": 14.7,
       "totpop": 3637
@@ -4119,7 +4119,7 @@
     },
     {
       "geoid": "48113007827",
-      "dist_centroid_to_nearest_supply_m": 2878.8,
+      "dist_centroid_to_nearest_supply_m": 5445.8,
       "within_500m": false,
       "od_death_rate_per_100k": 17.6,
       "totpop": 2905
@@ -4140,49 +4140,49 @@
     },
     {
       "geoid": "48113013008",
-      "dist_centroid_to_nearest_supply_m": 2623.7,
+      "dist_centroid_to_nearest_supply_m": 4792.6,
       "within_500m": false,
       "od_death_rate_per_100k": 17.6,
       "totpop": 3046
     },
     {
       "geoid": "48113013009",
-      "dist_centroid_to_nearest_supply_m": 2508.0,
+      "dist_centroid_to_nearest_supply_m": 3827.8,
       "within_500m": false,
       "od_death_rate_per_100k": 17.6,
       "totpop": 4804
     },
     {
       "geoid": "48113013101",
-      "dist_centroid_to_nearest_supply_m": 5664.8,
+      "dist_centroid_to_nearest_supply_m": 7462.0,
       "within_500m": false,
       "od_death_rate_per_100k": 16.3,
       "totpop": 2828
     },
     {
       "geoid": "48113007826",
-      "dist_centroid_to_nearest_supply_m": 4451.1,
+      "dist_centroid_to_nearest_supply_m": 5773.3,
       "within_500m": false,
       "od_death_rate_per_100k": 14.7,
       "totpop": 1340
     },
     {
       "geoid": "48113007824",
-      "dist_centroid_to_nearest_supply_m": 3920.2,
+      "dist_centroid_to_nearest_supply_m": 6082.6,
       "within_500m": false,
       "od_death_rate_per_100k": 14.7,
       "totpop": 1852
     },
     {
       "geoid": "48113007825",
-      "dist_centroid_to_nearest_supply_m": 2266.9,
+      "dist_centroid_to_nearest_supply_m": 5991.5,
       "within_500m": false,
       "od_death_rate_per_100k": 17.6,
       "totpop": 4917
     },
     {
       "geoid": "48113013102",
-      "dist_centroid_to_nearest_supply_m": 6400.0,
+      "dist_centroid_to_nearest_supply_m": 8631.9,
       "within_500m": false,
       "od_death_rate_per_100k": 16.3,
       "totpop": 2104
@@ -4217,14 +4217,14 @@
     },
     {
       "geoid": "48113007910",
-      "dist_centroid_to_nearest_supply_m": 6014.0,
+      "dist_centroid_to_nearest_supply_m": 6012.7,
       "within_500m": false,
       "od_death_rate_per_100k": 12.8,
       "totpop": 2940
     },
     {
       "geoid": "48113007909",
-      "dist_centroid_to_nearest_supply_m": 5530.2,
+      "dist_centroid_to_nearest_supply_m": 5528.9,
       "within_500m": false,
       "od_death_rate_per_100k": 12.8,
       "totpop": 2205
@@ -4245,7 +4245,7 @@
     },
     {
       "geoid": "48113014205",
-      "dist_centroid_to_nearest_supply_m": 2026.7,
+      "dist_centroid_to_nearest_supply_m": 4324.5,
       "within_500m": false,
       "od_death_rate_per_100k": 18.7,
       "totpop": 1684
@@ -4336,7 +4336,7 @@
     },
     {
       "geoid": "48113009101",
-      "dist_centroid_to_nearest_supply_m": 5105.1,
+      "dist_centroid_to_nearest_supply_m": 6691.5,
       "within_500m": false,
       "od_death_rate_per_100k": -999.0,
       "totpop": 5572
@@ -4371,7 +4371,7 @@
     },
     {
       "geoid": "48113014138",
-      "dist_centroid_to_nearest_supply_m": 2910.4,
+      "dist_centroid_to_nearest_supply_m": 3783.6,
       "within_500m": false,
       "od_death_rate_per_100k": 12.4,
       "totpop": 4063
@@ -4385,7 +4385,7 @@
     },
     {
       "geoid": "48113007912",
-      "dist_centroid_to_nearest_supply_m": 6402.7,
+      "dist_centroid_to_nearest_supply_m": 6401.5,
       "within_500m": false,
       "od_death_rate_per_100k": 13.8,
       "totpop": 2188
@@ -4406,28 +4406,28 @@
     },
     {
       "geoid": "48113018505",
-      "dist_centroid_to_nearest_supply_m": 556.6,
+      "dist_centroid_to_nearest_supply_m": 4917.5,
       "within_500m": false,
       "od_death_rate_per_100k": 13.0,
       "totpop": 3776
     },
     {
       "geoid": "48113980000",
-      "dist_centroid_to_nearest_supply_m": 7001.2,
+      "dist_centroid_to_nearest_supply_m": 9520.2,
       "within_500m": false,
       "od_death_rate_per_100k": 9.9,
       "totpop": 0
     },
     {
       "geoid": "48113007913",
-      "dist_centroid_to_nearest_supply_m": 4960.2,
+      "dist_centroid_to_nearest_supply_m": 4958.9,
       "within_500m": false,
       "od_death_rate_per_100k": 12.8,
       "totpop": 2669
     },
     {
       "geoid": "48113018133",
-      "dist_centroid_to_nearest_supply_m": 5912.8,
+      "dist_centroid_to_nearest_supply_m": 6196.8,
       "within_500m": false,
       "od_death_rate_per_100k": 16.6,
       "totpop": 3820
@@ -4441,14 +4441,14 @@
     },
     {
       "geoid": "48113018135",
-      "dist_centroid_to_nearest_supply_m": 5301.0,
+      "dist_centroid_to_nearest_supply_m": 5348.0,
       "within_500m": false,
       "od_death_rate_per_100k": 20.9,
       "totpop": 4814
     },
     {
       "geoid": "48113019018",
-      "dist_centroid_to_nearest_supply_m": 1913.9,
+      "dist_centroid_to_nearest_supply_m": 6280.7,
       "within_500m": false,
       "od_death_rate_per_100k": 14.1,
       "totpop": 5025
@@ -4532,7 +4532,7 @@
     },
     {
       "geoid": "48113018111",
-      "dist_centroid_to_nearest_supply_m": 1808.9,
+      "dist_centroid_to_nearest_supply_m": 3974.9,
       "within_500m": false,
       "od_death_rate_per_100k": 18.8,
       "totpop": 6646
