@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "properties": {
-    "generated": "2026-08-21",
+    "generated": "2026-08-22",
     "county": "Dallas County, TX (GEOID 48113)",
     "n_features": 41,
     "n_with_geometry": 40,
