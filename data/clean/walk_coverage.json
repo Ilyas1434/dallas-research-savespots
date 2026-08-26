@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-25",
+  "generated": "2026-08-26",
   "status": "ok",
   "method_note": "Chicago's original metric is % of overdose DEATH POINTS within 500m of a naloxone supply location. Dallas County only publishes tract-level (not address-level) overdose rates, so no death points exist to test. This output instead reports: (a) the % of Dallas County census tracts whose GEOMETRIC centroid (population-weighted centroid not available) falls within 500m of any naloxone supply point -- a coarse areal proxy that says nothing about where residents/deaths are distributed within a tract; (b) a rate-weighted variant summing od_death_rate_per_100k over covered tracts and dividing by the county-wide sum, which up-weights tracts with higher modeled overdose rates but is NOT population- or death-count-weighted and should not be read as '% of deaths near supply'; (c) % of county population within 500m of supply (population assigned to the tract centroid, not distributed within the tract), computed only if data/clean/svi_tracts.geojson provides tract population -- otherwise skipped and noted. All three are approximations made necessary by the lack of point-level mortality data and should be reported as such.",
   "walk_radius_m": 500.0,
