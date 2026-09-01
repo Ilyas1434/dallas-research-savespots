@@ -1,6 +1,6 @@
 # Published-Baseline Validation (Phase 3.5)
 
-_Generated 2026-08-01T11:09:51.128327+00:00_
+_Generated 2026-09-01T14:22:03.391347+00:00_
 
 **County population denominator:** 2,604,053 (sum of totpop across svi_tracts.geojson (ACS 2020-2024 5-year), ~2.6M)
 
@@ -31,43 +31,43 @@ _Generated 2026-08-01T11:09:51.128327+00:00_
 
 | ZIP | Prior tier | Our modal tier | Tier of mean score | Our mean composite | Tracts (scored) | Weighting | Agree (modal) |
 |---|---|---|---|---|---|---|---|
-| 75215 | 1 | 2 | 1 | 0.4628 | 6 (6) | population (areal-apportioned) | N |
-| 75210 | 1 | 1 | 1 | 0.4674 | 4 (4) | population (areal-apportioned) | Y |
-| 75211 | 1 | 2 | 2 | 0.4045 | 19 (19) | population (areal-apportioned) | N |
-| 75212 | 1 | 2 | 2 | 0.3916 | 7 (7) | population (areal-apportioned) | N |
-| 75203 | 1 | 2 | 1 | 0.436 | 10 (10) | population (areal-apportioned) | N |
-| 75224 | 1 | 2 | 2 | 0.4078 | 11 (11) | population (areal-apportioned) | N |
-| 75201 | 2 | 3 | 3 | 0.2325 | 9 (9) | population (areal-apportioned) | N |
-| 75204 | 2 | 3 | 3 | 0.2573 | 15 (15) | population (areal-apportioned) | N |
-| 75226 | 2 | 2 | 2 | 0.3532 | 5 (5) | population (areal-apportioned) | Y |
-| 75217 | 3 | 1 | 1 | 0.4713 | 22 (22) | population (areal-apportioned) | N |
-| 75227 | 3 | 2 | 2 | 0.41 | 13 (13) | population (areal-apportioned) | N |
+| 75215 | 1 | 2 | 1 | 0.546 | 6 (6) | population (areal-apportioned) | N |
+| 75210 | 1 | 2 | 2 | 0.484 | 4 (4) | population (areal-apportioned) | N |
+| 75211 | 1 | 2 | 2 | 0.5018 | 19 (19) | population (areal-apportioned) | N |
+| 75212 | 1 | 3 | 2 | 0.4163 | 7 (7) | population (areal-apportioned) | N |
+| 75203 | 1 | 2 | 2 | 0.5427 | 10 (10) | population (areal-apportioned) | N |
+| 75224 | 1 | 2 | 2 | 0.5177 | 11 (11) | population (areal-apportioned) | N |
+| 75201 | 2 | 3 | 3 | 0.3621 | 9 (9) | population (areal-apportioned) | N |
+| 75204 | 2 | 3 | 3 | 0.3854 | 15 (15) | population (areal-apportioned) | N |
+| 75226 | 2 | 2 | 2 | 0.4536 | 5 (5) | population (areal-apportioned) | Y |
+| 75217 | 3 | 1 | 1 | 0.6234 | 22 (22) | population (areal-apportioned) | N |
+| 75227 | 3 | 3 | 2 | 0.4526 | 13 (13) | population (areal-apportioned) | Y |
 
 ## Ordering verdict
 
 **Prior Tier-1 South/West Dallas ZIPs remain elevated: 6/6 stay in our Tier 1-2 band (none drop to Tier 3), so the core high-vulnerability geography holds. Exact tier labels shift because the composite adds naloxone-distance and transit-access layers absent from the prior ZIP analysis: these promote peripheral southeast Dallas (e.g. 75217) into the highest tier and drop affluent downtown/uptown (75201, 75204) to Tier 3. Relative ordering is broadly preserved for deprivation-driven ZIPs but the composite is not a pure re-labeling of the prior ZIP tiers.**
 
-- Prior Tier-1 (South/West Dallas) mean composite: **0.4284**
-- Prior Tier-3 mean composite: **0.4406**
+- Prior Tier-1 (South/West Dallas) mean composite: **0.5014**
+- Prior Tier-3 mean composite: **0.538**
 - Prior Tier-1 mean still above prior Tier-3 mean: **False**
-- Prior Tier-1 ZIPs in our Tier 1 (modal tier): **1/6**
-- Prior Tier-1 ZIPs in our Tier 1 (by mean-score tier): **3/6**
+- Prior Tier-1 ZIPs in our Tier 1 (modal tier): **0/6**
+- Prior Tier-1 ZIPs in our Tier 1 (by mean-score tier): **1/6**
 - Prior Tier-1 ZIPs remaining Tier 1 or 2 (not dropped to Tier 3): **6/6**
-- Prior Tier-3 ZIPs newly elevated to Tier 1/2 by the composite: **[('75217', 0.4713, 1), ('75227', 0.41, 2)]**
+- Prior Tier-3 ZIPs newly elevated to Tier 1/2 by the composite: **[('75217', 0.6234, 1), ('75227', 0.4526, 2)]**
 
 Our ZIP ranking, highest to lowest composite (zip, mean composite, our mean-score tier, prior tier):
 
-- 75217: 0.4713 (ours T1, prior T3)
-- 75210: 0.4674 (ours T1, prior T1)
-- 75215: 0.4628 (ours T1, prior T1)
-- 75203: 0.436 (ours T1, prior T1)
-- 75227: 0.41 (ours T2, prior T3)
-- 75224: 0.4078 (ours T2, prior T1)
-- 75211: 0.4045 (ours T2, prior T1)
-- 75212: 0.3916 (ours T2, prior T1)
-- 75226: 0.3532 (ours T2, prior T2)
-- 75204: 0.2573 (ours T3, prior T2)
-- 75201: 0.2325 (ours T3, prior T2)
+- 75217: 0.6234 (ours T1, prior T3)
+- 75215: 0.546 (ours T1, prior T1)
+- 75203: 0.5427 (ours T2, prior T1)
+- 75224: 0.5177 (ours T2, prior T1)
+- 75211: 0.5018 (ours T2, prior T1)
+- 75210: 0.484 (ours T2, prior T1)
+- 75226: 0.4536 (ours T2, prior T2)
+- 75227: 0.4526 (ours T2, prior T3)
+- 75212: 0.4163 (ours T2, prior T1)
+- 75204: 0.3854 (ours T3, prior T2)
+- 75201: 0.3621 (ours T3, prior T2)
 
 ## Method / notes
 

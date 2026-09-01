@@ -333,7 +333,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113000706",
-        "n_candidates": 19
+        "n_candidates": 20
       },
       "geometry": {
         "type": "Point",
@@ -543,7 +543,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113001503",
-        "n_candidates": 22
+        "n_candidates": 21
       },
       "geometry": {
         "type": "Point",
@@ -879,7 +879,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113004500",
-        "n_candidates": 25
+        "n_candidates": 24
       },
       "geometry": {
         "type": "Point",
@@ -921,7 +921,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113004800",
-        "n_candidates": 13
+        "n_candidates": 16
       },
       "geometry": {
         "type": "Point",
@@ -1061,7 +1061,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113005902",
-        "n_candidates": 3
+        "n_candidates": 2
       },
       "geometry": {
         "type": "Point",
@@ -1439,7 +1439,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113007801",
-        "n_candidates": 7
+        "n_candidates": 8
       },
       "geometry": {
         "type": "Point",
@@ -1523,7 +1523,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113007819",
-        "n_candidates": 11
+        "n_candidates": 12
       },
       "geometry": {
         "type": "Point",
@@ -1817,7 +1817,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113007913",
-        "n_candidates": 7
+        "n_candidates": 8
       },
       "geometry": {
         "type": "Point",
@@ -2461,7 +2461,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113009900",
-        "n_candidates": 157
+        "n_candidates": 158
       },
       "geometry": {
         "type": "Point",
@@ -2475,7 +2475,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113010001",
-        "n_candidates": 27
+        "n_candidates": 26
       },
       "geometry": {
         "type": "Point",
@@ -3665,7 +3665,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113013615",
-        "n_candidates": 23
+        "n_candidates": 24
       },
       "geometry": {
         "type": "Point",
@@ -3679,7 +3679,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113013617",
-        "n_candidates": 9
+        "n_candidates": 10
       },
       "geometry": {
         "type": "Point",
@@ -3903,7 +3903,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113013721",
-        "n_candidates": 2
+        "n_candidates": 3
       },
       "geometry": {
         "type": "Point",
@@ -4043,7 +4043,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113013901",
-        "n_candidates": 4
+        "n_candidates": 5
       },
       "geometry": {
         "type": "Point",
@@ -4505,7 +4505,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113014306",
-        "n_candidates": 13
+        "n_candidates": 15
       },
       "geometry": {
         "type": "Point",
@@ -5401,7 +5401,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113016518",
-        "n_candidates": 7
+        "n_candidates": 8
       },
       "geometry": {
         "type": "Point",
@@ -5443,7 +5443,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113016522",
-        "n_candidates": 24
+        "n_candidates": 25
       },
       "geometry": {
         "type": "Point",
@@ -5709,7 +5709,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113016626",
-        "n_candidates": 24
+        "n_candidates": 25
       },
       "geometry": {
         "type": "Point",
@@ -6465,7 +6465,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113017808",
-        "n_candidates": 6
+        "n_candidates": 5
       },
       "geometry": {
         "type": "Point",
@@ -7137,7 +7137,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113018204",
-        "n_candidates": 10
+        "n_candidates": 9
       },
       "geometry": {
         "type": "Point",
@@ -7221,7 +7221,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113018403",
-        "n_candidates": 8
+        "n_candidates": 9
       },
       "geometry": {
         "type": "Point",
@@ -7445,7 +7445,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113019023",
-        "n_candidates": 5
+        "n_candidates": 6
       },
       "geometry": {
         "type": "Point",
@@ -7459,7 +7459,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113019024",
-        "n_candidates": 9
+        "n_candidates": 11
       },
       "geometry": {
         "type": "Point",
@@ -7529,7 +7529,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113019031",
-        "n_candidates": 11
+        "n_candidates": 12
       },
       "geometry": {
         "type": "Point",
@@ -7767,7 +7767,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113019052",
-        "n_candidates": 3
+        "n_candidates": 4
       },
       "geometry": {
         "type": "Point",
@@ -7935,7 +7935,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113019215",
-        "n_candidates": 7
+        "n_candidates": 6
       },
       "geometry": {
         "type": "Point",
@@ -8103,7 +8103,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113020402",
-        "n_candidates": 46
+        "n_candidates": 45
       },
       "geometry": {
         "type": "Point",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T11:09:51.128327+00:00",
+  "generated_at": "2026-09-01T14:22:03.391347+00:00",
   "phase": "Phase 3.5 - Published-Baseline Validation",
   "denominator": {
     "county_population": 2604053,
@@ -94,61 +94,60 @@
       "zip": "75215",
       "prior_tier": 1,
       "our_modal_tier": 2,
-      "our_mean_composite": 0.4628,
+      "our_mean_composite": 0.546,
       "tier_of_mean_composite": 1,
       "n_constituent_tracts": 6,
       "n_scored_tracts": 6,
       "weighting": "population (areal-apportioned)",
       "tier_share": {
-        "1": 0.479,
-        "2": 0.521
+        "1": 0.229,
+        "2": 0.771
       },
       "agree": false
     },
     {
       "zip": "75210",
       "prior_tier": 1,
-      "our_modal_tier": 1,
-      "our_mean_composite": 0.4674,
-      "tier_of_mean_composite": 1,
+      "our_modal_tier": 2,
+      "our_mean_composite": 0.484,
+      "tier_of_mean_composite": 2,
       "n_constituent_tracts": 4,
       "n_scored_tracts": 4,
       "weighting": "population (areal-apportioned)",
       "tier_share": {
-        "1": 0.849,
-        "2": 0.151
+        "1": 0.032,
+        "2": 0.968
       },
-      "agree": true
+      "agree": false
     },
     {
       "zip": "75211",
       "prior_tier": 1,
       "our_modal_tier": 2,
-      "our_mean_composite": 0.4045,
+      "our_mean_composite": 0.5018,
       "tier_of_mean_composite": 2,
       "n_constituent_tracts": 19,
       "n_scored_tracts": 19,
       "weighting": "population (areal-apportioned)",
       "tier_share": {
-        "1": 0.284,
-        "2": 0.593,
-        "3": 0.122
+        "1": 0.352,
+        "2": 0.526,
+        "3": 0.123
       },
       "agree": false
     },
     {
       "zip": "75212",
       "prior_tier": 1,
-      "our_modal_tier": 2,
-      "our_mean_composite": 0.3916,
+      "our_modal_tier": 3,
+      "our_mean_composite": 0.4163,
       "tier_of_mean_composite": 2,
       "n_constituent_tracts": 7,
       "n_scored_tracts": 7,
       "weighting": "population (areal-apportioned)",
       "tier_share": {
-        "1": 0.232,
-        "2": 0.595,
-        "3": 0.173
+        "1": 0.44,
+        "3": 0.56
       },
       "agree": false
     },
@@ -156,8 +155,8 @@
       "zip": "75203",
       "prior_tier": 1,
       "our_modal_tier": 2,
-      "our_mean_composite": 0.436,
-      "tier_of_mean_composite": 1,
+      "our_mean_composite": 0.5427,
+      "tier_of_mean_composite": 2,
       "n_constituent_tracts": 10,
       "n_scored_tracts": 10,
       "weighting": "population (areal-apportioned)",
@@ -172,14 +171,14 @@
       "zip": "75224",
       "prior_tier": 1,
       "our_modal_tier": 2,
-      "our_mean_composite": 0.4078,
+      "our_mean_composite": 0.5177,
       "tier_of_mean_composite": 2,
       "n_constituent_tracts": 11,
       "n_scored_tracts": 11,
       "weighting": "population (areal-apportioned)",
       "tier_share": {
-        "1": 0.421,
-        "2": 0.579
+        "1": 0.149,
+        "2": 0.851
       },
       "agree": false
     },
@@ -187,7 +186,7 @@
       "zip": "75201",
       "prior_tier": 2,
       "our_modal_tier": 3,
-      "our_mean_composite": 0.2325,
+      "our_mean_composite": 0.3621,
       "tier_of_mean_composite": 3,
       "n_constituent_tracts": 9,
       "n_scored_tracts": 9,
@@ -202,13 +201,14 @@
       "zip": "75204",
       "prior_tier": 2,
       "our_modal_tier": 3,
-      "our_mean_composite": 0.2573,
+      "our_mean_composite": 0.3854,
       "tier_of_mean_composite": 3,
       "n_constituent_tracts": 15,
       "n_scored_tracts": 15,
       "weighting": "population (areal-apportioned)",
       "tier_share": {
-        "3": 1.0
+        "2": 0.416,
+        "3": 0.584
       },
       "agree": false
     },
@@ -216,14 +216,13 @@
       "zip": "75226",
       "prior_tier": 2,
       "our_modal_tier": 2,
-      "our_mean_composite": 0.3532,
+      "our_mean_composite": 0.4536,
       "tier_of_mean_composite": 2,
       "n_constituent_tracts": 5,
       "n_scored_tracts": 5,
       "weighting": "population (areal-apportioned)",
       "tier_share": {
-        "1": 0.043,
-        "2": 0.835,
+        "2": 0.878,
         "3": 0.122
       },
       "agree": true
@@ -232,118 +231,119 @@
       "zip": "75217",
       "prior_tier": 3,
       "our_modal_tier": 1,
-      "our_mean_composite": 0.4713,
+      "our_mean_composite": 0.6234,
       "tier_of_mean_composite": 1,
       "n_constituent_tracts": 22,
       "n_scored_tracts": 22,
       "weighting": "population (areal-apportioned)",
       "tier_share": {
-        "1": 0.755,
-        "2": 0.245
+        "1": 0.886,
+        "2": 0.111,
+        "3": 0.002
       },
       "agree": false
     },
     {
       "zip": "75227",
       "prior_tier": 3,
-      "our_modal_tier": 2,
-      "our_mean_composite": 0.41,
+      "our_modal_tier": 3,
+      "our_mean_composite": 0.4526,
       "tier_of_mean_composite": 2,
       "n_constituent_tracts": 13,
       "n_scored_tracts": 13,
       "weighting": "population (areal-apportioned)",
       "tier_share": {
-        "1": 0.299,
-        "2": 0.626,
-        "3": 0.075
+        "1": 0.213,
+        "2": 0.313,
+        "3": 0.474
       },
-      "agree": false
+      "agree": true
     }
   ],
   "ordering_verdict": {
     "our_ranking_high_to_low": [
       [
         "75217",
-        0.4713,
+        0.6234,
         1,
         3
       ],
       [
-        "75210",
-        0.4674,
-        1,
-        1
-      ],
-      [
         "75215",
-        0.4628,
+        0.546,
         1,
         1
       ],
       [
         "75203",
-        0.436,
-        1,
+        0.5427,
+        2,
         1
       ],
       [
-        "75227",
-        0.41,
-        2,
-        3
-      ],
-      [
         "75224",
-        0.4078,
+        0.5177,
         2,
         1
       ],
       [
         "75211",
-        0.4045,
+        0.5018,
         2,
         1
       ],
       [
-        "75212",
-        0.3916,
+        "75210",
+        0.484,
         2,
         1
       ],
       [
         "75226",
-        0.3532,
+        0.4536,
         2,
         2
       ],
       [
+        "75227",
+        0.4526,
+        2,
+        3
+      ],
+      [
+        "75212",
+        0.4163,
+        2,
+        1
+      ],
+      [
         "75204",
-        0.2573,
+        0.3854,
         3,
         2
       ],
       [
         "75201",
-        0.2325,
+        0.3621,
         3,
         2
       ]
     ],
-    "prior_tier1_mean_composite": 0.4284,
-    "prior_tier3_mean_composite": 0.4406,
+    "prior_tier1_mean_composite": 0.5014,
+    "prior_tier3_mean_composite": 0.538,
     "prior_tier1_still_higher_than_tier3": false,
-    "prior_tier1_zips_in_our_tier1_modal": "1/6",
-    "prior_tier1_zips_in_our_tier1_by_mean": "3/6",
+    "prior_tier1_zips_in_our_tier1_modal": "0/6",
+    "prior_tier1_zips_in_our_tier1_by_mean": "1/6",
     "prior_tier1_zips_remaining_high_or_moderate": "6/6",
     "newly_elevated_prior_tier3_zips": [
       [
         "75217",
-        0.4713,
+        0.6234,
         1
       ],
       [
         "75227",
-        0.41,
+        0.4526,
         2
       ]
     ],
