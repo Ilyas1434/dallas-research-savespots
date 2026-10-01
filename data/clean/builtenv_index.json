@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-09-01T14:20:25.575461",
+    "generated": "2026-10-01T16:44:54.290464",
     "tract_source": "TIGER 2024 tl_2024_48_tract.zip, COUNTYFP=113 (Dallas County), n_tracts=645",
     "sources": {
       "311": {
         "endpoint": "https://www.dallasopendata.com/resource/d7e7-envw.json",
         "coverage": "Oct 2020 - present (live, actively updated)",
-        "window_used": "2024-09-01 to 2026-09-01 (last 24 months)",
+        "window_used": "2024-10-01 to 2026-10-01 (last 24 months)",
         "categories": {
           "illegal_dumping": [
             "Illegal Dumping Sign - CCS",
@@ -30,8 +30,8 @@
             "Sanitation Litter Cans - SAN"
           ]
         },
-        "rows_fetched": 7881,
-        "rows_matched_to_tract": 7758,
+        "rows_fetched": 8440,
+        "rows_matched_to_tract": 8314,
         "excluded_note": "'Code Concern - CCS' (683k lifetime records, largest 311 type) excluded: undifferentiated catch-all with no sub-type field, cannot be isolated as a specific blight category."
       },
       "code_violations": {
@@ -115,11 +115,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113012211": {
-      "blight_311_24mo": 43,
+      "blight_311_24mo": 51,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 2,
-        "litter": 40
+        "litter": 48
       },
       "violations_alltime_2013_2018": 1558,
       "violations_alltime_2013_2018_by_category": {
@@ -134,11 +134,11 @@
       "vacancy_proxy_addresses": 33
     },
     "48113012400": {
-      "blight_311_24mo": 37,
+      "blight_311_24mo": 38,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 4,
-        "litter": 32
+        "graffiti": 3,
+        "litter": 34
       },
       "violations_alltime_2013_2018": 2369,
       "violations_alltime_2013_2018_by_category": {
@@ -229,11 +229,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113016607": {
-      "blight_311_24mo": 5,
+      "blight_311_24mo": 6,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 5
+        "litter": 6
       },
       "violations_alltime_2013_2018": 133,
       "violations_alltime_2013_2018_by_category": {
@@ -286,11 +286,11 @@
       "vacancy_proxy_addresses": 9
     },
     "48113013610": {
-      "blight_311_24mo": 23,
+      "blight_311_24mo": 22,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
         "graffiti": 2,
-        "litter": 19
+        "litter": 18
       },
       "violations_alltime_2013_2018": 1158,
       "violations_alltime_2013_2018_by_category": {
@@ -305,11 +305,11 @@
       "vacancy_proxy_addresses": 30
     },
     "48113013611": {
-      "blight_311_24mo": 5,
+      "blight_311_24mo": 6,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 5
+        "litter": 6
       },
       "violations_alltime_2013_2018": 57,
       "violations_alltime_2013_2018_by_category": {
@@ -476,11 +476,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113017605": {
-      "blight_311_24mo": 13,
+      "blight_311_24mo": 14,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 4,
         "graffiti": 0,
-        "litter": 9
+        "litter": 10
       },
       "violations_alltime_2013_2018": 1467,
       "violations_alltime_2013_2018_by_category": {
@@ -495,11 +495,11 @@
       "vacancy_proxy_addresses": 42
     },
     "48113011701": {
-      "blight_311_24mo": 21,
+      "blight_311_24mo": 23,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 5,
-        "litter": 15
+        "litter": 17
       },
       "violations_alltime_2013_2018": 1655,
       "violations_alltime_2013_2018_by_category": {
@@ -514,11 +514,11 @@
       "vacancy_proxy_addresses": 50
     },
     "48113011702": {
-      "blight_311_24mo": 16,
+      "blight_311_24mo": 17,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 4,
         "graffiti": 2,
-        "litter": 10
+        "litter": 11
       },
       "violations_alltime_2013_2018": 957,
       "violations_alltime_2013_2018_by_category": {
@@ -533,11 +533,11 @@
       "vacancy_proxy_addresses": 44
     },
     "48113012000": {
-      "blight_311_24mo": 45,
+      "blight_311_24mo": 46,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 7,
         "graffiti": 0,
-        "litter": 38
+        "litter": 39
       },
       "violations_alltime_2013_2018": 1457,
       "violations_alltime_2013_2018_by_category": {
@@ -552,11 +552,11 @@
       "vacancy_proxy_addresses": 36
     },
     "48113012206": {
-      "blight_311_24mo": 37,
+      "blight_311_24mo": 43,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 2,
-        "litter": 34
+        "litter": 40
       },
       "violations_alltime_2013_2018": 1790,
       "violations_alltime_2013_2018_by_category": {
@@ -571,11 +571,11 @@
       "vacancy_proxy_addresses": 51
     },
     "48113012207": {
-      "blight_311_24mo": 78,
+      "blight_311_24mo": 87,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
         "graffiti": 0,
-        "litter": 75
+        "litter": 84
       },
       "violations_alltime_2013_2018": 1979,
       "violations_alltime_2013_2018_by_category": {
@@ -590,11 +590,11 @@
       "vacancy_proxy_addresses": 55
     },
     "48113012208": {
-      "blight_311_24mo": 10,
+      "blight_311_24mo": 13,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 10
+        "litter": 13
       },
       "violations_alltime_2013_2018": 78,
       "violations_alltime_2013_2018_by_category": {
@@ -609,11 +609,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113010704": {
-      "blight_311_24mo": 7,
+      "blight_311_24mo": 8,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 2,
-        "litter": 5
+        "litter": 6
       },
       "violations_alltime_2013_2018": 975,
       "violations_alltime_2013_2018_by_category": {
@@ -628,11 +628,11 @@
       "vacancy_proxy_addresses": 11
     },
     "48113980100": {
-      "blight_311_24mo": 6,
+      "blight_311_24mo": 7,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 2,
-        "litter": 4
+        "litter": 5
       },
       "violations_alltime_2013_2018": 103,
       "violations_alltime_2013_2018_by_category": {
@@ -742,11 +742,11 @@
       "vacancy_proxy_addresses": 14
     },
     "48113012210": {
-      "blight_311_24mo": 29,
+      "blight_311_24mo": 31,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
         "graffiti": 1,
-        "litter": 26
+        "litter": 28
       },
       "violations_alltime_2013_2018": 800,
       "violations_alltime_2013_2018_by_category": {
@@ -799,11 +799,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113004201": {
-      "blight_311_24mo": 275,
+      "blight_311_24mo": 288,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
-        "graffiti": 40,
-        "litter": 232
+        "graffiti": 36,
+        "litter": 249
       },
       "violations_alltime_2013_2018": 1487,
       "violations_alltime_2013_2018_by_category": {
@@ -818,11 +818,11 @@
       "vacancy_proxy_addresses": 30
     },
     "48113017102": {
-      "blight_311_24mo": 52,
+      "blight_311_24mo": 53,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 13,
         "graffiti": 2,
-        "litter": 37
+        "litter": 38
       },
       "violations_alltime_2013_2018": 2654,
       "violations_alltime_2013_2018_by_category": {
@@ -837,11 +837,11 @@
       "vacancy_proxy_addresses": 83
     },
     "48113011105": {
-      "blight_311_24mo": 11,
+      "blight_311_24mo": 12,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 11
+        "litter": 12
       },
       "violations_alltime_2013_2018": 861,
       "violations_alltime_2013_2018_by_category": {
@@ -856,11 +856,11 @@
       "vacancy_proxy_addresses": 38
     },
     "48113005901": {
-      "blight_311_24mo": 8,
+      "blight_311_24mo": 10,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 7
+        "litter": 9
       },
       "violations_alltime_2013_2018": 3070,
       "violations_alltime_2013_2018_by_category": {
@@ -896,9 +896,9 @@
     "48113006002": {
       "blight_311_24mo": 19,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 4,
+        "illegal_dumping": 2,
         "graffiti": 3,
-        "litter": 12
+        "litter": 14
       },
       "violations_alltime_2013_2018": 554,
       "violations_alltime_2013_2018_by_category": {
@@ -916,8 +916,8 @@
       "blight_311_24mo": 40,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 5,
-        "graffiti": 12,
-        "litter": 23
+        "graffiti": 11,
+        "litter": 24
       },
       "violations_alltime_2013_2018": 1880,
       "violations_alltime_2013_2018_by_category": {
@@ -932,11 +932,11 @@
       "vacancy_proxy_addresses": 47
     },
     "48113006301": {
-      "blight_311_24mo": 9,
+      "blight_311_24mo": 12,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 9
+        "litter": 12
       },
       "violations_alltime_2013_2018": 2079,
       "violations_alltime_2013_2018_by_category": {
@@ -1027,11 +1027,11 @@
       "vacancy_proxy_addresses": 127
     },
     "48113002100": {
-      "blight_311_24mo": 42,
+      "blight_311_24mo": 44,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 14,
-        "litter": 28
+        "graffiti": 15,
+        "litter": 29
       },
       "violations_alltime_2013_2018": 124,
       "violations_alltime_2013_2018_by_category": {
@@ -1046,11 +1046,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113001202": {
-      "blight_311_24mo": 41,
+      "blight_311_24mo": 51,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 18,
-        "litter": 23
+        "graffiti": 20,
+        "litter": 31
       },
       "violations_alltime_2013_2018": 831,
       "violations_alltime_2013_2018_by_category": {
@@ -1065,10 +1065,10 @@
       "vacancy_proxy_addresses": 11
     },
     "48113001203": {
-      "blight_311_24mo": 6,
+      "blight_311_24mo": 7,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 1,
+        "graffiti": 2,
         "litter": 5
       },
       "violations_alltime_2013_2018": 594,
@@ -1198,10 +1198,10 @@
       "vacancy_proxy_addresses": 0
     },
     "48113018508": {
-      "blight_311_24mo": 4,
+      "blight_311_24mo": 3,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 4,
+        "graffiti": 3,
         "litter": 0
       },
       "violations_alltime_2013_2018": 101,
@@ -1274,11 +1274,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113011500": {
-      "blight_311_24mo": 51,
+      "blight_311_24mo": 52,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 6,
         "graffiti": 1,
-        "litter": 44
+        "litter": 45
       },
       "violations_alltime_2013_2018": 2477,
       "violations_alltime_2013_2018_by_category": {
@@ -1293,11 +1293,11 @@
       "vacancy_proxy_addresses": 55
     },
     "48113005902": {
-      "blight_311_24mo": 3,
+      "blight_311_24mo": 5,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 3
+        "litter": 5
       },
       "violations_alltime_2013_2018": 1542,
       "violations_alltime_2013_2018_by_category": {
@@ -1331,11 +1331,11 @@
       "vacancy_proxy_addresses": 6
     },
     "48113007604": {
-      "blight_311_24mo": 4,
+      "blight_311_24mo": 5,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 4
+        "litter": 5
       },
       "violations_alltime_2013_2018": 383,
       "violations_alltime_2013_2018_by_category": {
@@ -1371,9 +1371,9 @@
     "48113007801": {
       "blight_311_24mo": 12,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 0,
+        "illegal_dumping": 1,
         "graffiti": 2,
-        "litter": 10
+        "litter": 9
       },
       "violations_alltime_2013_2018": 105,
       "violations_alltime_2013_2018_by_category": {
@@ -1388,11 +1388,11 @@
       "vacancy_proxy_addresses": 1
     },
     "48113007805": {
-      "blight_311_24mo": 45,
+      "blight_311_24mo": 49,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
         "graffiti": 18,
-        "litter": 24
+        "litter": 28
       },
       "violations_alltime_2013_2018": 778,
       "violations_alltime_2013_2018_by_category": {
@@ -1407,11 +1407,11 @@
       "vacancy_proxy_addresses": 23
     },
     "48113004700": {
-      "blight_311_24mo": 60,
+      "blight_311_24mo": 58,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 4,
-        "graffiti": 47,
-        "litter": 9
+        "graffiti": 42,
+        "litter": 12
       },
       "violations_alltime_2013_2018": 1572,
       "violations_alltime_2013_2018_by_category": {
@@ -1426,11 +1426,11 @@
       "vacancy_proxy_addresses": 34
     },
     "48113004800": {
-      "blight_311_24mo": 43,
+      "blight_311_24mo": 55,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 3,
-        "graffiti": 17,
-        "litter": 23
+        "illegal_dumping": 4,
+        "graffiti": 18,
+        "litter": 33
       },
       "violations_alltime_2013_2018": 2013,
       "violations_alltime_2013_2018_by_category": {
@@ -1467,8 +1467,8 @@
       "blight_311_24mo": 16,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 5,
-        "litter": 10
+        "graffiti": 4,
+        "litter": 11
       },
       "violations_alltime_2013_2018": 1370,
       "violations_alltime_2013_2018_by_category": {
@@ -1502,11 +1502,11 @@
       "vacancy_proxy_addresses": 52
     },
     "48113002500": {
-      "blight_311_24mo": 68,
+      "blight_311_24mo": 75,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 9,
-        "graffiti": 9,
-        "litter": 50
+        "graffiti": 10,
+        "litter": 56
       },
       "violations_alltime_2013_2018": 6121,
       "violations_alltime_2013_2018_by_category": {
@@ -1521,11 +1521,11 @@
       "vacancy_proxy_addresses": 152
     },
     "48113019019": {
-      "blight_311_24mo": 27,
+      "blight_311_24mo": 30,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 4,
         "graffiti": 0,
-        "litter": 23
+        "litter": 26
       },
       "violations_alltime_2013_2018": 1062,
       "violations_alltime_2013_2018_by_category": {
@@ -1540,11 +1540,11 @@
       "vacancy_proxy_addresses": 29
     },
     "48113005400": {
-      "blight_311_24mo": 36,
+      "blight_311_24mo": 41,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 8,
-        "graffiti": 7,
-        "litter": 21
+        "illegal_dumping": 9,
+        "graffiti": 8,
+        "litter": 24
       },
       "violations_alltime_2013_2018": 2990,
       "violations_alltime_2013_2018_by_category": {
@@ -1559,11 +1559,11 @@
       "vacancy_proxy_addresses": 84
     },
     "48113005500": {
-      "blight_311_24mo": 35,
+      "blight_311_24mo": 36,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 3,
-        "litter": 31
+        "litter": 32
       },
       "violations_alltime_2013_2018": 3706,
       "violations_alltime_2013_2018_by_category": {
@@ -1578,11 +1578,11 @@
       "vacancy_proxy_addresses": 123
     },
     "48113005300": {
-      "blight_311_24mo": 13,
+      "blight_311_24mo": 15,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 2,
-        "graffiti": 2,
-        "litter": 9
+        "illegal_dumping": 3,
+        "graffiti": 1,
+        "litter": 11
       },
       "violations_alltime_2013_2018": 2078,
       "violations_alltime_2013_2018_by_category": {
@@ -1597,11 +1597,11 @@
       "vacancy_proxy_addresses": 41
     },
     "48113005600": {
-      "blight_311_24mo": 25,
+      "blight_311_24mo": 29,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 5,
+        "illegal_dumping": 6,
         "graffiti": 2,
-        "litter": 18
+        "litter": 21
       },
       "violations_alltime_2013_2018": 2281,
       "violations_alltime_2013_2018_by_category": {
@@ -1635,11 +1635,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113005700": {
-      "blight_311_24mo": 21,
+      "blight_311_24mo": 22,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 14,
         "graffiti": 0,
-        "litter": 7
+        "litter": 8
       },
       "violations_alltime_2013_2018": 5634,
       "violations_alltime_2013_2018_by_category": {
@@ -1654,10 +1654,10 @@
       "vacancy_proxy_addresses": 228
     },
     "48113007815": {
-      "blight_311_24mo": 11,
+      "blight_311_24mo": 13,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 0,
+        "graffiti": 2,
         "litter": 10
       },
       "violations_alltime_2013_2018": 218,
@@ -1673,11 +1673,11 @@
       "vacancy_proxy_addresses": 5
     },
     "48113007819": {
-      "blight_311_24mo": 41,
+      "blight_311_24mo": 44,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 41
+        "litter": 44
       },
       "violations_alltime_2013_2018": 182,
       "violations_alltime_2013_2018_by_category": {
@@ -1692,11 +1692,11 @@
       "vacancy_proxy_addresses": 1
     },
     "48113007902": {
-      "blight_311_24mo": 34,
+      "blight_311_24mo": 35,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 6,
-        "litter": 27
+        "litter": 28
       },
       "violations_alltime_2013_2018": 1763,
       "violations_alltime_2013_2018_by_category": {
@@ -1711,11 +1711,11 @@
       "vacancy_proxy_addresses": 26
     },
     "48113002200": {
-      "blight_311_24mo": 22,
+      "blight_311_24mo": 24,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 8,
-        "litter": 13
+        "graffiti": 9,
+        "litter": 14
       },
       "violations_alltime_2013_2018": 851,
       "violations_alltime_2013_2018_by_category": {
@@ -1730,11 +1730,11 @@
       "vacancy_proxy_addresses": 4
     },
     "48113002400": {
-      "blight_311_24mo": 27,
+      "blight_311_24mo": 31,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
-        "graffiti": 2,
-        "litter": 22
+        "graffiti": 3,
+        "litter": 25
       },
       "violations_alltime_2013_2018": 2344,
       "violations_alltime_2013_2018_by_category": {
@@ -1768,11 +1768,11 @@
       "vacancy_proxy_addresses": 13
     },
     "48113008200": {
-      "blight_311_24mo": 27,
+      "blight_311_24mo": 31,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
         "graffiti": 4,
-        "litter": 21
+        "litter": 25
       },
       "violations_alltime_2013_2018": 1237,
       "violations_alltime_2013_2018_by_category": {
@@ -1789,9 +1789,9 @@
     "48113011401": {
       "blight_311_24mo": 17,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 4,
+        "illegal_dumping": 3,
         "graffiti": 1,
-        "litter": 12
+        "litter": 13
       },
       "violations_alltime_2013_2018": 4324,
       "violations_alltime_2013_2018_by_category": {
@@ -1806,11 +1806,11 @@
       "vacancy_proxy_addresses": 164
     },
     "48113008802": {
-      "blight_311_24mo": 19,
+      "blight_311_24mo": 18,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 18
+        "litter": 17
       },
       "violations_alltime_2013_2018": 3119,
       "violations_alltime_2013_2018_by_category": {
@@ -1828,8 +1828,8 @@
       "blight_311_24mo": 17,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 6,
-        "litter": 11
+        "graffiti": 5,
+        "litter": 12
       },
       "violations_alltime_2013_2018": 646,
       "violations_alltime_2013_2018_by_category": {
@@ -1844,11 +1844,11 @@
       "vacancy_proxy_addresses": 8
     },
     "48113009604": {
-      "blight_311_24mo": 62,
+      "blight_311_24mo": 68,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 14,
-        "litter": 47
+        "litter": 53
       },
       "violations_alltime_2013_2018": 546,
       "violations_alltime_2013_2018_by_category": {
@@ -1863,9 +1863,9 @@
       "vacancy_proxy_addresses": 9
     },
     "48113009605": {
-      "blight_311_24mo": 35,
+      "blight_311_24mo": 34,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 1,
+        "illegal_dumping": 0,
         "graffiti": 22,
         "litter": 12
       },
@@ -1882,10 +1882,10 @@
       "vacancy_proxy_addresses": 17
     },
     "48113009607": {
-      "blight_311_24mo": 12,
+      "blight_311_24mo": 11,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
-        "graffiti": 2,
+        "graffiti": 1,
         "litter": 8
       },
       "violations_alltime_2013_2018": 1504,
@@ -1901,11 +1901,11 @@
       "vacancy_proxy_addresses": 35
     },
     "48113009608": {
-      "blight_311_24mo": 10,
+      "blight_311_24mo": 12,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
         "graffiti": 1,
-        "litter": 7
+        "litter": 9
       },
       "violations_alltime_2013_2018": 793,
       "violations_alltime_2013_2018_by_category": {
@@ -1920,10 +1920,10 @@
       "vacancy_proxy_addresses": 14
     },
     "48113009609": {
-      "blight_311_24mo": 10,
+      "blight_311_24mo": 9,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 6,
+        "graffiti": 5,
         "litter": 3
       },
       "violations_alltime_2013_2018": 646,
@@ -1939,11 +1939,11 @@
       "vacancy_proxy_addresses": 9
     },
     "48113009611": {
-      "blight_311_24mo": 9,
+      "blight_311_24mo": 10,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 1,
-        "litter": 8
+        "litter": 9
       },
       "violations_alltime_2013_2018": 1816,
       "violations_alltime_2013_2018_by_category": {
@@ -1977,11 +1977,11 @@
       "vacancy_proxy_addresses": 22
     },
     "48113009202": {
-      "blight_311_24mo": 27,
+      "blight_311_24mo": 32,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 6,
+        "illegal_dumping": 8,
         "graffiti": 0,
-        "litter": 21
+        "litter": 24
       },
       "violations_alltime_2013_2018": 1985,
       "violations_alltime_2013_2018_by_category": {
@@ -2015,11 +2015,11 @@
       "vacancy_proxy_addresses": 28
     },
     "48113009304": {
-      "blight_311_24mo": 21,
+      "blight_311_24mo": 22,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 3,
-        "litter": 17
+        "litter": 18
       },
       "violations_alltime_2013_2018": 1336,
       "violations_alltime_2013_2018_by_category": {
@@ -2034,11 +2034,11 @@
       "vacancy_proxy_addresses": 41
     },
     "48113008500": {
-      "blight_311_24mo": 37,
+      "blight_311_24mo": 42,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 8,
+        "illegal_dumping": 9,
         "graffiti": 0,
-        "litter": 29
+        "litter": 33
       },
       "violations_alltime_2013_2018": 1514,
       "violations_alltime_2013_2018_by_category": {
@@ -2053,11 +2053,11 @@
       "vacancy_proxy_addresses": 44
     },
     "48113008604": {
-      "blight_311_24mo": 19,
+      "blight_311_24mo": 21,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 18
+        "litter": 20
       },
       "violations_alltime_2013_2018": 1357,
       "violations_alltime_2013_2018_by_category": {
@@ -2072,11 +2072,11 @@
       "vacancy_proxy_addresses": 40
     },
     "48113008701": {
-      "blight_311_24mo": 33,
+      "blight_311_24mo": 36,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 4,
         "graffiti": 0,
-        "litter": 29
+        "litter": 32
       },
       "violations_alltime_2013_2018": 2148,
       "violations_alltime_2013_2018_by_category": {
@@ -2091,9 +2091,9 @@
       "vacancy_proxy_addresses": 80
     },
     "48113008704": {
-      "blight_311_24mo": 6,
+      "blight_311_24mo": 7,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 0,
+        "illegal_dumping": 1,
         "graffiti": 0,
         "litter": 6
       },
@@ -2110,11 +2110,11 @@
       "vacancy_proxy_addresses": 98
     },
     "48113008801": {
-      "blight_311_24mo": 18,
+      "blight_311_24mo": 19,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 17
+        "litter": 18
       },
       "violations_alltime_2013_2018": 1349,
       "violations_alltime_2013_2018_by_category": {
@@ -2129,9 +2129,9 @@
       "vacancy_proxy_addresses": 31
     },
     "48113009802": {
-      "blight_311_24mo": 38,
+      "blight_311_24mo": 36,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 4,
+        "illegal_dumping": 2,
         "graffiti": 10,
         "litter": 24
       },
@@ -2281,11 +2281,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113012802": {
-      "blight_311_24mo": 31,
+      "blight_311_24mo": 37,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 7,
         "graffiti": 2,
-        "litter": 22
+        "litter": 28
       },
       "violations_alltime_2013_2018": 1659,
       "violations_alltime_2013_2018_by_category": {
@@ -2319,11 +2319,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113008402": {
-      "blight_311_24mo": 58,
+      "blight_311_24mo": 63,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 2,
-        "litter": 55
+        "litter": 60
       },
       "violations_alltime_2013_2018": 2062,
       "violations_alltime_2013_2018_by_category": {
@@ -2395,11 +2395,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113008101": {
-      "blight_311_24mo": 4,
+      "blight_311_24mo": 5,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 3
+        "litter": 4
       },
       "violations_alltime_2013_2018": 78,
       "violations_alltime_2013_2018_by_category": {
@@ -2433,11 +2433,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113013202": {
-      "blight_311_24mo": 35,
+      "blight_311_24mo": 45,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 11,
-        "litter": 23
+        "graffiti": 13,
+        "litter": 31
       },
       "violations_alltime_2013_2018": 71,
       "violations_alltime_2013_2018_by_category": {
@@ -2452,11 +2452,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113013012": {
-      "blight_311_24mo": 5,
+      "blight_311_24mo": 4,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 3,
-        "litter": 2
+        "litter": 1
       },
       "violations_alltime_2013_2018": 425,
       "violations_alltime_2013_2018_by_category": {
@@ -2471,11 +2471,11 @@
       "vacancy_proxy_addresses": 4
     },
     "48113008102": {
-      "blight_311_24mo": 25,
+      "blight_311_24mo": 28,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 4,
-        "graffiti": 4,
-        "litter": 17
+        "graffiti": 6,
+        "litter": 18
       },
       "violations_alltime_2013_2018": 1885,
       "violations_alltime_2013_2018_by_category": {
@@ -2509,9 +2509,9 @@
       "vacancy_proxy_addresses": 15
     },
     "48113000801": {
-      "blight_311_24mo": 33,
+      "blight_311_24mo": 34,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 3,
+        "illegal_dumping": 4,
         "graffiti": 1,
         "litter": 29
       },
@@ -2566,11 +2566,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113012801": {
-      "blight_311_24mo": 18,
+      "blight_311_24mo": 19,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 18
+        "litter": 19
       },
       "violations_alltime_2013_2018": 757,
       "violations_alltime_2013_2018_by_category": {
@@ -2587,9 +2587,9 @@
     "48113021200": {
       "blight_311_24mo": 13,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 7,
+        "illegal_dumping": 6,
         "graffiti": 1,
-        "litter": 5
+        "litter": 6
       },
       "violations_alltime_2013_2018": 1142,
       "violations_alltime_2013_2018_by_category": {
@@ -2623,11 +2623,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113012502": {
-      "blight_311_24mo": 20,
+      "blight_311_24mo": 21,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 3,
-        "litter": 17
+        "litter": 18
       },
       "violations_alltime_2013_2018": 2461,
       "violations_alltime_2013_2018_by_category": {
@@ -2642,11 +2642,11 @@
       "vacancy_proxy_addresses": 42
     },
     "48113012501": {
-      "blight_311_24mo": 1,
+      "blight_311_24mo": 2,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 1
+        "litter": 2
       },
       "violations_alltime_2013_2018": 1218,
       "violations_alltime_2013_2018_by_category": {
@@ -2813,11 +2813,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113010001": {
-      "blight_311_24mo": 51,
+      "blight_311_24mo": 60,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 9,
-        "litter": 42
+        "litter": 51
       },
       "violations_alltime_2013_2018": 1187,
       "violations_alltime_2013_2018_by_category": {
@@ -3383,11 +3383,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113002001": {
-      "blight_311_24mo": 195,
+      "blight_311_24mo": 196,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 95,
-        "litter": 100
+        "graffiti": 94,
+        "litter": 102
       },
       "violations_alltime_2013_2018": 692,
       "violations_alltime_2013_2018_by_category": {
@@ -3402,11 +3402,11 @@
       "vacancy_proxy_addresses": 9
     },
     "48113010002": {
-      "blight_311_24mo": 39,
+      "blight_311_24mo": 40,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 11,
-        "litter": 28
+        "litter": 29
       },
       "violations_alltime_2013_2018": 177,
       "violations_alltime_2013_2018_by_category": {
@@ -3573,11 +3573,11 @@
       "vacancy_proxy_addresses": 1
     },
     "48113001901": {
-      "blight_311_24mo": 17,
+      "blight_311_24mo": 20,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 16
+        "litter": 19
       },
       "violations_alltime_2013_2018": 77,
       "violations_alltime_2013_2018_by_category": {
@@ -3592,10 +3592,10 @@
       "vacancy_proxy_addresses": 0
     },
     "48113001801": {
-      "blight_311_24mo": 4,
+      "blight_311_24mo": 5,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 3,
+        "graffiti": 4,
         "litter": 1
       },
       "violations_alltime_2013_2018": 54,
@@ -3649,11 +3649,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113000610": {
-      "blight_311_24mo": 5,
+      "blight_311_24mo": 6,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 3,
-        "litter": 2
+        "litter": 3
       },
       "violations_alltime_2013_2018": 172,
       "violations_alltime_2013_2018_by_category": {
@@ -3668,10 +3668,10 @@
       "vacancy_proxy_addresses": 1
     },
     "48113000407": {
-      "blight_311_24mo": 7,
+      "blight_311_24mo": 9,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 1,
+        "graffiti": 3,
         "litter": 5
       },
       "violations_alltime_2013_2018": 458,
@@ -3706,11 +3706,11 @@
       "vacancy_proxy_addresses": 7
     },
     "48113016533": {
-      "blight_311_24mo": 19,
+      "blight_311_24mo": 23,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 6,
+        "illegal_dumping": 8,
         "graffiti": 4,
-        "litter": 9
+        "litter": 11
       },
       "violations_alltime_2013_2018": 1218,
       "violations_alltime_2013_2018_by_category": {
@@ -3744,11 +3744,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113003103": {
-      "blight_311_24mo": 23,
+      "blight_311_24mo": 24,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 2,
-        "graffiti": 17,
-        "litter": 4
+        "illegal_dumping": 3,
+        "graffiti": 18,
+        "litter": 3
       },
       "violations_alltime_2013_2018": 347,
       "violations_alltime_2013_2018_by_category": {
@@ -3763,9 +3763,9 @@
       "vacancy_proxy_addresses": 0
     },
     "48113010809": {
-      "blight_311_24mo": 9,
+      "blight_311_24mo": 8,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 2,
+        "illegal_dumping": 1,
         "graffiti": 2,
         "litter": 5
       },
@@ -3782,11 +3782,11 @@
       "vacancy_proxy_addresses": 32
     },
     "48113006701": {
-      "blight_311_24mo": 7,
+      "blight_311_24mo": 9,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 6
+        "litter": 8
       },
       "violations_alltime_2013_2018": 534,
       "violations_alltime_2013_2018_by_category": {
@@ -3953,11 +3953,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113020800": {
-      "blight_311_24mo": 111,
+      "blight_311_24mo": 127,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 15,
-        "graffiti": 6,
-        "litter": 90
+        "illegal_dumping": 14,
+        "graffiti": 7,
+        "litter": 106
       },
       "violations_alltime_2013_2018": 10569,
       "violations_alltime_2013_2018_by_category": {
@@ -3972,10 +3972,10 @@
       "vacancy_proxy_addresses": 375
     },
     "48113000802": {
-      "blight_311_24mo": 17,
+      "blight_311_24mo": 18,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 9,
+        "graffiti": 10,
         "litter": 8
       },
       "violations_alltime_2013_2018": 608,
@@ -3991,11 +3991,11 @@
       "vacancy_proxy_addresses": 19
     },
     "48113001602": {
-      "blight_311_24mo": 37,
+      "blight_311_24mo": 41,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
-        "graffiti": 6,
-        "litter": 29
+        "graffiti": 7,
+        "litter": 32
       },
       "violations_alltime_2013_2018": 851,
       "violations_alltime_2013_2018_by_category": {
@@ -4010,11 +4010,11 @@
       "vacancy_proxy_addresses": 14
     },
     "48113020401": {
-      "blight_311_24mo": 60,
+      "blight_311_24mo": 74,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 13,
-        "litter": 47
+        "graffiti": 17,
+        "litter": 57
       },
       "violations_alltime_2013_2018": 3343,
       "violations_alltime_2013_2018_by_category": {
@@ -4105,11 +4105,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113010906": {
-      "blight_311_24mo": 33,
+      "blight_311_24mo": 36,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
         "graffiti": 7,
-        "litter": 24
+        "litter": 27
       },
       "violations_alltime_2013_2018": 765,
       "violations_alltime_2013_2018_by_category": {
@@ -4219,11 +4219,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113000501": {
-      "blight_311_24mo": 16,
+      "blight_311_24mo": 17,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
         "graffiti": 11,
-        "litter": 3
+        "litter": 4
       },
       "violations_alltime_2013_2018": 275,
       "violations_alltime_2013_2018_by_category": {
@@ -4238,10 +4238,10 @@
       "vacancy_proxy_addresses": 8
     },
     "48113000503": {
-      "blight_311_24mo": 2,
+      "blight_311_24mo": 3,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 1,
+        "graffiti": 2,
         "litter": 0
       },
       "violations_alltime_2013_2018": 157,
@@ -4257,11 +4257,11 @@
       "vacancy_proxy_addresses": 8
     },
     "48113000502": {
-      "blight_311_24mo": 15,
+      "blight_311_24mo": 19,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 10,
-        "litter": 5
+        "litter": 9
       },
       "violations_alltime_2013_2018": 322,
       "violations_alltime_2013_2018_by_category": {
@@ -4295,11 +4295,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113000409": {
-      "blight_311_24mo": 23,
+      "blight_311_24mo": 24,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 5,
+        "illegal_dumping": 4,
         "graffiti": 2,
-        "litter": 16
+        "litter": 18
       },
       "violations_alltime_2013_2018": 345,
       "violations_alltime_2013_2018_by_category": {
@@ -4314,11 +4314,11 @@
       "vacancy_proxy_addresses": 10
     },
     "48113001902": {
-      "blight_311_24mo": 25,
+      "blight_311_24mo": 26,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 3,
-        "litter": 22
+        "litter": 23
       },
       "violations_alltime_2013_2018": 76,
       "violations_alltime_2013_2018_by_category": {
@@ -4333,11 +4333,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113000704": {
-      "blight_311_24mo": 6,
+      "blight_311_24mo": 7,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 3,
-        "litter": 3
+        "litter": 4
       },
       "violations_alltime_2013_2018": 34,
       "violations_alltime_2013_2018_by_category": {
@@ -4428,9 +4428,9 @@
       "vacancy_proxy_addresses": 0
     },
     "48113010808": {
-      "blight_311_24mo": 8,
+      "blight_311_24mo": 9,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 1,
+        "illegal_dumping": 2,
         "graffiti": 1,
         "litter": 6
       },
@@ -4447,11 +4447,11 @@
       "vacancy_proxy_addresses": 1
     },
     "48113006702": {
-      "blight_311_24mo": 13,
+      "blight_311_24mo": 16,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 4,
+        "illegal_dumping": 3,
         "graffiti": 0,
-        "litter": 9
+        "litter": 13
       },
       "violations_alltime_2013_2018": 685,
       "violations_alltime_2013_2018_by_category": {
@@ -4466,11 +4466,11 @@
       "vacancy_proxy_addresses": 18
     },
     "48113010806": {
-      "blight_311_24mo": 8,
+      "blight_311_24mo": 11,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 0,
+        "illegal_dumping": 2,
         "graffiti": 1,
-        "litter": 7
+        "litter": 8
       },
       "violations_alltime_2013_2018": 1645,
       "violations_alltime_2013_2018_by_category": {
@@ -4504,11 +4504,11 @@
       "vacancy_proxy_addresses": 30
     },
     "48113011003": {
-      "blight_311_24mo": 12,
+      "blight_311_24mo": 13,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
         "graffiti": 3,
-        "litter": 7
+        "litter": 8
       },
       "violations_alltime_2013_2018": 1503,
       "violations_alltime_2013_2018_by_category": {
@@ -4523,11 +4523,11 @@
       "vacancy_proxy_addresses": 38
     },
     "48113013628": {
-      "blight_311_24mo": 7,
+      "blight_311_24mo": 8,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 1,
-        "litter": 6
+        "litter": 7
       },
       "violations_alltime_2013_2018": 28,
       "violations_alltime_2013_2018_by_category": {
@@ -4580,11 +4580,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113016711": {
-      "blight_311_24mo": 10,
+      "blight_311_24mo": 11,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 5,
         "graffiti": 1,
-        "litter": 4
+        "litter": 5
       },
       "violations_alltime_2013_2018": 846,
       "violations_alltime_2013_2018_by_category": {
@@ -4599,11 +4599,11 @@
       "vacancy_proxy_addresses": 34
     },
     "48113011201": {
-      "blight_311_24mo": 19,
+      "blight_311_24mo": 20,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 7,
         "graffiti": 0,
-        "litter": 12
+        "litter": 13
       },
       "violations_alltime_2013_2018": 1128,
       "violations_alltime_2013_2018_by_category": {
@@ -4637,11 +4637,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113007829": {
-      "blight_311_24mo": 31,
+      "blight_311_24mo": 33,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 13,
-        "litter": 17
+        "graffiti": 12,
+        "litter": 20
       },
       "violations_alltime_2013_2018": 1249,
       "violations_alltime_2013_2018_by_category": {
@@ -4694,11 +4694,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113012212": {
-      "blight_311_24mo": 74,
+      "blight_311_24mo": 81,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 4,
         "graffiti": 0,
-        "litter": 70
+        "litter": 77
       },
       "violations_alltime_2013_2018": 1258,
       "violations_alltime_2013_2018_by_category": {
@@ -4770,11 +4770,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113007832": {
-      "blight_311_24mo": 6,
+      "blight_311_24mo": 7,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 6
+        "litter": 7
       },
       "violations_alltime_2013_2018": 53,
       "violations_alltime_2013_2018_by_category": {
@@ -4827,11 +4827,11 @@
       "vacancy_proxy_addresses": 9
     },
     "48113000608": {
-      "blight_311_24mo": 30,
+      "blight_311_24mo": 31,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 3,
-        "litter": 27
+        "litter": 28
       },
       "violations_alltime_2013_2018": 404,
       "violations_alltime_2013_2018_by_category": {
@@ -4865,11 +4865,11 @@
       "vacancy_proxy_addresses": 40
     },
     "48113010807": {
-      "blight_311_24mo": 27,
+      "blight_311_24mo": 30,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 7,
         "graffiti": 1,
-        "litter": 19
+        "litter": 22
       },
       "violations_alltime_2013_2018": 1242,
       "violations_alltime_2013_2018_by_category": {
@@ -4905,9 +4905,9 @@
     "48113007701": {
       "blight_311_24mo": 5,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 2,
+        "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 3
+        "litter": 4
       },
       "violations_alltime_2013_2018": 153,
       "violations_alltime_2013_2018_by_category": {
@@ -4941,11 +4941,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113010003": {
-      "blight_311_24mo": 113,
+      "blight_311_24mo": 130,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 8,
-        "graffiti": 16,
-        "litter": 89
+        "graffiti": 17,
+        "litter": 105
       },
       "violations_alltime_2013_2018": 1382,
       "violations_alltime_2013_2018_by_category": {
@@ -4998,11 +4998,11 @@
       "vacancy_proxy_addresses": 2
     },
     "48113013106": {
-      "blight_311_24mo": 10,
+      "blight_311_24mo": 12,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 8,
-        "litter": 2
+        "graffiti": 9,
+        "litter": 3
       },
       "violations_alltime_2013_2018": 61,
       "violations_alltime_2013_2018_by_category": {
@@ -5114,9 +5114,9 @@
     "48113000410": {
       "blight_311_24mo": 33,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 4,
+        "illegal_dumping": 3,
         "graffiti": 18,
-        "litter": 11
+        "litter": 12
       },
       "violations_alltime_2013_2018": 1557,
       "violations_alltime_2013_2018_by_category": {
@@ -5435,11 +5435,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113011603": {
-      "blight_311_24mo": 8,
+      "blight_311_24mo": 9,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
         "graffiti": 0,
-        "litter": 5
+        "litter": 6
       },
       "violations_alltime_2013_2018": 726,
       "violations_alltime_2013_2018_by_category": {
@@ -5473,11 +5473,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113017005": {
-      "blight_311_24mo": 12,
+      "blight_311_24mo": 16,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 0,
+        "illegal_dumping": 1,
         "graffiti": 3,
-        "litter": 9
+        "litter": 12
       },
       "violations_alltime_2013_2018": 508,
       "violations_alltime_2013_2018_by_category": {
@@ -5872,9 +5872,9 @@
       "vacancy_proxy_addresses": 0
     },
     "48113016710": {
-      "blight_311_24mo": 3,
+      "blight_311_24mo": 4,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 3,
+        "illegal_dumping": 4,
         "graffiti": 0,
         "litter": 0
       },
@@ -5891,11 +5891,11 @@
       "vacancy_proxy_addresses": 91
     },
     "48113008401": {
-      "blight_311_24mo": 18,
+      "blight_311_24mo": 20,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 1,
-        "litter": 16
+        "litter": 18
       },
       "violations_alltime_2013_2018": 2404,
       "violations_alltime_2013_2018_by_category": {
@@ -5986,11 +5986,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113011202": {
-      "blight_311_24mo": 14,
+      "blight_311_24mo": 16,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 7,
         "graffiti": 1,
-        "litter": 6
+        "litter": 8
       },
       "violations_alltime_2013_2018": 1413,
       "violations_alltime_2013_2018_by_category": {
@@ -6005,11 +6005,11 @@
       "vacancy_proxy_addresses": 52
     },
     "48113009001": {
-      "blight_311_24mo": 25,
+      "blight_311_24mo": 29,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 1,
+        "illegal_dumping": 2,
         "graffiti": 2,
-        "litter": 22
+        "litter": 25
       },
       "violations_alltime_2013_2018": 1005,
       "violations_alltime_2013_2018_by_category": {
@@ -6043,11 +6043,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113007834": {
-      "blight_311_24mo": 15,
+      "blight_311_24mo": 14,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 15,
-        "litter": 0
+        "graffiti": 13,
+        "litter": 1
       },
       "violations_alltime_2013_2018": 42,
       "violations_alltime_2013_2018_by_category": {
@@ -6138,11 +6138,11 @@
       "vacancy_proxy_addresses": 19
     },
     "48113009002": {
-      "blight_311_24mo": 13,
+      "blight_311_24mo": 15,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 1,
+        "illegal_dumping": 2,
         "graffiti": 0,
-        "litter": 12
+        "litter": 13
       },
       "violations_alltime_2013_2018": 987,
       "violations_alltime_2013_2018_by_category": {
@@ -6176,11 +6176,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113007833": {
-      "blight_311_24mo": 18,
+      "blight_311_24mo": 21,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 1,
-        "litter": 17
+        "graffiti": 2,
+        "litter": 19
       },
       "violations_alltime_2013_2018": 60,
       "violations_alltime_2013_2018_by_category": {
@@ -6214,11 +6214,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113012102": {
-      "blight_311_24mo": 21,
+      "blight_311_24mo": 25,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
         "graffiti": 1,
-        "litter": 17
+        "litter": 21
       },
       "violations_alltime_2013_2018": 1184,
       "violations_alltime_2013_2018_by_category": {
@@ -6271,9 +6271,9 @@
       "vacancy_proxy_addresses": 0
     },
     "48113011604": {
-      "blight_311_24mo": 6,
+      "blight_311_24mo": 7,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 0,
+        "illegal_dumping": 1,
         "graffiti": 0,
         "litter": 6
       },
@@ -6328,11 +6328,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113017010": {
-      "blight_311_24mo": 7,
+      "blight_311_24mo": 9,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 2,
+        "illegal_dumping": 3,
         "graffiti": 1,
-        "litter": 4
+        "litter": 5
       },
       "violations_alltime_2013_2018": 1342,
       "violations_alltime_2013_2018_by_category": {
@@ -6442,11 +6442,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113019016": {
-      "blight_311_24mo": 15,
+      "blight_311_24mo": 16,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 2,
-        "litter": 12
+        "litter": 13
       },
       "violations_alltime_2013_2018": 154,
       "violations_alltime_2013_2018_by_category": {
@@ -6594,11 +6594,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113021100": {
-      "blight_311_24mo": 76,
+      "blight_311_24mo": 80,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
         "graffiti": 1,
-        "litter": 72
+        "litter": 76
       },
       "violations_alltime_2013_2018": 2436,
       "violations_alltime_2013_2018_by_category": {
@@ -6651,9 +6651,9 @@
       "vacancy_proxy_addresses": 0
     },
     "48113011901": {
-      "blight_311_24mo": 46,
+      "blight_311_24mo": 45,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 2,
+        "illegal_dumping": 1,
         "graffiti": 2,
         "litter": 42
       },
@@ -6670,11 +6670,11 @@
       "vacancy_proxy_addresses": 72
     },
     "48113011902": {
-      "blight_311_24mo": 32,
+      "blight_311_24mo": 34,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
         "graffiti": 0,
-        "litter": 29
+        "litter": 31
       },
       "violations_alltime_2013_2018": 1539,
       "violations_alltime_2013_2018_by_category": {
@@ -6689,11 +6689,11 @@
       "vacancy_proxy_addresses": 37
     },
     "48113009204": {
-      "blight_311_24mo": 12,
+      "blight_311_24mo": 15,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 11
+        "litter": 14
       },
       "violations_alltime_2013_2018": 757,
       "violations_alltime_2013_2018_by_category": {
@@ -6784,11 +6784,11 @@
       "vacancy_proxy_addresses": 35
     },
     "48113001601": {
-      "blight_311_24mo": 24,
+      "blight_311_24mo": 26,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 10,
-        "litter": 14
+        "litter": 16
       },
       "violations_alltime_2013_2018": 571,
       "violations_alltime_2013_2018_by_category": {
@@ -6803,11 +6803,11 @@
       "vacancy_proxy_addresses": 16
     },
     "48113007828": {
-      "blight_311_24mo": 19,
+      "blight_311_24mo": 21,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 5,
-        "litter": 14
+        "graffiti": 4,
+        "litter": 17
       },
       "violations_alltime_2013_2018": 23,
       "violations_alltime_2013_2018_by_category": {
@@ -6825,8 +6825,8 @@
       "blight_311_24mo": 19,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 6,
-        "litter": 13
+        "graffiti": 5,
+        "litter": 14
       },
       "violations_alltime_2013_2018": 423,
       "violations_alltime_2013_2018_by_category": {
@@ -6841,11 +6841,11 @@
       "vacancy_proxy_addresses": 8
     },
     "48113002703": {
-      "blight_311_24mo": 84,
+      "blight_311_24mo": 94,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 5,
+        "illegal_dumping": 7,
         "graffiti": 2,
-        "litter": 77
+        "litter": 85
       },
       "violations_alltime_2013_2018": 9770,
       "violations_alltime_2013_2018_by_category": {
@@ -6860,11 +6860,11 @@
       "vacancy_proxy_addresses": 303
     },
     "48113020900": {
-      "blight_311_24mo": 112,
+      "blight_311_24mo": 123,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 8,
+        "illegal_dumping": 9,
         "graffiti": 2,
-        "litter": 102
+        "litter": 112
       },
       "violations_alltime_2013_2018": 5161,
       "violations_alltime_2013_2018_by_category": {
@@ -6898,9 +6898,9 @@
       "vacancy_proxy_addresses": 0
     },
     "48113021000": {
-      "blight_311_24mo": 41,
+      "blight_311_24mo": 44,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 10,
+        "illegal_dumping": 13,
         "graffiti": 3,
         "litter": 28
       },
@@ -7012,11 +7012,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113012101": {
-      "blight_311_24mo": 7,
+      "blight_311_24mo": 9,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 7
+        "litter": 9
       },
       "violations_alltime_2013_2018": 328,
       "violations_alltime_2013_2018_by_category": {
@@ -7088,11 +7088,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113020402": {
-      "blight_311_24mo": 206,
+      "blight_311_24mo": 215,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 3,
+        "illegal_dumping": 2,
         "graffiti": 73,
-        "litter": 130
+        "litter": 140
       },
       "violations_alltime_2013_2018": 3229,
       "violations_alltime_2013_2018_by_category": {
@@ -7221,11 +7221,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113016709": {
-      "blight_311_24mo": 16,
+      "blight_311_24mo": 18,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 4,
         "graffiti": 1,
-        "litter": 11
+        "litter": 13
       },
       "violations_alltime_2013_2018": 383,
       "violations_alltime_2013_2018_by_category": {
@@ -7392,11 +7392,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113017101": {
-      "blight_311_24mo": 19,
+      "blight_311_24mo": 17,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
-        "graffiti": 3,
-        "litter": 13
+        "graffiti": 2,
+        "litter": 12
       },
       "violations_alltime_2013_2018": 2003,
       "violations_alltime_2013_2018_by_category": {
@@ -7449,11 +7449,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113019208": {
-      "blight_311_24mo": 27,
+      "blight_311_24mo": 28,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 8,
-        "litter": 18
+        "graffiti": 7,
+        "litter": 20
       },
       "violations_alltime_2013_2018": 791,
       "violations_alltime_2013_2018_by_category": {
@@ -7525,11 +7525,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113017805": {
-      "blight_311_24mo": 12,
+      "blight_311_24mo": 14,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 0,
-        "litter": 11
+        "graffiti": 1,
+        "litter": 12
       },
       "violations_alltime_2013_2018": 23,
       "violations_alltime_2013_2018_by_category": {
@@ -7905,11 +7905,11 @@
       "vacancy_proxy_addresses": 2
     },
     "48113012604": {
-      "blight_311_24mo": 9,
+      "blight_311_24mo": 8,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 1,
-        "litter": 7
+        "litter": 6
       },
       "violations_alltime_2013_2018": 436,
       "violations_alltime_2013_2018_by_category": {
@@ -7924,11 +7924,11 @@
       "vacancy_proxy_addresses": 7
     },
     "48113013010": {
-      "blight_311_24mo": 40,
+      "blight_311_24mo": 42,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
         "graffiti": 1,
-        "litter": 36
+        "litter": 38
       },
       "violations_alltime_2013_2018": 287,
       "violations_alltime_2013_2018_by_category": {
@@ -7962,11 +7962,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113013621": {
-      "blight_311_24mo": 7,
+      "blight_311_24mo": 9,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 0,
-        "litter": 7
+        "graffiti": 1,
+        "litter": 8
       },
       "violations_alltime_2013_2018": 10,
       "violations_alltime_2013_2018_by_category": {
@@ -8266,9 +8266,9 @@
       "vacancy_proxy_addresses": 0
     },
     "48113019213": {
-      "blight_311_24mo": 8,
+      "blight_311_24mo": 7,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 2,
+        "illegal_dumping": 1,
         "graffiti": 5,
         "litter": 1
       },
@@ -8342,11 +8342,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113010903": {
-      "blight_311_24mo": 10,
+      "blight_311_24mo": 11,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 9
+        "litter": 10
       },
       "violations_alltime_2013_2018": 916,
       "violations_alltime_2013_2018_by_category": {
@@ -8399,11 +8399,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113020300": {
-      "blight_311_24mo": 64,
+      "blight_311_24mo": 67,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 8,
         "graffiti": 3,
-        "litter": 53
+        "litter": 56
       },
       "violations_alltime_2013_2018": 3172,
       "violations_alltime_2013_2018_by_category": {
@@ -8418,11 +8418,11 @@
       "vacancy_proxy_addresses": 57
     },
     "48113020500": {
-      "blight_311_24mo": 37,
+      "blight_311_24mo": 39,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
         "graffiti": 13,
-        "litter": 21
+        "litter": 23
       },
       "violations_alltime_2013_2018": 931,
       "violations_alltime_2013_2018_by_category": {
@@ -8437,11 +8437,11 @@
       "vacancy_proxy_addresses": 22
     },
     "48113020600": {
-      "blight_311_24mo": 16,
+      "blight_311_24mo": 17,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 4,
         "graffiti": 1,
-        "litter": 11
+        "litter": 12
       },
       "violations_alltime_2013_2018": 303,
       "violations_alltime_2013_2018_by_category": {
@@ -8494,11 +8494,11 @@
       "vacancy_proxy_addresses": 42
     },
     "48113012302": {
-      "blight_311_24mo": 30,
+      "blight_311_24mo": 31,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 5,
         "graffiti": 1,
-        "litter": 24
+        "litter": 25
       },
       "violations_alltime_2013_2018": 1963,
       "violations_alltime_2013_2018_by_category": {
@@ -8532,11 +8532,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113011002": {
-      "blight_311_24mo": 17,
+      "blight_311_24mo": 20,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
         "graffiti": 2,
-        "litter": 12
+        "litter": 15
       },
       "violations_alltime_2013_2018": 1431,
       "violations_alltime_2013_2018_by_category": {
@@ -8551,11 +8551,11 @@
       "vacancy_proxy_addresses": 42
     },
     "48113011101": {
-      "blight_311_24mo": 27,
+      "blight_311_24mo": 28,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 1,
-        "litter": 25
+        "litter": 26
       },
       "violations_alltime_2013_2018": 1293,
       "violations_alltime_2013_2018_by_category": {
@@ -8570,11 +8570,11 @@
       "vacancy_proxy_addresses": 36
     },
     "48113011103": {
-      "blight_311_24mo": 12,
+      "blight_311_24mo": 13,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
         "graffiti": 1,
-        "litter": 8
+        "litter": 9
       },
       "violations_alltime_2013_2018": 1170,
       "violations_alltime_2013_2018_by_category": {
@@ -8589,11 +8589,11 @@
       "vacancy_proxy_addresses": 37
     },
     "48113011104": {
-      "blight_311_24mo": 12,
+      "blight_311_24mo": 14,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
         "graffiti": 0,
-        "litter": 9
+        "litter": 11
       },
       "violations_alltime_2013_2018": 1440,
       "violations_alltime_2013_2018_by_category": {
@@ -8608,9 +8608,9 @@
       "vacancy_proxy_addresses": 65
     },
     "48113010101": {
-      "blight_311_24mo": 37,
+      "blight_311_24mo": 38,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 11,
+        "illegal_dumping": 12,
         "graffiti": 3,
         "litter": 23
       },
@@ -8627,11 +8627,11 @@
       "vacancy_proxy_addresses": 321
     },
     "48113010102": {
-      "blight_311_24mo": 80,
+      "blight_311_24mo": 83,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 5,
-        "graffiti": 32,
-        "litter": 43
+        "graffiti": 33,
+        "litter": 45
       },
       "violations_alltime_2013_2018": 3741,
       "violations_alltime_2013_2018_by_category": {
@@ -8646,11 +8646,11 @@
       "vacancy_proxy_addresses": 127
     },
     "48113010500": {
-      "blight_311_24mo": 26,
+      "blight_311_24mo": 36,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 1,
+        "illegal_dumping": 2,
         "graffiti": 2,
-        "litter": 23
+        "litter": 32
       },
       "violations_alltime_2013_2018": 2252,
       "violations_alltime_2013_2018_by_category": {
@@ -8665,11 +8665,11 @@
       "vacancy_proxy_addresses": 90
     },
     "48113010601": {
-      "blight_311_24mo": 24,
+      "blight_311_24mo": 30,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 3,
+        "illegal_dumping": 4,
         "graffiti": 1,
-        "litter": 20
+        "litter": 25
       },
       "violations_alltime_2013_2018": 1979,
       "violations_alltime_2013_2018_by_category": {
@@ -8684,11 +8684,11 @@
       "vacancy_proxy_addresses": 57
     },
     "48113010602": {
-      "blight_311_24mo": 20,
+      "blight_311_24mo": 22,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
-        "graffiti": 3,
-        "litter": 14
+        "graffiti": 2,
+        "litter": 17
       },
       "violations_alltime_2013_2018": 1126,
       "violations_alltime_2013_2018_by_category": {
@@ -8722,11 +8722,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113020200": {
-      "blight_311_24mo": 66,
+      "blight_311_24mo": 68,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 11,
-        "graffiti": 2,
-        "litter": 53
+        "graffiti": 1,
+        "litter": 56
       },
       "violations_alltime_2013_2018": 2622,
       "violations_alltime_2013_2018_by_category": {
@@ -8798,11 +8798,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113000606": {
-      "blight_311_24mo": 23,
+      "blight_311_24mo": 24,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 5,
-        "litter": 17
+        "litter": 18
       },
       "violations_alltime_2013_2018": 375,
       "violations_alltime_2013_2018_by_category": {
@@ -8836,9 +8836,9 @@
       "vacancy_proxy_addresses": 0
     },
     "48113007812": {
-      "blight_311_24mo": 16,
+      "blight_311_24mo": 17,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 0,
+        "illegal_dumping": 1,
         "graffiti": 2,
         "litter": 14
       },
@@ -8893,11 +8893,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113006100": {
-      "blight_311_24mo": 21,
+      "blight_311_24mo": 24,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 4,
         "graffiti": 1,
-        "litter": 16
+        "litter": 19
       },
       "violations_alltime_2013_2018": 1396,
       "violations_alltime_2013_2018_by_category": {
@@ -8931,11 +8931,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113007809": {
-      "blight_311_24mo": 48,
+      "blight_311_24mo": 53,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 4,
-        "litter": 43
+        "litter": 48
       },
       "violations_alltime_2013_2018": 603,
       "violations_alltime_2013_2018_by_category": {
@@ -8969,11 +8969,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113013618": {
-      "blight_311_24mo": 5,
+      "blight_311_24mo": 4,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 1,
-        "litter": 4
+        "litter": 3
       },
       "violations_alltime_2013_2018": 244,
       "violations_alltime_2013_2018_by_category": {
@@ -8988,11 +8988,11 @@
       "vacancy_proxy_addresses": 1
     },
     "48113009900": {
-      "blight_311_24mo": 64,
+      "blight_311_24mo": 71,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 14,
         "graffiti": 3,
-        "litter": 47
+        "litter": 54
       },
       "violations_alltime_2013_2018": 1966,
       "violations_alltime_2013_2018_by_category": {
@@ -9007,10 +9007,10 @@
       "vacancy_proxy_addresses": 47
     },
     "48113009804": {
-      "blight_311_24mo": 1,
+      "blight_311_24mo": 2,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 1,
+        "graffiti": 2,
         "litter": 0
       },
       "violations_alltime_2013_2018": 84,
@@ -9064,11 +9064,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113009103": {
-      "blight_311_24mo": 5,
+      "blight_311_24mo": 6,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 1,
-        "litter": 3
+        "litter": 4
       },
       "violations_alltime_2013_2018": 490,
       "violations_alltime_2013_2018_by_category": {
@@ -9083,11 +9083,11 @@
       "vacancy_proxy_addresses": 18
     },
     "48113001504": {
-      "blight_311_24mo": 16,
+      "blight_311_24mo": 18,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
         "graffiti": 3,
-        "litter": 11
+        "litter": 13
       },
       "violations_alltime_2013_2018": 1104,
       "violations_alltime_2013_2018_by_category": {
@@ -9140,11 +9140,11 @@
       "vacancy_proxy_addresses": 22
     },
     "48113006900": {
-      "blight_311_24mo": 15,
+      "blight_311_24mo": 16,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 4,
-        "litter": 10
+        "litter": 11
       },
       "violations_alltime_2013_2018": 601,
       "violations_alltime_2013_2018_by_category": {
@@ -9273,11 +9273,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113000100": {
-      "blight_311_24mo": 27,
+      "blight_311_24mo": 31,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 8,
-        "litter": 18
+        "graffiti": 11,
+        "litter": 19
       },
       "violations_alltime_2013_2018": 872,
       "violations_alltime_2013_2018_by_category": {
@@ -9311,11 +9311,11 @@
       "vacancy_proxy_addresses": 8
     },
     "48113000202": {
-      "blight_311_24mo": 13,
+      "blight_311_24mo": 15,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 1,
-        "litter": 12
+        "litter": 14
       },
       "violations_alltime_2013_2018": 778,
       "violations_alltime_2013_2018_by_category": {
@@ -9330,11 +9330,11 @@
       "vacancy_proxy_addresses": 7
     },
     "48113000300": {
-      "blight_311_24mo": 23,
+      "blight_311_24mo": 24,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
         "graffiti": 5,
-        "litter": 16
+        "litter": 17
       },
       "violations_alltime_2013_2018": 1195,
       "violations_alltime_2013_2018_by_category": {
@@ -9349,11 +9349,11 @@
       "vacancy_proxy_addresses": 15
     },
     "48113000401": {
-      "blight_311_24mo": 58,
+      "blight_311_24mo": 62,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 5,
-        "graffiti": 21,
-        "litter": 32
+        "graffiti": 19,
+        "litter": 38
       },
       "violations_alltime_2013_2018": 1264,
       "violations_alltime_2013_2018_by_category": {
@@ -9368,11 +9368,11 @@
       "vacancy_proxy_addresses": 29
     },
     "48113000405": {
-      "blight_311_24mo": 36,
+      "blight_311_24mo": 43,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 24,
-        "litter": 11
+        "litter": 18
       },
       "violations_alltime_2013_2018": 275,
       "violations_alltime_2013_2018_by_category": {
@@ -9387,11 +9387,11 @@
       "vacancy_proxy_addresses": 4
     },
     "48113001001": {
-      "blight_311_24mo": 3,
+      "blight_311_24mo": 5,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 3
+        "litter": 5
       },
       "violations_alltime_2013_2018": 728,
       "violations_alltime_2013_2018_by_category": {
@@ -9406,11 +9406,11 @@
       "vacancy_proxy_addresses": 16
     },
     "48113001002": {
-      "blight_311_24mo": 29,
+      "blight_311_24mo": 31,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 8,
-        "litter": 21
+        "litter": 23
       },
       "violations_alltime_2013_2018": 1362,
       "violations_alltime_2013_2018_by_category": {
@@ -9425,10 +9425,10 @@
       "vacancy_proxy_addresses": 27
     },
     "48113001102": {
-      "blight_311_24mo": 1,
+      "blight_311_24mo": 2,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 0,
+        "graffiti": 1,
         "litter": 1
       },
       "violations_alltime_2013_2018": 619,
@@ -9482,10 +9482,10 @@
       "vacancy_proxy_addresses": 12
     },
     "48113001302": {
-      "blight_311_24mo": 29,
+      "blight_311_24mo": 28,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 10,
+        "graffiti": 9,
         "litter": 19
       },
       "violations_alltime_2013_2018": 1188,
@@ -9501,10 +9501,10 @@
       "vacancy_proxy_addresses": 27
     },
     "48113001400": {
-      "blight_311_24mo": 22,
+      "blight_311_24mo": 24,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
-        "graffiti": 7,
+        "graffiti": 9,
         "litter": 13
       },
       "violations_alltime_2013_2018": 979,
@@ -9520,10 +9520,10 @@
       "vacancy_proxy_addresses": 18
     },
     "48113001101": {
-      "blight_311_24mo": 16,
+      "blight_311_24mo": 21,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 5,
+        "graffiti": 10,
         "litter": 10
       },
       "violations_alltime_2013_2018": 1936,
@@ -9539,11 +9539,11 @@
       "vacancy_proxy_addresses": 46
     },
     "48113001502": {
-      "blight_311_24mo": 24,
+      "blight_311_24mo": 26,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 3,
+        "illegal_dumping": 4,
         "graffiti": 2,
-        "litter": 19
+        "litter": 20
       },
       "violations_alltime_2013_2018": 3116,
       "violations_alltime_2013_2018_by_category": {
@@ -9558,10 +9558,10 @@
       "vacancy_proxy_addresses": 61
     },
     "48113001503": {
-      "blight_311_24mo": 28,
+      "blight_311_24mo": 27,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 4,
+        "graffiti": 3,
         "litter": 23
       },
       "violations_alltime_2013_2018": 1059,
@@ -9577,11 +9577,11 @@
       "vacancy_proxy_addresses": 16
     },
     "48113012209": {
-      "blight_311_24mo": 10,
+      "blight_311_24mo": 14,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 0,
-        "litter": 10
+        "graffiti": 2,
+        "litter": 12
       },
       "violations_alltime_2013_2018": 563,
       "violations_alltime_2013_2018_by_category": {
@@ -9634,11 +9634,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113009303": {
-      "blight_311_24mo": 15,
+      "blight_311_24mo": 17,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 6,
         "graffiti": 0,
-        "litter": 9
+        "litter": 11
       },
       "violations_alltime_2013_2018": 2039,
       "violations_alltime_2013_2018_by_category": {
@@ -9672,9 +9672,9 @@
       "vacancy_proxy_addresses": 0
     },
     "48113011601": {
-      "blight_311_24mo": 23,
+      "blight_311_24mo": 21,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 4,
+        "illegal_dumping": 2,
         "graffiti": 0,
         "litter": 19
       },
@@ -9729,11 +9729,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113004600": {
-      "blight_311_24mo": 11,
+      "blight_311_24mo": 12,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 3,
-        "litter": 8
+        "litter": 9
       },
       "violations_alltime_2013_2018": 708,
       "violations_alltime_2013_2018_by_category": {
@@ -9748,11 +9748,11 @@
       "vacancy_proxy_addresses": 7
     },
     "48113007102": {
-      "blight_311_24mo": 16,
+      "blight_311_24mo": 17,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 1,
-        "litter": 14
+        "litter": 15
       },
       "violations_alltime_2013_2018": 3093,
       "violations_alltime_2013_2018_by_category": {
@@ -9786,11 +9786,11 @@
       "vacancy_proxy_addresses": 5
     },
     "48113007302": {
-      "blight_311_24mo": 17,
+      "blight_311_24mo": 18,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 4,
-        "litter": 12
+        "litter": 13
       },
       "violations_alltime_2013_2018": 730,
       "violations_alltime_2013_2018_by_category": {
@@ -9805,11 +9805,11 @@
       "vacancy_proxy_addresses": 17
     },
     "48113003700": {
-      "blight_311_24mo": 67,
+      "blight_311_24mo": 70,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 19,
         "graffiti": 2,
-        "litter": 46
+        "litter": 49
       },
       "violations_alltime_2013_2018": 3567,
       "violations_alltime_2013_2018_by_category": {
@@ -9824,11 +9824,11 @@
       "vacancy_proxy_addresses": 119
     },
     "48113007810": {
-      "blight_311_24mo": 53,
+      "blight_311_24mo": 61,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
         "graffiti": 11,
-        "litter": 40
+        "litter": 48
       },
       "violations_alltime_2013_2018": 492,
       "violations_alltime_2013_2018_by_category": {
@@ -9843,11 +9843,11 @@
       "vacancy_proxy_addresses": 10
     },
     "48113007903": {
-      "blight_311_24mo": 20,
+      "blight_311_24mo": 21,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 1,
-        "litter": 18
+        "litter": 19
       },
       "violations_alltime_2013_2018": 432,
       "violations_alltime_2013_2018_by_category": {
@@ -9862,11 +9862,11 @@
       "vacancy_proxy_addresses": 3
     },
     "48113007906": {
-      "blight_311_24mo": 8,
+      "blight_311_24mo": 9,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 2,
-        "litter": 6
+        "litter": 7
       },
       "violations_alltime_2013_2018": 218,
       "violations_alltime_2013_2018_by_category": {
@@ -10052,11 +10052,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113008705": {
-      "blight_311_24mo": 6,
+      "blight_311_24mo": 7,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 5
+        "litter": 6
       },
       "violations_alltime_2013_2018": 2059,
       "violations_alltime_2013_2018_by_category": {
@@ -10071,11 +10071,11 @@
       "vacancy_proxy_addresses": 73
     },
     "48113010701": {
-      "blight_311_24mo": 61,
+      "blight_311_24mo": 63,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 6,
-        "litter": 55
+        "litter": 57
       },
       "violations_alltime_2013_2018": 1009,
       "violations_alltime_2013_2018_by_category": {
@@ -10109,10 +10109,10 @@
       "vacancy_proxy_addresses": 0
     },
     "48113004202": {
-      "blight_311_24mo": 29,
+      "blight_311_24mo": 28,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 10,
+        "graffiti": 9,
         "litter": 19
       },
       "violations_alltime_2013_2018": 878,
@@ -10128,11 +10128,11 @@
       "vacancy_proxy_addresses": 34
     },
     "48113004300": {
-      "blight_311_24mo": 524,
+      "blight_311_24mo": 545,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 3,
-        "graffiti": 145,
-        "litter": 376
+        "illegal_dumping": 4,
+        "graffiti": 144,
+        "litter": 397
       },
       "violations_alltime_2013_2018": 2380,
       "violations_alltime_2013_2018_by_category": {
@@ -10147,11 +10147,11 @@
       "vacancy_proxy_addresses": 56
     },
     "48113004400": {
-      "blight_311_24mo": 111,
+      "blight_311_24mo": 117,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 10,
-        "litter": 101
+        "litter": 107
       },
       "violations_alltime_2013_2018": 650,
       "violations_alltime_2013_2018_by_category": {
@@ -10166,11 +10166,11 @@
       "vacancy_proxy_addresses": 14
     },
     "48113004500": {
-      "blight_311_24mo": 29,
+      "blight_311_24mo": 31,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 8,
+        "illegal_dumping": 9,
         "graffiti": 9,
-        "litter": 12
+        "litter": 13
       },
       "violations_alltime_2013_2018": 1694,
       "violations_alltime_2013_2018_by_category": {
@@ -10223,10 +10223,10 @@
       "vacancy_proxy_addresses": 1
     },
     "48113013617": {
-      "blight_311_24mo": 2,
+      "blight_311_24mo": 3,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 0,
+        "graffiti": 1,
         "litter": 2
       },
       "violations_alltime_2013_2018": 449,
@@ -10242,10 +10242,10 @@
       "vacancy_proxy_addresses": 7
     },
     "48113013619": {
-      "blight_311_24mo": 4,
+      "blight_311_24mo": 6,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 1,
-        "graffiti": 0,
+        "illegal_dumping": 2,
+        "graffiti": 1,
         "litter": 3
       },
       "violations_alltime_2013_2018": 769,
@@ -10546,10 +10546,10 @@
       "vacancy_proxy_addresses": 0
     },
     "48113014001": {
-      "blight_311_24mo": 10,
+      "blight_311_24mo": 8,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 4,
+        "graffiti": 2,
         "litter": 6
       },
       "violations_alltime_2013_2018": 14,
@@ -10565,11 +10565,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113019040": {
-      "blight_311_24mo": 2,
+      "blight_311_24mo": 3,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 1,
-        "litter": 1
+        "litter": 2
       },
       "violations_alltime_2013_2018": 36,
       "violations_alltime_2013_2018_by_category": {
@@ -10584,11 +10584,11 @@
       "vacancy_proxy_addresses": 1
     },
     "48113018506": {
-      "blight_311_24mo": 19,
+      "blight_311_24mo": 21,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 2,
+        "illegal_dumping": 1,
         "graffiti": 7,
-        "litter": 10
+        "litter": 13
       },
       "violations_alltime_2013_2018": 246,
       "violations_alltime_2013_2018_by_category": {
@@ -10603,11 +10603,11 @@
       "vacancy_proxy_addresses": 5
     },
     "48113010904": {
-      "blight_311_24mo": 43,
+      "blight_311_24mo": 48,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 2,
-        "litter": 40
+        "litter": 45
       },
       "violations_alltime_2013_2018": 627,
       "violations_alltime_2013_2018_by_category": {
@@ -10793,11 +10793,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113012601": {
-      "blight_311_24mo": 8,
+      "blight_311_24mo": 10,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 1,
-        "litter": 7
+        "litter": 9
       },
       "violations_alltime_2013_2018": 1800,
       "violations_alltime_2013_2018_by_category": {
@@ -10812,11 +10812,11 @@
       "vacancy_proxy_addresses": 29
     },
     "48113012701": {
-      "blight_311_24mo": 31,
+      "blight_311_24mo": 32,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 4,
         "graffiti": 4,
-        "litter": 23
+        "litter": 24
       },
       "violations_alltime_2013_2018": 1672,
       "violations_alltime_2013_2018_by_category": {
@@ -10834,8 +10834,8 @@
       "blight_311_24mo": 26,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 4,
-        "litter": 21
+        "graffiti": 3,
+        "litter": 22
       },
       "violations_alltime_2013_2018": 1619,
       "violations_alltime_2013_2018_by_category": {
@@ -10850,11 +10850,11 @@
       "vacancy_proxy_addresses": 39
     },
     "48113012900": {
-      "blight_311_24mo": 51,
+      "blight_311_24mo": 50,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 11,
-        "graffiti": 8,
-        "litter": 32
+        "illegal_dumping": 6,
+        "graffiti": 9,
+        "litter": 35
       },
       "violations_alltime_2013_2018": 1588,
       "violations_alltime_2013_2018_by_category": {
@@ -10983,10 +10983,10 @@
       "vacancy_proxy_addresses": 0
     },
     "48113013620": {
-      "blight_311_24mo": 15,
+      "blight_311_24mo": 17,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 2,
+        "graffiti": 4,
         "litter": 12
       },
       "violations_alltime_2013_2018": 47,
@@ -11002,11 +11002,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113006402": {
-      "blight_311_24mo": 19,
+      "blight_311_24mo": 20,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 3,
-        "litter": 15
+        "graffiti": 2,
+        "litter": 17
       },
       "violations_alltime_2013_2018": 1105,
       "violations_alltime_2013_2018_by_category": {
@@ -11021,11 +11021,11 @@
       "vacancy_proxy_addresses": 22
     },
     "48113010804": {
-      "blight_311_24mo": 7,
+      "blight_311_24mo": 8,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 1,
-        "litter": 6
+        "litter": 7
       },
       "violations_alltime_2013_2018": 923,
       "violations_alltime_2013_2018_by_category": {
@@ -11040,11 +11040,11 @@
       "vacancy_proxy_addresses": 17
     },
     "48113010805": {
-      "blight_311_24mo": 20,
+      "blight_311_24mo": 22,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 5,
+        "illegal_dumping": 4,
         "graffiti": 1,
-        "litter": 14
+        "litter": 17
       },
       "violations_alltime_2013_2018": 835,
       "violations_alltime_2013_2018_by_category": {
@@ -11059,11 +11059,11 @@
       "vacancy_proxy_addresses": 16
     },
     "48113006401": {
-      "blight_311_24mo": 1,
+      "blight_311_24mo": 2,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 0
+        "litter": 1
       },
       "violations_alltime_2013_2018": 625,
       "violations_alltime_2013_2018_by_category": {
@@ -11116,11 +11116,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113007823": {
-      "blight_311_24mo": 47,
+      "blight_311_24mo": 48,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 25,
-        "litter": 21
+        "graffiti": 24,
+        "litter": 23
       },
       "violations_alltime_2013_2018": 75,
       "violations_alltime_2013_2018_by_category": {
@@ -11135,11 +11135,11 @@
       "vacancy_proxy_addresses": 1
     },
     "48113007822": {
-      "blight_311_24mo": 35,
+      "blight_311_24mo": 42,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 5,
-        "litter": 30
+        "graffiti": 6,
+        "litter": 36
       },
       "violations_alltime_2013_2018": 87,
       "violations_alltime_2013_2018_by_category": {
@@ -11154,11 +11154,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113007821": {
-      "blight_311_24mo": 6,
+      "blight_311_24mo": 9,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 6
+        "litter": 9
       },
       "violations_alltime_2013_2018": 67,
       "violations_alltime_2013_2018_by_category": {
@@ -11192,10 +11192,10 @@
       "vacancy_proxy_addresses": 1
     },
     "48113007827": {
-      "blight_311_24mo": 17,
+      "blight_311_24mo": 16,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 10,
+        "graffiti": 9,
         "litter": 7
       },
       "violations_alltime_2013_2018": 35,
@@ -11211,11 +11211,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113013005": {
-      "blight_311_24mo": 17,
+      "blight_311_24mo": 19,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 16
+        "litter": 18
       },
       "violations_alltime_2013_2018": 1105,
       "violations_alltime_2013_2018_by_category": {
@@ -11230,11 +11230,11 @@
       "vacancy_proxy_addresses": 15
     },
     "48113013007": {
-      "blight_311_24mo": 12,
+      "blight_311_24mo": 13,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 4,
         "graffiti": 1,
-        "litter": 7
+        "litter": 8
       },
       "violations_alltime_2013_2018": 945,
       "violations_alltime_2013_2018_by_category": {
@@ -11249,11 +11249,11 @@
       "vacancy_proxy_addresses": 18
     },
     "48113013008": {
-      "blight_311_24mo": 10,
+      "blight_311_24mo": 11,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 0,
-        "graffiti": 5,
-        "litter": 5
+        "illegal_dumping": 1,
+        "graffiti": 4,
+        "litter": 6
       },
       "violations_alltime_2013_2018": 258,
       "violations_alltime_2013_2018_by_category": {
@@ -11268,11 +11268,11 @@
       "vacancy_proxy_addresses": 4
     },
     "48113013009": {
-      "blight_311_24mo": 11,
+      "blight_311_24mo": 12,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 4,
-        "litter": 7
+        "litter": 8
       },
       "violations_alltime_2013_2018": 501,
       "violations_alltime_2013_2018_by_category": {
@@ -11306,10 +11306,10 @@
       "vacancy_proxy_addresses": 7
     },
     "48113007826": {
-      "blight_311_24mo": 8,
+      "blight_311_24mo": 7,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 2,
+        "graffiti": 1,
         "litter": 6
       },
       "violations_alltime_2013_2018": 32,
@@ -11325,11 +11325,11 @@
       "vacancy_proxy_addresses": 2
     },
     "48113007824": {
-      "blight_311_24mo": 6,
+      "blight_311_24mo": 8,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 3,
-        "litter": 3
+        "litter": 5
       },
       "violations_alltime_2013_2018": 200,
       "violations_alltime_2013_2018_by_category": {
@@ -11347,8 +11347,8 @@
       "blight_311_24mo": 15,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 4,
-        "litter": 10
+        "graffiti": 3,
+        "litter": 11
       },
       "violations_alltime_2013_2018": 253,
       "violations_alltime_2013_2018_by_category": {
@@ -11458,11 +11458,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113007910": {
-      "blight_311_24mo": 1,
+      "blight_311_24mo": 2,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 1
+        "litter": 2
       },
       "violations_alltime_2013_2018": 0,
       "violations_alltime_2013_2018_by_category": {
@@ -11477,11 +11477,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113007909": {
-      "blight_311_24mo": 4,
+      "blight_311_24mo": 6,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
         "graffiti": 0,
-        "litter": 4
+        "litter": 6
       },
       "violations_alltime_2013_2018": 62,
       "violations_alltime_2013_2018_by_category": {
@@ -11572,11 +11572,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113013300": {
-      "blight_311_24mo": 4,
+      "blight_311_24mo": 5,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 3
+        "litter": 4
       },
       "violations_alltime_2013_2018": 271,
       "violations_alltime_2013_2018_by_category": {
@@ -11591,10 +11591,10 @@
       "vacancy_proxy_addresses": 5
     },
     "48113013400": {
-      "blight_311_24mo": 13,
+      "blight_311_24mo": 12,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 6,
+        "graffiti": 5,
         "litter": 7
       },
       "violations_alltime_2013_2018": 278,
@@ -11648,11 +11648,11 @@
       "vacancy_proxy_addresses": 9
     },
     "48113013606": {
-      "blight_311_24mo": 16,
+      "blight_311_24mo": 17,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 2,
         "graffiti": 1,
-        "litter": 13
+        "litter": 14
       },
       "violations_alltime_2013_2018": 805,
       "violations_alltime_2013_2018_by_category": {
@@ -11667,11 +11667,11 @@
       "vacancy_proxy_addresses": 5
     },
     "48113013608": {
-      "blight_311_24mo": 24,
+      "blight_311_24mo": 26,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
         "graffiti": 0,
-        "litter": 23
+        "litter": 25
       },
       "violations_alltime_2013_2018": 409,
       "violations_alltime_2013_2018_by_category": {
@@ -11781,11 +11781,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113009101": {
-      "blight_311_24mo": 53,
+      "blight_311_24mo": 57,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 3,
         "graffiti": 1,
-        "litter": 49
+        "litter": 53
       },
       "violations_alltime_2013_2018": 2184,
       "violations_alltime_2013_2018_by_category": {
@@ -11800,10 +11800,10 @@
       "vacancy_proxy_addresses": 53
     },
     "48113009401": {
-      "blight_311_24mo": 15,
+      "blight_311_24mo": 16,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 9,
+        "graffiti": 10,
         "litter": 5
       },
       "violations_alltime_2013_2018": 1395,
@@ -11914,11 +11914,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113007912": {
-      "blight_311_24mo": 9,
+      "blight_311_24mo": 11,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 0,
-        "graffiti": 3,
-        "litter": 6
+        "graffiti": 4,
+        "litter": 7
       },
       "violations_alltime_2013_2018": 49,
       "violations_alltime_2013_2018_by_category": {
@@ -11952,11 +11952,11 @@
       "vacancy_proxy_addresses": 0
     },
     "48113016521": {
-      "blight_311_24mo": 18,
+      "blight_311_24mo": 19,
       "blight_311_24mo_by_category": {
-        "illegal_dumping": 2,
+        "illegal_dumping": 1,
         "graffiti": 5,
-        "litter": 11
+        "litter": 13
       },
       "violations_alltime_2013_2018": 1116,
       "violations_alltime_2013_2018_by_category": {
@@ -11971,10 +11971,10 @@
       "vacancy_proxy_addresses": 19
     },
     "48113018505": {
-      "blight_311_24mo": 11,
+      "blight_311_24mo": 10,
       "blight_311_24mo_by_category": {
         "illegal_dumping": 1,
-        "graffiti": 1,
+        "graffiti": 0,
         "litter": 9
       },
       "violations_alltime_2013_2018": 72,

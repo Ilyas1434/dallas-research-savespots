@@ -361,7 +361,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113000802",
-        "n_candidates": 15
+        "n_candidates": 16
       },
       "geometry": {
         "type": "Point",
@@ -613,7 +613,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113001705",
-        "n_candidates": 23
+        "n_candidates": 22
       },
       "geometry": {
         "type": "Point",
@@ -655,7 +655,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113001901",
-        "n_candidates": 10
+        "n_candidates": 9
       },
       "geometry": {
         "type": "Point",
@@ -907,7 +907,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113004700",
-        "n_candidates": 49
+        "n_candidates": 48
       },
       "geometry": {
         "type": "Point",
@@ -1551,7 +1551,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113007822",
-        "n_candidates": 49
+        "n_candidates": 50
       },
       "geometry": {
         "type": "Point",
@@ -1747,7 +1747,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113007903",
-        "n_candidates": 4
+        "n_candidates": 12
       },
       "geometry": {
         "type": "Point",
@@ -1887,7 +1887,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113008101",
-        "n_candidates": 10
+        "n_candidates": 11
       },
       "geometry": {
         "type": "Point",
@@ -2517,7 +2517,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113010101",
-        "n_candidates": 10
+        "n_candidates": 11
       },
       "geometry": {
         "type": "Point",
@@ -3637,7 +3637,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113013610",
-        "n_candidates": 7
+        "n_candidates": 8
       },
       "geometry": {
         "type": "Point",
@@ -3875,7 +3875,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113013719",
-        "n_candidates": 21
+        "n_candidates": 22
       },
       "geometry": {
         "type": "Point",
@@ -4085,7 +4085,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113014002",
-        "n_candidates": 4
+        "n_candidates": 5
       },
       "geometry": {
         "type": "Point",
@@ -4099,7 +4099,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113014119",
-        "n_candidates": 9
+        "n_candidates": 10
       },
       "geometry": {
         "type": "Point",
@@ -4561,7 +4561,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113014313",
-        "n_candidates": 10
+        "n_candidates": 9
       },
       "geometry": {
         "type": "Point",
@@ -4701,7 +4701,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113014501",
-        "n_candidates": 4
+        "n_candidates": 5
       },
       "geometry": {
         "type": "Point",
@@ -6451,7 +6451,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113017806",
-        "n_candidates": 6
+        "n_candidates": 5
       },
       "geometry": {
         "type": "Point",
@@ -6549,7 +6549,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113017817",
-        "n_candidates": 10
+        "n_candidates": 9
       },
       "geometry": {
         "type": "Point",
@@ -6885,7 +6885,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113018141",
-        "n_candidates": 4
+        "n_candidates": 5
       },
       "geometry": {
         "type": "Point",
@@ -7473,7 +7473,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113019026",
-        "n_candidates": 6
+        "n_candidates": 7
       },
       "geometry": {
         "type": "Point",
@@ -7501,7 +7501,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113019028",
-        "n_candidates": 2
+        "n_candidates": 4
       },
       "geometry": {
         "type": "Point",
@@ -7781,7 +7781,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113019053",
-        "n_candidates": 9
+        "n_candidates": 11
       },
       "geometry": {
         "type": "Point",
@@ -7879,7 +7879,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113019210",
-        "n_candidates": 7
+        "n_candidates": 8
       },
       "geometry": {
         "type": "Point",
@@ -8173,7 +8173,7 @@
       "type": "Feature",
       "properties": {
         "geoid": "48113020900",
-        "n_candidates": 31
+        "n_candidates": 30
       },
       "geometry": {
         "type": "Point",
